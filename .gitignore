@@ -1,5 +1,11 @@
 *.swp
-latex/maths.aux
-latex/maths.dvi
-latex/maths.toc
-latex/maths.log
+maths.aux
+maths.dvi
+maths.toc
+maths.log
+maths.lg
+maths.4ct
+maths.4tc
+maths.idv
+maths.tmp
+maths.xref
