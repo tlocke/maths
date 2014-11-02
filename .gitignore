@@ -1,0 +1,5 @@
+*.swp
+latex/maths.aux
+latex/maths.dvi
+latex/maths.toc
+latex/maths.log
