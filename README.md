@@ -3,7 +3,7 @@ Maths
 
 Maths is a website that you can see at:
 
-http://tlocke.github.io/maths
+http://maths.tlocke.org.uk/
 
 
 License
