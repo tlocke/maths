@@ -17,22 +17,14 @@ http://creativecommons.org/licenses/by-sa/4.0/.
 Building the website
 ====================
 
-Building the website, pdf and epub books requires a LaTeX distribution to be
-installed. On Ubuntu this can be done with:
+Building the website, pdf and epub books requires a tex4ht to be installed. On
+Ubuntu this can be done with:
 
-`sudo apt-get install texlive tex4ht`
+`sudo apt-get install tex4ht`
 
-To create the `.dvi` file type:
+To create the HTML type:
 
-`latex maths.tex`
-
-To view the DVI file, do:
-
-`xdvi maths.dvi`
-
-To create the HTML, `cd` to the `html` directory and type:
-
-`htlatex maths.tex`
+`htlatex index.tex`
 
 
 Useful Links
