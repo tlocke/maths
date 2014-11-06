@@ -1,299 +1,919 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
-  "http://www.w3.org/TR/html4/loose.dtd">  
-<html > 
-<head><title>My Glimpse Of Propositional Logic Inside The Ivory Tower Of Mathematics</title> 
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
-<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
-<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
-<!-- html --> 
-<meta name="src" content="index.tex"> 
-<meta name="date" content="2014-11-04 22:09:00"> 
-<link rel="stylesheet" type="text/css" href="index.css"> 
-</head><body 
->
-   <div class="maketitle">
-                                                                  
-
-                                                                  
-                                                                  
-
-                                                                  
-
-<h2 class="titleHead">My Glimpse Of Propositional Logic Inside The
-Ivory Tower Of Mathematics</h2>
-<div class="author" ><span 
-class="cmr-12">The Contributors</span></div><br />
-<div class="date" ><span 
-class="cmr-12">November 4, 2014</span></div>
-   </div>
-   <h3 class="likesectionHead"><a 
- id="x1-1000"></a>Contents</h3>
-   <div class="tableofcontents">
-   <span class="sectionToc" >1 <a 
-href="#x1-20001" id="QQ2-1-2">Introduction</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >1.1 <a 
-href="#x1-30001.1" id="QQ2-1-3">Licence</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >1.2 <a 
-href="#x1-40001.2" id="QQ2-1-4">Contributing</a></span>
-<br />   <span class="sectionToc" >2 <a 
-href="#x1-50002" id="QQ2-1-5">Propositions</a></span>
-<br />   <span class="sectionToc" >3 <a 
-href="#x1-70003" id="QQ2-1-7">Expressions</a></span>
-<br />   <span class="sectionToc" >4 <a 
-href="#x1-90004" id="QQ2-1-9">Rosetta Stone</a></span>
-<br />   <span class="sectionToc" >A <a 
-href="#x1-10000A" id="QQ2-1-10">Answers To Section Questions</a></span>
-   </div>
-<!--l. 10--><p class="noindent" >
-   <h3 class="sectionHead"><span class="titlemark">1   </span> <a 
- id="x1-20001"></a>Introduction</h3>
-<!--l. 12--><p class="noindent" >I&#8217;m a mathematical barbarian, but a few days ago I broke into the ivory tower of
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 1.5.1">
+<meta name="author" content="The Contributors">
+<title>My Glimpse Of Propositional Logic Inside The Ivory Tower Of Mathematics</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic|Noto+Serif:400,400italic,700,700italic|Droid+Sans+Mono:400">
+<style>
+/* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
+/* Remove the comments around the @import statement below when using this as a custom stylesheet */
+/*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic|Noto+Serif:400,400italic,700,700italic|Droid+Sans+Mono:400";*/
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}
+audio,canvas,video{display:inline-block}
+audio:not([controls]){display:none;height:0}
+[hidden],template{display:none}
+script{display:none!important}
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+body{margin:0}
+a{background:transparent}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:.67em 0}
+abbr[title]{border-bottom:1px dotted}
+b,strong{font-weight:bold}
+dfn{font-style:italic}
+hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}
+mark{background:#ff0;color:#000}
+code,kbd,pre,samp{font-family:monospace;font-size:1em}
+pre{white-space:pre-wrap}
+q{quotes:"\201C" "\201D" "\2018" "\2019"}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:0}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
+button,input{line-height:normal}
+button,select{text-transform:none}
+button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}
+input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}
+input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}
+table{border-collapse:collapse;border-spacing:0}
+*,*:before,*:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
+html,body{font-size:100%}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto}
+a:hover{cursor:pointer}
+img,object,embed{max-width:100%;height:auto}
+object,embed{height:100%}
+img{-ms-interpolation-mode:bicubic}
+#map_canvas img,#map_canvas embed,#map_canvas object,.map_canvas img,.map_canvas embed,.map_canvas object{max-width:none!important}
+.left{float:left!important}
+.right{float:right!important}
+.text-left{text-align:left!important}
+.text-right{text-align:right!important}
+.text-center{text-align:center!important}
+.text-justify{text-align:justify!important}
+.hide{display:none}
+.antialiased,body{-webkit-font-smoothing:antialiased}
+img{display:inline-block;vertical-align:middle}
+textarea{height:auto;min-height:50px}
+select{width:100%}
+p.lead,.paragraph.lead>p,#preamble>.sectionbody>.paragraph:first-of-type p{font-size:1.21875em;line-height:1.6}
+.subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0;direction:ltr}
+a{color:#2156a5;text-decoration:underline;line-height:inherit}
+a:hover,a:focus{color:#1d4b8f}
+a img{border:none}
+p{font-family:inherit;font-weight:400;font-size:1em;line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
+p aside{font-size:.875em;line-height:1.35;font-style:italic}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
+h1{font-size:2.125em}
+h2{font-size:1.6875em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.375em}
+h4,h5{font-size:1.125em}
+h6{font-size:1em}
+hr{border:solid #ddddd8;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em;height:0}
+em,i{font-style:italic;line-height:inherit}
+strong,b{font-weight:bold;line-height:inherit}
+small{font-size:60%;line-height:inherit}
+code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
+ul,ol,dl{font-size:1em;line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
+ul,ol,ul.no-bullet,ol.no-bullet{margin-left:1.5em}
+ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0;font-size:1em}
+ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
+ul.square{list-style-type:square}
+ul.circle{list-style-type:circle}
+ul.disc{list-style-type:disc}
+ul.no-bullet{list-style:none}
+ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
+dl dt{margin-bottom:.3125em;font-weight:bold}
+dl dd{margin-bottom:1.25em}
+abbr,acronym{text-transform:uppercase;font-size:90%;color:rgba(0,0,0,.8);border-bottom:1px dotted #ddd;cursor:help}
+abbr{text-transform:none}
+blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
+blockquote cite{display:block;font-size:.9375em;color:rgba(0,0,0,.6)}
+blockquote cite:before{content:"\2014 \0020"}
+blockquote cite a,blockquote cite a:visited{color:rgba(0,0,0,.6)}
+blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
+@media only screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
+h1{font-size:2.75em}
+h2{font-size:2.3125em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
+h4{font-size:1.4375em}}table{background:#fff;margin-bottom:1.25em;border:solid 1px #dedede}
+table thead,table tfoot{background:#f7f8f7;font-weight:bold}
+table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
+table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
+table tr.even,table tr.alt,table tr:nth-of-type(even){background:#f8f8f7}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{display:table-cell;line-height:1.6}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
+h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.clearfix:before,.clearfix:after,.float-group:before,.float-group:after{content:" ";display:table}
+.clearfix:after,.float-group:after{clear:both}
+*:not(pre)>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background-color:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
+pre,pre>code{line-height:1.45;color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;text-rendering:optimizeSpeed}
+.keyseq{color:rgba(51,51,51,.8)}
+kbd{display:inline-block;color:rgba(0,0,0,.8);font-size:.75em;line-height:1.4;background-color:#f7f7f7;border:1px solid #ccc;-webkit-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em white inset;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em #fff inset;margin:-.15em .15em 0 .15em;padding:.2em .6em .2em .5em;vertical-align:middle;white-space:nowrap}
+.keyseq kbd:first-child{margin-left:0}
+.keyseq kbd:last-child{margin-right:0}
+.menuseq,.menu{color:rgba(0,0,0,.8)}
+b.button:before,b.button:after{position:relative;top:-1px;font-weight:400}
+b.button:before{content:"[";padding:0 3px 0 2px}
+b.button:after{content:"]";padding:0 2px 0 3px}
+p a>code:hover{color:rgba(0,0,0,.9)}
+#header,#content,#footnotes,#footer{width:100%;margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
+#header:before,#header:after,#content:before,#content:after,#footnotes:before,#footnotes:after,#footer:before,#footer:after{content:" ";display:table}
+#header:after,#content:after,#footnotes:after,#footer:after{clear:both}
+#content{margin-top:1.25em}
+#content:before{content:none}
+#header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
+#header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #ddddd8}
+#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #ddddd8;padding-bottom:8px}
+#header .details{border-bottom:1px solid #ddddd8;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:-ms-flexbox;display:-webkit-flex;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap}
+#header .details span:first-child{margin-left:-.125em}
+#header .details span.email a{color:rgba(0,0,0,.85)}
+#header .details br{display:none}
+#header .details br+span:before{content:"\00a0\2013\00a0"}
+#header .details br+span.author:before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
+#header .details br+span#revremark:before{content:"\00a0|\00a0"}
+#header #revnumber{text-transform:capitalize}
+#header #revnumber:after{content:"\00a0"}
+#content>h1:first-child:not([class]){color:rgba(0,0,0,.85);border-bottom:1px solid #ddddd8;padding-bottom:8px;margin-top:0;padding-top:1rem;margin-bottom:1.25rem}
+#toc{border-bottom:1px solid #efefed;padding-bottom:.5em}
+#toc>ul{margin-left:.125em}
+#toc ul.sectlevel0>li>a{font-style:italic}
+#toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
+#toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc a{text-decoration:none}
+#toc a:active{text-decoration:underline}
+#toctitle{color:#7a2518;font-size:1.2em}
+@media only screen and (min-width:768px){#toctitle{font-size:1.375em}
+body.toc2{padding-left:15em;padding-right:0}
+#toc.toc2{margin-top:0!important;background-color:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #efefed;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
+#toc.toc2 #toctitle{margin-top:0;font-size:1.2em}
+#toc.toc2>ul{font-size:.9em;margin-bottom:0}
+#toc.toc2 ul ul{margin-left:0;padding-left:1em}
+#toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
+body.toc2.toc-right{padding-left:0;padding-right:15em}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #efefed;left:auto;right:0}}@media only screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+#toc.toc2{width:20em}
+#toc.toc2 #toctitle{font-size:1.375em}
+#toc.toc2>ul{font-size:.95em}
+#toc.toc2 ul ul{padding-left:1.25em}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}#content #toc{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
+#content #toc>:first-child{margin-top:0}
+#content #toc>:last-child{margin-bottom:0}
+#footer{max-width:100%;background-color:rgba(0,0,0,.8);padding:1.25em}
+#footer-text{color:rgba(255,255,255,.8);line-height:1.44}
+.sect1{padding-bottom:.625em}
+@media only screen and (min-width:768px){.sect1{padding-bottom:1.25em}}.sect1+.sect1{border-top:1px solid #efefed}
+#content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
+#content h1>a.anchor:before,h2>a.anchor:before,h3>a.anchor:before,#toctitle>a.anchor:before,.sidebarblock>.content>.title>a.anchor:before,h4>a.anchor:before,h5>a.anchor:before,h6>a.anchor:before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
+#content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
+#content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
+#content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
+.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
+table.tableblock>caption.title{white-space:nowrap;overflow:visible;max-width:0}
+.paragraph.lead>p,#preamble>.sectionbody>.paragraph:first-of-type p{color:rgba(0,0,0,.85)}
+table.tableblock #preamble>.sectionbody>.paragraph:first-of-type p{font-size:inherit}
+.admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
+.admonitionblock>table td.icon{text-align:center;width:80px}
+.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #ddddd8;color:rgba(0,0,0,.6)}
+.admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content{border-style:solid;border-width:1px;border-color:#e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;-webkit-border-radius:4px;border-radius:4px}
+.exampleblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child{margin-bottom:0}
+.sidebarblock{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
+.sidebarblock>:first-child{margin-top:0}
+.sidebarblock>:last-child{margin-bottom:0}
+.sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
+.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.literalblock pre,.listingblock pre:not(.highlight),.listingblock pre[class="highlight"],.listingblock pre[class^="highlight "],.listingblock pre.CodeRay,.listingblock pre.prettyprint{background:#f7f7f8}
+.sidebarblock .literalblock pre,.sidebarblock .listingblock pre:not(.highlight),.sidebarblock .listingblock pre[class="highlight"],.sidebarblock .listingblock pre[class^="highlight "],.sidebarblock .listingblock pre.CodeRay,.sidebarblock .listingblock pre.prettyprint{background:#f2f1f1}
+.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{-webkit-border-radius:4px;border-radius:4px;word-wrap:break-word;padding:1em;font-size:.8125em}
+.literalblock pre.nowrap,.literalblock pre[class].nowrap,.listingblock pre.nowrap,.listingblock pre[class].nowrap{overflow-x:auto;white-space:pre;word-wrap:normal}
+@media only screen and (min-width:768px){.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{font-size:.90625em}}@media only screen and (min-width:1280px){.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{font-size:1em}}.literalblock.output pre{color:#f7f7f8;background-color:rgba(0,0,0,.9)}
+.listingblock pre.highlightjs{padding:0}
+.listingblock pre.highlightjs>code{padding:1em;-webkit-border-radius:4px;border-radius:4px}
+.listingblock pre.prettyprint{border-width:0}
+.listingblock>.content{position:relative}
+.listingblock code[data-lang]:before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:#999}
+.listingblock:hover code[data-lang]:before{display:block}
+.listingblock.terminal pre .command:before{content:attr(data-prompt);padding-right:.5em;color:#999}
+.listingblock.terminal pre .command:not([data-prompt]):before{content:"$"}
+table.pyhltable{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.pyhltable td{vertical-align:top;padding-top:0;padding-bottom:0}
+table.pyhltable td.code{padding-left:.75em;padding-right:0}
+pre.pygments .lineno,table.pyhltable td:not(.code){color:#999;padding-left:0;padding-right:.5em;border-right:1px solid #ddddd8}
+pre.pygments .lineno{display:inline-block;margin-right:.25em}
+table.pyhltable .linenodiv{background:none!important;padding-right:0!important}
+.quoteblock{margin:0 1em 1.25em 1.5em;display:table}
+.quoteblock>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock blockquote,.quoteblock blockquote p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
+.quoteblock blockquote{margin:0;padding:0;border:0}
+.quoteblock blockquote:before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
+.quoteblock .attribution{margin-top:.5em;margin-right:.5ex;text-align:right}
+.quoteblock .quoteblock{margin-left:0;margin-right:0;padding:.5em 0;border-left:3px solid rgba(0,0,0,.6)}
+.quoteblock .quoteblock blockquote{padding:0 0 0 .75em}
+.quoteblock .quoteblock blockquote:before{display:none}
+.verseblock{margin:0 1em 1.25em 1em}
+.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre strong{font-weight:400}
+.verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
+.quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
+.quoteblock .attribution br,.verseblock .attribution br{display:none}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.05em;color:rgba(0,0,0,.6)}
+.quoteblock.abstract{margin:0 0 1.25em 0;display:block}
+.quoteblock.abstract blockquote,.quoteblock.abstract blockquote p{text-align:left;word-spacing:0}
+.quoteblock.abstract blockquote:before,.quoteblock.abstract blockquote p:first-of-type:before{display:none}
+table.tableblock{max-width:100%;border-collapse:separate}
+table.tableblock td>.paragraph:last-child p>p:last-child,table.tableblock th>p:last-child,table.tableblock td>p:last-child{margin-bottom:0}
+table.spread{width:100%}
+table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
+table.grid-all th.tableblock,table.grid-all td.tableblock{border-width:0 1px 1px 0}
+table.grid-all tfoot>tr>th.tableblock,table.grid-all tfoot>tr>td.tableblock{border-width:1px 1px 0 0}
+table.grid-cols th.tableblock,table.grid-cols td.tableblock{border-width:0 1px 0 0}
+table.grid-all *>tr>.tableblock:last-child,table.grid-cols *>tr>.tableblock:last-child{border-right-width:0}
+table.grid-rows th.tableblock,table.grid-rows td.tableblock{border-width:0 0 1px 0}
+table.grid-all tbody>tr:last-child>th.tableblock,table.grid-all tbody>tr:last-child>td.tableblock,table.grid-all thead:last-child>tr>th.tableblock,table.grid-rows tbody>tr:last-child>th.tableblock,table.grid-rows tbody>tr:last-child>td.tableblock,table.grid-rows thead:last-child>tr>th.tableblock{border-bottom-width:0}
+table.grid-rows tfoot>tr>th.tableblock,table.grid-rows tfoot>tr>td.tableblock{border-width:1px 0 0 0}
+table.frame-all{border-width:1px}
+table.frame-sides{border-width:0 1px}
+table.frame-topbot{border-width:1px 0}
+th.halign-left,td.halign-left{text-align:left}
+th.halign-right,td.halign-right{text-align:right}
+th.halign-center,td.halign-center{text-align:center}
+th.valign-top,td.valign-top{vertical-align:top}
+th.valign-bottom,td.valign-bottom{vertical-align:bottom}
+th.valign-middle,td.valign-middle{vertical-align:middle}
+table thead th,table tfoot th{font-weight:bold}
+tbody tr th{display:table-cell;line-height:1.6;background:#f7f8f7}
+tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
+p.tableblock>code:only-child{background:none;padding:0}
+p.tableblock{font-size:1em}
+td>div.verse{white-space:pre}
+ol{margin-left:1.75em}
+ul li ol{margin-left:1.5em}
+dl dd{margin-left:1.125em}
+dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
+ol>li p,ul>li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+ul.unstyled,ol.unnumbered,ul.checklist,ul.none{list-style-type:none}
+ul.unstyled,ol.unnumbered,ul.checklist{margin-left:.625em}
+ul.checklist li>p:first-child>.fa-check-square-o:first-child,ul.checklist li>p:first-child>input[type="checkbox"]:first-child{margin-right:.25em}
+ul.checklist li>p:first-child>input[type="checkbox"]:first-child{position:relative;top:1px}
+ul.inline{margin:0 auto .625em auto;margin-left:-1.375em;margin-right:0;padding:0;list-style:none;overflow:hidden}
+ul.inline>li{list-style:none;float:left;margin-left:1.375em;display:block}
+ul.inline>li>*{display:block}
+.unstyled dl dt{font-weight:400;font-style:normal}
+ol.arabic{list-style-type:decimal}
+ol.decimal{list-style-type:decimal-leading-zero}
+ol.loweralpha{list-style-type:lower-alpha}
+ol.upperalpha{list-style-type:upper-alpha}
+ol.lowerroman{list-style-type:lower-roman}
+ol.upperroman{list-style-type:upper-roman}
+ol.lowergreek{list-style-type:lower-greek}
+.hdlist>table,.colist>table{border:0;background:none}
+.hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
+td.hdlist1{padding-right:.75em;font-weight:bold}
+td.hdlist1,td.hdlist2{vertical-align:top}
+.literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
+.colist>table tr>td:first-of-type{padding:0 .75em;line-height:1}
+.colist>table tr>td:last-of-type{padding:.25em 0}
+.thumb,.th{line-height:0;display:inline-block;border:solid 4px #fff;-webkit-box-shadow:0 0 0 1px #ddd;box-shadow:0 0 0 1px #ddd}
+.imageblock.left,.imageblock[style*="float: left"]{margin:.25em .625em 1.25em 0}
+.imageblock.right,.imageblock[style*="float: right"]{margin:.25em 0 1.25em .625em}
+.imageblock>.title{margin-bottom:0}
+.imageblock.thumb,.imageblock.th{border-width:6px}
+.imageblock.thumb>.title,.imageblock.th>.title{padding:0 .125em}
+.image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
+.image.left{margin-right:.625em}
+.image.right{margin-left:.625em}
+a.image{text-decoration:none}
+span.footnote,span.footnoteref{vertical-align:super;font-size:.875em}
+span.footnote a,span.footnoteref a{text-decoration:none}
+span.footnote a:active,span.footnoteref a:active{text-decoration:underline}
+#footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
+#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em 0;border-width:1px 0 0 0}
+#footnotes .footnote{padding:0 .375em;line-height:1.3;font-size:.875em;margin-left:1.2em;text-indent:-1.2em;margin-bottom:.2em}
+#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none}
+#footnotes .footnote:last-of-type{margin-bottom:0}
+#content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
+.gist .file-data>table{border:0;background:#fff;width:100%;margin-bottom:0}
+.gist .file-data>table td.line-data{width:99%}
+div.unbreakable{page-break-inside:avoid}
+.big{font-size:larger}
+.small{font-size:smaller}
+.underline{text-decoration:underline}
+.overline{text-decoration:overline}
+.line-through{text-decoration:line-through}
+.aqua{color:#00bfbf}
+.aqua-background{background-color:#00fafa}
+.black{color:#000}
+.black-background{background-color:#000}
+.blue{color:#0000bf}
+.blue-background{background-color:#0000fa}
+.fuchsia{color:#bf00bf}
+.fuchsia-background{background-color:#fa00fa}
+.gray{color:#606060}
+.gray-background{background-color:#7d7d7d}
+.green{color:#006000}
+.green-background{background-color:#007d00}
+.lime{color:#00bf00}
+.lime-background{background-color:#00fa00}
+.maroon{color:#600000}
+.maroon-background{background-color:#7d0000}
+.navy{color:#000060}
+.navy-background{background-color:#00007d}
+.olive{color:#606000}
+.olive-background{background-color:#7d7d00}
+.purple{color:#600060}
+.purple-background{background-color:#7d007d}
+.red{color:#bf0000}
+.red-background{background-color:#fa0000}
+.silver{color:#909090}
+.silver-background{background-color:#bcbcbc}
+.teal{color:#006060}
+.teal-background{background-color:#007d7d}
+.white{color:#bfbfbf}
+.white-background{background-color:#fafafa}
+.yellow{color:#bfbf00}
+.yellow-background{background-color:#fafa00}
+span.icon>.fa{cursor:default}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note:before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip:before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning:before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution:before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important:before{content:"\f06a";color:#bf0000}
+.conum[data-value]{display:inline-block;color:#fff!important;background-color:rgba(0,0,0,.8);-webkit-border-radius:100px;border-radius:100px;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value] *{color:#fff!important}
+.conum[data-value]+b{display:none}
+.conum[data-value]:after{content:attr(data-value)}
+pre .conum[data-value]{position:relative;top:-.125em}
+b.conum *{color:inherit!important}
+.conum:not([data-value]):empty{display:none}
+h1,h2{letter-spacing:-.01em}
+dt,th.tableblock,td.content{text-rendering:optimizeLegibility}
+p,td.content{letter-spacing:-.01em}
+p strong,td.content strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content{font-size:1.0625rem}
+p{margin-bottom:1.25rem}
+.sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
+.exampleblock>.content{background-color:#fffef7;border-color:#e0e0dc;-webkit-box-shadow:0 1px 4px #e0e0dc;box-shadow:0 1px 4px #e0e0dc}
+.print-only{display:none!important}
+@media print{@page{margin:1.25cm .75cm}
+*{-webkit-box-shadow:none!important;box-shadow:none!important;text-shadow:none!important}
+a{color:inherit!important;text-decoration:underline!important}
+a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+a[href^="http:"]:not(.bare):after,a[href^="https:"]:not(.bare):after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]:after{content:" (" attr(title) ")"}
+pre,blockquote,tr,img{page-break-inside:avoid}
+thead{display:table-header-group}
+img{max-width:100%!important}
+p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
+h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+#toc{border-bottom:1px solid #ddddd8!important;padding-bottom:0!important}
+.sect1{padding-bottom:0!important}
+.sect1+.sect1{border:0!important}
+#header>h1:first-child{margin-top:1.25rem}
+body.book #header{text-align:center}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em 0}
+body.book #header .details{border:0!important;display:block;padding:0!important}
+body.book #header .details span:first-child{margin-left:0!important}
+body.book #header .details br{display:block}
+body.book #header .details br+span:before{content:none!important}
+body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
+body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
+.listingblock code[data-lang]:before{display:block}
+#footer{background:none!important;padding:0 .9375em}
+#footer-text{color:rgba(0,0,0,.6)!important;font-size:.9em}
+.hide-on-print{display:none!important}
+.print-only{display:block!important}
+.hide-for-print{display:none!important}
+.show-for-print{display:inherit!important}}
+</style>
+</head>
+<body class="article">
+<div id="header">
+<h1>My Glimpse Of Propositional Logic Inside The Ivory Tower Of Mathematics</h1>
+<div class="details">
+<span id="author" class="author">The Contributors</span><br>
+</div>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_introduction">1. Introduction</a>
+<ul class="sectlevel2">
+<li><a href="#_licence">1.1. Licence</a></li>
+<li><a href="#_contributing">1.2. Contributing</a></li>
+<li><a href="#_formats">1.3. Formats</a></li>
+</ul>
+</li>
+<li><a href="#_propositions">2. Propositions</a>
+<ul class="sectlevel2">
+<li><a href="#_questions">Questions</a></li>
+</ul>
+</li>
+<li><a href="#_expressions">3. Expressions</a>
+<ul class="sectlevel2">
+<li><a href="#_questions_2">Questions</a></li>
+</ul>
+</li>
+<li><a href="#_labels">4. Labels</a>
+<ul class="sectlevel2">
+<li><a href="#_questions_3">Questions</a></li>
+</ul>
+</li>
+<li><a href="#_rosetta_stone">Rosetta Stone</a></li>
+<li><a href="#_answers_to_section_questions">Appendix A: Answers To Section Questions</a>
+<ul class="sectlevel2">
+<li><a href="#__a_href_propositions_propositions_a"><a href="#_propositions">Propositions</a></a></li>
+<li><a href="#__a_href_expressions_expressions_a"><a href="#_expressions">Expressions</a></a></li>
+<li><a href="#__a_href_labels_labels_a"><a href="#_labels">Labels</a></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_introduction">1. Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I&#8217;m a mathematical barbarian, but a few days ago I broke into the ivory tower of
 mathematics and learnt the basics of Propositional Logic. In order to help me
 learn it, I wrote this tutorial. It helped me, and perhaps you&#8217;ll find it useful
-too.
-<!--l. 17--><p class="noindent" >
-   <h4 class="subsectionHead"><span class="titlemark">1.1   </span> <a 
- id="x1-30001.1"></a>Licence</h4>
-                                                                  
-
-                                                                  
-<!--l. 19--><p class="noindent" >This work is licensed under a <a 
-href="http://creativecommons.org/licenses/by-sa/4.0/" >Creative Commons Attribution-ShareAlike 4.0
-International License</a>.
-<!--l. 23--><p class="noindent" >
-   <h4 class="subsectionHead"><span class="titlemark">1.2   </span> <a 
- id="x1-40001.2"></a>Contributing</h4>
-<!--l. 25--><p class="noindent" >All contributions (corrections, amendments, additions etc) welcome at
-<a 
-href="https://github.com/tlocke/maths" class="url" ><span 
-class="cmtt-10">https://github.com/tlocke/maths</span></a>.
-<!--l. 29--><p class="noindent" >
-   <h3 class="sectionHead"><span class="titlemark">2   </span> <a 
- id="x1-50002"></a>Propositions</h3>
-<!--l. 31--><p class="noindent" >In propositional logic, we&#8217;re only interested in sentences that are either true or false.
-Such sentences are known as <span 
-class="cmti-10">propositions</span>. Here are some sentences together with
-explanations of whether they are propositions or not:
-     <ul class="itemize1">
-     <li class="itemize"><span 
-class="cmti-10">How many miles to Crinnis?</span>
-     <!--l. 40--><p class="noindent" >This is a question, so not a proposition.
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">Elephants have four legs.</span>
-     <!--l. 44--><p class="noindent" >Yay, an actual proposition! It&#8217;s a sentence that is either true or false.
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">Don&#8217;t dilly-dally.</span>
-     <!--l. 49--><p class="noindent" >This isn&#8217;t true or false, it sounds like someone admonishing somebody.
-     Not a proposition.
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">The capital of France is Paris.</span>
-     <!--l. 54--><p class="noindent" >Yes, a proposition.
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">He likes chocolate.</span>
-     <!--l. 58--><p class="noindent" >This sounds like a proposition, but according to those logicians in the
-     ivory tower it doesn&#8217;t count because it relies on knowing who &#8216;he&#8217; is.
-     </li>
-     <li class="itemize"><span 
-class="cmti-10">Don&#8217;t spoil the ship for a ha&#8217;peth of tar.</span>
-     <!--l. 64--><p class="noindent" >This is a proverb, not a proposition.
-     </li></ul>
-                                                                  
-
-                                                                  
-<!--l. 68--><p class="indent" >   I&#8217;ve got this nagging doubt in my mind. Most propositions I can think of aren&#8217;t
-<span 
-class="cmti-10">totally </span>ambiguous. Take the &#8216;Elephants have four legs&#8217; example. Maybe there&#8217;s a
-three legged elephant in existence, perhaps one in a zoo got gangrene or something
-and had to have a leg amputated &hellip;Nevertheless, let&#8217;s suspend our disbelief and
-imagine all those perfect propositions.
-<!--l. 75--><p class="noindent" >
-   <h4 class="likesubsectionHead"><a 
- id="x1-60002"></a>Questions</h4>
-<!--l. 77--><p class="noindent" >
-     <ol  class="enumerate1" >
-     <li 
-  class="enumerate" id="x1-6002x1">Which of the following are propositions?
-         <ol  class="enumerate2" >
-         <li 
-  class="enumerate" id="x1-6004x1">Who is John Galt?
-         </li>
-         <li 
-  class="enumerate" id="x1-6006x2">He&#8217;s over there.
-         </li>
-         <li 
-  class="enumerate" id="x1-6008x3">Three divided by three is one.
-         </li>
-         <li 
-  class="enumerate" id="x1-6010x4">Belgium is a European country.
-         </li>
-         <li 
-  class="enumerate" id="x1-6012x5">Praise be!
-         </li>
-         <li 
-  class="enumerate" id="x1-6014x6">Blue is a colour.</li></ol>
-     </li>
-     <li 
-  class="enumerate" id="x1-6016x2">Are the following propositions true or false?
-         <ol  class="enumerate2" >
-         <li 
-  class="enumerate" id="x1-6018x1">Four is greater than two.
-         </li>
-         <li 
-  class="enumerate" id="x1-6020x2">Tennis is a colour.
-         </li>
-         <li 
-  class="enumerate" id="x1-6022x3">A square has eight sides.
-         </li>
-         <li 
-  class="enumerate" id="x1-6024x4">A cube has eight corners.
-         </li>
-         <li 
-  class="enumerate" id="x1-6026x5">Birmingham is a city in England.
-         </li>
-         <li 
-  class="enumerate" id="x1-6028x6">The word &#8216;rotavator&#8217; is a <a 
-href="http://en.wiktionary.org/wiki/palindrome" >palindrome</a>.</li></ol>
-     </li></ol>
-                                                                  
-
-                                                                  
-<!--l. 102--><p class="noindent" >
-   <h3 class="sectionHead"><span class="titlemark">3   </span> <a 
- id="x1-70003"></a>Expressions</h3>
-<!--l. 104--><p class="noindent" >It seems that the next thing the logicians do is string together propositions. They call
-the result an <span 
-class="cmti-10">expression</span>. So two propositions might be:
-     <ul class="itemize1">
-     <li class="itemize">Abelard likes coffee.
-     </li>
-     <li class="itemize">Abelard likes cake.</li></ul>
-<!--l. 113--><p class="indent" >   And an expression formed from these propositions might be:
-     <ul class="itemize1">
-     <li class="itemize">Abelard likes coffee and Abelard likes cake.</li></ul>
-<!--l. 119--><p class="indent" >   This expression is true if both the propositions are true, otherwise it is false.
-Another expression we can make from our propositions is:
-     <ul class="itemize1">
-     <li class="itemize">Abelard likes coffee or Abelard likes cake.</li></ul>
-<!--l. 126--><p class="indent" >   This expression is false if both propositions are false, otherwise it&#8217;s true. Those
-mathematicians from the Ivory Tower use the term <span 
-class="cmti-10">connectives </span>for the &#8216;and&#8217; and &#8216;or&#8217;
-that join propositions to make expressions.
-<!--l. 131--><p class="noindent" >
-   <h4 class="likesubsectionHead"><a 
- id="x1-80003"></a>Questions</h4>
-<!--l. 133--><p class="noindent" >
-     <ol  class="enumerate1" >
-     <li 
-  class="enumerate" id="x1-8002x1">Are the following expressions true or false?
-         <ol  class="enumerate2" >
-         <li 
-  class="enumerate" id="x1-8004x1">The film Erin Brokovich stars Julia Roberts and 16 is greater than
-         4.
-         </li>
-         <li 
-  class="enumerate" id="x1-8006x2">London is the capital of France or Paris is the capital of France.
-         </li>
-         <li 
-  class="enumerate" id="x1-8008x3">Some people have brown eyes and humans lay eggs.
-         </li>
-         <li 
-  class="enumerate" id="x1-8010x4">Four multiplied by two is twenty or it has never rained in Wales.
-                                                                  
-
-                                                                  
-         </li>
-         <li 
-  class="enumerate" id="x1-8012x5">Toothpaste is harder than diamond and less than 100 films have ever
-         been made.</li></ol>
-     </li></ol>
-<!--l. 150--><p class="noindent" >
-   <h3 class="sectionHead"><span class="titlemark">4   </span> <a 
- id="x1-90004"></a>Rosetta Stone</h3>
-     <ul class="itemize1">
-     <li class="itemize">Expression - Formula, Compound Proposition</li></ul>
-<!--l. 156--><p class="noindent" >
-   <h3 class="sectionHead"><span class="titlemark">A   </span> <a 
- id="x1-10000A"></a>Answers To Section Questions</h3>
-<!--l. 158--><p class="noindent" >
-   <h4 class="likesubsectionHead"><a 
- id="x1-11000A"></a>2 Propositions</h4>
-<!--l. 160--><p class="noindent" >
-     <ol  class="enumerate1" >
-     <li 
-  class="enumerate" id="x1-11002x1">
-         <ol  class="enumerate2" >
-         <li 
-  class="enumerate" id="x1-11004x1">Not a proposition.
-         </li>
-         <li 
-  class="enumerate" id="x1-11006x2">Not a proposition.
-         </li>
-         <li 
-  class="enumerate" id="x1-11008x3">A proposition.
-         </li>
-         <li 
-  class="enumerate" id="x1-11010x4">A proposition.
-         </li>
-         <li 
-  class="enumerate" id="x1-11012x5">Not a proposition.
-         </li>
-         <li 
-  class="enumerate" id="x1-11014x6">A proposition.</li></ol>
-     </li>
-     <li 
-  class="enumerate" id="x1-11016x2">
-         <ol  class="enumerate2" >
-         <li 
-  class="enumerate" id="x1-11018x1">True.
-                                                                  
-
-                                                                  
-         </li>
-         <li 
-  class="enumerate" id="x1-11020x2">False.
-         </li>
-         <li 
-  class="enumerate" id="x1-11022x3">False.
-         </li>
-         <li 
-  class="enumerate" id="x1-11024x4">True.
-         </li>
-         <li 
-  class="enumerate" id="x1-11026x5">True.
-         </li>
-         <li 
-  class="enumerate" id="x1-11028x6">True.</li></ol>
-     </li></ol>
-<!--l. 181--><p class="noindent" >
-   <h4 class="likesubsectionHead"><a 
- id="x1-12000A"></a>3 Expressions</h4>
-<!--l. 183--><p class="noindent" >
-     <ol  class="enumerate1" >
-     <li 
-  class="enumerate" id="x1-12002x1">
-         <ol  class="enumerate2" >
-         <li 
-  class="enumerate" id="x1-12004x1">True.
-         </li>
-         <li 
-  class="enumerate" id="x1-12006x2">True.
-         </li>
-         <li 
-  class="enumerate" id="x1-12008x3">False.
-         </li>
-         <li 
-  class="enumerate" id="x1-12010x4">False.
-         </li>
-         <li 
-  class="enumerate" id="x1-12012x5">False.</li></ol>
-     </li></ol>
-    
-</body></html> 
-
-                                                                  
-
-
+too.</p>
+</div>
+<div class="sect2">
+<h3 id="_licence">1.1. Licence</h3>
+<div class="paragraph">
+<p>This work is licensed under a
+<a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons
+Attribution-ShareAlike 4.0 International License</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_contributing">1.2. Contributing</h3>
+<div class="paragraph">
+<p>All contributions (corrections, amendments, additions etc) welcome at
+<a href="https://github.com/tlocke/maths">https://github.com/tlocke/maths</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_formats">1.3. Formats</h3>
+<div class="paragraph">
+<p>This book is available in the following formats:</p>
+</div>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+Web
+</td>
+<td class="hdlist2">
+<p><a href="http://maths.tlocke.org.uk/" class="bare">http://maths.tlocke.org.uk/</a></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+EPUB
+</td>
+<td class="hdlist2">
+<p><a href="http://maths.tlocke.org.uk/maths.epub" class="bare">http://maths.tlocke.org.uk/maths.epub</a></p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_propositions">2. Propositions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In propositional logic, we&#8217;re only interested in sentences that are either true
+or false. Such sentences are known as <em>propositions</em>. Here are some sentences
+together with explanations of whether they are propositions or not:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>How many miles to Crinnis?</em></p>
+<div class="paragraph">
+<p>This is a question, so not a proposition.</p>
+</div>
+</li>
+<li>
+<p><em>Elephants have four legs.</em></p>
+<div class="paragraph">
+<p>Yay, an actual proposition! It&#8217;s a sentence that is either true or false.</p>
+</div>
+</li>
+<li>
+<p><em>Don&#8217;t dilly-dally.</em></p>
+<div class="paragraph">
+<p>This isn&#8217;t true or false, it sounds like someone admonishing somebody. Not a
+proposition.</p>
+</div>
+</li>
+<li>
+<p><em>The capital of France is Paris.</em></p>
+<div class="paragraph">
+<p>Yes, a proposition.</p>
+</div>
+</li>
+<li>
+<p><em>He likes chocolate.</em></p>
+<div class="paragraph">
+<p>This sounds like a proposition, but according to those logicians in the ivory
+tower it doesn&#8217;t count because it relies on knowing who `he' is.</p>
+</div>
+</li>
+<li>
+<p><em>Don&#8217;t spoil the ship for a ha&#8217;peth of tar.</em></p>
+<div class="paragraph">
+<p>This is a proverb, not a proposition.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>I&#8217;ve got this nagging doubt in my mind. Most propositions I can think of aren&#8217;t
+<em>totally</em> ambiguous. Take the `Elephants have four legs' example. Maybe there&#8217;s
+a three legged elephant in existence, perhaps one in a zoo got gangrene or
+something and had to have a leg amputated&#8230;&#8203; Nevertheless, let&#8217;s suspend our
+disbelief and imagine all those perfect propositions.</p>
+</div>
+<div class="sect2">
+<h3 id="_questions">Questions</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Which of the following are propositions?</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Who is John Galt?</p>
+</li>
+<li>
+<p>He&#8217;s over there.</p>
+</li>
+<li>
+<p>Three divided by three is one.</p>
+</li>
+<li>
+<p>Belgium is a European country.</p>
+</li>
+<li>
+<p>Praise be!</p>
+</li>
+<li>
+<p>Blue is a colour.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Are the following propositions true or false?</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Four is greater than two.</p>
+</li>
+<li>
+<p>Tennis is a colour.</p>
+</li>
+<li>
+<p>A square has eight sides.</p>
+</li>
+<li>
+<p>A cube has eight corners.</p>
+</li>
+<li>
+<p>Birmingham is a city in England.</p>
+</li>
+<li>
+<p>The word `rotavator' is a
+<a href="http://en.wiktionary.org/wiki/palindrome">palindrome</a>.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_expressions">3. Expressions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>It seems that the next thing the logicians do is string together propositions.
+They call the result an <em>expression</em>. So two propositions might be:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+Abelard likes coffee.<br>
+Abelard likes cake.
+</div>
+</div>
+<div class="paragraph">
+<p>And an expression formed from these propositions might be:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+Abelard likes coffee and Abelard likes cake.
+</div>
+</div>
+<div class="paragraph">
+<p>This expression is true if both the propositions are true, otherwise it is
+false. Another expression we can make from our propositions is:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+Abelard likes coffee or Abelard likes cake.
+</div>
+</div>
+<div class="paragraph">
+<p>This expression is false if both propositions are false, otherwise it&#8217;s true.
+Those mathematicians from the Ivory Tower use the term <em>connectives</em> for the
+`and' and `or' that join propositions to make expressions.</p>
+</div>
+<div class="sect2">
+<h3 id="_questions_2">Questions</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Are the following expressions true or false?</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>The film Erin Brokovich stars Julia Roberts and 16 is greater than 4.</p>
+</li>
+<li>
+<p>London is the capital of France or Paris is the capital of France.</p>
+</li>
+<li>
+<p>Some people have brown eyes and humans lay eggs.</p>
+</li>
+<li>
+<p>Four multiplied by two is twenty or it has never rained in Wales.</p>
+</li>
+<li>
+<p>Toothpaste is harder than diamond and less than 100 films have ever been
+made.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_labels">4. Labels</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Rather than always writing propositions out in full, those work-shy logicians
+assign a label to them. So for the expression:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+Abelard likes coffee and Abelard likes cake.
+</div>
+</div>
+<div class="paragraph">
+<p>the two propositions can be labelled P and Q:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+P: Abelard likes coffee.<br>
+Q: Abelard likes cake.
+</div>
+</div>
+<div class="paragraph">
+<p>and the expression can be written:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+P and Q
+</div>
+</div>
+<div class="paragraph">
+<p>Now that we&#8217;ve said what P and Q stand for we write the expression:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+Abelard likes coffe or Abelard likes cake.
+</div>
+</div>
+<div class="paragraph">
+<p>and write it using the labels as:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+P or Q
+</div>
+</div>
+<div class="sect2">
+<h3 id="_questions_3">Questions</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>For the following expressions, assign labels to the propositions and write the
+expression using the labels.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>The film Erin Brokovich stars Julia Roberts and 16 is greater than 4.</p>
+</li>
+<li>
+<p>London is the capital of France or Paris is the capital of France.</p>
+</li>
+<li>
+<p>Some people have brown eyes and humans lay eggs.</p>
+</li>
+<li>
+<p>Four multiplied by two is twenty or it has never rained in Wales.</p>
+</li>
+<li>
+<p>Toothpaste is harder than diamond and less than 100 films have ever been
+made.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_rosetta_stone">Rosetta Stone</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Expression - Formula, Compound Proposition</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_answers_to_section_questions">Appendix A: Answers To Section Questions</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="__a_href_propositions_propositions_a"><a href="#_propositions">Propositions</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Not a proposition.</p>
+</li>
+<li>
+<p>Not a proposition.</p>
+</li>
+<li>
+<p>A proposition.</p>
+</li>
+<li>
+<p>A proposition.</p>
+</li>
+<li>
+<p>Not a proposition.</p>
+</li>
+<li>
+<p>A proposition.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>True.</p>
+</li>
+<li>
+<p>False.</p>
+</li>
+<li>
+<p>False.</p>
+</li>
+<li>
+<p>True.</p>
+</li>
+<li>
+<p>True.</p>
+</li>
+<li>
+<p>True.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__a_href_expressions_expressions_a"><a href="#_expressions">Expressions</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>True.</p>
+</li>
+<li>
+<p>True.</p>
+</li>
+<li>
+<p>False.</p>
+</li>
+<li>
+<p>False.</p>
+</li>
+<li>
+<p>False.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__a_href_labels_labels_a"><a href="#_labels">Labels</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>P: The film Erin Brokovich stars Julia Roberts.<br>
+Q: 16 is greater than 4.<br>
+P and Q</p>
+</li>
+<li>
+<p>A: London is the capital of France.<br>
+B: Paris is the capital of France.<br>
+A or B</p>
+</li>
+<li>
+<p>P: Some people have brown eyes.<br>
+Q: Humans lay eggs.<br>
+P and Q</p>
+</li>
+<li>
+<p>P: Four multiplied by two is twenty.<br>
+Q: It has never rained in Wales.<br>
+P or Q</p>
+</li>
+<li>
+<p>P: Toothpaste is harder than diamond.<br>
+Q: Less than 100 films have ever been made.<br>
+P and Q</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2014-11-06 15:22:35 GMT
+</div>
+</div>
+</body>
+</html>
