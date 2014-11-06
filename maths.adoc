@@ -327,11 +327,14 @@ and the truth table is:
 * Expression - Formula, Compound Proposition
 * Proposition - Atomic proposition, simple proposition.
 
+
 :numbered!:
 [appendix]
 == Answers To Section Questions
 
-=== <<_propositions>>
+=== Propositions: Answers
+
+Answers for <<_propositions>>.
 
 . {empty}
 .. Not a proposition.
@@ -348,7 +351,9 @@ and the truth table is:
 .. True.
 .. True.
 
-=== <<_expressions>>
+=== Expressions: Answers
+
+Answers for <<_expressions>>.
 
 . {empty}
 .. True.
@@ -357,7 +362,9 @@ and the truth table is:
 .. False.
 .. False.
 
-=== <<_labels>>
+=== Labels: Answers
+
+Answers for <<_labels>>.
 
 . {empty}
 .. P: The film Erin Brokovich stars Julia Roberts. +
@@ -377,7 +384,9 @@ and the truth table is:
    P and Q
 
 
-=== <<_funny_symbols>>
+=== Funny Symbols: Answers
+
+Answers for <<_funny_symbols>>.
 
 . {empty}
 .. P: The film Erin Brokovich stars Julia Roberts. +
@@ -397,7 +406,9 @@ and the truth table is:
    P &and; Q
 
 
-=== <<_truth_tables>>
+=== Truth Tables: Answers
+
+Answers for <<_truth_tables>>.
 
 . {empty}
 |===
@@ -412,7 +423,10 @@ and the truth table is:
 For each row of the truth table, the last two columns are the same, and so
 P &or; Q means the same as Q &or; P.
 
-=== <<_precedence>>
+
+=== Precedence: Answers
+
+Answers for <<_precedence>>.
 
 . {empty}
 .. {empty}
