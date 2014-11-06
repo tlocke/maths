@@ -17,19 +17,22 @@ http://creativecommons.org/licenses/by-sa/4.0/.
 Building the website
 ====================
 
-Building the website, pdf and epub books requires a tex4ht to be installed. On
-Ubuntu this can be done with:
+Building the website and EPUB book requires `asciidoctor` and `asciidoc` to be
+installed. On Ubuntu this can be done with:
 
-`sudo apt-get install tex4ht`
+`sudo apt-get install asciidoc asciidoctor`
 
 To create the HTML type:
 
-`htlatex index.tex`
+`asciidoctor maths.adoc -o index.html`
+
+and to create the EPUB book do:
+
+`a2x -fepub maths.adoc`
 
 
 Useful Links
 ============
 
-* http://mirror.ox.ac.uk/sites/ctan.org/info/lshort/english/lshort.pdf
-* http://tug.org/applications/tex4ht/mn.html
+* http://asciidoctor.org/docs/asciidoc-writers-guide/
 * https://help.github.com/articles/markdown-basics/
