@@ -57,17 +57,17 @@ Yes, a proposition.
 * _He likes chocolate._
 +
 This sounds like a proposition, but according to those logicians in the ivory
-tower it doesn't count because it relies on knowing who `he' is.
+tower it doesn't count because it relies on knowing who '`he`' is.
 
 * _Don't spoil the ship for a ha'peth of tar._
 +
 This is a proverb, not a proposition.
 
 I've got this nagging doubt in my mind. Most propositions I can think of aren't
-_totally_ ambiguous. Take the `Elephants have four legs' example. Maybe there's
-a three legged elephant in existence, perhaps one in a zoo got gangrene or
-something and had to have a leg amputated... Nevertheless, let's suspend our
-disbelief and imagine all those perfect propositions.
+_totally_ ambiguous. Take the '`Elephants have four legs`' example. Maybe
+there's a three legged elephant in existence, perhaps one in a zoo got
+gangrene or something and had to have a leg amputated... Nevertheless, let's
+suspend our disbelief and imagine all those perfect propositions.
 
 :numbered!:
 === Questions
@@ -86,7 +86,7 @@ disbelief and imagine all those perfect propositions.
 .. A square has eight sides.
 .. A cube has eight corners.
 .. Birmingham is a city in England.
-.. The word `rotavator' is a
+.. The word '`rotavator`' is a
       http://en.wiktionary.org/wiki/palindrome[palindrome].
 
 
@@ -113,7 +113,7 @@ Abelard likes coffee or Abelard likes cake.
 
 This expression is false if both propositions are false, otherwise it's true.
 Those mathematicians from the Ivory Tower use the term _connectives_ for the
-`and' and `or' that join propositions to make expressions.
+'`and`' and '`or`' that join propositions to make expressions.
 
 :numbered!:
 === Questions
@@ -169,9 +169,163 @@ P or Q
 .. Toothpaste is harder than diamond and less than 100 films have ever been
    made.
 
+:numbered:
+== Funny Symbols
+
+Using letters of the alphabet to label propositions does genuinely make it a lot
+easier to write down expressions, I get that. At the same time though it makes
+it harder for the uninitiated to understand what's going on. A bit like jargon.
+Something else that mathematicians do takes things even further in this
+direction of adding mystique to their subject. Instead of using words for
+connectives they use obscure symbols, as if they were sorceresses writing an
+occult text. So '`and`' is written &and; and '`or`' is written &or;. Going back
+to our friend Abelard in the cafe, the expression:
+
+[example]
+Abelard likes coffee and Abelard likes cake.
+
+is written in logical notation as:
+
+[example]
+P: Abelard likes coffee. +
+Q: Abelard likes cake. +
+P &and; Q
+
+and:
+
+[example]
+Abelard likes coffee or Abelard likes cake.
+
+is written:
+
+[example]
+P: Abelard likes coffee. +
+Q: Abelard likes cake. +
+P &or; Q
+
+:numbered!:
+=== Questions
+
+. For the following expressions, assign labels to the propositions and write the
+  expression in logical notation:
+.. The film Erin Brokovich stars Julia Roberts and 16 is greater than 4.
+.. London is the capital of France or Paris is the capital of France.
+.. Some people have brown eyes and humans lay eggs.
+.. Four multiplied by two is twenty or it has never rained in Wales.
+.. Toothpaste is harder than diamond and less than 100 films have ever been
+   made.
+
+
+:numbered:
+== Truth Tables
+
+A truth table. A medieval device for extracting a confession? No, a
+mathematical device for showing all the possible ways an expression can be true
+(T) or false (F). For the two propositions P and Q, the truth table for P &and;
+Q is:
+
+|===
+| P | Q | P &and; Q
+
+| T | T | T
+| F | T | F
+| T | F | F
+| F | F | F
+|===
+
+so what we've done is written a row for all the combination of true and false
+for P and Q, and then in the final column put the value of P &and; Q. The truth table for P &or; Q is:
+
+|===
+| P | Q | P &or; Q
+
+| T | T | T
+| F | T | T
+| T | F | T
+| F | F | F
+|===
+
+You can use a truth table to show that P &and; Q means the same as Q &and; P:
+
+|===
+| P | Q | P &and; Q | Q &and; P
+
+| T | T | T | T
+| F | T | F | F
+| T | F | F | F
+| F | F | F | F
+|===
+
+For each row of the truth table, the last two columns are the same, and so
+P &and; Q means the same as Q &and; P.
+
+:numbered!:
+=== Questions
+
+. Use a truth table to show that P &or; Q means the same thing as Q &or; P.
+
+:numbered:
+== Precedence
+
+Let's say we've got _three_ propositions P, Q and R. What's the truth table for:
+
+[example]
+P &or; Q &and; R
+
+But wait, do I do the P &or; Q first and then apply the &and; to the result? Or
+do I do Q &and; R first and then apply P &or; to the result? And does it even
+matter? The Rules Of Propositional Logic that I read while in the Ivory Tower
+are quite clear on the point. They say that &and; is evaluated before &or;.
+Okay, so the truth table for P &or; Q &and; R is:
+
+|===
+| P | Q | R | Q &and; R | P &or; Q &and; R
+
+| T | T | T | T         | T
+| F | T | T | T         | T
+| T | F | T | F         | T
+| F | F | T | F         | F
+| T | T | F | F         | T
+| F | T | F | F         | F
+| T | F | F | F         | T
+| F | F | F | F         | F
+|===
+
+So what would you write if you want to do P &or; Q and then apply &and; R? The
+Rules say that anything in brackets gets evaluated first. So you'd write:
+
+[example]
+(P &or; Q) &and; R
+
+and the truth table is:
+
+|===
+| P | Q | R | P &or; Q | (P &or; Q) &and; R
+
+| T | T | T | T         | T
+| F | T | T | T         | T
+| T | F | T | T         | T
+| F | F | T | F         | F
+| T | T | F | T         | F
+| F | T | F | T         | F
+| T | F | F | T         | F
+| F | F | F | F         | F
+|===
+
+:numbered!:
+=== Questions
+
+. Write out the truth tables for:
+.. P &and; Q &or; R
+.. P &and; Q &and; R
+.. P &or; Q &or; R
+.. P &and; (Q &or; R)
+
+
 == Rosetta Stone
 
 * Expression - Formula, Compound Proposition
+* Proposition - Atomic proposition, simple proposition.
 
 :numbered!:
 [appendix]
@@ -221,3 +375,98 @@ P or Q
 .. P: Toothpaste is harder than diamond. +
    Q: Less than 100 films have ever been made. +
    P and Q
+
+
+=== <<_funny_symbols>>
+
+. {empty}
+.. P: The film Erin Brokovich stars Julia Roberts. +
+   Q: 16 is greater than 4. +
+   P &and; Q
+.. A: London is the capital of France. +
+   B: Paris is the capital of France. +
+   A &or; B
+.. P: Some people have brown eyes. +
+   Q: Humans lay eggs. +
+   P &and; Q
+.. P: Four multiplied by two is twenty. +
+   Q: It has never rained in Wales. +
+   P &or; Q
+.. P: Toothpaste is harder than diamond. +
+   Q: Less than 100 films have ever been made. +
+   P &and; Q
+
+
+=== <<_truth_tables>>
+
+. {empty}
+|===
+| P | Q | P &or; Q | Q &or; P
+
+| T | T | T | T
+| F | T | T | T
+| T | F | T | T
+| F | F | F | F
+|===
+
+For each row of the truth table, the last two columns are the same, and so
+P &or; Q means the same as Q &or; P.
+
+=== <<_precedence>>
+
+. {empty}
+.. {empty}
+|===
+| P | Q | R | P &and; Q | P &and; Q &or; R
+
+| T | T | T | T         | T
+| F | T | T | F         | T
+| T | F | T | F         | T
+| F | F | T | F         | T
+| T | T | F | T         | T
+| F | T | F | F         | F
+| T | F | F | F         | F
+| F | F | F | F         | F
+|===
+[start=2]
+.. {empty}
+|===
+| P | Q | R | P &and; Q | P &and; Q &and; R
+
+| T | T | T | T         | T
+| F | T | T | F         | F
+| T | F | T | F         | F
+| F | F | T | F         | F
+| T | T | F | T         | F
+| F | T | F | F         | F
+| T | F | F | F         | F
+| F | F | F | F         | F
+|===
+[start=3]
+.. {empty}
+|===
+| P | Q | R | P &or; Q | P &or; Q &or; R
+
+| T | T | T | T         | T
+| F | T | T | T         | T
+| T | F | T | T         | T
+| F | F | T | F         | T
+| T | T | F | T         | T
+| F | T | F | T         | T
+| T | F | F | T         | T
+| F | F | F | F         | F
+|===
+[start=4]
+.. {empty}
+|===
+| P | Q | R | Q &or; R | P &and; (Q &or; R)
+
+| T | T | T | T         | T
+| F | T | T | T         | F
+| T | F | T | T         | T
+| F | F | T | F         | F
+| T | T | F | T         | T
+| F | T | F | T         | F
+| T | F | F | F         | F
+| F | F | F | F         | F
+|===
