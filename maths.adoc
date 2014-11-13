@@ -2,6 +2,7 @@
 The Contributors
 :toc:
 
+[subs="replacements"]
 ++++
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -338,16 +339,76 @@ and the truth table is:
 :numbered:
 == Not
 
-There's another connective called `not'. It has the symbol &not; Here's what you need to know about
-`not':
+There's another connective called '`not`'. It has the symbol &not; and the fancy
+name '`negation`'. In precedence it is second only to brackets, and its truth
+table is:
+
+|===
+| P | &not;P
+
+| T | F
+| F | T
+|===
+
+Let us cast it loose amongst the other connectives and employ the truth table
+to see what results. Picking an expression at random, let's try:
+
+[example]
+&not;P &or; Q
+
+We know that &not; takes precedence over &or;, so the truth table is:
+
+|===
+| P | Q | &not;P | &not;P &or; Q
+
+| T | T | F      | T
+| F | T | T      | T
+| T | F | F      | F
+| F | F | T      | T
+|===
+
+Let us now extract a full confession from:
+
+[example]
+&not;(P &or; Q)
+
+Brackets take precedence over &not; so the truth table is:
+
+|===
+| P | Q | P &or; Q | &not;(P &or; Q)
+
+| T | T | T        | F
+| F | T | T        | F
+| T | F | T        | F
+| F | F | F        | T
+|===
+
+One other thing, the first two connectives we encountered (&and; and &or;) both
+acted on two propositions, and so they're known as _binary_ connectives. The
+&not; connectives acts on one proposition and so is called a _unary_ connective.
+
+:numbered!:
+=== Questions
+
+. Give the truth tables for:
+.. &not;(P &and; Q)
+.. &not;P &and; Q
+.. P &or; &not;Q
+.. &not;&not;P
+.. &not;(P &or; Q &or; R)
+.. &not;((P &or; Q) &and; R)
 
 
 
+
+
+
+:numbered:
 == Rosetta Stone
 
 * Expression - Formula, Compound Proposition
 * Proposition - Atomic proposition, simple proposition.
-
+* Connective - Operator.
 
 :numbered!:
 [appendix]
@@ -504,4 +565,66 @@ Answers for <<_precedence>>.
 | F | T | F | T         | F
 | T | F | F | F         | F
 | F | F | F | F         | F
+|===
+
+
+=== Not: Answers
+
+Answers for <<_not>>.
+
+. {empty}
+.. {empty}
+|===
+| P | Q | &not;P | &not;P &and; Q
+
+| T | T | F      | F
+| F | T | T      | T
+| T | F | F      | F
+| F | F | T      | F
+|===
+[start=2]
+.. {empty}
+|===
+| P | Q | &not;Q | P &or; &not;Q
+
+| T | T | F      | T
+| F | T | F      | T
+| T | F | T      | T
+| F | F | T      | F
+|===
+[start=3]
+.. {empty}
+|===
+| P | &not;P | &not;&not;P
+
+| T | F      | T
+| F | T      | F
+|===
+[start=4]
+.. {empty}
+|===
+| P | Q | R | P &or; Q | P &or; Q &or; R | &not;(P &or; Q &or; R)
+
+| T | T | T | T        | T               | F
+| F | T | T | T        | T               | F
+| T | F | T | T        | T               | F
+| F | F | T | F        | T               | F
+| T | T | F | T        | T               | F
+| F | T | F | T        | T               | F
+| T | F | F | T        | T               | F
+| F | F | F | F        | F               | T
+|===
+[start=5]
+.. {empty}
+|===
+| P | Q | R | P &or; Q | (P &or; Q) &and; R | &not;((P &or; Q) &and; R)
+
+| T | T | T | T        | T                  | F
+| F | T | T | T        | T                  | F
+| T | F | T | T        | T                  | F
+| F | F | T | F        | F                  | T
+| T | T | F | T        | F                  | T
+| F | T | F | T        | F                  | T
+| T | F | F | T        | F                  | T
+| F | F | F | F        | F                  | T
 |===
