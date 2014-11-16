@@ -24,11 +24,11 @@ installed. On Ubuntu this can be done with:
 
 To create the HTML type:
 
-`asciidoctor maths.adoc -o index.html`
+`asciidoctor src/maths.adoc -o index.html`
 
 and to create the EPUB book do:
 
-`a2x -fepub maths.adoc`
+`a2x -fepub -D . src/maths.adoc`
 
 
 Useful Links
