@@ -447,7 +447,93 @@ So since the expression is always false, the expression is a contradiction.
 .. &not;P &and; (Q &or; &not;P) &and; R
 
 
+:numbered:
+== Implies
 
+There's another binary connective called _implies_ that has the symbol &rarr;
+and in precedence it comes after &or;. Its truth table is:
+
+|===
+| P | Q | P &rarr; Q
+
+| T | T | T
+| F | T | T
+| T | F | F
+| F | F | T
+|===
+
+Take the two propositions:
+
+[example]
+* Abelard is at the cafe. 
+* The cafe is open.
+
+Joining the two with an implication could give the expression:
+
+[example]
+Abelard is at the cafe only if the cafe is open.
+
+If Abelard really is at the cafe and the cafe really is open, then this
+expression is true. If Abelard isn't at the cafe, then whether or not the cafe
+is open, the expression is still true (another way of putting it is to say that if Abelard is not at the cafe, then this is still consistent with with the
+statement that '`Abelard is at the cafe only when the cafe is open`'). The only
+time the expression is false is if Abelard is at the cafe but the cafe is not
+open.
+
+There are a few different ways that '`implies`' occurs in English. Then
+sentence:
+
+[example]
+Abelard is at the cafe only if the cafe is open.
+
+could be written in these alternative ways:
+
+[example]
+* If Abelard is at the cafe then the cafe is open.
+* Abelard being at the cafe implies that the cafe is open.
+* The cafe being open is a necessary condition for Abelard to be at the cafe.
+* The cafe being open follows from Abelard being at the cafe.
+
+Let's find the truth table for:
+
+[example]
+P &and; &not;Q &rarr; Q
+
+The &rarr; connective is evaluated last, so the truth table is:
+
+|===
+| P | Q | &not;Q | P &and; &not;Q | P &and; &not;Q &rarr; Q
+
+| T | T | F      | F              | T
+| F | T | F      | F              | T
+| T | F | T      | T              | F
+| F | F | T      | F              | T
+|===
+
+Another example; the truth table for Q &rarr; P &and; &not;Q is:
+
+|===
+| P | Q | &not;Q | P &and; &not;Q | Q &rarr; P &and; &not;Q
+
+| T | T | F      | F              | F
+| F | T | F      | F              | F
+| T | F | T      | T              | T
+| F | F | T      | F              | T
+|===
+
+:numbered!:
+=== Questions
+
+. Write the following English sentences as logical expressions:
+.. The washing is out only if it's a dry day.
+.. If Keith is in Bath, then Keith is in England.
+.. The sky being red at night implies that the shepherds are delighted.
+. Create a truth table for each of the following expressions:
+.. &not;P &rarr; Q
+.. Q &rarr; &not;Q
+.. (P &rarr; Q) &or; P
+.. &not;(P &and; Q) &rarr; &not;P &or; &not; Q
+.. P &and; (P &rarr; Q) &rarr; &not;P
 
 
 :numbered:
@@ -742,3 +828,65 @@ Neither.
 |===
 Neither.
 
+=== Implies: Answers
+
+Answers for <<_implies>>.
+
+. {empty}
+.. P: The washing is out. +
+   Q: It's a dry day. +
+   P &rarr; Q
+.. A: Keith is in Bath. +
+   B: Keith is in England. +
+   A &rarr; B
+.. A: The sky is red at night. +
+   B: The shepherds are delighted. +
+   A &rarr; B
+. {empty}
+.. {empty}
+|===
+| P | Q | &not;P | &not;P &rarr; Q
+
+| T | T | F      | T
+| F | T | T      | T
+| T | F | F      | T
+| F | F | T      | F
+|===
+[start=2]
+.. {empty}
+|===
+| Q | &not;Q | Q &rarr; &not;Q
+
+| T | F      | F
+| F | T      | T
+|===
+[start=3]
+.. {empty}
+|===
+| P | Q | P &rarr; Q | (P &rarr; Q) &or; P
+
+| T | T | T          | T
+| F | T | T          | T
+| T | F | F          | T
+| F | F | T          | T
+|===
+[start=4]
+.. {empty}
+|===
+| P | Q | P &and; Q | &not;(P &and; Q) | &not; P | &not; Q | &not;P &or; &not; Q | &not;(P &and; Q) &rarr; &not;P &or; &not; Q
+
+| T | T | T         | F                | F       | F       | F                   | T
+| F | T | F         | T                | T       | F       | T                   | T
+| T | F | F         | T                | F       | T       | T                   | T
+| F | F | F         | T                | T       | T       | T                   | T
+|===
+[start=5]
+.. {empty}
+|===
+| P | Q | P &rarr; Q | &not;P | P &and; (P &rarr; Q) | P &and; (P &rarr; Q) &rarr; &not;P
+
+| T | T | T          | F      | T                   | F
+| F | T | F          | T      | F                   | T
+| T | F | F          | F      | F                   | T
+| F | F | F          | T      | F                   | T
+|===
