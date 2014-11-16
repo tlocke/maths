@@ -399,6 +399,53 @@ acted on two propositions, and so they're known as _binary_ connectives. The
 .. &not;((P &or; Q) &and; R)
 
 
+:numbered:
+== Tautology And Contradiction
+
+The expression:
+
+[example]
+P &or; &not;P
+
+has the truth table:
+
+|===
+| P | &not;P | P &or; &not;P
+
+| T | F      | T
+| F | T      | T
+|===
+
+which shows that  whatever the value of P, the expression is always true. In the
+Tower they call any expression that's always true a _tautology_. Also, any
+expression that's always false they call a _contradiction_. An example of a
+contradiction is:
+
+[example]
+P &and; &not;P
+
+the truth table being:
+
+|===
+| P | &not;P | P &and; &not;P
+
+| T | F      | F
+| F | T      | F
+|===
+
+So since the expression is always false, the expression is a contradiction.
+ 
+:numbered!:
+=== Questions
+
+. Say whether each of the following expressions is a tautology, a contradiction
+  or both:
+.. (P &and; Q) &and; &not;(P &and; Q)
+.. P &or; Q &or; &not;P
+.. P &or; Q &and; &not; P
+.. (&not;P &and; &not;Q) &and; &not;(&not;P &and; &not;Q)
+.. &not;P &and; (Q &or; &not;P) &and; R
+
 
 
 
@@ -409,6 +456,7 @@ acted on two propositions, and so they're known as _binary_ connectives. The
 * Expression - Formula, Compound Proposition
 * Proposition - Atomic proposition, simple proposition.
 * Connective - Operator.
+* Not - 
 
 :numbered!:
 [appendix]
@@ -628,3 +676,69 @@ Answers for <<_not>>.
 | T | F | F | T        | F                  | T
 | F | F | F | F        | F                  | T
 |===
+
+=== Tautology And Contradiction: Answers
+
+Answers for <<_tautology_and_contradiction>>.
+
+
+. {empty}
+.. {empty}
+|===
+| P | Q | P &and; Q | &not;(P &and; Q) | (P &and; Q) &and; &not;(P &and; Q)
+
+| T | T | T         | F                | F
+| F | T | F         | T                | F
+| T | F | F         | T                | F
+| F | F | F         | T                | F
+|===
+A contradiction.
+[start=2]
+.. {empty}
+|===
+| P | Q | &not;P | P &or; Q | P &or; Q &or; &not;P
+
+| T | T | F      | T        | T
+| F | T | T      | T        | T
+| T | F | F      | T        | T
+| F | F | T      | F        | T
+|===
+A tautology.
+[start=3]
+.. {empty}
+|===
+| P | Q | &not;P | Q &and; &not;P | P &or; Q &and; &not;P
+
+| T | T | F      | F              | T
+| F | T | T      | T              | T
+| T | F | F      | F              | T
+| F | F | T      | F              | F
+|===
+Neither.
+[start=4]
+.. {empty}
+|===
+| P | Q | &not;P | &not;Q | &not;P &and; &not;Q | (&not;P &and; &not;Q) &and; &not;(&not;P &and; &not;Q)
+
+| T | T | F      | F      | F                   | F
+| F | T | T      | F      | F                   | F
+| T | F | F      | T      | F                   | F
+| F | F | T      | T      | T                   | T
+|===
+Neither.
+[start=5]
+.. {empty}
+|===
+| P | Q | R | &not;P | Q &or; &not;P | &not;P &and; (Q &or; &not;P) | &not;P &and; (Q &or; &not;P) &and; R
+
+| T | T | T | F      | T             | F                            | F
+| F | T | T | T      | T             | T                            | T
+| T | F | T | F      | F             | F                            | F
+| F | F | T | T      | T             | T                            | T
+| T | T | F | F      | T             | F                            | F
+| F | T | F | T      | T             | T                            | F
+| T | F | F | F      | F             | F                            | F
+| F | F | F | T      | T             | T                            | F
+|===
+Neither.
+
