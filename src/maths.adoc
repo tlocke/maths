@@ -1,5 +1,10 @@
 = My Glimpse Of Propositional Logic Inside The Ivory Tower Of Mathematics
 The Contributors
+:entails: &#x22A8;
+:and: &#x2227;
+:or: &#x2228;
+:implies: &#x2192;
+:not: &#x00AC;
 :toc:
 
 [subs="replacements"]
@@ -192,7 +197,7 @@ it harder for the uninitiated to understand what's going on. A bit like jargon.
 Something else that mathematicians do takes things even further in this
 direction of adding mystique to their subject. Instead of using words for
 connectives they use obscure symbols, as if they were sorceresses writing an
-occult text. So '`and`' is written &and; and '`or`' is written &or;. Going back
+occult text. So '`and`' is written {and} and '`or`' is written {or}. Going back
 to our friend Abelard in the cafe, the expression:
 
 [example]
@@ -203,7 +208,7 @@ is written in logical notation as:
 [example]
 P: Abelard likes coffee. +
 Q: Abelard likes cake. +
-P &and; Q
+P {and} Q
 
 and:
 
@@ -215,7 +220,7 @@ is written:
 [example]
 P: Abelard likes coffee. +
 Q: Abelard likes cake. +
-P &or; Q
+P {or} Q
 
 :numbered!:
 === Questions
@@ -235,11 +240,11 @@ P &or; Q
 
 A truth table. A medieval device for extracting a confession? No, a
 mathematical device for showing all the possible ways an expression can be true
-(T) or false (F). For the two propositions P and Q, the truth table for P &and;
+(T) or false (F). For the two propositions P and Q, the truth table for P {and}
 Q is:
 
 |===
-| P | Q | P &and; Q
+| P | Q | P {and} Q
 
 | T | T | T
 | F | T | F
@@ -248,10 +253,10 @@ Q is:
 |===
 
 so what we've done is written a row for all the combination of true and false
-for P and Q, and then in the final column put the value of P &and; Q. The truth table for P &or; Q is:
+for P and Q, and then in the final column put the value of P {and} Q. The truth table for P {or} Q is:
 
 |===
-| P | Q | P &or; Q
+| P | Q | P {or} Q
 
 | T | T | T
 | F | T | T
@@ -259,10 +264,10 @@ for P and Q, and then in the final column put the value of P &and; Q. The truth 
 | F | F | F
 |===
 
-You can use a truth table to show that P &and; Q means the same as Q &and; P:
+You can use a truth table to show that P {and} Q means the same as Q {and} P:
 
 |===
-| P | Q | P &and; Q | Q &and; P
+| P | Q | P {and} Q | Q {and} P
 
 | T | T | T | T
 | F | T | F | F
@@ -271,12 +276,12 @@ You can use a truth table to show that P &and; Q means the same as Q &and; P:
 |===
 
 For each row of the truth table, the last two columns are the same, and so
-P &and; Q means the same as Q &and; P.
+P {and} Q means the same as Q {and} P.
 
 :numbered!:
 === Questions
 
-. Use a truth table to show that P &or; Q means the same thing as Q &or; P.
+. Use a truth table to show that P {or} Q means the same thing as Q {or} P.
 
 :numbered:
 == Precedence
@@ -284,16 +289,16 @@ P &and; Q means the same as Q &and; P.
 Let's say we've got _three_ propositions P, Q and R. What's the truth table for:
 
 [example]
-P &or; Q &and; R
+P {or} Q {and} R
 
-But wait, do I do the P &or; Q first and then apply the &and; to the result? Or
-do I do Q &and; R first and then apply P &or; to the result? And does it even
+But wait, do I do the P {or} Q first and then apply the {and} to the result? Or
+do I do Q {and} R first and then apply P {or} to the result? And does it even
 matter? The Rules Of Propositional Logic that I read while in the Ivory Tower
-are quite clear on the point. They say that &and; is evaluated before &or;.
-Okay, so the truth table for P &or; Q &and; R is:
+are quite clear on the point. They say that {and} is evaluated before {or}.
+Okay, so the truth table for P {or} Q {and} R is:
 
 |===
-| P | Q | R | Q &and; R | P &or; Q &and; R
+| P | Q | R | Q {and} R | P {or} Q {and} R
 
 | T | T | T | T         | T
 | F | T | T | T         | T
@@ -305,16 +310,16 @@ Okay, so the truth table for P &or; Q &and; R is:
 | F | F | F | F         | F
 |===
 
-So what would you write if you want to do P &or; Q and then apply &and; R? The
+So what would you write if you want to do P {or} Q and then apply {and} R? The
 Rules say that anything in brackets gets evaluated first. So you'd write:
 
 [example]
-(P &or; Q) &and; R
+(P {or} Q) {and} R
 
 and the truth table is:
 
 |===
-| P | Q | R | P &or; Q | (P &or; Q) &and; R
+| P | Q | R | P {or} Q | (P {or} Q) {and} R
 
 | T | T | T | T         | T
 | F | T | T | T         | T
@@ -330,21 +335,21 @@ and the truth table is:
 === Questions
 
 . Write out the truth tables for:
-.. P &and; Q &or; R
-.. P &and; Q &and; R
-.. P &or; Q &or; R
-.. P &and; (Q &or; R)
+.. P {and} Q {or} R
+.. P {and} Q {and} R
+.. P {or} Q {or} R
+.. P {and} (Q {or} R)
 
 
 :numbered:
 == Not
 
-There's another connective called '`not`'. It has the symbol &not; and the fancy
+There's another connective called '`not`'. It has the symbol {not} and the fancy
 name '`negation`'. In precedence it is second only to brackets, and its truth
 table is:
 
 |===
-| P | &not;P
+| P | {not}P
 
 | T | F
 | F | T
@@ -354,12 +359,12 @@ Let us cast it loose amongst the other connectives and employ the truth table
 to see what results. Picking an expression at random, let's try:
 
 [example]
-&not;P &or; Q
+{not}P {or} Q
 
-We know that &not; takes precedence over &or;, so the truth table is:
+We know that {not} takes precedence over {or}, so the truth table is:
 
 |===
-| P | Q | &not;P | &not;P &or; Q
+| P | Q | {not}P | {not}P {or} Q
 
 | T | T | F      | T
 | F | T | T      | T
@@ -370,12 +375,12 @@ We know that &not; takes precedence over &or;, so the truth table is:
 Let us now extract a full confession from:
 
 [example]
-&not;(P &or; Q)
+{not}(P {or} Q)
 
-Brackets take precedence over &not; so the truth table is:
+Brackets take precedence over {not} so the truth table is:
 
 |===
-| P | Q | P &or; Q | &not;(P &or; Q)
+| P | Q | P {or} Q | {not}(P {or} Q)
 
 | T | T | T        | F
 | F | T | T        | F
@@ -383,20 +388,20 @@ Brackets take precedence over &not; so the truth table is:
 | F | F | F        | T
 |===
 
-One other thing, the first two connectives we encountered (&and; and &or;) both
+One other thing, the first two connectives we encountered ({and} and {or}) both
 acted on two propositions, and so they're known as _binary_ connectives. The
-&not; connectives acts on one proposition and so is called a _unary_ connective.
+{not} connectives acts on one proposition and so is called a _unary_ connective.
 
 :numbered!:
 === Questions
 
 . Give the truth tables for:
-.. &not;(P &and; Q)
-.. &not;P &and; Q
-.. P &or; &not;Q
-.. &not;&not;P
-.. &not;(P &or; Q &or; R)
-.. &not;((P &or; Q) &and; R)
+.. {not}(P {and} Q)
+.. {not}P {and} Q
+.. P {or} {not}Q
+.. {not}{not}P
+.. {not}(P {or} Q {or} R)
+.. {not}((P {or} Q) {and} R)
 
 
 :numbered:
@@ -405,12 +410,12 @@ acted on two propositions, and so they're known as _binary_ connectives. The
 The expression:
 
 [example]
-P &or; &not;P
+P {or} {not}P
 
 has the truth table:
 
 |===
-| P | &not;P | P &or; &not;P
+| P | {not}P | P {or} {not}P
 
 | T | F      | T
 | F | T      | T
@@ -422,12 +427,12 @@ expression that's always false they call a _contradiction_. An example of a
 contradiction is:
 
 [example]
-P &and; &not;P
+P {and} {not}P
 
 the truth table being:
 
 |===
-| P | &not;P | P &and; &not;P
+| P | {not}P | P {and} {not}P
 
 | T | F      | F
 | F | T      | F
@@ -440,21 +445,21 @@ So since the expression is always false, the expression is a contradiction.
 
 . Say whether each of the following expressions is a tautology, a contradiction
   or both:
-.. (P &and; Q) &and; &not;(P &and; Q)
-.. P &or; Q &or; &not;P
-.. P &or; Q &and; &not; P
-.. (&not;P &and; &not;Q) &and; &not;(&not;P &and; &not;Q)
-.. &not;P &and; (Q &or; &not;P) &and; R
+.. (P {and} Q) {and} {not}(P {and} Q)
+.. P {or} Q {or} {not}P
+.. P {or} Q {and} {not} P
+.. ({not}P {and} {not}Q) {and} {not}({not}P {and} {not}Q)
+.. {not}P {and} (Q {or} {not}P) {and} R
 
 
 :numbered:
 == Implies
 
-There's another binary connective called _implies_ that has the symbol &rarr;
-and in precedence it comes after &or;. Its truth table is:
+There's another binary connective called _implies_ that has the symbol {implies}
+and in precedence it comes after {or}. Its truth table is:
 
 |===
-| P | Q | P &rarr; Q
+| P | Q | P {implies} Q
 
 | T | T | T
 | F | T | T
@@ -497,12 +502,12 @@ could be written in these alternative ways:
 Let's find the truth table for:
 
 [example]
-P &and; &not;Q &rarr; Q
+P {and} {not}Q {implies} Q
 
-The &rarr; connective is evaluated last, so the truth table is:
+The {implies} connective is evaluated last, so the truth table is:
 
 |===
-| P | Q | &not;Q | P &and; &not;Q | P &and; &not;Q &rarr; Q
+| P | Q | {not}Q | P {and} {not}Q | P {and} {not}Q {implies} Q
 
 | T | T | F      | F              | T
 | F | T | F      | F              | T
@@ -510,10 +515,10 @@ The &rarr; connective is evaluated last, so the truth table is:
 | F | F | T      | F              | T
 |===
 
-Another example; the truth table for Q &rarr; P &and; &not;Q is:
+Another example; the truth table for Q {implies} P {and} {not}Q is:
 
 |===
-| P | Q | &not;Q | P &and; &not;Q | Q &rarr; P &and; &not;Q
+| P | Q | {not}Q | P {and} {not}Q | Q {implies} P {and} {not}Q
 
 | T | T | F      | F              | F
 | F | T | F      | F              | F
@@ -529,11 +534,124 @@ Another example; the truth table for Q &rarr; P &and; &not;Q is:
 .. If Keith is in Bath, then Keith is in England.
 .. The sky being red at night implies that the shepherds are delighted.
 . Create a truth table for each of the following expressions:
-.. &not;P &rarr; Q
-.. Q &rarr; &not;Q
-.. (P &rarr; Q) &or; P
-.. &not;(P &and; Q) &rarr; &not;P &or; &not; Q
-.. P &and; (P &rarr; Q) &rarr; &not;P
+.. {not}P {implies} Q
+.. Q {implies} {not}Q
+.. (P {implies} Q) {or} P
+.. {not}(P {and} Q) {implies} {not}P {or} {not} Q
+.. P {and} (P {implies} Q) {implies} {not}P
+
+
+:numbered:
+== Arguments
+
+The word '`argument`' makes me think of a bitter shouting match. To a logician
+it means something altogether more cerebral. A logical argument in English might
+be:
+
+[example]
+Abelard ordered coffee or Abelard ordered cake. Abelard didn't order cake.
+Therefore Abelard ordered coffee.
+
+To convert this argument from English into logical symbols, we first of all
+label the propositions:
+
+[example]
+A: Abelard ordered coffee. +
+B: Abelard ordered cake.
+
+So the argument becomes:
+
+[example]
+If A {or} B is true and {not}B is true, then A is true.
+
+To express this argument more concisely we roll out the _semantic turnstile_.
+Yes, it really is called that. Anyway, the symbol for the semantic turnstile is
+{entails} and the argument can now be written:
+
+[example]
+A {or} B, {not}B {entails} A
+
+Where the comma-separated list of expressions on the left of the semantic
+turnstile are the assumptions, and the expression on the right is the
+conclusion. That's the argument written down, but is it valid? In other words,
+if the assumptions are true, is the conclusion true? To find out, we can say
+that if:
+
+[example]
+(A {or} B) {and} {not}B {implies} A
+
+is a tautology, then the argument is valid. If effect we've joined the
+assumptions together with {and} and replaced the {entails} with a {implies} to get
+the expressions. Bring on the table of truth!
+
+|===
+|A | B | A {or} B | {not}B | (A {or} B) {and} {not}B | (A {or} B) {and} {not}B {implies} A
+
+|T | T | T        | F      | F                       | T
+|F | T | T        | F      | F                       | T
+|T | F | T        | T      | T                       | T
+|F | F | F        | T      | F                       | T
+|===
+
+The last column is always true, so the expression is a tautology, so the
+argument is valid. Yay! Let's test another argument for validity:
+
+[example]
+If we run out of petrol we won't get to the wedding on time. If we lose our
+way we won't get to the wedding on time. We've run out of petrol. We won't get
+to the wedding on time.
+
+In logic symbols the argument is:
+
+[example]
+A: Run out of petrol. +
+B: Get to the wedding on time. +
+C: Lose our way. +
+A {implies} {not}B, C {implies} {not}B, A {entails} {not}B
+
+The argument is valid if:
+
+(A {implies} {not}B) {and} (C {implies} {not}B) {and} A {implies} {not}B
+
+is a tautology. Doing a giant truth table:
+
+|===
+| 1 | 2 | 3 | 4      | 5                 | 6                 | 7                 | 8             | 9
+
+| A | B | C | {not}B | A {implies} col_4 | C {implies} col_4 | col_5 {and} col_6 | col_7 {and} A | col_8 {implies} col_4
+
+| T | T | T | F      | F                 | F                 | F                 | F             | T
+| F | T | T | F      | T                 | F                 | F                 | F             | T
+| T | F | T | T      | T                 | F                 | F                 | F             | T
+| F | F | T | T      | T                 | T                 | T                 | F             | T
+| T | T | F | F      | F                 | T                 | F                 | F             | T
+| F | T | F | F      | T                 | T                 | T                 | F             | T
+| T | F | F | T      | T                 | T                 | T                 | T             | T
+| F | F | F | T      | T                 | T                 | T                 | F             | T
+|===
+
+
+:numbered!:
+=== Questions
+
+. Construct logical arguments for the following arguments in English:
+.. If it's a silent film then there's no sound. It's a silent film. Therefore
+   there's no sound.
+.. Scheherazade bought black paint or Scheherazade bought grey paint.
+   Scheherazade did not buy grey paint. Therefore Scheherazade bought black
+   paint.
+.. Ben won a tennis match or Toby won a tennis match. Toby won a tennis match.
+   Therefore Ben did not win a tennis match.
+.. Bill orders 6x or Bill orders Tribute. If Bill orders 6x or Tribute then the
+   pub is open. Bill does not order Tribute. Therefore the pub is open and Bill
+   orders 6x.
+.. The light switch is on or the light switch is off. The light switch is not on
+   and off. This light switch is not on. Therefore the light switch is off.
+. For the arguments given in question 1, show whether they are valid or not.
+
+
+
+
 
 
 :numbered:
@@ -543,6 +661,7 @@ Another example; the truth table for Q &rarr; P &and; &not;Q is:
 * Proposition - Atomic proposition, simple proposition.
 * Connective - Operator.
 * Not - 
+* Semantic turnstile - double turnstile.
 
 :numbered!:
 [appendix]
@@ -607,19 +726,19 @@ Answers for <<_funny_symbols>>.
 . {empty}
 .. P: The film Erin Brokovich stars Julia Roberts. +
    Q: 16 is greater than 4. +
-   P &and; Q
+   P {and} Q
 .. A: London is the capital of France. +
    B: Paris is the capital of France. +
-   A &or; B
+   A {or} B
 .. P: Some people have brown eyes. +
    Q: Humans lay eggs. +
-   P &and; Q
+   P {and} Q
 .. P: Four multiplied by two is twenty. +
    Q: It has never rained in Wales. +
-   P &or; Q
+   P {or} Q
 .. P: Toothpaste is harder than diamond. +
    Q: Less than 100 films have ever been made. +
-   P &and; Q
+   P {and} Q
 
 
 === Truth Tables: Answers
@@ -628,7 +747,7 @@ Answers for <<_truth_tables>>.
 
 . {empty}
 |===
-| P | Q | P &or; Q | Q &or; P
+| P | Q | P {or} Q | Q {or} P
 
 | T | T | T | T
 | F | T | T | T
@@ -637,7 +756,7 @@ Answers for <<_truth_tables>>.
 |===
 
 For each row of the truth table, the last two columns are the same, and so
-P &or; Q means the same as Q &or; P.
+P {or} Q means the same as Q {or} P.
 
 
 === Precedence: Answers
@@ -647,7 +766,7 @@ Answers for <<_precedence>>.
 . {empty}
 .. {empty}
 |===
-| P | Q | R | P &and; Q | P &and; Q &or; R
+| P | Q | R | P {and} Q | P {and} Q {or} R
 
 | T | T | T | T         | T
 | F | T | T | F         | T
@@ -661,7 +780,7 @@ Answers for <<_precedence>>.
 [start=2]
 .. {empty}
 |===
-| P | Q | R | P &and; Q | P &and; Q &and; R
+| P | Q | R | P {and} Q | P {and} Q {and} R
 
 | T | T | T | T         | T
 | F | T | T | F         | F
@@ -675,7 +794,7 @@ Answers for <<_precedence>>.
 [start=3]
 .. {empty}
 |===
-| P | Q | R | P &or; Q | P &or; Q &or; R
+| P | Q | R | P {or} Q | P {or} Q {or} R
 
 | T | T | T | T         | T
 | F | T | T | T         | T
@@ -689,7 +808,7 @@ Answers for <<_precedence>>.
 [start=4]
 .. {empty}
 |===
-| P | Q | R | Q &or; R | P &and; (Q &or; R)
+| P | Q | R | Q {or} R | P {and} (Q {or} R)
 
 | T | T | T | T         | T
 | F | T | T | T         | F
@@ -709,7 +828,7 @@ Answers for <<_not>>.
 . {empty}
 .. {empty}
 |===
-| P | Q | &not;P | &not;P &and; Q
+| P | Q | {not}P | {not}P {and} Q
 
 | T | T | F      | F
 | F | T | T      | T
@@ -719,7 +838,7 @@ Answers for <<_not>>.
 [start=2]
 .. {empty}
 |===
-| P | Q | &not;Q | P &or; &not;Q
+| P | Q | {not}Q | P {or} {not}Q
 
 | T | T | F      | T
 | F | T | F      | T
@@ -729,7 +848,7 @@ Answers for <<_not>>.
 [start=3]
 .. {empty}
 |===
-| P | &not;P | &not;&not;P
+| P | {not}P | {not}{not}P
 
 | T | F      | T
 | F | T      | F
@@ -737,7 +856,7 @@ Answers for <<_not>>.
 [start=4]
 .. {empty}
 |===
-| P | Q | R | P &or; Q | P &or; Q &or; R | &not;(P &or; Q &or; R)
+| P | Q | R | P {or} Q | P {or} Q {or} R | {not}(P {or} Q {or} R)
 
 | T | T | T | T        | T               | F
 | F | T | T | T        | T               | F
@@ -751,7 +870,7 @@ Answers for <<_not>>.
 [start=5]
 .. {empty}
 |===
-| P | Q | R | P &or; Q | (P &or; Q) &and; R | &not;((P &or; Q) &and; R)
+| P | Q | R | P {or} Q | (P {or} Q) {and} R | {not}((P {or} Q) {and} R)
 
 | T | T | T | T        | T                  | F
 | F | T | T | T        | T                  | F
@@ -771,7 +890,7 @@ Answers for <<_tautology_and_contradiction>>.
 . {empty}
 .. {empty}
 |===
-| P | Q | P &and; Q | &not;(P &and; Q) | (P &and; Q) &and; &not;(P &and; Q)
+| P | Q | P {and} Q | {not}(P {and} Q) | (P {and} Q) {and} {not}(P {and} Q)
 
 | T | T | T         | F                | F
 | F | T | F         | T                | F
@@ -782,7 +901,7 @@ A contradiction.
 [start=2]
 .. {empty}
 |===
-| P | Q | &not;P | P &or; Q | P &or; Q &or; &not;P
+| P | Q | {not}P | P {or} Q | P {or} Q {or} {not}P
 
 | T | T | F      | T        | T
 | F | T | T      | T        | T
@@ -793,7 +912,7 @@ A tautology.
 [start=3]
 .. {empty}
 |===
-| P | Q | &not;P | Q &and; &not;P | P &or; Q &and; &not;P
+| P | Q | {not}P | Q {and} {not}P | P {or} Q {and} {not}P
 
 | T | T | F      | F              | T
 | F | T | T      | T              | T
@@ -804,7 +923,7 @@ Neither.
 [start=4]
 .. {empty}
 |===
-| P | Q | &not;P | &not;Q | &not;P &and; &not;Q | (&not;P &and; &not;Q) &and; &not;(&not;P &and; &not;Q)
+| P | Q | {not}P | {not}Q | {not}P {and} {not}Q | ({not}P {and} {not}Q) {and} {not}({not}P {and} {not}Q)
 
 | T | T | F      | F      | F                   | F
 | F | T | T      | F      | F                   | F
@@ -815,7 +934,7 @@ Neither.
 [start=5]
 .. {empty}
 |===
-| P | Q | R | &not;P | Q &or; &not;P | &not;P &and; (Q &or; &not;P) | &not;P &and; (Q &or; &not;P) &and; R
+| P | Q | R | {not}P | Q {or} {not}P | {not}P {and} (Q {or} {not}P) | {not}P {and} (Q {or} {not}P) {and} R
 
 | T | T | T | F      | T             | F                            | F
 | F | T | T | T      | T             | T                            | T
@@ -835,17 +954,17 @@ Answers for <<_implies>>.
 . {empty}
 .. P: The washing is out. +
    Q: It's a dry day. +
-   P &rarr; Q
+   P {implies} Q
 .. A: Keith is in Bath. +
    B: Keith is in England. +
-   A &rarr; B
+   A {implies} B
 .. A: The sky is red at night. +
    B: The shepherds are delighted. +
-   A &rarr; B
+   A {implies} B
 . {empty}
 .. {empty}
 |===
-| P | Q | &not;P | &not;P &rarr; Q
+| P | Q | {not}P | {not}P {implies} Q
 
 | T | T | F      | T
 | F | T | T      | T
@@ -855,7 +974,7 @@ Answers for <<_implies>>.
 [start=2]
 .. {empty}
 |===
-| Q | &not;Q | Q &rarr; &not;Q
+| Q | {not}Q | Q {implies} {not}Q
 
 | T | F      | F
 | F | T      | T
@@ -863,7 +982,7 @@ Answers for <<_implies>>.
 [start=3]
 .. {empty}
 |===
-| P | Q | P &rarr; Q | (P &rarr; Q) &or; P
+| P | Q | P {implies} Q | (P {implies} Q) {or} P
 
 | T | T | T          | T
 | F | T | T          | T
@@ -873,7 +992,7 @@ Answers for <<_implies>>.
 [start=4]
 .. {empty}
 |===
-| P | Q | P &and; Q | &not;(P &and; Q) | &not; P | &not; Q | &not;P &or; &not; Q | &not;(P &and; Q) &rarr; &not;P &or; &not; Q
+| P | Q | P {and} Q | {not}(P {and} Q) | {not} P | {not} Q | {not}P {or} {not} Q | {not}(P {and} Q) {implies} {not}P {or} {not} Q
 
 | T | T | T         | F                | F       | F       | F                   | T
 | F | T | F         | T                | T       | F       | T                   | T
@@ -883,10 +1002,108 @@ Answers for <<_implies>>.
 [start=5]
 .. {empty}
 |===
-| P | Q | P &rarr; Q | &not;P | P &and; (P &rarr; Q) | P &and; (P &rarr; Q) &rarr; &not;P
+| P | Q | P {implies} Q | {not}P | P {and} (P {implies} Q) | P {and} (P {implies} Q) {implies} {not}P
 
 | T | T | T          | F      | T                   | F
 | F | T | F          | T      | F                   | T
 | T | F | F          | F      | F                   | T
 | F | F | F          | T      | F                   | T
+|===
+
+=== Arguments: Answers
+
+Answers for <<_arguments>>.
+
+. {empty}
+.. P: It's a silent film. +
+   Q: There's no sound. +
+   P {implies} Q, P {entails} Q
+.. A: Scheherazade bought black paint. +
+   B: Scheherazade bought grey paint. +
+   A {or} B, {not} B {entails} A
+.. P: Ben won a tennis match. +
+   Q: Toby won a tennis match. +
+   P {or} Q, Q {entails} {not}P
+.. P: Bill orders 6x. +
+   Q: Bill orders Tribute. +
+   R: The pub is open. +
+   P {or} Q, P {or} Q {implies} R, {not}Q {entails} R {and} P
+.. P: The light switch is on. +
+   Q: The light switch is off. +
+   P {or} Q, {not}(P {and} Q), {not}P {entails} Q
+. {empty}
+.. If the argument P {implies} Q, P {entails} Q is valid, then the expression
+   (P {implies} Q) {and} P {implies} Q is a tautology. The following truth table
+   shows the expression is a tautology, so the argument is indeed valid.
+|===
+| 1 | 2 | 3             | 4             | 5
+
+| P | Q | P {implies} Q | col_3 {and} P | col_4 {implies} Q
+
+| T | T | T             | T             | T
+| F | T | T             | F             | T
+| T | F | F             | F             | T
+| F | F | T             | F             | T
+|===
+[start=2]
+.. If the argument A {or} B, {not} B {entails} A is valid, then the expression
+   (A {or} B) {and} {not}B {implies} A is a tautology. The following truth table
+   shows the expression is a tautology, so the argument is indeed valid.
+|===
+| 1 | 2 | 3        | 4      | 5                 | 6
+
+| A | B | A {or} B | {not}B | col_3 {and} col_4 | col_5 {implies} A
+
+| T | T | T        | F      | F                 | T
+| F | T | T        | F      | F                 | T
+| T | F | T        | T      | T                 | T
+| F | F | F        | T      | F                 | T
+|===
+[start=3]
+.. If the argument P {or} Q, Q {entails} {not}P is valid, then the expression
+   (P {or} Q) {and} Q {implies} {not}P is a tautology. The following truth table
+   shows the expression is not a tautology, so the argument is not valid.
+|===
+| 1 | 2 | 3        | 4      | 5             | 6
+
+| P | Q | P {or} Q | {not}P | col_3 {and} Q | col_5 {implies} col_4
+
+| T | T | T        | F      | T             | F
+| F | T | T        | T      | T             | T
+| T | F | T        | F      | F             | T
+| F | F | F        | T      | F             | T
+|===
+[start=4]
+.. If the argument P {or} Q, P {or} Q {implies} R, {not}Q {entails} R {and} P is
+   valid, then the expression (P {or} Q) {and} (P {or} Q {implies} R) {and}
+   {not}Q {implies} (R {and} P) is a tautology. The following truth table shows
+   the expression is a tautology, so the argument is valid.
+|===
+| 1 | 2 | 3 | 4        | 5                 | 6         | 7      | 8                 | 9               | 10
+
+| P | Q | R | P {or} Q | col_4 {implies} R | R {and} P | {not}Q | col_4 {and} col_5 | col_8 and col_7 | col_9 {implies} col_6
+
+| T | T | T | T        | T                 | T         | F      | T                 | F               | T
+| F | T | T | F        | T                 | F         | F      | F                 | F               | T
+| T | F | T | F        | F                 | T         | T      | F                 | F               | T
+| F | F | T | F        | T                 | F         | T      | F                 | F               | T
+| T | T | F | T        | F                 | F         | F      | F                 | F               | T
+| F | T | F | F        | T                 | F         | F      | F                 | F               | T
+| T | F | F | F        | T                 | F         | T      | F                 | F               | T
+| F | F | F | F        | T                 | F         | T      | F                 | F               | T
+|===
+[start=5]
+.. If the argument P {or} Q, {not}(P {and} Q), {not}P {entails} Q is valid, then
+   the expression (P {or} Q) {and} {not}(P {and} Q) {and} {not}P {implies} Q is
+   a tautology. The following truth table shows the expression is a tautology,
+   so the argument is valid.
+|===
+| 1 | 2 | 3        | 4         | 5             | 6      | 7                 | 8                 | 9
+
+| P | Q | P {or} Q | P {and} Q | {not}col_4    | {not}P | col_3 {and} col_5 | col_7 {and} col_6 | col_8 {implies} Q
+
+| T | T | T        | T         | F             | F      | F                 | F                 | T
+| F | T | T        | F         | T             | T      | T                 | T                 | T
+| T | F | T        | F         | T             | F      | T                 | F                 | T
+| F | F | F        | F         | T             | T      | F                 | F                 | T
 |===
