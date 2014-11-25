@@ -1,4 +1,4 @@
-= My Glimpse Of Propositional Logic Inside The Ivory Tower Of Mathematics
+= My Glimpse Inside The Ivory Tower Of Mathematics
 The Contributors
 :entails: &#x22A8;
 :and: &#x2227;
@@ -640,8 +640,8 @@ is a tautology. Doing a giant truth table:
 .. Scheherazade bought black paint or Scheherazade bought grey paint.
    Scheherazade did not buy grey paint. Therefore Scheherazade bought black
    paint.
-.. Ben won a tennis match or Toby won a tennis match. Toby won a tennis match.
-   Therefore Ben did not win a tennis match.
+.. It is not the case that Ben won a tennis match and Toby won a tennis match.
+   Toby won a tennis match. Therefore Ben did not win a tennis match.
 .. Bill orders 6x or Bill orders Tribute. If Bill orders 6x or Tribute then the
    pub is open. Bill does not order Tribute. Therefore the pub is open and Bill
    orders 6x.
@@ -650,6 +650,105 @@ is a tautology. Doing a giant truth table:
 . For the arguments given in question 1, show whether they are valid or not.
 
 
+:numbered:
+== Rules Of Inference
+
+Writing out truth tables gets tedious, especially as the number of rows grows
+exponentially with the number of propositions. The logicians have discovered /
+invented an easier way of showing if an argument is valid or not. It involves rewriting the assumptions in a progressively simpler and simpler form until you
+end up with the conclusion. The simplifying substitutions are valid arguments
+that are known as _rules of inference_. One rule of inference is:
+
+[example]
+P, P {implies} Q {entails} Q
+
+You can see this is a valid argument because the expression:
+
+[example]
+P {and} (P {implies} Q) {implies} Q
+
+has the truth table:
+
+|===
+| P | Q | P {implies} Q | P {and} (P {implies} Q) | P {and} (P {implies} Q) {implies} Q
+
+| T | T | T             | T                       | T
+| F | T | T             | F                       | T
+| T | F | F             | F                       | T
+| F | F | T             | F                       | T
+|===
+
+which shows that the expression is a tautology and so the argument is valid.
+This rule of inference has the typically recondite name of..._modus ponens_!!!
+
+Another rule of inference is:
+
+[example]
+A {and} B {entails} B
+
+and another:
+
+[example]
+A {and} B {entails} A
+
+These two rules are called _{and} reduction_. And so, armed with these rules,
+lets find out if the following argument is valid:
+
+[example]
+A {and} B {implies} A, B {entails} A
+
+The steps to show this is valid are:
+
+. A {and} B {implies} A (assumption)
+. B {implies} A (1. and {and} reduction)
+. B (assumption)
+. A (2. and 3. and modus ponens)
+
+Case solved! Another one:
+
+[example]
+Q, (R {and} P) {and} (R {and} Q) {implies} P {entails} P
+
+. (R {and} P) {and} (R {and} Q) {implies} P (assumption)
+. R {and} (R {and} Q) {implies} P (1. and {and} reduction)
+. R {and} Q {implies} P (2. and {and} reduction)
+. Q {implies} P (3. and {and} reduction)
+. Q (assumption)
+. P (4. and 5. and modus ponens)
+
+Here's a list of rules of inference:
+
+|===
+| Name                   | Rule
+
+| Modus ponens           | A {implies} B, A {entails} B
+| {implies} introduction | A, B {entails} A {implies} B
+| Modus tollens          | A {implies} B, {not}B {entails} {not}A
+| Double negation        | {not}{not}A {entails} A
+| {and} elimination      | A {and} B {entails} A also A {and} B {entails} B
+| {and} introduction     | A, B {entails} A {and} B
+| {or} elimination       | A {implies} C, B {implies} C, A {or} B {entails} C
+| {or} introduction      | A {entails} A {or} B
+| {or} syllogism         | A {or} B, {not}B {entails} A
+| transitive             | A {implies} B, B {implies} C {entails} A {implies} C
+|===
+
+:numbered!:
+=== Questions
+
+. Show that the rules of inference are valid by using a truth table.
+. For all the arguments in the questions for <<_arguments>>, show that they are
+  valid by using rules of inference. (Warning: I can't do the last three, so
+  there aren't any answers for them yet. Let me know if you have the answer!)
+
+
+:numbered:
+== Equivalence and Exclusive-or
+
+There are a couple more connectives (with their own mystical symbols!) that
+logicians use, _equivalence_ and _exclusive-or_. Equivalence is a binary
+connective with the symbol {equivalent}. It's precedence is after {implies} and
+it's truth table is:
 
 
 
@@ -1023,7 +1122,7 @@ Answers for <<_arguments>>.
    A {or} B, {not} B {entails} A
 .. P: Ben won a tennis match. +
    Q: Toby won a tennis match. +
-   P {or} Q, Q {entails} {not}P
+   {not}(P {and} Q), Q {entails} {not}P
 .. P: Bill orders 6x. +
    Q: Bill orders Tribute. +
    R: The pub is open. +
@@ -1107,3 +1206,152 @@ Answers for <<_arguments>>.
 | T | F | T        | F         | T             | F      | T                 | F                 | T
 | F | F | F        | F         | T             | T      | F                 | F                 | T
 |===
+
+=== Rules Of Inference: Answers
+
+Answers for <<_rules_of_inference>>.
+
+. {empty}
+.. The following truth table shows that A {and} (A {implies} B) {implies} B is
+   a tautology, and so the rule of inference is valid.
+|===
+| 1 | 2 | 3             | 4             | 5
+| A | B | A {implies} B | A {and} col_3 | col_4 implies B
+
+| T | T | T             | T             | T
+| F | T | T             | F             | T
+| T | F | F             | F             | T
+| F | F | T             | F             | T
+|===
+| {implies} introduction | A, B {entails} A {implies} B
+[start=2]
+.. The following truth table shows that A {and} B {implies} (A {implies} B) is a
+   tautology, and so the rule of inference is valid.
+|===
+| 1 | 2 | 3         | 4             | 5
+| A | B | A {and} B | A {implies} B | col_3 {implies} col_4
+
+| T | T | T         | T             | T
+| F | T | F         | T             | T
+| T | F | F         | F             | T
+| F | F | F         | T             | T
+|===
+[start=3]
+.. The following truth table shows that (A {implies} B) {and} {not}B {implies}
+   {not}A is a tautology, and so the rule of inference is valid.
+|===
+| 1 | 2 | 3             | 4      | 5      | 6                 | 7
+| A | B | A {implies} B | {not}B | {not}A | col_3 {and} col_4 | col_6 {implies} col_5
+
+| T | T | T             | F      | F      | F                 | T
+| F | T | T             | F      | T      | F                 | T
+| T | F | F             | T      | F      | F                 | T
+| F | F | T             | T      | T      | T                 | T
+|===
+[start=4]
+.. The following truth table shows that {not}{not}A {implies} A is a tautology,
+   and so the rule of inference is valid.
+|===
+| A | {not}A | {not}{not}A | {not}{not}A {implies} A
+
+| T | F      | T           | T
+| F | T      | F           | T
+|===
+[start=5]
+.. The following truth table shows that A {and} B {implies} A is a tautology,
+   and so the rule of inference is valid.
+|===
+| A | B | A {and} B | A {and} B {implies} A
+
+| T | T | T         | T
+| F | T | F         | T
+| T | F | F         | T
+| F | F | F         | T
+|===
+[start=6]
+.. The following truth table shows that A {and} B {implies} A {and} B is
+   obviously a tautology, and so the rule of inference is valid.
+[start=7]
+.. The following truth table shows that (A {implies} C) {and} (B {implies} C)
+   {and} (A {or} B) {implies} C is a tautology, and so the rule of inference is
+   valid.
+|===
+| 1 | 2 | 3 | 4             | 5             | 6        | 7                 | 8                 | 9
+| A | B | C | A {implies} C | B {implies} C | A {or} B | col_4 {and} col_5 | col_7 {and} col_6 | col_8 {implies} C
+
+| T | T | T | T             | T             | T        | T                 | T                 | T
+| F | T | T | T             | T             | T        | T                 | T                 | T
+| T | F | T | T             | T             | T        | T                 | T                 | T
+| F | F | T | T             | T             | F        | T                 | F                 | T
+| T | T | F | F             | F             | T        | F                 | F                 | T
+| F | T | F | T             | F             | T        | F                 | F                 | T
+| T | F | F | F             | T             | T        | F                 | F                 | T
+| F | F | F | T             | T             | F        | T                 | F                 | T
+|===
+[start=8]
+.. The following truth table shows that A {implies} A {or} B is a tautology,
+   and so the rule of inference is valid.
+|===
+| A | B | A {or} B | A {implies} A {or} B
+
+| T | T | T        | T
+| F | T | T        | T
+| T | F | T        | T
+| F | F | F        | T
+|===
+[start=9]
+.. The following truth table shows that (A {or} B) {and} {not}B {implies} A is a
+   tautology, and so the rule of inference is valid.
+|===
+| 1 | 2 | 3        | 4      | 5                 | 6
+| A | B | A {or} B | {not}B | col_3 {and} col_4 | col_5 {implies} A
+
+| T | T | T        | F      | F                 | T
+| F | T | T        | F      | F                 | T
+| T | F | T        | T      | T                 | T
+| F | F | F        | T      | F                 | T
+|===
+| {or} syllogism     | A {or} B, {not}B {entails} A
+[start=10]
+.. The following truth table shows that (A {implies} B) {and} (B {implies} C)
+   {implies} (A {implies} C) is a tautology, and so the rule of inference is
+   valid.
+|===
+| 1 | 2 | 3 | 4             | 5             | 6             | 7                 | 8                 | 9
+| A | B | C | A {implies} B | B {implies} C | A {implies} C | col_4 {and} col_5 | col_7 {implies} col_6
+
+| T | T | T | T             | T             | T             | T                 | T
+| F | T | T | T             | T             | T             | T                 | T
+| T | F | T | F             | T             | T             | F                 | T
+| F | F | T | T             | T             | T             | T                 | T
+| T | T | F | T             | F             | F             | F                 | T
+| F | T | F | T             | F             | T             | F                 | T
+| T | F | F | F             | T             | F             | F                 | T
+| F | F | F | T             | T             | T             | T                 | T
+|===
+. {empty}
+.. P: It's a silent film. +
+   Q: There's no sound. +
+   P {implies} Q, P {entails} Q +
+   1. P {implies} Q (assumption)
+   2. P (assumption)
+   3. Q (1. and 2. and modus ponens)
+.. A: Scheherazade bought black paint. +
+   B: Scheherazade bought grey paint. +
+   A {or} B, {not}B {entails} A
+   1. A {or} B (assumption)
+   2. {not}B (assumption)
+   3. A (1. and 2. and {or} syllogism)
+.. P: Ben won a tennis match. +
+   Q: Toby won a tennis match. +
+   P {or} Q, {not}(P {and} Q), Q {entails} {not}P
+   1. I'm afraid I can't do this one. Let me know if you work out the answer!
+.. P: Bill orders 6x. +
+   Q: Bill orders Tribute. +
+   R: The pub is open. +
+   P {or} Q, P {or} Q {implies} R, {not}Q {entails} R {and} P
+   1. I'm afraid I can't do this one. Let me know if you work out the answer!
+.. P: The light switch is on. +
+   Q: The light switch is off. +
+   P {or} Q, {not}(P {and} Q), {not}P {entails} Q
+   1. I'm afraid I can't do this one. Let me know if you work out the answer!
