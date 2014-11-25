@@ -5,6 +5,7 @@ The Contributors
 :or: &#x2228;
 :implies: &#x2192;
 :not: &#x00AC;
+:equiv: &#x21D4;
 :toc:
 
 [subs="replacements"]
@@ -725,6 +726,7 @@ Here's a list of rules of inference:
 | {implies} introduction | A, B {entails} A {implies} B
 | Modus tollens          | A {implies} B, {not}B {entails} {not}A
 | Double negation        | {not}{not}A {entails} A
+| {not} elimination      | Assume {not}A, derive B and {not}B {entails} A
 | {and} elimination      | A {and} B {entails} A also A {and} B {entails} B
 | {and} introduction     | A, B {entails} A {and} B
 | {or} elimination       | A {implies} C, B {implies} C, A {or} B {entails} C
@@ -738,20 +740,73 @@ Here's a list of rules of inference:
 
 . Show that the rules of inference are valid by using a truth table.
 . For all the arguments in the questions for <<_arguments>>, show that they are
-  valid by using rules of inference. (Warning: I can't do the last three, so
-  there aren't any answers for them yet. Let me know if you have the answer!)
+  valid by using rules of inference.
 
 
 :numbered:
-== Equivalence and Exclusive-or
+== Equivalence
 
 There are a couple more connectives (with their own mystical symbols!) that
 logicians use, _equivalence_ and _exclusive-or_. Equivalence is a binary
-connective with the symbol {equivalent}. It's precedence is after {implies} and
+connective with the symbol {equiv}. It's precedence is after {implies} and
 it's truth table is:
 
+|===
+| P | Q | P {equiv} Q
 
+| T | T | T
+| F | T | F
+| T | F | F
+| F | F | T
+|===
 
+Translating from English to logic symbols the sentence:
+
+[example]
+It's Christmas Day if and only if it's the 25th of December.
+
+is written:
+
+[example]
+P: It's Christmas Day.
+Q: It's the 25th of December.
+P {equiv} Q
+
+If two expressions are equivalent, then the expression formed by connecting
+them with the {equiv} connective will be a tautology. For example, if the two
+expressions:
+
+[example]
+A and {not}{not}A
+
+are equivalent, then:
+
+[example]
+A {equiv} {not}{not}A
+
+will be a tautology. Let's find out by writing its truth table:
+
+|===
+| A | {not}A | {not}{not}A | A {equiv} {not}{not}A
+
+| T | F      | T           | T
+| F | T      | F           | T
+|===
+
+it's a tautology, so the two expressions are equivalent.
+
+:numbered!:
+=== Questions
+
+. Translate the following English sentences into logical symbols:
+.. The bike's back brake comes on if, and only if, the left brake lever is
+   applied.
+.. The fridge light is on if, and only if, the fridge door is open.
+. Give the truth table for each of the following expressions:
+.. A {equiv} B {and} C
+.. B {or} (A {equiv} B)
+.. P {and} {not}(P {equiv} Q {or} P)
+.. (Q {equiv} {not}P) {and} (P {equiv} {not} {not}Q)
 
 :numbered:
 == Rosetta Stone
@@ -761,6 +816,7 @@ it's truth table is:
 * Connective - Operator.
 * Not - 
 * Semantic turnstile - double turnstile.
+* All the rules of inference. and equivalence
 
 :numbered!:
 [appendix]
@@ -1123,6 +1179,11 @@ Answers for <<_arguments>>.
 .. P: Ben won a tennis match. +
    Q: Toby won a tennis match. +
    {not}(P {and} Q), Q {entails} {not}P
+   1. P (assume as part of {not} elimination)
+   2. Q (assumption) 
+   3. P {and} Q (1. and 2. and {and} introduction)
+   4. {not}(P {and} Q) (assumption)
+   5. {not}P (3. and 4. and {not} elimination)
 .. P: Bill orders 6x. +
    Q: Bill orders Tribute. +
    R: The pub is open. +
@@ -1223,7 +1284,6 @@ Answers for <<_rules_of_inference>>.
 | T | F | F             | F             | T
 | F | F | T             | F             | T
 |===
-| {implies} introduction | A, B {entails} A {implies} B
 [start=2]
 .. The following truth table shows that A {and} B {implies} (A {implies} B) is a
    tautology, and so the rule of inference is valid.
@@ -1311,7 +1371,6 @@ Answers for <<_rules_of_inference>>.
 | T | F | T        | T      | T                 | T
 | F | F | F        | T      | F                 | T
 |===
-| {or} syllogism     | A {or} B, {not}B {entails} A
 [start=10]
 .. The following truth table shows that (A {implies} B) {and} (B {implies} C)
    {implies} (A {implies} C) is a tautology, and so the rule of inference is
@@ -1344,14 +1403,96 @@ Answers for <<_rules_of_inference>>.
    3. A (1. and 2. and {or} syllogism)
 .. P: Ben won a tennis match. +
    Q: Toby won a tennis match. +
-   P {or} Q, {not}(P {and} Q), Q {entails} {not}P
-   1. I'm afraid I can't do this one. Let me know if you work out the answer!
+   {not}(P {and} Q), Q {entails} {not}P
+   1. P (assume as part of {not} elimination)
+   2. Q (assumption) 
+   3. P {and} Q (1. and 2. and {and} introduction)
+   4. {not}(P {and} Q) (assumption)
+   5. {not}P (3. and 4. and {not} elimination)
 .. P: Bill orders 6x. +
    Q: Bill orders Tribute. +
    R: The pub is open. +
    P {or} Q, P {or} Q {implies} R, {not}Q {entails} R {and} P
-   1. I'm afraid I can't do this one. Let me know if you work out the answer!
+   1. {not}P (assume for {not} elimination)
+   2. {not}Q (assumption)
+   3. {not}P {and} {not}Q (1. and 2. {and} introduction)
+   4. {not}(P {or} Q) (3. and De Morgan's law)
+   5. P {or} Q (assumption)
+   6. P (4 and 5 and {not} elimination)
+   7. P {or} Q {implies} R (assumption)
+   8. R (7 and 5 and modus ponens)
+   9. P {and} R (7 and 8 and {and} introduction)
+   10. 
 .. P: The light switch is on. +
    Q: The light switch is off. +
    P {or} Q, {not}(P {and} Q), {not}P {entails} Q
-   1. I'm afraid I can't do this one. Let me know if you work out the answer!
+   1. {not}Q (assume for {not} elimination)
+   2. {not}P (assumption)
+   3. {not}P {and} {not}Q (1 and 2 and {and} introduction)
+   4. {not}(P {or} Q) (3 and De Morgan's laws)
+   5. P {or} Q (assumption)
+   6. Q (4 and 5 and {not} elimination)
+
+=== Equivalence: Answers
+
+Answers for <<_equivalence>>.
+
+. {empty}
+.. A: The bike's back brake comes on. +
+   B: The left brake lever is applied. +
+   A {equiv} B
+.. The fridge light is on if, and only if, the fridge door is open.
+.. P: The fridge light is on. +
+   Q: The fridge door is open. +
+   P {equiv} Q
+. {empty}
+.. {empty}
+|===
+| A | B | C | B {and} C | A {equiv} B {and} C
+
+| T | T | T | T         | T
+| F | T | T | T         | F
+| T | F | T | F         | F
+| F | F | T | F         | T
+| T | T | F | F         | F
+| F | T | F | F         | T
+| T | F | F | F         | F
+| F | F | F | F         | T
+|===
+[start=2]
+.. {empty}
+|===
+| A | B | A {equiv} B | B {or} (A {equiv} B)
+
+| T | T | T           | T
+| F | T | F           | T
+| T | F | F           | F
+| F | F | T           | T
+|===
+[start=3]
+.. {empty}
+|===
+| 1 | 2 | 3        | 4               | 5          | 6
+| P | Q | Q {or} P | P {equiv} col_3 | {not}col_4 | P {and} col_5
+
+| T | T | T        | T               | F          | F
+| F | T | T        | F               | T          | F
+| T | F | T        | T               | F          | F
+| F | F | F        | T               | F          | F
+|===
+.. (Q {equiv} {not}P) {and} (P {equiv} {not}{not}Q)
+[start=4]
+.. {empty}
+|===
+| 1 | 2 | 3      | 4               | 5      | 6          | 7               | 8
+| P | Q | {not}P | Q {equiv} col_3 | {not}Q | {not}col_5 | P {equiv} col_6 | col_4 {and} col_7
+
+| T | T | F      | F               | F      | T          | T               | F
+| F | T | T      | T               | F      | T          | F               | F
+| T | F | F      | T               | T      | F          | F               | F
+| F | F | T      | F               | T      | F          | T               | F
+|===
+
+References
+
+http://en.wikibooks.org/wiki/Formal_Logic/Sentential_Logic
