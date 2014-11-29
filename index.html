@@ -426,81 +426,24 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_formats">1.3. Formats</a></li>
 </ul>
 </li>
-<li><a href="#_propositions">2. Propositions</a>
+<li><a href="#_sentential_logic">2. Sentential Logic</a>
 <ul class="sectlevel2">
-<li><a href="#_questions">Questions</a></li>
-</ul>
-</li>
-<li><a href="#_expressions">3. Expressions</a>
-<ul class="sectlevel2">
-<li><a href="#_questions_2">Questions</a></li>
-</ul>
-</li>
-<li><a href="#_labels">4. Labels</a>
-<ul class="sectlevel2">
-<li><a href="#_questions_3">Questions</a></li>
-</ul>
-</li>
-<li><a href="#_funny_symbols">5. Funny Symbols</a>
-<ul class="sectlevel2">
-<li><a href="#_questions_4">Questions</a></li>
-</ul>
-</li>
-<li><a href="#_truth_tables">6. Truth Tables</a>
-<ul class="sectlevel2">
-<li><a href="#_questions_5">Questions</a></li>
-</ul>
-</li>
-<li><a href="#_precedence">7. Precedence</a>
-<ul class="sectlevel2">
-<li><a href="#_questions_6">Questions</a></li>
-</ul>
-</li>
-<li><a href="#_not">8. Not</a>
-<ul class="sectlevel2">
-<li><a href="#_questions_7">Questions</a></li>
-</ul>
-</li>
-<li><a href="#_tautology_and_contradiction">9. Tautology And Contradiction</a>
-<ul class="sectlevel2">
-<li><a href="#_questions_8">Questions</a></li>
-</ul>
-</li>
-<li><a href="#_implies">10. Implies</a>
-<ul class="sectlevel2">
-<li><a href="#_questions_9">Questions</a></li>
-</ul>
-</li>
-<li><a href="#_arguments">11. Arguments</a>
-<ul class="sectlevel2">
-<li><a href="#_questions_10">Questions</a></li>
-</ul>
-</li>
-<li><a href="#_rules_of_inference">12. Rules Of Inference</a>
-<ul class="sectlevel2">
-<li><a href="#_questions_11">Questions</a></li>
-</ul>
-</li>
-<li><a href="#_equivalence">13. Equivalence</a>
-<ul class="sectlevel2">
-<li><a href="#_questions_12">Questions</a></li>
-</ul>
-</li>
-<li><a href="#_rosetta_stone">14. Rosetta Stone</a></li>
-<li><a href="#_answers_to_section_questions">Appendix A: Answers To Section Questions</a>
-<ul class="sectlevel2">
-<li><a href="#_propositions_answers">Propositions: Answers</a></li>
-<li><a href="#_expressions_answers">Expressions: Answers</a></li>
-<li><a href="#_labels_answers">Labels: Answers</a></li>
-<li><a href="#_funny_symbols_answers">Funny Symbols: Answers</a></li>
-<li><a href="#_truth_tables_answers">Truth Tables: Answers</a></li>
-<li><a href="#_precedence_answers">Precedence: Answers</a></li>
-<li><a href="#_not_answers">Not: Answers</a></li>
-<li><a href="#_tautology_and_contradiction_answers">Tautology And Contradiction: Answers</a></li>
-<li><a href="#_implies_answers">Implies: Answers</a></li>
-<li><a href="#_arguments_answers">Arguments: Answers</a></li>
-<li><a href="#_rules_of_inference_answers">Rules Of Inference: Answers</a></li>
-<li><a href="#_equivalence_answers">Equivalence: Answers</a></li>
+<li><a href="#_statements">2.1. Statements</a></li>
+<li><a href="#_connectives">2.2. Connectives</a></li>
+<li><a href="#_formulae">2.3. Formulae</a></li>
+<li><a href="#_funny_symbols">2.4. Funny Symbols</a></li>
+<li><a href="#_brackets">2.5. Brackets</a></li>
+<li><a href="#_truth_tables">2.6. Truth Tables</a></li>
+<li><a href="#_negation">2.7. Negation</a></li>
+<li><a href="#_tautology_and_contradiction">2.8. Tautology And Contradiction</a></li>
+<li><a href="#_implies">2.9. Implies</a></li>
+<li><a href="#_arguments">2.10. Arguments</a></li>
+<li><a href="#_rules_of_inference">2.11. Rules Of Inference</a></li>
+<li><a href="#_equivalence">2.12. Equivalence</a></li>
+<li><a href="#_precedence">2.13. Precedence</a></li>
+<li><a href="#_rosetta_stone">2.14. Rosetta Stone</a></li>
+<li><a href="#_answers_to_section_questions">Appendix A: Answers To Section Questions</a></li>
+<li><a href="#_references">References</a></li>
 </ul>
 </li>
 </ul>
@@ -526,7 +469,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sectionbody">
 <div class="paragraph">
 <p>I&#8217;m a mathematical barbarian, but a few days ago I broke into the ivory tower of
-mathematics and learnt the basics of Propositional Logic. In order to help me
+mathematics and learnt the basics of Sentential Logic. In order to help me
 learn it, I wrote this tutorial. It helped me, and perhaps you&#8217;ll find it useful
 too.</p>
 </div>
@@ -574,68 +517,76 @@ EPUB
 </div>
 </div>
 <div class="sect1">
-<h2 id="_propositions">2. Propositions</h2>
+<h2 id="_sentential_logic">2. Sentential Logic</h2>
 <div class="sectionbody">
+<div id="img" class="imageblock">
+<div class="content">
+<img src="russell.jpg" alt="Bertrand Russell in 1924">
+</div>
+<div class="title">Figure 1. <a href="http://commons.wikimedia.org/wiki/File:Russell_in_1924_01.jpg#mediaviewer/File:Russell_in_1924_01.jpg">Russell in 1924 01</a> by Unknown - <a href="http://www.humanities.mcmaster.ca/~bertrand/later.html" class="bare">http://www.humanities.mcmaster.ca/~bertrand/later.html</a>. Licensed under Public domain via <a href="http://commons.wikimedia.org/wiki/">Wikimedia Commons</a>.</div>
+</div>
+<div class="sect2">
+<h3 id="_statements">2.1. Statements</h3>
 <div class="paragraph">
-<p>In propositional logic, we&#8217;re only interested in sentences that are either true
-or false. Such sentences are known as <em>propositions</em>. Here are some sentences
-together with explanations of whether they are propositions or not:</p>
+<p>In sentential logic, we&#8217;re only interested in sentences that are either true
+or false. Such sentences are known as <em>statements</em>. Here are some sentences
+together with explanations of whether they are statements or not:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
 <p><em>How many miles to Crinnis?</em></p>
 <div class="paragraph">
-<p>This is a question, so not a proposition.</p>
+<p>This is a question, so not a statement.</p>
 </div>
 </li>
 <li>
 <p><em>Elephants have four legs.</em></p>
 <div class="paragraph">
-<p>Yay, an actual proposition! It&#8217;s a sentence that is either true or false.</p>
+<p>Yay, an actual statement! It&#8217;s a sentence that is either true or false.</p>
 </div>
 </li>
 <li>
 <p><em>Don&#8217;t dilly-dally.</em></p>
 <div class="paragraph">
 <p>This isn&#8217;t true or false, it sounds like someone admonishing somebody. Not a
-proposition.</p>
+statement.</p>
 </div>
 </li>
 <li>
 <p><em>The capital of France is Paris.</em></p>
 <div class="paragraph">
-<p>Yes, a proposition.</p>
+<p>Yes, a statement.</p>
 </div>
 </li>
 <li>
 <p><em>He likes chocolate.</em></p>
 <div class="paragraph">
-<p>This sounds like a proposition, but according to those logicians in the ivory
+<p>This sounds like a statement, but according to those logicians in the ivory
 tower it doesn&#8217;t count because it relies on knowing who &#8216;he&#8217; is.</p>
 </div>
 </li>
 <li>
 <p><em>Don&#8217;t spoil the ship for a ha&#8217;peth of tar.</em></p>
 <div class="paragraph">
-<p>This is a proverb, not a proposition.</p>
+<p>This is a proverb, not a statement.</p>
 </div>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>I&#8217;ve got this nagging doubt in my mind. Most propositions I can think of aren&#8217;t
+<p>I&#8217;ve got this nagging doubt in my mind. Most statements I can think of aren&#8217;t
 <em>totally</em> ambiguous. Take the &#8216;Elephants have four legs&#8217; example. Maybe
 there&#8217;s a three legged elephant in existence, perhaps one in a zoo got
 gangrene or something and had to have a leg amputated&#8230;&#8203; Nevertheless, let&#8217;s
-suspend our disbelief and imagine all those perfect propositions.</p>
+suspend our disbelief and imagine all those perfect statements.</p>
 </div>
-<div class="sect2">
-<h3 id="_questions">Questions</h3>
+<div class="sect3">
+<h4 id="_questions">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Which of the following are propositions?</p>
+<p>Which of the following are statements?</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -660,7 +611,7 @@ suspend our disbelief and imagine all those perfect propositions.</p>
 </div>
 </li>
 <li>
-<p>Are the following propositions true or false?</p>
+<p>Are the following statements true or false?</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -689,13 +640,11 @@ suspend our disbelief and imagine all those perfect propositions.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_expressions">3. Expressions</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_connectives">2.2. Connectives</h3>
 <div class="paragraph">
-<p>It seems that the next thing the logicians do is string together propositions.
-They call the result an <em>expression</em>. So two propositions might be:</p>
+<p>It seems that the next thing the logicians do is string together simple
+statements to make complex statements. So two simple statements might be:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -704,7 +653,7 @@ Abelard likes cake.
 </div>
 </div>
 <div class="paragraph">
-<p>And an expression formed from these propositions might be:</p>
+<p>And a complex statement formed from these two simple statements is:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -712,8 +661,9 @@ Abelard likes coffee and Abelard likes cake.
 </div>
 </div>
 <div class="paragraph">
-<p>This expression is true if both the propositions are true, otherwise it is
-false. Another expression we can make from our propositions is:</p>
+<p>This complex statement is true if both the simple statements are true, otherwise
+it is false. Another complex statement we can make from our two simple
+statements is:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -721,16 +671,17 @@ Abelard likes coffee or Abelard likes cake.
 </div>
 </div>
 <div class="paragraph">
-<p>This expression is false if both propositions are false, otherwise it&#8217;s true.
-Those mathematicians from the Ivory Tower use the term <em>connectives</em> for the
-&#8216;and&#8217; and &#8216;or&#8217; that join propositions to make expressions.</p>
+<p>This complex statment is false if both simple statements are false, otherwise
+it&#8217;s true. Those mathematicians from the Ivory Tower use the term <em>connectives</em>
+for the &#8216;and&#8217; and &#8216;or&#8217; that join simple statements to make complex
+statements.</p>
 </div>
-<div class="sect2">
-<h3 id="_questions_2">Questions</h3>
+<div class="sect3">
+<h4 id="_questions_2">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Are the following expressions true or false?</p>
+<p>Are the following complex statements true or false?</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -756,13 +707,12 @@ made.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_labels">4. Labels</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_formulae">2.3. Formulae</h3>
 <div class="paragraph">
-<p>Rather than always writing propositions out in full, those work-shy logicians
-assign a label to them. So for the expression:</p>
+<p>Rather than always writing simple statements out in full, those work-shy
+logicians assign a label to them. They call the label an <em>atomic formula</em>, and
+it can be any capital letter of the alphabet. So for the complex statement:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -770,7 +720,7 @@ Abelard likes coffee and Abelard likes cake.
 </div>
 </div>
 <div class="paragraph">
-<p>the two propositions can be labelled P and Q:</p>
+<p>the two simple statements can have the atomic formulae P and Q:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -779,7 +729,7 @@ Q: Abelard likes cake.
 </div>
 </div>
 <div class="paragraph">
-<p>and the expression can be written:</p>
+<p>and the compound statement can be written as the <em>formula</em>:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -787,7 +737,7 @@ P and Q
 </div>
 </div>
 <div class="paragraph">
-<p>Now that we&#8217;ve said what P and Q stand for we write the expression:</p>
+<p>Now that we&#8217;ve said what P and Q stand for we can take this compound statement:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -795,20 +745,19 @@ Abelard likes coffe or Abelard likes cake.
 </div>
 </div>
 <div class="paragraph">
-<p>and write it using the labels as:</p>
+<p>and write it using the atomic formulae to give the formula:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
 P or Q
 </div>
 </div>
-<div class="sect2">
-<h3 id="_questions_3">Questions</h3>
+<div class="sect3">
+<h4 id="_questions_3">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>For the following expressions, assign labels to the propositions and write the
-expression using the labels.</p>
+<p>Write the following compound statements as formulae:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -834,19 +783,17 @@ made.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_funny_symbols">5. Funny Symbols</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_funny_symbols">2.4. Funny Symbols</h3>
 <div class="paragraph">
-<p>Using letters of the alphabet to label propositions does genuinely make it a lot
-easier to write down expressions, I get that. At the same time though it makes
-it harder for the uninitiated to understand what&#8217;s going on. A bit like jargon.
-Something else that mathematicians do takes things even further in this
-direction of adding mystique to their subject. Instead of using words for
-connectives they use obscure symbols, as if they were sorceresses writing an
-occult text. So &#8216;and&#8217; is written &#x2227; and &#8216;or&#8217; is written &#x2228;. Going back
-to our friend Abelard in the cafe, the expression:</p>
+<p>Using formulae does genuinely make it a lot easier to write down statements, I
+get that. At the same time though it makes it harder for the uninitiated to
+understand what&#8217;s going on. A bit like jargon. Something else that
+mathematicians do takes things even further in this direction of adding mystique
+to their subject. Instead of using words for connectives they use obscure
+symbols, as if they were sorceresses writing an occult text. So &#8216;and&#8217; is
+written &#x2227; and &#8216;or&#8217; is written &#x2228;. Going back to our friend Abelard in
+the cafe, the compound statement:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -854,7 +801,7 @@ Abelard likes coffee and Abelard likes cake.
 </div>
 </div>
 <div class="paragraph">
-<p>is written in logical notation as:</p>
+<p>is written in logical symbols as:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -881,47 +828,75 @@ Q: Abelard likes cake.<br>
 P &#x2228; Q
 </div>
 </div>
-<div class="sect2">
-<h3 id="_questions_4">Questions</h3>
+<div class="sect3">
+<h4 id="_questions_4">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>For the following expressions, assign labels to the propositions and write the
-expression in logical notation:</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>The film Erin Brokovich stars Julia Roberts and 16 is greater than 4.</p>
-</li>
-<li>
-<p>London is the capital of France or Paris is the capital of France.</p>
-</li>
-<li>
-<p>Some people have brown eyes and humans lay eggs.</p>
-</li>
-<li>
-<p>Four multiplied by two is twenty or it has never rained in Wales.</p>
-</li>
-<li>
-<p>Toothpaste is harder than diamond and less than 100 films have ever been
-made.</p>
-</li>
-</ol>
-</div>
+<p>Write the answers to the questions for <a href="#_formulae">Formulae</a> in logical symbols.</p>
 </li>
 </ol>
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_brackets">2.5. Brackets</h3>
+<div class="paragraph">
+<p>In the Tower, they&#8217;re mad for brackets. They put them round everything in
+sight. So instead of writing:</p>
 </div>
-<div class="sect1">
-<h2 id="_truth_tables">6. Truth Tables</h2>
-<div class="sectionbody">
+<div class="exampleblock">
+<div class="content">
+P &#x2227; Q
+</div>
+</div>
+<div class="paragraph">
+<p>they write:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+(P &#x2227; Q)
+</div>
+</div>
+<div class="paragraph">
+<p>and instead of:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+P &#x2228; Q
+</div>
+</div>
+<div class="paragraph">
+<p>they write:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+(P &#x2228; Q)
+</div>
+</div>
+<div class="paragraph">
+<p>I thought all these brackets were a bit over the top at first. A touch of OCD.
+Rather fussy. But I found that it makes sense later on when formulae become
+more complicated.</p>
+</div>
+<div class="sect3">
+<h4 id="_questions_5">Questions</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Write the answers to the questions for <a href="#_formulae">Formulae</a> using logical symbols.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_truth_tables">2.6. Truth Tables</h3>
 <div class="paragraph">
 <p>A truth table. A medieval device for extracting a confession? No, a
-mathematical device for showing all the possible ways an expression can be true
-(T) or false (F). For the two propositions P and Q, the truth table for P &#x2227;
-Q is:</p>
+mathematical device for showing all the possible ways a formula can be true
+(T) or false (F). For the two atomic formulae P and Q, the truth table for
+(P &#x2227; Q) is:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -933,7 +908,7 @@ Q is:</p>
 <tr>
 <th class="tableblock halign-left valign-top">P</th>
 <th class="tableblock halign-left valign-top">Q</th>
-<th class="tableblock halign-left valign-top">P &#x2227; Q</th>
+<th class="tableblock halign-left valign-top">(P &#x2227; Q)</th>
 </tr>
 </thead>
 <tbody>
@@ -961,7 +936,8 @@ Q is:</p>
 </table>
 <div class="paragraph">
 <p>so what we&#8217;ve done is written a row for all the combination of true and false
-for P and Q, and then in the final column put the value of P &#x2227; Q. The truth table for P &#x2228; Q is:</p>
+for P and Q, and then in the final column put the value of (P &#x2227; Q). The
+truth table for (P &#x2228; Q) is:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -973,7 +949,7 @@ for P and Q, and then in the final column put the value of P &#x2227; Q. The tru
 <tr>
 <th class="tableblock halign-left valign-top">P</th>
 <th class="tableblock halign-left valign-top">Q</th>
-<th class="tableblock halign-left valign-top">P &#x2228; Q</th>
+<th class="tableblock halign-left valign-top">(P &#x2228; Q)</th>
 </tr>
 </thead>
 <tbody>
@@ -1000,7 +976,8 @@ for P and Q, and then in the final column put the value of P &#x2227; Q. The tru
 </tbody>
 </table>
 <div class="paragraph">
-<p>You can use a truth table to show that P &#x2227; Q means the same as Q &#x2227; P:</p>
+<p>You can use a truth table to show that (P &#x2227; Q) means the same as
+(Q &#x2227; P):</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -1013,8 +990,8 @@ for P and Q, and then in the final column put the value of P &#x2227; Q. The tru
 <tr>
 <th class="tableblock halign-left valign-top">P</th>
 <th class="tableblock halign-left valign-top">Q</th>
-<th class="tableblock halign-left valign-top">P &#x2227; Q</th>
-<th class="tableblock halign-left valign-top">Q &#x2227; P</th>
+<th class="tableblock halign-left valign-top">(P &#x2227; Q)</th>
+<th class="tableblock halign-left valign-top">(Q &#x2227; P)</th>
 </tr>
 </thead>
 <tbody>
@@ -1046,237 +1023,24 @@ for P and Q, and then in the final column put the value of P &#x2227; Q. The tru
 </table>
 <div class="paragraph">
 <p>For each row of the truth table, the last two columns are the same, and so
-P &#x2227; Q means the same as Q &#x2227; P.</p>
+(P &#x2227; Q) means the same as (Q &#x2227; P).</p>
 </div>
-<div class="sect2">
-<h3 id="_questions_5">Questions</h3>
+<div class="sect3">
+<h4 id="_questions_6">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Use a truth table to show that P &#x2228; Q means the same thing as Q &#x2228; P.</p>
+<p>Use a truth table to show that (P &#x2228; Q) means the same thing as (Q &#x2228; P).</p>
 </li>
 </ol>
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_precedence">7. Precedence</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Let&#8217;s say we&#8217;ve got <em>three</em> propositions P, Q and R. What&#8217;s the truth table for:</p>
-</div>
-<div class="exampleblock">
-<div class="content">
-P &#x2228; Q &#x2227; R
-</div>
-</div>
-<div class="paragraph">
-<p>But wait, do I do the P &#x2228; Q first and then apply the &#x2227; to the result? Or
-do I do Q &#x2227; R first and then apply P &#x2228; to the result? And does it even
-matter? The Rules Of Propositional Logic that I read while in the Ivory Tower
-are quite clear on the point. They say that &#x2227; is evaluated before &#x2228;.
-Okay, so the truth table for P &#x2228; Q &#x2227; R is:</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">P</th>
-<th class="tableblock halign-left valign-top">Q</th>
-<th class="tableblock halign-left valign-top">R</th>
-<th class="tableblock halign-left valign-top">Q &#x2227; R</th>
-<th class="tableblock halign-left valign-top">P &#x2228; Q &#x2227; R</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>So what would you write if you want to do P &#x2228; Q and then apply &#x2227; R? The
-Rules say that anything in brackets gets evaluated first. So you&#8217;d write:</p>
-</div>
-<div class="exampleblock">
-<div class="content">
-(P &#x2228; Q) &#x2227; R
-</div>
-</div>
-<div class="paragraph">
-<p>and the truth table is:</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">P</th>
-<th class="tableblock halign-left valign-top">Q</th>
-<th class="tableblock halign-left valign-top">R</th>
-<th class="tableblock halign-left valign-top">P &#x2228; Q</th>
-<th class="tableblock halign-left valign-top">(P &#x2228; Q) &#x2227; R</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-</tr>
-</tbody>
-</table>
 <div class="sect2">
-<h3 id="_questions_6">Questions</h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Write out the truth tables for:</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>P &#x2227; Q &#x2228; R</p>
-</li>
-<li>
-<p>P &#x2227; Q &#x2227; R</p>
-</li>
-<li>
-<p>P &#x2228; Q &#x2228; R</p>
-</li>
-<li>
-<p>P &#x2227; (Q &#x2228; R)</p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_not">8. Not</h2>
-<div class="sectionbody">
+<h3 id="_negation">2.7. Negation</h3>
 <div class="paragraph">
-<p>There&#8217;s another connective called &#8216;not&#8217;. It has the symbol &#x00AC; and the fancy
-name &#8216;negation&#8217;. In precedence it is second only to brackets, and its truth
-table is:</p>
+<p>There&#8217;s another connective called <em>negation</em>, which has the symbol &#x00AC; and in
+English sentences appears as the word &#8216;not&#8217;. Its truth table is:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -1302,15 +1066,15 @@ table is:</p>
 </table>
 <div class="paragraph">
 <p>Let us cast it loose amongst the other connectives and employ the truth table
-to see what results. Picking an expression at random, let&#8217;s try:</p>
+to see what results. Picking a formula at random, let&#8217;s try:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
-&#x00AC;P &#x2228; Q
+(&#x00AC;P &#x2228; Q)
 </div>
 </div>
 <div class="paragraph">
-<p>We know that &#x00AC; takes precedence over &#x2228;, so the truth table is:</p>
+<p>which gives the truth table:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -1324,7 +1088,7 @@ to see what results. Picking an expression at random, let&#8217;s try:</p>
 <th class="tableblock halign-left valign-top">P</th>
 <th class="tableblock halign-left valign-top">Q</th>
 <th class="tableblock halign-left valign-top">&#x00AC;P</th>
-<th class="tableblock halign-left valign-top">&#x00AC;P &#x2228; Q</th>
+<th class="tableblock halign-left valign-top">(&#x00AC;P &#x2228; Q)</th>
 </tr>
 </thead>
 <tbody>
@@ -1363,7 +1127,7 @@ to see what results. Picking an expression at random, let&#8217;s try:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Brackets take precedence over &#x00AC; so the truth table is:</p>
+<p>which gives the truth table:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -1376,7 +1140,7 @@ to see what results. Picking an expression at random, let&#8217;s try:</p>
 <tr>
 <th class="tableblock halign-left valign-top">P</th>
 <th class="tableblock halign-left valign-top">Q</th>
-<th class="tableblock halign-left valign-top">P &#x2228; Q</th>
+<th class="tableblock halign-left valign-top">(P &#x2228; Q)</th>
 <th class="tableblock halign-left valign-top">&#x00AC;(P &#x2228; Q)</th>
 </tr>
 </thead>
@@ -1409,11 +1173,11 @@ to see what results. Picking an expression at random, let&#8217;s try:</p>
 </table>
 <div class="paragraph">
 <p>One other thing, the first two connectives we encountered (&#x2227; and &#x2228;) both
-acted on two propositions, and so they&#8217;re known as <em>binary</em> connectives. The
-&#x00AC; connectives acts on one proposition and so is called a <em>unary</em> connective.</p>
+acted on two formulas, and so they&#8217;re known as <em>binary</em> connectives. The
+&#x00AC; connective acts on one formula and so is called a <em>unary</em> connective.</p>
 </div>
-<div class="sect2">
-<h3 id="_questions_7">Questions</h3>
+<div class="sect3">
+<h4 id="_questions_7">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1424,16 +1188,16 @@ acted on two propositions, and so they&#8217;re known as <em>binary</em> connect
 <p>&#x00AC;(P &#x2227; Q)</p>
 </li>
 <li>
-<p>&#x00AC;P &#x2227; Q</p>
+<p>&#x00AC;(P &#x2227; Q)</p>
 </li>
 <li>
-<p>P &#x2228; &#x00AC;Q</p>
+<p>(P &#x2228; &#x00AC;Q)</p>
 </li>
 <li>
 <p>&#x00AC;&#x00AC;P</p>
 </li>
 <li>
-<p>&#x00AC;(P &#x2228; Q &#x2228; R)</p>
+<p>&#x00AC;((P &#x2228; Q) &#x2228; R)</p>
 </li>
 <li>
 <p>&#x00AC;((P &#x2228; Q) &#x2227; R)</p>
@@ -1445,16 +1209,14 @@ acted on two propositions, and so they&#8217;re known as <em>binary</em> connect
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_tautology_and_contradiction">9. Tautology And Contradiction</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_tautology_and_contradiction">2.8. Tautology And Contradiction</h3>
 <div class="paragraph">
-<p>The expression:</p>
+<p>The formula:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
-P &#x2228; &#x00AC;P
+(P &#x2228; &#x00AC;P)
 </div>
 </div>
 <div class="paragraph">
@@ -1470,7 +1232,7 @@ P &#x2228; &#x00AC;P
 <tr>
 <th class="tableblock halign-left valign-top">P</th>
 <th class="tableblock halign-left valign-top">&#x00AC;P</th>
-<th class="tableblock halign-left valign-top">P &#x2228; &#x00AC;P</th>
+<th class="tableblock halign-left valign-top">(P &#x2228; &#x00AC;P)</th>
 </tr>
 </thead>
 <tbody>
@@ -1487,14 +1249,14 @@ P &#x2228; &#x00AC;P
 </tbody>
 </table>
 <div class="paragraph">
-<p>which shows that  whatever the value of P, the expression is always true. In the
-Tower they call any expression that&#8217;s always true a <em>tautology</em>. Also, any
-expression that&#8217;s always false they call a <em>contradiction</em>. An example of a
+<p>which shows that  whatever the value of P, the formula is always true. In the
+Tower they call any formula that&#8217;s always true a <em>tautology</em>. Also, any
+formula that&#8217;s always false they call a <em>contradiction</em>. An example of a
 contradiction is:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
-P &#x2227; &#x00AC;P
+(P &#x2227; &#x00AC;P)
 </div>
 </div>
 <div class="paragraph">
@@ -1510,7 +1272,7 @@ P &#x2227; &#x00AC;P
 <tr>
 <th class="tableblock halign-left valign-top">P</th>
 <th class="tableblock halign-left valign-top">&#x00AC;P</th>
-<th class="tableblock halign-left valign-top">P &#x2227; &#x00AC;P</th>
+<th class="tableblock halign-left valign-top">(P &#x2227; &#x00AC;P)</th>
 </tr>
 </thead>
 <tbody>
@@ -1527,31 +1289,31 @@ P &#x2227; &#x00AC;P
 </tbody>
 </table>
 <div class="paragraph">
-<p>So since the expression is always false, the expression is a contradiction.</p>
+<p>So since the formula is always false, the formula is a contradiction.</p>
 </div>
-<div class="sect2">
-<h3 id="_questions_8">Questions</h3>
+<div class="sect3">
+<h4 id="_questions_8">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Say whether each of the following expressions is a tautology, a contradiction
+<p>Say whether each of the following formulae is a tautology, a contradiction
 or both:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>(P &#x2227; Q) &#x2227; &#x00AC;(P &#x2227; Q)</p>
+<p>P &#x2227; Q) &#x2227; &#x00AC;(P &#x2227; Q</p>
 </li>
 <li>
-<p>P &#x2228; Q &#x2228; &#x00AC;P</p>
+<p>((P &#x2228; Q) &#x2228; &#x00AC;P)</p>
 </li>
 <li>
-<p>P &#x2228; Q &#x2227; &#x00AC; P</p>
+<p>((P &#x2228; Q) &#x2227; &#x00AC; P)</p>
 </li>
 <li>
-<p>(&#x00AC;P &#x2227; &#x00AC;Q) &#x2227; &#x00AC;(&#x00AC;P &#x2227; &#x00AC;Q)</p>
+<p>&#x00AC;P &#x2227; &#x00AC;Q) &#x2227; &#x00AC;(&#x00AC;P &#x2227; &#x00AC;Q</p>
 </li>
 <li>
-<p>&#x00AC;P &#x2227; (Q &#x2228; &#x00AC;P) &#x2227; R</p>
+<p>&#x00AC;P &#x2227; (Q &#x2228; &#x00AC;P &#x2227; R)</p>
 </li>
 </ol>
 </div>
@@ -1560,13 +1322,11 @@ or both:</p>
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_implies">10. Implies</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_implies">2.9. Implies</h3>
 <div class="paragraph">
-<p>There&#8217;s another binary connective called <em>implies</em> that has the symbol &#x2192;
-and in precedence it comes after &#x2228;. Its truth table is:</p>
+<p>There&#8217;s another binary connective called <em>implies</em> that has the symbol
+&#x2192;. Its truth table is:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -1578,7 +1338,7 @@ and in precedence it comes after &#x2228;. Its truth table is:</p>
 <tr>
 <th class="tableblock halign-left valign-top">P</th>
 <th class="tableblock halign-left valign-top">Q</th>
-<th class="tableblock halign-left valign-top">P &#x2192; Q</th>
+<th class="tableblock halign-left valign-top">(P &#x2192; Q)</th>
 </tr>
 </thead>
 <tbody>
@@ -1605,7 +1365,7 @@ and in precedence it comes after &#x2228;. Its truth table is:</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>Take the two propositions:</p>
+<p>Take the two simple statements:</p>
 </div>
 <div class="ulist example">
 <ul class="example">
@@ -1618,7 +1378,7 @@ and in precedence it comes after &#x2228;. Its truth table is:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Joining the two with an implication could give the expression:</p>
+<p>Joining the two with an implication could give the compound statement:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -1627,15 +1387,16 @@ Abelard is at the cafe only if the cafe is open.
 </div>
 <div class="paragraph">
 <p>If Abelard really is at the cafe and the cafe really is open, then this
-expression is true. If Abelard isn&#8217;t at the cafe, then whether or not the cafe
-is open, the expression is still true (another way of putting it is to say that if Abelard is not at the cafe, then this is still consistent with with the
-statement that &#8216;Abelard is at the cafe only when the cafe is open&#8217;). The only
-time the expression is false is if Abelard is at the cafe but the cafe is not
-open.</p>
+compound statement is true. If Abelard isn&#8217;t at the cafe, then whether or not
+the cafe is open, the compound statement is still true (another way of putting
+it is to say that if Abelard is not at the cafe, then this is still consistent
+with with the statement that &#8216;Abelard is at the cafe only when the cafe is
+open&#8217;). The only time the compound statement is false is if Abelard is at the
+cafe but the cafe is not open.</p>
 </div>
 <div class="paragraph">
-<p>There are a few different ways that &#8216;implies&#8217; occurs in English. Then
-sentence:</p>
+<p>There are a few different ways that &#8216;implies&#8217; occurs in English. The
+statement:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -1662,15 +1423,15 @@ Abelard is at the cafe only if the cafe is open.
 </ul>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s find the truth table for:</p>
+<p>The formula:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
-P &#x2227; &#x00AC;Q &#x2192; Q
+((P &#x2227; &#x00AC;Q) &#x2192; Q)
 </div>
 </div>
 <div class="paragraph">
-<p>The &#x2192; connective is evaluated last, so the truth table is:</p>
+<p>Has the truth table:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -1685,8 +1446,8 @@ P &#x2227; &#x00AC;Q &#x2192; Q
 <th class="tableblock halign-left valign-top">P</th>
 <th class="tableblock halign-left valign-top">Q</th>
 <th class="tableblock halign-left valign-top">&#x00AC;Q</th>
-<th class="tableblock halign-left valign-top">P &#x2227; &#x00AC;Q</th>
-<th class="tableblock halign-left valign-top">P &#x2227; &#x00AC;Q &#x2192; Q</th>
+<th class="tableblock halign-left valign-top">(P &#x2227; &#x00AC;Q)</th>
+<th class="tableblock halign-left valign-top">((P &#x2227; &#x00AC;Q) &#x2192; Q)</th>
 </tr>
 </thead>
 <tbody>
@@ -1721,7 +1482,7 @@ P &#x2227; &#x00AC;Q &#x2192; Q
 </tbody>
 </table>
 <div class="paragraph">
-<p>Another example; the truth table for Q &#x2192; P &#x2227; &#x00AC;Q is:</p>
+<p>Another example; the truth table for (Q &#x2192; (P &#x2227; &#x00AC;Q)) is:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -1736,8 +1497,8 @@ P &#x2227; &#x00AC;Q &#x2192; Q
 <th class="tableblock halign-left valign-top">P</th>
 <th class="tableblock halign-left valign-top">Q</th>
 <th class="tableblock halign-left valign-top">&#x00AC;Q</th>
-<th class="tableblock halign-left valign-top">P &#x2227; &#x00AC;Q</th>
-<th class="tableblock halign-left valign-top">Q &#x2192; P &#x2227; &#x00AC;Q</th>
+<th class="tableblock halign-left valign-top">(P &#x2227; &#x00AC;Q)</th>
+<th class="tableblock halign-left valign-top">(Q &#x2192; (P &#x2227; &#x00AC;Q))</th>
 </tr>
 </thead>
 <tbody>
@@ -1771,12 +1532,12 @@ P &#x2227; &#x00AC;Q &#x2192; Q
 </tr>
 </tbody>
 </table>
-<div class="sect2">
-<h3 id="_questions_9">Questions</h3>
+<div class="sect3">
+<h4 id="_questions_9">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Write the following English sentences as logical expressions:</p>
+<p>Write the following English statements as logical formulae:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -1792,23 +1553,23 @@ P &#x2227; &#x00AC;Q &#x2192; Q
 </div>
 </li>
 <li>
-<p>Create a truth table for each of the following expressions:</p>
+<p>Create a truth table for each of the following formulae:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>&#x00AC;P &#x2192; Q</p>
+<p>(&#x00AC;P &#x2192; Q)</p>
 </li>
 <li>
-<p>Q &#x2192; &#x00AC;Q</p>
+<p>(Q &#x2192; &#x00AC;Q)</p>
 </li>
 <li>
-<p>(P &#x2192; Q) &#x2228; P</p>
+<p>((P &#x2192; Q) &#x2228; P)</p>
 </li>
 <li>
-<p>&#x00AC;(P &#x2227; Q) &#x2192; &#x00AC;P &#x2228; &#x00AC; Q</p>
+<p>(&#x00AC;(P &#x2227; Q) &#x2192; (&#x00AC;P &#x2228; &#x00AC; Q))</p>
 </li>
 <li>
-<p>P &#x2227; (P &#x2192; Q) &#x2192; &#x00AC;P</p>
+<p>P &#x2227; (P &#x2192; Q &#x2192; &#x00AC;P)</p>
 </li>
 </ol>
 </div>
@@ -1817,10 +1578,8 @@ P &#x2227; &#x00AC;Q &#x2192; Q
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_arguments">11. Arguments</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_arguments">2.10. Arguments</h3>
 <div class="paragraph">
 <p>The word &#8216;argument&#8217; makes me think of a bitter shouting match. To a logician
 it means something altogether more cerebral. A logical argument in English might
@@ -1834,7 +1593,7 @@ Therefore Abelard ordered coffee.
 </div>
 <div class="paragraph">
 <p>To convert this argument from English into logical symbols, we first of all
-label the propositions:</p>
+define the atomic formulae:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -1851,31 +1610,29 @@ If A &#x2228; B is true and &#x00AC;B is true, then A is true.
 </div>
 </div>
 <div class="paragraph">
-<p>To express this argument more concisely we roll out the <em>semantic turnstile</em>.
-Yes, it really is called that. Anyway, the symbol for the semantic turnstile is
-&#x22A8; and the argument can now be written:</p>
+<p>To express this argument more concisely we roll out the <em>double turnstile</em>
+symbol &#x22A8;, and write the argument as:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
-A &#x2228; B, &#x00AC;B &#x22A8; A
+(A &#x2228; B), (&#x00AC;B) &#x22A8; A
 </div>
 </div>
 <div class="paragraph">
-<p>Where the comma-separated list of expressions on the left of the semantic
-turnstile are the assumptions, and the expression on the right is the
-conclusion. That&#8217;s the argument written down, but is it valid? In other words,
-if the assumptions are true, is the conclusion true? To find out, we can say
-that if:</p>
+<p>Where the comma-separated list of formulae on the left of the double-turnstile
+are the premises, and the formula on the right is the conclusion. That&#8217;s the
+argument written down, but is it valid? In other words, if the premises are
+true, is the conclusion true? To find out, we can say that if:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
-(A &#x2228; B) &#x2227; &#x00AC;B &#x2192; A
+(((A &#x2228; B) &#x2227; &#x00AC;B) &#x2192; A)
 </div>
 </div>
 <div class="paragraph">
 <p>is a tautology, then the argument is valid. If effect we&#8217;ve joined the
-assumptions together with &#x2227; and replaced the &#x22A8; with a &#x2192; to get
-the expressions. Bring on the table of truth!</p>
+premises together with &#x2227; and replaced the &#x22A8; with a &#x2192; to get
+the formula. Bring on the table of truth!</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -1890,10 +1647,10 @@ the expressions. Bring on the table of truth!</p>
 <tr>
 <th class="tableblock halign-left valign-top">A</th>
 <th class="tableblock halign-left valign-top">B</th>
-<th class="tableblock halign-left valign-top">A &#x2228; B</th>
+<th class="tableblock halign-left valign-top">(A &#x2228; B)</th>
 <th class="tableblock halign-left valign-top">&#x00AC;B</th>
-<th class="tableblock halign-left valign-top">(A &#x2228; B) &#x2227; &#x00AC;B</th>
-<th class="tableblock halign-left valign-top">(A &#x2228; B) &#x2227; &#x00AC;B &#x2192; A</th>
+<th class="tableblock halign-left valign-top">((A &#x2228; B) &#x2227; &#x00AC;B)</th>
+<th class="tableblock halign-left valign-top">(((A &#x2228; B) &#x2227; &#x00AC;B) &#x2192; A)</th>
 </tr>
 </thead>
 <tbody>
@@ -1932,7 +1689,7 @@ the expressions. Bring on the table of truth!</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>The last column is always true, so the expression is a tautology, so the
+<p>The last column is always true, so the formula is a tautology, so the
 argument is valid. Yay! Let&#8217;s test another argument for validity:</p>
 </div>
 <div class="exampleblock">
@@ -1950,14 +1707,14 @@ to the wedding on time.
 A: Run out of petrol.<br>
 B: Get to the wedding on time.<br>
 C: Lose our way.<br>
-A &#x2192; &#x00AC;B, C &#x2192; &#x00AC;B, A &#x22A8; &#x00AC;B
+(A &#x2192; &#x00AC;B), (C &#x2192; &#x00AC;B), A &#x22A8; &#x00AC;B
 </div>
 </div>
 <div class="paragraph">
 <p>The argument is valid if:</p>
 </div>
 <div class="paragraph">
-<p>(A &#x2192; &#x00AC;B) &#x2227; (C &#x2192; &#x00AC;B) &#x2227; A &#x2192; &#x00AC;B</p>
+<p>((A &#x2192; &#x00AC;B) &#x2227; (C &#x2192; &#x00AC;B &#x2227; A) &#x2192; &#x00AC;B)</p>
 </div>
 <div class="paragraph">
 <p>is a tautology. Doing a giant truth table:</p>
@@ -1993,11 +1750,11 @@ A &#x2192; &#x00AC;B, C &#x2192; &#x00AC;B, A &#x22A8; &#x00AC;B
 <td class="tableblock halign-left valign-top"><p class="tableblock">B</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">C</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#x00AC;B</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A &#x2192; col_4</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">C &#x2192; col_4</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">col_5 &#x2227; col_6</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">col_7 &#x2227; A</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">col_8 &#x2192; col_4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(A &#x2192; col_4)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(C &#x2192; col_4)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(col_5 &#x2227; col_6)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(col_7 &#x2227; A)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(col_8 &#x2192; col_4)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
@@ -2089,8 +1846,8 @@ A &#x2192; &#x00AC;B, C &#x2192; &#x00AC;B, A &#x22A8; &#x00AC;B
 </tr>
 </tbody>
 </table>
-<div class="sect2">
-<h3 id="_questions_10">Questions</h3>
+<div class="sect3">
+<h4 id="_questions_10">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2129,10 +1886,8 @@ and off. This light switch is not on. Therefore the light switch is off.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_rules_of_inference">12. Rules Of Inference</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_rules_of_inference">2.11. Rules Of Inference</h3>
 <div class="paragraph">
 <p>Writing out truth tables gets tedious, especially as the number of rows grows
 exponentially with the number of propositions. The logicians have discovered /
@@ -2343,8 +2098,8 @@ Q, (R &#x2227; P) &#x2227; (R &#x2227; Q) &#x2192; P &#x22A8; P
 </tr>
 </tbody>
 </table>
-<div class="sect2">
-<h3 id="_questions_11">Questions</h3>
+<div class="sect3">
+<h4 id="_questions_11">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2358,15 +2113,11 @@ valid by using rules of inference.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_equivalence">13. Equivalence</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_equivalence">2.12. Equivalence</h3>
 <div class="paragraph">
-<p>There are a couple more connectives (with their own mystical symbols!) that
-logicians use, <em>equivalence</em> and <em>exclusive-or</em>. Equivalence is a binary
-connective with the symbol &#x21D4;. It&#8217;s precedence is after &#x2192; and
-it&#8217;s truth table is:</p>
+<p><em>Equivalence</em> is a binary connective with the mystical symbol &#x21D4; and its
+truth table is:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -2378,7 +2129,7 @@ it&#8217;s truth table is:</p>
 <tr>
 <th class="tableblock halign-left valign-top">P</th>
 <th class="tableblock halign-left valign-top">Q</th>
-<th class="tableblock halign-left valign-top">P &#x21D4; Q</th>
+<th class="tableblock halign-left valign-top">(P &#x21D4; Q)</th>
 </tr>
 </thead>
 <tbody>
@@ -2419,17 +2170,16 @@ It&#8217;s Christmas Day if and only if it&#8217;s the 25th of December.
 <div class="content">
 P: It&#8217;s Christmas Day.
 Q: It&#8217;s the 25th of December.
-P &#x21D4; Q
+(P &#x21D4; Q)
 </div>
 </div>
 <div class="paragraph">
-<p>If two expressions are equivalent, then the expression formed by connecting
-them with the &#x21D4; connective will be a tautology. For example, if the two
-expressions:</p>
+<p>If two formulas are equivalent, then the formula formed by joining them with the
+&#x21D4; connective will be a tautology. For example, if the two formulas:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
-A and &#x00AC;&#x00AC;A
+(A and &#x00AC;&#x00AC;A)
 </div>
 </div>
 <div class="paragraph">
@@ -2437,11 +2187,11 @@ A and &#x00AC;&#x00AC;A
 </div>
 <div class="exampleblock">
 <div class="content">
-A &#x21D4; &#x00AC;&#x00AC;A
+(A &#x21D4; &#x00AC;&#x00AC;A)
 </div>
 </div>
 <div class="paragraph">
-<p>will be a tautology. Let&#8217;s find out by writing its truth table:</p>
+<p>will be a tautology. Let&#8217;s check by writing its truth table:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -2455,7 +2205,7 @@ A &#x21D4; &#x00AC;&#x00AC;A
 <th class="tableblock halign-left valign-top">A</th>
 <th class="tableblock halign-left valign-top">&#x00AC;A</th>
 <th class="tableblock halign-left valign-top">&#x00AC;&#x00AC;A</th>
-<th class="tableblock halign-left valign-top">A &#x21D4; &#x00AC;&#x00AC;A</th>
+<th class="tableblock halign-left valign-top">(A &#x21D4; &#x00AC;&#x00AC;A)</th>
 </tr>
 </thead>
 <tbody>
@@ -2474,10 +2224,10 @@ A &#x21D4; &#x00AC;&#x00AC;A
 </tbody>
 </table>
 <div class="paragraph">
-<p>it&#8217;s a tautology, so the two expressions are equivalent.</p>
+<p>it&#8217;s a tautology, so the two formulae are equivalent.</p>
 </div>
-<div class="sect2">
-<h3 id="_questions_12">Questions</h3>
+<div class="sect3">
+<h4 id="_questions_12">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2495,20 +2245,20 @@ applied.</p>
 </div>
 </li>
 <li>
-<p>Give the truth table for each of the following expressions:</p>
+<p>Give the truth table for each of the following formulae:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>A &#x21D4; B &#x2227; C</p>
+<p>(A &#x21D4; (B &#x2227; C))</p>
 </li>
 <li>
-<p>B &#x2228; (A &#x21D4; B)</p>
+<p>(B &#x2228; (A &#x21D4; B))</p>
 </li>
 <li>
-<p>P &#x2227; &#x00AC;(P &#x21D4; Q &#x2228; P)</p>
+<p>(P &#x2227; &#x00AC;(P &#x21D4; (Q &#x2228; P)))</p>
 </li>
 <li>
-<p>(Q &#x21D4; &#x00AC;P) &#x2227; (P &#x21D4; &#x00AC; &#x00AC;Q)</p>
+<p>Q &#x21D4; &#x00AC;P) &#x2227; (P &#x21D4; &#x00AC; &#x00AC;Q</p>
 </li>
 </ol>
 </div>
@@ -2517,10 +2267,270 @@ applied.</p>
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_precedence">2.13. Precedence</h3>
+<div class="paragraph">
+<p>Let&#8217;s say we&#8217;ve got <em>three</em> propositions P, Q and R. What&#8217;s the truth table for:</p>
 </div>
-<div class="sect1">
-<h2 id="_rosetta_stone">14. Rosetta Stone</h2>
-<div class="sectionbody">
+<div class="exampleblock">
+<div class="content">
+P &#x2228; Q &#x2227; R
+</div>
+</div>
+<div class="paragraph">
+<p>But wait, do I do the P &#x2228; Q first and then apply the &#x2227; to the result? Or
+do I do Q &#x2227; R first and then apply P &#x2228; to the result? And does it even
+matter? The Rules Of Propositional Logic that I read while in the Ivory Tower
+are quite clear on the point. They say that &#x2227; is evaluated before &#x2228;.
+Okay, so the truth table for P &#x2228; Q &#x2227; R is:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">P</th>
+<th class="tableblock halign-left valign-top">Q</th>
+<th class="tableblock halign-left valign-top">R</th>
+<th class="tableblock halign-left valign-top">Q &#x2227; R</th>
+<th class="tableblock halign-left valign-top">P &#x2228; Q &#x2227; R</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>So what would you write if you want to do P &#x2228; Q and then apply &#x2227; R? The
+Rules say that anything in brackets gets evaluated first. So you&#8217;d write:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+(P &#x2228; Q) &#x2227; R
+</div>
+</div>
+<div class="paragraph">
+<p>and the truth table is:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">P</th>
+<th class="tableblock halign-left valign-top">Q</th>
+<th class="tableblock halign-left valign-top">R</th>
+<th class="tableblock halign-left valign-top">P &#x2228; Q</th>
+<th class="tableblock halign-left valign-top">(P &#x2228; Q) &#x2227; R</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="_questions_13">Questions</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Write out the truth tables for:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>P &#x2227; Q &#x2228; R</p>
+</li>
+<li>
+<p>P &#x2227; Q &#x2227; R</p>
+</li>
+<li>
+<p>P &#x2228; Q &#x2228; R</p>
+</li>
+<li>
+<p>P &#x2227; (Q &#x2228; R)</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rosetta_stone">2.14. Rosetta Stone</h3>
+<div id="img" class="imageblock">
+<div class="content">
+<img src="rosetta.jpg" alt="Rosetta Stone">
+</div>
+<div class="title">Figure 2. <a href="http://commons.wikimedia.org/wiki/File:Rosetta_Stone.JPG#mediaviewer/File:Rosetta_Stone.JPG">Rosetta Stone</a> by <a href="http://commons.wikimedia.org/wiki/User:Biopics">Hans Hillewaert</a> - Own work. Licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a> via <a href="http://commons.wikimedia.org/wiki/">Wikimedia Commons</a>.</div>
+</div>
+<div class="paragraph">
+<p>I&#8217;ve found that in maths, the same thing is often called different names by
+different authors. Also, some authors take different philosophical approaches to
+the same area of maths. This point of this section is to help us understand
+what other authors are saying, in terms that we already understand.</p>
+</div>
+<div class="sect3">
+<h4 id="_sentential_logic_versus_propositional_logic">2.14.1. Sentential Logic versus Propositional Logic</h4>
+<div class="paragraph">
+<p>Some authors talk of Sentential Logic, and some talk of Propositional Logic.
+This is a philosophical difference. Say there are two statements that mean the
+same thing but use a different form of words. The sentential school of thought
+uses a different label for each statement, but the proposition school would use
+just one label.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_synonyms">2.14.2. Synonyms</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Synonym</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Connective</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Operator</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sentential Logic</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sentential Calculus</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not, &#x00AC;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">~</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Atomic formula</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Atom, simple proposition, atomic sentence</p></td>
+</tr>
+</tbody>
+</table>
 <div class="ulist">
 <ul>
 <li>
@@ -2530,28 +2540,18 @@ applied.</p>
 <p>Proposition - Atomic proposition, simple proposition.</p>
 </li>
 <li>
-<p>Connective - Operator.</p>
-</li>
-<li>
-<p>Not -</p>
-</li>
-<li>
-<p>Semantic turnstile - double turnstile.</p>
-</li>
-<li>
 <p>All the rules of inference. and equivalence</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="_answers_to_section_questions">Appendix A: Answers To Section Questions</h2>
-<div class="sectionbody">
 <div class="sect2">
-<h3 id="_propositions_answers">Propositions: Answers</h3>
+<h3 id="_answers_to_section_questions">Appendix A: Answers To Section Questions</h3>
+<div class="sect3">
+<h4 id="_statements_answers">Statements: Answers</h4>
 <div class="paragraph">
-<p>Answers for <a href="#_propositions">Propositions</a>.</p>
+<p>Answers for <a href="#_statements">Statements</a>.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -2560,22 +2560,22 @@ applied.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Not a proposition.</p>
+<p>Not a statement.</p>
 </li>
 <li>
-<p>Not a proposition.</p>
+<p>Not a statement.</p>
 </li>
 <li>
-<p>A proposition.</p>
+<p>A statement.</p>
 </li>
 <li>
-<p>A proposition.</p>
+<p>A statement.</p>
 </li>
 <li>
-<p>Not a proposition.</p>
+<p>Not a statement.</p>
 </li>
 <li>
-<p>A proposition.</p>
+<p>A statement.</p>
 </li>
 </ol>
 </div>
@@ -2608,10 +2608,10 @@ applied.</p>
 </ol>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_expressions_answers">Expressions: Answers</h3>
+<div class="sect3">
+<h4 id="_connectives_answers">Connectives: Answers</h4>
 <div class="paragraph">
-<p>Answers for <a href="#_expressions">Expressions</a>.</p>
+<p>Answers for <a href="#_connectives">Connectives</a>.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -2640,10 +2640,10 @@ applied.</p>
 </ol>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_labels_answers">Labels: Answers</h3>
+<div class="sect3">
+<h4 id="_formulae_answers">Formulae: Answers</h4>
 <div class="paragraph">
-<p>Answers for <a href="#_labels">Labels</a>.</p>
+<p>Answers for <a href="#_formulae">Formulae</a>.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -2682,8 +2682,8 @@ P and Q</p>
 </ol>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_funny_symbols_answers">Funny Symbols: Answers</h3>
+<div class="sect3">
+<h4 id="_funny_symbols_answers">Funny Symbols: Answers</h4>
 <div class="paragraph">
 <p>Answers for <a href="#_funny_symbols">Funny Symbols</a>.</p>
 </div>
@@ -2694,29 +2694,19 @@ P and Q</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>P: The film Erin Brokovich stars Julia Roberts.<br>
-Q: 16 is greater than 4.<br>
-P &#x2227; Q</p>
+<p>P &#x2227; Q</p>
 </li>
 <li>
-<p>A: London is the capital of France.<br>
-B: Paris is the capital of France.<br>
-A &#x2228; B</p>
+<p>A &#x2228; B</p>
 </li>
 <li>
-<p>P: Some people have brown eyes.<br>
-Q: Humans lay eggs.<br>
-P &#x2227; Q</p>
+<p>P &#x2227; Q</p>
 </li>
 <li>
-<p>P: Four multiplied by two is twenty.<br>
-Q: It has never rained in Wales.<br>
-P &#x2228; Q</p>
+<p>P &#x2228; Q</p>
 </li>
 <li>
-<p>P: Toothpaste is harder than diamond.<br>
-Q: Less than 100 films have ever been made.<br>
-P &#x2227; Q</p>
+<p>P &#x2227; Q</p>
 </li>
 </ol>
 </div>
@@ -2724,8 +2714,40 @@ P &#x2227; Q</p>
 </ol>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_truth_tables_answers">Truth Tables: Answers</h3>
+<div class="sect3">
+<h4 id="_brackets_answers">Brackets: Answers</h4>
+<div class="paragraph">
+<p>Answers for <a href="#_brackets">Brackets</a>.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>(P &#x2227; Q)</p>
+</li>
+<li>
+<p>(A &#x2228; B)</p>
+</li>
+<li>
+<p>(P &#x2227; Q)</p>
+</li>
+<li>
+<p>(P &#x2228; Q)</p>
+</li>
+<li>
+<p>(P &#x2227; Q)</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_truth_tables_answers">Truth Tables: Answers</h4>
 <div class="paragraph">
 <p>Answers for <a href="#_truth_tables">Truth Tables</a>.</p>
 </div>
@@ -2783,355 +2805,10 @@ P &#x2227; Q</p>
 P &#x2228; Q means the same as Q &#x2228; P.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_precedence_answers">Precedence: Answers</h3>
+<div class="sect3">
+<h4 id="_negation_answers">Negation: Answers</h4>
 <div class="paragraph">
-<p>Answers for <a href="#_precedence">Precedence</a>.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p></p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p></p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">P</th>
-<th class="tableblock halign-left valign-top">Q</th>
-<th class="tableblock halign-left valign-top">R</th>
-<th class="tableblock halign-left valign-top">P &#x2227; Q</th>
-<th class="tableblock halign-left valign-top">P &#x2227; Q &#x2228; R</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-</tr>
-</tbody>
-</table>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a" start="2">
-<li>
-<p></p>
-</li>
-</ol>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">P</th>
-<th class="tableblock halign-left valign-top">Q</th>
-<th class="tableblock halign-left valign-top">R</th>
-<th class="tableblock halign-left valign-top">P &#x2227; Q</th>
-<th class="tableblock halign-left valign-top">P &#x2227; Q &#x2227; R</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-</tr>
-</tbody>
-</table>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a" start="3">
-<li>
-<p></p>
-</li>
-</ol>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">P</th>
-<th class="tableblock halign-left valign-top">Q</th>
-<th class="tableblock halign-left valign-top">R</th>
-<th class="tableblock halign-left valign-top">P &#x2228; Q</th>
-<th class="tableblock halign-left valign-top">P &#x2228; Q &#x2228; R</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-</tr>
-</tbody>
-</table>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a" start="4">
-<li>
-<p></p>
-</li>
-</ol>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">P</th>
-<th class="tableblock halign-left valign-top">Q</th>
-<th class="tableblock halign-left valign-top">R</th>
-<th class="tableblock halign-left valign-top">Q &#x2228; R</th>
-<th class="tableblock halign-left valign-top">P &#x2227; (Q &#x2228; R)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_not_answers">Not: Answers</h3>
-<div class="paragraph">
-<p>Answers for <a href="#_not">Not</a>.</p>
+<p>Answers for <a href="#_negation">Negation</a>.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -3458,8 +3135,8 @@ P &#x2228; Q means the same as Q &#x2228; P.</p>
 </tbody>
 </table>
 </div>
-<div class="sect2">
-<h3 id="_tautology_and_contradiction_answers">Tautology And Contradiction: Answers</h3>
+<div class="sect3">
+<h4 id="_tautology_and_contradiction_answers">Tautology And Contradiction: Answers</h4>
 <div class="paragraph">
 <p>Answers for <a href="#_tautology_and_contradiction">Tautology And Contradiction</a>.</p>
 </div>
@@ -3815,8 +3492,8 @@ P &#x2228; Q means the same as Q &#x2228; P.</p>
 <p>Neither.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_implies_answers">Implies: Answers</h3>
+<div class="sect3">
+<h4 id="_implies_answers">Implies: Answers</h4>
 <div class="paragraph">
 <p>Answers for <a href="#_implies">Implies</a>.</p>
 </div>
@@ -4115,8 +3792,8 @@ A &#x2192; B</p>
 </tbody>
 </table>
 </div>
-<div class="sect2">
-<h3 id="_arguments_answers">Arguments: Answers</h3>
+<div class="sect3">
+<h4 id="_arguments_answers">Arguments: Answers</h4>
 <div class="paragraph">
 <p>Answers for <a href="#_arguments">Arguments</a>.</p>
 </div>
@@ -4627,8 +4304,8 @@ so the argument is valid.</p>
 </tbody>
 </table>
 </div>
-<div class="sect2">
-<h3 id="_rules_of_inference_answers">Rules Of Inference: Answers</h3>
+<div class="sect3">
+<h4 id="_rules_of_inference_answers">Rules Of Inference: Answers</h4>
 <div class="paragraph">
 <p>Answers for <a href="#_rules_of_inference">Rules Of Inference</a>.</p>
 </div>
@@ -5440,8 +5117,8 @@ P &#x2228; Q, &#x00AC;(P &#x2227; Q), &#x00AC;P &#x22A8; Q</p>
 </ol>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_equivalence_answers">Equivalence: Answers</h3>
+<div class="sect3">
+<h4 id="_equivalence_answers">Equivalence: Answers</h4>
 <div class="paragraph">
 <p>Answers for <a href="#_equivalence">Equivalence</a>.</p>
 </div>
@@ -5755,11 +5432,359 @@ P &#x21D4; Q</p>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>References</p>
 </div>
+<div class="sect3">
+<h4 id="_precedence_answers">Precedence: Answers</h4>
 <div class="paragraph">
-<p><a href="http://en.wikibooks.org/wiki/Formal_Logic/Sentential_Logic" class="bare">http://en.wikibooks.org/wiki/Formal_Logic/Sentential_Logic</a></p>
+<p>Answers for <a href="#_precedence">Precedence</a>.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p></p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">P</th>
+<th class="tableblock halign-left valign-top">Q</th>
+<th class="tableblock halign-left valign-top">R</th>
+<th class="tableblock halign-left valign-top">P &#x2227; Q</th>
+<th class="tableblock halign-left valign-top">P &#x2227; Q &#x2228; R</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+</tbody>
+</table>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a" start="2">
+<li>
+<p></p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">P</th>
+<th class="tableblock halign-left valign-top">Q</th>
+<th class="tableblock halign-left valign-top">R</th>
+<th class="tableblock halign-left valign-top">P &#x2227; Q</th>
+<th class="tableblock halign-left valign-top">P &#x2227; Q &#x2227; R</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+</tbody>
+</table>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a" start="3">
+<li>
+<p></p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">P</th>
+<th class="tableblock halign-left valign-top">Q</th>
+<th class="tableblock halign-left valign-top">R</th>
+<th class="tableblock halign-left valign-top">P &#x2228; Q</th>
+<th class="tableblock halign-left valign-top">P &#x2228; Q &#x2228; R</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+</tbody>
+</table>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a" start="4">
+<li>
+<p></p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">P</th>
+<th class="tableblock halign-left valign-top">Q</th>
+<th class="tableblock halign-left valign-top">R</th>
+<th class="tableblock halign-left valign-top">Q &#x2228; R</th>
+<th class="tableblock halign-left valign-top">P &#x2227; (Q &#x2228; R)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_references">References</h3>
+<div class="paragraph">
+<p><a href="http://en.wikibooks.org/wiki/Formal_Logic/Sentential_Logic" class="bare">http://en.wikibooks.org/wiki/Formal_Logic/Sentential_Logic</a>
+Mathematics for Computing by Robert Callen 1998, Letts Educational.
+<a href="http://en.wikipedia.org/wiki/Propositional_calculus" class="bare">http://en.wikipedia.org/wiki/Propositional_calculus</a></p>
 </div>
 </div>
 </div>
@@ -5767,7 +5792,7 @@ P &#x21D4; Q</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2014-11-25 19:16:45 GMT
+Last updated 2014-11-29 22:11:29 GMT
 </div>
 </div>
 </body>

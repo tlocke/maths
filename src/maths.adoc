@@ -26,7 +26,7 @@ The Contributors
 == Introduction
 
 I'm a mathematical barbarian, but a few days ago I broke into the ivory tower of
-mathematics and learnt the basics of Propositional Logic. In order to help me
+mathematics and learnt the basics of Sentential Logic. In order to help me
 learn it, I wrote this tutorial. It helped me, and perhaps you'll find it useful
 too.
 
@@ -51,48 +51,54 @@ Web:: http://maths.tlocke.org.uk/
 EPUB:: http://maths.tlocke.org.uk/maths.epub
 
 
-== Propositions
+== Sentential Logic
 
-In propositional logic, we're only interested in sentences that are either true
-or false. Such sentences are known as _propositions_. Here are some sentences
-together with explanations of whether they are propositions or not:
+[[img-russel]]
+.http://commons.wikimedia.org/wiki/File:Russell_in_1924_01.jpg#mediaviewer/File:Russell_in_1924_01.jpg[Russell in 1924 01] by Unknown - http://www.humanities.mcmaster.ca/~bertrand/later.html. Licensed under Public domain via http://commons.wikimedia.org/wiki/[Wikimedia Commons].
+image::russell.jpg[Bertrand Russell in 1924]
+
+=== Statements
+
+In sentential logic, we're only interested in sentences that are either true
+or false. Such sentences are known as _statements_. Here are some sentences
+together with explanations of whether they are statements or not:
 
 * _How many miles to Crinnis?_
 +
-This is a question, so not a proposition.
+This is a question, so not a statement.
 
 * _Elephants have four legs._
 +
-Yay, an actual proposition! It's a sentence that is either true or false.
+Yay, an actual statement! It's a sentence that is either true or false.
 
 * _Don't dilly-dally._
 +
 This isn't true or false, it sounds like someone admonishing somebody. Not a
-proposition.
+statement.
 
 * _The capital of France is Paris._
 +
-Yes, a proposition.
+Yes, a statement.
 
 * _He likes chocolate._
 +
-This sounds like a proposition, but according to those logicians in the ivory
+This sounds like a statement, but according to those logicians in the ivory
 tower it doesn't count because it relies on knowing who '`he`' is.
 
 * _Don't spoil the ship for a ha'peth of tar._
 +
-This is a proverb, not a proposition.
+This is a proverb, not a statement.
 
-I've got this nagging doubt in my mind. Most propositions I can think of aren't
+I've got this nagging doubt in my mind. Most statements I can think of aren't
 _totally_ ambiguous. Take the '`Elephants have four legs`' example. Maybe
 there's a three legged elephant in existence, perhaps one in a zoo got
 gangrene or something and had to have a leg amputated... Nevertheless, let's
-suspend our disbelief and imagine all those perfect propositions.
+suspend our disbelief and imagine all those perfect statements.
 
 :numbered!:
-=== Questions
+==== Questions
 
-. Which of the following are propositions?
+. Which of the following are statements?
 .. Who is John Galt?
 .. He's over there.
 .. Three divided by three is one.
@@ -100,7 +106,7 @@ suspend our disbelief and imagine all those perfect propositions.
 .. Praise be!
 .. Blue is a colour.
 
-. Are the following propositions true or false?
+. Are the following statements true or false?
 .. Four is greater than two.
 .. Tennis is a colour.
 .. A square has eight sides.
@@ -111,34 +117,36 @@ suspend our disbelief and imagine all those perfect propositions.
 
 
 :numbered:
-== Expressions
+=== Connectives
 
-It seems that the next thing the logicians do is string together propositions.
-They call the result an _expression_. So two propositions might be:
+It seems that the next thing the logicians do is string together simple
+statements to make complex statements. So two simple statements might be:
 
 [example]
 Abelard likes coffee. +
 Abelard likes cake.
 
-And an expression formed from these propositions might be:
+And a complex statement formed from these two simple statements is:
 
 [example]
 Abelard likes coffee and Abelard likes cake.
 
-This expression is true if both the propositions are true, otherwise it is
-false. Another expression we can make from our propositions is:
+This complex statement is true if both the simple statements are true, otherwise
+it is false. Another complex statement we can make from our two simple
+statements is:
 
 [example]
 Abelard likes coffee or Abelard likes cake.
 
-This expression is false if both propositions are false, otherwise it's true.
-Those mathematicians from the Ivory Tower use the term _connectives_ for the
-'`and`' and '`or`' that join propositions to make expressions.
+This complex statment is false if both simple statements are false, otherwise
+it's true. Those mathematicians from the Ivory Tower use the term _connectives_
+for the '`and`' and '`or`' that join simple statements to make complex
+statements.
 
 :numbered!:
-=== Questions
+==== Questions
 
-. Are the following expressions true or false?
+. Are the following complex statements true or false?
 .. The film Erin Brokovich stars Julia Roberts and 16 is greater than 4.
 .. London is the capital of France or Paris is the capital of France.
 .. Some people have brown eyes and humans lay eggs.
@@ -148,40 +156,40 @@ Those mathematicians from the Ivory Tower use the term _connectives_ for the
 
 
 :numbered:
-== Labels
+=== Formulae
 
-Rather than always writing propositions out in full, those work-shy logicians
-assign a label to them. So for the expression:
+Rather than always writing simple statements out in full, those work-shy
+logicians assign a label to them. They call the label an _atomic formula_, and
+it can be any capital letter of the alphabet. So for the complex statement:
 
 [example]
 Abelard likes coffee and Abelard likes cake.
 
-the two propositions can be labelled P and Q:
+the two simple statements can have the atomic formulae P and Q:
 
 [example]
 P: Abelard likes coffee. +
 Q: Abelard likes cake.
 
-and the expression can be written:
+and the compound statement can be written as the _formula_:
 
 [example]
 P and Q
 
-Now that we've said what P and Q stand for we write the expression:
+Now that we've said what P and Q stand for we can take this compound statement:
 
 [example]
 Abelard likes coffe or Abelard likes cake.
 
-and write it using the labels as:
+and write it using the atomic formulae to give the formula:
 
 [example]
 P or Q
 
 :numbered!:
-=== Questions
+==== Questions
 
-. For the following expressions, assign labels to the propositions and write the
-  expression using the labels.
+. Write the following compound statements as formulae:
 .. The film Erin Brokovich stars Julia Roberts and 16 is greater than 4.
 .. London is the capital of France or Paris is the capital of France.
 .. Some people have brown eyes and humans lay eggs.
@@ -190,21 +198,21 @@ P or Q
    made.
 
 :numbered:
-== Funny Symbols
+=== Funny Symbols
 
-Using letters of the alphabet to label propositions does genuinely make it a lot
-easier to write down expressions, I get that. At the same time though it makes
-it harder for the uninitiated to understand what's going on. A bit like jargon.
-Something else that mathematicians do takes things even further in this
-direction of adding mystique to their subject. Instead of using words for
-connectives they use obscure symbols, as if they were sorceresses writing an
-occult text. So '`and`' is written {and} and '`or`' is written {or}. Going back
-to our friend Abelard in the cafe, the expression:
+Using formulae does genuinely make it a lot easier to write down statements, I
+get that. At the same time though it makes it harder for the uninitiated to
+understand what's going on. A bit like jargon. Something else that
+mathematicians do takes things even further in this direction of adding mystique
+to their subject. Instead of using words for connectives they use obscure
+symbols, as if they were sorceresses writing an occult text. So '`and`' is
+written {and} and '`or`' is written {or}. Going back to our friend Abelard in
+the cafe, the compound statement:
 
 [example]
 Abelard likes coffee and Abelard likes cake.
 
-is written in logical notation as:
+is written in logical symbols as:
 
 [example]
 P: Abelard likes coffee. +
@@ -224,28 +232,55 @@ Q: Abelard likes cake. +
 P {or} Q
 
 :numbered!:
-=== Questions
+==== Questions
 
-. For the following expressions, assign labels to the propositions and write the
-  expression in logical notation:
-.. The film Erin Brokovich stars Julia Roberts and 16 is greater than 4.
-.. London is the capital of France or Paris is the capital of France.
-.. Some people have brown eyes and humans lay eggs.
-.. Four multiplied by two is twenty or it has never rained in Wales.
-.. Toothpaste is harder than diamond and less than 100 films have ever been
-   made.
+. Write the answers to the questions for <<_formulae>> in logical symbols.
+
+:numbered:
+=== Brackets
+
+In the Tower, they're mad for brackets. They put them round everything in
+sight. So instead of writing:
+
+[example]
+P {and} Q
+
+they write:
+
+[example]
+(P {and} Q)
+
+and instead of:
+
+[example]
+P {or} Q
+
+they write:
+
+[example]
+(P {or} Q)
+
+I thought all these brackets were a bit over the top at first. A touch of OCD.
+Rather fussy. But I found that it makes sense later on when formulae become
+more complicated. 
+
+
+:numbered!:
+==== Questions
+
+. Write the answers to the questions for <<_formulae>> using logical symbols.
 
 
 :numbered:
-== Truth Tables
+=== Truth Tables
 
 A truth table. A medieval device for extracting a confession? No, a
-mathematical device for showing all the possible ways an expression can be true
-(T) or false (F). For the two propositions P and Q, the truth table for P {and}
-Q is:
+mathematical device for showing all the possible ways a formula can be true
+(T) or false (F). For the two atomic formulae P and Q, the truth table for
+(P {and} Q) is:
 
 |===
-| P | Q | P {and} Q
+| P | Q | (P {and} Q)
 
 | T | T | T
 | F | T | F
@@ -254,10 +289,11 @@ Q is:
 |===
 
 so what we've done is written a row for all the combination of true and false
-for P and Q, and then in the final column put the value of P {and} Q. The truth table for P {or} Q is:
+for P and Q, and then in the final column put the value of (P {and} Q). The
+truth table for (P {or} Q) is:
 
 |===
-| P | Q | P {or} Q
+| P | Q | (P {or} Q)
 
 | T | T | T
 | F | T | T
@@ -265,10 +301,11 @@ for P and Q, and then in the final column put the value of P {and} Q. The truth 
 | F | F | F
 |===
 
-You can use a truth table to show that P {and} Q means the same as Q {and} P:
+You can use a truth table to show that (P {and} Q) means the same as
+(Q {and} P):
 
 |===
-| P | Q | P {and} Q | Q {and} P
+| P | Q | (P {and} Q) | (Q {and} P)
 
 | T | T | T | T
 | F | T | F | F
@@ -277,77 +314,19 @@ You can use a truth table to show that P {and} Q means the same as Q {and} P:
 |===
 
 For each row of the truth table, the last two columns are the same, and so
-P {and} Q means the same as Q {and} P.
+(P {and} Q) means the same as (Q {and} P).
 
 :numbered!:
-=== Questions
+==== Questions
 
-. Use a truth table to show that P {or} Q means the same thing as Q {or} P.
-
-:numbered:
-== Precedence
-
-Let's say we've got _three_ propositions P, Q and R. What's the truth table for:
-
-[example]
-P {or} Q {and} R
-
-But wait, do I do the P {or} Q first and then apply the {and} to the result? Or
-do I do Q {and} R first and then apply P {or} to the result? And does it even
-matter? The Rules Of Propositional Logic that I read while in the Ivory Tower
-are quite clear on the point. They say that {and} is evaluated before {or}.
-Okay, so the truth table for P {or} Q {and} R is:
-
-|===
-| P | Q | R | Q {and} R | P {or} Q {and} R
-
-| T | T | T | T         | T
-| F | T | T | T         | T
-| T | F | T | F         | T
-| F | F | T | F         | F
-| T | T | F | F         | T
-| F | T | F | F         | F
-| T | F | F | F         | T
-| F | F | F | F         | F
-|===
-
-So what would you write if you want to do P {or} Q and then apply {and} R? The
-Rules say that anything in brackets gets evaluated first. So you'd write:
-
-[example]
-(P {or} Q) {and} R
-
-and the truth table is:
-
-|===
-| P | Q | R | P {or} Q | (P {or} Q) {and} R
-
-| T | T | T | T         | T
-| F | T | T | T         | T
-| T | F | T | T         | T
-| F | F | T | F         | F
-| T | T | F | T         | F
-| F | T | F | T         | F
-| T | F | F | T         | F
-| F | F | F | F         | F
-|===
-
-:numbered!:
-=== Questions
-
-. Write out the truth tables for:
-.. P {and} Q {or} R
-.. P {and} Q {and} R
-.. P {or} Q {or} R
-.. P {and} (Q {or} R)
+. Use a truth table to show that (P {or} Q) means the same thing as (Q {or} P).
 
 
 :numbered:
-== Not
+=== Negation
 
-There's another connective called '`not`'. It has the symbol {not} and the fancy
-name '`negation`'. In precedence it is second only to brackets, and its truth
-table is:
+There's another connective called _negation_, which has the symbol {not} and in
+English sentences appears as the word '`not`'. Its truth table is:
 
 |===
 | P | {not}P
@@ -357,15 +336,15 @@ table is:
 |===
 
 Let us cast it loose amongst the other connectives and employ the truth table
-to see what results. Picking an expression at random, let's try:
+to see what results. Picking a formula at random, let's try:
 
 [example]
-{not}P {or} Q
+({not}P {or} Q)
 
-We know that {not} takes precedence over {or}, so the truth table is:
+which gives the truth table:
 
 |===
-| P | Q | {not}P | {not}P {or} Q
+| P | Q | {not}P | ({not}P {or} Q)
 
 | T | T | F      | T
 | F | T | T      | T
@@ -378,10 +357,10 @@ Let us now extract a full confession from:
 [example]
 {not}(P {or} Q)
 
-Brackets take precedence over {not} so the truth table is:
+which gives the truth table:
 
 |===
-| P | Q | P {or} Q | {not}(P {or} Q)
+| P | Q | (P {or} Q) | {not}(P {or} Q)
 
 | T | T | T        | F
 | F | T | T        | F
@@ -390,77 +369,78 @@ Brackets take precedence over {not} so the truth table is:
 |===
 
 One other thing, the first two connectives we encountered ({and} and {or}) both
-acted on two propositions, and so they're known as _binary_ connectives. The
-{not} connectives acts on one proposition and so is called a _unary_ connective.
+acted on two formulas, and so they're known as _binary_ connectives. The
+{not} connective acts on one formula and so is called a _unary_ connective.
+
 
 :numbered!:
-=== Questions
+==== Questions
 
 . Give the truth tables for:
 .. {not}(P {and} Q)
-.. {not}P {and} Q
-.. P {or} {not}Q
+.. {not}(P {and} Q)
+.. (P {or} {not}Q)
 .. {not}{not}P
-.. {not}(P {or} Q {or} R)
+.. {not}((P {or} Q) {or} R)
 .. {not}((P {or} Q) {and} R)
 
 
 :numbered:
-== Tautology And Contradiction
+=== Tautology And Contradiction
 
-The expression:
+The formula:
 
 [example]
-P {or} {not}P
+(P {or} {not}P)
 
 has the truth table:
 
 |===
-| P | {not}P | P {or} {not}P
+| P | {not}P | (P {or} {not}P)
 
 | T | F      | T
 | F | T      | T
 |===
 
-which shows that  whatever the value of P, the expression is always true. In the
-Tower they call any expression that's always true a _tautology_. Also, any
-expression that's always false they call a _contradiction_. An example of a
+which shows that  whatever the value of P, the formula is always true. In the
+Tower they call any formula that's always true a _tautology_. Also, any
+formula that's always false they call a _contradiction_. An example of a
 contradiction is:
 
 [example]
-P {and} {not}P
+(P {and} {not}P)
 
 the truth table being:
 
 |===
-| P | {not}P | P {and} {not}P
+| P | {not}P | (P {and} {not}P)
 
 | T | F      | F
 | F | T      | F
 |===
 
-So since the expression is always false, the expression is a contradiction.
+So since the formula is always false, the formula is a contradiction.
  
 :numbered!:
-=== Questions
+==== Questions
 
-. Say whether each of the following expressions is a tautology, a contradiction
+. Say whether each of the following formulae is a tautology, a contradiction
   or both:
-.. (P {and} Q) {and} {not}(P {and} Q)
-.. P {or} Q {or} {not}P
-.. P {or} Q {and} {not} P
-.. ({not}P {and} {not}Q) {and} {not}({not}P {and} {not}Q)
-.. {not}P {and} (Q {or} {not}P) {and} R
+.. ((P {and} Q) {and} {not}(P {and} Q))
+.. ((P {or} Q) {or} {not}P)
+.. ((P {or} Q) {and} {not} P)
+.. (({not}P {and} {not}Q) {and} {not}({not}P {and} {not}Q))
+.. (({not}P {and} (Q {or} {not}P)) {and} R)
 
 
 :numbered:
-== Implies
+=== Implies
 
-There's another binary connective called _implies_ that has the symbol {implies}
-and in precedence it comes after {or}. Its truth table is:
+There's another binary connective called _implies_ that has the symbol
+{implies}. Its truth table is:
 
 |===
-| P | Q | P {implies} Q
+| P | Q | (P {implies} Q)
 
 | T | T | T
 | F | T | T
@@ -468,26 +448,27 @@ and in precedence it comes after {or}. Its truth table is:
 | F | F | T
 |===
 
-Take the two propositions:
+Take the two simple statements:
 
 [example]
 * Abelard is at the cafe. 
 * The cafe is open.
 
-Joining the two with an implication could give the expression:
+Joining the two with an implication could give the compound statement:
 
 [example]
 Abelard is at the cafe only if the cafe is open.
 
 If Abelard really is at the cafe and the cafe really is open, then this
-expression is true. If Abelard isn't at the cafe, then whether or not the cafe
-is open, the expression is still true (another way of putting it is to say that if Abelard is not at the cafe, then this is still consistent with with the
-statement that '`Abelard is at the cafe only when the cafe is open`'). The only
-time the expression is false is if Abelard is at the cafe but the cafe is not
-open.
+compound statement is true. If Abelard isn't at the cafe, then whether or not
+the cafe is open, the compound statement is still true (another way of putting
+it is to say that if Abelard is not at the cafe, then this is still consistent
+with with the statement that '`Abelard is at the cafe only when the cafe is
+open`'). The only time the compound statement is false is if Abelard is at the
+cafe but the cafe is not open.
 
-There are a few different ways that '`implies`' occurs in English. Then
-sentence:
+There are a few different ways that '`implies`' occurs in English. The
+statement:
 
 [example]
 Abelard is at the cafe only if the cafe is open.
@@ -500,15 +481,15 @@ could be written in these alternative ways:
 * The cafe being open is a necessary condition for Abelard to be at the cafe.
 * The cafe being open follows from Abelard being at the cafe.
 
-Let's find the truth table for:
+The formula:
 
 [example]
-P {and} {not}Q {implies} Q
+((P {and} {not}Q) {implies} Q)
 
-The {implies} connective is evaluated last, so the truth table is:
+Has the truth table:
 
 |===
-| P | Q | {not}Q | P {and} {not}Q | P {and} {not}Q {implies} Q
+| P | Q | {not}Q | (P {and} {not}Q) | ((P {and} {not}Q) {implies} Q)
 
 | T | T | F      | F              | T
 | F | T | F      | F              | T
@@ -516,10 +497,10 @@ The {implies} connective is evaluated last, so the truth table is:
 | F | F | T      | F              | T
 |===
 
-Another example; the truth table for Q {implies} P {and} {not}Q is:
+Another example; the truth table for (Q {implies} (P {and} {not}Q)) is:
 
 |===
-| P | Q | {not}Q | P {and} {not}Q | Q {implies} P {and} {not}Q
+| P | Q | {not}Q | (P {and} {not}Q) | (Q {implies} (P {and} {not}Q))
 
 | T | T | F      | F              | F
 | F | T | F      | F              | F
@@ -528,22 +509,22 @@ Another example; the truth table for Q {implies} P {and} {not}Q is:
 |===
 
 :numbered!:
-=== Questions
+==== Questions
 
-. Write the following English sentences as logical expressions:
+. Write the following English statements as logical formulae:
 .. The washing is out only if it's a dry day.
 .. If Keith is in Bath, then Keith is in England.
 .. The sky being red at night implies that the shepherds are delighted.
-. Create a truth table for each of the following expressions:
-.. {not}P {implies} Q
-.. Q {implies} {not}Q
-.. (P {implies} Q) {or} P
-.. {not}(P {and} Q) {implies} {not}P {or} {not} Q
-.. P {and} (P {implies} Q) {implies} {not}P
+. Create a truth table for each of the following formulae:
+.. ({not}P {implies} Q)
+.. (Q {implies} {not}Q)
+.. ((P {implies} Q) {or} P)
+.. ({not}(P {and} Q) {implies} ({not}P {or} {not} Q))
+.. ((P {and} (P {implies} Q)) {implies} {not}P)
 
 
 :numbered:
-== Arguments
+=== Arguments
 
 The word '`argument`' makes me think of a bitter shouting match. To a logician
 it means something altogether more cerebral. A logical argument in English might
@@ -554,7 +535,7 @@ Abelard ordered coffee or Abelard ordered cake. Abelard didn't order cake.
 Therefore Abelard ordered coffee.
 
 To convert this argument from English into logical symbols, we first of all
-label the propositions:
+define the atomic formulae:
 
 [example]
 A: Abelard ordered coffee. +
@@ -565,28 +546,26 @@ So the argument becomes:
 [example]
 If A {or} B is true and {not}B is true, then A is true.
 
-To express this argument more concisely we roll out the _semantic turnstile_.
-Yes, it really is called that. Anyway, the symbol for the semantic turnstile is
-{entails} and the argument can now be written:
+To express this argument more concisely we roll out the _double turnstile_ 
+symbol {entails}, and write the argument as:
 
 [example]
-A {or} B, {not}B {entails} A
+(A {or} B), ({not}B) {entails} A
 
-Where the comma-separated list of expressions on the left of the semantic
-turnstile are the assumptions, and the expression on the right is the
-conclusion. That's the argument written down, but is it valid? In other words,
-if the assumptions are true, is the conclusion true? To find out, we can say
-that if:
+Where the comma-separated list of formulae on the left of the double-turnstile
+are the premises, and the formula on the right is the conclusion. That's the
+argument written down, but is it valid? In other words, if the premises are
+true, is the conclusion true? To find out, we can say that if:
 
 [example]
-(A {or} B) {and} {not}B {implies} A
+(((A {or} B) {and} {not}B) {implies} A)
 
 is a tautology, then the argument is valid. If effect we've joined the
-assumptions together with {and} and replaced the {entails} with a {implies} to get
-the expressions. Bring on the table of truth!
+premises together with {and} and replaced the {entails} with a {implies} to get
+the formula. Bring on the table of truth!
 
 |===
-|A | B | A {or} B | {not}B | (A {or} B) {and} {not}B | (A {or} B) {and} {not}B {implies} A
+|A | B | (A {or} B) | {not}B | ((A {or} B) {and} {not}B) | (((A {or} B) {and} {not}B) {implies} A)
 
 |T | T | T        | F      | F                       | T
 |F | T | T        | F      | F                       | T
@@ -594,7 +573,7 @@ the expressions. Bring on the table of truth!
 |F | F | F        | T      | F                       | T
 |===
 
-The last column is always true, so the expression is a tautology, so the
+The last column is always true, so the formula is a tautology, so the
 argument is valid. Yay! Let's test another argument for validity:
 
 [example]
@@ -608,32 +587,32 @@ In logic symbols the argument is:
 A: Run out of petrol. +
 B: Get to the wedding on time. +
 C: Lose our way. +
-A {implies} {not}B, C {implies} {not}B, A {entails} {not}B
+(A {implies} {not}B), (C {implies} {not}B), A {entails} {not}B
 
 The argument is valid if:
 
-(A {implies} {not}B) {and} (C {implies} {not}B) {and} A {implies} {not}B
+((((A {implies} {not}B) {and} (C {implies} {not}B)) {and} A) {implies} {not}B)
 
 is a tautology. Doing a giant truth table:
 
 |===
-| 1 | 2 | 3 | 4      | 5                 | 6                 | 7                 | 8             | 9
+| 1 | 2 | 3 | 4      | 5                   | 6                   | 7                   | 8               | 9
 
-| A | B | C | {not}B | A {implies} col_4 | C {implies} col_4 | col_5 {and} col_6 | col_7 {and} A | col_8 {implies} col_4
+| A | B | C | {not}B | (A {implies} col_4) | (C {implies} col_4) | (col_5 {and} col_6) | (col_7 {and} A) | (col_8 {implies} col_4)
 
-| T | T | T | F      | F                 | F                 | F                 | F             | T
-| F | T | T | F      | T                 | F                 | F                 | F             | T
-| T | F | T | T      | T                 | F                 | F                 | F             | T
-| F | F | T | T      | T                 | T                 | T                 | F             | T
-| T | T | F | F      | F                 | T                 | F                 | F             | T
-| F | T | F | F      | T                 | T                 | T                 | F             | T
-| T | F | F | T      | T                 | T                 | T                 | T             | T
-| F | F | F | T      | T                 | T                 | T                 | F             | T
+| T | T | T | F      | F                   | F                   | F                   | F               | T
+| F | T | T | F      | T                   | F                   | F                   | F               | T
+| T | F | T | T      | T                   | F                   | F                   | F               | T
+| F | F | T | T      | T                   | T                   | T                   | F               | T
+| T | T | F | F      | F                   | T                   | F                   | F               | T
+| F | T | F | F      | T                   | T                   | T                   | F               | T
+| T | F | F | T      | T                   | T                   | T                   | T               | T
+| F | F | F | T      | T                   | T                   | T                   | F               | T
 |===
 
 
 :numbered!:
-=== Questions
+==== Questions
 
 . Construct logical arguments for the following arguments in English:
 .. If it's a silent film then there's no sound. It's a silent film. Therefore
@@ -652,7 +631,7 @@ is a tautology. Doing a giant truth table:
 
 
 :numbered:
-== Rules Of Inference
+=== Rules Of Inference
 
 Writing out truth tables gets tedious, especially as the number of rows grows
 exponentially with the number of propositions. The logicians have discovered /
@@ -736,7 +715,7 @@ Here's a list of rules of inference:
 |===
 
 :numbered!:
-=== Questions
+==== Questions
 
 . Show that the rules of inference are valid by using a truth table.
 . For all the arguments in the questions for <<_arguments>>, show that they are
@@ -744,15 +723,13 @@ Here's a list of rules of inference:
 
 
 :numbered:
-== Equivalence
+=== Equivalence
 
-There are a couple more connectives (with their own mystical symbols!) that
-logicians use, _equivalence_ and _exclusive-or_. Equivalence is a binary
-connective with the symbol {equiv}. It's precedence is after {implies} and
-it's truth table is:
+_Equivalence_ is a binary connective with the mystical symbol {equiv} and its
+truth table is:
 
 |===
-| P | Q | P {equiv} Q
+| P | Q | (P {equiv} Q)
 
 | T | T | T
 | F | T | F
@@ -770,91 +747,181 @@ is written:
 [example]
 P: It's Christmas Day.
 Q: It's the 25th of December.
-P {equiv} Q
+(P {equiv} Q)
 
-If two expressions are equivalent, then the expression formed by connecting
-them with the {equiv} connective will be a tautology. For example, if the two
-expressions:
+If two formulas are equivalent, then the formula formed by joining them with the
+{equiv} connective will be a tautology. For example, if the two formulas:
 
 [example]
-A and {not}{not}A
+(A and {not}{not}A)
 
 are equivalent, then:
 
 [example]
-A {equiv} {not}{not}A
+(A {equiv} {not}{not}A)
 
-will be a tautology. Let's find out by writing its truth table:
+will be a tautology. Let's check by writing its truth table:
 
 |===
-| A | {not}A | {not}{not}A | A {equiv} {not}{not}A
+| A | {not}A | {not}{not}A | (A {equiv} {not}{not}A)
 
 | T | F      | T           | T
 | F | T      | F           | T
 |===
 
-it's a tautology, so the two expressions are equivalent.
+it's a tautology, so the two formulae are equivalent.
 
 :numbered!:
-=== Questions
+==== Questions
 
 . Translate the following English sentences into logical symbols:
 .. The bike's back brake comes on if, and only if, the left brake lever is
    applied.
 .. The fridge light is on if, and only if, the fridge door is open.
-. Give the truth table for each of the following expressions:
-.. A {equiv} B {and} C
-.. B {or} (A {equiv} B)
-.. P {and} {not}(P {equiv} Q {or} P)
-.. (Q {equiv} {not}P) {and} (P {equiv} {not} {not}Q)
+. Give the truth table for each of the following formulae:
+.. (A {equiv} (B {and} C))
+.. (B {or} (A {equiv} B))
+.. (P {and} {not}(P {equiv} (Q {or} P)))
+.. ((Q {equiv} {not}P) {and} (P {equiv} {not} {not}Q))
+
 
 :numbered:
-== Rosetta Stone
+=== Precedence
+
+Let's say we've got _three_ propositions P, Q and R. What's the truth table for:
+
+[example]
+P {or} Q {and} R
+
+But wait, do I do the P {or} Q first and then apply the {and} to the result? Or
+do I do Q {and} R first and then apply P {or} to the result? And does it even
+matter? The Rules Of Propositional Logic that I read while in the Ivory Tower
+are quite clear on the point. They say that {and} is evaluated before {or}.
+Okay, so the truth table for P {or} Q {and} R is:
+
+|===
+| P | Q | R | Q {and} R | P {or} Q {and} R
+
+| T | T | T | T         | T
+| F | T | T | T         | T
+| T | F | T | F         | T
+| F | F | T | F         | F
+| T | T | F | F         | T
+| F | T | F | F         | F
+| T | F | F | F         | T
+| F | F | F | F         | F
+|===
+
+So what would you write if you want to do P {or} Q and then apply {and} R? The
+Rules say that anything in brackets gets evaluated first. So you'd write:
+
+[example]
+(P {or} Q) {and} R
+
+and the truth table is:
+
+|===
+| P | Q | R | P {or} Q | (P {or} Q) {and} R
+
+| T | T | T | T         | T
+| F | T | T | T         | T
+| T | F | T | T         | T
+| F | F | T | F         | F
+| T | T | F | T         | F
+| F | T | F | T         | F
+| T | F | F | T         | F
+| F | F | F | F         | F
+|===
+
+:numbered!:
+==== Questions
+
+. Write out the truth tables for:
+.. P {and} Q {or} R
+.. P {and} Q {and} R
+.. P {or} Q {or} R
+.. P {and} (Q {or} R)
+
+
+:numbered:
+=== Rosetta Stone
+
+[[img-rosetta]]
+.http://commons.wikimedia.org/wiki/File:Rosetta_Stone.JPG#mediaviewer/File:Rosetta_Stone.JPG[Rosetta Stone] by http://commons.wikimedia.org/wiki/User:Biopics[Hans Hillewaert] - Own work. Licensed under http://creativecommons.org/licenses/by-sa/4.0[CC BY-SA 4.0] via http://commons.wikimedia.org/wiki/[Wikimedia Commons].
+image::rosetta.jpg[Rosetta Stone]
+
+I've found that in maths, the same thing is often called different names by
+different authors. Also, some authors take different philosophical approaches to
+the same area of maths. This point of this section is to help us understand
+what other authors are saying, in terms that we already understand.
+
+
+==== Sentential Logic versus Propositional Logic
+
+Some authors talk of Sentential Logic, and some talk of Propositional Logic.
+This is a philosophical difference. Say there are two statements that mean the
+same thing but use a different form of words. The sentential school of thought
+uses a different label for each statement, but the proposition school would use
+just one label.
+
+
+==== Synonyms
+
+|===
+| Name             | Synonym
+
+| Connective       | Operator
+| Sentential Logic | Sentential Calculus
+| Not, {not}       | ~
+| Atomic formula   | Atom, simple proposition, atomic sentence
+| Mol
+|===
 
 * Expression - Formula, Compound Proposition
 * Proposition - Atomic proposition, simple proposition.
-* Connective - Operator.
-* Not - 
-* Semantic turnstile - double turnstile.
 * All the rules of inference. and equivalence
 
 :numbered!:
 [appendix]
-== Answers To Section Questions
+== Answers to Questions
 
-=== Propositions: Answers
+== Sentential Logic: Answers
 
-Answers for <<_propositions>>.
+Answers for <_sentential_logic>
 
-. {empty}
-.. Not a proposition.
-.. Not a proposition.
-.. A proposition.
-.. A proposition.
-.. Not a proposition.
-.. A proposition.
-. {empty}
-.. True.
-.. False.
-.. False.
-.. True.
-.. True.
-.. True.
+==== Statements: Answers
 
-=== Expressions: Answers
-
-Answers for <<_expressions>>.
+Answers for <<_statements>>.
 
 . {empty}
+.. Not a statement.
+.. Not a statement.
+.. A statement.
+.. A statement.
+.. Not a statement.
+.. A statement.
+. {empty}
+.. True.
+.. False.
+.. False.
+.. True.
+.. True.
+.. True.
+
+==== Connectives: Answers
+
+Answers for <<_connectives>>.
+
+. {empty}
 .. True.
 .. True.
 .. False.
 .. False.
 .. False.
 
-=== Labels: Answers
+==== Formulae: Answers
 
-Answers for <<_labels>>.
+Answers for <<_formulae>>.
 
 . {empty}
 .. P: The film Erin Brokovich stars Julia Roberts. +
@@ -874,29 +941,31 @@ Answers for <<_labels>>.
    P and Q
 
 
-=== Funny Symbols: Answers
+==== Funny Symbols: Answers
 
 Answers for <<_funny_symbols>>.
 
 . {empty}
-.. P: The film Erin Brokovich stars Julia Roberts. +
-   Q: 16 is greater than 4. +
-   P {and} Q
-.. A: London is the capital of France. +
-   B: Paris is the capital of France. +
-   A {or} B
-.. P: Some people have brown eyes. +
-   Q: Humans lay eggs. +
-   P {and} Q
-.. P: Four multiplied by two is twenty. +
-   Q: It has never rained in Wales. +
-   P {or} Q
-.. P: Toothpaste is harder than diamond. +
-   Q: Less than 100 films have ever been made. +
-   P {and} Q
+.. P {and} Q
+.. A {or} B
+.. P {and} Q
+.. P {or} Q
+.. P {and} Q
 
 
-=== Truth Tables: Answers
+==== Brackets: Answers
+
+Answers for <<_brackets>>.
+
+. {empty}
+.. (P {and} Q)
+.. (A {or} B)
+.. (P {and} Q)
+.. (P {or} Q)
+.. (P {and} Q)
+
+
+==== Truth Tables: Answers
 
 Answers for <<_truth_tables>>.
 
@@ -914,71 +983,10 @@ For each row of the truth table, the last two columns are the same, and so
 P {or} Q means the same as Q {or} P.
 
 
-=== Precedence: Answers
 
-Answers for <<_precedence>>.
+==== Negation: Answers
 
-. {empty}
-.. {empty}
-|===
-| P | Q | R | P {and} Q | P {and} Q {or} R
-
-| T | T | T | T         | T
-| F | T | T | F         | T
-| T | F | T | F         | T
-| F | F | T | F         | T
-| T | T | F | T         | T
-| F | T | F | F         | F
-| T | F | F | F         | F
-| F | F | F | F         | F
-|===
-[start=2]
-.. {empty}
-|===
-| P | Q | R | P {and} Q | P {and} Q {and} R
-
-| T | T | T | T         | T
-| F | T | T | F         | F
-| T | F | T | F         | F
-| F | F | T | F         | F
-| T | T | F | T         | F
-| F | T | F | F         | F
-| T | F | F | F         | F
-| F | F | F | F         | F
-|===
-[start=3]
-.. {empty}
-|===
-| P | Q | R | P {or} Q | P {or} Q {or} R
-
-| T | T | T | T         | T
-| F | T | T | T         | T
-| T | F | T | T         | T
-| F | F | T | F         | T
-| T | T | F | T         | T
-| F | T | F | T         | T
-| T | F | F | T         | T
-| F | F | F | F         | F
-|===
-[start=4]
-.. {empty}
-|===
-| P | Q | R | Q {or} R | P {and} (Q {or} R)
-
-| T | T | T | T         | T
-| F | T | T | T         | F
-| T | F | T | T         | T
-| F | F | T | F         | F
-| T | T | F | T         | T
-| F | T | F | T         | F
-| T | F | F | F         | F
-| F | F | F | F         | F
-|===
-
-
-=== Not: Answers
-
-Answers for <<_not>>.
+Answers for <<_negation>>.
 
 . {empty}
 .. {empty}
@@ -1037,7 +1045,7 @@ Answers for <<_not>>.
 | F | F | F | F        | F                  | T
 |===
 
-=== Tautology And Contradiction: Answers
+==== Tautology And Contradiction: Answers
 
 Answers for <<_tautology_and_contradiction>>.
 
@@ -1102,7 +1110,7 @@ Neither.
 |===
 Neither.
 
-=== Implies: Answers
+==== Implies: Answers
 
 Answers for <<_implies>>.
 
@@ -1165,7 +1173,7 @@ Answers for <<_implies>>.
 | F | F | F          | T      | F                   | T
 |===
 
-=== Arguments: Answers
+==== Arguments: Answers
 
 Answers for <<_arguments>>.
 
@@ -1268,7 +1276,7 @@ Answers for <<_arguments>>.
 | F | F | F        | F         | T             | T      | F                 | F                 | T
 |===
 
-=== Rules Of Inference: Answers
+==== Rules Of Inference: Answers
 
 Answers for <<_rules_of_inference>>.
 
@@ -1433,7 +1441,7 @@ Answers for <<_rules_of_inference>>.
    5. P {or} Q (assumption)
    6. Q (4 and 5 and {not} elimination)
 
-=== Equivalence: Answers
+==== Equivalence: Answers
 
 Answers for <<_equivalence>>.
 
@@ -1493,6 +1501,69 @@ Answers for <<_equivalence>>.
 | F | F | T      | F               | T      | F          | T               | F
 |===
 
-References
+==== Precedence: Answers
 
-http://en.wikibooks.org/wiki/Formal_Logic/Sentential_Logic
+Answers for <<_precedence>>.
+
+. {empty}
+.. {empty}
+|===
+| P | Q | R | P {and} Q | P {and} Q {or} R
+
+| T | T | T | T         | T
+| F | T | T | F         | T
+| T | F | T | F         | T
+| F | F | T | F         | T
+| T | T | F | T         | T
+| F | T | F | F         | F
+| T | F | F | F         | F
+| F | F | F | F         | F
+|===
+[start=2]
+.. {empty}
+|===
+| P | Q | R | P {and} Q | P {and} Q {and} R
+
+| T | T | T | T         | T
+| F | T | T | F         | F
+| T | F | T | F         | F
+| F | F | T | F         | F
+| T | T | F | T         | F
+| F | T | F | F         | F
+| T | F | F | F         | F
+| F | F | F | F         | F
+|===
+[start=3]
+.. {empty}
+|===
+| P | Q | R | P {or} Q | P {or} Q {or} R
+
+| T | T | T | T         | T
+| F | T | T | T         | T
+| T | F | T | T         | T
+| F | F | T | F         | T
+| T | T | F | T         | T
+| F | T | F | T         | T
+| T | F | F | T         | T
+| F | F | F | F         | F
+|===
+[start=4]
+.. {empty}
+|===
+| P | Q | R | Q {or} R | P {and} (Q {or} R)
+
+| T | T | T | T         | T
+| F | T | T | T         | F
+| T | F | T | T         | T
+| F | F | T | F         | F
+| T | T | F | T         | T
+| F | T | F | T         | F
+| T | F | F | F         | F
+| F | F | F | F         | F
+|===
+
+
+[bibliography]
+* http://en.wikibooks.org/wiki/Formal_Logic/Sentential_Logic
+* Mathematics for Computing by Robert Callen 1998, Letts Educational.
+* http://en.wikipedia.org/wiki/Propositional_calculus
