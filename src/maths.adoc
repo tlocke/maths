@@ -268,7 +268,8 @@ more complicated.
 :numbered!:
 ==== Questions
 
-. Write the answers to the questions for <<_formulae>> using logical symbols.
+. Write the answers to the questions for <<_funny_symbols>> using logical
+  symbols.
 
 
 :numbered:
@@ -323,10 +324,10 @@ For each row of the truth table, the last two columns are the same, and so
 
 
 :numbered:
-=== Negation
+=== Not
 
-There's another connective called _negation_, which has the symbol {not} and in
-English sentences appears as the word '`not`'. Its truth table is:
+There's another connective called _not_, which has the symbol {not}. Its truth
+table is:
 
 |===
 | P | {not}P
@@ -425,7 +426,7 @@ So since the formula is always false, the formula is a contradiction.
 ==== Questions
 
 . Say whether each of the following formulae is a tautology, a contradiction
-  or both:
+  or neither:
 .. ((P {and} Q) {and} {not}(P {and} Q))
 .. ((P {or} Q) {or} {not}P)
 .. ((P {or} Q) {and} {not} P)
@@ -610,6 +611,8 @@ is a tautology. Doing a giant truth table:
 | F | F | F | T      | T                   | T                   | T                   | F               | T
 |===
 
+Shows that the formula is a tautology and so the argument is indeed valid.
+
 
 :numbered!:
 ==== Questions
@@ -634,8 +637,8 @@ is a tautology. Doing a giant truth table:
 === Rules Of Inference
 
 Writing out truth tables gets tedious, especially as the number of rows grows
-exponentially with the number of propositions. The logicians have discovered /
-invented an easier way of showing if an argument is valid or not. It involves rewriting the assumptions in a progressively simpler and simpler form until you
+exponentially with the number of atomic formulas. The logicians have discovered
+/ invented an easier way of showing if an argument is valid or not. It involves rewriting the assumptions in a progressively simpler and simpler form until you
 end up with the conclusion. The simplifying substitutions are valid arguments
 that are known as _rules of inference_. One rule of inference is:
 
@@ -704,7 +707,7 @@ Here's a list of rules of inference:
 | Modus ponens           | A {implies} B, A {entails} B
 | {implies} introduction | A, B {entails} A {implies} B
 | Modus tollens          | A {implies} B, {not}B {entails} {not}A
-| Double negation        | {not}{not}A {entails} A
+| Double {not}           | {not}{not}A {entails} A
 | {not} elimination      | Assume {not}A, derive B and {not}B {entails} A
 | {and} elimination      | A {and} B {entails} A also A {and} B {entails} B
 | {and} introduction     | A, B {entails} A {and} B
@@ -788,7 +791,7 @@ it's a tautology, so the two formulae are equivalent.
 :numbered:
 === Precedence
 
-Let's say we've got _three_ propositions P, Q and R. What's the truth table for:
+Let's say we've got _three_ atomic formulas P, Q and R. What's the truth table for:
 
 [example]
 P {or} Q {and} R
@@ -872,22 +875,22 @@ just one label.
 
 | Connective       | Operator
 | Sentential Logic | Sentential Calculus
-| Not, {not}       | ~
+| Not, {not}       | ~, negation
+| And              | Conjunction
+| Or               | Disjunction
+| Implies          | Conditional
 | Atomic formula   | Atom, simple proposition, atomic sentence
-| Mol
 |===
 
-* Expression - Formula, Compound Proposition
-* Proposition - Atomic proposition, simple proposition.
 * All the rules of inference. and equivalence
 
 :numbered!:
 [appendix]
 == Answers to Questions
 
+
 === Sentential Logic: Answers
 
-Answers for <_sentential_logic>
 
 ==== Statements: Answers
 
@@ -984,9 +987,9 @@ P {or} Q means the same as Q {or} P.
 
 
 
-==== Negation: Answers
+==== Not: Answers
 
-Answers for <<_negation>>.
+Answers for <<_not>>.
 
 . {empty}
 .. {empty}

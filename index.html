@@ -434,7 +434,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_funny_symbols">2.4. Funny Symbols</a></li>
 <li><a href="#_brackets">2.5. Brackets</a></li>
 <li><a href="#_truth_tables">2.6. Truth Tables</a></li>
-<li><a href="#_negation">2.7. Negation</a></li>
+<li><a href="#_not">2.7. Not</a></li>
 <li><a href="#_tautology_and_contradiction">2.8. Tautology And Contradiction</a></li>
 <li><a href="#_implies">2.9. Implies</a></li>
 <li><a href="#_arguments">2.10. Arguments</a></li>
@@ -888,7 +888,8 @@ more complicated.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Write the answers to the questions for <a href="#_formulae">Formulae</a> using logical symbols.</p>
+<p>Write the answers to the questions for <a href="#_funny_symbols">Funny Symbols</a> using logical
+symbols.</p>
 </li>
 </ol>
 </div>
@@ -1041,10 +1042,10 @@ truth table for (P &#x2228; Q) is:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_negation">2.7. Negation</h3>
+<h3 id="_not">2.7. Not</h3>
 <div class="paragraph">
-<p>There&#8217;s another connective called <em>negation</em>, which has the symbol &#x00AC; and in
-English sentences appears as the word &#8216;not&#8217;. Its truth table is:</p>
+<p>There&#8217;s another connective called <em>not</em>, which has the symbol &#x00AC;. Its truth
+table is:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -1301,7 +1302,7 @@ contradiction is:</p>
 <ol class="arabic">
 <li>
 <p>Say whether each of the following formulae is a tautology, a contradiction
-or both:</p>
+or neither:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -1850,6 +1851,9 @@ C: Lose our way.<br>
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>Shows that the formula is a tautology and so the argument is indeed valid.</p>
+</div>
 <div class="sect3">
 <h4 id="_questions_10">Questions</h4>
 <div class="olist arabic">
@@ -1894,8 +1898,8 @@ and off. This light switch is not on. Therefore the light switch is off.</p>
 <h3 id="_rules_of_inference">2.11. Rules Of Inference</h3>
 <div class="paragraph">
 <p>Writing out truth tables gets tedious, especially as the number of rows grows
-exponentially with the number of propositions. The logicians have discovered /
-invented an easier way of showing if an argument is valid or not. It involves rewriting the assumptions in a progressively simpler and simpler form until you
+exponentially with the number of atomic formulas. The logicians have discovered
+/ invented an easier way of showing if an argument is valid or not. It involves rewriting the assumptions in a progressively simpler and simpler form until you
 end up with the conclusion. The simplifying substitutions are valid arguments
 that are known as <em>rules of inference</em>. One rule of inference is:</p>
 </div>
@@ -2069,7 +2073,7 @@ Q, (R &#x2227; P) &#x2227; (R &#x2227; Q) &#x2192; P &#x22A8; P
 <td class="tableblock halign-left valign-top"><p class="tableblock">A &#x2192; B, &#x00AC;B &#x22A8; &#x00AC;A</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Double negation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Double &#x00AC;</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#x00AC;&#x00AC;A &#x22A8; A</p></td>
 </tr>
 <tr>
@@ -2274,7 +2278,7 @@ applied.</p>
 <div class="sect2">
 <h3 id="_precedence">2.13. Precedence</h3>
 <div class="paragraph">
-<p>Let&#8217;s say we&#8217;ve got <em>three</em> propositions P, Q and R. What&#8217;s the truth table for:</p>
+<p>Let&#8217;s say we&#8217;ve got <em>three</em> atomic formulas P, Q and R. What&#8217;s the truth table for:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -2527,7 +2531,19 @@ just one label.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Not, &#x00AC;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">~</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">~, negation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">And</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Conjunction</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Or</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Disjunction</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implies</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Conditional</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Atomic formula</p></td>
@@ -2537,12 +2553,6 @@ just one label.</p>
 </table>
 <div class="ulist">
 <ul>
-<li>
-<p>Expression - Formula, Compound Proposition</p>
-</li>
-<li>
-<p>Proposition - Atomic proposition, simple proposition.</p>
-</li>
 <li>
 <p>All the rules of inference. and equivalence</p>
 </li>
@@ -2557,9 +2567,6 @@ just one label.</p>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_sentential_logic_answers">Sentential Logic: Answers</h3>
-<div class="paragraph">
-<p>Answers for &lt;_sentential_logic&gt;</p>
-</div>
 <div class="sect3">
 <h4 id="_statements_answers">Statements: Answers</h4>
 <div class="paragraph">
@@ -2818,9 +2825,9 @@ P &#x2228; Q means the same as Q &#x2228; P.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_negation_answers">Negation: Answers</h4>
+<h4 id="_not_answers">Not: Answers</h4>
 <div class="paragraph">
-<p>Answers for <a href="#_negation">Negation</a>.</p>
+<p>Answers for <a href="#_not">Not</a>.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -5814,7 +5821,7 @@ P &#x21D4; Q</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2014-12-01 20:26:47 GMT
+Last updated 2014-12-01 22:02:49 GMT
 </div>
 </div>
 </body>
