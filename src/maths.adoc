@@ -120,33 +120,33 @@ suspend our disbelief and imagine all those perfect statements.
 === Connectives
 
 It seems that the next thing the logicians do is string together simple
-statements to make complex statements. So two simple statements might be:
+statements to make compound statements. So two simple statements might be:
 
 [example]
 Abelard likes coffee. +
 Abelard likes cake.
 
-And a complex statement formed from these two simple statements is:
+And a compound statement formed from these two simple statements is:
 
 [example]
 Abelard likes coffee and Abelard likes cake.
 
-This complex statement is true if both the simple statements are true, otherwise
-it is false. Another complex statement we can make from our two simple
-statements is:
+This compound statement is true if both the simple statements are true,
+otherwise it is false. Another compound statement we can make from our two
+simple statements is:
 
 [example]
 Abelard likes coffee or Abelard likes cake.
 
-This complex statment is false if both simple statements are false, otherwise
+This compound statment is false if both simple statements are false, otherwise
 it's true. Those mathematicians from the Ivory Tower use the term _connectives_
-for the '`and`' and '`or`' that join simple statements to make complex
+for the '`and`' and '`or`' that join simple statements to make compound
 statements.
 
 :numbered!:
 ==== Questions
 
-. Are the following complex statements true or false?
+. Are the following compound statements true or false?
 .. The film Erin Brokovich stars Julia Roberts and 16 is greater than 4.
 .. London is the capital of France or Paris is the capital of France.
 .. Some people have brown eyes and humans lay eggs.
@@ -160,7 +160,7 @@ statements.
 
 Rather than always writing simple statements out in full, those work-shy
 logicians assign a label to them. They call the label an _atomic formula_, and
-it can be any capital letter of the alphabet. So for the complex statement:
+it can be any capital letter of the alphabet. So for the compound statement:
 
 [example]
 Abelard likes coffee and Abelard likes cake.
@@ -885,7 +885,7 @@ just one label.
 [appendix]
 == Answers to Questions
 
-== Sentential Logic: Answers
+=== Sentential Logic: Answers
 
 Answers for <_sentential_logic>
 
@@ -1562,6 +1562,9 @@ Answers for <<_precedence>>.
 | F | F | F | F         | F
 |===
 
+
+[bibliography]
+== Bibliography
 
 [bibliography]
 * http://en.wikibooks.org/wiki/Formal_Logic/Sentential_Logic

@@ -22,13 +22,9 @@ installed. On Ubuntu this can be done with:
 
 `sudo apt-get install asciidoc asciidoctor`
 
-To create the HTML type:
+Then to create the site, go the the `maths` directory and type:
 
-`asciidoctor src/maths.adoc -o index.html`
-
-and to create the EPUB book do:
-
-`a2x -fepub -D . src/maths.adoc`
+`./make_site`
 
 
 Useful Links

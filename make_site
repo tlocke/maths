@@ -1,0 +1,13 @@
+if [ ! -d html ]; then
+  mkdir html
+fi
+asciidoctor src/maths.adoc -o html/index.html
+
+if [ ! -d epub ]; then
+  mkdir epub
+fi
+a2x -fepub -D epub src/maths.adoc
+
+cp html/index.html .
+cp epub/maths.epub .
+cp src/*.jpg .
