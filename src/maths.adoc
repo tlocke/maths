@@ -1,11 +1,12 @@
 = My Glimpse Inside The Ivory Tower Of Mathematics
-The Contributors
+Tony Locke
 :entails: &#x22A8;
 :and: &#x2227;
 :or: &#x2228;
 :implies: &#x2192;
 :not: &#x00AC;
 :equiv: &#x21D4;
+:bicond: &#x2194;
 :toc:
 
 [subs="replacements"]
@@ -54,7 +55,7 @@ EPUB:: http://maths.tlocke.org.uk/maths.epub
 == Sentential Logic
 
 [[img-russel]]
-.http://commons.wikimedia.org/wiki/File:Russell_in_1924_01.jpg#mediaviewer/File:Russell_in_1924_01.jpg[Russell in 1924 01] by Unknown - http://www.humanities.mcmaster.ca/~bertrand/later.html. Licensed under Public domain via http://commons.wikimedia.org/wiki/[Wikimedia Commons].
+.http://commons.wikimedia.org/wiki/File:Russell_in_1924_01.jpg#mediaviewer/File:Russell_in_1924_01.jpg[Bertrand Russell in 1924] by Unknown - http://www.humanities.mcmaster.ca/~bertrand/later.html. Licensed under Public domain via http://commons.wikimedia.org/wiki/[Wikimedia Commons].
 image::russell.jpg[Bertrand Russell in 1924]
 
 === Statements
@@ -156,7 +157,7 @@ statements.
 
 
 :numbered:
-=== Formulae
+=== Formulas
 
 Rather than always writing simple statements out in full, those work-shy
 logicians assign a label to them. They call the label an _atomic formula_, and
@@ -165,7 +166,7 @@ it can be any capital letter of the alphabet. So for the compound statement:
 [example]
 Abelard likes coffee and Abelard likes cake.
 
-the two simple statements can have the atomic formulae P and Q:
+the two simple statements can have the atomic formulas P and Q:
 
 [example]
 P: Abelard likes coffee. +
@@ -181,7 +182,7 @@ Now that we've said what P and Q stand for we can take this compound statement:
 [example]
 Abelard likes coffe or Abelard likes cake.
 
-and write it using the atomic formulae to give the formula:
+and write it using the atomic formulas to give the formula:
 
 [example]
 P or Q
@@ -189,7 +190,7 @@ P or Q
 :numbered!:
 ==== Questions
 
-. Write the following compound statements as formulae:
+. Write the following compound statements as formulas:
 .. The film Erin Brokovich stars Julia Roberts and 16 is greater than 4.
 .. London is the capital of France or Paris is the capital of France.
 .. Some people have brown eyes and humans lay eggs.
@@ -200,7 +201,7 @@ P or Q
 :numbered:
 === Funny Symbols
 
-Using formulae does genuinely make it a lot easier to write down statements, I
+Using formulas does genuinely make it a lot easier to write down statements, I
 get that. At the same time though it makes it harder for the uninitiated to
 understand what's going on. A bit like jargon. Something else that
 mathematicians do takes things even further in this direction of adding mystique
@@ -234,7 +235,7 @@ P {or} Q
 :numbered!:
 ==== Questions
 
-. Write the answers to the questions for <<_formulae>> in logical symbols.
+. Write the answers to the questions for <<_formulas>> in logical symbols.
 
 :numbered:
 === Brackets
@@ -261,7 +262,7 @@ they write:
 (P {or} Q)
 
 I thought all these brackets were a bit over the top at first. A touch of OCD.
-Rather fussy. But I found that it makes sense later on when formulae become
+Rather fussy. But I found that it makes sense later on when formulas become
 more complicated. 
 
 
@@ -277,7 +278,7 @@ more complicated.
 
 A truth table. A medieval device for extracting a confession? No, a
 mathematical device for showing all the possible ways a formula can be true
-(T) or false (F). For the two atomic formulae P and Q, the truth table for
+(T) or false (F). For the two atomic formulas P and Q, the truth table for
 (P {and} Q) is:
 
 |===
@@ -425,7 +426,7 @@ So since the formula is always false, the formula is a contradiction.
 :numbered!:
 ==== Questions
 
-. Say whether each of the following formulae is a tautology, a contradiction
+. Say whether each of the following formulas is a tautology, a contradiction
   or neither:
 .. ((P {and} Q) {and} {not}(P {and} Q))
 .. ((P {or} Q) {or} {not}P)
@@ -512,17 +513,221 @@ Another example; the truth table for (Q {implies} (P {and} {not}Q)) is:
 :numbered!:
 ==== Questions
 
-. Write the following English statements as logical formulae:
+. Write the following English statements as logical formulas:
 .. The washing is out only if it's a dry day.
 .. If Keith is in Bath, then Keith is in England.
 .. The sky being red at night implies that the shepherds are delighted.
-. Create a truth table for each of the following formulae:
+. Create a truth table for each of the following formulas:
 .. ({not}P {implies} Q)
 .. (Q {implies} {not}Q)
 .. ((P {implies} Q) {or} P)
 .. ({not}(P {and} Q) {implies} ({not}P {or} {not} Q))
 .. ((P {and} (P {implies} Q)) {implies} {not}P)
 
+
+:numbered:
+=== Biconditional
+
+The _biconditional_ is a binary connective with the mystical symbol {bicond} and
+its truth table is:
+
+|===
+| P | Q | (P {bicond} Q)
+
+| T | T | T
+| F | T | F
+| T | F | F
+| F | F | T
+|===
+
+Translating from English to logic symbols the sentence:
+
+[example]
+It's Christmas Day if and only if it's the 25th of December.
+
+is written:
+
+[example]
+P: It's Christmas Day.
+Q: It's the 25th of December.
+(P {bicond} Q)
+
+which of course is true. An example that is false is:
+
+[example]
+It's Christmas Day if and only if it's the 2nd of March.
+
+which is written:
+
+[example]
+P: It's Christmas Day.
+Q: It's the 2nd of March.
+(P {bicond} Q)
+
+
+:numbered!:
+==== Questions
+
+. Translate the following English sentences into logical symbols:
+.. The bike's back brake comes on if, and only if, the left brake lever is
+   applied.
+.. The fridge light is on if, and only if, the fridge door is open.
+. Give the truth table for each of the following formulas:
+.. (A {bicond} (B {and} C))
+.. (B {or} (A {bicond} B))
+.. (P {and} {not}(P {bicond} (Q {or} P)))
+.. ((Q {bicond} {not}P) {and} (P {bicond} {not} {not}Q))
+
+
+:numbered:
+=== Equivalence
+
+If two formulas are _equivalent_, then the formula formed by joining them with
+the {bicond} connective will be a tautology. For example, if the pair of
+formulas:
+
+[example]
+A and {not}{not}A
+
+are equivalent, then:
+
+[example]
+(A {bicond} {not}{not}A)
+
+will be a tautology. Its truth table is:
+
+|===
+| A | {not}A | {not}{not}A | (A {bicond} {not}{not}A)
+
+| T | F      | T           | T
+| F | T      | F           | T
+|===
+
+and so indeed we can say that this pair of formulas are equivalent. The symbol
+for equivalence is {equiv}, and so we can write the equivalence of the pair as:
+
+A {equiv} {not}{not}A
+
+Pairs of equivalent formulas can be substituted for each other in other
+formulas, without changing the meaning of those other formulas. The commonly
+used pairs of equivalent formulas are called _rules of replacement_ (for once
+they actually chose a _logical_ name, lol). The equivalent pair that we've just
+found:
+
+A {equiv} {not}{not}A
+
+is a rule of replacement called _double {not}_.
+
+
+:numbered!:
+==== Questions
+
+. Use the double {not} rule of replacement to simplify the following formulas:
+.. (P {or} {not}{not}Q)
+.. {not}{not}(P {or} Q)
+.. ({not}{not}A {and} {not}{not}B)
+
+
+:numbered:
+=== Commutativity
+
+Some binary connectives have the property of _commutativity_. The connective
+{and} is commutative which means that:
+
+[example]
+(A {and} B) {equiv} (B {and} A)
+
+This equivalence is a rule of replacement called _{and} commutativity_. Not all
+binary connectives are commutative though. For example:
+
+[example]
+(A {implies} B)
+
+is not equivalent to:
+
+(B {implies} A)
+
+because:
+
+(A {implies} B) {bicond} (B {implies} A)
+
+is not a tautology, and so {implies} is not commutative. Here's a table showing
+all the binary connectives, and whether they're commutative or not, and if they
+are, giving the name of the associated replacement rule.
+
+|===
+| Binary Connective | Commutative? | Rule Of Replacement
+
+| {and}             | Yes          | {and} commutativity
+| {or}              | Yes          | {or} commutativity
+| {implies}         | No           |
+| {bicond}           | Yes          | {equiv} commutativity
+|===
+
+
+:numbered!:
+==== Questions
+
+. For each of the four binary connectives use a truth table to show if they
+  are or are not commutative.
+
+
+:numbered:
+=== Associativity
+
+Another property that some binary connectives have is _associativity_. The
+{and} connective is associative, which means:
+
+[example]
+(P {and} (Q {and} R)) {equiv} ((P {and} Q) {and} R)
+
+because the formula:
+
+[example]
+(P {and} (Q {and} R)) {bicond} ((P {and} Q) {and} R)
+
+is a tautology. So if you've got three formulas joined by {and}, it doesn't
+make any difference if you put brackets round the first two or the last two.
+This equivalence is a rule of replacement called _{and} associativity_. Here's a
+table showing all the binary connectives, and whether they're associative or
+not, and if they are, giving the name of the replacement rule:
+
+|===
+| Binary Connective | Associative? | Rule Of Replacement
+
+| {and}             | Yes          | {and} associativity
+| {or}              | Yes          | {or} associativity
+| {implies}         | No           |
+| {bicond}          | Yes          | {bicond} associativity
+|===
+
+:numbered!:
+==== Questions
+
+. For each of the four binary connectives use a truth table to show if they
+  are or are not associative (big truth tables ahoy!).
+
+
+:numbered:
+=== Distributivity
+
+Another '`itivity`'. Here are the _distributivity_ rules of replacement:
+
+|===
+| Rule Of Replacement | Name
+
+| (A {and} (B {and} C)) {equiv} ((A {and} B) {and} (A {and} C))                     | Distribution of {and} over {and}
+| (A {and} (B {or} C)) {equiv} ((A {and} B) {or} (A {and} C))                       | Distribution of {and} over {or}
+| (A {or} (B {and} C)) {equiv} ((A {or} B) {and} (A {or} C))                        | Distribution of {or} over {and}
+| (A {or} (B {or} C)) {equiv} ((A {or} B) {or} (A {or} C))                          | Distribution of {or} over {or}
+| (A {or} (B {or} C)) {equiv} ((A {or} B) {or} (A {or} C))                          | Distribution of {or} over {or}
+| (A {implies} (B {implies} C)) {equiv} ((A {implies} B) {implies} (A {implies} C)) | Distribution of {implies} over {implies}
+| (A {implies} (B {bicond} C)) {equiv} ((A {implies} B) {bicond} (A {implies} C))     | Distribution of {implies} over {bicond}
+| (A {or} (B {bicond} C)) {equiv} ((A {or} B) {bicond} (A {or} C))                 | Distribution of {or} over {bicond}
+|===
+
+Here's the pattern as I see it. If there are two connectives x and y, then if
+they are distributive 
 
 :numbered:
 === Arguments
@@ -536,7 +741,7 @@ Abelard ordered coffee or Abelard ordered cake. Abelard didn't order cake.
 Therefore Abelard ordered coffee.
 
 To convert this argument from English into logical symbols, we first of all
-define the atomic formulae:
+define the atomic formulas:
 
 [example]
 A: Abelard ordered coffee. +
@@ -551,9 +756,9 @@ To express this argument more concisely we roll out the _double turnstile_
 symbol {entails}, and write the argument as:
 
 [example]
-(A {or} B), ({not}B) {entails} A
+(A {or} B), {not}B {entails} A
 
-Where the comma-separated list of formulae on the left of the double-turnstile
+Where the comma-separated list of formulas on the left of the double-turnstile
 are the premises, and the formula on the right is the conclusion. That's the
 argument written down, but is it valid? In other words, if the premises are
 true, is the conclusion true? To find out, we can say that if:
@@ -631,6 +836,8 @@ Shows that the formula is a tautology and so the argument is indeed valid.
 .. The light switch is on or the light switch is off. The light switch is not on
    and off. This light switch is not on. Therefore the light switch is off.
 . For the arguments given in question 1, show whether they are valid or not.
+
+
 
 
 :numbered:
@@ -725,67 +932,6 @@ Here's a list of rules of inference:
   valid by using rules of inference.
 
 
-:numbered:
-=== Equivalence
-
-_Equivalence_ is a binary connective with the mystical symbol {equiv} and its
-truth table is:
-
-|===
-| P | Q | (P {equiv} Q)
-
-| T | T | T
-| F | T | F
-| T | F | F
-| F | F | T
-|===
-
-Translating from English to logic symbols the sentence:
-
-[example]
-It's Christmas Day if and only if it's the 25th of December.
-
-is written:
-
-[example]
-P: It's Christmas Day.
-Q: It's the 25th of December.
-(P {equiv} Q)
-
-If two formulas are equivalent, then the formula formed by joining them with the
-{equiv} connective will be a tautology. For example, if the two formulas:
-
-[example]
-(A and {not}{not}A)
-
-are equivalent, then:
-
-[example]
-(A {equiv} {not}{not}A)
-
-will be a tautology. Let's check by writing its truth table:
-
-|===
-| A | {not}A | {not}{not}A | (A {equiv} {not}{not}A)
-
-| T | F      | T           | T
-| F | T      | F           | T
-|===
-
-it's a tautology, so the two formulae are equivalent.
-
-:numbered!:
-==== Questions
-
-. Translate the following English sentences into logical symbols:
-.. The bike's back brake comes on if, and only if, the left brake lever is
-   applied.
-.. The fridge light is on if, and only if, the fridge door is open.
-. Give the truth table for each of the following formulae:
-.. (A {equiv} (B {and} C))
-.. (B {or} (A {equiv} B))
-.. (P {and} {not}(P {equiv} (Q {or} P)))
-.. ((Q {equiv} {not}P) {and} (P {equiv} {not} {not}Q))
 
 
 :numbered:
@@ -845,6 +991,18 @@ and the truth table is:
 .. P {or} Q {or} R
 .. P {and} (Q {or} R)
 
+:numbered:
+=== Sentential Logic: Summary
+
+|===
+| Name | Rule |
+
+| {or} associativity     | (P {or} (Q {or} R)) {equiv} ((P {or} Q) {or} R)
+| {and} associativity    | (P {and} (Q {and} R)) {equiv} ((P {and} Q) {and} R)
+| {bicond} associativity | (P {bicond} (Q {bicond} R)) {equiv} ((P {bicond} Q) {bicond} R)
+| {or} commutativity     | (P {or} Q) {equiv} (Q {or} P)
+| {and} commutativity    | (P {and} Q) {equiv} (Q {and} P)
+|===
 
 :numbered:
 === Rosetta Stone
@@ -922,9 +1080,9 @@ Answers for <<_connectives>>.
 .. False.
 .. False.
 
-==== Formulae: Answers
+==== Formulas: Answers
 
-Answers for <<_formulae>>.
+Answers for <<_formulas>>.
 
 . {empty}
 .. P: The film Erin Brokovich stars Julia Roberts. +
