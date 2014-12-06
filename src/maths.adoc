@@ -548,8 +548,8 @@ It's Christmas Day if and only if it's the 25th of December.
 is written:
 
 [example]
-P: It's Christmas Day.
-Q: It's the 25th of December.
+P: It's Christmas Day. +
+Q: It's the 25th of December. +
 (P {bicond} Q)
 
 which of course is true. An example that is false is:
@@ -560,8 +560,8 @@ It's Christmas Day if and only if it's the 2nd of March.
 which is written:
 
 [example]
-P: It's Christmas Day.
-Q: It's the 2nd of March.
+P: It's Christmas Day. +
+Q: It's the 2nd of March. +
 (P {bicond} Q)
 
 
@@ -643,12 +643,15 @@ binary connectives are commutative though. For example:
 [example]
 (A {implies} B)
 
+[example]
 is not equivalent to:
 
+[example]
 (B {implies} A)
 
 because:
 
+[example]
 (A {implies} B) {bicond} (B {implies} A)
 
 is not a tautology, and so {implies} is not commutative. Here's a table showing
