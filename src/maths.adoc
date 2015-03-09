@@ -96,6 +96,7 @@ there's a three legged elephant in existence, perhaps one in a zoo got
 gangrene or something and had to have a leg amputated... Nevertheless, let's
 suspend our disbelief and imagine all those perfect statements.
 
+
 :numbered!:
 ==== Questions
 
@@ -115,6 +116,24 @@ suspend our disbelief and imagine all those perfect statements.
 .. Birmingham is a city in England.
 .. The word '`rotavator`' is a
       http://en.wiktionary.org/wiki/palindrome[palindrome].
+
+
+==== Answers
+
+. {empty}
+.. Not a statement.
+.. Not a statement.
+.. A statement.
+.. A statement.
+.. Not a statement.
+.. A statement.
+. {empty}
+.. True.
+.. False.
+.. False.
+.. True.
+.. True.
+.. True.
 
 
 :numbered:
@@ -144,6 +163,7 @@ it's true. Those mathematicians from the Ivory Tower use the term _connectives_
 for the '`and`' and '`or`' that join simple statements to make compound
 statements.
 
+
 :numbered!:
 ==== Questions
 
@@ -154,6 +174,16 @@ statements.
 .. Four multiplied by two is twenty or it has never rained in Wales.
 .. Toothpaste is harder than diamond and less than 100 films have ever been
    made.
+
+
+==== Answers
+
+. {empty}
+.. True.
+.. True.
+.. False.
+.. False.
+.. False.
 
 
 :numbered:
@@ -187,6 +217,7 @@ and write it using the atomic formulas to give the formula:
 [example]
 P or Q
 
+
 :numbered!:
 ==== Questions
 
@@ -197,6 +228,27 @@ P or Q
 .. Four multiplied by two is twenty or it has never rained in Wales.
 .. Toothpaste is harder than diamond and less than 100 films have ever been
    made.
+
+
+==== Answers
+
+. {empty}
+.. P: The film Erin Brokovich stars Julia Roberts. +
+   Q: 16 is greater than 4. +
+   P and Q
+.. A: London is the capital of France. +
+   B: Paris is the capital of France. +
+   A or B
+.. P: Some people have brown eyes. +
+   Q: Humans lay eggs. +
+   P and Q
+.. P: Four multiplied by two is twenty. +
+   Q: It has never rained in Wales. +
+   P or Q
+.. P: Toothpaste is harder than diamond. +
+   Q: Less than 100 films have ever been made. +
+   P and Q
+
 
 :numbered:
 === Funny Symbols
@@ -232,10 +284,22 @@ P: Abelard likes coffee. +
 Q: Abelard likes cake. +
 P {or} Q
 
+
 :numbered!:
 ==== Questions
 
 . Write the answers to the questions for <<_formulas>> in logical symbols.
+
+
+==== Funny Symbols: Answers
+
+. {empty}
+.. P {and} Q
+.. A {or} B
+.. P {and} Q
+.. P {or} Q
+.. P {and} Q
+
 
 :numbered:
 === Brackets
@@ -271,6 +335,16 @@ more complicated.
 
 . Write the answers to the questions for <<_funny_symbols>> using logical
   symbols.
+
+
+==== Answers
+
+. {empty}
+.. (P {and} Q)
+.. (A {or} B)
+.. (P {and} Q)
+.. (P {or} Q)
+.. (P {and} Q)
 
 
 :numbered:
@@ -322,6 +396,23 @@ For each row of the truth table, the last two columns are the same, and so
 ==== Questions
 
 . Use a truth table to show that (P {or} Q) means the same thing as (Q {or} P).
+
+
+==== Answers
+
+. {empty}
++
+|===
+| P | Q | P {or} Q | Q {or} P
+
+| T | T | T | T
+| F | T | T | T
+| T | F | T | T
+| F | F | F | F
+|===
+
+For each row of the truth table, the last two columns are the same, and so
+P {or} Q means the same as Q {or} P.
 
 
 :numbered:
@@ -383,9 +474,68 @@ acted on two formulas, and so they're known as _binary_ connectives. The
 .. {not}(P {and} Q)
 .. (P {or} {not}Q)
 .. {not}{not}P
-.. {not}((P {or} Q) {or} R)
-.. {not}((P {or} Q) {and} R)
+.. {not}(\(P {or} Q) {or} R)
+.. {not}(\(P {or} Q) {and} R)
 
+
+==== Answers
+
+. {empty}
+.. {empty}
+|===
+| P | Q | {not}P | {not}P {and} Q
+
+| T | T | F      | F
+| F | T | T      | T
+| T | F | F      | F
+| F | F | T      | F
+|===
+[start=2]
+.. {empty}
+|===
+| P | Q | {not}Q | P {or} {not}Q
+
+| T | T | F      | T
+| F | T | F      | T
+| T | F | T      | T
+| F | F | T      | F
+|===
+[start=3]
+.. {empty}
+|===
+| P | {not}P | {not}{not}P
+
+| T | F      | T
+| F | T      | F
+|===
+[start=4]
+.. {empty}
+|===
+| P | Q | R | P {or} Q | P {or} Q {or} R | {not}(P {or} Q {or} R)
+
+| T | T | T | T        | T               | F
+| F | T | T | T        | T               | F
+| T | F | T | T        | T               | F
+| F | F | T | F        | T               | F
+| T | T | F | T        | T               | F
+| F | T | F | T        | T               | F
+| T | F | F | T        | T               | F
+| F | F | F | F        | F               | T
+|===
+[start=5]
+.. {empty}
+|===
+| P | Q | R | P {or} Q | (P {or} Q) {and} R | {not}(\(P {or} Q) {and} R)
+
+| T | T | T | T        | T                  | F
+| F | T | T | T        | T                  | F
+| T | F | T | T        | T                  | F
+| F | F | T | F        | F                  | T
+| T | T | F | T        | F                  | T
+| F | T | F | T        | F                  | T
+| T | F | F | T        | F                  | T
+| F | F | F | F        | F                  | T
+|===
 
 :numbered:
 === Tautology And Contradiction
@@ -423,16 +573,80 @@ the truth table being:
 
 So since the formula is always false, the formula is a contradiction.
  
+
 :numbered!:
 ==== Questions
 
 . Say whether each of the following formulas is a tautology, a contradiction
   or neither:
-.. ((P {and} Q) {and} {not}(P {and} Q))
-.. ((P {or} Q) {or} {not}P)
-.. ((P {or} Q) {and} {not} P)
-.. (({not}P {and} {not}Q) {and} {not}({not}P {and} {not}Q))
-.. (({not}P {and} (Q {or} {not}P)) {and} R)
+.. (\(P {and} Q) {and} {not}(P {and} Q))
+.. (\(P {or} Q) {or} {not}P)
+.. (\(P {or} Q) {and} {not} P)
+.. (\({not}P {and} {not}Q) {and} {not}({not}P {and} {not}Q))
+.. (\({not}P {and} (Q {or} {not}P)) {and} R)
+
+
+==== Answers
+
+. {empty}
+.. {empty}
+|===
+| P | Q | P {and} Q | {not}(P {and} Q) | (P {and} Q) {and} {not}(P {and} Q)
+
+| T | T | T         | F                | F
+| F | T | F         | T                | F
+| T | F | F         | T                | F
+| F | F | F         | T                | F
+|===
+A contradiction.
+[start=2]
+.. {empty}
+|===
+| P | Q | {not}P | P {or} Q | P {or} Q {or} {not}P
+
+| T | T | F      | T        | T
+| F | T | T      | T        | T
+| T | F | F      | T        | T
+| F | F | T      | F        | T
+|===
+A tautology.
+[start=3]
+.. {empty}
+|===
+| P | Q | {not}P | Q {and} {not}P | P {or} Q {and} {not}P
+
+| T | T | F      | F              | T
+| F | T | T      | T              | T
+| T | F | F      | F              | T
+| F | F | T      | F              | F
+|===
+Neither.
+[start=4]
+.. {empty}
+|===
+| P | Q | {not}P | {not}Q | {not}P {and} {not}Q | ({not}P {and} {not}Q) {and} {not}({not}P {and} {not}Q)
+
+| T | T | F      | F      | F                   | F
+| F | T | T      | F      | F                   | F
+| T | F | F      | T      | F                   | F
+| F | F | T      | T      | T                   | T
+|===
+Neither.
+[start=5]
+.. {empty}
+|===
+| P | Q | R | {not}P | Q {or} {not}P | {not}P {and} (Q {or} {not}P) | {not}P {and} (Q {or} {not}P) {and} R
+
+| T | T | T | F      | T             | F                            | F
+| F | T | T | T      | T             | T                            | T
+| T | F | T | F      | F             | F                            | F
+| F | F | T | T      | T             | T                            | T
+| T | T | F | F      | T             | F                            | F
+| F | T | F | T      | T             | T                            | F
+| T | F | F | F      | F             | F                            | F
+| F | F | F | T      | T             | T                            | F
+|===
+Neither.
 
 
 :numbered:
@@ -523,6 +737,68 @@ Another example; the truth table for (Q {implies} (P {and} {not}Q)) is:
 .. ((P {implies} Q) {or} P)
 .. ({not}(P {and} Q) {implies} ({not}P {or} {not} Q))
 .. ((P {and} (P {implies} Q)) {implies} {not}P)
+
+
+==== Answers
+
+. {empty}
+.. P: The washing is out. +
+   Q: It's a dry day. +
+   P {implies} Q
+.. A: Keith is in Bath. +
+   B: Keith is in England. +
+   A {implies} B
+.. A: The sky is red at night. +
+   B: The shepherds are delighted. +
+   A {implies} B
+. {empty}
+.. {empty}
+|===
+| P | Q | {not}P | {not}P {implies} Q
+
+| T | T | F      | T
+| F | T | T      | T
+| T | F | F      | T
+| F | F | T      | F
+|===
+[start=2]
+.. {empty}
+|===
+| Q | {not}Q | Q {implies} {not}Q
+
+| T | F      | F
+| F | T      | T
+|===
+[start=3]
+.. {empty}
+|===
+| P | Q | P {implies} Q | (P {implies} Q) {or} P
+
+| T | T | T          | T
+| F | T | T          | T
+| T | F | F          | T
+| F | F | T          | T
+|===
+[start=4]
+.. {empty}
+|===
+| P | Q | P {and} Q | {not}(P {and} Q) | {not} P | {not} Q | {not}P {or} {not} Q | {not}(P {and} Q) {implies} {not}P {or} {not} Q
+
+| T | T | T         | F                | F       | F       | F                   | T
+| F | T | F         | T                | T       | F       | T                   | T
+| T | F | F         | T                | F       | T       | T                   | T
+| F | F | F         | T                | T       | T       | T                   | T
+|===
+[start=5]
+.. {empty}
+|===
+| P | Q | P {implies} Q | {not}P | P {and} (P {implies} Q) | P {and} (P {implies} Q) {implies} {not}P
+
+| T | T | T          | F      | T                   | F
+| F | T | F          | T      | F                   | T
+| T | F | F          | F      | F                   | T
+| F | F | F          | T      | F                   | T
+|===
 
 
 :numbered:
@@ -628,6 +904,65 @@ is a rule of replacement called _double {not}_.
 .. ({not}{not}A {and} {not}{not}B)
 
 
+==== Answers
+
+. {empty}
+.. A: The bike's back brake comes on. +
+   B: The left brake lever is applied. +
+   A {equiv} B
+.. The fridge light is on if, and only if, the fridge door is open.
+.. P: The fridge light is on. +
+   Q: The fridge door is open. +
+   P {equiv} Q
+. {empty}
+.. {empty}
+|===
+| A | B | C | B {and} C | A {equiv} B {and} C
+
+| T | T | T | T         | T
+| F | T | T | T         | F
+| T | F | T | F         | F
+| F | F | T | F         | T
+| T | T | F | F         | F
+| F | T | F | F         | T
+| T | F | F | F         | F
+| F | F | F | F         | T
+|===
+[start=2]
+.. {empty}
+|===
+| A | B | A {equiv} B | B {or} (A {equiv} B)
+
+| T | T | T           | T
+| F | T | F           | T
+| T | F | F           | F
+| F | F | T           | T
+|===
+[start=3]
+.. {empty}
+|===
+| 1 | 2 | 3        | 4               | 5          | 6
+| P | Q | Q {or} P | P {equiv} col_3 | {not}col_4 | P {and} col_5
+
+| T | T | T        | T               | F          | F
+| F | T | T        | F               | T          | F
+| T | F | T        | T               | F          | F
+| F | F | F        | T               | F          | F
+|===
+.. (Q {equiv} {not}P) {and} (P {equiv} {not}{not}Q)
+[start=4]
+.. {empty}
+|===
+| 1 | 2 | 3      | 4               | 5      | 6          | 7               | 8
+| P | Q | {not}P | Q {equiv} col_3 | {not}Q | {not}col_5 | P {equiv} col_6 | col_4 {and} col_7
+
+| T | T | F      | F               | F      | T          | T               | F
+| F | T | T      | T               | F      | T          | F               | F
+| T | F | F      | T               | T      | F          | F               | F
+| F | F | T      | F               | T      | F          | T               | F
+|===
+
+
 :numbered:
 === Commutativity
 
@@ -664,7 +999,7 @@ are, giving the name of the associated replacement rule.
 | {and}             | Yes          | {and} commutativity
 | {or}              | Yes          | {or} commutativity
 | {implies}         | No           |
-| {bicond}           | Yes          | {equiv} commutativity
+| {bicond}          | Yes          | {bicond} commutativity
 |===
 
 
@@ -719,18 +1054,101 @@ Another '`itivity`'. Here are the _distributivity_ rules of replacement:
 |===
 | Rule Of Replacement | Name
 
-| (A {and} (B {and} C)) {equiv} ((A {and} B) {and} (A {and} C))                     | Distribution of {and} over {and}
-| (A {and} (B {or} C)) {equiv} ((A {and} B) {or} (A {and} C))                       | Distribution of {and} over {or}
-| (A {or} (B {and} C)) {equiv} ((A {or} B) {and} (A {or} C))                        | Distribution of {or} over {and}
-| (A {or} (B {or} C)) {equiv} ((A {or} B) {or} (A {or} C))                          | Distribution of {or} over {or}
-| (A {or} (B {or} C)) {equiv} ((A {or} B) {or} (A {or} C))                          | Distribution of {or} over {or}
-| (A {implies} (B {implies} C)) {equiv} ((A {implies} B) {implies} (A {implies} C)) | Distribution of {implies} over {implies}
-| (A {implies} (B {bicond} C)) {equiv} ((A {implies} B) {bicond} (A {implies} C))     | Distribution of {implies} over {bicond}
-| (A {or} (B {bicond} C)) {equiv} ((A {or} B) {bicond} (A {or} C))                 | Distribution of {or} over {bicond}
+| (A {and} (B {and} C)) {equiv} \((A {and} B) {and} (A {and} C))
+| Distribution of {and} over {and}
+
+| (A {and} (B {or} C)) {equiv} \((A {and} B) {or} (A {and} C))
+| Distribution of {and} over {or}
+
+| (A {or} (B {and} C)) {equiv} \((A {or} B) {and} (A {or} C))
+| Distribution of {or} over {and}
+
+| (A {or} (B {or} C)) {equiv} \((A {or} B) {or} (A {or} C))
+| Distribution of {or} over {or}
+
+| (A {implies} (B {implies} C)) {equiv} \((A {implies} B) {implies} (A {implies} C))
+| Distribution of {implies} over {implies}
+
+| (A {implies} (B {bicond} C)) {equiv} \((A {implies} B) {bicond} (A {implies} C))
+| Distribution of {implies} over {bicond}
+
+| (A {or} (B {bicond} C)) {equiv} \((A {or} B) {bicond} (A {or} C))
+| Distribution of {or} over {bicond}
 |===
 
-Here's the pattern as I see it. If there are two connectives x and y, then if
-they are distributive 
+Here's the pattern as I see it. If there are two connectives y and z, then if
+y distributes over z then:
+
+[example]
+(A y (B z C)) {equiv} \((A y B ) z (A y C))
+
+:numbered!:
+==== Questions
+
+. For each of the distributivity rules of replacement, use a truth table to
+  show that they are indeed equivalent.
+
+
+:numbered:
+=== De Morgan's Laws
+
+I found in the Tower that Mathematicians are often good at music too. De Morgan
+was a flautist. I've got no musical ability. De Morgan's Laws are a couple of
+rules of replacement:
+
+[example]
+(A {and} B) {equiv} {not}({not}A {or} {not}B)
+
+and:
+
+[example]
+(A {or} B) {equiv} {not}({not}A {and} {not}B)
+
+Some say they're obvious. Do you find them obvious? I don't.
+
+:numbered!:
+==== Questions
+
+. For De Morgan's laws, use a truth table to show that they are equivalent.
+
+
+
+:numbered:
+=== More rules of replacement
+
+Here are a few more rules of replacement. I'm not sure what the definitive list
+of rules of replacement are. Or even if there is one. If you know, please tell
+me. Thanks.
+
+|===
+| Name | Rule
+
+| Transposition
+| (P {implies} Q) {equiv} ({not}Q {implies} {not}P)
+
+| Material Implication
+| (P {implies} Q) {equiv} ({not}P {or} Q)
+
+| Exportation
+| (P {and} Q) {implies} R) {equiv} (P {implies} (Q {implies} R))
+
+| Idempotency of {and}
+| (P {and} P) {equiv} P
+
+| Idempotency of {or}
+| (P {or} P) {equiv} P
+
+| {not} introduction
+| ((P {implies} Q) {and} (P {implies} {not}Q)) {equiv} {not}P
+|===
+
+
+:numbered!:
+==== Questions
+
+. For the '`other rules of replacement`', use a truth table to show that they
+  are equivalent.
+
 
 :numbered:
 === Arguments
@@ -773,13 +1191,20 @@ is a tautology, then the argument is valid. If effect we've joined the
 premises together with {and} and replaced the {entails} with a {implies} to get
 the formula. Bring on the table of truth!
 
+[cols="6*"]
 |===
-|A | B | (A {or} B) | {not}B | ((A {or} B) {and} {not}B) | (((A {or} B) {and} {not}B) {implies} A)
 
-|T | T | T        | F      | F                       | T
-|F | T | T        | F      | F                       | T
-|T | F | T        | T      | T                       | T
-|F | F | F        | T      | F                       | T
+| A
+| B
+| (A {or} B)
+| {not}B
+| ((A {or} B) {and} {not}B)
+| (((A {or} B) {and} {not}B) {implies} A)
+
+| T | T | T | F | F | T
+| F | T | T | F | F | T
+| T | F | T | T | T | T
+| F | F | F | T | F | T
 |===
 
 The last column is always true, so the formula is a tautology, so the
@@ -804,19 +1229,28 @@ The argument is valid if:
 
 is a tautology. Doing a giant truth table:
 
+[cols="9"]
 |===
-| 1 | 2 | 3 | 4      | 5                   | 6                   | 7                   | 8               | 9
+| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 
-| A | B | C | {not}B | (A {implies} col_4) | (C {implies} col_4) | (col_5 {and} col_6) | (col_7 {and} A) | (col_8 {implies} col_4)
+| A
+| B
+| C
+| {not}B
+| (A {implies} col_4)
+| (C {implies} col_4)
+| (col_5 {and} col_6)
+| (col_7 {and} A)
+| (col_8 {implies} col_4)
 
-| T | T | T | F      | F                   | F                   | F                   | F               | T
-| F | T | T | F      | T                   | F                   | F                   | F               | T
-| T | F | T | T      | T                   | F                   | F                   | F               | T
-| F | F | T | T      | T                   | T                   | T                   | F               | T
-| T | T | F | F      | F                   | T                   | F                   | F               | T
-| F | T | F | F      | T                   | T                   | T                   | F               | T
-| T | F | F | T      | T                   | T                   | T                   | T               | T
-| F | F | F | T      | T                   | T                   | T                   | F               | T
+| T | T | T | F | F | F | F | F | T
+| F | T | T | F | T | F | F | F | T
+| T | F | T | T | T | F | F | F | T
+| F | F | T | T | T | T | T | F | T
+| T | T | F | F | F | T | F | F | T
+| F | T | F | F | T | T | T | F | T
+| T | F | F | T | T | T | T | T | T
+| F | F | F | T | T | T | T | F | T
 |===
 
 Shows that the formula is a tautology and so the argument is indeed valid.
@@ -841,505 +1275,7 @@ Shows that the formula is a tautology and so the argument is indeed valid.
 . For the arguments given in question 1, show whether they are valid or not.
 
 
-
-
-:numbered:
-=== Rules Of Inference
-
-Writing out truth tables gets tedious, especially as the number of rows grows
-exponentially with the number of atomic formulas. The logicians have discovered
-/ invented an easier way of showing if an argument is valid or not. It involves rewriting the assumptions in a progressively simpler and simpler form until you
-end up with the conclusion. The simplifying substitutions are valid arguments
-that are known as _rules of inference_. One rule of inference is:
-
-[example]
-P, P {implies} Q {entails} Q
-
-You can see this is a valid argument because the expression:
-
-[example]
-P {and} (P {implies} Q) {implies} Q
-
-has the truth table:
-
-|===
-| P | Q | P {implies} Q | P {and} (P {implies} Q) | P {and} (P {implies} Q) {implies} Q
-
-| T | T | T             | T                       | T
-| F | T | T             | F                       | T
-| T | F | F             | F                       | T
-| F | F | T             | F                       | T
-|===
-
-which shows that the expression is a tautology and so the argument is valid.
-This rule of inference has the typically recondite name of..._modus ponens_!!!
-
-Another rule of inference is:
-
-[example]
-A {and} B {entails} B
-
-and another:
-
-[example]
-A {and} B {entails} A
-
-These two rules are called _{and} reduction_. And so, armed with these rules,
-lets find out if the following argument is valid:
-
-[example]
-A {and} B {implies} A, B {entails} A
-
-The steps to show this is valid are:
-
-. A {and} B {implies} A (assumption)
-. B {implies} A (1. and {and} reduction)
-. B (assumption)
-. A (2. and 3. and modus ponens)
-
-Case solved! Another one:
-
-[example]
-Q, (R {and} P) {and} (R {and} Q) {implies} P {entails} P
-
-. (R {and} P) {and} (R {and} Q) {implies} P (assumption)
-. R {and} (R {and} Q) {implies} P (1. and {and} reduction)
-. R {and} Q {implies} P (2. and {and} reduction)
-. Q {implies} P (3. and {and} reduction)
-. Q (assumption)
-. P (4. and 5. and modus ponens)
-
-Here's a list of rules of inference:
-
-|===
-| Name                   | Rule
-
-| Modus ponens           | A {implies} B, A {entails} B
-| {implies} introduction | A, B {entails} A {implies} B
-| Modus tollens          | A {implies} B, {not}B {entails} {not}A
-| Double {not}           | {not}{not}A {entails} A
-| {not} elimination      | Assume {not}A, derive B and {not}B {entails} A
-| {and} elimination      | A {and} B {entails} A also A {and} B {entails} B
-| {and} introduction     | A, B {entails} A {and} B
-| {or} elimination       | A {implies} C, B {implies} C, A {or} B {entails} C
-| {or} introduction      | A {entails} A {or} B
-| {or} syllogism         | A {or} B, {not}B {entails} A
-| transitive             | A {implies} B, B {implies} C {entails} A {implies} C
-|===
-
-:numbered!:
-==== Questions
-
-. Show that the rules of inference are valid by using a truth table.
-. For all the arguments in the questions for <<_arguments>>, show that they are
-  valid by using rules of inference.
-
-
-
-
-:numbered:
-=== Precedence
-
-Let's say we've got _three_ atomic formulas P, Q and R. What's the truth table for:
-
-[example]
-P {or} Q {and} R
-
-But wait, do I do the P {or} Q first and then apply the {and} to the result? Or
-do I do Q {and} R first and then apply P {or} to the result? And does it even
-matter? The Rules Of Propositional Logic that I read while in the Ivory Tower
-are quite clear on the point. They say that {and} is evaluated before {or}.
-Okay, so the truth table for P {or} Q {and} R is:
-
-|===
-| P | Q | R | Q {and} R | P {or} Q {and} R
-
-| T | T | T | T         | T
-| F | T | T | T         | T
-| T | F | T | F         | T
-| F | F | T | F         | F
-| T | T | F | F         | T
-| F | T | F | F         | F
-| T | F | F | F         | T
-| F | F | F | F         | F
-|===
-
-So what would you write if you want to do P {or} Q and then apply {and} R? The
-Rules say that anything in brackets gets evaluated first. So you'd write:
-
-[example]
-(P {or} Q) {and} R
-
-and the truth table is:
-
-|===
-| P | Q | R | P {or} Q | (P {or} Q) {and} R
-
-| T | T | T | T         | T
-| F | T | T | T         | T
-| T | F | T | T         | T
-| F | F | T | F         | F
-| T | T | F | T         | F
-| F | T | F | T         | F
-| T | F | F | T         | F
-| F | F | F | F         | F
-|===
-
-:numbered!:
-==== Questions
-
-. Write out the truth tables for:
-.. P {and} Q {or} R
-.. P {and} Q {and} R
-.. P {or} Q {or} R
-.. P {and} (Q {or} R)
-
-:numbered:
-=== Sentential Logic: Summary
-
-|===
-| Name | Rule |
-
-| {or} associativity     | (P {or} (Q {or} R)) {equiv} ((P {or} Q) {or} R)
-| {and} associativity    | (P {and} (Q {and} R)) {equiv} ((P {and} Q) {and} R)
-| {bicond} associativity | (P {bicond} (Q {bicond} R)) {equiv} ((P {bicond} Q) {bicond} R)
-| {or} commutativity     | (P {or} Q) {equiv} (Q {or} P)
-| {and} commutativity    | (P {and} Q) {equiv} (Q {and} P)
-|===
-
-:numbered:
-=== Rosetta Stone
-
-[[img-rosetta]]
-.http://commons.wikimedia.org/wiki/File:Rosetta_Stone.JPG#mediaviewer/File:Rosetta_Stone.JPG[Rosetta Stone] by http://commons.wikimedia.org/wiki/User:Biopics[Hans Hillewaert] - Own work. Licensed under http://creativecommons.org/licenses/by-sa/4.0[CC BY-SA 4.0] via http://commons.wikimedia.org/wiki/[Wikimedia Commons].
-image::rosetta.jpg[Rosetta Stone]
-
-I've found that in maths, the same thing is often called different names by
-different authors. Also, some authors take different philosophical approaches to
-the same area of maths. This point of this section is to help us understand
-what other authors are saying, in terms that we already understand.
-
-
-==== Sentential Logic versus Propositional Logic
-
-Some authors talk of Sentential Logic, and some talk of Propositional Logic.
-This is a philosophical difference. Say there are two statements that mean the
-same thing but use a different form of words. The sentential school of thought
-uses a different label for each statement, but the proposition school would use
-just one label.
-
-
-==== Synonyms
-
-|===
-| Name             | Synonym
-
-| Connective       | Operator
-| Sentential Logic | Sentential Calculus
-| Not, {not}       | ~, negation
-| And              | Conjunction
-| Or               | Disjunction
-| Implies          | Conditional
-| Atomic formula   | Atom, simple proposition, atomic sentence
-|===
-
-* All the rules of inference. and equivalence
-
-:numbered!:
-[appendix]
-== Answers to Questions
-
-
-=== Sentential Logic: Answers
-
-
-==== Statements: Answers
-
-Answers for <<_statements>>.
-
-. {empty}
-.. Not a statement.
-.. Not a statement.
-.. A statement.
-.. A statement.
-.. Not a statement.
-.. A statement.
-. {empty}
-.. True.
-.. False.
-.. False.
-.. True.
-.. True.
-.. True.
-
-==== Connectives: Answers
-
-Answers for <<_connectives>>.
-
-. {empty}
-.. True.
-.. True.
-.. False.
-.. False.
-.. False.
-
-==== Formulas: Answers
-
-Answers for <<_formulas>>.
-
-. {empty}
-.. P: The film Erin Brokovich stars Julia Roberts. +
-   Q: 16 is greater than 4. +
-   P and Q
-.. A: London is the capital of France. +
-   B: Paris is the capital of France. +
-   A or B
-.. P: Some people have brown eyes. +
-   Q: Humans lay eggs. +
-   P and Q
-.. P: Four multiplied by two is twenty. +
-   Q: It has never rained in Wales. +
-   P or Q
-.. P: Toothpaste is harder than diamond. +
-   Q: Less than 100 films have ever been made. +
-   P and Q
-
-
-==== Funny Symbols: Answers
-
-Answers for <<_funny_symbols>>.
-
-. {empty}
-.. P {and} Q
-.. A {or} B
-.. P {and} Q
-.. P {or} Q
-.. P {and} Q
-
-
-==== Brackets: Answers
-
-Answers for <<_brackets>>.
-
-. {empty}
-.. (P {and} Q)
-.. (A {or} B)
-.. (P {and} Q)
-.. (P {or} Q)
-.. (P {and} Q)
-
-
-==== Truth Tables: Answers
-
-Answers for <<_truth_tables>>.
-
-. {empty}
-|===
-| P | Q | P {or} Q | Q {or} P
-
-| T | T | T | T
-| F | T | T | T
-| T | F | T | T
-| F | F | F | F
-|===
-
-For each row of the truth table, the last two columns are the same, and so
-P {or} Q means the same as Q {or} P.
-
-
-
-==== Not: Answers
-
-Answers for <<_not>>.
-
-. {empty}
-.. {empty}
-|===
-| P | Q | {not}P | {not}P {and} Q
-
-| T | T | F      | F
-| F | T | T      | T
-| T | F | F      | F
-| F | F | T      | F
-|===
-[start=2]
-.. {empty}
-|===
-| P | Q | {not}Q | P {or} {not}Q
-
-| T | T | F      | T
-| F | T | F      | T
-| T | F | T      | T
-| F | F | T      | F
-|===
-[start=3]
-.. {empty}
-|===
-| P | {not}P | {not}{not}P
-
-| T | F      | T
-| F | T      | F
-|===
-[start=4]
-.. {empty}
-|===
-| P | Q | R | P {or} Q | P {or} Q {or} R | {not}(P {or} Q {or} R)
-
-| T | T | T | T        | T               | F
-| F | T | T | T        | T               | F
-| T | F | T | T        | T               | F
-| F | F | T | F        | T               | F
-| T | T | F | T        | T               | F
-| F | T | F | T        | T               | F
-| T | F | F | T        | T               | F
-| F | F | F | F        | F               | T
-|===
-[start=5]
-.. {empty}
-|===
-| P | Q | R | P {or} Q | (P {or} Q) {and} R | {not}((P {or} Q) {and} R)
-
-| T | T | T | T        | T                  | F
-| F | T | T | T        | T                  | F
-| T | F | T | T        | T                  | F
-| F | F | T | F        | F                  | T
-| T | T | F | T        | F                  | T
-| F | T | F | T        | F                  | T
-| T | F | F | T        | F                  | T
-| F | F | F | F        | F                  | T
-|===
-
-==== Tautology And Contradiction: Answers
-
-Answers for <<_tautology_and_contradiction>>.
-
-
-. {empty}
-.. {empty}
-|===
-| P | Q | P {and} Q | {not}(P {and} Q) | (P {and} Q) {and} {not}(P {and} Q)
-
-| T | T | T         | F                | F
-| F | T | F         | T                | F
-| T | F | F         | T                | F
-| F | F | F         | T                | F
-|===
-A contradiction.
-[start=2]
-.. {empty}
-|===
-| P | Q | {not}P | P {or} Q | P {or} Q {or} {not}P
-
-| T | T | F      | T        | T
-| F | T | T      | T        | T
-| T | F | F      | T        | T
-| F | F | T      | F        | T
-|===
-A tautology.
-[start=3]
-.. {empty}
-|===
-| P | Q | {not}P | Q {and} {not}P | P {or} Q {and} {not}P
-
-| T | T | F      | F              | T
-| F | T | T      | T              | T
-| T | F | F      | F              | T
-| F | F | T      | F              | F
-|===
-Neither.
-[start=4]
-.. {empty}
-|===
-| P | Q | {not}P | {not}Q | {not}P {and} {not}Q | ({not}P {and} {not}Q) {and} {not}({not}P {and} {not}Q)
-
-| T | T | F      | F      | F                   | F
-| F | T | T      | F      | F                   | F
-| T | F | F      | T      | F                   | F
-| F | F | T      | T      | T                   | T
-|===
-Neither.
-[start=5]
-.. {empty}
-|===
-| P | Q | R | {not}P | Q {or} {not}P | {not}P {and} (Q {or} {not}P) | {not}P {and} (Q {or} {not}P) {and} R
-
-| T | T | T | F      | T             | F                            | F
-| F | T | T | T      | T             | T                            | T
-| T | F | T | F      | F             | F                            | F
-| F | F | T | T      | T             | T                            | T
-| T | T | F | F      | T             | F                            | F
-| F | T | F | T      | T             | T                            | F
-| T | F | F | F      | F             | F                            | F
-| F | F | F | T      | T             | T                            | F
-|===
-Neither.
-
-==== Implies: Answers
-
-Answers for <<_implies>>.
-
-. {empty}
-.. P: The washing is out. +
-   Q: It's a dry day. +
-   P {implies} Q
-.. A: Keith is in Bath. +
-   B: Keith is in England. +
-   A {implies} B
-.. A: The sky is red at night. +
-   B: The shepherds are delighted. +
-   A {implies} B
-. {empty}
-.. {empty}
-|===
-| P | Q | {not}P | {not}P {implies} Q
-
-| T | T | F      | T
-| F | T | T      | T
-| T | F | F      | T
-| F | F | T      | F
-|===
-[start=2]
-.. {empty}
-|===
-| Q | {not}Q | Q {implies} {not}Q
-
-| T | F      | F
-| F | T      | T
-|===
-[start=3]
-.. {empty}
-|===
-| P | Q | P {implies} Q | (P {implies} Q) {or} P
-
-| T | T | T          | T
-| F | T | T          | T
-| T | F | F          | T
-| F | F | T          | T
-|===
-[start=4]
-.. {empty}
-|===
-| P | Q | P {and} Q | {not}(P {and} Q) | {not} P | {not} Q | {not}P {or} {not} Q | {not}(P {and} Q) {implies} {not}P {or} {not} Q
-
-| T | T | T         | F                | F       | F       | F                   | T
-| F | T | F         | T                | T       | F       | T                   | T
-| T | F | F         | T                | F       | T       | T                   | T
-| F | F | F         | T                | T       | T       | T                   | T
-|===
-[start=5]
-.. {empty}
-|===
-| P | Q | P {implies} Q | {not}P | P {and} (P {implies} Q) | P {and} (P {implies} Q) {implies} {not}P
-
-| T | T | T          | F      | T                   | F
-| F | T | F          | T      | F                   | T
-| T | F | F          | F      | F                   | T
-| F | F | F          | T      | F                   | T
-|===
-
-==== Arguments: Answers
-
-Answers for <<_arguments>>.
+==== Answers
 
 . {empty}
 .. P: It's a silent film. +
@@ -1440,9 +1376,373 @@ Answers for <<_arguments>>.
 | F | F | F        | F         | T             | T      | F                 | F                 | T
 |===
 
-==== Rules Of Inference: Answers
 
-Answers for <<_rules_of_inference>>.
+:numbered:
+=== Conjunctive Normal Form (CNF)
+
+When I got to this point in the Ivory Tower, John Alan Robinson took me by the
+scruff of the neck and said, '`Look, you've just got to learn this, don't ask
+why`'. '`Okay, I replied meekly`'.
+
+A _literal_ is an atomic formual or the {not} of an atomic formula. Eg:
+
+[example]
+P +
+{not}P
+
+A _clause_ is a number of literals joined by the {or} connective. Eg:
+
+[example]
+({not}P {or} Q) +
+P +
+((P {or} Q) {or} {not}R)
+
+A formula in CNF is a number of clauses joined by the {and} connective. Eg:
+
+(\(({not}P {or} Q) {and} P) {and} ((P {or} Q) {or} {not}R))
+
+Then to make things clearer, they write the CNF in _set notation_. Here's our
+example clauses in the left hand column, and the clauses in set notation in the
+right hand column:
+
+|===
+| CNF                       | CNF set notation
+
+| ({not}P {or} Q)           | {{not}P, Q}
+| P                         | \{P}
+| ((P {or} Q) {or} {not}R)  | {P, Q, {not}R}
+|===
+
+Then in CNF set notation, our example formula is written:
+
+{{not}P, Q}, \{P}, {P, Q, {not}R}
+
+Yes, I like this CNF set notation. Much clearer and easier to write. How do you
+find it? Anyway, John Alan Robinson went on to tell me the most remarkable
+thing, _any_ formula can be written in CNF. You simply (!) use the following
+equivalences (which we've previously encountered), applying them in the given
+order:
+
+[cols="3"]
+|===
+.2+| Step 1: Implications
+| Material Implication
+| (P {implies} Q) {equiv} ({not}P {or} Q)
+
+| Material Equivalence
+| (P {bicond} Q) {equiv} \(({not}P {or} Q) {and} (P {or} {not}Q))
+
+.2+| Step 2: Negations
+| Double {not}
+| {not}{not}P {equiv} P
+
+| De Morgan's Laws
+| (A {and} B) {equiv} {not}({not}A {or} {not}B) +
+  (A {or} B) {equiv} {not}({not}A {and} {not}B)
+
+.4+| Step 3: Distributivity
+| {and} over {and}
+| (A {and} (B {and} C)) {equiv} \((A {and} B) {and} (A {and} C))
+
+| {and} over {or}
+| (A {and} (B {or} C)) {equiv} \((A {and} B) {or} (A {and} C))
+
+| {or} over {and}
+| (A {or} (B {and} C)) {equiv} \((A {or} B) {and} (A {or} C))
+
+| {or} over {or}
+| (A {or} (B {or} C)) {equiv} \((A {or} B) {or} (A {or} C))
+
+| Step 4
+| Rewrite in set notation
+| First rewrite the clauses eg. +
+  +
+  ((A {or} B) {or} {not}C) +
+  +
+  becomes: +
+  +
+  {A, B, {not}C} +
+  +
+  then the formula is the list of clauses separated by commas, eg: +
+  +
+  {A, B, {not}C}, {A, C}, {{not}A}
+|===
+
+Here's are a couple of examples that I was shown. We start out with an example
+formula in the normal logical notation:
+
+[example]
+\((A {and} {not}B) {implies} (C {implies} B))
+
+Applying step 1, Material Implication, we get:
+
+[example]
+\((A {and} {not}B) {implies} ({not}C {or} B))
+
+applying Material Implication again gives us:
+
+[example]
+({not}(A {and} {not}B) {or} ({not}C {or} B))
+
+so now we've got rid of the {implies} connectives. Now let's plough on with
+step 2, Negations, where the application of De Morgan's Laws, gives:
+
+[example]
+\(({not}A {or} {not}{not}B) {or} ({not}C {or} B))
+
+Double {not} alert!
+
+[example]
+\(({not}A {or} B) {or} ({not}C {or} B))
+
+We're so nearly in CNF, but not quite. Since {or} is associative:
+
+[example]
+((({not}A {or} B) {or} {not}C) {or} B)
+
+Hah! We're now in CNF. Writing it in set notation is easy:
+
+[example]
+{{not}A, B, {not}C, B}
+
+And look at that, B is in there twice. That second B is redundant so:
+
+[example]
+{{not}A, B, {not}C}
+
+Okay, in the second example we've got to convert:
+
+[example]
+((A {bicond} B) {or} {not}C)
+
+into CNF set notation. Starting with step 1, Implications:
+
+[example]
+((({not}A {or} B) {and} (A {or} {not}B)) {or} {not}C)
+
+there aren't any negations to do, so skipping on to step 3, distributivity:
+
+[example]
+\(({not}C {or} ({not}A {or} B)) {and} ({not}C {or} (A {or} {not}B)))
+
+using the associativity of {or}:
+
+[example]
+(\(({not}C {or} {not}A) {or} B) {and} (({not}C {or} A) {or} {not}B))
+
+we've got it in CNF. Then rewriting in set notation gives:
+
+[example]
+{{not}C , {not}A, B}, {{not}C, A, {not}B}
+
+
+:numbered!:
+==== Questions
+
+. Write the following formulas in CNF set notation:
+.. (A {or} ({not}B {implies} A))
+.. ((A {implies} B) {implies} C)
+.. (P {or} (Q {bicond} {not}P))
+.. \((A {and} B) {or} (A {and} C))
+.. \((A {and} B) {and} (A {and} C))
+
+
+==== Answers
+
+. {empty}
+.. (A {or} ({not}B {implies} A))
++
+(A {or} ({not}{not}B {or} A)) [Material Implication] +
+(A {or} (B {or} A)) [Double {not}] +
+((A {or} B) {or} A) [Associativity of {or}] +
+{A, B} [Set notation] +
+.. ((A {implies} B) {implies} C)
++
+\(({not}A {or} B) {implies} C) [Material Implication] +
+({not}({not}A {or} B) {or} C) [Material Implication] +
+(({not}{not}A {and} {not}B) {or} C) [De Morgan's Laws] +
+((A {and} {not}B) {or} C) [Double {not}] +
+((C {or} A) {and} (C {or} {not}B)) [Distribute {or} over {and}] +
+{C, A}, {C, {not}B} [Set notation]
+.. (P {or} (Q {bicond} {not}P))
++
+(P {or} \(({not}Q {or} {not}P) {and} (Q {or} {not}{not}P))) [Material
+Equivalence] +
+(P {or} \(({not}Q {or} {not}P) {and} (Q {or} P))) [Double {not}] +
+\((P {or} ({not}Q {or} {not}P)) {and} (P {or} (Q {or} P))) [Distribute
+{or} over {and}] +
+{P, {not}Q, {not}P}, {P, Q} [Set notation]
+.. \((A {and} B) {or} (A {and} C))
++
+(\((A {and} B) {or} A) {and} ((A {and} B) {or} C)) [Distribute {or} over
+{and}] +
+(\((A {or} A) {and} (B {or} A)) {and} \((A {or} C) {and} (B {or} C))) [
+Distribute {or} over {and}] +
+(\(((A {or} A) {and} (B {or} A)) {and} (A {or} C)) {and} (B {or} C)) [{and}
+is associative] +
+\{A}, {B, A}, {A, C}, {B, C} [Set notation]
+.. \((A {and} B) {and} (A {and} C))
++
+(((A {and} B) {and} A) {and} C) [{and} is associative] +
+\{A}, \{B}, \{C} [Set notation]
+
+
+:numbered:
+=== Propositional Resolution
+
+Writing out truth tables gets tedious, especially as the number of rows grows
+exponentially with the number of atomic formulas. The logicians have discovered
+/ invented other ways of showing if an argument is valid or not. One of these
+methods is _Propositional Resolution_.
+Mendelson's System only works if an argument is expressed using only the
+connectives {not} and {implies}. You have to rewrite the argument using the
+following rules of replacement:
+
+
+:numbered:
+=== Mendelson's Axiomatic System
+
+Writing out truth tables gets tedious, especially as the number of rows grows
+exponentially with the number of atomic formulas. The logicians have discovered
+/ invented other ways of showing if an argument is valid or not. One of these
+methods is _Mendelson's Axiomatic System_. They tell me it may not be easier
+than truth tables but enables them to introduce Big Ideas. I can't help but
+feel that's somewhat patronising. These so-called Big Ideas better be worth it.
+Mendelson's System only works if an argument is expressed using only the
+connectives {not} and {implies}. You have to rewrite the argument using the
+following rules of replacement:
+
+* (P {or} Q) {equiv} ({not}P {implies} Q)
+* (P {and} Q) {equiv} {not}(P {implies} {not}Q)
+* (P {bicond} Q) {equiv} {not}((P {implies} Q) {implies} {not}(Q {implies} P))
+
+So for example we looked at this argument previously:
+
+[example]
+(A {or} B), {not}B {entails} A
+
+Using the above rules of replacement we can rewrite it as:
+
+[example]
+({not}A {implies} B), {not}B {entails} A
+
+
+
+about theseSo, I'll press on
+
+and I find this attitude
+somewhat patronising. It involves rewriting the assumptions in a progressively simpler and simpler form until you
+end up with the conclusion. The simplifying substitutions are valid arguments
+that are known as _rules of inference_. One rule of inference is:
+
+[example]
+(A {or} B), {not}B {entails} A
+
+Writing out truth tables gets tedious, especially as the number of rows grows
+exponentially with the number of atomic formulas. The logicians have discovered
+/ invented an easier way of showing if an argument is valid or not. It involves rewriting the assumptions in a progressively simpler and simpler form until you
+end up with the conclusion. The simplifying substitutions are valid arguments
+that are known as _rules of inference_. One rule of inference is:
+
+
+:numbered:
+=== Rules Of Inference
+
+Writing out truth tables gets tedious, especially as the number of rows grows
+exponentially with the number of atomic formulas. The logicians have discovered
+/ invented an easier way of showing if an argument is valid or not. It involves rewriting the assumptions in a progressively simpler and simpler form until you
+end up with the conclusion. The simplifying substitutions are valid arguments
+that are known as _rules of inference_. One rule of inference is:
+
+[example]
+P, P {implies} Q {entails} Q
+
+You can see this is a valid argument because the expression:
+
+[example]
+P {and} (P {implies} Q) {implies} Q
+
+has the truth table:
+
+[cols="5"]
+|===
+| P
+| Q
+| P {implies} Q
+| P {and} (P {implies} Q)
+| P {and} (P {implies} Q) {implies} Q
+
+| T | T | T | T | T
+| F | T | T | F | T
+| T | F | F | F | T
+| F | F | T | F | T
+|===
+
+which shows that the expression is a tautology and so the argument is valid.
+This rule of inference has the typically recondite name of..._modus ponens_!!!
+
+Another rule of inference is:
+
+[example]
+A {and} B {entails} B
+
+and another:
+
+[example]
+A {and} B {entails} A
+
+These two rules are called _{and} reduction_. And so, armed with these rules,
+lets find out if the following argument is valid:
+
+[example]
+A {and} B {implies} A, B {entails} A
+
+The steps to show this is valid are:
+
+. A {and} B {implies} A (assumption)
+. B {implies} A (1. and {and} reduction)
+. B (assumption)
+. A (2. and 3. and modus ponens)
+
+Case solved! Another one:
+
+[example]
+Q, (R {and} P) {and} (R {and} Q) {implies} P {entails} P
+
+. (R {and} P) {and} (R {and} Q) {implies} P (assumption)
+. R {and} (R {and} Q) {implies} P (1. and {and} reduction)
+. R {and} Q {implies} P (2. and {and} reduction)
+. Q {implies} P (3. and {and} reduction)
+. Q (assumption)
+. P (4. and 5. and modus ponens)
+
+Here's a list of rules of inference:
+
+|===
+| Name                   | Rule
+
+| Modus ponens           | (A {implies} B), A {entails} B
+| Modus tollens          | (A {implies} B), {not}B {entails} {not}A
+| {implies} introduction | A {entails} (B {implies} A)
+| {or} introduction      | A {entails} (A {or} B)
+| {or} elimination       | (A {implies} C), (B {implies} C), (A {or} B) {entails} C
+| {bicond} introduction  | (A {implies} B), (B {implies} A) {entails} (A {bicond} B)
+| {bicond} elimination   | (A {bicond} B) {entails} (A {implies} B)
+| {and} introduction     | A, B {entails} (A {and} B)
+| {and} elimination      | (A {and} B) {entails} A
+| {not} elimination      | Assume {not}A, derive B and {not}B {entails} A
+| transitive             | A {implies} B, B {implies} C {entails} A {implies} C
+|===
+
+
+:numbered!:
+==== Questions
+
+. Show that the rules of inference are valid by using a truth table.
+. For all the arguments in the questions for <<_arguments>>, show that they are
+  valid by using rules of inference.
+
+==== Answers
 
 . {empty}
 .. The following truth table shows that A {and} (A {implies} B) {implies} B is
@@ -1605,69 +1905,67 @@ Answers for <<_rules_of_inference>>.
    5. P {or} Q (assumption)
    6. Q (4 and 5 and {not} elimination)
 
-==== Equivalence: Answers
 
-Answers for <<_equivalence>>.
 
-. {empty}
-.. A: The bike's back brake comes on. +
-   B: The left brake lever is applied. +
-   A {equiv} B
-.. The fridge light is on if, and only if, the fridge door is open.
-.. P: The fridge light is on. +
-   Q: The fridge door is open. +
-   P {equiv} Q
-. {empty}
-.. {empty}
+:numbered:
+=== Precedence
+
+Let's say we've got _three_ atomic formulas P, Q and R. What's the truth table for:
+
+[example]
+P {or} Q {and} R
+
+But wait, do I do the P {or} Q first and then apply the {and} to the result? Or
+do I do Q {and} R first and then apply P {or} to the result? And does it even
+matter? The Rules Of Propositional Logic that I read while in the Ivory Tower
+are quite clear on the point. They say that {and} is evaluated before {or}.
+Okay, so the truth table for P {or} Q {and} R is:
+
 |===
-| A | B | C | B {and} C | A {equiv} B {and} C
+| P | Q | R | Q {and} R | P {or} Q {and} R
 
 | T | T | T | T         | T
-| F | T | T | T         | F
-| T | F | T | F         | F
-| F | F | T | F         | T
-| T | T | F | F         | F
-| F | T | F | F         | T
-| T | F | F | F         | F
-| F | F | F | F         | T
-|===
-[start=2]
-.. {empty}
-|===
-| A | B | A {equiv} B | B {or} (A {equiv} B)
-
-| T | T | T           | T
-| F | T | F           | T
-| T | F | F           | F
-| F | F | T           | T
-|===
-[start=3]
-.. {empty}
-|===
-| 1 | 2 | 3        | 4               | 5          | 6
-| P | Q | Q {or} P | P {equiv} col_3 | {not}col_4 | P {and} col_5
-
-| T | T | T        | T               | F          | F
-| F | T | T        | F               | T          | F
-| T | F | T        | T               | F          | F
-| F | F | F        | T               | F          | F
-|===
-.. (Q {equiv} {not}P) {and} (P {equiv} {not}{not}Q)
-[start=4]
-.. {empty}
-|===
-| 1 | 2 | 3      | 4               | 5      | 6          | 7               | 8
-| P | Q | {not}P | Q {equiv} col_3 | {not}Q | {not}col_5 | P {equiv} col_6 | col_4 {and} col_7
-
-| T | T | F      | F               | F      | T          | T               | F
-| F | T | T      | T               | F      | T          | F               | F
-| T | F | F      | T               | T      | F          | F               | F
-| F | F | T      | F               | T      | F          | T               | F
+| F | T | T | T         | T
+| T | F | T | F         | T
+| F | F | T | F         | F
+| T | T | F | F         | T
+| F | T | F | F         | F
+| T | F | F | F         | T
+| F | F | F | F         | F
 |===
 
-==== Precedence: Answers
+So what would you write if you want to do P {or} Q and then apply {and} R? The
+Rules say that anything in brackets gets evaluated first. So you'd write:
 
-Answers for <<_precedence>>.
+[example]
+(P {or} Q) {and} R
+
+and the truth table is:
+
+|===
+| P | Q | R | P {or} Q | (P {or} Q) {and} R
+
+| T | T | T | T         | T
+| F | T | T | T         | T
+| T | F | T | T         | T
+| F | F | T | F         | F
+| T | T | F | T         | F
+| F | T | F | T         | F
+| T | F | F | T         | F
+| F | F | F | F         | F
+|===
+
+:numbered!:
+==== Questions
+
+. Write out the truth tables for:
+.. P {and} Q {or} R
+.. P {and} Q {and} R
+.. P {or} Q {or} R
+.. P {and} (Q {or} R)
+
+
+==== Answers
 
 . {empty}
 .. {empty}
@@ -1726,11 +2024,97 @@ Answers for <<_precedence>>.
 | F | F | F | F         | F
 |===
 
+:numbered:
+=== Sentential Logic: Summary
+
+|===
+| Name | Rule
+
+| {or} associativity
+| (P {or} (Q {or} R)) {equiv} (\(P {or} Q) {or} R)
+
+| {and} associativity
+| (P {and} (Q {and} R)) {equiv} (\(P {and} Q) {and} R)
+
+| {bicond} associativity
+| (P {bicond} (Q {bicond} R)) {equiv} (\(P {bicond} Q) {bicond} R)
+
+| {or} commutativity
+| (P {or} Q) {equiv} (Q {or} P)
+
+| {and} commutativity
+| (P {and} Q) {equiv} (Q {and} P)
+|===
+
+==== Answers
+
+Answers on their way...
+
+:numbered:
+=== Rosetta Stone
+
+[[img-rosetta]]
+.http://commons.wikimedia.org/wiki/File:Rosetta_Stone.JPG#mediaviewer/File:Rosetta_Stone.JPG[Rosetta Stone] by http://commons.wikimedia.org/wiki/User:Biopics[Hans Hillewaert] - Own work. Licensed under http://creativecommons.org/licenses/by-sa/4.0[CC BY-SA 4.0] via http://commons.wikimedia.org/wiki/[Wikimedia Commons].
+image::rosetta.jpg[Rosetta Stone]
+
+I've found that in maths, the same thing is often called different names by
+different authors. Also, some authors take different philosophical approaches to
+the same area of maths. This point of this section is to help us understand
+what other authors are saying, in terms that we already understand.
+
+
+==== Sentential Logic versus Propositional Logic
+
+Some authors talk of Sentential Logic, and some talk of Propositional Logic.
+This is a philosophical difference. Say there are two statements that mean the
+same thing but use a different form of words. The sentential school of thought
+uses a different label for each statement, but the proposition school would use
+just one label.
+
+
+==== Synonyms
+
+|===
+| Name             | Synonym
+
+| Connective       | Operator
+| Sentential Logic | Sentential Calculus
+| Not, {not}       | ~, negation
+| And              | Conjunction
+| Or               | Disjunction
+| Implies          | Conditional
+| Atomic formula   | Atom, simple proposition, atomic sentence
+|===
+
+* All the rules of inference. and equivalence
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 [bibliography]
 == Bibliography
 
 [bibliography]
-* http://en.wikibooks.org/wiki/Formal_Logic/Sentential_Logic
-* Mathematics for Computing by Robert Callen 1998, Letts Educational.
-* http://en.wikipedia.org/wiki/Propositional_calculus
+* http://en.wikibooks.org/wiki/Formal_Logic/Sentential_Logic (Referred to this
+  throughout, very good.)
+* Mathematics for Computing by Robert Callen 1998, Letts Educational. (This
+  book first got me going on propositional logic.)
+* http://en.wikipedia.org/wiki/Propositional_calculus (This and related pages
+  on Wikipedia continually useful).
+* http://logic.stanford.edu/classes/cs157/2010/notes/chap02.html (excellent
+  notes).
+* https://www.trinity.edu/cbrown/logic/alter.pdf (Shows the different
+  systems of propositional logic)
