@@ -64,30 +64,36 @@ In sentential logic, we're only interested in sentences that are either true
 or false. Such sentences are known as _statements_. Here are some sentences
 together with explanations of whether they are statements or not:
 
-* _How many miles to Crinnis?_
-+
+[example]
+How many miles to Crinnis?
+
 This is a question, so not a statement.
 
-* _Elephants have four legs._
-+
+[example]
+Elephants have four legs.
+
 Yay, an actual statement! It's a sentence that is either true or false.
 
-* _Don't dilly-dally._
-+
+[example]
+Don't dilly-dally.
+
 This isn't true or false, it sounds like someone admonishing somebody. Not a
 statement.
 
-* _The capital of France is Paris._
-+
+[example]
+The capital of France is Paris.
+
 Yes, a statement.
 
-* _He likes chocolate._
-+
+[example]
+He likes chocolate.
+
 This sounds like a statement, but according to those logicians in the ivory
 tower it doesn't count because it relies on knowing who '`he`' is.
 
-* _Don't spoil the ship for a ha'peth of tar._
-+
+[example]
+Don't spoil the ship for a ha'peth of tar.
+
 This is a proverb, not a statement.
 
 I've got this nagging doubt in my mind. Most statements I can think of aren't
@@ -978,7 +984,6 @@ binary connectives are commutative though. For example:
 [example]
 (A {implies} B)
 
-[example]
 is not equivalent to:
 
 [example]
@@ -1008,6 +1013,82 @@ are, giving the name of the associated replacement rule.
 
 . For each of the four binary connectives use a truth table to show if they
   are or are not commutative.
+
+==== Answers
+
+. {empty}
+.. {and} is commutative if \((A {and} B) {bicond} (B {and} A)) is a tautology.
++
+|===
+| A | B | (A {and} B) | (B {and} A) | \((A {and} B) {bicond} (B {and} A))
+
+| T | T | T           | T           | T
+| F | T | F           | F           | T
+| T | F | F           | F           | T
+| F | F | F           | F           | T
+|===
++
+it is a tautology and so {and} is commutative.
+.. {or} is commutative if \((A {or} B) {bicond} (B {or} A)) is a tautology.
++
+|===
+| A | B | (A {or} B) | (B {or} A) | \((A {or} B) {bicond} (B {or} A))
+
+| T | T | T          | T          | T
+| F | T | T          | T          | T
+| T | F | T          | T          | T
+| F | F | F          | F          | T
+|===
++
+it is a tautology and so {or} is commutative.
+.. {or} is commutative if \((A {or} B) {bicond} (B {or} A)) is a tautology.
++
+|===
+| A | B | (A {or} B) | (B {or} A) | \((A {or} B) {bicond} (B {or} A))
+
+| T | T | T          | T          | T
+| F | T | T          | T          | T
+| T | F | T          | T          | T
+| F | F | F          | F          | T
+|===
++
+it is a tautology and so {or} is commutative.
+.. {implies} is commutative if \((A {implies} B) {bicond} (B {implies} A)) is a
+   tautology.
++
+[cols="5*", options="header"]
+|===
+| A
+| B
+| (A {implies} B)
+| (B {implies} A)
+| \((A {implies} B) {bicond} (B {bicond} A))
+
+| T | T | T | T | T
+| F | T | T | F | F
+| T | F | F | T | F
+| F | F | T | T | T
+|===
++
+it is not a tautology and so {implies} is not commutative.
+.. {bicond} is commutative if \((A {bicond} B) {bicond} (B {bicond} A)) is a
+   tautology.
++
+[cols="5*", options="header"]
+|===
+| A
+| B
+| (A {bicond} B)
+| (B {bicond} A)
+| \((A {bicond} B) {bicond} (B {bicond} A))
+
+| T | T | T | T | T
+| F | T | F | F | T
+| T | F | F | F | T
+| F | F | T | T | T
+|===
++
+it is a tautology and so {bicond} is commutative.
 
 
 :numbered:
