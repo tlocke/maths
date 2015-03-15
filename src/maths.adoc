@@ -1041,18 +1041,6 @@ it is a tautology and so {and} is commutative.
 |===
 +
 it is a tautology and so {or} is commutative.
-.. {or} is commutative if \((A {or} B) {bicond} (B {or} A)) is a tautology.
-+
-|===
-| A | B | (A {or} B) | (B {or} A) | \((A {or} B) {bicond} (B {or} A))
-
-| T | T | T          | T          | T
-| F | T | T          | T          | T
-| T | F | T          | T          | T
-| F | F | F          | F          | T
-|===
-+
-it is a tautology and so {or} is commutative.
 .. {implies} is commutative if \((A {implies} B) {bicond} (B {implies} A)) is a
    tautology.
 +
@@ -1120,11 +1108,117 @@ not, and if they are, giving the name of the replacement rule:
 | {bicond}          | Yes          | {bicond} associativity
 |===
 
+
 :numbered!:
 ==== Questions
 
 . For each of the four binary connectives use a truth table to show if they
   are or are not associative (big truth tables ahoy!).
+
+
+==== Answers
+
+. {empty}
+.. {and} is associative if (\((A {and} B) {and} C) {bicond} (A {and}
+   (B {and} C))) is a tautology.
++
+[cols="8*", options="header"]
+|===
+| A
+| B
+| C
+| (A {and} B)
+| ((A {and} B) {and} C)
+| (B {and} C)
+| (A {and} (B {and} C))
+| (\((A {and} B) {and} C) {bicond} (A {and} (B {and} C)))
+
+| T | T | T | T | T | T | T | T
+| F | T | T | F | F | T | F | T
+| T | F | T | F | F | F | F | T
+| F | F | T | F | F | F | F | T
+| T | T | F | T | F | F | F | T
+| F | T | F | F | F | F | F | T
+| T | F | F | F | F | F | F | T
+| F | F | F | F | F | F | F | T
+|===
++
+it is a tautology and so {and} is associative.
+.. {or} is associative if (\((A {or} B) {or} C) {bicond} (A {or} (B {or} C))) is
+   a tautology.
++
+[cols="8*", options="header"]
+|===
+| A
+| B
+| C
+| (A {or} B)
+| ((A {or} B) {or} C)
+| (B {or} C)
+| (A {or} (B {or} C))
+| (\((A {or} B) {or} C) {bicond} (A {or} (B {or} C)))
+
+| T | T | T | T | T | T | T | T
+| F | T | T | T | T | T | T | T
+| T | F | T | T | T | T | T | T
+| F | F | T | F | T | T | T | T
+| T | T | F | T | T | T | T | T
+| F | T | F | T | T | T | T | T
+| T | F | F | T | T | F | T | T
+| F | F | F | F | F | F | F | T
+|===
++
+it is a tautology and so {or} is associative.
+.. {implies} is associative if (\((A {implies} B) {implies} C) {bicond}
+   (A {implies} (B {implies} C))) is a tautology.
++
+[cols="8*", options="header"]
+|===
+| A
+| B
+| C
+| (A {implies} B)
+| ((A {implies} B) {implies} C)
+| (B {implies} C)
+| (A {implies} (B {implies} C))
+| (\((A {implies} B) {implies} C) {bicond} (A {implies} (B {implies} C)))
+
+| T | T | T | T | T | T | T | T
+| F | T | T | T | T | T | T | T
+| T | F | T | F | T | T | T | T
+| F | F | T | T | T | T | T | T
+| T | T | F | T | F | F | F | T
+| F | T | F | T | F | F | T | F
+| T | F | F | F | T | T | T | T
+| F | F | F | T | F | T | T | F
+|===
++
+it is not a tautology and so {implies} is not associative.
+.. {bicond} is associative if (\((A {bicond} B) {bicond} C) {bicond}
+   (A {bicond} (B {bicond} C))) is a tautology.
++
+[cols="8*", options="header"]
+|===
+| A
+| B
+| C
+| (A {bicond} B)
+| ((A {bicond} B) {bicond} C)
+| (B {bicond} C)
+| (A {bicond} (B {bicond} C))
+| (\((A {bicond} B) {bicond} C) {bicond} (A {bicond} (B {bicond} C)))
+
+| T | T | T | T | T | T | T | T
+| F | T | T | F | F | T | F | T
+| T | F | T | F | F | F | F | T
+| F | F | T | T | T | F | T | T
+| T | T | F | T | F | F | F | T
+| F | T | F | F | T | F | T | T
+| T | F | F | F | T | T | T | T
+| F | F | F | T | F | T | F | T
+|===
++
+it is a tautology and so {bicond} is associative.
 
 
 :numbered:
