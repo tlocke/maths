@@ -37,9 +37,12 @@ This work is licensed under a
 http://creativecommons.org/licenses/by-sa/4.0/[Creative Commons
 Attribution-ShareAlike 4.0 International License].
 
-=== Contributing
+=== Forum
 
-All contributions (corrections, amendments, additions etc) welcome at
+If you have any comments on this book, please visit
+https://groups.google.com/forum/\#!forum/glimpse-of-mathematics[https://groups.google.com/forum/#!forum/glimpse-of-mathematics].
+
+The source code for the book is at
 https://github.com/tlocke/maths[https://github.com/tlocke/maths].
 
 
