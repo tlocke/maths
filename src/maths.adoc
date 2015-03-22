@@ -1241,10 +1241,12 @@ Another '`itivity`'. Here are the _distributivity_ rules of replacement:
 | (A {or} (B {or} C)) {equiv} \((A {or} B) {or} (A {or} C))
 | Distribution of {or} over {or}
 
-| (A {implies} (B {implies} C)) {equiv} \((A {implies} B) {implies} (A {implies} C))
+| (A {implies} (B {implies} C)) {equiv} \((A {implies} B) {implies}
+  (A {implies} C))
 | Distribution of {implies} over {implies}
 
-| (A {implies} (B {bicond} C)) {equiv} \((A {implies} B) {bicond} (A {implies} C))
+| (A {implies} (B {bicond} C)) {equiv} \((A {implies} B) {bicond}
+  (A {implies} C))
 | Distribution of {implies} over {bicond}
 
 | (A {or} (B {bicond} C)) {equiv} \((A {or} B) {bicond} (A {or} C))
@@ -1260,8 +1262,99 @@ y distributes over z then:
 :numbered!:
 ==== Questions
 
-. For each of the distributivity rules of replacement, use a truth table to
-  show that they are indeed equivalent.
+. For the following distributivity rules of replacement, use a truth table to
+  show that each pair of formulas are indeed equivalent.
+.. {and} over {and}
+.. {implies} over {bicond}
+.. {or} over {bicond}
+
+
+==== Answers
+
+. {empty}
+.. If {and} is distributive over {and} then: +
+   (P {and} (Q {and} R)) {bicond} \((P {and} Q) {and} (P {and} R)) is a
+   tautology.
++
+[cols="9*", options="header"]
+|===
+| P
+| Q
+| R
+| (Q {and} R)
+| (P {and} (Q {and} R))
+| (P {and} Q)
+| (P {and} R)
+| \((P {and} Q) {and} (P {and} R))
+| (P {and} (Q {and} R)) {bicond} \((P {and} Q) {and} (P {and} R))
+
+| T | T | T | T | T | T | T | T | T
+| F | T | T | T | F | F | F | F | T
+| T | F | T | F | F | F | T | F | T
+| F | F | T | F | F | F | F | F | T
+| T | T | F | F | F | T | F | F | T
+| F | T | F | F | F | F | F | F | T
+| T | F | F | F | F | F | F | F | T
+| F | F | F | F | F | F | F | F | T
+|===
++
+the formula is indeed a tautology, so {and} is distributive over {and}.
+.. {implies} over {bicond}
+.. If {implies} is distributive over {bicond} then: +
+   (P {implies} (Q {bicond} R)) {bicond}
+   \((P {implies} Q) {bicond} (P {implies} R)) is a tautology.
++
+[cols="9*", options="header"]
+|===
+| P
+| Q
+| R
+| (Q {bicond} R)
+| (P {implies} (Q {bicond} R))
+| (P {implies} Q)
+| (P {implies} R)
+| \((P {implies} Q) {bicond} (P {implies} R))
+| (P {implies} (Q {bicond} R)) {bicond}
+  \((P {implies} Q) {bicond} (P {implies} R))
+
+| T | T | T | T | T | T | T | T | T
+| F | T | T | T | T | T | T | T | T
+| T | F | T | F | F | F | T | F | T
+| F | F | T | F | T | T | T | T | T
+| T | T | F | F | F | T | F | F | T
+| F | T | F | F | T | T | T | T | T
+| T | F | F | T | T | F | F | T | T
+| F | F | F | T | T | T | T | T | T
+|===
++
+the formula is indeed a tautology, so {implies} is distributive over {bicond}.
+.. If {or} is distributive over {bicond} then: +
+   (P {or} (Q {bicond} R)) {bicond} \((P {or} Q) {bicond} (P {or} R)) is a
+   tautology.
++
+[cols="9*", options="header"]
+|===
+| P
+| Q
+| R
+| (Q {bicond} R)
+| (P {or} (Q {bicond} R))
+| (P {or} Q)
+| (P {or} R)
+| \((P {or} Q) {bicond} (P {or} R))
+| (P {or} (Q {bicond} R)) {bicond} \((P {or} Q) {bicond} (P {or} R))
+
+| T | T | T | T | T | T | T | T | T
+| F | T | T | T | T | T | T | T | T
+| T | F | T | F | T | T | T | T | T
+| F | F | T | F | F | F | T | F | T
+| T | T | F | F | T | T | T | T | T
+| F | T | F | F | F | T | F | F | T
+| T | F | F | T | T | T | T | T | T
+| F | F | F | T | T | F | F | T | T
+|===
++
+the formula is indeed a tautology, so {or} is distributive over {bicond}.
 
 
 :numbered:
