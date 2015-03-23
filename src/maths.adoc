@@ -1401,7 +1401,7 @@ me. Thanks.
 | (P {implies} Q) {equiv} ({not}P {or} Q)
 
 | Exportation
-| (P {and} Q) {implies} R) {equiv} (P {implies} (Q {implies} R))
+| \((P {and} Q) {implies} R) {equiv} (P {implies} (Q {implies} R))
 
 | Idempotency of {and}
 | (P {and} P) {equiv} P
@@ -1410,15 +1410,85 @@ me. Thanks.
 | (P {or} P) {equiv} P
 
 | {not} introduction
-| ((P {implies} Q) {and} (P {implies} {not}Q)) {equiv} {not}P
+| \((P {implies} Q) {and} (P {implies} {not}Q)) {equiv} {not}P
 |===
 
 
 :numbered!:
 ==== Questions
 
-. For the '`other rules of replacement`', use a truth table to show that they
-  are equivalent.
+. For the following rules of replacement, use a truth table to show that the
+  pairs of formulas are equivalent.
+.. Idempotency of {and}
+.. {not} introduction
+.. Material Implication
+
+
+==== Answers
+
+. {empty}
+.. Idempotency of {and} is +
+   (P {and} P) {equiv} P +
+   so the two formulas are equivalent if +
+   (P {and} P) {bicond} P +
+   is a tautology. The truth table:
++
+|===
+| P | (P {and} P) | (P {and} P) {bicond} P
+
+| T | T           | T
+| F | F           | T
+|===
++
+shows that it is a tautology, and so the two formulas are equivalent.   
+.. {not} introduction is +
+   \((P {implies} Q) {and} (P {implies} {not}Q)) {equiv} {not}P +
+   so the two formulas are equivalent if +
+   \((P {implies} Q) {and} (P {implies} {not}Q)) {bicond} {not}P +
+   is a tautology. The truth table:
++
+[cols="8*", options="header"]
+|===
+| P
+| Q
+| (P {implies} Q)
+| {not}Q
+| (P {implies} {not}Q)
+| \((P {implies} Q) {and} (P {implies} {not}Q))
+| {not}P
+| \((P {implies} Q) {and} (P {implies} {not}Q)) {bicond} {not}P
+
+
+| T | T | T | F | F | F | F | T
+| F | T | T | F | T | T | T | T
+| T | F | F | T | T | F | F | T
+| F | F | T | T | T | T | T | T
+|===
++
+shows that it is a tautology, and so the two formulas are equivalent.   
+.. Material Implication is +
+   (P {implies} Q) {equiv} ({not}P {or} Q) +
+   so the two formulas are equivalent if +
+   (P {implies} Q) {bicond} ({not}P {or} Q) +
+   is a tautology. The truth table:
++
+[cols="6*", options="header"]
+|===
+| P
+| Q
+| (P {implies} Q)
+| {not}P
+| ({not}P {or} Q)
+| (P {implies} Q) {bicond} ({not}P {or} Q)
+
+
+| T | T | T | F | T | T
+| F | T | T | F | T | T
+| T | F | F | T | F | T
+| F | F | T | T | T | T
+|===
++
+shows that it is a tautology, and so the two formulas are equivalent.   
 
 
 :numbered:

@@ -4743,7 +4743,7 @@ me. Thanks.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Exportation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">(P &#x2227; Q) &#x2192; R) &#x21D4; (P &#x2192; (Q &#x2192; R))</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">((P &#x2227; Q) &#x2192; R) &#x21D4; (P &#x2192; (Q &#x2192; R))</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Idempotency of &#x2227;</p></td>
@@ -4755,7 +4755,7 @@ me. Thanks.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#x00AC; introduction</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">P &#x2192; Q) &#x2227; (P &#x2192; &#x00AC;Q &#x21D4; &#x00AC;P</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">((P &#x2192; Q) &#x2227; (P &#x2192; &#x00AC;Q)) &#x21D4; &#x00AC;P</p></td>
 </tr>
 </tbody>
 </table>
@@ -4764,8 +4764,211 @@ me. Thanks.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>For the &#8216;other rules of replacement&#8217;, use a truth table to show that they
-are equivalent.</p>
+<p>For the following rules of replacement, use a truth table to show that the
+pairs of formulas are equivalent.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Idempotency of &#x2227;</p>
+</li>
+<li>
+<p>&#x00AC; introduction</p>
+</li>
+<li>
+<p>Material Implication</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_answers_13">Answers</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Idempotency of &#x2227; is<br>
+(P &#x2227; P) &#x21D4; P<br>
+so the two formulas are equivalent if<br>
+(P &#x2227; P) &#x2194; P<br>
+is a tautology. The truth table:</p>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33%;">
+<col style="width: 33%;">
+<col style="width: 33%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">P</th>
+<th class="tableblock halign-left valign-top">(P &#x2227; P)</th>
+<th class="tableblock halign-left valign-top">(P &#x2227; P) &#x2194; P</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>shows that it is a tautology, and so the two formulas are equivalent.</p>
+</div>
+</li>
+<li>
+<p>&#x00AC; introduction is<br>
+((P &#x2192; Q) &#x2227; (P &#x2192; &#x00AC;Q)) &#x21D4; &#x00AC;P<br>
+so the two formulas are equivalent if<br>
+((P &#x2192; Q) &#x2227; (P &#x2192; &#x00AC;Q)) &#x2194; &#x00AC;P<br>
+is a tautology. The truth table:</p>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 12%;">
+<col style="width: 12%;">
+<col style="width: 12%;">
+<col style="width: 12%;">
+<col style="width: 12%;">
+<col style="width: 12%;">
+<col style="width: 12%;">
+<col style="width: 12%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">P</th>
+<th class="tableblock halign-left valign-top">Q</th>
+<th class="tableblock halign-left valign-top">(P &#x2192; Q)</th>
+<th class="tableblock halign-left valign-top">&#x00AC;Q</th>
+<th class="tableblock halign-left valign-top">(P &#x2192; &#x00AC;Q)</th>
+<th class="tableblock halign-left valign-top">((P &#x2192; Q) &#x2227; (P &#x2192; &#x00AC;Q))</th>
+<th class="tableblock halign-left valign-top">&#x00AC;P</th>
+<th class="tableblock halign-left valign-top">((P &#x2192; Q) &#x2227; (P &#x2192; &#x00AC;Q)) &#x2194; &#x00AC;P</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>shows that it is a tautology, and so the two formulas are equivalent.</p>
+</div>
+</li>
+<li>
+<p>Material Implication is<br>
+(P &#x2192; Q) &#x21D4; (&#x00AC;P &#x2228; Q)<br>
+so the two formulas are equivalent if<br>
+(P &#x2192; Q) &#x2194; (&#x00AC;P &#x2228; Q)<br>
+is a tautology. The truth table:</p>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">P</th>
+<th class="tableblock halign-left valign-top">Q</th>
+<th class="tableblock halign-left valign-top">(P &#x2192; Q)</th>
+<th class="tableblock halign-left valign-top">&#x00AC;P</th>
+<th class="tableblock halign-left valign-top">(&#x00AC;P &#x2228; Q)</th>
+<th class="tableblock halign-left valign-top">(P &#x2192; Q) &#x2194; (&#x00AC;P &#x2228; Q)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>shows that it is a tautology, and so the two formulas are equivalent.</p>
+</div>
+</li>
+</ol>
+</div>
 </li>
 </ol>
 </div>
@@ -5080,7 +5283,7 @@ and off. This light switch is not on. Therefore the light switch is off.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_13">Answers</h4>
+<h4 id="_answers_14">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -5861,7 +6064,7 @@ step 2, Negations, where the application of De Morgan&#8217;s Laws, gives:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_14">Answers</h4>
+<h4 id="_answers_15">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -6226,7 +6429,7 @@ valid by using rules of inference.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_15">Answers</h4>
+<h4 id="_answers_16">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7244,7 +7447,7 @@ Rules say that anything in brackets gets evaluated first. So you&#8217;d write:<
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_16">Answers</h4>
+<h4 id="_answers_17">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7623,7 +7826,7 @@ Rules say that anything in brackets gets evaluated first. So you&#8217;d write:<
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="_answers_17">2.23.1. Answers</h4>
+<h4 id="_answers_18">2.23.1. Answers</h4>
 <div class="paragraph">
 <p>Answers on their way&#8230;&#8203;</p>
 </div>
@@ -7740,7 +7943,7 @@ systems of propositional logic)</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-03-22 16:08:26 GMT
+Last updated 2015-03-23 19:26:08 GMT
 </div>
 </div>
 </body>
