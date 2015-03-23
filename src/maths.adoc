@@ -1383,6 +1383,59 @@ Some say they're obvious. Do you find them obvious? I don't.
 . For De Morgan's laws, use a truth table to show that they are equivalent.
 
 
+==== Answers
+
+. For De Morgan's laws, use a truth table to show that they are equivalent.
+.. If: +
+   (A {and} B) {equiv} {not}({not}A {or} {not}B) +
+   then: +
+   (A {and} B) {bicond} {not}({not}A {or} {not}B) +
+   is a tautology. The truth table is:
++
+[cols="8*", options="header"]
+|===
+| A
+| B
+| (A {and} B)
+| {not}A
+| {not}B
+| ({not}A {or} {not}B)
+| {not}({not}A {or} {not}B)
+| (A {and} B) {bicond} {not}({not}A {or} {not}B) +
+
+| T | T | T | F | F | F | T | T
+| F | T | F | T | F | T | F | T
+| T | F | F | F | T | T | F | T
+| F | F | F | T | T | T | F | T
+|===
++
+which shows it is a tautology, and so the two formulas are equivalent.
+.. If: +
+   (A {or} B) {equiv} {not}({not}A {and} {not}B) +
+   then: +
+   (A {or} B) {bicond} {not}({not}A {and} {not}B) +
+   is a tautology. The truth table for this formula is:
++
+[cols="8*", options="header"]
+|===
+| A
+| B
+| (A {or} B)
+| {not}A
+| {not}B
+| ({not}A {and} {not}B)
+| {not}({not}A {and} {not}B)
+| (A {or} B) {bicond} {not}({not}A {and} {not}B) +
+
+| T | T | T | F | F | F | T | T
+| F | T | T | T | F | F | T | T
+| T | F | T | F | T | F | T | T
+| F | F | F | T | T | T | F | T
+|===
++
+which shows it is a tautology, and so the two formulas we started with are
+equivalent.
+
 
 :numbered:
 === More rules of replacement
@@ -1532,7 +1585,7 @@ is a tautology, then the argument is valid. If effect we've joined the
 premises together with {and} and replaced the {entails} with a {implies} to get
 the formula. Bring on the table of truth!
 
-[cols="6*"]
+[cols="6*", options="header"]
 |===
 
 | A
@@ -1566,7 +1619,7 @@ C: Lose our way. +
 
 The argument is valid if:
 
-((((A {implies} {not}B) {and} (C {implies} {not}B)) {and} A) {implies} {not}B)
+\((((A {implies} {not}B) {and} (C {implies} {not}B)) {and} A) {implies} {not}B)
 
 is a tautology. Doing a giant truth table:
 
@@ -1641,9 +1694,10 @@ Shows that the formula is a tautology and so the argument is indeed valid.
    Q: The light switch is off. +
    P {or} Q, {not}(P {and} Q), {not}P {entails} Q
 . {empty}
-.. If the argument P {implies} Q, P {entails} Q is valid, then the expression
-   (P {implies} Q) {and} P {implies} Q is a tautology. The following truth table
-   shows the expression is a tautology, so the argument is indeed valid.
+.. If the argument P {implies} Q, P {entails} Q is valid, then the formula
+   \((P {implies} Q) {and} P {implies} Q) is a tautology. The following truth
+   table shows the formula is a tautology, so the argument is indeed valid.
++
 |===
 | 1 | 2 | 3             | 4             | 5
 
@@ -1654,10 +1708,11 @@ Shows that the formula is a tautology and so the argument is indeed valid.
 | T | F | F             | F             | T
 | F | F | T             | F             | T
 |===
-[start=2]
-.. If the argument A {or} B, {not} B {entails} A is valid, then the expression
-   (A {or} B) {and} {not}B {implies} A is a tautology. The following truth table
-   shows the expression is a tautology, so the argument is indeed valid.
++
+.. If the argument A {or} B, {not} B {entails} A is valid, then the formula
+   \(\((A {or} B) {and} {not}B) {implies} A) is a tautology. The following truth
+   table shows the formula is a tautology, so the argument is indeed valid.
++
 |===
 | 1 | 2 | 3        | 4      | 5                 | 6
 
@@ -1668,10 +1723,11 @@ Shows that the formula is a tautology and so the argument is indeed valid.
 | T | F | T        | T      | T                 | T
 | F | F | F        | T      | F                 | T
 |===
-[start=3]
-.. If the argument P {or} Q, Q {entails} {not}P is valid, then the expression
-   (P {or} Q) {and} Q {implies} {not}P is a tautology. The following truth table
-   shows the expression is not a tautology, so the argument is not valid.
++
+.. If the argument P {or} Q, Q {entails} {not}P is valid, then the formula
+   \(\((P {or} Q) {and} Q) {implies} {not}P) is a tautology. The following truth
+   table shows the formula is not a tautology, so the argument is not valid.
++
 |===
 | 1 | 2 | 3        | 4      | 5             | 6
 
@@ -1682,39 +1738,77 @@ Shows that the formula is a tautology and so the argument is indeed valid.
 | T | F | T        | F      | F             | T
 | F | F | F        | T      | F             | T
 |===
-[start=4]
++
 .. If the argument P {or} Q, P {or} Q {implies} R, {not}Q {entails} R {and} P is
-   valid, then the expression (P {or} Q) {and} (P {or} Q {implies} R) {and}
-   {not}Q {implies} (R {and} P) is a tautology. The following truth table shows
-   the expression is a tautology, so the argument is valid.
+   valid, then the formula \(\((\((P {or} Q) {and} (P {or} Q)) {implies} R)
+   {and} {not}Q) {implies} (R {and} P)) is a tautology. The following truth
+   table shows the formula is a tautology, so the argument is valid.
++
+[cols="10*", options="header"]
 |===
-| 1 | 2 | 3 | 4        | 5                 | 6         | 7      | 8                 | 9               | 10
+| 1
+| 2
+| 3
+| 4
+| 5
+| 6
+| 7
+| 8
+| 9
+| 10
 
-| P | Q | R | P {or} Q | col_4 {implies} R | R {and} P | {not}Q | col_4 {and} col_5 | col_8 and col_7 | col_9 {implies} col_6
+| P
+| Q
+| R
+| P {or} Q
+| col_4 {implies} R
+| R {and} P
+| {not}Q
+| col_4 {and} col_5
+| col_8 and col_7
+| col_9 {implies} col_6
 
-| T | T | T | T        | T                 | T         | F      | T                 | F               | T
-| F | T | T | F        | T                 | F         | F      | F                 | F               | T
-| T | F | T | F        | F                 | T         | T      | F                 | F               | T
-| F | F | T | F        | T                 | F         | T      | F                 | F               | T
-| T | T | F | T        | F                 | F         | F      | F                 | F               | T
-| F | T | F | F        | T                 | F         | F      | F                 | F               | T
-| T | F | F | F        | T                 | F         | T      | F                 | F               | T
-| F | F | F | F        | T                 | F         | T      | F                 | F               | T
+| T | T | T | T | T | T | F | T | F | T
+| F | T | T | F | T | F | F | F | F | T
+| T | F | T | F | F | T | T | F | F | T
+| F | F | T | F | T | F | T | F | F | T
+| T | T | F | T | F | F | F | F | F | T
+| F | T | F | F | T | F | F | F | F | T
+| T | F | F | F | T | F | T | F | F | T
+| F | F | F | F | T | F | T | F | F | T
 |===
-[start=5]
++
 .. If the argument P {or} Q, {not}(P {and} Q), {not}P {entails} Q is valid, then
-   the expression (P {or} Q) {and} {not}(P {and} Q) {and} {not}P {implies} Q is
-   a tautology. The following truth table shows the expression is a tautology,
-   so the argument is valid.
+   the formula (\(\((P {or} Q) {and} {not}(P {and} Q)) {and} {not}P) {implies}
+   Q) is a tautology. The following truth table shows the formula is a
+   tautology, so the argument is valid.
++
+[cols="9*", options="header"]
 |===
-| 1 | 2 | 3        | 4         | 5             | 6      | 7                 | 8                 | 9
+| 1
+| 2
+| 3
+| 4
+| 5
+| 6
+| 7
+| 8
+| 9
 
-| P | Q | P {or} Q | P {and} Q | {not}col_4    | {not}P | col_3 {and} col_5 | col_7 {and} col_6 | col_8 {implies} Q
+| P
+| Q
+| P {or} Q
+| P {and} Q
+| {not}col_4
+| {not}P
+| col_3 {and} col_5
+| col_7 {and} col_6
+| col_8 {implies} Q
 
-| T | T | T        | T         | F             | F      | F                 | F                 | T
-| F | T | T        | F         | T             | T      | T                 | T                 | T
-| T | F | T        | F         | T             | F      | T                 | F                 | T
-| F | F | F        | F         | T             | T      | F                 | F                 | T
+| T | T | T | T | F | F | F | F | T
+| F | T | T | F | T | T | T | T | T
+| T | F | T | F | T | F | T | F | T
+| F | F | F | F | T | T | F | F | T
 |===
 
 
@@ -1998,10 +2092,10 @@ that are known as _rules of inference_. One rule of inference is:
 [example]
 P, P {implies} Q {entails} Q
 
-You can see this is a valid argument because the expression:
+You can see this is a valid argument because the formula:
 
 [example]
-P {and} (P {implies} Q) {implies} Q
+\((P {and} (P {implies} Q)) {implies} Q)
 
 has the truth table:
 
@@ -2009,9 +2103,9 @@ has the truth table:
 |===
 | P
 | Q
-| P {implies} Q
-| P {and} (P {implies} Q)
-| P {and} (P {implies} Q) {implies} Q
+| (P {implies} Q)
+| (P {and} (P {implies} Q))
+| \((P {and} (P {implies} Q)) {implies} Q)
 
 | T | T | T | T | T
 | F | T | T | F | T
@@ -2019,7 +2113,7 @@ has the truth table:
 | F | F | T | F | T
 |===
 
-which shows that the expression is a tautology and so the argument is valid.
+which shows that the formula is a tautology and so the argument is valid.
 This rule of inference has the typically recondite name of..._modus ponens_!!!
 
 Another rule of inference is:
