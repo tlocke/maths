@@ -1361,6 +1361,100 @@ the formula is indeed a tautology, so {or} is distributive over {bicond}.
 
 
 :numbered:
+=== Idempotence
+
+[[img-benjaminpeirce]]
+.http://commons.wikimedia.org/wiki/File:BenjaminPeirce5.jpg#/media/File:BenjaminPeirce5.jpg[Benjamin Peirce] by http://www.pragmaticism.net/faq.htm[www.pragmaticism.net]. Licensed under Public Domain via http://commons.wikimedia.org/wiki/[Wikimedia Commons].
+image::benjaminpeirce.jpg[Benjamin Peirce]
+
+'`Hey, Tony`', Benjamin Peirce said as he tapped me on the knee and leaned over
+confidentially, '`there's another property of binary connectives that I call
+_idempotence_`'. The {and} connective is idempotent because:
+
+[example]
+(P {and} P) {equiv} P
+
+and the {or} connective is idempotent because:
+
+[example]
+(P {or} P) {equiv} P
+
+but {implies} is not idempotent. We can show that {or} is idempotent by showing
+that:
+
+[example]
+(P {or} P) {bicond} P
+
+is a tautology, as shown by truth table:
+
+|===
+| P | (P {or} P) | (P {or} P) {bicond} P
+
+| T | T          | T
+| F | F          | T
+|===
+
+and {implies} is not idempotent because:
+
+[example]
+(P {implies} P) {bicond} P
+
+is not a tautology, as shown by truth table:
+
+|===
+| P | (P {implies} P) | (P {implies} P) {bicond} P
+
+| T | T               | T
+| F | T               | F
+|===
+
+Here's a table showing whether each connective is idempotent or not.
+
+|===
+| Binary Connective | Idempotent?
+
+| {and}             | Yes
+| {or}              | Yes
+| {implies}         | No
+| {bicond}          | Yes
+|===
+
+
+:numbered!:
+==== Questions
+
+. For the following connectives, use a truth table to show whether or not the
+  connective is idempotent.
+.. {bicond}
+.. {and}
+
+
+==== Answers
+
+. {empty}
+.. {bicond} is idempotent because: +
+   (P {bicond} P) {bicond} P +
+   is a tautology, as shown by truth table:
++
+|===
+| P | (P {bicond} P) | (P {bicond} P) {bicond} P
+
+| T | T              | T
+| F | F              | T
+|===
+.. {and} is idempotent because: +
+   (P {and} P) {bicond} P +
+   is a tautology, as shown by truth table:
++
+|===
+| P | (P {and} P) | (P {and} P) {bicond} P
+
+| T | T           | T
+| F | F           | T
+|===
+
+
+:numbered:
 === De Morgan's Laws
 
 I found in the Tower that Mathematicians are often good at music too. De Morgan
@@ -1888,7 +1982,14 @@ order:
 | {or} over {or}
 | (A {or} (B {or} C)) {equiv} \((A {or} B) {or} (A {or} C))
 
-| Step 4
+.2+| Step 4: Associativity
+| {and}
+| (A {and} (B {and} C)) {equiv} \((A {and} B) {and} C)
+
+| {or}
+| (A {or} (B {or} C)) {equiv} \((A {or} B) {or} C)
+
+| Step 5
 | Rewrite in set notation
 | First rewrite the clauses eg. +
   +
@@ -2026,7 +2127,7 @@ is associative] +
 === Propositional Resolution
 
 Writing out truth tables gets tedious, especially as the number of rows grows
-exponentially with the number of atomic formulas. The logicians have discovered
+quadratically with the number of atomic formulas. The logicians have discovered
 / invented other ways of showing if an argument is valid or not. One of these
 methods is _Propositional Resolution_.
 Mendelson's System only works if an argument is expressed using only the

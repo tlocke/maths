@@ -442,16 +442,17 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_commutativity">2.12. Commutativity</a></li>
 <li><a href="#_associativity">2.13. Associativity</a></li>
 <li><a href="#_distributivity">2.14. Distributivity</a></li>
-<li><a href="#_de_morgan_s_laws">2.15. De Morgan&#8217;s Laws</a></li>
-<li><a href="#_more_rules_of_replacement">2.16. More rules of replacement</a></li>
-<li><a href="#_arguments">2.17. Arguments</a></li>
-<li><a href="#_conjunctive_normal_form_cnf">2.18. Conjunctive Normal Form (CNF)</a></li>
-<li><a href="#_propositional_resolution">2.19. Propositional Resolution</a></li>
-<li><a href="#_mendelson_s_axiomatic_system">2.20. Mendelson&#8217;s Axiomatic System</a></li>
-<li><a href="#_rules_of_inference">2.21. Rules Of Inference</a></li>
-<li><a href="#_precedence">2.22. Precedence</a></li>
-<li><a href="#_sentential_logic_summary">2.23. Sentential Logic: Summary</a></li>
-<li><a href="#_rosetta_stone">2.24. Rosetta Stone</a></li>
+<li><a href="#_idempotence">2.15. Idempotence</a></li>
+<li><a href="#_de_morgan_s_laws">2.16. De Morgan&#8217;s Laws</a></li>
+<li><a href="#_more_rules_of_replacement">2.17. More rules of replacement</a></li>
+<li><a href="#_arguments">2.18. Arguments</a></li>
+<li><a href="#_conjunctive_normal_form_cnf">2.19. Conjunctive Normal Form (CNF)</a></li>
+<li><a href="#_propositional_resolution">2.20. Propositional Resolution</a></li>
+<li><a href="#_mendelson_s_axiomatic_system">2.21. Mendelson&#8217;s Axiomatic System</a></li>
+<li><a href="#_rules_of_inference">2.22. Rules Of Inference</a></li>
+<li><a href="#_precedence">2.23. Precedence</a></li>
+<li><a href="#_sentential_logic_summary">2.24. Sentential Logic: Summary</a></li>
+<li><a href="#_rosetta_stone">2.25. Rosetta Stone</a></li>
 </ul>
 </li>
 <li><a href="#_bibliography">3. Bibliography</a></li>
@@ -4681,7 +4682,239 @@ tautology.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_de_morgan_s_laws">2.15. De Morgan&#8217;s Laws</h3>
+<h3 id="_idempotence">2.15. Idempotence</h3>
+<div id="img-benjaminpeirce" class="imageblock">
+<div class="content">
+<img src="benjaminpeirce.jpg" alt="Benjamin Peirce">
+</div>
+<div class="title">Figure 2. <a href="http://commons.wikimedia.org/wiki/File:BenjaminPeirce5.jpg#/media/File:BenjaminPeirce5.jpg">Benjamin Peirce</a> by <a href="http://www.pragmaticism.net/faq.htm">www.pragmaticism.net</a>. Licensed under Public Domain via <a href="http://commons.wikimedia.org/wiki/">Wikimedia Commons</a>.</div>
+</div>
+<div class="paragraph">
+<p>&#8216;Hey, Tony&#8217;, Benjamin Peirce said as he tapped me on the knee and leaned over
+confidentially, &#8216;there&#8217;s another property of binary connectives that I call
+<em>idempotence</em>&#8217;. The &#x2227; connective is idempotent because:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+(P &#x2227; P) &#x21D4; P
+</div>
+</div>
+<div class="paragraph">
+<p>and the &#x2228; connective is idempotent because:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+(P &#x2228; P) &#x21D4; P
+</div>
+</div>
+<div class="paragraph">
+<p>but &#x2192; is not idempotent. We can show that &#x2228; is idempotent by showing
+that:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+(P &#x2228; P) &#x2194; P
+</div>
+</div>
+<div class="paragraph">
+<p>is a tautology, as shown by truth table:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33%;">
+<col style="width: 33%;">
+<col style="width: 33%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">P</th>
+<th class="tableblock halign-left valign-top">(P &#x2228; P)</th>
+<th class="tableblock halign-left valign-top">(P &#x2228; P) &#x2194; P</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>and &#x2192; is not idempotent because:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+(P &#x2192; P) &#x2194; P
+</div>
+</div>
+<div class="paragraph">
+<p>is not a tautology, as shown by truth table:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33%;">
+<col style="width: 33%;">
+<col style="width: 33%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">P</th>
+<th class="tableblock halign-left valign-top">(P &#x2192; P)</th>
+<th class="tableblock halign-left valign-top">(P &#x2192; P) &#x2194; P</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Here&#8217;s a table showing whether each connective is idempotent or not.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Binary Connective</th>
+<th class="tableblock halign-left valign-top">Idempotent?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2227;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2228;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2192;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2194;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="_questions_15">Questions</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>For the following connectives, use a truth table to show whether or not the
+connective is idempotent.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>&#x2194;</p>
+</li>
+<li>
+<p>&#x2227;</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_answers_13">Answers</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>&#x2194; is idempotent because:<br>
+(P &#x2194; P) &#x2194; P<br>
+is a tautology, as shown by truth table:</p>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33%;">
+<col style="width: 33%;">
+<col style="width: 33%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">P</th>
+<th class="tableblock halign-left valign-top">(P &#x2194; P)</th>
+<th class="tableblock halign-left valign-top">(P &#x2194; P) &#x2194; P</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>&#x2227; is idempotent because:<br>
+(P &#x2227; P) &#x2194; P<br>
+is a tautology, as shown by truth table:</p>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33%;">
+<col style="width: 33%;">
+<col style="width: 33%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">P</th>
+<th class="tableblock halign-left valign-top">(P &#x2227; P)</th>
+<th class="tableblock halign-left valign-top">(P &#x2227; P) &#x2194; P</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_de_morgan_s_laws">2.16. De Morgan&#8217;s Laws</h3>
 <div class="paragraph">
 <p>I found in the Tower that Mathematicians are often good at music too. De Morgan
 was a flautist. I&#8217;ve got no musical ability. De Morgan&#8217;s Laws are a couple of
@@ -4704,7 +4937,7 @@ rules of replacement:</p>
 <p>Some say they&#8217;re obvious. Do you find them obvious? I don&#8217;t.</p>
 </div>
 <div class="sect3">
-<h4 id="_questions_15">Questions</h4>
+<h4 id="_questions_16">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4714,7 +4947,7 @@ rules of replacement:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_13">Answers</h4>
+<h4 id="_answers_14">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4882,7 +5115,7 @@ equivalent.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_more_rules_of_replacement">2.16. More rules of replacement</h3>
+<h3 id="_more_rules_of_replacement">2.17. More rules of replacement</h3>
 <div class="paragraph">
 <p>Here are a few more rules of replacement. I&#8217;m not sure what the definitive list
 of rules of replacement are. Or even if there is one. If you know, please tell
@@ -4927,7 +5160,7 @@ me. Thanks.</p>
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="_questions_16">Questions</h4>
+<h4 id="_questions_17">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4951,7 +5184,7 @@ pairs of formulas are equivalent.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_14">Answers</h4>
+<h4 id="_answers_15">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -5142,7 +5375,7 @@ is a tautology. The truth table:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_arguments">2.17. Arguments</h3>
+<h3 id="_arguments">2.18. Arguments</h3>
 <div class="paragraph">
 <p>The word &#8216;argument&#8217; makes me think of a bitter shouting match. To a logician
 it means something altogether more cerebral. A logical argument in English might
@@ -5413,7 +5646,7 @@ C: Lose our way.<br>
 <p>Shows that the formula is a tautology and so the argument is indeed valid.</p>
 </div>
 <div class="sect3">
-<h4 id="_questions_17">Questions</h4>
+<h4 id="_questions_18">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -5452,7 +5685,7 @@ and off. This light switch is not on. Therefore the light switch is off.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_15">Answers</h4>
+<h4 id="_answers_16">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -5946,7 +6179,7 @@ tautology, so the argument is valid.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_conjunctive_normal_form_cnf">2.18. Conjunctive Normal Form (CNF)</h3>
+<h3 id="_conjunctive_normal_form_cnf">2.19. Conjunctive Normal Form (CNF)</h3>
 <div class="paragraph">
 <p>When I got to this point in the Ivory Tower, John Alan Robinson took me by the
 scruff of the neck and said, &#8216;Look, you&#8217;ve just got to learn this, don&#8217;t ask
@@ -6065,7 +6298,16 @@ order:</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">(A &#x2228; (B &#x2228; C)) &#x21D4; ((A &#x2228; B) &#x2228; (A &#x2228; C))</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Step 4</p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">Step 4: Associativity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2227;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(A &#x2227; (B &#x2227; C)) &#x21D4; \((A &#x2227; B) &#x2227; C)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2228;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(A &#x2228; (B &#x2228; C)) &#x21D4; \((A &#x2228; B) &#x2228; C)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 5</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Rewrite in set notation</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">First rewrite the clauses eg.<br>
  <br>
@@ -6188,7 +6430,7 @@ step 2, Negations, where the application of De Morgan&#8217;s Laws, gives:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_questions_18">Questions</h4>
+<h4 id="_questions_19">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -6217,7 +6459,7 @@ step 2, Negations, where the application of De Morgan&#8217;s Laws, gives:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_16">Answers</h4>
+<h4 id="_answers_17">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -6282,10 +6524,10 @@ is associative]<br>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_propositional_resolution">2.19. Propositional Resolution</h3>
+<h3 id="_propositional_resolution">2.20. Propositional Resolution</h3>
 <div class="paragraph">
 <p>Writing out truth tables gets tedious, especially as the number of rows grows
-exponentially with the number of atomic formulas. The logicians have discovered
+quadratically with the number of atomic formulas. The logicians have discovered
 / invented other ways of showing if an argument is valid or not. One of these
 methods is <em>Propositional Resolution</em>.
 Mendelson&#8217;s System only works if an argument is expressed using only the
@@ -6294,7 +6536,7 @@ following rules of replacement:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_mendelson_s_axiomatic_system">2.20. Mendelson&#8217;s Axiomatic System</h3>
+<h3 id="_mendelson_s_axiomatic_system">2.21. Mendelson&#8217;s Axiomatic System</h3>
 <div class="paragraph">
 <p>Writing out truth tables gets tedious, especially as the number of rows grows
 exponentially with the number of atomic formulas. The logicians have discovered
@@ -6358,7 +6600,7 @@ that are known as <em>rules of inference</em>. One rule of inference is:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_rules_of_inference">2.21. Rules Of Inference</h3>
+<h3 id="_rules_of_inference">2.22. Rules Of Inference</h3>
 <div class="paragraph">
 <p>Writing out truth tables gets tedious, especially as the number of rows grows
 exponentially with the number of atomic formulas. The logicians have discovered
@@ -6568,7 +6810,7 @@ Q, (R &#x2227; P) &#x2227; (R &#x2227; Q) &#x2192; P &#x22A8; P
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="_questions_19">Questions</h4>
+<h4 id="_questions_20">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -6582,7 +6824,7 @@ valid by using rules of inference.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_17">Answers</h4>
+<h4 id="_answers_18">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7393,7 +7635,7 @@ P &#x2228; Q, &#x00AC;(P &#x2227; Q), &#x00AC;P &#x22A8; Q</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_precedence">2.22. Precedence</h3>
+<h3 id="_precedence">2.23. Precedence</h3>
 <div class="paragraph">
 <p>Let&#8217;s say we&#8217;ve got <em>three</em> atomic formulas P, Q and R. What&#8217;s the truth table for:</p>
 </div>
@@ -7574,7 +7816,7 @@ Rules say that anything in brackets gets evaluated first. So you&#8217;d write:<
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="_questions_20">Questions</h4>
+<h4 id="_questions_21">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7600,7 +7842,7 @@ Rules say that anything in brackets gets evaluated first. So you&#8217;d write:<
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_18">Answers</h4>
+<h4 id="_answers_19">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7943,7 +8185,7 @@ Rules say that anything in brackets gets evaluated first. So you&#8217;d write:<
 </div>
 </div>
 <div class="sect2">
-<h3 id="_sentential_logic_summary">2.23. Sentential Logic: Summary</h3>
+<h3 id="_sentential_logic_summary">2.24. Sentential Logic: Summary</h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -7979,19 +8221,19 @@ Rules say that anything in brackets gets evaluated first. So you&#8217;d write:<
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="_answers_19">2.23.1. Answers</h4>
+<h4 id="_answers_20">2.24.1. Answers</h4>
 <div class="paragraph">
 <p>Answers on their way&#8230;&#8203;</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_rosetta_stone">2.24. Rosetta Stone</h3>
+<h3 id="_rosetta_stone">2.25. Rosetta Stone</h3>
 <div id="img-rosetta" class="imageblock">
 <div class="content">
 <img src="rosetta.jpg" alt="Rosetta Stone">
 </div>
-<div class="title">Figure 2. <a href="http://commons.wikimedia.org/wiki/File:Rosetta_Stone.JPG#mediaviewer/File:Rosetta_Stone.JPG">Rosetta Stone</a> by <a href="http://commons.wikimedia.org/wiki/User:Biopics">Hans Hillewaert</a> - Own work. Licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a> via <a href="http://commons.wikimedia.org/wiki/">Wikimedia Commons</a>.</div>
+<div class="title">Figure 3. <a href="http://commons.wikimedia.org/wiki/File:Rosetta_Stone.JPG#mediaviewer/File:Rosetta_Stone.JPG">Rosetta Stone</a> by <a href="http://commons.wikimedia.org/wiki/User:Biopics">Hans Hillewaert</a> - Own work. Licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a> via <a href="http://commons.wikimedia.org/wiki/">Wikimedia Commons</a>.</div>
 </div>
 <div class="paragraph">
 <p>I&#8217;ve found that in maths, the same thing is often called different names by
@@ -8000,7 +8242,7 @@ the same area of maths. This point of this section is to help us understand
 what other authors are saying, in terms that we already understand.</p>
 </div>
 <div class="sect3">
-<h4 id="_sentential_logic_versus_propositional_logic">2.24.1. Sentential Logic versus Propositional Logic</h4>
+<h4 id="_sentential_logic_versus_propositional_logic">2.25.1. Sentential Logic versus Propositional Logic</h4>
 <div class="paragraph">
 <p>Some authors talk of Sentential Logic, and some talk of Propositional Logic.
 This is a philosophical difference. Say there are two statements that mean the
@@ -8010,7 +8252,7 @@ just one label.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_synonyms">2.24.2. Synonyms</h4>
+<h4 id="_synonyms">2.25.2. Synonyms</h4>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -8096,7 +8338,7 @@ systems of propositional logic)</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-03-23 20:46:16 GMT
+Last updated 2015-03-26 20:18:41 GMT
 </div>
 </div>
 </body>
