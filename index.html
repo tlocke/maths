@@ -447,12 +447,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_more_rules_of_replacement">2.17. More rules of replacement</a></li>
 <li><a href="#_arguments">2.18. Arguments</a></li>
 <li><a href="#_conjunctive_normal_form_cnf">2.19. Conjunctive Normal Form (CNF)</a></li>
-<li><a href="#_propositional_resolution">2.20. Propositional Resolution</a></li>
-<li><a href="#_mendelson_s_axiomatic_system">2.21. Mendelson&#8217;s Axiomatic System</a></li>
-<li><a href="#_rules_of_inference">2.22. Rules Of Inference</a></li>
-<li><a href="#_precedence">2.23. Precedence</a></li>
-<li><a href="#_sentential_logic_summary">2.24. Sentential Logic: Summary</a></li>
-<li><a href="#_rosetta_stone">2.25. Rosetta Stone</a></li>
+<li><a href="#_cnf_set_notation">2.20. CNF Set Notation</a></li>
+<li><a href="#_propositional_resolution">2.21. Propositional Resolution</a></li>
+<li><a href="#_mendelson_s_axiomatic_system">2.22. Mendelson&#8217;s Axiomatic System</a></li>
+<li><a href="#_rules_of_inference">2.23. Rules Of Inference</a></li>
+<li><a href="#_precedence">2.24. Precedence</a></li>
+<li><a href="#_sentential_logic_summary">2.25. Sentential Logic: Summary</a></li>
+<li><a href="#_rosetta_stone">2.26. Rosetta Stone</a></li>
 </ul>
 </li>
 <li><a href="#_bibliography">3. Bibliography</a></li>
@@ -6186,7 +6187,7 @@ scruff of the neck and said, &#8216;Look, you&#8217;ve just got to learn this, d
 why&#8217;. &#8216;Okay, I replied meekly&#8217;.</p>
 </div>
 <div class="paragraph">
-<p>A <em>literal</em> is an atomic formual or the &#x00AC; of an atomic formula. Eg:</p>
+<p>A <em>literal</em> is an atomic formula or the &#x00AC; of an atomic formula. Eg:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -6211,48 +6212,9 @@ P<br>
 <p>(((&#x00AC;P &#x2228; Q) &#x2227; P) &#x2227; ((P &#x2228; Q) &#x2228; &#x00AC;R))</p>
 </div>
 <div class="paragraph">
-<p>Then to make things clearer, they write the CNF in <em>set notation</em>. Here&#8217;s our
-example clauses in the left hand column, and the clauses in set notation in the
-right hand column:</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">CNF</th>
-<th class="tableblock halign-left valign-top">CNF set notation</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">(&#x00AC;P &#x2228; Q)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">{&#x00AC;P, Q}</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">P</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">{P}</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">((P &#x2228; Q) &#x2228; &#x00AC;R)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">{P, Q, &#x00AC;R}</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>Then in CNF set notation, our example formula is written:</p>
-</div>
-<div class="paragraph">
-<p>{&#x00AC;P, Q}, {P}, {P, Q, &#x00AC;R}</p>
-</div>
-<div class="paragraph">
-<p>Yes, I like this CNF set notation. Much clearer and easier to write. How do you
-find it? Anyway, John Alan Robinson went on to tell me the most remarkable
-thing, <em>any</em> formula can be written in CNF. You simply (!) use the following
-equivalences (which we&#8217;ve previously encountered), applying them in the given
-order:</p>
+<p>Anyway, John Alan Robinson went on to tell me the most remarkable thing, <em>any</em>
+formula can be written in CNF. You simply (!) use the following equivalences
+(which we&#8217;ve previously encountered), applying them in the given order:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -6300,26 +6262,11 @@ order:</p>
 <tr>
 <td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">Step 4: Associativity</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#x2227;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">(A &#x2227; (B &#x2227; C)) &#x21D4; \((A &#x2227; B) &#x2227; C)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(A &#x2227; (B &#x2227; C)) &#x21D4; ((A &#x2227; B) &#x2227; C)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#x2228;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">(A &#x2228; (B &#x2228; C)) &#x21D4; \((A &#x2228; B) &#x2228; C)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Step 5</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Rewrite in set notation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">First rewrite the clauses eg.<br>
- <br>
-  ((A &#x2228; B) &#x2228; &#x00AC;C)<br>
- <br>
-  becomes:<br>
- <br>
-  {A, B, &#x00AC;C}<br>
- <br>
-  then the formula is the list of clauses separated by commas, eg:<br>
- <br>
-  {A, B, &#x00AC;C}, {A, C}, {&#x00AC;A}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(A &#x2228; (B &#x2228; C)) &#x21D4; ((A &#x2228; B) &#x2228; C)</p></td>
 </tr>
 </tbody>
 </table>
@@ -6374,23 +6321,7 @@ step 2, Negations, where the application of De Morgan&#8217;s Laws, gives:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Hah! We&#8217;re now in CNF. Writing it in set notation is easy:</p>
-</div>
-<div class="exampleblock">
-<div class="content">
-{&#x00AC;A, B, &#x00AC;C, B}
-</div>
-</div>
-<div class="paragraph">
-<p>And look at that, B is in there twice. That second B is redundant so:</p>
-</div>
-<div class="exampleblock">
-<div class="content">
-{&#x00AC;A, B, &#x00AC;C}
-</div>
-</div>
-<div class="paragraph">
-<p>Okay, in the second example we&#8217;ve got to convert:</p>
+<p>Hah! We&#8217;re now in CNF. Okay, in the second example we&#8217;ve got to convert:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -6398,7 +6329,7 @@ step 2, Negations, where the application of De Morgan&#8217;s Laws, gives:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>into CNF set notation. Starting with step 1, Implications:</p>
+<p>into CNF. Starting with step 1, Implications:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -6422,19 +6353,14 @@ step 2, Negations, where the application of De Morgan&#8217;s Laws, gives:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>we&#8217;ve got it in CNF. Then rewriting in set notation gives:</p>
-</div>
-<div class="exampleblock">
-<div class="content">
-{&#x00AC;C , &#x00AC;A, B}, {&#x00AC;C, A, &#x00AC;B}
-</div>
+<p>we&#8217;ve got it in CNF.</p>
 </div>
 <div class="sect3">
 <h4 id="_questions_19">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Write the following formulas in CNF set notation:</p>
+<p>Write the following formulas in CNF notation:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -6471,8 +6397,7 @@ step 2, Negations, where the application of De Morgan&#8217;s Laws, gives:</p>
 <div class="paragraph">
 <p>(A &#x2228; (&#x00AC;&#x00AC;B &#x2228; A)) [Material Implication]<br>
 (A &#x2228; (B &#x2228; A)) [Double &#x00AC;]<br>
-((A &#x2228; B) &#x2228; A) [Associativity of &#x2228;]<br>
-{A, B} [Set notation]<br></p>
+((A &#x2228; B) &#x2228; A) [Associativity of &#x2228;]</p>
 </div>
 </li>
 <li>
@@ -6482,8 +6407,7 @@ step 2, Negations, where the application of De Morgan&#8217;s Laws, gives:</p>
 (&#x00AC;(&#x00AC;A &#x2228; B) &#x2228; C) [Material Implication]<br>
 ((&#x00AC;&#x00AC;A &#x2227; &#x00AC;B) &#x2228; C) [De Morgan&#8217;s Laws]<br>
 ((A &#x2227; &#x00AC;B) &#x2228; C) [Double &#x00AC;]<br>
-((C &#x2228; A) &#x2227; (C &#x2228; &#x00AC;B)) [Distribute &#x2228; over &#x2227;]<br>
-{C, A}, {C, &#x00AC;B} [Set notation]</p>
+((C &#x2228; A) &#x2227; (C &#x2228; &#x00AC;B)) [Distribute &#x2228; over &#x2227;]</p>
 </div>
 </li>
 <li>
@@ -6493,8 +6417,7 @@ step 2, Negations, where the application of De Morgan&#8217;s Laws, gives:</p>
 Equivalence]<br>
 (P &#x2228; ((&#x00AC;Q &#x2228; &#x00AC;P) &#x2227; (Q &#x2228; P))) [Double &#x00AC;]<br>
 ((P &#x2228; (&#x00AC;Q &#x2228; &#x00AC;P)) &#x2227; (P &#x2228; (Q &#x2228; P))) [Distribute
-&#x2228; over &#x2227;]<br>
-{P, &#x00AC;Q, &#x00AC;P}, {P, Q} [Set notation]</p>
+&#x2228; over &#x2227;]</p>
 </div>
 </li>
 <li>
@@ -6505,16 +6428,12 @@ Equivalence]<br>
 (((A &#x2228; A) &#x2227; (B &#x2228; A)) &#x2227; ((A &#x2228; C) &#x2227; (B &#x2228; C))) [
 Distribute &#x2228; over &#x2227;]<br>
 ((((A &#x2228; A) &#x2227; (B &#x2228; A)) &#x2227; (A &#x2228; C)) &#x2227; (B &#x2228; C)) [&#x2227;
-is associative]<br>
-{A}, {B, A}, {A, C}, {B, C} [Set notation]</p>
+is associative]</p>
 </div>
 </li>
 <li>
-<p>((A &#x2227; B) &#x2227; (A &#x2227; C))</p>
-<div class="paragraph">
-<p>(((A &#x2227; B) &#x2227; A) &#x2227; C) [&#x2227; is associative]<br>
-{A}, {B}, {C} [Set notation]</p>
-</div>
+<p>A &#x2227; B) &#x2227; (A &#x2227; C<br>
+(((A &#x2227; B) &#x2227; A) &#x2227; C) [&#x2227; is associative]</p>
 </li>
 </ol>
 </div>
@@ -6524,7 +6443,342 @@ is associative]<br>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_propositional_resolution">2.20. Propositional Resolution</h3>
+<h3 id="_cnf_set_notation">2.20. CNF Set Notation</h3>
+<div class="paragraph">
+<p>As we&#8217;ve seen, the &#x2228; connective is commutative and associative. Dr Robinson
+told me that this means that for any CNF clause it doesn&#8217;t matter how you
+arrange the brackets and literals, each arrangement will be equivalent. Let&#8217;s
+try that out:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+(A &#x2228; B)<br>
+(B &#x2228; A)
+</div>
+</div>
+<div class="paragraph">
+<p>well yes, that&#8217;s easy because since &#x2228; is commutative:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+(A &#x2228; B) &#x21D4; (B &#x2228; A)
+</div>
+</div>
+<div class="paragraph">
+<p>Here are all the different ways of arranging three literals:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+((A &#x2228; B) &#x2228; C)<br>
+((A &#x2228; C) &#x2228; B)<br>
+((B &#x2228; A) &#x2228; C)<br>
+((B &#x2228; C) &#x2228; A)<br>
+((C &#x2228; A) &#x2228; B)<br>
+((C &#x2228; B) &#x2228; A)<br>
+(A &#x2228; (B &#x2228; C))<br>
+(A &#x2228; (C &#x2228; B))<br>
+(B &#x2228; (A &#x2228; C))<br>
+(B &#x2228; (C &#x2228; A))<br>
+(C &#x2228; (A &#x2228; B))<br>
+(C &#x2228; (B &#x2228; A))
+</div>
+</div>
+<div class="paragraph">
+<p>I&#8217;ll try and transform the second clause to be the same as the first:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+((A &#x2228; C) &#x2228; B)<br>
+(A &#x2228; (C &#x2228; B)) [associativity]<br>
+(A &#x2228; (B &#x2228; C)) [commutativity]<br>
+((A &#x2228; B) &#x2228; C) [associativity]<br>
+</div>
+</div>
+<div class="paragraph">
+<p>and transforming the third clause to be the same as the first:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+((B &#x2228; A) &#x2228; C)<br>
+((A &#x2228; B) &#x2228; C) [commutativity]
+</div>
+</div>
+<div class="paragraph">
+<p>Okay, so a collection of literals in any order is enough to specify a clause.
+&#8216;But wait&#8217;, cries Robinson, &#8216;there&#8217;s more! Since &#x2227; is commutative and
+associative, all ways of arranging the clauses and brackets of a CNF formula
+are equivalent&#8217;. Well let&#8217;s try that out with two clauses A and B:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+(A &#x2227; B)<br>
+(B &#x2227; A)
+</div>
+</div>
+<div class="paragraph">
+<p>since &#x2227; is commutative:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+(A &#x2227; B) &#x21D4; (B &#x2227; A)
+</div>
+</div>
+<div class="paragraph">
+<p>Here are all the different ways of arranging three clauses:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+((A &#x2227; B) &#x2227; C)<br>
+((A &#x2227; C) &#x2227; B)<br>
+((B &#x2227; A) &#x2227; C)<br>
+((B &#x2227; C) &#x2227; A)<br>
+((C &#x2227; A) &#x2227; B)<br>
+((C &#x2227; B) &#x2227; A)<br>
+(A &#x2227; (B &#x2227; C))<br>
+(A &#x2227; (C &#x2227; B))<br>
+(B &#x2227; (A &#x2227; C))<br>
+(B &#x2227; (C &#x2227; A))<br>
+(C &#x2227; (A &#x2227; B))<br>
+(C &#x2227; (B &#x2227; A))
+</div>
+</div>
+<div class="paragraph">
+<p>I&#8217;ll try and transform the second formula to be the same as the first:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+((A &#x2227; C) &#x2227; B)<br>
+(A &#x2227; (C &#x2227; B)) [associativity]<br>
+(A &#x2227; (B &#x2227; C)) [commutativity]<br>
+((A &#x2227; B) &#x2227; C) [associativity]<br>
+</div>
+</div>
+<div class="paragraph">
+<p>and then transform the third formula to be the same as the first:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+((B &#x2227; A) &#x2227; C)<br>
+((A &#x2227; B) &#x2227; C) [commutativity]
+</div>
+</div>
+<div class="paragraph">
+<p>With that under my belt, Robinson exclaimed, &#8216;Idempotence! We can ignore any
+repeated literals in a CNF clause or repeated clauses in a CNF formula&#8217;.
+Robinson was used to quicker minds than mine, so I asked him to elaborate. If
+we&#8217;ve got a clause:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+(A &#x2228; A)
+</div>
+</div>
+<div class="paragraph">
+<p>them since &#x2228; is idempotent we can replace it with:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+A
+</div>
+</div>
+<div class="paragraph">
+<p>and with a more complicated example:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+((A &#x2228; B) &#x2228; A)
+</div>
+</div>
+<div class="paragraph">
+<p>since we know that we can put the brackets and literals anywhere we can write:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+((A &#x2228; A) &#x2228; B)<br>
+(A &#x2228; B) [idempotence]
+</div>
+</div>
+<div class="paragraph">
+<p>Likewise, if we&#8217;ve got a CNF formula:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+(A &#x2227; A)
+</div>
+</div>
+<div class="paragraph">
+<p>them since &#x2227; is idempotent we can replace it with:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+A
+</div>
+</div>
+<div class="paragraph">
+<p>and with a more complicated example:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+((A &#x2227; B) &#x2227; A)
+</div>
+</div>
+<div class="paragraph">
+<p>since we know that we can put the brackets and literals anywhere we can write:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+((A &#x2227; A) &#x2227; B)<br>
+(A &#x2227; B) [idempotence]
+</div>
+</div>
+<div class="paragraph">
+<p>&#8216;Do keep up Locke! I now want to introduce the idea of a <em>set</em>, which is a
+collection of items where the order doesn&#8217;t matter and no item is repeated. A
+CNF clause can be written as a set of literals, and a CNF formual can be written
+as a set of clauses&#8217;.</p>
+</div>
+<div class="paragraph">
+<p>Here are some example clauses in the left hand column, and the clauses in set
+notation in the right hand column:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">CNF Clause</th>
+<th class="tableblock halign-left valign-top">Set Notation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(&#x00AC;P &#x2228; Q)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{&#x00AC;P, Q}</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">P</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{P}</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">((P &#x2228; Q) &#x2228; &#x00AC;R)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{P, Q, &#x00AC;R}</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>So an example formula:</p>
+</div>
+<div class="paragraph">
+<p>(((&#x00AC;P &#x2228; Q) &#x2227; P) &#x2227; ((P &#x2228; Q) &#x2228; &#x00AC;R))</p>
+</div>
+<div class="paragraph">
+<p>is written in CNF set notation as:</p>
+</div>
+<div class="paragraph">
+<p>{{&#x00AC;P, Q}, {P}, {P, Q, &#x00AC;R}}</p>
+</div>
+<div class="paragraph">
+<p>Yes, I like this CNF set notation. Much clearer and easier to write. How do you
+find it? Here&#8217;s another example:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+((&#x00AC;A &#x2228; B) &#x2228; &#x00AC;C)
+</div>
+</div>
+<div class="paragraph">
+<p>which written in set notation is:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+{{&#x00AC;A, B, &#x00AC;C}}
+</div>
+</div>
+<div class="paragraph">
+<p>Okay, in the second example we&#8217;ve got to convert:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+(((&#x00AC;C &#x2228; &#x00AC;A) &#x2228; B) &#x2227; ((&#x00AC;C &#x2228; A) &#x2228; &#x00AC;B))
+</div>
+</div>
+<div class="paragraph">
+<p>into set notation which gives:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+{{&#x00AC;C, &#x00AC;A, B}, {&#x00AC;C, A, &#x00AC;B}}
+</div>
+</div>
+<div class="paragraph">
+<p>So to go from CNF to CNF set notation:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Remove repeated literals in clauses (&#x2228; associativity, commutativity and
+idempotence)</p>
+</li>
+<li>
+<p>Remove repeated clauses in the formula (&#x2227; associativity, commutativity
+and idempotence)</p>
+</li>
+<li>
+<p>Rewrite clauses as a comma separated list of literals surrounded by braces.</p>
+</li>
+<li>
+<p>Rewrite formula as comma separated list of clauses surrounded by braces.</p>
+</li>
+</ol>
+</div>
+<div class="sect3">
+<h4 id="_questions_20">Questions</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Write the answers to the CNF section in CNF set notation:</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_answers_18">Answers</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>C &#x2228; A) &#x2227; (C &#x2228; &#x00AC;B<br>
+{{C, A}, {C, &#x00AC;B}}</p>
+</li>
+<li>
+<p>((P &#x2228; (&#x00AC;Q &#x2228; &#x00AC;P)) &#x2227; (P &#x2228; (Q &#x2228; P)))<br>
+((P &#x2228; (&#x00AC;Q &#x2228; &#x00AC;P)) &#x2227; (P &#x2228; Q)) [&#x2228; associativity,
+commutativity and idempotence]<br>
+{{P, &#x00AC;Q, &#x00AC;P}, {P, Q}} [set notation]</p>
+</li>
+<li>
+<p>((((A &#x2228; A) &#x2227; (B &#x2228; A)) &#x2227; (A &#x2228; C)) &#x2227; (B &#x2228; C))<br>
+{{A}, {B, A}, {A, C}, {B, C}} [set notation]</p>
+</li>
+<li>
+<p>(((A &#x2227; B) &#x2227; A) &#x2227; C)<br>
+((B &#x2227; A) &#x2227; C) [&#x2227; associativity, commutativity and idempotence]<br>
+{{B}, {A}, {C}} [Set notation]</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_propositional_resolution">2.21. Propositional Resolution</h3>
 <div class="paragraph">
 <p>Writing out truth tables gets tedious, especially as the number of rows grows
 quadratically with the number of atomic formulas. The logicians have discovered
@@ -6536,7 +6790,7 @@ following rules of replacement:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_mendelson_s_axiomatic_system">2.21. Mendelson&#8217;s Axiomatic System</h3>
+<h3 id="_mendelson_s_axiomatic_system">2.22. Mendelson&#8217;s Axiomatic System</h3>
 <div class="paragraph">
 <p>Writing out truth tables gets tedious, especially as the number of rows grows
 exponentially with the number of atomic formulas. The logicians have discovered
@@ -6600,7 +6854,7 @@ that are known as <em>rules of inference</em>. One rule of inference is:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_rules_of_inference">2.22. Rules Of Inference</h3>
+<h3 id="_rules_of_inference">2.23. Rules Of Inference</h3>
 <div class="paragraph">
 <p>Writing out truth tables gets tedious, especially as the number of rows grows
 exponentially with the number of atomic formulas. The logicians have discovered
@@ -6810,7 +7064,7 @@ Q, (R &#x2227; P) &#x2227; (R &#x2227; Q) &#x2192; P &#x22A8; P
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="_questions_20">Questions</h4>
+<h4 id="_questions_21">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -6824,7 +7078,7 @@ valid by using rules of inference.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_18">Answers</h4>
+<h4 id="_answers_19">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7635,7 +7889,7 @@ P &#x2228; Q, &#x00AC;(P &#x2227; Q), &#x00AC;P &#x22A8; Q</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_precedence">2.23. Precedence</h3>
+<h3 id="_precedence">2.24. Precedence</h3>
 <div class="paragraph">
 <p>Let&#8217;s say we&#8217;ve got <em>three</em> atomic formulas P, Q and R. What&#8217;s the truth table for:</p>
 </div>
@@ -7816,7 +8070,7 @@ Rules say that anything in brackets gets evaluated first. So you&#8217;d write:<
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="_questions_21">Questions</h4>
+<h4 id="_questions_22">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7842,7 +8096,7 @@ Rules say that anything in brackets gets evaluated first. So you&#8217;d write:<
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_19">Answers</h4>
+<h4 id="_answers_20">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -8185,7 +8439,7 @@ Rules say that anything in brackets gets evaluated first. So you&#8217;d write:<
 </div>
 </div>
 <div class="sect2">
-<h3 id="_sentential_logic_summary">2.24. Sentential Logic: Summary</h3>
+<h3 id="_sentential_logic_summary">2.25. Sentential Logic: Summary</h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -8221,14 +8475,14 @@ Rules say that anything in brackets gets evaluated first. So you&#8217;d write:<
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="_answers_20">2.24.1. Answers</h4>
+<h4 id="_answers_21">2.25.1. Answers</h4>
 <div class="paragraph">
 <p>Answers on their way&#8230;&#8203;</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_rosetta_stone">2.25. Rosetta Stone</h3>
+<h3 id="_rosetta_stone">2.26. Rosetta Stone</h3>
 <div id="img-rosetta" class="imageblock">
 <div class="content">
 <img src="rosetta.jpg" alt="Rosetta Stone">
@@ -8242,7 +8496,7 @@ the same area of maths. This point of this section is to help us understand
 what other authors are saying, in terms that we already understand.</p>
 </div>
 <div class="sect3">
-<h4 id="_sentential_logic_versus_propositional_logic">2.25.1. Sentential Logic versus Propositional Logic</h4>
+<h4 id="_sentential_logic_versus_propositional_logic">2.26.1. Sentential Logic versus Propositional Logic</h4>
 <div class="paragraph">
 <p>Some authors talk of Sentential Logic, and some talk of Propositional Logic.
 This is a philosophical difference. Say there are two statements that mean the
@@ -8252,7 +8506,7 @@ just one label.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_synonyms">2.25.2. Synonyms</h4>
+<h4 id="_synonyms">2.26.2. Synonyms</h4>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -8324,8 +8578,8 @@ book first got me going on propositional logic.)</p>
 on Wikipedia continually useful).</p>
 </li>
 <li>
-<p><a href="http://logic.stanford.edu/classes/cs157/2010/notes/chap02.html" class="bare">http://logic.stanford.edu/classes/cs157/2010/notes/chap02.html</a> (excellent
-notes).</p>
+<p><a href="http://logic.stanford.edu/classes/cs157/2010/notes/chap02.html" class="bare">http://logic.stanford.edu/classes/cs157/2010/notes/chap02.html</a> (Excellent
+notes, but sadly no longer available).</p>
 </li>
 <li>
 <p><a href="https://www.trinity.edu/cbrown/logic/alter.pdf" class="bare">https://www.trinity.edu/cbrown/logic/alter.pdf</a> (Shows the different
@@ -8338,7 +8592,7 @@ systems of propositional logic)</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-03-26 20:18:41 GMT
+Last updated 2015-03-29 13:00:28 BST
 </div>
 </div>
 </body>

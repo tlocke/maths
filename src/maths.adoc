@@ -1913,7 +1913,7 @@ When I got to this point in the Ivory Tower, John Alan Robinson took me by the
 scruff of the neck and said, '`Look, you've just got to learn this, don't ask
 why`'. '`Okay, I replied meekly`'.
 
-A _literal_ is an atomic formual or the {not} of an atomic formula. Eg:
+A _literal_ is an atomic formula or the {not} of an atomic formula. Eg:
 
 [example]
 P +
@@ -1930,27 +1930,9 @@ A formula in CNF is a number of clauses joined by the {and} connective. Eg:
 
 (\(({not}P {or} Q) {and} P) {and} ((P {or} Q) {or} {not}R))
 
-Then to make things clearer, they write the CNF in _set notation_. Here's our
-example clauses in the left hand column, and the clauses in set notation in the
-right hand column:
-
-|===
-| CNF                       | CNF set notation
-
-| ({not}P {or} Q)           | {{not}P, Q}
-| P                         | \{P}
-| ((P {or} Q) {or} {not}R)  | {P, Q, {not}R}
-|===
-
-Then in CNF set notation, our example formula is written:
-
-{{not}P, Q}, \{P}, {P, Q, {not}R}
-
-Yes, I like this CNF set notation. Much clearer and easier to write. How do you
-find it? Anyway, John Alan Robinson went on to tell me the most remarkable
-thing, _any_ formula can be written in CNF. You simply (!) use the following
-equivalences (which we've previously encountered), applying them in the given
-order:
+Anyway, John Alan Robinson went on to tell me the most remarkable thing, _any_
+formula can be written in CNF. You simply (!) use the following equivalences
+(which we've previously encountered), applying them in the given order:
 
 [cols="3"]
 |===
@@ -1984,24 +1966,10 @@ order:
 
 .2+| Step 4: Associativity
 | {and}
-| (A {and} (B {and} C)) {equiv} \((A {and} B) {and} C)
+| (A {and} (B {and} C)) {equiv} ((A {and} B) {and} C)
 
 | {or}
-| (A {or} (B {or} C)) {equiv} \((A {or} B) {or} C)
-
-| Step 5
-| Rewrite in set notation
-| First rewrite the clauses eg. +
-  +
-  ((A {or} B) {or} {not}C) +
-  +
-  becomes: +
-  +
-  {A, B, {not}C} +
-  +
-  then the formula is the list of clauses separated by commas, eg: +
-  +
-  {A, B, {not}C}, {A, C}, {{not}A}
+| (A {or} (B {or} C)) {equiv} ((A {or} B) {or} C)
 |===
 
 Here's are a couple of examples that I was shown. We start out with an example
@@ -2036,22 +2004,12 @@ We're so nearly in CNF, but not quite. Since {or} is associative:
 [example]
 ((({not}A {or} B) {or} {not}C) {or} B)
 
-Hah! We're now in CNF. Writing it in set notation is easy:
-
-[example]
-{{not}A, B, {not}C, B}
-
-And look at that, B is in there twice. That second B is redundant so:
-
-[example]
-{{not}A, B, {not}C}
-
-Okay, in the second example we've got to convert:
+Hah! We're now in CNF. Okay, in the second example we've got to convert:
 
 [example]
 ((A {bicond} B) {or} {not}C)
 
-into CNF set notation. Starting with step 1, Implications:
+into CNF. Starting with step 1, Implications:
 
 [example]
 ((({not}A {or} B) {and} (A {or} {not}B)) {or} {not}C)
@@ -2066,16 +2024,13 @@ using the associativity of {or}:
 [example]
 (\(({not}C {or} {not}A) {or} B) {and} (({not}C {or} A) {or} {not}B))
 
-we've got it in CNF. Then rewriting in set notation gives:
-
-[example]
-{{not}C , {not}A, B}, {{not}C, A, {not}B}
+we've got it in CNF.
 
 
 :numbered!:
 ==== Questions
 
-. Write the following formulas in CNF set notation:
+. Write the following formulas in CNF notation:
 .. (A {or} ({not}B {implies} A))
 .. ((A {implies} B) {implies} C)
 .. (P {or} (Q {bicond} {not}P))
@@ -2090,24 +2045,21 @@ we've got it in CNF. Then rewriting in set notation gives:
 +
 (A {or} ({not}{not}B {or} A)) [Material Implication] +
 (A {or} (B {or} A)) [Double {not}] +
-((A {or} B) {or} A) [Associativity of {or}] +
-{A, B} [Set notation] +
+((A {or} B) {or} A) [Associativity of {or}]
 .. ((A {implies} B) {implies} C)
 +
 \(({not}A {or} B) {implies} C) [Material Implication] +
 ({not}({not}A {or} B) {or} C) [Material Implication] +
 (({not}{not}A {and} {not}B) {or} C) [De Morgan's Laws] +
 ((A {and} {not}B) {or} C) [Double {not}] +
-((C {or} A) {and} (C {or} {not}B)) [Distribute {or} over {and}] +
-{C, A}, {C, {not}B} [Set notation]
+((C {or} A) {and} (C {or} {not}B)) [Distribute {or} over {and}]
 .. (P {or} (Q {bicond} {not}P))
 +
 (P {or} \(({not}Q {or} {not}P) {and} (Q {or} {not}{not}P))) [Material
 Equivalence] +
 (P {or} \(({not}Q {or} {not}P) {and} (Q {or} P))) [Double {not}] +
 \((P {or} ({not}Q {or} {not}P)) {and} (P {or} (Q {or} P))) [Distribute
-{or} over {and}] +
-{P, {not}Q, {not}P}, {P, Q} [Set notation]
+{or} over {and}]
 .. \((A {and} B) {or} (A {and} C))
 +
 (\((A {and} B) {or} A) {and} ((A {and} B) {or} C)) [Distribute {or} over
@@ -2115,12 +2067,222 @@ Equivalence] +
 (\((A {or} A) {and} (B {or} A)) {and} \((A {or} C) {and} (B {or} C))) [
 Distribute {or} over {and}] +
 (\(((A {or} A) {and} (B {or} A)) {and} (A {or} C)) {and} (B {or} C)) [{and}
-is associative] +
-\{A}, {B, A}, {A, C}, {B, C} [Set notation]
-.. \((A {and} B) {and} (A {and} C))
-+
-(((A {and} B) {and} A) {and} C) [{and} is associative] +
-\{A}, \{B}, \{C} [Set notation]
+is associative]
+.. ((A {and} B) {and} (A {and} C)) +
+   (((A {and} B) {and} A) {and} C) [{and} is associative]
+
+
+:numbered:
+=== CNF Set Notation
+
+As we've seen, the {or} connective is commutative and associative. Dr Robinson
+told me that this means that for any CNF clause it doesn't matter how you
+arrange the brackets and literals, each arrangement will be equivalent. Let's
+try that out:
+
+[example]
+(A {or} B) +
+(B {or} A)
+
+well yes, that's easy because since {or} is commutative:
+
+[example]
+(A {or} B) {equiv} (B {or} A)
+
+Here are all the different ways of arranging three literals:
+
+[example]
+\((A {or} B) {or} C) +
+((A {or} C) {or} B) +
+((B {or} A) {or} C) +
+((B {or} C) {or} A) +
+((C {or} A) {or} B) +
+((C {or} B) {or} A) +
+(A {or} (B {or} C)) +
+(A {or} (C {or} B)) +
+(B {or} (A {or} C)) +
+(B {or} (C {or} A)) +
+(C {or} (A {or} B)) +
+(C {or} (B {or} A))
+
+I'll try and transform the second clause to be the same as the first:
+
+[example]
+\((A {or} C) {or} B) +
+(A {or} (C {or} B)) [associativity] +
+(A {or} (B {or} C)) [commutativity] +
+((A {or} B) {or} C) [associativity] +
+
+and transforming the third clause to be the same as the first:
+
+[example]
+((B {or} A) {or} C) +
+((A {or} B) {or} C) [commutativity]
+
+Okay, so a collection of literals in any order is enough to specify a clause.
+'`But wait`', cries Robinson, '`there's more! Since {and} is commutative and
+associative, all ways of arranging the clauses and brackets of a CNF formula
+are equivalent`'. Well let's try that out with two clauses A and B:
+
+[example]
+(A {and} B) +
+(B {and} A)
+
+since {and} is commutative:
+
+[example]
+(A {and} B) {equiv} (B {and} A)
+
+Here are all the different ways of arranging three clauses:
+
+[example]
+\((A {and} B) {and} C) +
+((A {and} C) {and} B) +
+((B {and} A) {and} C) +
+((B {and} C) {and} A) +
+((C {and} A) {and} B) +
+((C {and} B) {and} A) +
+(A {and} (B {and} C)) +
+(A {and} (C {and} B)) +
+(B {and} (A {and} C)) +
+(B {and} (C {and} A)) +
+(C {and} (A {and} B)) +
+(C {and} (B {and} A))
+
+I'll try and transform the second formula to be the same as the first:
+
+[example]
+\((A {and} C) {and} B) +
+(A {and} (C {and} B)) [associativity] +
+(A {and} (B {and} C)) [commutativity] +
+((A {and} B) {and} C) [associativity] +
+
+and then transform the third formula to be the same as the first:
+
+[example]
+((B {and} A) {and} C) +
+((A {and} B) {and} C) [commutativity]
+
+With that under my belt, Robinson exclaimed, '`Idempotence! We can ignore any
+repeated literals in a CNF clause or repeated clauses in a CNF formula`'.
+Robinson was used to quicker minds than mine, so I asked him to elaborate. If
+we've got a clause:
+
+[example]
+(A {or} A)
+
+them since {or} is idempotent we can replace it with:
+
+[example]
+A
+
+and with a more complicated example:
+
+[example]
+((A {or} B) {or} A)
+
+since we know that we can put the brackets and literals anywhere we can write:
+
+[example]
+((A {or} A) {or} B) +
+(A {or} B) [idempotence]
+
+Likewise, if we've got a CNF formula:
+
+[example]
+(A {and} A)
+
+them since {and} is idempotent we can replace it with:
+
+[example]
+A
+
+and with a more complicated example:
+
+[example]
+((A {and} B) {and} A)
+
+since we know that we can put the brackets and literals anywhere we can write:
+
+[example]
+((A {and} A) {and} B) +
+(A {and} B) [idempotence]
+
+'`Do keep up Locke! I now want to introduce the idea of a _set_, which is a
+collection of items where the order doesn't matter and no item is repeated. A
+CNF clause can be written as a set of literals, and a CNF formual can be written
+as a set of clauses`'. 
+
+Here are some example clauses in the left hand column, and the clauses in set
+notation in the right hand column:
+
+|===
+| CNF Clause                | Set Notation
+
+| ({not}P {or} Q)           | {{not}P, Q}
+| P                         | \{P}
+| ((P {or} Q) {or} {not}R)  | {P, Q, {not}R}
+|===
+
+So an example formula:
+
+(\(({not}P {or} Q) {and} P) {and} ((P {or} Q) {or} {not}R))
+
+is written in CNF set notation as:
+
+{{{not}P, Q}, \{P}, {P, Q, {not}R}}
+
+Yes, I like this CNF set notation. Much clearer and easier to write. How do you
+find it? Here's another example:
+
+[example]
+(({not}A {or} B) {or} {not}C)
+
+which written in set notation is:
+
+[example]
+{{{not}A, B, {not}C}}
+
+Okay, in the second example we've got to convert:
+
+[example]
+(\(({not}C {or} {not}A) {or} B) {and} (({not}C {or} A) {or} {not}B))
+
+into set notation which gives:
+
+[example]
+{{{not}C, {not}A, B}, {{not}C, A, {not}B}}
+
+So to go from CNF to CNF set notation:
+
+. Remove repeated literals in clauses ({or} associativity, commutativity and
+   idempotence)
+. Remove repeated clauses in the formula ({and} associativity, commutativity
+   and idempotence)
+. Rewrite clauses as a comma separated list of literals surrounded by braces.
+. Rewrite formula as comma separated list of clauses surrounded by braces.
+
+
+:numbered!:
+==== Questions
+
+. Write the answers to the CNF section in CNF set notation:
+
+
+==== Answers
+
+. {empty}
+.. ((C {or} A) {and} (C {or} {not}B)) +
+   {{C, A}, {C, {not}B}}
+.. \((P {or} ({not}Q {or} {not}P)) {and} (P {or} (Q {or} P))) +
+   \((P {or} ({not}Q {or} {not}P)) {and} (P {or} Q)) [{or} associativity,
+   commutativity and idempotence] +
+   {{P, {not}Q, {not}P}, {P, Q}} [set notation]
+.. (\(((A {or} A) {and} (B {or} A)) {and} (A {or} C)) {and} (B {or} C)) +
+   {\{A}, {B, A}, {A, C}, {B, C}} [set notation]
+.. (((A {and} B) {and} A) {and} C) +
+   ((B {and} A) {and} C) [{and} associativity, commutativity and idempotence] +
+   {\{B}, \{A}, \{C}} [Set notation]
 
 
 :numbered:
@@ -2650,7 +2812,7 @@ just one label.
   book first got me going on propositional logic.)
 * http://en.wikipedia.org/wiki/Propositional_calculus (This and related pages
   on Wikipedia continually useful).
-* http://logic.stanford.edu/classes/cs157/2010/notes/chap02.html (excellent
-  notes).
+* http://logic.stanford.edu/classes/cs157/2010/notes/chap02.html (Excellent
+  notes, but sadly no longer available).
 * https://www.trinity.edu/cbrown/logic/alter.pdf (Shows the different
   systems of propositional logic)
