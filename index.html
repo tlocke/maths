@@ -435,7 +435,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_brackets">2.5. Brackets</a></li>
 <li><a href="#_truth_tables">2.6. Truth Tables</a></li>
 <li><a href="#_not">2.7. Not</a></li>
-<li><a href="#_tautology_and_contradiction">2.8. Tautology And Contradiction</a></li>
+<li><a href="#_valid_formula">2.8. Valid Formula</a></li>
 <li><a href="#_implies">2.9. Implies</a></li>
 <li><a href="#_biconditional">2.10. Biconditional</a></li>
 <li><a href="#_equivalence">2.11. Equivalence</a></li>
@@ -1800,7 +1800,7 @@ acted on two formulas, and so they&#8217;re known as <em>binary</em> connectives
 </div>
 </div>
 <div class="sect2">
-<h3 id="_tautology_and_contradiction">2.8. Tautology And Contradiction</h3>
+<h3 id="_valid_formula">2.8. Valid Formula</h3>
 <div class="paragraph">
 <p>The formula:</p>
 </div>
@@ -1840,9 +1840,8 @@ acted on two formulas, and so they&#8217;re known as <em>binary</em> connectives
 </table>
 <div class="paragraph">
 <p>which shows that  whatever the value of P, the formula is always true. In the
-Tower they call any formula that&#8217;s always true a <em>tautology</em>. Also, any
-formula that&#8217;s always false they call a <em>contradiction</em>. An example of a
-contradiction is:</p>
+Tower a formula that is always true is called a <em>valid formula</em>. An example of a
+formula that is not valid is:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -1879,31 +1878,30 @@ contradiction is:</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>So since the formula is always false, the formula is a contradiction.</p>
+<p>since the formula is always false.</p>
 </div>
 <div class="sect3">
 <h4 id="_questions_8">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Say whether each of the following formulas is a tautology, a contradiction
-or neither:</p>
+<p>Say whether each of the following formulas is valid or not:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>(\(P &#x2227; Q) &#x2227; &#x00AC;(P &#x2227; Q))</p>
+<p>((P &#x2227; Q) &#x2227; &#x00AC;(P &#x2227; Q))</p>
 </li>
 <li>
-<p>(\(P &#x2228; Q) &#x2228; &#x00AC;P)</p>
+<p>((P &#x2228; Q) &#x2228; &#x00AC;P)</p>
 </li>
 <li>
-<p>(\(P &#x2228; Q) &#x2227; &#x00AC; P)</p>
+<p>((P &#x2228; Q) &#x2227; &#x00AC; P)</p>
 </li>
 <li>
-<p>(\(&#x00AC;P &#x2227; &#x00AC;Q) &#x2227; &#x00AC;(&#x00AC;P &#x2227; &#x00AC;Q))</p>
+<p>((&#x00AC;P &#x2227; &#x00AC;Q) &#x2227; &#x00AC;(&#x00AC;P &#x2227; &#x00AC;Q))</p>
 </li>
 <li>
-<p>(\(&#x00AC;P &#x2227; (Q &#x2228; &#x00AC;P)) &#x2227; R)</p>
+<p>((&#x00AC;P &#x2227; (Q &#x2228; &#x00AC;P)) &#x2227; R)</p>
 </li>
 </ol>
 </div>
@@ -1921,12 +1919,6 @@ or neither:</p>
 <ol class="loweralpha" type="a">
 <li>
 <p></p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 20%;">
@@ -1976,15 +1968,11 @@ or neither:</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>A contradiction.</p>
+<p>so not valid.</p>
 </div>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a" start="2">
+</li>
 <li>
 <p></p>
-</li>
-</ol>
-</div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 20%;">
@@ -2034,15 +2022,11 @@ or neither:</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>A tautology.</p>
+<p>so the formula is valid.</p>
 </div>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a" start="3">
+</li>
 <li>
 <p></p>
-</li>
-</ol>
-</div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 20%;">
@@ -2092,15 +2076,11 @@ or neither:</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>Neither.</p>
+<p>so the formula is not valid.</p>
 </div>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a" start="4">
+</li>
 <li>
 <p></p>
-</li>
-</ol>
-</div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 16%;">
@@ -2156,15 +2136,11 @@ or neither:</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>Neither.</p>
+<p>so the formula is not valid.</p>
 </div>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a" start="5">
+</li>
 <li>
 <p></p>
-</li>
-</ol>
-</div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 14%;">
@@ -2262,7 +2238,13 @@ or neither:</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>Neither.</p>
+<p>so not valid.</p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -2942,8 +2924,7 @@ applied.</p>
 <h3 id="_equivalence">2.11. Equivalence</h3>
 <div class="paragraph">
 <p>If two formulas are <em>equivalent</em>, then the formula formed by joining them with
-the &#x2194; connective will be a tautology. For example, if the pair of
-formulas:</p>
+the &#x2194; connective will be valid. For example, if the pair of formulas:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -2959,7 +2940,7 @@ A and &#x00AC;&#x00AC;A
 </div>
 </div>
 <div class="paragraph">
-<p>will be a tautology. Its truth table is:</p>
+<p>will be valid. Its truth table is:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -3385,7 +3366,7 @@ binary connectives are commutative though. For example:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>is not a tautology, and so &#x2192; is not commutative. Here&#8217;s a table showing
+<p>is not valid, and so &#x2192; is not commutative. Here&#8217;s a table showing
 all the binary connectives, and whether they&#8217;re commutative or not, and if they
 are, giving the name of the associated replacement rule.</p>
 </div>
@@ -3445,7 +3426,7 @@ are or are not commutative.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>&#x2227; is commutative if ((A &#x2227; B) &#x2194; (B &#x2227; A)) is a tautology.</p>
+<p>&#x2227; is commutative if ((A &#x2227; B) &#x2194; (B &#x2227; A)) is valid.</p>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 20%;">
@@ -3495,11 +3476,11 @@ are or are not commutative.</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>it is a tautology and so &#x2227; is commutative.</p>
+<p>it is valid and so &#x2227; is commutative.</p>
 </div>
 </li>
 <li>
-<p>&#x2228; is commutative if ((A &#x2228; B) &#x2194; (B &#x2228; A)) is a tautology.</p>
+<p>&#x2228; is commutative if ((A &#x2228; B) &#x2194; (B &#x2228; A)) is valid.</p>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 20%;">
@@ -3549,12 +3530,12 @@ are or are not commutative.</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>it is a tautology and so &#x2228; is commutative.</p>
+<p>it is valid and so &#x2228; is commutative.</p>
 </div>
 </li>
 <li>
-<p>&#x2192; is commutative if ((A &#x2192; B) &#x2194; (B &#x2192; A)) is a
-tautology.</p>
+<p>&#x2192; is commutative if ((A &#x2192; B) &#x2194; (B &#x2192; A)) is
+valid.</p>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 20%;">
@@ -3604,12 +3585,12 @@ tautology.</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>it is not a tautology and so &#x2192; is not commutative.</p>
+<p>it is not valid and so &#x2192; is not commutative.</p>
 </div>
 </li>
 <li>
-<p>&#x2194; is commutative if ((A &#x2194; B) &#x2194; (B &#x2194; A)) is a
-tautology.</p>
+<p>&#x2194; is commutative if ((A &#x2194; B) &#x2194; (B &#x2194; A)) is
+valid.</p>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 20%;">
@@ -3659,7 +3640,7 @@ tautology.</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>it is a tautology and so &#x2194; is commutative.</p>
+<p>it is valid and so &#x2194; is commutative.</p>
 </div>
 </li>
 </ol>
@@ -3689,7 +3670,7 @@ tautology.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>is a tautology. So if you&#8217;ve got three formulas joined by &#x2227;, it doesn&#8217;t
+<p>is valid. So if you&#8217;ve got three formulas joined by &#x2227;, it doesn&#8217;t
 make any difference if you put brackets round the first two or the last two.
 This equivalence is a rule of replacement called <em>&#x2227; associativity</em>. Here&#8217;s a
 table showing all the binary connectives, and whether they&#8217;re associative or
@@ -3752,7 +3733,7 @@ are or are not associative (big truth tables ahoy!).</p>
 <ol class="loweralpha" type="a">
 <li>
 <p>&#x2227; is associative if (((A &#x2227; B) &#x2227; C) &#x2194; (A &#x2227;
-(B &#x2227; C))) is a tautology.</p>
+(B &#x2227; C))) is valid.</p>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 12%;">
@@ -3860,12 +3841,12 @@ are or are not associative (big truth tables ahoy!).</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>it is a tautology and so &#x2227; is associative.</p>
+<p>it is valid and so &#x2227; is associative.</p>
 </div>
 </li>
 <li>
 <p>&#x2228; is associative if (((A &#x2228; B) &#x2228; C) &#x2194; (A &#x2228; (B &#x2228; C))) is
-a tautology.</p>
+valid.</p>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 12%;">
@@ -3973,12 +3954,12 @@ a tautology.</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>it is a tautology and so &#x2228; is associative.</p>
+<p>it is valid and so &#x2228; is associative.</p>
 </div>
 </li>
 <li>
 <p>&#x2192; is associative if (((A &#x2192; B) &#x2192; C) &#x2194;
-(A &#x2192; (B &#x2192; C))) is a tautology.</p>
+(A &#x2192; (B &#x2192; C))) is valid.</p>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 12%;">
@@ -4086,12 +4067,12 @@ a tautology.</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>it is not a tautology and so &#x2192; is not associative.</p>
+<p>it is not valid and so &#x2192; is not associative.</p>
 </div>
 </li>
 <li>
 <p>&#x2194; is associative if (((A &#x2194; B) &#x2194; C) &#x2194;
-(A &#x2194; (B &#x2194; C))) is a tautology.</p>
+(A &#x2194; (B &#x2194; C))) is valid.</p>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 12%;">
@@ -4199,7 +4180,7 @@ a tautology.</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>it is a tautology and so &#x2194; is associative.</p>
+<p>it is valid and so &#x2194; is associative.</p>
 </div>
 </li>
 </ol>
@@ -4301,8 +4282,7 @@ show that each pair of formulas are indeed equivalent.</p>
 <ol class="loweralpha" type="a">
 <li>
 <p>If &#x2227; is distributive over &#x2227; then:<br>
-(P &#x2227; (Q &#x2227; R)) &#x2194; ((P &#x2227; Q) &#x2227; (P &#x2227; R)) is a
-tautology.</p>
+(P &#x2227; (Q &#x2227; R)) &#x2194; ((P &#x2227; Q) &#x2227; (P &#x2227; R)) is valid.</p>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 11%;">
@@ -4420,7 +4400,7 @@ tautology.</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>the formula is indeed a tautology, so &#x2227; is distributive over &#x2227;.</p>
+<p>the formula is indeed valid, so &#x2227; is distributive over &#x2227;.</p>
 </div>
 </li>
 <li>
@@ -4429,7 +4409,7 @@ tautology.</p>
 <li>
 <p>If &#x2192; is distributive over &#x2194; then:<br>
 (P &#x2192; (Q &#x2194; R)) &#x2194;
-((P &#x2192; Q) &#x2194; (P &#x2192; R)) is a tautology.</p>
+((P &#x2192; Q) &#x2194; (P &#x2192; R)) is valid.</p>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 11%;">
@@ -4548,13 +4528,12 @@ tautology.</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>the formula is indeed a tautology, so &#x2192; is distributive over &#x2194;.</p>
+<p>the formula is indeed valid, so &#x2192; is distributive over &#x2194;.</p>
 </div>
 </li>
 <li>
 <p>If &#x2228; is distributive over &#x2194; then:<br>
-(P &#x2228; (Q &#x2194; R)) &#x2194; ((P &#x2228; Q) &#x2194; (P &#x2228; R)) is a
-tautology.</p>
+(P &#x2228; (Q &#x2194; R)) &#x2194; ((P &#x2228; Q) &#x2194; (P &#x2228; R)) is valid.</p>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 11%;">
@@ -4672,7 +4651,7 @@ tautology.</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>the formula is indeed a tautology, so &#x2228; is distributive over &#x2194;.</p>
+<p>the formula is indeed valid, so &#x2228; is distributive over &#x2194;.</p>
 </div>
 </li>
 </ol>
@@ -4718,7 +4697,7 @@ that:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>is a tautology, as shown by truth table:</p>
+<p>is valid, as shown by truth table:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -4755,7 +4734,7 @@ that:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>is not a tautology, as shown by truth table:</p>
+<p>is not valid, as shown by truth table:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -4848,7 +4827,7 @@ connective is idempotent.</p>
 <li>
 <p>&#x2194; is idempotent because:<br>
 (P &#x2194; P) &#x2194; P<br>
-is a tautology, as shown by truth table:</p>
+is valid, as shown by truth table:</p>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 33%;">
@@ -4879,7 +4858,7 @@ is a tautology, as shown by truth table:</p>
 <li>
 <p>&#x2227; is idempotent because:<br>
 (P &#x2227; P) &#x2194; P<br>
-is a tautology, as shown by truth table:</p>
+is valid, as shown by truth table:</p>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 33%;">
@@ -4960,7 +4939,7 @@ rules of replacement:</p>
 (A &#x2227; B) &#x21D4; &#x00AC;(&#x00AC;A &#x2228; &#x00AC;B)<br>
 then:<br>
 (A &#x2227; B) &#x2194; &#x00AC;(&#x00AC;A &#x2228; &#x00AC;B)<br>
-is a tautology. The truth table is:</p>
+is valid. The truth table is:</p>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 12%;">
@@ -5028,7 +5007,7 @@ is a tautology. The truth table is:</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>which shows it is a tautology, and so the two formulas are equivalent.</p>
+<p>which shows it is valid, and so the two formulas are equivalent.</p>
 </div>
 </li>
 <li>
@@ -5036,7 +5015,7 @@ is a tautology. The truth table is:</p>
 (A &#x2228; B) &#x21D4; &#x00AC;(&#x00AC;A &#x2227; &#x00AC;B)<br>
 then:<br>
 (A &#x2228; B) &#x2194; &#x00AC;(&#x00AC;A &#x2227; &#x00AC;B)<br>
-is a tautology. The truth table for this formula is:</p>
+is valid. The truth table for this formula is:</p>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 12%;">
@@ -5104,7 +5083,7 @@ is a tautology. The truth table for this formula is:</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>which shows it is a tautology, and so the two formulas we started with are
+<p>which shows it is valid, and so the two formulas we started with are
 equivalent.</p>
 </div>
 </li>
@@ -5197,7 +5176,7 @@ pairs of formulas are equivalent.</p>
 (P &#x2227; P) &#x21D4; P<br>
 so the two formulas are equivalent if<br>
 (P &#x2227; P) &#x2194; P<br>
-is a tautology. The truth table:</p>
+is valid. The truth table:</p>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 33%;">
@@ -5225,7 +5204,7 @@ is a tautology. The truth table:</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>shows that it is a tautology, and so the two formulas are equivalent.</p>
+<p>shows that it is valid, and so the two formulas are equivalent.</p>
 </div>
 </li>
 <li>
@@ -5233,7 +5212,7 @@ is a tautology. The truth table:</p>
 ((P &#x2192; Q) &#x2227; (P &#x2192; &#x00AC;Q)) &#x21D4; &#x00AC;P<br>
 so the two formulas are equivalent if<br>
 ((P &#x2192; Q) &#x2227; (P &#x2192; &#x00AC;Q)) &#x2194; &#x00AC;P<br>
-is a tautology. The truth table:</p>
+is valid. The truth table:</p>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 12%;">
@@ -5301,7 +5280,7 @@ is a tautology. The truth table:</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>shows that it is a tautology, and so the two formulas are equivalent.</p>
+<p>shows that it is valid, and so the two formulas are equivalent.</p>
 </div>
 </li>
 <li>
@@ -5309,7 +5288,7 @@ is a tautology. The truth table:</p>
 (P &#x2192; Q) &#x21D4; (&#x00AC;P &#x2228; Q)<br>
 so the two formulas are equivalent if<br>
 (P &#x2192; Q) &#x2194; (&#x00AC;P &#x2228; Q)<br>
-is a tautology. The truth table:</p>
+is valid. The truth table:</p>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 16%;">
@@ -5365,7 +5344,7 @@ is a tautology. The truth table:</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>shows that it is a tautology, and so the two formulas are equivalent.</p>
+<p>shows that it is valid, and so the two formulas are equivalent.</p>
 </div>
 </li>
 </ol>
@@ -5427,9 +5406,9 @@ true, is the conclusion true? To find out, we can say that if:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>is a tautology, then the argument is valid. If effect we&#8217;ve joined the
-premises together with &#x2227; and replaced the &#x22A8; with a &#x2192; to get
-the formula. Bring on the table of truth!</p>
+<p>is valid, then the argument is valid. If effect we&#8217;ve joined the premises
+together with &#x2227; and replaced the &#x22A8; with a &#x2192; to get the
+formula. Bring on the table of truth!</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -5486,7 +5465,7 @@ the formula. Bring on the table of truth!</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>The last column is always true, so the formula is a tautology, so the
+<p>The last column is always true, so the formula is valid, so the
 argument is valid. Yay! Let&#8217;s test another argument for validity:</p>
 </div>
 <div class="exampleblock">
@@ -5514,7 +5493,7 @@ C: Lose our way.<br>
 <p>((((A &#x2192; &#x00AC;B) &#x2227; (C &#x2192; &#x00AC;B)) &#x2227; A) &#x2192; &#x00AC;B)</p>
 </div>
 <div class="paragraph">
-<p>is a tautology. Doing a giant truth table:</p>
+<p>is valid. Doing a giant truth table:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -5644,7 +5623,7 @@ C: Lose our way.<br>
 </tbody>
 </table>
 <div class="paragraph">
-<p>Shows that the formula is a tautology and so the argument is indeed valid.</p>
+<p>Shows that the formula is valid and so the argument is indeed valid.</p>
 </div>
 <div class="sect3">
 <h4 id="_questions_18">Questions</h4>
@@ -5747,8 +5726,8 @@ P &#x2228; Q, &#x00AC;(P &#x2227; Q), &#x00AC;P &#x22A8; Q</p>
 <ol class="loweralpha" type="a">
 <li>
 <p>If the argument P &#x2192; Q, P &#x22A8; Q is valid, then the formula
-\((P &#x2192; Q) &#x2227; P &#x2192; Q) is a tautology. The following truth
-table shows the formula is a tautology, so the argument is indeed valid.</p>
+\((P &#x2192; Q) &#x2227; P &#x2192; Q) is valid. The following truth table
+shows the formula is valid, so the argument is indeed valid.</p>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 20%;">
@@ -5807,8 +5786,8 @@ table shows the formula is a tautology, so the argument is indeed valid.</p>
 </li>
 <li>
 <p>If the argument A &#x2228; B, &#x00AC; B &#x22A8; A is valid, then the formula
-\(\((A &#x2228; B) &#x2227; &#x00AC;B) &#x2192; A) is a tautology. The following truth
-table shows the formula is a tautology, so the argument is indeed valid.</p>
+\(\((A &#x2228; B) &#x2227; &#x00AC;B) &#x2192; A) is valid. The following truth table
+shows the formula is valid, so the argument is indeed valid.</p>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 16%;">
@@ -5874,8 +5853,8 @@ table shows the formula is a tautology, so the argument is indeed valid.</p>
 </li>
 <li>
 <p>If the argument P &#x2228; Q, Q &#x22A8; &#x00AC;P is valid, then the formula
-\(\((P &#x2228; Q) &#x2227; Q) &#x2192; &#x00AC;P) is a tautology. The following truth
-table shows the formula is not a tautology, so the argument is not valid.</p>
+\(\((P &#x2228; Q) &#x2227; Q) &#x2192; &#x00AC;P) is valid. The following truth table
+shows the formula is not valid, so the argument is not valid.</p>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 16%;">
@@ -5942,8 +5921,8 @@ table shows the formula is not a tautology, so the argument is not valid.</p>
 <li>
 <p>If the argument P &#x2228; Q, P &#x2228; Q &#x2192; R, &#x00AC;Q &#x22A8; R &#x2227; P is
 valid, then the formula \(((\((P &#x2228; Q) &#x2227; (P &#x2228; Q)) &#x2192; R)
-&#x2227; &#x00AC;Q) &#x2192; (R &#x2227; P)) is a tautology. The following truth
-table shows the formula is a tautology, so the argument is valid.</p>
+&#x2227; &#x00AC;Q) &#x2192; (R &#x2227; P)) is valid. The following truth table
+shows the formula is valid, so the argument is valid.</p>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 10%;">
@@ -6086,8 +6065,8 @@ table shows the formula is a tautology, so the argument is valid.</p>
 <li>
 <p>If the argument P &#x2228; Q, &#x00AC;(P &#x2227; Q), &#x00AC;P &#x22A8; Q is valid, then
 the formula (\(((P &#x2228; Q) &#x2227; &#x00AC;(P &#x2227; Q)) &#x2227; &#x00AC;P) &#x2192;
-Q) is a tautology. The following truth table shows the formula is a
-tautology, so the argument is valid.</p>
+Q) is valid. The following truth table shows the formula is valid, so the
+argument is valid.</p>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 11%;">
@@ -6780,13 +6759,12 @@ commutativity and idempotence]<br>
 <div class="sect2">
 <h3 id="_propositional_resolution">2.21. Propositional Resolution</h3>
 <div class="paragraph">
+<p>The logicians have discovered / invented other ways of showing if an argument is
+valid or not. One of these methods is <em>Propositional Resolution</em>.</p>
+</div>
+<div class="paragraph">
 <p>Writing out truth tables gets tedious, especially as the number of rows grows
-quadratically with the number of atomic formulas. The logicians have discovered
-/ invented other ways of showing if an argument is valid or not. One of these
-methods is <em>Propositional Resolution</em>.
-Mendelson&#8217;s System only works if an argument is expressed using only the
-connectives &#x00AC; and &#x2192;. You have to rewrite the argument using the
-following rules of replacement:</p>
+exponentially with the number of atomic formulas. The logicians have discovered</p>
 </div>
 </div>
 <div class="sect2">
@@ -6925,7 +6903,7 @@ P, P &#x2192; Q &#x22A8; Q
 </tbody>
 </table>
 <div class="paragraph">
-<p>which shows that the formula is a tautology and so the argument is valid.
+<p>which shows that the formula is valid and so the argument is valid.
 This rule of inference has the typically recondite name of&#8230;&#8203;<em>modus ponens</em>!!!</p>
 </div>
 <div class="paragraph">
@@ -7087,7 +7065,7 @@ valid by using rules of inference.</p>
 <ol class="loweralpha" type="a">
 <li>
 <p>The following truth table shows that A &#x2227; (A &#x2192; B) &#x2192; B is
-a tautology, and so the rule of inference is valid.</p>
+valid, and so the rule of inference is valid.</p>
 </li>
 </ol>
 </div>
@@ -7150,8 +7128,8 @@ a tautology, and so the rule of inference is valid.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a" start="2">
 <li>
-<p>The following truth table shows that A &#x2227; B &#x2192; (A &#x2192; B) is a
-tautology, and so the rule of inference is valid.</p>
+<p>The following truth table shows that A &#x2227; B &#x2192; (A &#x2192; B) is
+valid, and so the rule of inference is valid.</p>
 </li>
 </ol>
 </div>
@@ -7212,7 +7190,7 @@ tautology, and so the rule of inference is valid.</p>
 <ol class="loweralpha" type="a" start="3">
 <li>
 <p>The following truth table shows that (A &#x2192; B) &#x2227; &#x00AC;B &#x2192;
-&#x00AC;A is a tautology, and so the rule of inference is valid.</p>
+&#x00AC;A is valid, and so the rule of inference is valid.</p>
 </li>
 </ol>
 </div>
@@ -7286,8 +7264,8 @@ tautology, and so the rule of inference is valid.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a" start="4">
 <li>
-<p>The following truth table shows that &#x00AC;&#x00AC;A &#x2192; A is a tautology,
-and so the rule of inference is valid.</p>
+<p>The following truth table shows that &#x00AC;&#x00AC;A &#x2192; A is valid, and so
+the rule of inference is valid.</p>
 </li>
 </ol>
 </div>
@@ -7324,8 +7302,8 @@ and so the rule of inference is valid.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a" start="5">
 <li>
-<p>The following truth table shows that A &#x2227; B &#x2192; A is a tautology,
-and so the rule of inference is valid.</p>
+<p>The following truth table shows that A &#x2227; B &#x2192; A is valid, and so
+the rule of inference is valid.</p>
 </li>
 </ol>
 </div>
@@ -7375,11 +7353,11 @@ and so the rule of inference is valid.</p>
 <ol class="loweralpha" type="a" start="6">
 <li>
 <p>The following truth table shows that A &#x2227; B &#x2192; A &#x2227; B is
-obviously a tautology, and so the rule of inference is valid.</p>
+obviously valid, and so the rule of inference is valid.</p>
 </li>
 <li>
 <p>The following truth table shows that (A &#x2192; C) &#x2227; (B &#x2192; C)
-&#x2227; (A &#x2228; B) &#x2192; C is a tautology, and so the rule of inference is
+&#x2227; (A &#x2228; B) &#x2192; C is valid, and so the rule of inference is
 valid.</p>
 </li>
 </ol>
@@ -7512,8 +7490,8 @@ valid.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a" start="8">
 <li>
-<p>The following truth table shows that A &#x2192; A &#x2228; B is a tautology,
-and so the rule of inference is valid.</p>
+<p>The following truth table shows that A &#x2192; A &#x2228; B is valid, and so
+the rule of inference is valid.</p>
 </li>
 </ol>
 </div>
@@ -7562,8 +7540,8 @@ and so the rule of inference is valid.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a" start="9">
 <li>
-<p>The following truth table shows that (A &#x2228; B) &#x2227; &#x00AC;B &#x2192; A is a
-tautology, and so the rule of inference is valid.</p>
+<p>The following truth table shows that (A &#x2228; B) &#x2227; &#x00AC;B &#x2192; A is
+valid, and so the rule of inference is valid.</p>
 </li>
 </ol>
 </div>
@@ -7631,7 +7609,7 @@ tautology, and so the rule of inference is valid.</p>
 <ol class="loweralpha" type="a" start="10">
 <li>
 <p>The following truth table shows that (A &#x2192; B) &#x2227; (B &#x2192; C)
-&#x2192; (A &#x2192; C) is a tautology, and so the rule of inference is
+&#x2192; (A &#x2192; C) is valid, and so the rule of inference is
 valid.</p>
 </li>
 </ol>
@@ -8529,7 +8507,7 @@ just one label.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Not, &#x00AC;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">~, negation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\~, negation</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">And</p></td>
@@ -8547,8 +8525,20 @@ just one label.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Atomic formula</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Atom, simple proposition, atomic sentence</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Valid formula</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tautology</p></td>
+</tr>
 </tbody>
 </table>
+</div>
+<div class="sect3">
+<h4 id="_tautology_and_contradiction">2.26.3. Tautology And Contradiction</h4>
+<div class="paragraph">
+<p>In the table of synonyms we&#8217;ve got <em>valid formula</em> being synonymous with
+<em>tautology</em>. In various parts of the Tower they&#8217;ll talk about <em>contradictions</em>,
+which are formula that are always false.</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -8578,12 +8568,11 @@ book first got me going on propositional logic.)</p>
 on Wikipedia continually useful).</p>
 </li>
 <li>
-<p><a href="http://logic.stanford.edu/classes/cs157/2010/notes/chap02.html" class="bare">http://logic.stanford.edu/classes/cs157/2010/notes/chap02.html</a> (Excellent
-notes, but sadly no longer available).</p>
+<p><a href="http://logic.stanford.edu/intrologic/chapters/cover.html" class="bare">http://logic.stanford.edu/intrologic/chapters/cover.html</a> (Excellent notes).</p>
 </li>
 <li>
-<p><a href="https://www.trinity.edu/cbrown/logic/alter.pdf" class="bare">https://www.trinity.edu/cbrown/logic/alter.pdf</a> (Shows the different
-systems of propositional logic)</p>
+<p><a href="https://www.trinity.edu/cbrown/logic/alter.pdf" class="bare">https://www.trinity.edu/cbrown/logic/alter.pdf</a> (Shows the different systems of
+propositional logic)</p>
 </li>
 </ul>
 </div>
@@ -8592,7 +8581,7 @@ systems of propositional logic)</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-03-29 13:00:28 BST
+Last updated 2015-04-03 11:28:00 BST
 </div>
 </div>
 </body>

@@ -547,7 +547,7 @@ acted on two formulas, and so they're known as _binary_ connectives. The
 |===
 
 :numbered:
-=== Tautology And Contradiction
+=== Valid Formula
 
 The formula:
 
@@ -564,9 +564,8 @@ has the truth table:
 |===
 
 which shows that  whatever the value of P, the formula is always true. In the
-Tower they call any formula that's always true a _tautology_. Also, any
-formula that's always false they call a _contradiction_. An example of a
-contradiction is:
+Tower a formula that is always true is called a _valid formula_. An example of a
+formula that is not valid is:
 
 [example]
 (P {and} {not}P)
@@ -580,25 +579,25 @@ the truth table being:
 | F | T      | F
 |===
 
-So since the formula is always false, the formula is a contradiction.
+since the formula is always false.
  
 
 :numbered!:
 ==== Questions
 
-. Say whether each of the following formulas is a tautology, a contradiction
-  or neither:
-.. (\(P {and} Q) {and} {not}(P {and} Q))
-.. (\(P {or} Q) {or} {not}P)
-.. (\(P {or} Q) {and} {not} P)
-.. (\({not}P {and} {not}Q) {and} {not}({not}P {and} {not}Q))
-.. (\({not}P {and} (Q {or} {not}P)) {and} R)
+. Say whether each of the following formulas is valid or not:
+.. \((P {and} Q) {and} {not}(P {and} Q))
+.. ((P {or} Q) {or} {not}P)
+.. ((P {or} Q) {and} {not} P)
+.. \(({not}P {and} {not}Q) {and} {not}({not}P {and} {not}Q))
+.. \(({not}P {and} (Q {or} {not}P)) {and} R)
 
 
 ==== Answers
 
 . {empty}
 .. {empty}
++
 |===
 | P | Q | P {and} Q | {not}(P {and} Q) | (P {and} Q) {and} {not}(P {and} Q)
 
@@ -607,9 +606,10 @@ So since the formula is always false, the formula is a contradiction.
 | T | F | F         | T                | F
 | F | F | F         | T                | F
 |===
-A contradiction.
-[start=2]
++
+so not valid.
 .. {empty}
++
 |===
 | P | Q | {not}P | P {or} Q | P {or} Q {or} {not}P
 
@@ -618,9 +618,10 @@ A contradiction.
 | T | F | F      | T        | T
 | F | F | T      | F        | T
 |===
-A tautology.
-[start=3]
++
+so the formula is valid.
 .. {empty}
++
 |===
 | P | Q | {not}P | Q {and} {not}P | P {or} Q {and} {not}P
 
@@ -629,33 +630,47 @@ A tautology.
 | T | F | F      | F              | T
 | F | F | T      | F              | F
 |===
-Neither.
-[start=4]
++
+so the formula is not valid.
 .. {empty}
++
+[cols="6*", options="header"]
 |===
-| P | Q | {not}P | {not}Q | {not}P {and} {not}Q | ({not}P {and} {not}Q) {and} {not}({not}P {and} {not}Q)
+| P
+| Q
+| {not}P
+| {not}Q
+| {not}P {and} {not}Q
+| ({not}P {and} {not}Q) {and} {not}({not}P {and} {not}Q)
 
-| T | T | F      | F      | F                   | F
-| F | T | T      | F      | F                   | F
-| T | F | F      | T      | F                   | F
-| F | F | T      | T      | T                   | T
+| T | T | F | F | F | F
+| F | T | T | F | F | F
+| T | F | F | T | F | F
+| F | F | T | T | T | T
 |===
-Neither.
-[start=5]
+so the formula is not valid.
 .. {empty}
++
+[cols="7*", options="header"]
 |===
-| P | Q | R | {not}P | Q {or} {not}P | {not}P {and} (Q {or} {not}P) | {not}P {and} (Q {or} {not}P) {and} R
+| P
+| Q
+| R
+| {not}P
+| Q {or} {not}P
+| {not}P {and} (Q {or} {not}P)
+| {not}P {and} (Q {or} {not}P) {and} R
 
-| T | T | T | F      | T             | F                            | F
-| F | T | T | T      | T             | T                            | T
-| T | F | T | F      | F             | F                            | F
-| F | F | T | T      | T             | T                            | T
-| T | T | F | F      | T             | F                            | F
-| F | T | F | T      | T             | T                            | F
-| T | F | F | F      | F             | F                            | F
-| F | F | F | T      | T             | T                            | F
+| T | T | T | F | T | F | F
+| F | T | T | T | T | T | T
+| T | F | T | F | F | F | F
+| F | F | T | T | T | T | T
+| T | T | F | F | T | F | F
+| F | T | F | T | T | T | F
+| T | F | F | F | F | F | F
+| F | F | F | T | T | T | F
 |===
-Neither.
+so not valid.
 
 
 :numbered:
@@ -868,8 +883,7 @@ Q: It's the 2nd of March. +
 === Equivalence
 
 If two formulas are _equivalent_, then the formula formed by joining them with
-the {bicond} connective will be a tautology. For example, if the pair of
-formulas:
+the {bicond} connective will be valid. For example, if the pair of formulas:
 
 [example]
 A and {not}{not}A
@@ -879,7 +893,7 @@ are equivalent, then:
 [example]
 (A {bicond} {not}{not}A)
 
-will be a tautology. Its truth table is:
+will be valid. Its truth table is:
 
 |===
 | A | {not}A | {not}{not}A | (A {bicond} {not}{not}A)
@@ -997,7 +1011,7 @@ because:
 [example]
 (A {implies} B) {bicond} (B {implies} A)
 
-is not a tautology, and so {implies} is not commutative. Here's a table showing
+is not valid, and so {implies} is not commutative. Here's a table showing
 all the binary connectives, and whether they're commutative or not, and if they
 are, giving the name of the associated replacement rule.
 
@@ -1020,7 +1034,7 @@ are, giving the name of the associated replacement rule.
 ==== Answers
 
 . {empty}
-.. {and} is commutative if \((A {and} B) {bicond} (B {and} A)) is a tautology.
+.. {and} is commutative if \((A {and} B) {bicond} (B {and} A)) is valid.
 +
 |===
 | A | B | (A {and} B) | (B {and} A) | \((A {and} B) {bicond} (B {and} A))
@@ -1031,8 +1045,8 @@ are, giving the name of the associated replacement rule.
 | F | F | F           | F           | T
 |===
 +
-it is a tautology and so {and} is commutative.
-.. {or} is commutative if \((A {or} B) {bicond} (B {or} A)) is a tautology.
+it is valid and so {and} is commutative.
+.. {or} is commutative if \((A {or} B) {bicond} (B {or} A)) is valid.
 +
 |===
 | A | B | (A {or} B) | (B {or} A) | \((A {or} B) {bicond} (B {or} A))
@@ -1043,9 +1057,9 @@ it is a tautology and so {and} is commutative.
 | F | F | F          | F          | T
 |===
 +
-it is a tautology and so {or} is commutative.
-.. {implies} is commutative if \((A {implies} B) {bicond} (B {implies} A)) is a
-   tautology.
+it is valid and so {or} is commutative.
+.. {implies} is commutative if \((A {implies} B) {bicond} (B {implies} A)) is 
+   valid.
 +
 [cols="5*", options="header"]
 |===
@@ -1061,9 +1075,9 @@ it is a tautology and so {or} is commutative.
 | F | F | T | T | T
 |===
 +
-it is not a tautology and so {implies} is not commutative.
-.. {bicond} is commutative if \((A {bicond} B) {bicond} (B {bicond} A)) is a
-   tautology.
+it is not valid and so {implies} is not commutative.
+.. {bicond} is commutative if \((A {bicond} B) {bicond} (B {bicond} A)) is
+   valid.
 +
 [cols="5*", options="header"]
 |===
@@ -1079,7 +1093,7 @@ it is not a tautology and so {implies} is not commutative.
 | F | F | T | T | T
 |===
 +
-it is a tautology and so {bicond} is commutative.
+it is valid and so {bicond} is commutative.
 
 
 :numbered:
@@ -1096,7 +1110,7 @@ because the formula:
 [example]
 (P {and} (Q {and} R)) {bicond} ((P {and} Q) {and} R)
 
-is a tautology. So if you've got three formulas joined by {and}, it doesn't
+is valid. So if you've got three formulas joined by {and}, it doesn't
 make any difference if you put brackets round the first two or the last two.
 This equivalence is a rule of replacement called _{and} associativity_. Here's a
 table showing all the binary connectives, and whether they're associative or
@@ -1123,7 +1137,7 @@ not, and if they are, giving the name of the replacement rule:
 
 . {empty}
 .. {and} is associative if (\((A {and} B) {and} C) {bicond} (A {and}
-   (B {and} C))) is a tautology.
+   (B {and} C))) is valid.
 +
 [cols="8*", options="header"]
 |===
@@ -1146,9 +1160,9 @@ not, and if they are, giving the name of the replacement rule:
 | F | F | F | F | F | F | F | T
 |===
 +
-it is a tautology and so {and} is associative.
+it is valid and so {and} is associative.
 .. {or} is associative if (\((A {or} B) {or} C) {bicond} (A {or} (B {or} C))) is
-   a tautology.
+   valid.
 +
 [cols="8*", options="header"]
 |===
@@ -1171,9 +1185,9 @@ it is a tautology and so {and} is associative.
 | F | F | F | F | F | F | F | T
 |===
 +
-it is a tautology and so {or} is associative.
+it is valid and so {or} is associative.
 .. {implies} is associative if (\((A {implies} B) {implies} C) {bicond}
-   (A {implies} (B {implies} C))) is a tautology.
+   (A {implies} (B {implies} C))) is valid.
 +
 [cols="8*", options="header"]
 |===
@@ -1196,9 +1210,9 @@ it is a tautology and so {or} is associative.
 | F | F | F | T | F | T | T | F
 |===
 +
-it is not a tautology and so {implies} is not associative.
+it is not valid and so {implies} is not associative.
 .. {bicond} is associative if (\((A {bicond} B) {bicond} C) {bicond}
-   (A {bicond} (B {bicond} C))) is a tautology.
+   (A {bicond} (B {bicond} C))) is valid.
 +
 [cols="8*", options="header"]
 |===
@@ -1221,7 +1235,7 @@ it is not a tautology and so {implies} is not associative.
 | F | F | F | T | F | T | F | T
 |===
 +
-it is a tautology and so {bicond} is associative.
+it is valid and so {bicond} is associative.
 
 
 :numbered:
@@ -1276,8 +1290,7 @@ y distributes over z then:
 
 . {empty}
 .. If {and} is distributive over {and} then: +
-   (P {and} (Q {and} R)) {bicond} \((P {and} Q) {and} (P {and} R)) is a
-   tautology.
+   (P {and} (Q {and} R)) {bicond} \((P {and} Q) {and} (P {and} R)) is valid.
 +
 [cols="9*", options="header"]
 |===
@@ -1301,11 +1314,11 @@ y distributes over z then:
 | F | F | F | F | F | F | F | F | T
 |===
 +
-the formula is indeed a tautology, so {and} is distributive over {and}.
+the formula is indeed valid, so {and} is distributive over {and}.
 .. {implies} over {bicond}
 .. If {implies} is distributive over {bicond} then: +
    (P {implies} (Q {bicond} R)) {bicond}
-   \((P {implies} Q) {bicond} (P {implies} R)) is a tautology.
+   \((P {implies} Q) {bicond} (P {implies} R)) is valid.
 +
 [cols="9*", options="header"]
 |===
@@ -1330,10 +1343,9 @@ the formula is indeed a tautology, so {and} is distributive over {and}.
 | F | F | F | T | T | T | T | T | T
 |===
 +
-the formula is indeed a tautology, so {implies} is distributive over {bicond}.
+the formula is indeed valid, so {implies} is distributive over {bicond}.
 .. If {or} is distributive over {bicond} then: +
-   (P {or} (Q {bicond} R)) {bicond} \((P {or} Q) {bicond} (P {or} R)) is a
-   tautology.
+   (P {or} (Q {bicond} R)) {bicond} \((P {or} Q) {bicond} (P {or} R)) is valid.
 +
 [cols="9*", options="header"]
 |===
@@ -1357,7 +1369,7 @@ the formula is indeed a tautology, so {implies} is distributive over {bicond}.
 | F | F | F | T | T | F | F | T | T
 |===
 +
-the formula is indeed a tautology, so {or} is distributive over {bicond}.
+the formula is indeed valid, so {or} is distributive over {bicond}.
 
 
 :numbered:
@@ -1385,7 +1397,7 @@ that:
 [example]
 (P {or} P) {bicond} P
 
-is a tautology, as shown by truth table:
+is valid, as shown by truth table:
 
 |===
 | P | (P {or} P) | (P {or} P) {bicond} P
@@ -1399,7 +1411,7 @@ and {implies} is not idempotent because:
 [example]
 (P {implies} P) {bicond} P
 
-is not a tautology, as shown by truth table:
+is not valid, as shown by truth table:
 
 |===
 | P | (P {implies} P) | (P {implies} P) {bicond} P
@@ -1434,7 +1446,7 @@ Here's a table showing whether each connective is idempotent or not.
 . {empty}
 .. {bicond} is idempotent because: +
    (P {bicond} P) {bicond} P +
-   is a tautology, as shown by truth table:
+   is valid, as shown by truth table:
 +
 |===
 | P | (P {bicond} P) | (P {bicond} P) {bicond} P
@@ -1444,7 +1456,7 @@ Here's a table showing whether each connective is idempotent or not.
 |===
 .. {and} is idempotent because: +
    (P {and} P) {bicond} P +
-   is a tautology, as shown by truth table:
+   is valid, as shown by truth table:
 +
 |===
 | P | (P {and} P) | (P {and} P) {bicond} P
@@ -1484,7 +1496,7 @@ Some say they're obvious. Do you find them obvious? I don't.
    (A {and} B) {equiv} {not}({not}A {or} {not}B) +
    then: +
    (A {and} B) {bicond} {not}({not}A {or} {not}B) +
-   is a tautology. The truth table is:
+   is valid. The truth table is:
 +
 [cols="8*", options="header"]
 |===
@@ -1503,12 +1515,12 @@ Some say they're obvious. Do you find them obvious? I don't.
 | F | F | F | T | T | T | F | T
 |===
 +
-which shows it is a tautology, and so the two formulas are equivalent.
+which shows it is valid, and so the two formulas are equivalent.
 .. If: +
    (A {or} B) {equiv} {not}({not}A {and} {not}B) +
    then: +
    (A {or} B) {bicond} {not}({not}A {and} {not}B) +
-   is a tautology. The truth table for this formula is:
+   is valid. The truth table for this formula is:
 +
 [cols="8*", options="header"]
 |===
@@ -1527,7 +1539,7 @@ which shows it is a tautology, and so the two formulas are equivalent.
 | F | F | F | T | T | T | F | T
 |===
 +
-which shows it is a tautology, and so the two formulas we started with are
+which shows it is valid, and so the two formulas we started with are
 equivalent.
 
 
@@ -1578,7 +1590,7 @@ me. Thanks.
    (P {and} P) {equiv} P +
    so the two formulas are equivalent if +
    (P {and} P) {bicond} P +
-   is a tautology. The truth table:
+   is valid. The truth table:
 +
 |===
 | P | (P {and} P) | (P {and} P) {bicond} P
@@ -1587,12 +1599,12 @@ me. Thanks.
 | F | F           | T
 |===
 +
-shows that it is a tautology, and so the two formulas are equivalent.   
+shows that it is valid, and so the two formulas are equivalent.   
 .. {not} introduction is +
    \((P {implies} Q) {and} (P {implies} {not}Q)) {equiv} {not}P +
    so the two formulas are equivalent if +
    \((P {implies} Q) {and} (P {implies} {not}Q)) {bicond} {not}P +
-   is a tautology. The truth table:
+   is valid. The truth table:
 +
 [cols="8*", options="header"]
 |===
@@ -1612,12 +1624,12 @@ shows that it is a tautology, and so the two formulas are equivalent.
 | F | F | T | T | T | T | T | T
 |===
 +
-shows that it is a tautology, and so the two formulas are equivalent.   
+shows that it is valid, and so the two formulas are equivalent.   
 .. Material Implication is +
    (P {implies} Q) {equiv} ({not}P {or} Q) +
    so the two formulas are equivalent if +
    (P {implies} Q) {bicond} ({not}P {or} Q) +
-   is a tautology. The truth table:
+   is valid. The truth table:
 +
 [cols="6*", options="header"]
 |===
@@ -1635,7 +1647,7 @@ shows that it is a tautology, and so the two formulas are equivalent.
 | F | F | T | T | T | T
 |===
 +
-shows that it is a tautology, and so the two formulas are equivalent.   
+shows that it is valid, and so the two formulas are equivalent.   
 
 
 :numbered:
@@ -1675,9 +1687,9 @@ true, is the conclusion true? To find out, we can say that if:
 [example]
 (((A {or} B) {and} {not}B) {implies} A)
 
-is a tautology, then the argument is valid. If effect we've joined the
-premises together with {and} and replaced the {entails} with a {implies} to get
-the formula. Bring on the table of truth!
+is valid, then the argument is valid. If effect we've joined the premises
+together with {and} and replaced the {entails} with a {implies} to get the
+formula. Bring on the table of truth!
 
 [cols="6*", options="header"]
 |===
@@ -1695,7 +1707,7 @@ the formula. Bring on the table of truth!
 | F | F | F | T | F | T
 |===
 
-The last column is always true, so the formula is a tautology, so the
+The last column is always true, so the formula is valid, so the
 argument is valid. Yay! Let's test another argument for validity:
 
 [example]
@@ -1715,7 +1727,7 @@ The argument is valid if:
 
 \((((A {implies} {not}B) {and} (C {implies} {not}B)) {and} A) {implies} {not}B)
 
-is a tautology. Doing a giant truth table:
+is valid. Doing a giant truth table:
 
 [cols="9"]
 |===
@@ -1741,7 +1753,7 @@ is a tautology. Doing a giant truth table:
 | F | F | F | T | T | T | T | F | T
 |===
 
-Shows that the formula is a tautology and so the argument is indeed valid.
+Shows that the formula is valid and so the argument is indeed valid.
 
 
 :numbered!:
@@ -1789,8 +1801,8 @@ Shows that the formula is a tautology and so the argument is indeed valid.
    P {or} Q, {not}(P {and} Q), {not}P {entails} Q
 . {empty}
 .. If the argument P {implies} Q, P {entails} Q is valid, then the formula
-   \((P {implies} Q) {and} P {implies} Q) is a tautology. The following truth
-   table shows the formula is a tautology, so the argument is indeed valid.
+   \((P {implies} Q) {and} P {implies} Q) is valid. The following truth table
+   shows the formula is valid, so the argument is indeed valid.
 +
 |===
 | 1 | 2 | 3             | 4             | 5
@@ -1804,8 +1816,8 @@ Shows that the formula is a tautology and so the argument is indeed valid.
 |===
 +
 .. If the argument A {or} B, {not} B {entails} A is valid, then the formula
-   \(\((A {or} B) {and} {not}B) {implies} A) is a tautology. The following truth
-   table shows the formula is a tautology, so the argument is indeed valid.
+   \(\((A {or} B) {and} {not}B) {implies} A) is valid. The following truth table
+   shows the formula is valid, so the argument is indeed valid.
 +
 |===
 | 1 | 2 | 3        | 4      | 5                 | 6
@@ -1819,8 +1831,8 @@ Shows that the formula is a tautology and so the argument is indeed valid.
 |===
 +
 .. If the argument P {or} Q, Q {entails} {not}P is valid, then the formula
-   \(\((P {or} Q) {and} Q) {implies} {not}P) is a tautology. The following truth
-   table shows the formula is not a tautology, so the argument is not valid.
+   \(\((P {or} Q) {and} Q) {implies} {not}P) is valid. The following truth table
+   shows the formula is not valid, so the argument is not valid.
 +
 |===
 | 1 | 2 | 3        | 4      | 5             | 6
@@ -1835,8 +1847,8 @@ Shows that the formula is a tautology and so the argument is indeed valid.
 +
 .. If the argument P {or} Q, P {or} Q {implies} R, {not}Q {entails} R {and} P is
    valid, then the formula \(\((\((P {or} Q) {and} (P {or} Q)) {implies} R)
-   {and} {not}Q) {implies} (R {and} P)) is a tautology. The following truth
-   table shows the formula is a tautology, so the argument is valid.
+   {and} {not}Q) {implies} (R {and} P)) is valid. The following truth table
+   shows the formula is valid, so the argument is valid.
 +
 [cols="10*", options="header"]
 |===
@@ -1874,8 +1886,8 @@ Shows that the formula is a tautology and so the argument is indeed valid.
 +
 .. If the argument P {or} Q, {not}(P {and} Q), {not}P {entails} Q is valid, then
    the formula (\(\((P {or} Q) {and} {not}(P {and} Q)) {and} {not}P) {implies}
-   Q) is a tautology. The following truth table shows the formula is a
-   tautology, so the argument is valid.
+   Q) is valid. The following truth table shows the formula is valid, so the
+   argument is valid.
 +
 [cols="9*", options="header"]
 |===
@@ -2288,14 +2300,15 @@ So to go from CNF to CNF set notation:
 :numbered:
 === Propositional Resolution
 
-Writing out truth tables gets tedious, especially as the number of rows grows
-quadratically with the number of atomic formulas. The logicians have discovered
-/ invented other ways of showing if an argument is valid or not. One of these
-methods is _Propositional Resolution_.
-Mendelson's System only works if an argument is expressed using only the
-connectives {not} and {implies}. You have to rewrite the argument using the
-following rules of replacement:
+The logicians have discovered / invented other ways of showing if an argument is
+valid or not. One of these methods is _Propositional Resolution_. 
 
+
+
+
+
+Writing out truth tables gets tedious, especially as the number of rows grows
+exponentially with the number of atomic formulas. The logicians have discovered
 
 :numbered:
 === Mendelson's Axiomatic System
@@ -2376,7 +2389,7 @@ has the truth table:
 | F | F | T | F | T
 |===
 
-which shows that the formula is a tautology and so the argument is valid.
+which shows that the formula is valid and so the argument is valid.
 This rule of inference has the typically recondite name of..._modus ponens_!!!
 
 Another rule of inference is:
@@ -2444,7 +2457,7 @@ Here's a list of rules of inference:
 
 . {empty}
 .. The following truth table shows that A {and} (A {implies} B) {implies} B is
-   a tautology, and so the rule of inference is valid.
+   valid, and so the rule of inference is valid.
 |===
 | 1 | 2 | 3             | 4             | 5
 | A | B | A {implies} B | A {and} col_3 | col_4 implies B
@@ -2455,8 +2468,8 @@ Here's a list of rules of inference:
 | F | F | T             | F             | T
 |===
 [start=2]
-.. The following truth table shows that A {and} B {implies} (A {implies} B) is a
-   tautology, and so the rule of inference is valid.
+.. The following truth table shows that A {and} B {implies} (A {implies} B) is
+   valid, and so the rule of inference is valid.
 |===
 | 1 | 2 | 3         | 4             | 5
 | A | B | A {and} B | A {implies} B | col_3 {implies} col_4
@@ -2468,7 +2481,7 @@ Here's a list of rules of inference:
 |===
 [start=3]
 .. The following truth table shows that (A {implies} B) {and} {not}B {implies}
-   {not}A is a tautology, and so the rule of inference is valid.
+   {not}A is valid, and so the rule of inference is valid.
 |===
 | 1 | 2 | 3             | 4      | 5      | 6                 | 7
 | A | B | A {implies} B | {not}B | {not}A | col_3 {and} col_4 | col_6 {implies} col_5
@@ -2479,8 +2492,8 @@ Here's a list of rules of inference:
 | F | F | T             | T      | T      | T                 | T
 |===
 [start=4]
-.. The following truth table shows that {not}{not}A {implies} A is a tautology,
-   and so the rule of inference is valid.
+.. The following truth table shows that {not}{not}A {implies} A is valid, and so
+   the rule of inference is valid.
 |===
 | A | {not}A | {not}{not}A | {not}{not}A {implies} A
 
@@ -2488,8 +2501,8 @@ Here's a list of rules of inference:
 | F | T      | F           | T
 |===
 [start=5]
-.. The following truth table shows that A {and} B {implies} A is a tautology,
-   and so the rule of inference is valid.
+.. The following truth table shows that A {and} B {implies} A is valid, and so
+   the rule of inference is valid.
 |===
 | A | B | A {and} B | A {and} B {implies} A
 
@@ -2500,10 +2513,10 @@ Here's a list of rules of inference:
 |===
 [start=6]
 .. The following truth table shows that A {and} B {implies} A {and} B is
-   obviously a tautology, and so the rule of inference is valid.
+   obviously valid, and so the rule of inference is valid.
 [start=7]
 .. The following truth table shows that (A {implies} C) {and} (B {implies} C)
-   {and} (A {or} B) {implies} C is a tautology, and so the rule of inference is
+   {and} (A {or} B) {implies} C is valid, and so the rule of inference is
    valid.
 |===
 | 1 | 2 | 3 | 4             | 5             | 6        | 7                 | 8                 | 9
@@ -2519,8 +2532,8 @@ Here's a list of rules of inference:
 | F | F | F | T             | T             | F        | T                 | F                 | T
 |===
 [start=8]
-.. The following truth table shows that A {implies} A {or} B is a tautology,
-   and so the rule of inference is valid.
+.. The following truth table shows that A {implies} A {or} B is valid, and so
+   the rule of inference is valid.
 |===
 | A | B | A {or} B | A {implies} A {or} B
 
@@ -2530,8 +2543,8 @@ Here's a list of rules of inference:
 | F | F | F        | T
 |===
 [start=9]
-.. The following truth table shows that (A {or} B) {and} {not}B {implies} A is a
-   tautology, and so the rule of inference is valid.
+.. The following truth table shows that (A {or} B) {and} {not}B {implies} A is
+   valid, and so the rule of inference is valid.
 |===
 | 1 | 2 | 3        | 4      | 5                 | 6
 | A | B | A {or} B | {not}B | col_3 {and} col_4 | col_5 {implies} A
@@ -2543,7 +2556,7 @@ Here's a list of rules of inference:
 |===
 [start=10]
 .. The following truth table shows that (A {implies} B) {and} (B {implies} C)
-   {implies} (A {implies} C) is a tautology, and so the rule of inference is
+   {implies} (A {implies} C) is valid, and so the rule of inference is
    valid.
 |===
 | 1 | 2 | 3 | 4             | 5             | 6             | 7                 | 8                 | 9
@@ -2777,12 +2790,19 @@ just one label.
 
 | Connective       | Operator
 | Sentential Logic | Sentential Calculus
-| Not, {not}       | ~, negation
+| Not, {not}       | \~, negation
 | And              | Conjunction
 | Or               | Disjunction
 | Implies          | Conditional
 | Atomic formula   | Atom, simple proposition, atomic sentence
+| Valid formula    | Tautology
 |===
+
+==== Tautology And Contradiction
+
+In the table of synonyms we've got _valid formula_ being synonymous with
+_tautology_. In various parts of the Tower they'll talk about _contradictions_,
+which are formula that are always false.
 
 * All the rules of inference. and equivalence
 
@@ -2812,7 +2832,6 @@ just one label.
   book first got me going on propositional logic.)
 * http://en.wikipedia.org/wiki/Propositional_calculus (This and related pages
   on Wikipedia continually useful).
-* http://logic.stanford.edu/classes/cs157/2010/notes/chap02.html (Excellent
-  notes, but sadly no longer available).
-* https://www.trinity.edu/cbrown/logic/alter.pdf (Shows the different
-  systems of propositional logic)
+* http://logic.stanford.edu/intrologic/chapters/cover.html (Excellent notes).
+* https://www.trinity.edu/cbrown/logic/alter.pdf (Shows the different systems of
+  propositional logic)
