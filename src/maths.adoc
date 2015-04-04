@@ -357,12 +357,79 @@ more complicated.
 
 
 :numbered:
+=== Interpretations
+
+Say you've got a formula:
+
+[example]
+(P {and} Q)
+
+To logicians, an _interpretation_ is the assignment of true or false to P and Q.
+So one interpretation is:
+
+[example]
+P is false +
+Q is false
+
+and another is:
+
+[example]
+P is true +
+Q is false
+
+so for a formula with two atomic formulas, there are four possible
+interpretations:
+
+|===
+| P     | Q
+
+| True  | True
+| False | True
+| True  | False
+| False | False 
+|===
+
+and to make it easier to write they use T for true and F for false:
+
+|===
+| P | Q
+
+| T | T
+| F | T
+| T | F
+| F | F 
+|===
+
+:numbered!:
+==== Questions
+
+. For a formula with three atomic formulas, there are eight possible
+  interpretations. Show those eight possible interpretation in a table.
+
+
+==== Answers
+
+. {empty}
++
+|===
+| P | Q | R
+
+| T | T | T
+| F | T | T
+| T | F | T
+| F | F | T
+| T | T | F
+| F | T | F
+| T | F | F
+| F | F | F
+|===
+
+:numbered:
 === Truth Tables
 
 A truth table. A medieval device for extracting a confession? No, a
-mathematical device for showing all the possible ways a formula can be true
-(T) or false (F). For the two atomic formulas P and Q, the truth table for
-(P {and} Q) is:
+mathematical device for showing if a formula is true or false for every possible
+<<_interpretations, interpretation>>. The truth table for (P {and} Q) is:
 
 |===
 | P | Q | (P {and} Q)
@@ -373,9 +440,8 @@ mathematical device for showing all the possible ways a formula can be true
 | F | F | F
 |===
 
-so what we've done is written a row for all the combination of true and false
-for P and Q, and then in the final column put the value of (P {and} Q). The
-truth table for (P {or} Q) is:
+so what we've done is written a row for each interpretation of P and Q, and thenin the final column put the value of (P {and} Q). The truth table for
+(P {or} Q) is:
 
 |===
 | P | Q | (P {or} Q)
@@ -400,6 +466,7 @@ You can use a truth table to show that (P {and} Q) means the same as
 
 For each row of the truth table, the last two columns are the same, and so
 (P {and} Q) means the same as (Q {and} P).
+
 
 :numbered!:
 ==== Questions
@@ -585,7 +652,7 @@ since the formula is always false.
 :numbered!:
 ==== Questions
 
-. Say whether each of the following formulas is valid or not:
+. Using truth tables, show whether the following formulas are valid or not:
 .. \((P {and} Q) {and} {not}(P {and} Q))
 .. ((P {or} Q) {or} {not}P)
 .. ((P {or} Q) {and} {not} P)
@@ -2785,17 +2852,41 @@ just one label.
 
 ==== Synonyms
 
+[cols="2*", options="header"]
 |===
-| Name             | Synonym
+| Name
+| Synonym
 
-| Connective       | Operator
-| Sentential Logic | Sentential Calculus
-| Not, {not}       | \~, negation
-| And              | Conjunction
-| Or               | Disjunction
-| Implies          | Conditional
-| Atomic formula   | Atom, simple proposition, atomic sentence
-| Valid formula    | Tautology
+| Connective
+| Operator
+
+| Sentential Logic
+| Sentential Calculus
+
+| Not, {not}
+| \~, negation
+
+| And
+| Conjunction
+
+| Or
+| Disjunction
+
+| Implies
+| Conditional
+
+| Atomic formula
+| Atom, simple proposition, atomic sentence, simple sentence, proposition
+  constant, logical constant
+
+| Compound formula
+| compound proposition, compound sentence
+
+| <<_interpretations,Interpretation>>
+| Truth assignment
+
+| Valid formula
+| Tautology
 |===
 
 ==== Tautology And Contradiction

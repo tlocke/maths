@@ -433,27 +433,28 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_formulas">2.3. Formulas</a></li>
 <li><a href="#_funny_symbols">2.4. Funny Symbols</a></li>
 <li><a href="#_brackets">2.5. Brackets</a></li>
-<li><a href="#_truth_tables">2.6. Truth Tables</a></li>
-<li><a href="#_not">2.7. Not</a></li>
-<li><a href="#_valid_formula">2.8. Valid Formula</a></li>
-<li><a href="#_implies">2.9. Implies</a></li>
-<li><a href="#_biconditional">2.10. Biconditional</a></li>
-<li><a href="#_equivalence">2.11. Equivalence</a></li>
-<li><a href="#_commutativity">2.12. Commutativity</a></li>
-<li><a href="#_associativity">2.13. Associativity</a></li>
-<li><a href="#_distributivity">2.14. Distributivity</a></li>
-<li><a href="#_idempotence">2.15. Idempotence</a></li>
-<li><a href="#_de_morgan_s_laws">2.16. De Morgan&#8217;s Laws</a></li>
-<li><a href="#_more_rules_of_replacement">2.17. More rules of replacement</a></li>
-<li><a href="#_arguments">2.18. Arguments</a></li>
-<li><a href="#_conjunctive_normal_form_cnf">2.19. Conjunctive Normal Form (CNF)</a></li>
-<li><a href="#_cnf_set_notation">2.20. CNF Set Notation</a></li>
-<li><a href="#_propositional_resolution">2.21. Propositional Resolution</a></li>
-<li><a href="#_mendelson_s_axiomatic_system">2.22. Mendelson&#8217;s Axiomatic System</a></li>
-<li><a href="#_rules_of_inference">2.23. Rules Of Inference</a></li>
-<li><a href="#_precedence">2.24. Precedence</a></li>
-<li><a href="#_sentential_logic_summary">2.25. Sentential Logic: Summary</a></li>
-<li><a href="#_rosetta_stone">2.26. Rosetta Stone</a></li>
+<li><a href="#_interpretations">2.6. Interpretations</a></li>
+<li><a href="#_truth_tables">2.7. Truth Tables</a></li>
+<li><a href="#_not">2.8. Not</a></li>
+<li><a href="#_valid_formula">2.9. Valid Formula</a></li>
+<li><a href="#_implies">2.10. Implies</a></li>
+<li><a href="#_biconditional">2.11. Biconditional</a></li>
+<li><a href="#_equivalence">2.12. Equivalence</a></li>
+<li><a href="#_commutativity">2.13. Commutativity</a></li>
+<li><a href="#_associativity">2.14. Associativity</a></li>
+<li><a href="#_distributivity">2.15. Distributivity</a></li>
+<li><a href="#_idempotence">2.16. Idempotence</a></li>
+<li><a href="#_de_morgan_s_laws">2.17. De Morgan&#8217;s Laws</a></li>
+<li><a href="#_more_rules_of_replacement">2.18. More rules of replacement</a></li>
+<li><a href="#_arguments">2.19. Arguments</a></li>
+<li><a href="#_conjunctive_normal_form_cnf">2.20. Conjunctive Normal Form (CNF)</a></li>
+<li><a href="#_cnf_set_notation">2.21. CNF Set Notation</a></li>
+<li><a href="#_propositional_resolution">2.22. Propositional Resolution</a></li>
+<li><a href="#_mendelson_s_axiomatic_system">2.23. Mendelson&#8217;s Axiomatic System</a></li>
+<li><a href="#_rules_of_inference">2.24. Rules Of Inference</a></li>
+<li><a href="#_precedence">2.25. Precedence</a></li>
+<li><a href="#_sentential_logic_summary">2.26. Sentential Logic: Summary</a></li>
+<li><a href="#_rosetta_stone">2.27. Rosetta Stone</a></li>
 </ul>
 </li>
 <li><a href="#_bibliography">3. Bibliography</a></li>
@@ -1098,12 +1099,185 @@ symbols.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_truth_tables">2.6. Truth Tables</h3>
+<h3 id="_interpretations">2.6. Interpretations</h3>
+<div class="paragraph">
+<p>Say you&#8217;ve got a formula:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+(P &#x2227; Q)
+</div>
+</div>
+<div class="paragraph">
+<p>To logicians, an <em>interpretation</em> is the assignment of true or false to P and Q.
+So one interpretation is:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+P is false<br>
+Q is false
+</div>
+</div>
+<div class="paragraph">
+<p>and another is:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+P is true<br>
+Q is false
+</div>
+</div>
+<div class="paragraph">
+<p>so for a formula with two atomic formulas, there are four possible
+interpretations:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">P</th>
+<th class="tableblock halign-left valign-top">Q</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">True</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">True</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">True</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">True</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>and to make it easier to write they use T for true and F for false:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">P</th>
+<th class="tableblock halign-left valign-top">Q</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="_questions_6">Questions</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>For a formula with three atomic formulas, there are eight possible
+interpretations. Show those eight possible interpretation in a table.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_answers_5">Answers</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p></p>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33%;">
+<col style="width: 33%;">
+<col style="width: 33%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">P</th>
+<th class="tableblock halign-left valign-top">Q</th>
+<th class="tableblock halign-left valign-top">R</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_truth_tables">2.7. Truth Tables</h3>
 <div class="paragraph">
 <p>A truth table. A medieval device for extracting a confession? No, a
-mathematical device for showing all the possible ways a formula can be true
-(T) or false (F). For the two atomic formulas P and Q, the truth table for
-(P &#x2227; Q) is:</p>
+mathematical device for showing if a formula is true or false for every possible
+<a href="#_interpretations">interpretation</a>. The truth table for (P &#x2227; Q) is:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -1142,9 +1316,8 @@ mathematical device for showing all the possible ways a formula can be true
 </tbody>
 </table>
 <div class="paragraph">
-<p>so what we&#8217;ve done is written a row for all the combination of true and false
-for P and Q, and then in the final column put the value of (P &#x2227; Q). The
-truth table for (P &#x2228; Q) is:</p>
+<p>so what we&#8217;ve done is written a row for each interpretation of P and Q, and thenin the final column put the value of (P &#x2227; Q). The truth table for
+(P &#x2228; Q) is:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -1233,7 +1406,7 @@ truth table for (P &#x2228; Q) is:</p>
 (P &#x2227; Q) means the same as (Q &#x2227; P).</p>
 </div>
 <div class="sect3">
-<h4 id="_questions_6">Questions</h4>
+<h4 id="_questions_7">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1243,7 +1416,7 @@ truth table for (P &#x2228; Q) is:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_5">Answers</h4>
+<h4 id="_answers_6">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1300,7 +1473,7 @@ P &#x2228; Q means the same as Q &#x2228; P.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_not">2.7. Not</h3>
+<h3 id="_not">2.8. Not</h3>
 <div class="paragraph">
 <p>There&#8217;s another connective called <em>not</em>, which has the symbol &#x00AC;. Its truth
 table is:</p>
@@ -1440,7 +1613,7 @@ acted on two formulas, and so they&#8217;re known as <em>binary</em> connectives
 &#x00AC; connective acts on one formula and so is called a <em>unary</em> connective.</p>
 </div>
 <div class="sect3">
-<h4 id="_questions_7">Questions</h4>
+<h4 id="_questions_8">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1472,7 +1645,7 @@ acted on two formulas, and so they&#8217;re known as <em>binary</em> connectives
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_6">Answers</h4>
+<h4 id="_answers_7">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1800,7 +1973,7 @@ acted on two formulas, and so they&#8217;re known as <em>binary</em> connectives
 </div>
 </div>
 <div class="sect2">
-<h3 id="_valid_formula">2.8. Valid Formula</h3>
+<h3 id="_valid_formula">2.9. Valid Formula</h3>
 <div class="paragraph">
 <p>The formula:</p>
 </div>
@@ -1881,11 +2054,11 @@ formula that is not valid is:</p>
 <p>since the formula is always false.</p>
 </div>
 <div class="sect3">
-<h4 id="_questions_8">Questions</h4>
+<h4 id="_questions_9">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Say whether each of the following formulas is valid or not:</p>
+<p>Using truth tables, show whether the following formulas are valid or not:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -1910,7 +2083,7 @@ formula that is not valid is:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_7">Answers</h4>
+<h4 id="_answers_8">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2249,7 +2422,7 @@ formula that is not valid is:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_implies">2.9. Implies</h3>
+<h3 id="_implies">2.10. Implies</h3>
 <div class="paragraph">
 <p>There&#8217;s another binary connective called <em>implies</em> that has the symbol
 &#x2192;. Its truth table is:</p>
@@ -2459,7 +2632,7 @@ Abelard is at the cafe only if the cafe is open.
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="_questions_9">Questions</h4>
+<h4 id="_questions_10">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2504,7 +2677,7 @@ Abelard is at the cafe only if the cafe is open.
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_8">Answers</h4>
+<h4 id="_answers_9">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2802,7 +2975,7 @@ A &#x2192; B</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_biconditional">2.10. Biconditional</h3>
+<h3 id="_biconditional">2.11. Biconditional</h3>
 <div class="paragraph">
 <p>The <em>biconditional</em> is a binary connective with the mystical symbol &#x2194; and
 its truth table is:</p>
@@ -2880,7 +3053,7 @@ Q: It&#8217;s the 2nd of March.<br>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_questions_10">Questions</h4>
+<h4 id="_questions_11">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2921,7 +3094,7 @@ applied.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_equivalence">2.11. Equivalence</h3>
+<h3 id="_equivalence">2.12. Equivalence</h3>
 <div class="paragraph">
 <p>If two formulas are <em>equivalent</em>, then the formula formed by joining them with
 the &#x2194; connective will be valid. For example, if the pair of formulas:</p>
@@ -2993,7 +3166,7 @@ found:</p>
 <p>is a rule of replacement called <em>double &#x00AC;</em>.</p>
 </div>
 <div class="sect3">
-<h4 id="_questions_11">Questions</h4>
+<h4 id="_questions_12">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3016,7 +3189,7 @@ found:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_9">Answers</h4>
+<h4 id="_answers_10">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3330,7 +3503,7 @@ P &#x21D4; Q</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_commutativity">2.12. Commutativity</h3>
+<h3 id="_commutativity">2.13. Commutativity</h3>
 <div class="paragraph">
 <p>Some binary connectives have the property of <em>commutativity</em>. The connective
 &#x2227; is commutative which means that:</p>
@@ -3407,7 +3580,7 @@ are, giving the name of the associated replacement rule.</p>
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="_questions_12">Questions</h4>
+<h4 id="_questions_13">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3418,7 +3591,7 @@ are or are not commutative.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_10">Answers</h4>
+<h4 id="_answers_11">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3651,7 +3824,7 @@ valid.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_associativity">2.13. Associativity</h3>
+<h3 id="_associativity">2.14. Associativity</h3>
 <div class="paragraph">
 <p>Another property that some binary connectives have is <em>associativity</em>. The
 &#x2227; connective is associative, which means:</p>
@@ -3713,7 +3886,7 @@ not, and if they are, giving the name of the replacement rule:</p>
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="_questions_13">Questions</h4>
+<h4 id="_questions_14">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3724,7 +3897,7 @@ are or are not associative (big truth tables ahoy!).</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_11">Answers</h4>
+<h4 id="_answers_12">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4191,7 +4364,7 @@ valid.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_distributivity">2.14. Distributivity</h3>
+<h3 id="_distributivity">2.15. Distributivity</h3>
 <div class="paragraph">
 <p>Another &#8216;itivity&#8217;. Here are the <em>distributivity</em> rules of replacement:</p>
 </div>
@@ -4249,7 +4422,7 @@ y distributes over z then:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_questions_14">Questions</h4>
+<h4 id="_questions_15">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4273,7 +4446,7 @@ show that each pair of formulas are indeed equivalent.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_12">Answers</h4>
+<h4 id="_answers_13">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4662,7 +4835,7 @@ show that each pair of formulas are indeed equivalent.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_idempotence">2.15. Idempotence</h3>
+<h3 id="_idempotence">2.16. Idempotence</h3>
 <div id="img-benjaminpeirce" class="imageblock">
 <div class="content">
 <img src="benjaminpeirce.jpg" alt="Benjamin Peirce">
@@ -4796,7 +4969,7 @@ that:</p>
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="_questions_15">Questions</h4>
+<h4 id="_questions_16">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4817,7 +4990,7 @@ connective is idempotent.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_13">Answers</h4>
+<h4 id="_answers_14">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4894,7 +5067,7 @@ is valid, as shown by truth table:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_de_morgan_s_laws">2.16. De Morgan&#8217;s Laws</h3>
+<h3 id="_de_morgan_s_laws">2.17. De Morgan&#8217;s Laws</h3>
 <div class="paragraph">
 <p>I found in the Tower that Mathematicians are often good at music too. De Morgan
 was a flautist. I&#8217;ve got no musical ability. De Morgan&#8217;s Laws are a couple of
@@ -4917,7 +5090,7 @@ rules of replacement:</p>
 <p>Some say they&#8217;re obvious. Do you find them obvious? I don&#8217;t.</p>
 </div>
 <div class="sect3">
-<h4 id="_questions_16">Questions</h4>
+<h4 id="_questions_17">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4927,7 +5100,7 @@ rules of replacement:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_14">Answers</h4>
+<h4 id="_answers_15">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -5095,7 +5268,7 @@ equivalent.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_more_rules_of_replacement">2.17. More rules of replacement</h3>
+<h3 id="_more_rules_of_replacement">2.18. More rules of replacement</h3>
 <div class="paragraph">
 <p>Here are a few more rules of replacement. I&#8217;m not sure what the definitive list
 of rules of replacement are. Or even if there is one. If you know, please tell
@@ -5140,7 +5313,7 @@ me. Thanks.</p>
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="_questions_17">Questions</h4>
+<h4 id="_questions_18">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -5164,7 +5337,7 @@ pairs of formulas are equivalent.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_15">Answers</h4>
+<h4 id="_answers_16">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -5355,7 +5528,7 @@ is valid. The truth table:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_arguments">2.18. Arguments</h3>
+<h3 id="_arguments">2.19. Arguments</h3>
 <div class="paragraph">
 <p>The word &#8216;argument&#8217; makes me think of a bitter shouting match. To a logician
 it means something altogether more cerebral. A logical argument in English might
@@ -5626,7 +5799,7 @@ C: Lose our way.<br>
 <p>Shows that the formula is valid and so the argument is indeed valid.</p>
 </div>
 <div class="sect3">
-<h4 id="_questions_18">Questions</h4>
+<h4 id="_questions_19">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -5665,7 +5838,7 @@ and off. This light switch is not on. Therefore the light switch is off.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_16">Answers</h4>
+<h4 id="_answers_17">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -6159,7 +6332,7 @@ argument is valid.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_conjunctive_normal_form_cnf">2.19. Conjunctive Normal Form (CNF)</h3>
+<h3 id="_conjunctive_normal_form_cnf">2.20. Conjunctive Normal Form (CNF)</h3>
 <div class="paragraph">
 <p>When I got to this point in the Ivory Tower, John Alan Robinson took me by the
 scruff of the neck and said, &#8216;Look, you&#8217;ve just got to learn this, don&#8217;t ask
@@ -6335,7 +6508,7 @@ step 2, Negations, where the application of De Morgan&#8217;s Laws, gives:</p>
 <p>we&#8217;ve got it in CNF.</p>
 </div>
 <div class="sect3">
-<h4 id="_questions_19">Questions</h4>
+<h4 id="_questions_20">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -6364,7 +6537,7 @@ step 2, Negations, where the application of De Morgan&#8217;s Laws, gives:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_17">Answers</h4>
+<h4 id="_answers_18">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -6422,7 +6595,7 @@ is associative]</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_cnf_set_notation">2.20. CNF Set Notation</h3>
+<h3 id="_cnf_set_notation">2.21. CNF Set Notation</h3>
 <div class="paragraph">
 <p>As we&#8217;ve seen, the &#x2228; connective is commutative and associative. Dr Robinson
 told me that this means that for any CNF clause it doesn&#8217;t matter how you
@@ -6713,7 +6886,7 @@ and idempotence)</p>
 </ol>
 </div>
 <div class="sect3">
-<h4 id="_questions_20">Questions</h4>
+<h4 id="_questions_21">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -6723,7 +6896,7 @@ and idempotence)</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_18">Answers</h4>
+<h4 id="_answers_19">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -6757,7 +6930,7 @@ commutativity and idempotence]<br>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_propositional_resolution">2.21. Propositional Resolution</h3>
+<h3 id="_propositional_resolution">2.22. Propositional Resolution</h3>
 <div class="paragraph">
 <p>The logicians have discovered / invented other ways of showing if an argument is
 valid or not. One of these methods is <em>Propositional Resolution</em>.</p>
@@ -6768,7 +6941,7 @@ exponentially with the number of atomic formulas. The logicians have discovered<
 </div>
 </div>
 <div class="sect2">
-<h3 id="_mendelson_s_axiomatic_system">2.22. Mendelson&#8217;s Axiomatic System</h3>
+<h3 id="_mendelson_s_axiomatic_system">2.23. Mendelson&#8217;s Axiomatic System</h3>
 <div class="paragraph">
 <p>Writing out truth tables gets tedious, especially as the number of rows grows
 exponentially with the number of atomic formulas. The logicians have discovered
@@ -6832,7 +7005,7 @@ that are known as <em>rules of inference</em>. One rule of inference is:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_rules_of_inference">2.23. Rules Of Inference</h3>
+<h3 id="_rules_of_inference">2.24. Rules Of Inference</h3>
 <div class="paragraph">
 <p>Writing out truth tables gets tedious, especially as the number of rows grows
 exponentially with the number of atomic formulas. The logicians have discovered
@@ -7042,7 +7215,7 @@ Q, (R &#x2227; P) &#x2227; (R &#x2227; Q) &#x2192; P &#x22A8; P
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="_questions_21">Questions</h4>
+<h4 id="_questions_22">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7056,7 +7229,7 @@ valid by using rules of inference.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_19">Answers</h4>
+<h4 id="_answers_20">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7867,7 +8040,7 @@ P &#x2228; Q, &#x00AC;(P &#x2227; Q), &#x00AC;P &#x22A8; Q</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_precedence">2.24. Precedence</h3>
+<h3 id="_precedence">2.25. Precedence</h3>
 <div class="paragraph">
 <p>Let&#8217;s say we&#8217;ve got <em>three</em> atomic formulas P, Q and R. What&#8217;s the truth table for:</p>
 </div>
@@ -8048,7 +8221,7 @@ Rules say that anything in brackets gets evaluated first. So you&#8217;d write:<
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="_questions_22">Questions</h4>
+<h4 id="_questions_23">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -8074,7 +8247,7 @@ Rules say that anything in brackets gets evaluated first. So you&#8217;d write:<
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_20">Answers</h4>
+<h4 id="_answers_21">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -8417,7 +8590,7 @@ Rules say that anything in brackets gets evaluated first. So you&#8217;d write:<
 </div>
 </div>
 <div class="sect2">
-<h3 id="_sentential_logic_summary">2.25. Sentential Logic: Summary</h3>
+<h3 id="_sentential_logic_summary">2.26. Sentential Logic: Summary</h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -8453,14 +8626,14 @@ Rules say that anything in brackets gets evaluated first. So you&#8217;d write:<
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="_answers_21">2.25.1. Answers</h4>
+<h4 id="_answers_22">2.26.1. Answers</h4>
 <div class="paragraph">
 <p>Answers on their way&#8230;&#8203;</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_rosetta_stone">2.26. Rosetta Stone</h3>
+<h3 id="_rosetta_stone">2.27. Rosetta Stone</h3>
 <div id="img-rosetta" class="imageblock">
 <div class="content">
 <img src="rosetta.jpg" alt="Rosetta Stone">
@@ -8474,7 +8647,7 @@ the same area of maths. This point of this section is to help us understand
 what other authors are saying, in terms that we already understand.</p>
 </div>
 <div class="sect3">
-<h4 id="_sentential_logic_versus_propositional_logic">2.26.1. Sentential Logic versus Propositional Logic</h4>
+<h4 id="_sentential_logic_versus_propositional_logic">2.27.1. Sentential Logic versus Propositional Logic</h4>
 <div class="paragraph">
 <p>Some authors talk of Sentential Logic, and some talk of Propositional Logic.
 This is a philosophical difference. Say there are two statements that mean the
@@ -8484,7 +8657,7 @@ just one label.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_synonyms">2.26.2. Synonyms</h4>
+<h4 id="_synonyms">2.27.2. Synonyms</h4>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -8523,7 +8696,16 @@ just one label.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Atomic formula</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Atom, simple proposition, atomic sentence</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Atom, simple proposition, atomic sentence, simple sentence, proposition
+  constant, logical constant</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Compound formula</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">compound proposition, compound sentence</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_interpretations">Interpretation</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Truth assignment</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Valid formula</p></td>
@@ -8533,7 +8715,7 @@ just one label.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_tautology_and_contradiction">2.26.3. Tautology And Contradiction</h4>
+<h4 id="_tautology_and_contradiction">2.27.3. Tautology And Contradiction</h4>
 <div class="paragraph">
 <p>In the table of synonyms we&#8217;ve got <em>valid formula</em> being synonymous with
 <em>tautology</em>. In various parts of the Tower they&#8217;ll talk about <em>contradictions</em>,
@@ -8581,7 +8763,7 @@ propositional logic)</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-04-03 11:28:00 BST
+Last updated 2015-04-04 15:34:51 BST
 </div>
 </div>
 </body>
