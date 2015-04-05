@@ -698,6 +698,81 @@ and so this interpretation satisfies this formula.
 
 
 :numbered:
+=== Falsification
+
+This is the opposite of <<_satisfaction,satisfaction>>. An interpretation
+_falsifies_ a formula if it is false under that interpretation. Under the
+interpretation:
+
+[example]
+P is true +
+Q is true
+
+the formula:
+
+[example]
+({not}P {and} Q)
+
+evaluates to:
+
+[example]
+({not}true {and} true) +
+(false {and} true) +
+false
+
+since it's false, we can say that this interpretation falsifies this formula.
+Under the interpretation:
+
+[example]
+A is true +
+B is true +
+C is true +
+
+the formula:
+
+[example]
+((B {or} A) {and} {not}C)
+
+evaluates to:
+
+[example]
+((true {or} true) {and} {not}true) +
+(true {and} false) +
+false
+
+and so this interpretation satisfies this formula.
+
+
+:numbered!:
+==== Questions
+
+. For the following pairs of formulas and interpretations, show that the
+  interpretation falsifies the formula:
+.. (P {or} Q) when P is false and Q is false.
+.. ({not}P {or} {not}Q) when P is true and Q is true.
+.. ({not}A {and} B) when A is false and B is false.
+
+
+==== Answers
+
+. {empty}
+.. (P {or} Q) +
+   (false {or} false) +
+   false +
+   so the interpretation falsifies the formula.
+.. ({not}P {or} {not}Q) +
+   ({not}true {or} {not}true) +
+   (false {or} false) +
+   false
+   so the interpretation falsifies the formula.
+.. ({not}A {and} B) +
+   ({not}false {and} false) +
+   (true {and} false) +
+   false +
+   so the interpretation falsifies the formula.
+
+
+:numbered:
 === Valid Formula
 
 The formula:
@@ -714,31 +789,60 @@ has the truth table:
 | F | T      | T
 |===
 
-which shows that  whatever the value of P, the formula is always true. In the
-Tower a formula that is always true is called a _valid formula_. An example of a
-formula that is not valid is:
-
-[example]
-(P {and} {not}P)
-
-the truth table being:
-
-|===
-| P | {not}P | (P {and} {not}P)
-
-| T | F      | F
-| F | T      | F
-|===
-
-since the formula is always false.
+which shows that every possible interpretation satisfies the formula. In the
+Tower such a formula is called a _valid formula_.
  
 
 :numbered!:
 ==== Questions
 
-. Using truth tables, show whether the following formulas are valid or not:
-.. \((P {and} Q) {and} {not}(P {and} Q))
+. Using a truth table, show that the following formula is valid:
 .. ((P {or} Q) {or} {not}P)
+
+
+==== Answers
+
+. {empty}
+.. {empty}
++
+|===
+| P | Q | {not}P | P {or} Q | P {or} Q {or} {not}P
+
+| T | T | F      | T        | T
+| F | T | T      | T        | T
+| T | F | F      | T        | T
+| F | F | T      | F        | T
+|===
++
+so the formula is valid.
+
+
+:numbered:
+=== Unsatisfiable Formula
+
+The formula:
+
+[example]
+(P {and} {not}P)
+
+has the truth table:
+
+|===
+| P | {not}P | (P {or} {not}P)
+
+| T | F      | F
+| F | T      | F
+|===
+
+which shows that every possible interpretation falsifies the formula. In the
+Tower such a formula is called an _unsatisfiable formula_.
+
+
+:numbered!:
+==== Questions
+
+. Using truth tables, show that the following formulas unsatisfiable:
+.. \((P {and} Q) {and} {not}(P {and} Q))
 .. ((P {or} Q) {and} {not} P)
 .. \(({not}P {and} {not}Q) {and} {not}({not}P {and} {not}Q))
 .. \(({not}P {and} (Q {or} {not}P)) {and} R)
@@ -758,19 +862,7 @@ since the formula is always false.
 | F | F | F         | T                | F
 |===
 +
-so not valid.
-.. {empty}
-+
-|===
-| P | Q | {not}P | P {or} Q | P {or} Q {or} {not}P
-
-| T | T | F      | T        | T
-| F | T | T      | T        | T
-| T | F | F      | T        | T
-| F | F | T      | F        | T
-|===
-+
-so the formula is valid.
+so unsatisfiable.
 .. {empty}
 +
 |===
@@ -782,7 +874,7 @@ so the formula is valid.
 | F | F | T      | F              | F
 |===
 +
-so the formula is not valid.
+so the formula is unsatisfiable.
 .. {empty}
 +
 [cols="6*", options="header"]
@@ -799,7 +891,7 @@ so the formula is not valid.
 | T | F | F | T | F | F
 | F | F | T | T | T | T
 |===
-so the formula is not valid.
+so the formula is unsatisfiable.
 .. {empty}
 +
 [cols="7*", options="header"]
@@ -821,7 +913,7 @@ so the formula is not valid.
 | T | F | F | F | F | F | F
 | F | F | F | T | T | T | F
 |===
-so not valid.
+so unsatisfiable.
 
 
 :numbered:
@@ -2971,13 +3063,10 @@ just one label.
 
 | Valid formula
 | Tautology
+
+| Unsatisfiable formula
+| Contradiction
 |===
-
-==== Tautology And Contradiction
-
-In the table of synonyms we've got _valid formula_ being synonymous with
-_tautology_. In various parts of the Tower they'll talk about _contradictions_,
-which are formula that are always false.
 
 * All the rules of inference. and equivalence
 
