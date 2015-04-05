@@ -613,6 +613,90 @@ acted on two formulas, and so they're known as _binary_ connectives. The
 | F | F | F | F        | F                  | T
 |===
 
+
+:numbered:
+=== Satisfaction
+
+'`Sir, I demand satisfaction!`'. Yeah, we're not in Poldark, they don't watch
+that in their Ivory Tower. Why waste time on TV dramas when you could be doing
+maths?
+
+An interpretation _satisfies_ a formula if it is true under that interpretation.
+An example you say? An example? Okay, okay, you started off humble and now
+you're making demands. I just feel you need to take a moment to think about
+your attitude to this whole thing.
+
+Under the interpretation:
+
+[example]
+P is false +
+Q is true
+
+the formula:
+
+[example]
+({not}P {and} Q)
+
+evaluates to:
+
+[example]
+({not}false {and} true) +
+(true {and} true) +
+true
+
+since it's true, we can say that this interpretation satisfies this formula.
+'`Could you show me another example please?`', '`Certainly dear reader`'.
+Under the interpretation:
+
+[example]
+A is true +
+B is true +
+C is true +
+
+the formula:
+
+[example]
+((B {or} A) {or} {not}C)
+
+evaluates to:
+
+[example]
+((true {or} true) {or} {not}true) +
+(true {or} false) +
+true
+
+and so this interpretation satisfies this formula.
+
+
+:numbered!:
+==== Questions
+
+. For the following pairs of formulas and interpretations, show that the
+  interpretation satisfies the formula:
+.. (P {or} Q) when P is true and Q is false.
+.. ({not}P {or} {not}Q) when P is true and Q is false.
+.. ({not}A {and} B) when A is false and B is true.
+
+
+==== Answers
+
+. {empty}
+.. (P {or} Q) +
+   (true {or} false) +
+   true +
+   so the interpretation satisfies the formula.
+.. ({not}P {or} {not}Q) +
+   ({not}true {or} {not}false) +
+   (false {or} true) +
+   true
+   so the interpretation satisfies the formula.
+.. ({not}A {and} B) +
+   ({not}false {and} true) +
+   (true {and} true) +
+   true +
+   so the interpretation satisfies the formula.
+
+
 :numbered:
 === Valid Formula
 
