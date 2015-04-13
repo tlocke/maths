@@ -5,8 +5,8 @@ Tony Locke
 :or: &#x2228;
 :implies: &#x2192;
 :not: &#x00AC;
-:equiv: &#x21D4;
 :bicond: &#x2194;
+:equiv: &#8801;
 :toc:
 
 [subs="replacements"]
@@ -146,7 +146,7 @@ suspend our disbelief and imagine all those perfect statements.
 
 
 :numbered:
-=== Connectives
+=== Functions
 
 It seems that the next thing the logicians do is string together simple
 statements to make compound statements. So two simple statements might be:
@@ -168,7 +168,7 @@ simple statements is:
 Abelard likes coffee or Abelard likes cake.
 
 This compound statment is false if both simple statements are false, otherwise
-it's true. Those mathematicians from the Ivory Tower use the term _connectives_
+it's true. Those mathematicians from the Ivory Tower use the term _function_
 for the '`and`' and '`or`' that join simple statements to make compound
 statements.
 
@@ -211,7 +211,7 @@ the two simple statements can have the atomic formulas P and Q:
 P: Abelard likes coffee. +
 Q: Abelard likes cake.
 
-and the compound statement can be written as the _formula_:
+and the compound statement can be written as the _compound formula_:
 
 [example]
 P and Q
@@ -221,7 +221,7 @@ Now that we've said what P and Q stand for we can take this compound statement:
 [example]
 Abelard likes coffe or Abelard likes cake.
 
-and write it using the atomic formulas to give the formula:
+and write it using the atomic formulas to give the compound formula:
 
 [example]
 P or Q
@@ -260,100 +260,72 @@ P or Q
 
 
 :numbered:
-=== Funny Symbols
+=== Function Notation
 
-Using formulas does genuinely make it a lot easier to write down statements, I
-get that. At the same time though it makes it harder for the uninitiated to
-understand what's going on. A bit like jargon. Something else that
-mathematicians do takes things even further in this direction of adding mystique
-to their subject. Instead of using words for connectives they use obscure
-symbols, as if they were sorceresses writing an occult text. So '`and`' is
-written {and} and '`or`' is written {or}. Going back to our friend Abelard in
-the cafe, the compound statement:
+Here's an ambiguous compound statement:
 
 [example]
-Abelard likes coffee and Abelard likes cake.
+London is the capital of the UK or London is the capital of France and Paris is
+the captital of the UK.
 
-is written in logical symbols as:
-
-[example]
-P: Abelard likes coffee. +
-Q: Abelard likes cake. +
-P {and} Q
-
-and:
+substituting in '`true`' or '`false`' for the statements we get:
 
 [example]
-Abelard likes coffee or Abelard likes cake.
+true or false and false
 
-is written:
+Which is false if we do the '`or`' first, and true if we do the '`and`' first.
+So to express themselves unambiguously, logicians use _function notation_. In
+function notation the formula:
 
 [example]
-P: Abelard likes coffee. +
-Q: Abelard likes cake. +
-P {or} Q
+A and B
+
+is written as the formula:
+
+[example]
+and(A, B)
+
+and the formula:
+
+[example]
+A or B
+
+is written as the formula:
+
+[example]
+or(A, B)
+
+so going back to our example:
+
+[example]
+true or false and false
+
+if a logician wanted '`or`' to be done first they'd write the formula:
+
+[example]
+and(or(true, false), false)
+
+and if they wanted the '`and`' to be done first they'd write the formula:
+
+[example]
+or(true, and(false, false))
 
 
 :numbered!:
 ==== Questions
 
-. Write the answers to the questions for <<_formulas>> in logical symbols.
-
-
-==== Funny Symbols: Answers
-
-. {empty}
-.. P {and} Q
-.. A {or} B
-.. P {and} Q
-.. P {or} Q
-.. P {and} Q
-
-
-:numbered:
-=== Brackets
-
-In the Tower, they're mad for brackets. They put them round everything in
-sight. So instead of writing:
-
-[example]
-P {and} Q
-
-they write:
-
-[example]
-(P {and} Q)
-
-and instead of:
-
-[example]
-P {or} Q
-
-they write:
-
-[example]
-(P {or} Q)
-
-I thought all these brackets were a bit over the top at first. A touch of OCD.
-Rather fussy. But I found that it makes sense later on when formulas become
-more complicated. 
-
-
-:numbered!:
-==== Questions
-
-. Write the answers to the questions for <<_funny_symbols>> using logical
-  symbols.
+. Write the answers to the questions for <<_formulas>> using function
+  notation.
 
 
 ==== Answers
 
 . {empty}
-.. (P {and} Q)
-.. (A {or} B)
-.. (P {and} Q)
-.. (P {or} Q)
-.. (P {and} Q)
+.. and(P, Q)
+.. or(A, B)
+.. and(P, Q)
+.. or(P, Q)
+.. and(P, Q)
 
 
 :numbered:
@@ -362,7 +334,7 @@ more complicated.
 Say you've got a formula:
 
 [example]
-(P {and} Q)
+and(P, Q)
 
 To logicians, an _interpretation_ is the assignment of true or false to P and Q.
 So one interpretation is:
@@ -377,7 +349,7 @@ and another is:
 P is true +
 Q is false
 
-so for a formula with two atomic formulas, there are four possible
+so for a compound formula with two atomic formulas, there are four possible
 interpretations:
 
 |===
@@ -403,7 +375,7 @@ and to make it easier to write they use T for true and F for false:
 :numbered!:
 ==== Questions
 
-. For a formula with three atomic formulas, there are eight possible
+. For a compound formula with three atomic formulas, there are eight possible
   interpretations. Show those eight possible interpretation in a table.
 
 
@@ -429,10 +401,10 @@ and to make it easier to write they use T for true and F for false:
 
 A truth table. A medieval device for extracting a confession? No, a
 mathematical device for showing if a formula is true or false for every possible
-<<_interpretations, interpretation>>. The truth table for (P {and} Q) is:
+<<_interpretations, interpretation>>. The truth table for and(P, Q) is:
 
 |===
-| P | Q | (P {and} Q)
+| P | Q | and(P, Q)
 
 | T | T | T
 | F | T | F
@@ -440,11 +412,12 @@ mathematical device for showing if a formula is true or false for every possible
 | F | F | F
 |===
 
-so what we've done is written a row for each interpretation of P and Q, and thenin the final column put the value of (P {and} Q). The truth table for
-(P {or} Q) is:
+so what we've done is written a row for each interpretation of P and Q, and then
+in the final column put the value of and(P, Q). The truth table for
+or(P, Q) is:
 
 |===
-| P | Q | (P {or} Q)
+| P | Q | or(P, Q)
 
 | T | T | T
 | F | T | T
@@ -452,26 +425,25 @@ so what we've done is written a row for each interpretation of P and Q, and then
 | F | F | F
 |===
 
-You can use a truth table to show that (P {and} Q) means the same as
-(Q {and} P):
+You can use a truth table to show that and(P, Q) means the same as and(Q, P):
 
 |===
-| P | Q | (P {and} Q) | (Q {and} P)
+| P | Q | and(P, Q) | and(Q, P)
 
-| T | T | T | T
-| F | T | F | F
-| T | F | F | F
-| F | F | F | F
+| T | T | T         | T
+| F | T | F         | F
+| T | F | F         | F
+| F | F | F         | F
 |===
 
-For each row of the truth table, the last two columns are the same, and so
-(P {and} Q) means the same as (Q {and} P).
+For each interpretation, the last two columns are the same, and so and(P, Q)
+means the same as and(Q, P).
 
 
 :numbered!:
 ==== Questions
 
-. Use a truth table to show that (P {or} Q) means the same thing as (Q {or} P).
+. Use a truth table to show that or(P, Q) means the same thing as or(Q, P).
 
 
 ==== Answers
@@ -479,41 +451,40 @@ For each row of the truth table, the last two columns are the same, and so
 . {empty}
 +
 |===
-| P | Q | P {or} Q | Q {or} P
+| P | Q | or(P, Q) | or(Q, P)
 
-| T | T | T | T
-| F | T | T | T
-| T | F | T | T
-| F | F | F | F
+| T | T | T        | T
+| F | T | T        | T
+| T | F | T        | T
+| F | F | F        | F
 |===
 
 For each row of the truth table, the last two columns are the same, and so
-P {or} Q means the same as Q {or} P.
+or(P, Q) means the same as or(Q, P).
 
 
 :numbered:
 === Not
 
-There's another connective called _not_, which has the symbol {not}. Its truth
-table is:
+There's another function called _not_, which has the truth table:
 
 |===
-| P | {not}P
+| P | not(P)
 
 | T | F
 | F | T
 |===
 
-Let us cast it loose amongst the other connectives and employ the truth table
+Let us cast it loose amongst the other functions and employ the truth table
 to see what results. Picking a formula at random, let's try:
 
 [example]
-({not}P {or} Q)
+or(not(P), Q)
 
 which gives the truth table:
 
 |===
-| P | Q | {not}P | ({not}P {or} Q)
+| P | Q | not(P) | or(not(P), Q)
 
 | T | T | F      | T
 | F | T | T      | T
@@ -524,12 +495,12 @@ which gives the truth table:
 Let us now extract a full confession from:
 
 [example]
-{not}(P {or} Q)
+not(or(P, Q))
 
 which gives the truth table:
 
 |===
-| P | Q | (P {or} Q) | {not}(P {or} Q)
+| P | Q | or(P, Q) | not(or(P, Q))
 
 | T | T | T        | F
 | F | T | T        | F
@@ -537,57 +508,58 @@ which gives the truth table:
 | F | F | F        | T
 |===
 
-One other thing, the first two connectives we encountered ({and} and {or}) both
-acted on two formulas, and so they're known as _binary_ connectives. The
-{not} connective acts on one formula and so is called a _unary_ connective.
+One other thing, the first two functions we encountered ('`and`' and '`or`')
+both acted on two formulas, and so they're known as _binary_ functions. The
+'`not`' function acts on one formula and so is called a _unary_ function.
 
 
 :numbered!:
 ==== Questions
 
 . Give the truth tables for:
-.. {not}(P {and} Q)
-.. {not}(P {and} Q)
-.. (P {or} {not}Q)
-.. {not}{not}P
-.. {not}(\(P {or} Q) {or} R)
-.. {not}(\(P {or} Q) {and} R)
+.. not(and(P, Q))
+.. or(P, not(Q))
+.. not(not(P))
+.. not(or(or(P, Q), R))
+.. not(and(or(P, Q), R))
 
 
 ==== Answers
 
 . {empty}
 .. {empty}
++
 |===
-| P | Q | {not}P | {not}P {and} Q
+| P | Q | not(P) | not(and(P, Q))
 
 | T | T | F      | F
 | F | T | T      | T
 | T | F | F      | F
 | F | F | T      | F
 |===
-[start=2]
++
 .. {empty}
++
 |===
-| P | Q | {not}Q | P {or} {not}Q
+| P | Q | not(Q) | or(P, not(Q))
 
 | T | T | F      | T
 | F | T | F      | T
 | T | F | T      | T
 | F | F | T      | F
 |===
-[start=3]
++
 .. {empty}
 |===
-| P | {not}P | {not}{not}P
+| P | not(P) | not(not(P))
 
 | T | F      | T
 | F | T      | F
 |===
-[start=4]
++
 .. {empty}
 |===
-| P | Q | R | P {or} Q | P {or} Q {or} R | {not}(P {or} Q {or} R)
+| P | Q | R | or(P, Q) | or(or(P, Q), R) | not(or(or(P, Q), R))
 
 | T | T | T | T        | T               | F
 | F | T | T | T        | T               | F
@@ -598,19 +570,20 @@ acted on two formulas, and so they're known as _binary_ connectives. The
 | T | F | F | T        | T               | F
 | F | F | F | F        | F               | T
 |===
-[start=5]
++
 .. {empty}
++
 |===
-| P | Q | R | P {or} Q | (P {or} Q) {and} R | {not}(\(P {or} Q) {and} R)
+| P | Q | R | or(P, Q) | and(or(P, Q), R) | not(and(or(P, Q), R))
 
-| T | T | T | T        | T                  | F
-| F | T | T | T        | T                  | F
-| T | F | T | T        | T                  | F
-| F | F | T | F        | F                  | T
-| T | T | F | T        | F                  | T
-| F | T | F | T        | F                  | T
-| T | F | F | T        | F                  | T
-| F | F | F | F        | F                  | T
+| T | T | T | T        | T                | F
+| F | T | T | T        | T                | F
+| T | F | T | T        | T                | F
+| F | F | T | F        | F                | T
+| T | T | F | T        | F                | T
+| F | T | F | T        | F                | T
+| T | F | F | T        | F                | T
+| F | F | F | F        | F                | T
 |===
 
 
@@ -635,13 +608,13 @@ Q is true
 the formula:
 
 [example]
-({not}P {and} Q)
+and(not(P), Q)
 
 evaluates to:
 
 [example]
-({not}false {and} true) +
-(true {and} true) +
+and(not(false), true) +
+and(true, true) +
 true
 
 since it's true, we can say that this interpretation satisfies this formula.
@@ -656,13 +629,13 @@ C is true +
 the formula:
 
 [example]
-((B {or} A) {or} {not}C)
+or(or(B, A), not\(C))
 
 evaluates to:
 
 [example]
-((true {or} true) {or} {not}true) +
-(true {or} false) +
+or(or(true, true), not(true)) +
+or(true, false) +
 true
 
 and so this interpretation satisfies this formula.
@@ -673,26 +646,26 @@ and so this interpretation satisfies this formula.
 
 . For the following pairs of formulas and interpretations, show that the
   interpretation satisfies the formula:
-.. (P {or} Q) when P is true and Q is false.
-.. ({not}P {or} {not}Q) when P is true and Q is false.
-.. ({not}A {and} B) when A is false and B is true.
+.. or(P, Q) when P is true and Q is false.
+.. or(not(P), not(Q)) when P is true and Q is false.
+.. and(not(A), B) when A is false and B is true.
 
 
 ==== Answers
 
 . {empty}
-.. (P {or} Q) +
-   (true {or} false) +
+.. or(P, Q) +
+   or(true, false) +
    true +
    so the interpretation satisfies the formula.
-.. ({not}P {or} {not}Q) +
-   ({not}true {or} {not}false) +
-   (false {or} true) +
+.. or(not(P), not(Q)) +
+   or(not(true), not(false)) +
+   or(false, true) +
    true
    so the interpretation satisfies the formula.
-.. ({not}A {and} B) +
-   ({not}false {and} true) +
-   (true {and} true) +
+.. and(not(A), B) +
+   and(not(false), true) +
+   and(true, true) +
    true +
    so the interpretation satisfies the formula.
 
@@ -711,13 +684,13 @@ Q is true
 the formula:
 
 [example]
-({not}P {and} Q)
+and(not(P), Q)
 
 evaluates to:
 
 [example]
-({not}true {and} true) +
-(false {and} true) +
+and(not(true), true) +
+and(false, true) +
 false
 
 since it's false, we can say that this interpretation falsifies this formula.
@@ -731,13 +704,13 @@ C is true +
 the formula:
 
 [example]
-((B {or} A) {and} {not}C)
+and(or(B, A), not\(C))
 
 evaluates to:
 
 [example]
-((true {or} true) {and} {not}true) +
-(true {and} false) +
+and(or(true, true), not(true)) +
+and(true, false) +
 false
 
 and so this interpretation satisfies this formula.
@@ -748,26 +721,26 @@ and so this interpretation satisfies this formula.
 
 . For the following pairs of formulas and interpretations, show that the
   interpretation falsifies the formula:
-.. (P {or} Q) when P is false and Q is false.
-.. ({not}P {or} {not}Q) when P is true and Q is true.
-.. ({not}A {and} B) when A is false and B is false.
+.. or(P, Q) when P is false and Q is false.
+.. or(not(P), not(Q)) when P is true and Q is true.
+.. and(not(A), B) when A is false and B is false.
 
 
 ==== Answers
 
 . {empty}
-.. (P {or} Q) +
-   (false {or} false) +
+.. or(P, Q) +
+   or(false, false) +
    false +
    so the interpretation falsifies the formula.
-.. ({not}P {or} {not}Q) +
-   ({not}true {or} {not}true) +
-   (false {or} false) +
+.. or(not(P), not(Q)) +
+   or(not(true), not(true)) +
+   or(false, false) +
    false
    so the interpretation falsifies the formula.
-.. ({not}A {and} B) +
-   ({not}false {and} false) +
-   (true {and} false) +
+.. and(not(A), B) +
+   and(not(false), false) +
+   and(true, false) +
    false +
    so the interpretation falsifies the formula.
 
@@ -778,12 +751,12 @@ and so this interpretation satisfies this formula.
 The formula:
 
 [example]
-(P {or} {not}P)
+or(P, not(P))
 
 has the truth table:
 
 |===
-| P | {not}P | (P {or} {not}P)
+| P | not(P) | or(P, not(P))
 
 | T | F      | T
 | F | T      | T
@@ -797,7 +770,7 @@ Tower such a formula is called a _valid formula_.
 ==== Questions
 
 . Using a truth table, show that the following formula is valid:
-.. ((P {or} Q) {or} {not}P)
+.. or(or(P, Q), not(P))
 
 
 ==== Answers
@@ -806,7 +779,7 @@ Tower such a formula is called a _valid formula_.
 .. {empty}
 +
 |===
-| P | Q | {not}P | P {or} Q | P {or} Q {or} {not}P
+| P | Q | not(P) | or(P, Q) | or(or(P, Q), not(P))
 
 | T | T | F      | T        | T
 | F | T | T      | T        | T
@@ -823,12 +796,12 @@ so the formula is valid.
 The formula:
 
 [example]
-(P {and} {not}P)
+and(P, not(P))
 
 has the truth table:
 
 |===
-| P | {not}P | (P {or} {not}P)
+| P | not(P) | or(P, not(P))
 
 | T | F      | F
 | F | T      | F
@@ -841,11 +814,11 @@ Tower such a formula is called an _unsatisfiable formula_.
 :numbered!:
 ==== Questions
 
-. Using truth tables, show that the following formulas unsatisfiable:
-.. \((P {and} Q) {and} {not}(P {and} Q))
-.. ((P {or} Q) {and} {not} P)
-.. \(({not}P {and} {not}Q) {and} {not}({not}P {and} {not}Q))
-.. \(({not}P {and} (Q {or} {not}P)) {and} R)
+. Using truth tables, show that the following formulas are unsatisfiable:
+.. and(and(P, Q), not(and(P, Q)))
+.. and(P, and(Q, not(P)))
+.. and(and(not(P), not(Q)), not(and(not(P), not(Q))))
+.. and(and(and(P, not(P)), Q), R)
 
 
 ==== Answers
@@ -854,23 +827,23 @@ Tower such a formula is called an _unsatisfiable formula_.
 .. {empty}
 +
 |===
-| P | Q | P {and} Q | {not}(P {and} Q) | (P {and} Q) {and} {not}(P {and} Q)
+| P | Q | and(P, Q) | not(and(P, Q)) | and(and(P, Q), not(and(P, Q)))
 
-| T | T | T         | F                | F
-| F | T | F         | T                | F
-| T | F | F         | T                | F
-| F | F | F         | T                | F
+| T | T | T         | F              | F
+| F | T | F         | T              | F
+| T | F | F         | T              | F
+| F | F | F         | T              | F
 |===
 +
 so unsatisfiable.
 .. {empty}
 +
 |===
-| P | Q | {not}P | Q {and} {not}P | P {or} Q {and} {not}P
+| P | Q | not(P) | and(Q, not(P)) | and(P, and(Q, not(P)))
 
-| T | T | F      | F              | T
-| F | T | T      | T              | T
-| T | F | F      | F              | T
+| T | T | F      | F              | F
+| F | T | T      | T              | F
+| T | F | F      | F              | F
 | F | F | T      | F              | F
 |===
 +
@@ -881,15 +854,16 @@ so the formula is unsatisfiable.
 |===
 | P
 | Q
-| {not}P
-| {not}Q
-| {not}P {and} {not}Q
-| ({not}P {and} {not}Q) {and} {not}({not}P {and} {not}Q)
+| not(P)
+| not(Q)
+| and(not(P), not(Q))
+| not(and(not(P), not(Q)))
+| and(and(not(P), not(Q)), not(and(not(P), not(Q))))
 
-| T | T | F | F | F | F
-| F | T | T | F | F | F
-| T | F | F | T | F | F
-| F | F | T | T | T | T
+| T | T | F | F | F | T | F
+| F | T | T | F | F | T | F
+| T | F | F | T | F | T | F
+| F | F | T | T | T | F | F
 |===
 so the formula is unsatisfiable.
 .. {empty}
@@ -899,19 +873,19 @@ so the formula is unsatisfiable.
 | P
 | Q
 | R
-| {not}P
-| Q {or} {not}P
-| {not}P {and} (Q {or} {not}P)
-| {not}P {and} (Q {or} {not}P) {and} R
+| not(P)
+| and(P, not(P))
+| and(and(P, not(P)), Q)
+| and(and(and(P, not(P)), Q), R)
 
-| T | T | T | F | T | F | F
-| F | T | T | T | T | T | T
+| T | T | T | F | F | F | F
+| F | T | T | T | F | F | F
 | T | F | T | F | F | F | F
-| F | F | T | T | T | T | T
-| T | T | F | F | T | F | F
-| F | T | F | T | T | T | F
+| F | F | T | T | F | F | F
+| T | T | F | F | F | F | F
+| F | T | F | T | F | F | F
 | T | F | F | F | F | F | F
-| F | F | F | T | T | T | F
+| F | F | F | T | F | F | F
 |===
 so unsatisfiable.
 
@@ -919,11 +893,10 @@ so unsatisfiable.
 :numbered:
 === Implies
 
-There's another binary connective called _implies_ that has the symbol
-{implies}. Its truth table is:
+There's another binary function called _implies_ that has the truth table:
 
 |===
-| P | Q | (P {implies} Q)
+| P | Q | implies(P, Q)
 
 | T | T | T
 | F | T | T
@@ -934,8 +907,8 @@ There's another binary connective called _implies_ that has the symbol
 Take the two simple statements:
 
 [example]
-* Abelard is at the cafe. 
-* The cafe is open.
+Abelard is at the cafe. +
+The cafe is open.
 
 Joining the two with an implication could give the compound statement:
 
@@ -967,12 +940,12 @@ could be written in these alternative ways:
 The formula:
 
 [example]
-((P {and} {not}Q) {implies} Q)
+implies(and(P, not(Q)), Q)
 
 Has the truth table:
 
 |===
-| P | Q | {not}Q | (P {and} {not}Q) | ((P {and} {not}Q) {implies} Q)
+| P | Q | not(Q) | and(P, not(Q)) | implies(and(P, not(Q)), Q)
 
 | T | T | F      | F              | T
 | F | T | F      | F              | T
@@ -980,10 +953,10 @@ Has the truth table:
 | F | F | T      | F              | T
 |===
 
-Another example; the truth table for (Q {implies} (P {and} {not}Q)) is:
+Another example; the truth table for implies(Q, and(P, not(Q))) is:
 
 |===
-| P | Q | {not}Q | (P {and} {not}Q) | (Q {implies} (P {and} {not}Q))
+| P | Q | not(Q) | and(P, not(Q)) | implies(Q, and(P, not(Q)))
 
 | T | T | F      | F              | F
 | F | T | F      | F              | F
@@ -999,11 +972,11 @@ Another example; the truth table for (Q {implies} (P {and} {not}Q)) is:
 .. If Keith is in Bath, then Keith is in England.
 .. The sky being red at night implies that the shepherds are delighted.
 . Create a truth table for each of the following formulas:
-.. ({not}P {implies} Q)
-.. (Q {implies} {not}Q)
-.. ((P {implies} Q) {or} P)
-.. ({not}(P {and} Q) {implies} ({not}P {or} {not} Q))
-.. ((P {and} (P {implies} Q)) {implies} {not}P)
+.. implies(not(P), Q)
+.. implies(Q, not(Q))
+.. or(implies(P, Q), P)
+.. implies(not(and(P, Q)), or(not(P), not(Q)))
+.. implies(and(P, implies(P, Q)), not(P))
 
 
 ==== Answers
@@ -1011,71 +984,87 @@ Another example; the truth table for (Q {implies} (P {and} {not}Q)) is:
 . {empty}
 .. P: The washing is out. +
    Q: It's a dry day. +
-   P {implies} Q
+   implies(P, Q)
 .. A: Keith is in Bath. +
    B: Keith is in England. +
-   A {implies} B
+   implies(A, B)
 .. A: The sky is red at night. +
    B: The shepherds are delighted. +
-   A {implies} B
+   implies(A, B)
 . {empty}
 .. {empty}
++
 |===
-| P | Q | {not}P | {not}P {implies} Q
+| P | Q | not(P) | implies(not(P), Q)
 
 | T | T | F      | T
 | F | T | T      | T
 | T | F | F      | T
 | F | F | T      | F
 |===
-[start=2]
++
 .. {empty}
++
 |===
-| Q | {not}Q | Q {implies} {not}Q
+| Q | not(Q) | implies(Q, not(Q))
 
 | T | F      | F
 | F | T      | T
 |===
-[start=3]
++
 .. {empty}
++
 |===
-| P | Q | P {implies} Q | (P {implies} Q) {or} P
+| P | Q | implies(P, Q) | or(implies(P, Q), P)
 
-| T | T | T          | T
-| F | T | T          | T
-| T | F | F          | T
-| F | F | T          | T
+| T | T | T             | T
+| F | T | T             | T
+| T | F | F             | T
+| F | F | T             | T
 |===
-[start=4]
++
 .. {empty}
++
 |===
-| P | Q | P {and} Q | {not}(P {and} Q) | {not} P | {not} Q | {not}P {or} {not} Q | {not}(P {and} Q) {implies} {not}P {or} {not} Q
+| P
+| Q
+| and(P, Q)
+| not(and(P, Q))
+| not(P)
+| not(Q)
+| or(not(P), not(Q))
+| implies(not(and(P, Q)), or(not(P), not(Q)))
 
-| T | T | T         | F                | F       | F       | F                   | T
-| F | T | F         | T                | T       | F       | T                   | T
-| T | F | F         | T                | F       | T       | T                   | T
-| F | F | F         | T                | T       | T       | T                   | T
+| T | T | T | F | F | F | F | T
+| F | T | F | T | T | F | T | T
+| T | F | F | T | F | T | T | T
+| F | F | F | T | T | T | T | T
 |===
-[start=5]
++
 .. {empty}
++
 |===
-| P | Q | P {implies} Q | {not}P | P {and} (P {implies} Q) | P {and} (P {implies} Q) {implies} {not}P
+| P
+| Q
+| implies(P, Q)
+| not(P)
+| and(P, implies(P, Q))
+| implies(and(P, implies(P, Q)), not(P))
 
-| T | T | T          | F      | T                   | F
-| F | T | F          | T      | F                   | T
-| T | F | F          | F      | F                   | T
-| F | F | F          | T      | F                   | T
+| T | T | T | F | T | F
+| F | T | F | T | F | T
+| T | F | F | F | F | T
+| F | F | F | T | F | T
 |===
 
 
 :numbered:
-=== Biconditional
+=== Equals
 
-The _biconditional_ is a binary connective with the mystical symbol {bicond} and
-its truth table is:
+The _equals_ function is a binary function with the truth table:
 
 |===
-| P | Q | (P {bicond} Q)
+| P | Q | equals(P, Q)
 
 | T | T | T
 | F | T | F
@@ -1083,7 +1072,7 @@ its truth table is:
 | F | F | T
 |===
 
-Translating from English to logic symbols the sentence:
+Translating from English to a formula, the sentence:
 
 [example]
 It's Christmas Day if and only if it's the 25th of December.
@@ -1093,7 +1082,7 @@ is written:
 [example]
 P: It's Christmas Day. +
 Q: It's the 25th of December. +
-(P {bicond} Q)
+equals(P, Q)
 
 which of course is true. An example that is false is:
 
@@ -1105,85 +1094,40 @@ which is written:
 [example]
 P: It's Christmas Day. +
 Q: It's the 2nd of March. +
-(P {bicond} Q)
+equals(P, Q)
 
 
 :numbered!:
 ==== Questions
 
-. Translate the following English sentences into logical symbols:
+. Translate the following English sentences into formulas:
 .. The bike's back brake comes on if, and only if, the left brake lever is
    applied.
 .. The fridge light is on if, and only if, the fridge door is open.
 . Give the truth table for each of the following formulas:
-.. (A {bicond} (B {and} C))
-.. (B {or} (A {bicond} B))
-.. (P {and} {not}(P {bicond} (Q {or} P)))
-.. ((Q {bicond} {not}P) {and} (P {bicond} {not} {not}Q))
-
-
-:numbered:
-=== Equivalence
-
-If two formulas are _equivalent_, then the formula formed by joining them with
-the {bicond} connective will be valid. For example, if the pair of formulas:
-
-[example]
-A and {not}{not}A
-
-are equivalent, then:
-
-[example]
-(A {bicond} {not}{not}A)
-
-will be valid. Its truth table is:
-
-|===
-| A | {not}A | {not}{not}A | (A {bicond} {not}{not}A)
-
-| T | F      | T           | T
-| F | T      | F           | T
-|===
-
-and so indeed we can say that this pair of formulas are equivalent. The symbol
-for equivalence is {equiv}, and so we can write the equivalence of the pair as:
-
-A {equiv} {not}{not}A
-
-Pairs of equivalent formulas can be substituted for each other in other
-formulas, without changing the meaning of those other formulas. The commonly
-used pairs of equivalent formulas are called _rules of replacement_ (for once
-they actually chose a _logical_ name, lol). The equivalent pair that we've just
-found:
-
-A {equiv} {not}{not}A
-
-is a rule of replacement called _double {not}_.
-
-
-:numbered!:
-==== Questions
-
-. Use the double {not} rule of replacement to simplify the following formulas:
-.. (P {or} {not}{not}Q)
-.. {not}{not}(P {or} Q)
-.. ({not}{not}A {and} {not}{not}B)
+.. equals(A, and(B, C))
+.. or(B, equals(A, B))
+.. and(P, not(equals(P, or(Q, P))))
+.. and(equals(Q, not(P)), equals(P, not(not(Q))))
 
 
 ==== Answers
 
 . {empty}
-.. A: The bike's back brake comes on. +
-   B: The left brake lever is applied. +
-   A {equiv} B
-.. The fridge light is on if, and only if, the fridge door is open.
-.. P: The fridge light is on. +
+.. The bike's back brake comes on if, and only if, the left brake lever is
+   applied. +
+   P: The bike's back brake comes on. +
+   Q: The left brake lever is applied. +
+   equals(P, Q)
+.. The fridge light is on if, and only if, the fridge door is open. +
+   P: The fridge light is on. +
    Q: The fridge door is open. +
-   P {equiv} Q
-. {empty}
-.. {empty}
+   equals(P, Q)
+. Give the truth table for each of the following formulas:
+.. equals(A, and(B, C))
++
 |===
-| A | B | C | B {and} C | A {equiv} B {and} C
+| A | B | C | and(B, C) | equals(A, and(B, C)
 
 | T | T | T | T         | T
 | F | T | T | T         | F
@@ -1194,123 +1138,240 @@ is a rule of replacement called _double {not}_.
 | T | F | F | F         | F
 | F | F | F | F         | T
 |===
-[start=2]
-.. {empty}
++
+.. or(B, equals(A, B))
++
 |===
-| A | B | A {equiv} B | B {or} (A {equiv} B)
+| A | B | equals(A, B) | or(B, equals(A, B))
 
-| T | T | T           | T
-| F | T | F           | T
-| T | F | F           | F
-| F | F | T           | T
+| T | T | T            | T
+| F | T | F            | T
+| T | F | F            | F
+| F | F | T            | T
 |===
-[start=3]
-.. {empty}
++
+.. and(P, not(equals(P, or(Q, P))))
++
 |===
-| 1 | 2 | 3        | 4               | 5          | 6
-| P | Q | Q {or} P | P {equiv} col_3 | {not}col_4 | P {and} col_5
+| P
+| Q
+| or(Q, P)
+| equals(P, or(Q, P)
+| not(equals(P, or(Q, P))
+| and(P, not(equals(P, or(Q, P))))
 
-| T | T | T        | T               | F          | F
-| F | T | T        | F               | T          | F
-| T | F | T        | T               | F          | F
-| F | F | F        | T               | F          | F
+| T | T | T | T | F | F
+| F | T | T | F | T | F
+| T | F | T | T | F | F
+| F | F | F | T | F | F
 |===
-.. (Q {equiv} {not}P) {and} (P {equiv} {not}{not}Q)
-[start=4]
-.. {empty}
++
+.. and(equals(Q, not(P)), equals(P, not(not(Q))))
++
 |===
-| 1 | 2 | 3      | 4               | 5      | 6          | 7               | 8
-| P | Q | {not}P | Q {equiv} col_3 | {not}Q | {not}col_5 | P {equiv} col_6 | col_4 {and} col_7
+| P
+| Q
+| not(P)
+| equals(Q, not(P))
+| not(Q)
+| not(not(Q))
+| equals(P, not(not(Q)))
+| and(equals(Q, not(P)), equals(P, not(not(Q))))
 
-| T | T | F      | F               | F      | T          | T               | F
-| F | T | T      | T               | F      | T          | F               | F
-| T | F | F      | T               | T      | F          | F               | F
-| F | F | T      | F               | T      | F          | T               | F
+| T | T | F | F | F | T | T | F
+| F | T | T | T | F | T | F | F
+| T | F | F | T | T | F | F | F
+| F | F | T | F | T | F | T | F
 |===
+
+:numbered:
+=== Identity
+
+If two formulas are an _identity_, then the formula formed by joining them with
+the '`equals`' function will be valid. For example, if the pair of formulas:
+
+[example]
+implies(A, B) +
+or(not(A), B)
+
+are an identity, then:
+
+[example]
+equals(implies(A, B), or(not(A), B))
+
+will be valid. Its truth table is:
+
+|===
+| A
+| B
+| implies(A, B)
+| not(A)
+| or(not(A)), B)
+| equals(implies(A, B), or(not(A), B))
+
+| T | T | T | F | T | T
+| F | T | T | T | T | T
+| T | F | F | F | F | T
+| F | F | T | T | T | T
+|===
+
+and so indeed we can say that this pair of formulas is an identity. The symbol
+for identity is {equiv}, and so we can write the identity as:
+
+implies(A, B) {equiv} or(not(A), B)
+
+The two formulas in an identity can be substituted for each other in other
+formulas, without changing the meaning of those other formulas. The commonly
+used identities have their own names. The identity that we've just found:
+
+[example]
+implies(A, B) {equiv} or(not(A), B)
+
+is called _material implication_.
+
+
+:numbered!:
+==== Questions
+
+. Use the material implication identity to rewrite the following formulas while
+  preserving their meaning:
+.. implies(A, B)
+.. or(not(A), B)
+.. implies(A, not(B))
+.. or(A, B)
+
+
+==== Answers
+
+. Use the material implication identity to rewrite the following formulas while
+  preserving their meaning:
+.. implies(A, B) +
+   or(not(A), B)
+.. or(not(A), B) +
+   implies(A, B)
+.. implies(A, not(B)) +
+   or(not(A), not(B))
+.. or(A, B) +
+   implies(not(A), B)
+
+
+:numbered:
+==== Material Equality
+
+Hot on the heels of meeting the Material Implies identity, I encountered the
+Material Equality identity:
+
+[example]
+equals(P, Q) {equiv} and(or(not(P), Q), or(P, not(Q)))
+
+Actually I found loads of these identities in the Tower, some with names, some
+without. I noted down the ones I thought were important, and the ones that had
+a pattern to them and skipped over the rest. Is this the right approach?
+
+
+:numbered!:
+==== Questions
+
+. Use the material equality identity to rewrite the following formulas while
+  preserving their meaning:
+.. equals(P, Q)
+.. and(or(not(P), Q), or(P, not(Q)))
+.. and(equals(P, Q), P)
+.. or(and(or(P, Q), or(not(P), not(Q))), not(P))
+
+
+==== Answers
+
+. Use the material equality identity to rewrite the following formulas while
+  preserving their meaning:
+.. equals(P, Q) +
+   and(or(not(P), Q), or(P, not(Q)))
+.. and(or(not(P), Q), or(P, not(Q))) +
+   equals(P, Q)
+.. and(equals(P, Q), P) +
+   and(and(or(not(P), Q), or(P, not(Q))), P)
+.. or(and(or(P, Q), or(not(P), not(Q))), not(P)) +
+   or(equals(P, Q), not(P))
 
 
 :numbered:
 === Commutativity
 
-Some binary connectives have the property of _commutativity_. The connective
-{and} is commutative which means that:
+A special type of identity that some binary functions have is _commutativity_.
+The function '`and`' is commutative which means that:
 
 [example]
-(A {and} B) {equiv} (B {and} A)
+and(A, B) {equiv} and(B, A)
 
-This equivalence is a rule of replacement called _{and} commutativity_. Not all
-binary connectives are commutative though. For example:
-
-[example]
-(A {implies} B)
-
-is not equivalent to:
+This identity is called _conjunction commutativity_. Not all
+binary functions are commutative though. For example the pair of formulas:
 
 [example]
-(B {implies} A)
+implies(A, B) +
+implies(B, A)
 
-because:
+is not and identity because:
 
 [example]
-(A {implies} B) {bicond} (B {implies} A)
+equals(implies(A, B), implies(B, A))
 
-is not valid, and so {implies} is not commutative. Here's a table showing
-all the binary connectives, and whether they're commutative or not, and if they
-are, giving the name of the associated replacement rule.
+is not a valid formula, and so '`implies`' is not commutative. Here's a table
+showing all the binary functions, and whether they're commutative or not, and if
+they are, giving the name of the associated identity.
 
 |===
-| Binary Connective | Commutative? | Rule Of Replacement
+| Binary Function | Commutative? | Name Of Identity
 
-| {and}             | Yes          | {and} commutativity
-| {or}              | Yes          | {or} commutativity
-| {implies}         | No           |
-| {bicond}          | Yes          | {bicond} commutativity
+| and             | Yes          | conjunction commutativity
+| or              | Yes          | disjunction commutativity
+| implies         | No           |
+| equals          | Yes          | equality commutativity
 |===
 
 
 :numbered!:
 ==== Questions
 
-. For each of the four binary connectives use a truth table to show if they
+. For each of the four binary functions use a truth table to show if they
   are or are not commutative.
 
 ==== Answers
 
 . {empty}
-.. {and} is commutative if \((A {and} B) {bicond} (B {and} A)) is valid.
+.. '`and`' is commutative if equals(and(A, B), and(B, A)) is valid.
 +
 |===
-| A | B | (A {and} B) | (B {and} A) | \((A {and} B) {bicond} (B {and} A))
+| A | B | and(A, B) | and(B, A) | equals(and(A, B), and(B, A))
 
-| T | T | T           | T           | T
-| F | T | F           | F           | T
-| T | F | F           | F           | T
-| F | F | F           | F           | T
+| T | T | T         | T         | T
+| F | T | F         | F         | T
+| T | F | F         | F         | T
+| F | F | F         | F         | T
 |===
 +
-it is valid and so {and} is commutative.
-.. {or} is commutative if \((A {or} B) {bicond} (B {or} A)) is valid.
+so it is valid and so '`and`' is commutative.
+.. '`or`' is commutative if equals(or(A, B), or(B, A)) is valid.
 +
 |===
-| A | B | (A {or} B) | (B {or} A) | \((A {or} B) {bicond} (B {or} A))
+| A | B | or(A, B) | or(B, A) | equals(or(A, B), or(B, A))
 
-| T | T | T          | T          | T
-| F | T | T          | T          | T
-| T | F | T          | T          | T
-| F | F | F          | F          | T
+| T | T | T          | T      | T
+| F | T | T          | T      | T
+| T | F | T          | T      | T
+| F | F | F          | F      | T
 |===
 +
-it is valid and so {or} is commutative.
-.. {implies} is commutative if \((A {implies} B) {bicond} (B {implies} A)) is 
+so it is valid and so '`or`' is commutative.
+.. '`implies`' is commutative if equals(implies(A, B), implies(B, A)) is 
    valid.
 +
 [cols="5*", options="header"]
 |===
 | A
 | B
-| (A {implies} B)
-| (B {implies} A)
-| \((A {implies} B) {bicond} (B {bicond} A))
+| implies(A, B)
+| implies(B, A)
+| equals(implies(A, B), equals(B, A))
 
 | T | T | T | T | T
 | F | T | T | F | F
@@ -1318,17 +1379,17 @@ it is valid and so {or} is commutative.
 | F | F | T | T | T
 |===
 +
-it is not valid and so {implies} is not commutative.
-.. {bicond} is commutative if \((A {bicond} B) {bicond} (B {bicond} A)) is
+it is not valid and so '`implies`' is not commutative.
+.. '`equals`' is commutative if equals(equals(A, B), equals(B, A)) is
    valid.
 +
 [cols="5*", options="header"]
 |===
 | A
 | B
-| (A {bicond} B)
-| (B {bicond} A)
-| \((A {bicond} B) {bicond} (B {bicond} A))
+| equals(A, B)
+| equals(B, A)
+| equals(equals(A, B), equals(B, A))
 
 | T | T | T | T | T
 | F | T | F | F | T
@@ -1336,62 +1397,63 @@ it is not valid and so {implies} is not commutative.
 | F | F | T | T | T
 |===
 +
-it is valid and so {bicond} is commutative.
+it is valid and so '`equals`' is commutative.
 
 
 :numbered:
 === Associativity
 
-Another property that some binary connectives have is _associativity_. The
-{and} connective is associative, which means:
+Another type of identity that some binary functions have is _associativity_. The
+'`and`' function is associative, which means:
 
 [example]
-(P {and} (Q {and} R)) {equiv} ((P {and} Q) {and} R)
+and(P, and(Q, R)) {equiv} and(and(P, Q), R)
 
 because the formula:
 
 [example]
-(P {and} (Q {and} R)) {bicond} ((P {and} Q) {and} R)
+equals(and(P, and(Q, R)), and(and(P, Q), R))
 
-is valid. So if you've got three formulas joined by {and}, it doesn't
-make any difference if you put brackets round the first two or the last two.
-This equivalence is a rule of replacement called _{and} associativity_. Here's a
-table showing all the binary connectives, and whether they're associative or
-not, and if they are, giving the name of the replacement rule:
+is valid. So if you've got three formulas joined by '`and`', it doesn't
+make any difference if the first two are joined first, or the last two.
+This identity is called _conjunction associativity_. Here's a
+table showing all the binary functions, and whether they're associative or
+not, and if they are, giving the name of the identity:
 
 |===
-| Binary Connective | Associative? | Rule Of Replacement
+| Binary Function | Associative? | Name Of Identity
 
-| {and}             | Yes          | {and} associativity
-| {or}              | Yes          | {or} associativity
-| {implies}         | No           |
-| {bicond}          | Yes          | {bicond} associativity
+| and             | Yes          | Conjunction associativity
+| or              | Yes          | Disjunction associativity
+| implies         | No           |
+| equals          | Yes          | Equality associativity
 |===
 
 
 :numbered!:
 ==== Questions
 
-. For each of the four binary connectives use a truth table to show if they
+. For each of the four binary functions use a truth table to show if they
   are or are not associative (big truth tables ahoy!).
 
 
 ==== Answers
 
-. {empty}
-.. {and} is associative if (\((A {and} B) {and} C) {bicond} (A {and}
-   (B {and} C))) is valid.
+. For each of the four binary functions use a truth table to show if they
+  are or are not associative (big truth tables ahoy!).
+.. '`and`' is associative if equals(and(and(A, B), C), and(A, and(B, C))) is
+   valid.
 +
 [cols="8*", options="header"]
 |===
 | A
 | B
 | C
-| (A {and} B)
-| ((A {and} B) {and} C)
-| (B {and} C)
-| (A {and} (B {and} C))
-| (\((A {and} B) {and} C) {bicond} (A {and} (B {and} C)))
+| and(A, B)
+| and(and(A, B), C)
+| and(B, C)
+| and(A, and(B, C))
+| equals(and(and(A, B), C), and(A, and(B, C)))
 
 | T | T | T | T | T | T | T | T
 | F | T | T | F | F | T | F | T
@@ -1403,8 +1465,8 @@ not, and if they are, giving the name of the replacement rule:
 | F | F | F | F | F | F | F | T
 |===
 +
-it is valid and so {and} is associative.
-.. {or} is associative if (\((A {or} B) {or} C) {bicond} (A {or} (B {or} C))) is
+it is valid and so '`and`' is associative.
+.. '`or`' is associative if equals(or(or(A, B), C), or(A, or(B, C))) is
    valid.
 +
 [cols="8*", options="header"]
@@ -1412,11 +1474,11 @@ it is valid and so {and} is associative.
 | A
 | B
 | C
-| (A {or} B)
-| ((A {or} B) {or} C)
-| (B {or} C)
-| (A {or} (B {or} C))
-| (\((A {or} B) {or} C) {bicond} (A {or} (B {or} C)))
+| or(A, B)
+| or(or(A, B), C)
+| or(B, C)
+| or(A, or(B, C))
+| equals(or(or(A, B), C), or(A, or(B, C)))
 
 | T | T | T | T | T | T | T | T
 | F | T | T | T | T | T | T | T
@@ -1428,20 +1490,20 @@ it is valid and so {and} is associative.
 | F | F | F | F | F | F | F | T
 |===
 +
-it is valid and so {or} is associative.
-.. {implies} is associative if (\((A {implies} B) {implies} C) {bicond}
-   (A {implies} (B {implies} C))) is valid.
+it is valid and so '`or`' is associative.
+.. '`implies`' is associative if equals(implies(implies(A, B), C),
+   implies(A, implies(B, C))) is valid.
 +
 [cols="8*", options="header"]
 |===
 | A
 | B
 | C
-| (A {implies} B)
-| ((A {implies} B) {implies} C)
-| (B {implies} C)
-| (A {implies} (B {implies} C))
-| (\((A {implies} B) {implies} C) {bicond} (A {implies} (B {implies} C)))
+| implies(A, B)
+| implies(implies(A, B), C)
+| implies(B, C)
+| implies(A, implies(B, C))
+| equals(implies(implies(A, B), C), implies(A, implies(B, C)))
 
 | T | T | T | T | T | T | T | T
 | F | T | T | T | T | T | T | T
@@ -1453,20 +1515,20 @@ it is valid and so {or} is associative.
 | F | F | F | T | F | T | T | F
 |===
 +
-it is not valid and so {implies} is not associative.
-.. {bicond} is associative if (\((A {bicond} B) {bicond} C) {bicond}
-   (A {bicond} (B {bicond} C))) is valid.
+it is not valid and so '`implies`' is not associative.
+.. '`equals`' is associative if equals(equals(equals(A, B), C),
+   equals(A, equals(B, C))) is valid.
 +
 [cols="8*", options="header"]
 |===
 | A
 | B
 | C
-| (A {bicond} B)
-| ((A {bicond} B) {bicond} C)
-| (B {bicond} C)
-| (A {bicond} (B {bicond} C))
-| (\((A {bicond} B) {bicond} C) {bicond} (A {bicond} (B {bicond} C)))
+| equals(A, B)
+| equals(equals(A, B), C)
+| equals(B, C)
+| equals(A, equals(B, C))
+| equals(equals(equals(A, B), C), equals(A, equals(B, C)))
 
 | T | T | T | T | T | T | T | T
 | F | T | T | F | F | T | F | T
@@ -1478,74 +1540,74 @@ it is not valid and so {implies} is not associative.
 | F | F | F | T | F | T | F | T
 |===
 +
-it is valid and so {bicond} is associative.
+it is valid and so '`equals`' is associative.
 
 
 :numbered:
 === Distributivity
 
-Another '`itivity`'. Here are the _distributivity_ rules of replacement:
+Another '`itivity`'. Here are the _distributivity_ identities:
 
 |===
-| Rule Of Replacement | Name
+| Identity | Name
 
-| (A {and} (B {and} C)) {equiv} \((A {and} B) {and} (A {and} C))
-| Distribution of {and} over {and}
+| and(A, and(B, C)) {equiv} and(and(A, B), and(A, C))
+| Distribution of '`and`' over '`and`'
 
-| (A {and} (B {or} C)) {equiv} \((A {and} B) {or} (A {and} C))
-| Distribution of {and} over {or}
+| and(A, or(B, C)) {equiv} or(and(A, B), and(A, C))
+| Distribution of '`and`' over '`or`'
 
-| (A {or} (B {and} C)) {equiv} \((A {or} B) {and} (A {or} C))
-| Distribution of {or} over {and}
+| or(A, and(B, C)) {equiv} and(or(A, B), or(A, C))
+| Distribution of '`or`' over '`and`'
 
-| (A {or} (B {or} C)) {equiv} \((A {or} B) {or} (A {or} C))
-| Distribution of {or} over {or}
+| or(A, or(B, C)) {equiv} or(or(A, B), or(A, C))
+| Distribution of '`or`' over '`or`'
 
-| (A {implies} (B {implies} C)) {equiv} \((A {implies} B) {implies}
-  (A {implies} C))
-| Distribution of {implies} over {implies}
+| implies(A, implies(B, C)) {equiv} implies(implies(A, B), implies(A, C))
+| Distribution of '`implies`' over '`implies`'
 
-| (A {implies} (B {bicond} C)) {equiv} \((A {implies} B) {bicond}
-  (A {implies} C))
-| Distribution of {implies} over {bicond}
+| implies(A, equals(B, C)) {equiv} equals(implies(A, B), implies(A, C))
+| Distribution of '`implies`' over '`equals`'
 
-| (A {or} (B {bicond} C)) {equiv} \((A {or} B) {bicond} (A {or} C))
-| Distribution of {or} over {bicond}
+| or(A, equals(B, C)) {equiv} equals(or(A, B), or(A, C))
+| Distribution of '`or`' over '`equals`'
 |===
 
-Here's the pattern as I see it. If there are two connectives y and z, then if
+Here's the pattern as I see it. If there are two functions y and z, then if
 y distributes over z then:
 
 [example]
-(A y (B z C)) {equiv} \((A y B ) z (A y C))
+y(A, z(B, C)) {equiv} z(y(A, B), y(A, C))
+
 
 :numbered!:
 ==== Questions
 
-. For the following distributivity rules of replacement, use a truth table to
-  show that each pair of formulas are indeed equivalent.
-.. {and} over {and}
-.. {implies} over {bicond}
-.. {or} over {bicond}
+. For the following distributivity identities use a truth table to show that
+  they really are identities.
+.. '`and`' over '`and`'
+.. '`implies`' over '`equals`'
+.. '`or`' over '`equals`'
 
 
 ==== Answers
 
-. {empty}
-.. If {and} is distributive over {and} then: +
-   (P {and} (Q {and} R)) {bicond} \((P {and} Q) {and} (P {and} R)) is valid.
+. For the following distributivity identities use a truth table to show that
+  they really are identities.
+.. If '`and`' is distributive over '`and`' then: +
+   equals(and(P, and(Q, R)), and(and(P, Q), and(P, R))) is valid.
 +
 [cols="9*", options="header"]
 |===
 | P
 | Q
 | R
-| (Q {and} R)
-| (P {and} (Q {and} R))
-| (P {and} Q)
-| (P {and} R)
-| \((P {and} Q) {and} (P {and} R))
-| (P {and} (Q {and} R)) {bicond} \((P {and} Q) {and} (P {and} R))
+| and(Q, R)
+| and(P, and(Q, R))
+| and(P, Q)
+| and(P, R)
+| and(and(P, Q), and(P, R))
+| equals(and(P, and(Q, R)), and(and(P, Q), and(P, R)))
 
 | T | T | T | T | T | T | T | T | T
 | F | T | T | T | F | F | F | F | T
@@ -1557,24 +1619,23 @@ y distributes over z then:
 | F | F | F | F | F | F | F | F | T
 |===
 +
-the formula is indeed valid, so {and} is distributive over {and}.
-.. {implies} over {bicond}
-.. If {implies} is distributive over {bicond} then: +
-   (P {implies} (Q {bicond} R)) {bicond}
-   \((P {implies} Q) {bicond} (P {implies} R)) is valid.
+the formula is indeed valid, so '`and`' is distributive over '`and`'.
+.. '`implies`' over '`equals`'
+.. If '`implies`' is distributive over '`equals`' then: +
+   equals(implies(P, equals(Q, R)), equals(implies(P, Q), implies(P, R))) +
+   is valid.
 +
 [cols="9*", options="header"]
 |===
 | P
 | Q
 | R
-| (Q {bicond} R)
-| (P {implies} (Q {bicond} R))
-| (P {implies} Q)
-| (P {implies} R)
-| \((P {implies} Q) {bicond} (P {implies} R))
-| (P {implies} (Q {bicond} R)) {bicond}
-  \((P {implies} Q) {bicond} (P {implies} R))
+| equals(Q, R)
+| implies(P, equals(Q, R))
+| implies(P, Q)
+| implies(P, R)
+| equals(implies(P, Q), implies(P, R))
+| equals(implies(P, equals(Q, R)), equals(implies(P, Q), implies(P, R)))
 
 | T | T | T | T | T | T | T | T | T
 | F | T | T | T | T | T | T | T | T
@@ -1586,21 +1647,22 @@ the formula is indeed valid, so {and} is distributive over {and}.
 | F | F | F | T | T | T | T | T | T
 |===
 +
-the formula is indeed valid, so {implies} is distributive over {bicond}.
-.. If {or} is distributive over {bicond} then: +
-   (P {or} (Q {bicond} R)) {bicond} \((P {or} Q) {bicond} (P {or} R)) is valid.
+the formula is indeed valid, so '`implies`' is distributive over '`equals`'.
+.. If '`or`' is distributive over '`equals`' then: +
+   equals(or(P, equals(Q, R)), equals(or(P, Q), or(P, R))) +
+   is valid.
 +
 [cols="9*", options="header"]
 |===
 | P
 | Q
 | R
-| (Q {bicond} R)
-| (P {or} (Q {bicond} R))
-| (P {or} Q)
-| (P {or} R)
-| \((P {or} Q) {bicond} (P {or} R))
-| (P {or} (Q {bicond} R)) {bicond} \((P {or} Q) {bicond} (P {or} R))
+| equals(Q, R)
+| or(P, equals(Q, R))
+| or(P, Q)
+| or(P, R)
+| equals(or(P, Q), or(P, R))
+| equals(or(P, equals(Q, R)), equals(or(P, Q), or(P, R)))
 
 | T | T | T | T | T | T | T | T | T
 | F | T | T | T | T | T | T | T | T
@@ -1612,7 +1674,7 @@ the formula is indeed valid, so {implies} is distributive over {bicond}.
 | F | F | F | T | T | F | F | T | T
 |===
 +
-the formula is indeed valid, so {or} is distributive over {bicond}.
+the formula is indeed valid, so '`or`' is distributive over '`equals`'.
 
 
 :numbered:
@@ -1623,90 +1685,109 @@ the formula is indeed valid, so {or} is distributive over {bicond}.
 image::benjaminpeirce.jpg[Benjamin Peirce]
 
 '`Hey, Tony`', Benjamin Peirce said as he tapped me on the knee and leaned over
-confidentially, '`there's another property of binary connectives that I call
-_idempotence_`'. The {and} connective is idempotent because:
+confidentially, '`there's another property of functions that I call
+_idempotence_`'. The '`and`' function is idempotent because:
 
 [example]
-(P {and} P) {equiv} P
+and(P, P) {equiv} P
 
-and the {or} connective is idempotent because:
-
-[example]
-(P {or} P) {equiv} P
-
-but {implies} is not idempotent. We can show that {or} is idempotent by showing
-that:
+and the '`or`' function is idempotent because:
 
 [example]
-(P {or} P) {bicond} P
+or(P, P) {equiv} P
+
+but '`implies`' is not idempotent. We can show that '`or`' is idempotent by
+showing that:
+
+[example]
+equals(or(P, P), P)
 
 is valid, as shown by truth table:
 
 |===
-| P | (P {or} P) | (P {or} P) {bicond} P
+| P | or(P, P) | equals(or(P, P), P)
 
-| T | T          | T
-| F | F          | T
+| T | T        | T
+| F | F        | T
 |===
 
-and {implies} is not idempotent because:
+and '`implies`' is not idempotent because:
 
 [example]
-(P {implies} P) {bicond} P
+equals(implies(P, P), P)
 
-is not valid, as shown by truth table:
-
-|===
-| P | (P {implies} P) | (P {implies} P) {bicond} P
-
-| T | T               | T
-| F | T               | F
-|===
-
-Here's a table showing whether each connective is idempotent or not.
+is not valid, as shown by the truth table:
 
 |===
-| Binary Connective | Idempotent?
+| P | implies(P, P) | equals(implies(P, P), P)
 
-| {and}             | Yes
-| {or}              | Yes
-| {implies}         | No
-| {bicond}          | Yes
+| T | T             | T
+| F | T             | F
 |===
+
+Here's a table showing whether each function is idempotent or not.
+
+|===
+| Function        | Idempotent? | Identity Name
+
+| not             | Yes         | Idempotence of negation
+| and             | Yes         | Idempotence of conjunction
+| or              | Yes         | Idempotence of disjunction
+| implies         | No          |
+| equals          | No          |
+|===
+
+The unary function '`not`' is idempotent because:
+
+[example]
+not(not(P)) {equiv} P
 
 
 :numbered!:
 ==== Questions
 
-. For the following connectives, use a truth table to show whether or not the
-  connective is idempotent.
-.. {bicond}
-.. {and}
-
+. For the following functions, use a truth table to show whether or not the
+  function is idempotent.
+.. equals
+.. and
+. Use the idempotence of negation identity to simplify the following
+  formulas:
+.. or(P, not(not(Q)))
+.. not(not(or(P, Q)))
+.. and(not(not(A)), not(not(B)))
 
 ==== Answers
 
 . {empty}
-.. {bicond} is idempotent because: +
-   (P {bicond} P) {bicond} P +
+.. '`equals`' is not idempotent because: +
+   equals(equals(P, P), P) +
+   is not valid, as shown by truth table:
++
+|===
+| P | equals(P, P) | equals(equals(P, P), P)
+
+| T | T            | T
+| F | T            | F
+|===
+.. '`and`' is idempotent because: +
+   equals(and(P, P), P) +
    is valid, as shown by truth table:
 +
 |===
-| P | (P {bicond} P) | (P {bicond} P) {bicond} P
+| P | and(P, P) | equals(and(P, P), P)
 
-| T | T              | T
-| F | F              | T
+| T | T         | T
+| F | F         | T
 |===
-.. {and} is idempotent because: +
-   (P {and} P) {bicond} P +
-   is valid, as shown by truth table:
 +
-|===
-| P | (P {and} P) | (P {and} P) {bicond} P
-
-| T | T           | T
-| F | F           | T
-|===
+. Use the idempotence of negation identity to simplify the following
+  formulas:
+.. or(P, not(not(Q))) +
+   or(P, Q)
+.. not(not(or(P, Q))) +
+   or(P, Q)
+.. and(not(not(A)), not(not(B))) +
+   and(A, B)
 
 
 :numbered:
@@ -1714,43 +1795,44 @@ Here's a table showing whether each connective is idempotent or not.
 
 I found in the Tower that Mathematicians are often good at music too. De Morgan
 was a flautist. I've got no musical ability. De Morgan's Laws are a couple of
-rules of replacement:
+identities:
 
 [example]
-(A {and} B) {equiv} {not}({not}A {or} {not}B)
+and(A, B) {equiv} not(or(not(A), not(B)))
 
 and:
 
 [example]
-(A {or} B) {equiv} {not}({not}A {and} {not}B)
+or(A, B) {equiv} not(and(not(A), not(B)))
 
 Some say they're obvious. Do you find them obvious? I don't.
+
 
 :numbered!:
 ==== Questions
 
-. For De Morgan's laws, use a truth table to show that they are equivalent.
+. For De Morgan's laws, use a truth table to show that they are identities.
 
 
 ==== Answers
 
-. For De Morgan's laws, use a truth table to show that they are equivalent.
+. For De Morgan's laws, use a truth table to show that they are identities.
 .. If: +
-   (A {and} B) {equiv} {not}({not}A {or} {not}B) +
+   and(A, B) {equiv} not(or(not(A), not(B))) +
    then: +
-   (A {and} B) {bicond} {not}({not}A {or} {not}B) +
+   equals(and(A, B), not(or(not(A), not(B)))) +
    is valid. The truth table is:
 +
 [cols="8*", options="header"]
 |===
 | A
 | B
-| (A {and} B)
-| {not}A
-| {not}B
-| ({not}A {or} {not}B)
-| {not}({not}A {or} {not}B)
-| (A {and} B) {bicond} {not}({not}A {or} {not}B) +
+| and(A, B)
+| not(A)
+| not(B)
+| or(not(A), not(B))
+| not(or(not(A), not(B)))
+| equals(and(A, B), not(or(not(A), not(B))))
 
 | T | T | T | F | F | F | T | T
 | F | T | F | T | F | T | F | T
@@ -1760,21 +1842,21 @@ Some say they're obvious. Do you find them obvious? I don't.
 +
 which shows it is valid, and so the two formulas are equivalent.
 .. If: +
-   (A {or} B) {equiv} {not}({not}A {and} {not}B) +
+   or(A, B) {equiv} not(and(not(A), not(B))) +
    then: +
-   (A {or} B) {bicond} {not}({not}A {and} {not}B) +
+   or(A, B) {bicond} not(and(not(A), not(B)) +
    is valid. The truth table for this formula is:
 +
 [cols="8*", options="header"]
 |===
 | A
 | B
-| (A {or} B)
-| {not}A
-| {not}B
-| ({not}A {and} {not}B)
-| {not}({not}A {and} {not}B)
-| (A {or} B) {bicond} {not}({not}A {and} {not}B) +
+| or(A, B)
+| not(A)
+| not(B)
+| and(not(A), not(B))
+| not(and(not(A), not(B)))
+| equals(or(A, B), not(and(not(A), not(B)))) +
 
 | T | T | T | F | F | F | T | T
 | F | T | T | T | F | F | T | T
@@ -1782,115 +1864,8 @@ which shows it is valid, and so the two formulas are equivalent.
 | F | F | F | T | T | T | F | T
 |===
 +
-which shows it is valid, and so the two formulas we started with are
-equivalent.
-
-
-:numbered:
-=== More rules of replacement
-
-Here are a few more rules of replacement. I'm not sure what the definitive list
-of rules of replacement are. Or even if there is one. If you know, please tell
-me. Thanks.
-
-|===
-| Name | Rule
-
-| Transposition
-| (P {implies} Q) {equiv} ({not}Q {implies} {not}P)
-
-| Material Implication
-| (P {implies} Q) {equiv} ({not}P {or} Q)
-
-| Exportation
-| \((P {and} Q) {implies} R) {equiv} (P {implies} (Q {implies} R))
-
-| Idempotency of {and}
-| (P {and} P) {equiv} P
-
-| Idempotency of {or}
-| (P {or} P) {equiv} P
-
-| {not} introduction
-| \((P {implies} Q) {and} (P {implies} {not}Q)) {equiv} {not}P
-|===
-
-
-:numbered!:
-==== Questions
-
-. For the following rules of replacement, use a truth table to show that the
-  pairs of formulas are equivalent.
-.. Idempotency of {and}
-.. {not} introduction
-.. Material Implication
-
-
-==== Answers
-
-. {empty}
-.. Idempotency of {and} is +
-   (P {and} P) {equiv} P +
-   so the two formulas are equivalent if +
-   (P {and} P) {bicond} P +
-   is valid. The truth table:
-+
-|===
-| P | (P {and} P) | (P {and} P) {bicond} P
-
-| T | T           | T
-| F | F           | T
-|===
-+
-shows that it is valid, and so the two formulas are equivalent.   
-.. {not} introduction is +
-   \((P {implies} Q) {and} (P {implies} {not}Q)) {equiv} {not}P +
-   so the two formulas are equivalent if +
-   \((P {implies} Q) {and} (P {implies} {not}Q)) {bicond} {not}P +
-   is valid. The truth table:
-+
-[cols="8*", options="header"]
-|===
-| P
-| Q
-| (P {implies} Q)
-| {not}Q
-| (P {implies} {not}Q)
-| \((P {implies} Q) {and} (P {implies} {not}Q))
-| {not}P
-| \((P {implies} Q) {and} (P {implies} {not}Q)) {bicond} {not}P
-
-
-| T | T | T | F | F | F | F | T
-| F | T | T | F | T | T | T | T
-| T | F | F | T | T | F | F | T
-| F | F | T | T | T | T | T | T
-|===
-+
-shows that it is valid, and so the two formulas are equivalent.   
-.. Material Implication is +
-   (P {implies} Q) {equiv} ({not}P {or} Q) +
-   so the two formulas are equivalent if +
-   (P {implies} Q) {bicond} ({not}P {or} Q) +
-   is valid. The truth table:
-+
-[cols="6*", options="header"]
-|===
-| P
-| Q
-| (P {implies} Q)
-| {not}P
-| ({not}P {or} Q)
-| (P {implies} Q) {bicond} ({not}P {or} Q)
-
-
-| T | T | T | F | T | T
-| F | T | T | F | T | T
-| T | F | F | T | F | T
-| F | F | T | T | T | T
-|===
-+
-shows that it is valid, and so the two formulas are equivalent.   
+which shows it is valid, and so the pair of formulas we started with is an
+identity.
 
 
 :numbered:
@@ -1914,13 +1889,13 @@ B: Abelard ordered cake.
 So the argument becomes:
 
 [example]
-If A {or} B is true and {not}B is true, then A is true.
+If or(A, B) is true and not(B) is true, then A is true.
 
 To express this argument more concisely we roll out the _double turnstile_ 
 symbol {entails}, and write the argument as:
 
 [example]
-(A {or} B), {not}B {entails} A
+or(A, B), not(B) {entails} A
 
 Where the comma-separated list of formulas on the left of the double-turnstile
 are the premises, and the formula on the right is the conclusion. That's the
@@ -1928,10 +1903,10 @@ argument written down, but is it valid? In other words, if the premises are
 true, is the conclusion true? To find out, we can say that if:
 
 [example]
-(((A {or} B) {and} {not}B) {implies} A)
+implies(and(or(A, B), not(B)), A)
 
 is valid, then the argument is valid. If effect we've joined the premises
-together with {and} and replaced the {entails} with a {implies} to get the
+together with '`and`' and replaced the {entails} with an '`implies`' to get the
 formula. Bring on the table of truth!
 
 [cols="6*", options="header"]
@@ -1939,10 +1914,10 @@ formula. Bring on the table of truth!
 
 | A
 | B
-| (A {or} B)
-| {not}B
-| ((A {or} B) {and} {not}B)
-| (((A {or} B) {and} {not}B) {implies} A)
+| or(A, B)
+| not(B)
+| and(or(A, B), not(B))
+| implies(and(or(A, B), not(B)), A)
 
 | T | T | T | F | F | T
 | F | T | T | F | F | T
@@ -1964,11 +1939,11 @@ In logic symbols the argument is:
 A: Run out of petrol. +
 B: Get to the wedding on time. +
 C: Lose our way. +
-(A {implies} {not}B), (C {implies} {not}B), A {entails} {not}B
+implies(A, not(B)), implies(C, not(B)), A {entails} not(B)
 
 The argument is valid if:
 
-\((((A {implies} {not}B) {and} (C {implies} {not}B)) {and} A) {implies} {not}B)
+implies(and(and(implies(A, not(B)), implies(C, not(B))), A), not(B))
 
 is valid. Doing a giant truth table:
 
@@ -1979,12 +1954,12 @@ is valid. Doing a giant truth table:
 | A
 | B
 | C
-| {not}B
-| (A {implies} col_4)
-| (C {implies} col_4)
-| (col_5 {and} col_6)
-| (col_7 {and} A)
-| (col_8 {implies} col_4)
+| not(B)
+| implies(A, col_4)
+| implies(C, col_4)
+| and(col_5, col_6)
+| and(col_7, A)
+| implies(col_8, col_4)
 
 | T | T | T | F | F | F | F | F | T
 | F | T | T | F | T | F | F | F | T
@@ -2023,34 +1998,29 @@ Shows that the formula is valid and so the argument is indeed valid.
 . {empty}
 .. P: It's a silent film. +
    Q: There's no sound. +
-   P {implies} Q, P {entails} Q
+   implies(P, Q), P {entails} Q
 .. A: Scheherazade bought black paint. +
    B: Scheherazade bought grey paint. +
-   A {or} B, {not} B {entails} A
+   or(A, B), not(B) {entails} A
 .. P: Ben won a tennis match. +
    Q: Toby won a tennis match. +
-   {not}(P {and} Q), Q {entails} {not}P
-   1. P (assume as part of {not} elimination)
-   2. Q (assumption) 
-   3. P {and} Q (1. and 2. and {and} introduction)
-   4. {not}(P {and} Q) (assumption)
-   5. {not}P (3. and 4. and {not} elimination)
+   not(and(P, Q)), Q {entails} not(P)
 .. P: Bill orders 6x. +
    Q: Bill orders Tribute. +
    R: The pub is open. +
-   P {or} Q, P {or} Q {implies} R, {not}Q {entails} R {and} P
+   or(P, Q), implies(or(P, Q), R), not(Q) {entails} and(R, P)
 .. P: The light switch is on. +
    Q: The light switch is off. +
-   P {or} Q, {not}(P {and} Q), {not}P {entails} Q
+   or(P, Q), not(and(P, Q)), not(P) {entails} Q
 . {empty}
-.. If the argument P {implies} Q, P {entails} Q is valid, then the formula
-   \((P {implies} Q) {and} P {implies} Q) is valid. The following truth table
+.. If the argument implies(P, Q), P {entails} Q is valid, then the formula
+   and(implies(P, Q), implies(P, Q)) is valid. The following truth table
    shows the formula is valid, so the argument is indeed valid.
 +
 |===
 | 1 | 2 | 3             | 4             | 5
 
-| P | Q | P {implies} Q | col_3 {and} P | col_4 {implies} Q
+| P | Q | implies(P, Q) | and(col_3, P) | implies(col_4, Q)
 
 | T | T | T             | T             | T
 | F | T | T             | F             | T
@@ -2058,14 +2028,14 @@ Shows that the formula is valid and so the argument is indeed valid.
 | F | F | T             | F             | T
 |===
 +
-.. If the argument A {or} B, {not} B {entails} A is valid, then the formula
-   \(\((A {or} B) {and} {not}B) {implies} A) is valid. The following truth table
+.. If the argument or(A, B), not(B) {entails} A is valid, then the formula
+   implies(and(or(A, B), not(B)), A) is valid. The following truth table
    shows the formula is valid, so the argument is indeed valid.
 +
 |===
 | 1 | 2 | 3        | 4      | 5                 | 6
 
-| A | B | A {or} B | {not}B | col_3 {and} col_4 | col_5 {implies} A
+| A | B | or(A, B) | not(B) | and(col_3, col_4) | implies(col_5, A)
 
 | T | T | T        | F      | F                 | T
 | F | T | T        | F      | F                 | T
@@ -2073,14 +2043,14 @@ Shows that the formula is valid and so the argument is indeed valid.
 | F | F | F        | T      | F                 | T
 |===
 +
-.. If the argument P {or} Q, Q {entails} {not}P is valid, then the formula
-   \(\((P {or} Q) {and} Q) {implies} {not}P) is valid. The following truth table
+.. If the argument or(P, Q), Q {entails} not(P) is valid, then the formula
+   implies(and(or(P, Q), Q), not(P)) is valid. The following truth table
    shows the formula is not valid, so the argument is not valid.
 +
 |===
 | 1 | 2 | 3        | 4      | 5             | 6
 
-| P | Q | P {or} Q | {not}P | col_3 {and} Q | col_5 {implies} col_4
+| P | Q | or(P, Q) | not(P) | and(col_3, Q) | implies(col_5, col_4)
 
 | T | T | T        | F      | T             | F
 | F | T | T        | T      | T             | T
@@ -2088,9 +2058,9 @@ Shows that the formula is valid and so the argument is indeed valid.
 | F | F | F        | T      | F             | T
 |===
 +
-.. If the argument P {or} Q, P {or} Q {implies} R, {not}Q {entails} R {and} P is
-   valid, then the formula \(\((\((P {or} Q) {and} (P {or} Q)) {implies} R)
-   {and} {not}Q) {implies} (R {and} P)) is valid. The following truth table
+.. If the argument or(P, Q), implies(or(P, Q), R), not(Q) {entails} and(R, P) is
+   valid, then the formula implies(and(and(or(P, Q), implies(or(P, Q), R)),
+   not(Q)) {implies} and(R, P)) is valid. The following truth table
    shows the formula is valid, so the argument is valid.
 +
 [cols="10*", options="header"]
@@ -2109,13 +2079,13 @@ Shows that the formula is valid and so the argument is indeed valid.
 | P
 | Q
 | R
-| P {or} Q
-| col_4 {implies} R
-| R {and} P
-| {not}Q
-| col_4 {and} col_5
-| col_8 and col_7
-| col_9 {implies} col_6
+| or(P, Q)
+| implies(col_4, R)
+| and(R, P)
+| not(Q)
+| and(col_4, col_5)
+| and(col_8, col_7)
+| implies(col_9, col_6)
 
 | T | T | T | T | T | T | F | T | F | T
 | F | T | T | F | T | F | F | F | F | T
@@ -2127,10 +2097,10 @@ Shows that the formula is valid and so the argument is indeed valid.
 | F | F | F | F | T | F | T | F | F | T
 |===
 +
-.. If the argument P {or} Q, {not}(P {and} Q), {not}P {entails} Q is valid, then
-   the formula (\(\((P {or} Q) {and} {not}(P {and} Q)) {and} {not}P) {implies}
-   Q) is valid. The following truth table shows the formula is valid, so the
-   argument is valid.
+.. If the argument or(P, Q), not(and(P, Q)), not(P) {entails} Q is valid, then
+   the formula implies(and(and(or(P, Q), not(and(P, Q))), not(P)), Q) is valid.
+   The following truth table shows the formula is valid, so the argument is
+   valid.
 +
 [cols="9*", options="header"]
 |===
@@ -2146,13 +2116,13 @@ Shows that the formula is valid and so the argument is indeed valid.
 
 | P
 | Q
-| P {or} Q
-| P {and} Q
-| {not}col_4
-| {not}P
-| col_3 {and} col_5
-| col_7 {and} col_6
-| col_8 {implies} Q
+| or(P, Q)
+| and(P, Q)
+| not(col_4)
+| not(P)
+| and(col_3, col_5)
+| and(col_7, col_6)
+| implies(col_8, Q)
 
 | T | T | T | T | F | F | F | F | T
 | F | T | T | F | T | T | T | T | T
@@ -2168,116 +2138,116 @@ When I got to this point in the Ivory Tower, John Alan Robinson took me by the
 scruff of the neck and said, '`Look, you've just got to learn this, don't ask
 why`'. '`Okay, I replied meekly`'.
 
-A _literal_ is an atomic formula or the {not} of an atomic formula. Eg:
+A _literal_ is an atomic formula or the '`not`' of an atomic formula. Eg:
 
 [example]
 P +
-{not}P
+not(P)
 
-A _clause_ is a number of literals joined by the {or} connective. Eg:
+A _clause_ is a number of literals joined by the '`or`' function. Eg:
 
 [example]
-({not}P {or} Q) +
+or(not(P), Q) +
 P +
-((P {or} Q) {or} {not}R)
+or(or(P, Q), not\(R))
 
-A formula in CNF is a number of clauses joined by the {and} connective. Eg:
+A formula in CNF is a number of clauses joined by the '`and`' function. Eg:
 
-(\(({not}P {or} Q) {and} P) {and} ((P {or} Q) {or} {not}R))
+and(and(or(not(P), Q), P), or(or(P, Q), not\(R)))
 
 Anyway, John Alan Robinson went on to tell me the most remarkable thing, _any_
-formula can be written in CNF. You simply (!) use the following equivalences
+formula can be written in CNF. You simply (!) use the following identities
 (which we've previously encountered), applying them in the given order:
 
 [cols="3"]
 |===
 .2+| Step 1: Implications
 | Material Implication
-| (P {implies} Q) {equiv} ({not}P {or} Q)
+| implies(P, Q) {equiv} or(not(P), Q)
 
 | Material Equivalence
-| (P {bicond} Q) {equiv} \(({not}P {or} Q) {and} (P {or} {not}Q))
+| equals(P, Q) {equiv} and(or(not(P), Q), or(P, not(Q)))
 
 .2+| Step 2: Negations
-| Double {not}
-| {not}{not}P {equiv} P
+| Idempotence of '`not`'
+| not(not(P)) {equiv} P
 
 | De Morgan's Laws
-| (A {and} B) {equiv} {not}({not}A {or} {not}B) +
-  (A {or} B) {equiv} {not}({not}A {and} {not}B)
+| and(A, B) {equiv} not(or(not(A), not(B))) +
+  or(A, B) {equiv} not(and(not(A), not(B)))
 
 .4+| Step 3: Distributivity
-| {and} over {and}
-| (A {and} (B {and} C)) {equiv} \((A {and} B) {and} (A {and} C))
+| '`and`' over '`and`'
+| and(A, and(B, C)) {equiv} and(and(A, B), and(A, C))
 
-| {and} over {or}
-| (A {and} (B {or} C)) {equiv} \((A {and} B) {or} (A {and} C))
+| '`and`' over '`or`'
+| and(A, or(B, C)) {equiv} or(and(A, B), and(A, C))
 
-| {or} over {and}
-| (A {or} (B {and} C)) {equiv} \((A {or} B) {and} (A {or} C))
+| '`or`' over '`and`'
+| or(A, and(B, C)) {equiv} and(or(A, B), or(A, C))
 
-| {or} over {or}
-| (A {or} (B {or} C)) {equiv} \((A {or} B) {or} (A {or} C))
+| '`or`' over '`or`'
+| or(A, or(B, C)) {equiv} or(or(A, B), or(A, C))
 
 .2+| Step 4: Associativity
-| {and}
-| (A {and} (B {and} C)) {equiv} ((A {and} B) {and} C)
+| '`and`'
+| and(A, and(B, C)) {equiv} and(and(A, B), C)
 
-| {or}
-| (A {or} (B {or} C)) {equiv} ((A {or} B) {or} C)
+| '`or`'
+| or(A, or(B, C)) {equiv} or(or(A, B), C)
 |===
 
 Here's are a couple of examples that I was shown. We start out with an example
 formula in the normal logical notation:
 
 [example]
-\((A {and} {not}B) {implies} (C {implies} B))
+implies(and(A, not(B)), implies(C, B))
 
 Applying step 1, Material Implication, we get:
 
 [example]
-\((A {and} {not}B) {implies} ({not}C {or} B))
+implies(and(A, not(B)), or(not\(C), B))
 
 applying Material Implication again gives us:
 
 [example]
-({not}(A {and} {not}B) {or} ({not}C {or} B))
+or(not(and(A, not(B))), or(not\(C), B))
 
-so now we've got rid of the {implies} connectives. Now let's plough on with
+so now we've got rid of the '`implies`' functions. Now let's plough on with
 step 2, Negations, where the application of De Morgan's Laws, gives:
 
 [example]
-\(({not}A {or} {not}{not}B) {or} ({not}C {or} B))
+or(or(not(A), not(not(B))), or(not\(C), B))
 
-Double {not} alert!
-
-[example]
-\(({not}A {or} B) {or} ({not}C {or} B))
-
-We're so nearly in CNF, but not quite. Since {or} is associative:
+Idempotence of '`not`' alert!
 
 [example]
-((({not}A {or} B) {or} {not}C) {or} B)
+or(or(not(A), B), or(not\(C), B))
+
+We're so nearly in CNF, but not quite. Since '`or`' is associative:
+
+[example]
+or(or(or(not(A), B), not\(C)), B)
 
 Hah! We're now in CNF. Okay, in the second example we've got to convert:
 
 [example]
-((A {bicond} B) {or} {not}C)
+or(equals(A, B), not\(C))
 
 into CNF. Starting with step 1, Implications:
 
 [example]
-((({not}A {or} B) {and} (A {or} {not}B)) {or} {not}C)
+or(and(or(not(A), B), or(A, not(B))), not\(C))
 
 there aren't any negations to do, so skipping on to step 3, distributivity:
 
 [example]
-\(({not}C {or} ({not}A {or} B)) {and} ({not}C {or} (A {or} {not}B)))
+and(or(not\(C), or(not(A), B)), or(not\(C), or(A, not(B))))
 
 using the associativity of {or}:
 
 [example]
-(\(({not}C {or} {not}A) {or} B) {and} (({not}C {or} A) {or} {not}B))
+and(or(or(not\(C), not(A)), B), or(or(not\(C), A), not(B)))
 
 we've got it in CNF.
 
@@ -2286,137 +2256,131 @@ we've got it in CNF.
 ==== Questions
 
 . Write the following formulas in CNF notation:
-.. (A {or} ({not}B {implies} A))
-.. ((A {implies} B) {implies} C)
-.. (P {or} (Q {bicond} {not}P))
-.. \((A {and} B) {or} (A {and} C))
-.. \((A {and} B) {and} (A {and} C))
+.. or(A, implies(not(B), A))
+.. implies(implies(A, B), C)
+.. or(P, equals(Q, not(P)))
+.. or(and(A, B), and(A, C))
+.. and(and(A, B), and(A, C))
 
 
 ==== Answers
 
 . {empty}
-.. (A {or} ({not}B {implies} A))
-+
-(A {or} ({not}{not}B {or} A)) [Material Implication] +
-(A {or} (B {or} A)) [Double {not}] +
-((A {or} B) {or} A) [Associativity of {or}]
-.. ((A {implies} B) {implies} C)
-+
-\(({not}A {or} B) {implies} C) [Material Implication] +
-({not}({not}A {or} B) {or} C) [Material Implication] +
-(({not}{not}A {and} {not}B) {or} C) [De Morgan's Laws] +
-((A {and} {not}B) {or} C) [Double {not}] +
-((C {or} A) {and} (C {or} {not}B)) [Distribute {or} over {and}]
-.. (P {or} (Q {bicond} {not}P))
-+
-(P {or} \(({not}Q {or} {not}P) {and} (Q {or} {not}{not}P))) [Material
-Equivalence] +
-(P {or} \(({not}Q {or} {not}P) {and} (Q {or} P))) [Double {not}] +
-\((P {or} ({not}Q {or} {not}P)) {and} (P {or} (Q {or} P))) [Distribute
-{or} over {and}]
-.. \((A {and} B) {or} (A {and} C))
-+
-(\((A {and} B) {or} A) {and} ((A {and} B) {or} C)) [Distribute {or} over
-{and}] +
-(\((A {or} A) {and} (B {or} A)) {and} \((A {or} C) {and} (B {or} C))) [
-Distribute {or} over {and}] +
-(\(((A {or} A) {and} (B {or} A)) {and} (A {or} C)) {and} (B {or} C)) [{and}
-is associative]
-.. ((A {and} B) {and} (A {and} C)) +
-   (((A {and} B) {and} A) {and} C) [{and} is associative]
+.. or(A, implies(not(B), A)) +
+   or(A, or(not(not(B)), A)) [Material Implication] +
+   or(A, or(B, A)) [Idempotence of '`not`'] +
+   or(or(A, B), A) [Associativity of '`or`']
+.. implies(implies(A, B), C) +
+   implies(or(not(A), B), C) [Material Implication] +
+   or(not(or(not(A), B)), C) [Material Implication] +
+   or(and(not(not(A), not(B)), C) [De Morgan's Laws] +
+   or(and(A, not(B)), C) [Idempotence of '`not`'] +
+   and(or(C, A), or(C, not(B))) [Distribute '`or`' over '`and`']
+.. or(P, equals(Q, not(P))) +
+   or(P, and(or(not(Q), not(P)), or(Q, not(not(P))))) [Material Equality] +
+   or(P, and(or(not(Q), not(P)), or(Q, P))) [Idempotence of '`not`'] +
+   and(or(P, or(not(Q), not(P))), or(P, or(Q, P))) [Distribute '`or`' over
+   '`and`']
+.. or(and(A, B), and(A, C)) +
+   and(or(and(A, B), A), or(and(A, B), C)) [Distribute '`or`' over '`and`'] +
+   and(and(or(A, A), or(B, A)), and(or(A, C), or(B, C))) [Distribute '`or`' over
+   '`and`'] +
+   and(and(and(or(A, A), or(B, A)), or(A, C)), or(B, C)) ['`and`' is
+   associative]
+.. and(and(A, B), and(A, C)) +
+   and(and(and(A, B), A), C) ['`and`' is associative]
 
 
 :numbered:
 === CNF Set Notation
 
-As we've seen, the {or} connective is commutative and associative. Dr Robinson
+As we've seen, the '`or`' function is commutative and associative. Dr Robinson
 told me that this means that for any CNF clause it doesn't matter how you
 arrange the brackets and literals, each arrangement will be equivalent. Let's
 try that out:
 
 [example]
-(A {or} B) +
-(B {or} A)
+or(A, B) +
+or(B, A)
 
-well yes, that's easy because since {or} is commutative:
+well yes, that's easy because since '`or`' is commutative:
 
 [example]
-(A {or} B) {equiv} (B {or} A)
+or(A, B) {equiv} or(B, A)
 
 Here are all the different ways of arranging three literals:
 
 [example]
-\((A {or} B) {or} C) +
-((A {or} C) {or} B) +
-((B {or} A) {or} C) +
-((B {or} C) {or} A) +
-((C {or} A) {or} B) +
-((C {or} B) {or} A) +
-(A {or} (B {or} C)) +
-(A {or} (C {or} B)) +
-(B {or} (A {or} C)) +
-(B {or} (C {or} A)) +
-(C {or} (A {or} B)) +
-(C {or} (B {or} A))
+or(or(A, B), C) +
+or(or(A, C), B) +
+or(or(B, A), C) +
+or(or(B, C), A) +
+or(or(C, A), B) +
+or(or(C, B), A) +
+or(A, or(B, C)) +
+or(A, or(C, B)) +
+or(B, or(A, C)) +
+or(B, or(C, A)) +
+or(C, or(A, B)) +
+or(C, or(B, A))
 
 I'll try and transform the second clause to be the same as the first:
 
 [example]
-\((A {or} C) {or} B) +
-(A {or} (C {or} B)) [associativity] +
-(A {or} (B {or} C)) [commutativity] +
-((A {or} B) {or} C) [associativity] +
+or(or(A, C), B) +
+or(A, or(C, B)) [associativity] +
+or(A, or(B, C)) [commutativity] +
+or(or(A, B), C) [associativity] +
 
 and transforming the third clause to be the same as the first:
 
 [example]
-((B {or} A) {or} C) +
-((A {or} B) {or} C) [commutativity]
+or(or(B, A), C) +
+or(or(A, B), C) [commutativity]
 
 Okay, so a collection of literals in any order is enough to specify a clause.
-'`But wait`', cries Robinson, '`there's more! Since {and} is commutative and
+'`But wait`', cries Robinson, '`there's more! Since AND is commutative and
 associative, all ways of arranging the clauses and brackets of a CNF formula
 are equivalent`'. Well let's try that out with two clauses A and B:
 
 [example]
-(A {and} B) +
-(B {and} A)
+and(A, B) +
+and(B, A)
 
-since {and} is commutative:
+since '`and`' is commutative:
 
 [example]
-(A {and} B) {equiv} (B {and} A)
+and(A, B) {equiv} and(B, A)
 
 Here are all the different ways of arranging three clauses:
 
 [example]
-\((A {and} B) {and} C) +
-((A {and} C) {and} B) +
-((B {and} A) {and} C) +
-((B {and} C) {and} A) +
-((C {and} A) {and} B) +
-((C {and} B) {and} A) +
-(A {and} (B {and} C)) +
-(A {and} (C {and} B)) +
-(B {and} (A {and} C)) +
-(B {and} (C {and} A)) +
-(C {and} (A {and} B)) +
-(C {and} (B {and} A))
+and(and(A, B), C) +
+and(and(A, C), B) +
+and(and(B, A), C) +
+and(and(B, C), A) +
+and(and(C, A), B) +
+and(and(C, B), A) +
+and(A, and(B, C)) +
+and(A, and(C, B)) +
+and(B, and(A, C)) +
+and(B, and(C, A)) +
+and(C, and(A, B)) +
+and(C, and(B, A))
 
 I'll try and transform the second formula to be the same as the first:
 
 [example]
-\((A {and} C) {and} B) +
-(A {and} (C {and} B)) [associativity] +
-(A {and} (B {and} C)) [commutativity] +
-((A {and} B) {and} C) [associativity] +
+and(and(A, C), B) +
+and(A, and(C, B)) [associativity] +
+and(A, and(B, C)) [commutativity] +
+and(and(A, B), C) [associativity] +
 
 and then transform the third formula to be the same as the first:
 
 [example]
-((B {and} A) {and} C) +
-((A {and} B) {and} C) [commutativity]
+and(and(B, A), C) +
+and(and(A, B), C) [commutativity]
 
 With that under my belt, Robinson exclaimed, '`Idempotence! We can ignore any
 repeated literals in a CNF clause or repeated clauses in a CNF formula`'.
@@ -2424,9 +2388,9 @@ Robinson was used to quicker minds than mine, so I asked him to elaborate. If
 we've got a clause:
 
 [example]
-(A {or} A)
+or(A, A)
 
-them since {or} is idempotent we can replace it with:
+then since '`or`' is idempotent we can replace it with:
 
 [example]
 A
@@ -2434,20 +2398,20 @@ A
 and with a more complicated example:
 
 [example]
-((A {or} B) {or} A)
+or(or(A, B), A)
 
 since we know that we can put the brackets and literals anywhere we can write:
 
 [example]
-((A {or} A) {or} B) +
-(A {or} B) [idempotence]
+or(or(A, A), B) +
+or(A, B) [idempotence]
 
 Likewise, if we've got a CNF formula:
 
 [example]
-(A {and} A)
+and(A, A)
 
-them since {and} is idempotent we can replace it with:
+them since '`and`' is idempotent we can replace it with:
 
 [example]
 A
@@ -2455,16 +2419,16 @@ A
 and with a more complicated example:
 
 [example]
-((A {and} B) {and} A)
+and(and(A, B), A)
 
 since we know that we can put the brackets and literals anywhere we can write:
 
 [example]
-((A {and} A) {and} B) +
-(A {and} B) [idempotence]
+and(and(A, A), B) +
+and(A, B) [idempotence]
 
 '`Do keep up Locke! I now want to introduce the idea of a _set_, which is a
-collection of items where the order doesn't matter and no item is repeated. A
+collection of items which is unordered and no item is repeated. A
 CNF clause can be written as a set of literals, and a CNF formual can be written
 as a set of clauses`'. 
 
@@ -2472,47 +2436,47 @@ Here are some example clauses in the left hand column, and the clauses in set
 notation in the right hand column:
 
 |===
-| CNF Clause                | Set Notation
+| CNF Clause           | Set Notation
 
-| ({not}P {or} Q)           | {{not}P, Q}
-| P                         | \{P}
-| ((P {or} Q) {or} {not}R)  | {P, Q, {not}R}
+| or(not(P), Q)        | {not(P), Q}
+| P                    | \{P}
+| or(or(P, Q), not\(R)) | {P, Q, not\(R)}
 |===
 
 So an example formula:
 
-(\(({not}P {or} Q) {and} P) {and} ((P {or} Q) {or} {not}R))
+and(and(or(not(P), Q), P), or(or(P, Q), not\(R)))
 
 is written in CNF set notation as:
 
-{{{not}P, Q}, \{P}, {P, Q, {not}R}}
+{{not(P), Q}, \{P}, {P, Q, not\(R)}}
 
 Yes, I like this CNF set notation. Much clearer and easier to write. How do you
 find it? Here's another example:
 
 [example]
-(({not}A {or} B) {or} {not}C)
+or(or(not(A), B), not\(C))
 
 which written in set notation is:
 
 [example]
-{{{not}A, B, {not}C}}
+{{not(A), B, not\(C)}}
 
 Okay, in the second example we've got to convert:
 
 [example]
-(\(({not}C {or} {not}A) {or} B) {and} (({not}C {or} A) {or} {not}B))
+and(or(or(not\(C), not(A)), B), or(or(not\(C), A), not(B)))
 
 into set notation which gives:
 
 [example]
-{{{not}C, {not}A, B}, {{not}C, A, {not}B}}
+{{not\(C), not(A), B}, {not\(C), A, not(B)}}
 
 So to go from CNF to CNF set notation:
 
-. Remove repeated literals in clauses ({or} associativity, commutativity and
-   idempotence)
-. Remove repeated clauses in the formula ({and} associativity, commutativity
+. Remove repeated literals in clauses ('`or`' associativity, commutativity and
+  idempotence)
+. Remove repeated clauses in the formula ('`and`' associativity, commutativity
    and idempotence)
 . Rewrite clauses as a comma separated list of literals surrounded by braces.
 . Rewrite formula as comma separated list of clauses surrounded by braces.
@@ -2527,16 +2491,16 @@ So to go from CNF to CNF set notation:
 ==== Answers
 
 . {empty}
-.. ((C {or} A) {and} (C {or} {not}B)) +
-   {{C, A}, {C, {not}B}}
-.. \((P {or} ({not}Q {or} {not}P)) {and} (P {or} (Q {or} P))) +
-   \((P {or} ({not}Q {or} {not}P)) {and} (P {or} Q)) [{or} associativity,
+.. and(or(C, A), or(C, not(B))) +
+   {{C, A}, {C, not(B)}}
+.. and(or(P, or(not(Q), not(P))), or(P, or(Q, P))) +
+   and(or(P, or(not(Q), not(P))), or(P, Q)) ['`or`' associativity,
    commutativity and idempotence] +
-   {{P, {not}Q, {not}P}, {P, Q}} [set notation]
-.. (\(((A {or} A) {and} (B {or} A)) {and} (A {or} C)) {and} (B {or} C)) +
+   {{P, not(Q), not(P)}, {P, Q}} [set notation]
+.. and(and(and(or(A, A), or(B, A)), or(A, C)), or(B, C)) +
    {\{A}, {B, A}, {A, C}, {B, C}} [set notation]
-.. (((A {and} B) {and} A) {and} C) +
-   ((B {and} A) {and} C) [{and} associativity, commutativity and idempotence] +
+.. and(and(and(A, B), A), C) +
+   and(and(B, A), C) ['`and`' associativity, commutativity and idempotence] +
    {\{B}, \{A}, \{C}} [Set notation]
 
 
@@ -2563,7 +2527,7 @@ methods is _Mendelson's Axiomatic System_. They tell me it may not be easier
 than truth tables but enables them to introduce Big Ideas. I can't help but
 feel that's somewhat patronising. These so-called Big Ideas better be worth it.
 Mendelson's System only works if an argument is expressed using only the
-connectives {not} and {implies}. You have to rewrite the argument using the
+functions {not} and {implies}. You have to rewrite the argument using the
 following rules of replacement:
 
 * (P {or} Q) {equiv} ({not}P {implies} Q)
@@ -2861,9 +2825,117 @@ Here's a list of rules of inference:
 
 
 
-:numbered:
-=== Precedence
 
+:numbered:
+=== Sentential Logic: Summary
+
+|===
+| Name | Rule
+
+| {or} associativity
+| (P {or} (Q {or} R)) {equiv} (\(P {or} Q) {or} R)
+
+| {and} associativity
+| (P {and} (Q {and} R)) {equiv} (\(P {and} Q) {and} R)
+
+| {bicond} associativity
+| (P {bicond} (Q {bicond} R)) {equiv} (\(P {bicond} Q) {bicond} R)
+
+| {or} commutativity
+| (P {or} Q) {equiv} (Q {or} P)
+
+| {and} commutativity
+| (P {and} Q) {equiv} (Q {and} P)
+|===
+
+==== Answers
+
+Answers on their way...
+
+:numbered:
+=== Rosetta Stone
+
+[[img-rosetta]]
+.http://commons.wikimedia.org/wiki/File:Rosetta_Stone.JPG#mediaviewer/File:Rosetta_Stone.JPG[Rosetta Stone] by http://commons.wikimedia.org/wiki/User:Biopics[Hans Hillewaert] - Own work. Licensed under http://creativecommons.org/licenses/by-sa/4.0[CC BY-SA 4.0] via http://commons.wikimedia.org/wiki/[Wikimedia Commons].
+image::rosetta.jpg[Rosetta Stone]
+
+I've found that in maths, the same thing is often called different names by
+different authors. Also, some authors take different philosophical approaches to
+the same area of maths. This point of this section is to help us understand
+what other authors are saying, in terms that we already understand.
+
+
+==== Sentential Logic versus Propositional Logic
+
+Some authors talk of Sentential Logic, and some talk of Propositional Logic.
+This is a philosophical difference. Say there are two statements that mean the
+same thing but use a different form of words. The sentential school of thought
+uses a different label for each statement, but the proposition school would use
+just one label.
+
+
+==== Synonyms
+
+[cols="2*", options="header"]
+|===
+| Name
+| Synonym
+
+| Function
+| Operation, connective
+
+| Sentential Logic
+| Sentential Calculus
+
+| Not
+| ~, negation, {not}
+
+| And
+| Conjunction, {and}
+
+| Or
+| Disjunction, {or}
+
+| Implies
+| Implication, conditional, {implies}
+
+| Atomic formula
+| Atom, simple proposition, atomic sentence, simple sentence, proposition
+  constant, logical constant
+
+| Compound formula
+| compound proposition, compound sentence
+
+| <<_interpretations,Interpretation>>
+| Truth assignment
+
+| Valid formula
+| Tautology
+
+| Unsatisfiable formula
+| Contradiction
+
+| {equiv}
+| &#x21D4;
+
+| Identity
+| Rule of replacement
+|===
+
+* All the rules of inference. and equivalence
+
+
+
+==== Antecedent and Consequent
+
+The formula before the {implies} is called the _antecedent_ and the formula
+after the {implies} is the _consequent_.
+
+
+==== Precedence
+
+In many parts of the Ivory Tower they adopt the convention of _precedence_ of
+functions
 Let's say we've got _three_ atomic formulas P, Q and R. What's the truth table for:
 
 [example]
@@ -2977,103 +3049,6 @@ and the truth table is:
 | T | F | F | F         | F
 | F | F | F | F         | F
 |===
-
-:numbered:
-=== Sentential Logic: Summary
-
-|===
-| Name | Rule
-
-| {or} associativity
-| (P {or} (Q {or} R)) {equiv} (\(P {or} Q) {or} R)
-
-| {and} associativity
-| (P {and} (Q {and} R)) {equiv} (\(P {and} Q) {and} R)
-
-| {bicond} associativity
-| (P {bicond} (Q {bicond} R)) {equiv} (\(P {bicond} Q) {bicond} R)
-
-| {or} commutativity
-| (P {or} Q) {equiv} (Q {or} P)
-
-| {and} commutativity
-| (P {and} Q) {equiv} (Q {and} P)
-|===
-
-==== Answers
-
-Answers on their way...
-
-:numbered:
-=== Rosetta Stone
-
-[[img-rosetta]]
-.http://commons.wikimedia.org/wiki/File:Rosetta_Stone.JPG#mediaviewer/File:Rosetta_Stone.JPG[Rosetta Stone] by http://commons.wikimedia.org/wiki/User:Biopics[Hans Hillewaert] - Own work. Licensed under http://creativecommons.org/licenses/by-sa/4.0[CC BY-SA 4.0] via http://commons.wikimedia.org/wiki/[Wikimedia Commons].
-image::rosetta.jpg[Rosetta Stone]
-
-I've found that in maths, the same thing is often called different names by
-different authors. Also, some authors take different philosophical approaches to
-the same area of maths. This point of this section is to help us understand
-what other authors are saying, in terms that we already understand.
-
-
-==== Sentential Logic versus Propositional Logic
-
-Some authors talk of Sentential Logic, and some talk of Propositional Logic.
-This is a philosophical difference. Say there are two statements that mean the
-same thing but use a different form of words. The sentential school of thought
-uses a different label for each statement, but the proposition school would use
-just one label.
-
-
-==== Synonyms
-
-[cols="2*", options="header"]
-|===
-| Name
-| Synonym
-
-| Connective
-| Operator
-
-| Sentential Logic
-| Sentential Calculus
-
-| Not, {not}
-| \~, negation
-
-| And
-| Conjunction
-
-| Or
-| Disjunction
-
-| Implies
-| Conditional
-
-| Atomic formula
-| Atom, simple proposition, atomic sentence, simple sentence, proposition
-  constant, logical constant
-
-| Compound formula
-| compound proposition, compound sentence
-
-| <<_interpretations,Interpretation>>
-| Truth assignment
-
-| Valid formula
-| Tautology
-
-| Unsatisfiable formula
-| Contradiction
-|===
-
-* All the rules of inference. and equivalence
-
-
-
-
-
 
 
 
