@@ -1869,45 +1869,37 @@ identity.
 
 
 :numbered:
-=== Arguments
+=== Entailment
 
-The word '`argument`' makes me think of a bitter shouting match. To a logician
-it means something altogether more cerebral. A logical argument in English might
-be:
+'`What does that _entail_, lol!`', yeah thanks for that. In English you might
+have some _premises_ leading to a _conclusion_ such as:
 
 [example]
 Abelard ordered coffee or Abelard ordered cake. Abelard didn't order cake.
 Therefore Abelard ordered coffee.
 
-To convert this argument from English into logical symbols, we first of all
-define the atomic formulas:
+To convert the premises and conclusion from English into logical formulas, we
+first of all define the atomic formulas:
 
 [example]
 A: Abelard ordered coffee. +
 B: Abelard ordered cake.
 
-So the argument becomes:
+So the premises and conclusion becomes:
 
 [example]
-If or(A, B) is true and not(B) is true, then A is true.
+Premises: or(A, B), not(B) +
+Conclusion: A
 
-To express this argument more concisely we roll out the _double turnstile_ 
-symbol {entails}, and write the argument as:
-
-[example]
-or(A, B), not(B) {entails} A
-
-Where the comma-separated list of formulas on the left of the double-turnstile
-are the premises, and the formula on the right is the conclusion. That's the
-argument written down, but is it valid? In other words, if the premises are
-true, is the conclusion true? To find out, we can say that if:
+Now, do the premises _entail_ the conclusion? In other words, for every
+interpretation where the premises are true, is the conclusion true? If the
+premises entail the conclusion, the following formula must be valid:
 
 [example]
 implies(and(or(A, B), not(B)), A)
 
-is valid, then the argument is valid. If effect we've joined the premises
-together with '`and`' and replaced the {entails} with an '`implies`' to get the
-formula. Bring on the table of truth!
+In effect we've joined the premises together with '`and`' and then added on the
+conclusion with an '`implies`' to get the formula. Bring on the table of truth!
 
 [cols="6*", options="header"]
 |===
@@ -1925,8 +1917,14 @@ formula. Bring on the table of truth!
 | F | F | F | T | F | T
 |===
 
-The last column is always true, so the formula is valid, so the
-argument is valid. Yay! Let's test another argument for validity:
+The last column is always true, so the formula is valid, so the premises do
+entail the conclusion. Logicians denote an entailment with the {entails} symbol.
+So the entailment we've just found can be written:
+
+[example]
+or(A, B), not(B) {entails} A
+
+Here's another example of some premises and a conclusion in English:
 
 [example]
 If we run out of petrol we won't get to the wedding on time. If we lose our
@@ -1939,27 +1937,27 @@ In logic symbols the argument is:
 A: Run out of petrol. +
 B: Get to the wedding on time. +
 C: Lose our way. +
-implies(A, not(B)), implies(C, not(B)), A {entails} not(B)
+Premises: implies(A, not(B)), implies(C, not(B)), A +
+Conclusion: not(B)
 
-The argument is valid if:
+It's an entailment if:
 
+[example]
 implies(and(and(implies(A, not(B)), implies(C, not(B))), A), not(B))
 
 is valid. Doing a giant truth table:
 
-[cols="9"]
+[cols="9*", options="header"]
 |===
-| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
-
 | A
 | B
 | C
 | not(B)
-| implies(A, col_4)
-| implies(C, col_4)
-| and(col_5, col_6)
-| and(col_7, A)
-| implies(col_8, col_4)
+| implies(A, not(B))
+| implies(C, not(B))
+| and(implies(A, not(B)), implies(C, not(B)))
+| and(and(implies(A, not(B)), implies(C, not(B))), A)
+| implies(and(and(implies(A, not(B)), implies(C, not(B))), A), not(B))
 
 | T | T | T | F | F | F | F | F | T
 | F | T | T | F | T | F | F | F | T
@@ -1971,13 +1969,16 @@ is valid. Doing a giant truth table:
 | F | F | F | T | T | T | T | F | T
 |===
 
-Shows that the formula is valid and so the argument is indeed valid.
+Shows that the formula is valid and so we can write that:
+
+[example]
+implies(A, not(B)), implies(C, not(B)), A {entails} not(B)
 
 
 :numbered!:
 ==== Questions
 
-. Construct logical arguments for the following arguments in English:
+. Construct logical formulas for the following premises and conclusions:
 .. If it's a silent film then there's no sound. It's a silent film. Therefore
    there's no sound.
 .. Scheherazade bought black paint or Scheherazade bought grey paint.
@@ -1995,97 +1996,107 @@ Shows that the formula is valid and so the argument is indeed valid.
 
 ==== Answers
 
-. {empty}
-.. P: It's a silent film. +
+. Construct logical formulas for the following premises and conclusions:
+.. If it's a silent film then there's no sound. It's a silent film. Therefore
+   there's no sound. +
+   P: It's a silent film. +
    Q: There's no sound. +
-   implies(P, Q), P {entails} Q
+   Premises: implies(P, Q), P +
+   Conclusion: Q
 .. A: Scheherazade bought black paint. +
    B: Scheherazade bought grey paint. +
-   or(A, B), not(B) {entails} A
+   Premises: or(A, B), not(B) +
+   Conclusion: A
 .. P: Ben won a tennis match. +
    Q: Toby won a tennis match. +
-   not(and(P, Q)), Q {entails} not(P)
+   Premises: not(and(P, Q)), Q
+   Conclusion: not(P)
 .. P: Bill orders 6x. +
    Q: Bill orders Tribute. +
    R: The pub is open. +
-   or(P, Q), implies(or(P, Q), R), not(Q) {entails} and(R, P)
+   Premises: or(P, Q), implies(or(P, Q), R), not(Q)
+   Conclusion: and(R, P)
 .. P: The light switch is on. +
    Q: The light switch is off. +
-   or(P, Q), not(and(P, Q)), not(P) {entails} Q
-. {empty}
-.. If the argument implies(P, Q), P {entails} Q is valid, then the formula
-   and(implies(P, Q), implies(P, Q)) is valid. The following truth table
-   shows the formula is valid, so the argument is indeed valid.
+   Premises: or(P, Q), not(and(P, Q)), not(P)
+   Conclusion: Q
+. For the premises and conclusions given in question 1, show whether they are
+  entailments not.
+.. Premises: implies(P, Q), P +
+   Conclusion: Q +
+   The truth table below shows that the formula
+   implies(and(implies(P, Q), P), Q) is valid, and so +
+   implies(P, Q), P {entails} Q
 +
+[cols="5*", options="header"]
 |===
-| 1 | 2 | 3             | 4             | 5
+| P
+| Q
+| implies(P, Q)
+| and(implies(P, Q), P)
+| implies(and(implies(P, Q), P), Q)
 
-| P | Q | implies(P, Q) | and(col_3, P) | implies(col_4, Q)
-
-| T | T | T             | T             | T
-| F | T | T             | F             | T
-| T | F | F             | F             | T
-| F | F | T             | F             | T
-|===
-+
-.. If the argument or(A, B), not(B) {entails} A is valid, then the formula
-   implies(and(or(A, B), not(B)), A) is valid. The following truth table
-   shows the formula is valid, so the argument is indeed valid.
-+
-|===
-| 1 | 2 | 3        | 4      | 5                 | 6
-
-| A | B | or(A, B) | not(B) | and(col_3, col_4) | implies(col_5, A)
-
-| T | T | T        | F      | F                 | T
-| F | T | T        | F      | F                 | T
-| T | F | T        | T      | T                 | T
-| F | F | F        | T      | F                 | T
+| T | T | T | T | T
+| F | T | T | F | T
+| T | F | F | F | T
+| F | F | T | F | T
 |===
 +
-.. If the argument or(P, Q), Q {entails} not(P) is valid, then the formula
-   implies(and(or(P, Q), Q), not(P)) is valid. The following truth table
-   shows the formula is not valid, so the argument is not valid.
+.. Premises: or(A, B), not(B) +
+   Conclusion: A +
+   The truth table below shows that the formula
+   implies(and(or(A, B), not(B)), A) is valid, and so: +
+   or(A, B), not(B) {entails} A
++
+[cols="6*", options="header"]
+|===
+| A
+| B
+| or(A, B)
+| not(B)
+| and(or(A, B), not(B))
+| implies(and(or(A, B), not(B)), A)
+
+| T | T | T | F | F | T
+| F | T | T | F | F | T
+| T | F | T | T | T | T
+| F | F | F | T | F | T
+|===
++
+.. Premises: not(and(P, Q)), Q +
+   Conclusion: not(P) +
+   The truth table below shows that the formula: +
+   implies(and(or(P, Q), Q), not(P)) +
+   is not valid and so the premises do not ential the conclusion.
 +
 |===
-| 1 | 2 | 3        | 4      | 5             | 6
+| P | Q | or(P, Q) | and(or(P, Q), Q) | not(P) | implies(and(or(P, Q)), not(P))
 
-| P | Q | or(P, Q) | not(P) | and(col_3, Q) | implies(col_5, col_4)
-
-| T | T | T        | F      | T             | F
-| F | T | T        | T      | T             | T
-| T | F | T        | F      | F             | T
-| F | F | F        | T      | F             | T
+| T | T | T        | T                | F      | F
+| F | T | T        | T                | T      | T
+| T | F | T        | F                | F      | T
+| F | F | F        | F                | T      | T
 |===
 +
-.. If the argument or(P, Q), implies(or(P, Q), R), not(Q) {entails} and(R, P) is
-   valid, then the formula implies(and(and(or(P, Q), implies(or(P, Q), R)),
-   not(Q)) {implies} and(R, P)) is valid. The following truth table
-   shows the formula is valid, so the argument is valid.
+.. Premises: or(P, Q), implies(or(P, Q), R), not(Q) +
+   Conclusion: and(R, P) +
+   The truth table below shows that the formula: +
+   implies(and(and(or(P, Q), implies(or(P, Q), R)), not(Q)), and(R, P)) +
+   is valid and so: +
+   or(P, Q), implies(or(P, Q), R), not(Q) {entails} and(R, P)
 +
 [cols="10*", options="header"]
 |===
-| 1
-| 2
-| 3
-| 4
-| 5
-| 6
-| 7
-| 8
-| 9
-| 10
-
 | P
 | Q
 | R
 | or(P, Q)
-| implies(col_4, R)
-| and(R, P)
+| implies(or(P, Q), R)
 | not(Q)
-| and(col_4, col_5)
-| and(col_8, col_7)
-| implies(col_9, col_6)
+| and(or(P, Q), implies(or(P, Q), R))
+| and(and(or(P, Q), implies(or(P, Q), R)), not(Q))
+| and(R, P)
+| implies(and(and(or(P, Q), implies(or(P, Q), R)), not(Q)), and(R, P))
 
 | T | T | T | T | T | T | F | T | F | T
 | F | T | T | F | T | F | F | F | F | T
@@ -2097,37 +2108,29 @@ Shows that the formula is valid and so the argument is indeed valid.
 | F | F | F | F | T | F | T | F | F | T
 |===
 +
-.. If the argument or(P, Q), not(and(P, Q)), not(P) {entails} Q is valid, then
-   the formula implies(and(and(or(P, Q), not(and(P, Q))), not(P)), Q) is valid.
-   The following truth table shows the formula is valid, so the argument is
-   valid.
+.. Premises: or(P, Q), not(and(P, Q)), not(P)
+   Conclusion: Q
+   The truth table below shows that the formula: +
+   implies(and(and(or(P, Q), not(and(P, Q))), not(P)), Q) +
+   is valid and so: +
+   or(P, Q), not(and(P, Q)), not(P) {entails} Q +
 +
 [cols="9*", options="header"]
 |===
-| 1
-| 2
-| 3
-| 4
-| 5
-| 6
-| 7
-| 8
-| 9
-
 | P
 | Q
 | or(P, Q)
 | and(P, Q)
-| not(col_4)
+| not(and(P, Q))
+| and(or(P, Q), not(and(P, Q)))
 | not(P)
-| and(col_3, col_5)
-| and(col_7, col_6)
-| implies(col_8, Q)
+| and(and(or(P, Q), not(and(P, Q))), not(P))
+| implies(and(and(or(P, Q), not(and(P, Q))), not(P)), Q)
 
 | T | T | T | T | F | F | F | F | T
 | F | T | T | F | T | T | T | T | T
-| T | F | T | F | T | F | T | F | T
-| F | F | F | F | T | T | F | F | T
+| T | F | T | F | T | T | F | F | T
+| F | F | F | F | T | F | T | F | T
 |===
 
 
@@ -2657,7 +2660,7 @@ Here's a list of rules of inference:
 ==== Questions
 
 . Show that the rules of inference are valid by using a truth table.
-. For all the arguments in the questions for <<_arguments>>, show that they are
+. For all the arguments in the questions for <<_entailment>>, show that they are
   valid by using rules of inference.
 
 ==== Answers
@@ -2874,12 +2877,33 @@ uses a different label for each statement, but the proposition school would use
 just one label.
 
 
+==== Functional Notation Versus Operational Notation
+
+The formula:
+
+and(or(A, B), C)
+
+would be written in operational notation as:
+
+(\(A {or} B) {and} C)
+
+I've chosen to use functional notation because functions are more general than
+operations. So in learning maths you have to learn functional notation, but you
+don't necessarily have to learn operational notation.
+
+
 ==== Synonyms
 
 [cols="2*", options="header"]
 |===
 | Name
 | Synonym
+
+| True
+| 1, T
+
+| False
+| 0, F
 
 | Function
 | Operation, connective
@@ -2897,7 +2921,7 @@ just one label.
 | Disjunction, {or}
 
 | Implies
-| Implication, conditional, {implies}
+| Conditional, {implies}, material implication
 
 | Atomic formula
 | Atom, simple proposition, atomic sentence, simple sentence, proposition
@@ -2930,6 +2954,11 @@ just one label.
 
 The formula before the {implies} is called the _antecedent_ and the formula
 after the {implies} is the _consequent_.
+
+
+==== Contingent
+
+A formula that is neither valid nor unsatisfiable is said to be _contingent_.
 
 
 ==== Precedence

@@ -447,7 +447,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_distributivity">2.17. Distributivity</a></li>
 <li><a href="#_idempotence">2.18. Idempotence</a></li>
 <li><a href="#_de_morgan_s_laws">2.19. De Morgan&#8217;s Laws</a></li>
-<li><a href="#_arguments">2.20. Arguments</a></li>
+<li><a href="#_entailment">2.20. Entailment</a></li>
 <li><a href="#_conjunctive_normal_form_cnf">2.21. Conjunctive Normal Form (CNF)</a></li>
 <li><a href="#_cnf_set_notation">2.22. CNF Set Notation</a></li>
 <li><a href="#_propositional_resolution">2.23. Propositional Resolution</a></li>
@@ -5877,11 +5877,10 @@ identity.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_arguments">2.20. Arguments</h3>
+<h3 id="_entailment">2.20. Entailment</h3>
 <div class="paragraph">
-<p>The word &#8216;argument&#8217; makes me think of a bitter shouting match. To a logician
-it means something altogether more cerebral. A logical argument in English might
-be:</p>
+<p>&#8216;What does that <em>entail</em>, lol!&#8217;, yeah thanks for that. In English you might
+have some <em>premises</em> leading to a <em>conclusion</em> such as:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -5890,8 +5889,8 @@ Therefore Abelard ordered coffee.
 </div>
 </div>
 <div class="paragraph">
-<p>To convert this argument from English into logical symbols, we first of all
-define the atomic formulas:</p>
+<p>To convert the premises and conclusion from English into logical formulas, we
+first of all define the atomic formulas:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -5900,27 +5899,18 @@ B: Abelard ordered cake.
 </div>
 </div>
 <div class="paragraph">
-<p>So the argument becomes:</p>
+<p>So the premises and conclusion becomes:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
-If or(A, B) is true and not(B) is true, then A is true.
+Premises: or(A, B), not(B)<br>
+Conclusion: A
 </div>
 </div>
 <div class="paragraph">
-<p>To express this argument more concisely we roll out the <em>double turnstile</em>
-symbol &#x22A8;, and write the argument as:</p>
-</div>
-<div class="exampleblock">
-<div class="content">
-or(A, B), not(B) &#x22A8; A
-</div>
-</div>
-<div class="paragraph">
-<p>Where the comma-separated list of formulas on the left of the double-turnstile
-are the premises, and the formula on the right is the conclusion. That&#8217;s the
-argument written down, but is it valid? In other words, if the premises are
-true, is the conclusion true? To find out, we can say that if:</p>
+<p>Now, do the premises <em>entail</em> the conclusion? In other words, for every
+interpretation where the premises are true, is the conclusion true? If the
+premises entail the conclusion, the following formula must be valid:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -5928,9 +5918,8 @@ implies(and(or(A, B), not(B)), A)
 </div>
 </div>
 <div class="paragraph">
-<p>is valid, then the argument is valid. If effect we&#8217;ve joined the premises
-together with &#8216;and&#8217; and replaced the &#x22A8; with an &#8216;implies&#8217; to get the
-formula. Bring on the table of truth!</p>
+<p>In effect we&#8217;ve joined the premises together with &#8216;and&#8217; and then added on the
+conclusion with an &#8216;implies&#8217; to get the formula. Bring on the table of truth!</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -5987,8 +5976,17 @@ formula. Bring on the table of truth!</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>The last column is always true, so the formula is valid, so the
-argument is valid. Yay! Let&#8217;s test another argument for validity:</p>
+<p>The last column is always true, so the formula is valid, so the premises do
+entail the conclusion. Logicians denote an entailment with the &#x22A8; symbol.
+So the entailment we&#8217;ve just found can be written:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+or(A, B), not(B) &#x22A8; A
+</div>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s another example of some premises and a conclusion in English:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -6005,14 +6003,17 @@ to the wedding on time.
 A: Run out of petrol.<br>
 B: Get to the wedding on time.<br>
 C: Lose our way.<br>
-implies(A, not(B)), implies(C, not(B)), A &#x22A8; not(B)
+Premises: implies(A, not(B)), implies(C, not(B)), A<br>
+Conclusion: not(B)
 </div>
 </div>
 <div class="paragraph">
-<p>The argument is valid if:</p>
+<p>It&#8217;s an entailment if:</p>
 </div>
-<div class="paragraph">
-<p>implies(and(and(implies(A, not(B)), implies(C, not(B))), A), not(B))</p>
+<div class="exampleblock">
+<div class="content">
+implies(and(and(implies(A, not(B)), implies(C, not(B))), A), not(B))
+</div>
 </div>
 <div class="paragraph">
 <p>is valid. Doing a giant truth table:</p>
@@ -6031,29 +6032,18 @@ implies(A, not(B)), implies(C, not(B)), A &#x22A8; not(B)
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">1</th>
-<th class="tableblock halign-left valign-top">2</th>
-<th class="tableblock halign-left valign-top">3</th>
-<th class="tableblock halign-left valign-top">4</th>
-<th class="tableblock halign-left valign-top">5</th>
-<th class="tableblock halign-left valign-top">6</th>
-<th class="tableblock halign-left valign-top">7</th>
-<th class="tableblock halign-left valign-top">8</th>
-<th class="tableblock halign-left valign-top">9</th>
+<th class="tableblock halign-left valign-top">A</th>
+<th class="tableblock halign-left valign-top">B</th>
+<th class="tableblock halign-left valign-top">C</th>
+<th class="tableblock halign-left valign-top">not(B)</th>
+<th class="tableblock halign-left valign-top">implies(A, not(B))</th>
+<th class="tableblock halign-left valign-top">implies(C, not(B))</th>
+<th class="tableblock halign-left valign-top">and(implies(A, not(B)), implies(C, not(B)))</th>
+<th class="tableblock halign-left valign-top">and(and(implies(A, not(B)), implies(C, not(B))), A)</th>
+<th class="tableblock halign-left valign-top">implies(and(and(implies(A, not(B)), implies(C, not(B))), A), not(B))</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">B</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">C</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">not(B)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">implies(A, col_4)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">implies(C, col_4)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">and(col_5, col_6)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">and(col_7, A)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">implies(col_8, col_4)</p></td>
-</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
@@ -6145,14 +6135,19 @@ implies(A, not(B)), implies(C, not(B)), A &#x22A8; not(B)
 </tbody>
 </table>
 <div class="paragraph">
-<p>Shows that the formula is valid and so the argument is indeed valid.</p>
+<p>Shows that the formula is valid and so we can write that:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+implies(A, not(B)), implies(C, not(B)), A &#x22A8; not(B)
+</div>
 </div>
 <div class="sect3">
 <h4 id="_questions_21">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Construct logical arguments for the following arguments in English:</p>
+<p>Construct logical formulas for the following premises and conclusions:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -6191,46 +6186,56 @@ and off. This light switch is not on. Therefore the light switch is off.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p></p>
+<p>Construct logical formulas for the following premises and conclusions:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>P: It&#8217;s a silent film.<br>
+<p>If it&#8217;s a silent film then there&#8217;s no sound. It&#8217;s a silent film. Therefore
+there&#8217;s no sound.<br>
+P: It&#8217;s a silent film.<br>
 Q: There&#8217;s no sound.<br>
-implies(P, Q), P &#x22A8; Q</p>
+Premises: implies(P, Q), P<br>
+Conclusion: Q</p>
 </li>
 <li>
 <p>A: Scheherazade bought black paint.<br>
 B: Scheherazade bought grey paint.<br>
-or(A, B), not(B) &#x22A8; A</p>
+Premises: or(A, B), not(B)<br>
+Conclusion: A</p>
 </li>
 <li>
 <p>P: Ben won a tennis match.<br>
 Q: Toby won a tennis match.<br>
-not(and(P, Q)), Q &#x22A8; not(P)</p>
+Premises: not(and(P, Q)), Q
+Conclusion: not(P)</p>
 </li>
 <li>
 <p>P: Bill orders 6x.<br>
 Q: Bill orders Tribute.<br>
 R: The pub is open.<br>
-or(P, Q), implies(or(P, Q), R), not(Q) &#x22A8; and(R, P)</p>
+Premises: or(P, Q), implies(or(P, Q), R), not(Q)
+Conclusion: and(R, P)</p>
 </li>
 <li>
 <p>P: The light switch is on.<br>
 Q: The light switch is off.<br>
-or(P, Q), not(and(P, Q)), not(P) &#x22A8; Q</p>
+Premises: or(P, Q), not(and(P, Q)), not(P)
+Conclusion: Q</p>
 </li>
 </ol>
 </div>
 </li>
 <li>
-<p></p>
+<p>For the premises and conclusions given in question 1, show whether they are
+entailments not.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>If the argument implies(P, Q), P &#x22A8; Q is valid, then the formula
-and(implies(P, Q), implies(P, Q)) is valid. The following truth table
-shows the formula is valid, so the argument is indeed valid.</p>
+<p>Premises: implies(P, Q), P<br>
+Conclusion: Q<br>
+The truth table below shows that the formula
+implies(and(implies(P, Q), P), Q) is valid, and so<br>
+implies(P, Q), P &#x22A8; Q</p>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 20%;">
@@ -6241,21 +6246,14 @@ shows the formula is valid, so the argument is indeed valid.</p>
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">1</th>
-<th class="tableblock halign-left valign-top">2</th>
-<th class="tableblock halign-left valign-top">3</th>
-<th class="tableblock halign-left valign-top">4</th>
-<th class="tableblock halign-left valign-top">5</th>
+<th class="tableblock halign-left valign-top">P</th>
+<th class="tableblock halign-left valign-top">Q</th>
+<th class="tableblock halign-left valign-top">implies(P, Q)</th>
+<th class="tableblock halign-left valign-top">and(implies(P, Q), P)</th>
+<th class="tableblock halign-left valign-top">implies(and(implies(P, Q), P), Q)</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">P</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Q</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">implies(P, Q)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">and(col_3, P)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">implies(col_4, Q)</p></td>
-</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
@@ -6288,9 +6286,11 @@ shows the formula is valid, so the argument is indeed valid.</p>
 </table>
 </li>
 <li>
-<p>If the argument or(A, B), not(B) &#x22A8; A is valid, then the formula
-implies(and(or(A, B), not(B)), A) is valid. The following truth table
-shows the formula is valid, so the argument is indeed valid.</p>
+<p>Premises: or(A, B), not(B)<br>
+Conclusion: A<br>
+The truth table below shows that the formula
+implies(and(or(A, B), not(B)), A) is valid, and so:<br>
+or(A, B), not(B) &#x22A8; A</p>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 16%;">
@@ -6302,23 +6302,15 @@ shows the formula is valid, so the argument is indeed valid.</p>
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">1</th>
-<th class="tableblock halign-left valign-top">2</th>
-<th class="tableblock halign-left valign-top">3</th>
-<th class="tableblock halign-left valign-top">4</th>
-<th class="tableblock halign-left valign-top">5</th>
-<th class="tableblock halign-left valign-top">6</th>
+<th class="tableblock halign-left valign-top">A</th>
+<th class="tableblock halign-left valign-top">B</th>
+<th class="tableblock halign-left valign-top">or(A, B)</th>
+<th class="tableblock halign-left valign-top">not(B)</th>
+<th class="tableblock halign-left valign-top">and(or(A, B), not(B))</th>
+<th class="tableblock halign-left valign-top">implies(and(or(A, B), not(B)), A)</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">B</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">or(A, B)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">not(B)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">and(col_3, col_4)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">implies(col_5, A)</p></td>
-</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
@@ -6355,9 +6347,11 @@ shows the formula is valid, so the argument is indeed valid.</p>
 </table>
 </li>
 <li>
-<p>If the argument or(P, Q), Q &#x22A8; not(P) is valid, then the formula
-implies(and(or(P, Q), Q), not(P)) is valid. The following truth table
-shows the formula is not valid, so the argument is not valid.</p>
+<p>Premises: not(and(P, Q)), Q<br>
+Conclusion: not(P)<br>
+The truth table below shows that the formula:<br>
+implies(and(or(P, Q), Q), not(P))<br>
+is not valid and so the premises do not ential the conclusion.</p>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 16%;">
@@ -6369,29 +6363,21 @@ shows the formula is not valid, so the argument is not valid.</p>
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">1</th>
-<th class="tableblock halign-left valign-top">2</th>
-<th class="tableblock halign-left valign-top">3</th>
-<th class="tableblock halign-left valign-top">4</th>
-<th class="tableblock halign-left valign-top">5</th>
-<th class="tableblock halign-left valign-top">6</th>
+<th class="tableblock halign-left valign-top">P</th>
+<th class="tableblock halign-left valign-top">Q</th>
+<th class="tableblock halign-left valign-top">or(P, Q)</th>
+<th class="tableblock halign-left valign-top">and(or(P, Q), Q)</th>
+<th class="tableblock halign-left valign-top">not(P)</th>
+<th class="tableblock halign-left valign-top">implies(and(or(P, Q)), not(P))</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">P</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Q</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">or(P, Q)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">not(P)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">and(col_3, Q)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">implies(col_5, col_4)</p></td>
-</tr>
-<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
 </tr>
 <tr>
@@ -6414,18 +6400,20 @@ shows the formula is not valid, so the argument is not valid.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 </tbody>
 </table>
 </li>
 <li>
-<p>If the argument or(P, Q), implies(or(P, Q), R), not(Q) &#x22A8; and(R, P) is
-valid, then the formula implies(and(and(or(P, Q), implies(or(P, Q), R)),
-not(Q)) &#x2192; and(R, P)) is valid. The following truth table
-shows the formula is valid, so the argument is valid.</p>
+<p>Premises: or(P, Q), implies(or(P, Q), R), not(Q)<br>
+Conclusion: and(R, P)<br>
+The truth table below shows that the formula:<br>
+implies(and(and(or(P, Q), implies(or(P, Q), R)), not(Q)), and(R, P))<br>
+is valid and so:<br>
+or(P, Q), implies(or(P, Q), R), not(Q) &#x22A8; and(R, P)</p>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 10%;">
@@ -6441,31 +6429,19 @@ shows the formula is valid, so the argument is valid.</p>
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">1</th>
-<th class="tableblock halign-left valign-top">2</th>
-<th class="tableblock halign-left valign-top">3</th>
-<th class="tableblock halign-left valign-top">4</th>
-<th class="tableblock halign-left valign-top">5</th>
-<th class="tableblock halign-left valign-top">6</th>
-<th class="tableblock halign-left valign-top">7</th>
-<th class="tableblock halign-left valign-top">8</th>
-<th class="tableblock halign-left valign-top">9</th>
-<th class="tableblock halign-left valign-top">10</th>
+<th class="tableblock halign-left valign-top">P</th>
+<th class="tableblock halign-left valign-top">Q</th>
+<th class="tableblock halign-left valign-top">R</th>
+<th class="tableblock halign-left valign-top">or(P, Q)</th>
+<th class="tableblock halign-left valign-top">implies(or(P, Q), R)</th>
+<th class="tableblock halign-left valign-top">not(Q)</th>
+<th class="tableblock halign-left valign-top">and(or(P, Q), implies(or(P, Q), R))</th>
+<th class="tableblock halign-left valign-top">and(and(or(P, Q), implies(or(P, Q), R)), not(Q))</th>
+<th class="tableblock halign-left valign-top">and(R, P)</th>
+<th class="tableblock halign-left valign-top">implies(and(and(or(P, Q), implies(or(P, Q), R)), not(Q)), and(R, P))</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">P</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Q</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">R</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">or(P, Q)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">implies(col_4, R)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">and(R, P)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">not(Q)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">and(col_4, col_5)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">and(col_8, col_7)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">implies(col_9, col_6)</p></td>
-</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
@@ -6566,10 +6542,12 @@ shows the formula is valid, so the argument is valid.</p>
 </table>
 </li>
 <li>
-<p>If the argument or(P, Q), not(and(P, Q)), not(P) &#x22A8; Q is valid, then
-the formula implies(and(and(or(P, Q), not(and(P, Q))), not(P)), Q) is valid.
-The following truth table shows the formula is valid, so the argument is
-valid.</p>
+<p>Premises: or(P, Q), not(and(P, Q)), not(P)
+Conclusion: Q
+The truth table below shows that the formula:<br>
+implies(and(and(or(P, Q), not(and(P, Q))), not(P)), Q)<br>
+is valid and so:<br>
+or(P, Q), not(and(P, Q)), not(P) &#x22A8; Q<br></p>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 11%;">
@@ -6584,30 +6562,19 @@ valid.</p>
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">1</th>
-<th class="tableblock halign-left valign-top">2</th>
-<th class="tableblock halign-left valign-top">3</th>
-<th class="tableblock halign-left valign-top">4</th>
-<th class="tableblock halign-left valign-top">5</th>
-<th class="tableblock halign-left valign-top">6</th>
-<th class="tableblock halign-left valign-top">7</th>
-<th class="tableblock halign-left valign-top">8</th>
-<th class="tableblock halign-left valign-top">9</th>
+<th class="tableblock halign-left valign-top">P</th>
+<th class="tableblock halign-left valign-top">Q</th>
+<th class="tableblock halign-left valign-top">or(P, Q)</th>
+<th class="tableblock halign-left valign-top">and(P, Q)</th>
+<th class="tableblock halign-left valign-top">not(and(P, Q))</th>
+<th class="tableblock halign-left valign-top">and(or(P, Q), not(and(P, Q)))</th>
+<th class="tableblock halign-left valign-top">not(P)</th>
+<th class="tableblock halign-left valign-top">and(and(or(P, Q), not(and(P, Q))), not(P))</th>
+<th class="tableblock halign-left valign-top">implies(and(and(or(P, Q), not(and(P, Q))), not(P)), Q)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">P</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Q</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">or(P, Q)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">and(P, Q)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">not(col_4)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">not(P)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">and(col_3, col_5)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">and(col_7, col_6)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">implies(col_8, Q)</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
@@ -6635,8 +6602,8 @@ valid.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
@@ -6646,8 +6613,8 @@ valid.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
@@ -7542,7 +7509,7 @@ Q, (R &#x2227; P) &#x2227; (R &#x2227; Q) &#x2192; P &#x22A8; P
 <p>Show that the rules of inference are valid by using a truth table.</p>
 </li>
 <li>
-<p>For all the arguments in the questions for <a href="#_arguments">Arguments</a>, show that they are
+<p>For all the arguments in the questions for <a href="#_entailment">Entailment</a>, show that they are
 valid by using rules of inference.</p>
 </li>
 </ol>
@@ -8427,7 +8394,27 @@ just one label.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_synonyms">2.27.2. Synonyms</h4>
+<h4 id="_functional_notation_versus_operational_notation">2.27.2. Functional Notation Versus Operational Notation</h4>
+<div class="paragraph">
+<p>The formula:</p>
+</div>
+<div class="paragraph">
+<p>and(or(A, B), C)</p>
+</div>
+<div class="paragraph">
+<p>would be written in operational notation as:</p>
+</div>
+<div class="paragraph">
+<p>(\(A &#x2228; B) &#x2227; C)</p>
+</div>
+<div class="paragraph">
+<p>I&#8217;ve chosen to use functional notation because functions are more general than
+operations. So in learning maths you have to learn functional notation, but you
+don&#8217;t necessarily have to learn operational notation.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_synonyms">2.27.3. Synonyms</h4>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -8440,6 +8427,14 @@ just one label.</p>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">True</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1, T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0, F</p></td>
+</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Function</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Operation, connective</p></td>
@@ -8462,7 +8457,7 @@ just one label.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Implies</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Implication, conditional, &#x2192;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Conditional, &#x2192;, material implication</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Atomic formula</p></td>
@@ -8504,14 +8499,20 @@ just one label.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_antecedent_and_consequent">2.27.3. Antecedent and Consequent</h4>
+<h4 id="_antecedent_and_consequent">2.27.4. Antecedent and Consequent</h4>
 <div class="paragraph">
 <p>The formula before the &#x2192; is called the <em>antecedent</em> and the formula
 after the &#x2192; is the <em>consequent</em>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_precedence">2.27.4. Precedence</h4>
+<h4 id="_contingent">2.27.5. Contingent</h4>
+<div class="paragraph">
+<p>A formula that is neither valid nor unsatisfiable is said to be <em>contingent</em>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_precedence">2.27.6. Precedence</h4>
 <div class="paragraph">
 <p>In many parts of the Ivory Tower they adopt the convention of <em>precedence</em> of
 functions
@@ -9096,7 +9097,7 @@ propositional logic)</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-04-13 22:28:18 BST
+Last updated 2015-04-19 21:07:11 BST
 </div>
 </div>
 </body>
