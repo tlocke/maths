@@ -27,9 +27,8 @@ Tony Locke
 == Introduction
 
 I'm a mathematical barbarian, but a few days ago I broke into the ivory tower of
-mathematics and learnt the basics of Sentential Logic. In order to help me
-learn it, I wrote this tutorial. It helped me, and perhaps you'll find it useful
-too.
+mathematics and learnt some of the basics. In order to help me learn it, I wrote
+this tutorial. It helped me, and perhaps you'll find it useful too.
 
 === Licence
 
@@ -55,17 +54,18 @@ Web:: http://maths.tlocke.org.uk/
 EPUB:: http://maths.tlocke.org.uk/maths.epub
 
 
-== Sentential Logic
+== Boolean Algebra
 
 [[img-russel]]
 .http://commons.wikimedia.org/wiki/File:Russell_in_1924_01.jpg#mediaviewer/File:Russell_in_1924_01.jpg[Bertrand Russell in 1924] by Unknown - http://www.humanities.mcmaster.ca/~bertrand/later.html. Licensed under Public domain via http://commons.wikimedia.org/wiki/[Wikimedia Commons].
 image::russell.jpg[Bertrand Russell in 1924]
 
-=== Statements
+=== True and false
 
-In sentential logic, we're only interested in sentences that are either true
-or false. Such sentences are known as _statements_. Here are some sentences
-together with explanations of whether they are statements or not:
+In the realm of Boolean algebra, I found that they deal with things that are
+either true or false. In the English language, sentences that are either true or
+false are known as _statements_. Here are some sentences together with
+explanations of whether they are statements or not:
 
 [example]
 How many miles to Crinnis?
@@ -361,15 +361,15 @@ interpretations:
 | False | False 
 |===
 
-and to make it easier to write they use T for true and F for false:
+and to make it easier to write they use 1 for true and 0 for false:
 
 |===
 | P | Q
 
-| T | T
-| F | T
-| T | F
-| F | F 
+| 1 | 1
+| 0 | 1
+| 1 | 0
+| 0 | 0 
 |===
 
 :numbered!:
@@ -386,14 +386,14 @@ and to make it easier to write they use T for true and F for false:
 |===
 | P | Q | R
 
-| T | T | T
-| F | T | T
-| T | F | T
-| F | F | T
-| T | T | F
-| F | T | F
-| T | F | F
-| F | F | F
+| 1 | 1 | 1
+| 0 | 1 | 1
+| 1 | 0 | 1
+| 0 | 0 | 1
+| 1 | 1 | 0
+| 0 | 1 | 0
+| 1 | 0 | 0
+| 0 | 0 | 0
 |===
 
 :numbered:
@@ -406,10 +406,10 @@ mathematical device for showing if a formula is true or false for every possible
 |===
 | P | Q | and(P, Q)
 
-| T | T | T
-| F | T | F
-| T | F | F
-| F | F | F
+| 1 | 1 | 1
+| 0 | 1 | 0
+| 1 | 0 | 0
+| 0 | 0 | 0
 |===
 
 so what we've done is written a row for each interpretation of P and Q, and then
@@ -419,10 +419,10 @@ or(P, Q) is:
 |===
 | P | Q | or(P, Q)
 
-| T | T | T
-| F | T | T
-| T | F | T
-| F | F | F
+| 1 | 1 | 1
+| 0 | 1 | 1
+| 1 | 0 | 1
+| 0 | 0 | 0
 |===
 
 You can use a truth table to show that and(P, Q) means the same as and(Q, P):
@@ -430,10 +430,10 @@ You can use a truth table to show that and(P, Q) means the same as and(Q, P):
 |===
 | P | Q | and(P, Q) | and(Q, P)
 
-| T | T | T         | T
-| F | T | F         | F
-| T | F | F         | F
-| F | F | F         | F
+| 1 | 1 | 1         | 1
+| 0 | 1 | 0         | 0
+| 1 | 0 | 0         | 0
+| 0 | 0 | 0         | 0
 |===
 
 For each interpretation, the last two columns are the same, and so and(P, Q)
@@ -453,10 +453,10 @@ means the same as and(Q, P).
 |===
 | P | Q | or(P, Q) | or(Q, P)
 
-| T | T | T        | T
-| F | T | T        | T
-| T | F | T        | T
-| F | F | F        | F
+| 1 | 1 | 1        | 1
+| 0 | 1 | 1        | 1
+| 1 | 0 | 1        | 1
+| 0 | 0 | 0        | 0
 |===
 
 For each row of the truth table, the last two columns are the same, and so
@@ -471,8 +471,8 @@ There's another function called _not_, which has the truth table:
 |===
 | P | not(P)
 
-| T | F
-| F | T
+| 1 | 0
+| 0 | 1
 |===
 
 Let us cast it loose amongst the other functions and employ the truth table
@@ -486,10 +486,10 @@ which gives the truth table:
 |===
 | P | Q | not(P) | or(not(P), Q)
 
-| T | T | F      | T
-| F | T | T      | T
-| T | F | F      | F
-| F | F | T      | T
+| 1 | 1 | 0      | 1
+| 0 | 1 | 1      | 1
+| 1 | 0 | 0      | 0
+| 0 | 0 | 1      | 1
 |===
 
 Let us now extract a full confession from:
@@ -502,10 +502,10 @@ which gives the truth table:
 |===
 | P | Q | or(P, Q) | not(or(P, Q))
 
-| T | T | T        | F
-| F | T | T        | F
-| T | F | T        | F
-| F | F | F        | T
+| 1 | 1 | 1        | 0
+| 0 | 1 | 1        | 0
+| 1 | 0 | 1        | 0
+| 0 | 0 | 0        | 1
 |===
 
 One other thing, the first two functions we encountered ('`and`' and '`or`')
@@ -532,10 +532,10 @@ both acted on two formulas, and so they're known as _binary_ functions. The
 |===
 | P | Q | not(P) | not(and(P, Q))
 
-| T | T | F      | F
-| F | T | T      | T
-| T | F | F      | F
-| F | F | T      | F
+| 1 | 1 | 0      | 0
+| 0 | 1 | 1      | 1
+| 1 | 0 | 0      | 0
+| 0 | 0 | 1      | 0
 |===
 +
 .. {empty}
@@ -543,32 +543,32 @@ both acted on two formulas, and so they're known as _binary_ functions. The
 |===
 | P | Q | not(Q) | or(P, not(Q))
 
-| T | T | F      | T
-| F | T | F      | T
-| T | F | T      | T
-| F | F | T      | F
+| 1 | 1 | 0      | 1
+| 0 | 1 | 0      | 1
+| 1 | 0 | 1      | 1
+| 0 | 0 | 1      | 0
 |===
 +
 .. {empty}
 |===
 | P | not(P) | not(not(P))
 
-| T | F      | T
-| F | T      | F
+| 1 | 0      | 1
+| 0 | 1      | 0
 |===
 +
 .. {empty}
 |===
 | P | Q | R | or(P, Q) | or(or(P, Q), R) | not(or(or(P, Q), R))
 
-| T | T | T | T        | T               | F
-| F | T | T | T        | T               | F
-| T | F | T | T        | T               | F
-| F | F | T | F        | T               | F
-| T | T | F | T        | T               | F
-| F | T | F | T        | T               | F
-| T | F | F | T        | T               | F
-| F | F | F | F        | F               | T
+| 1 | 1 | 1 | 1        | 1               | 0
+| 0 | 1 | 1 | 1        | 1               | 0
+| 1 | 0 | 1 | 1        | 1               | 0
+| 0 | 0 | 1 | 0        | 1               | 0
+| 1 | 1 | 0 | 1        | 1               | 0
+| 0 | 1 | 0 | 1        | 1               | 0
+| 1 | 0 | 0 | 1        | 1               | 0
+| 0 | 0 | 0 | 0        | 0               | 1
 |===
 +
 .. {empty}
@@ -576,14 +576,14 @@ both acted on two formulas, and so they're known as _binary_ functions. The
 |===
 | P | Q | R | or(P, Q) | and(or(P, Q), R) | not(and(or(P, Q), R))
 
-| T | T | T | T        | T                | F
-| F | T | T | T        | T                | F
-| T | F | T | T        | T                | F
-| F | F | T | F        | F                | T
-| T | T | F | T        | F                | T
-| F | T | F | T        | F                | T
-| T | F | F | T        | F                | T
-| F | F | F | F        | F                | T
+| 1 | 1 | 1 | 1        | 1                | 0
+| 0 | 1 | 1 | 1        | 1                | 0
+| 1 | 0 | 1 | 1        | 1                | 0
+| 0 | 0 | 1 | 0        | 0                | 1
+| 1 | 1 | 0 | 1        | 0                | 1
+| 0 | 1 | 0 | 1        | 0                | 1
+| 1 | 0 | 0 | 1        | 0                | 1
+| 0 | 0 | 0 | 0        | 0                | 1
 |===
 
 
@@ -758,8 +758,8 @@ has the truth table:
 |===
 | P | not(P) | or(P, not(P))
 
-| T | F      | T
-| F | T      | T
+| 1 | 0      | 1
+| 0 | 1      | 1
 |===
 
 which shows that every possible interpretation satisfies the formula. In the
@@ -781,10 +781,10 @@ Tower such a formula is called a _valid formula_.
 |===
 | P | Q | not(P) | or(P, Q) | or(or(P, Q), not(P))
 
-| T | T | F      | T        | T
-| F | T | T      | T        | T
-| T | F | F      | T        | T
-| F | F | T      | F        | T
+| 1 | 1 | 0      | 1        | 1
+| 0 | 1 | 1      | 1        | 1
+| 1 | 0 | 0      | 1        | 1
+| 0 | 0 | 1      | 0        | 1
 |===
 +
 so the formula is valid.
@@ -803,8 +803,8 @@ has the truth table:
 |===
 | P | not(P) | or(P, not(P))
 
-| T | F      | F
-| F | T      | F
+| 1 | 0      | 0
+| 0 | 1      | 0
 |===
 
 which shows that every possible interpretation falsifies the formula. In the
@@ -829,10 +829,10 @@ Tower such a formula is called an _unsatisfiable formula_.
 |===
 | P | Q | and(P, Q) | not(and(P, Q)) | and(and(P, Q), not(and(P, Q)))
 
-| T | T | T         | F              | F
-| F | T | F         | T              | F
-| T | F | F         | T              | F
-| F | F | F         | T              | F
+| 1 | 1 | 1         | 0              | 0
+| 0 | 1 | 0         | 1              | 0
+| 1 | 0 | 0         | 1              | 0
+| 0 | 0 | 0         | 1              | 0
 |===
 +
 so unsatisfiable.
@@ -841,10 +841,10 @@ so unsatisfiable.
 |===
 | P | Q | not(P) | and(Q, not(P)) | and(P, and(Q, not(P)))
 
-| T | T | F      | F              | F
-| F | T | T      | T              | F
-| T | F | F      | F              | F
-| F | F | T      | F              | F
+| 1 | 1 | 0      | 0              | 0
+| 0 | 1 | 1      | 1              | 0
+| 1 | 0 | 0      | 0              | 0
+| 0 | 0 | 1      | 0              | 0
 |===
 +
 so the formula is unsatisfiable.
@@ -860,10 +860,10 @@ so the formula is unsatisfiable.
 | not(and(not(P), not(Q)))
 | and(and(not(P), not(Q)), not(and(not(P), not(Q))))
 
-| T | T | F | F | F | T | F
-| F | T | T | F | F | T | F
-| T | F | F | T | F | T | F
-| F | F | T | T | T | F | F
+| 1 | 1 | 0 | 0 | 0 | 1 | 0
+| 0 | 1 | 1 | 0 | 0 | 1 | 0
+| 1 | 0 | 0 | 1 | 0 | 1 | 0
+| 0 | 0 | 1 | 1 | 1 | 0 | 0
 |===
 so the formula is unsatisfiable.
 .. {empty}
@@ -878,14 +878,14 @@ so the formula is unsatisfiable.
 | and(and(P, not(P)), Q)
 | and(and(and(P, not(P)), Q), R)
 
-| T | T | T | F | F | F | F
-| F | T | T | T | F | F | F
-| T | F | T | F | F | F | F
-| F | F | T | T | F | F | F
-| T | T | F | F | F | F | F
-| F | T | F | T | F | F | F
-| T | F | F | F | F | F | F
-| F | F | F | T | F | F | F
+| 1 | 1 | 1 | 0 | 0 | 0 | 0
+| 0 | 1 | 1 | 1 | 0 | 0 | 0
+| 1 | 0 | 1 | 0 | 0 | 0 | 0
+| 0 | 0 | 1 | 1 | 0 | 0 | 0
+| 1 | 1 | 0 | 0 | 0 | 0 | 0
+| 0 | 1 | 0 | 1 | 0 | 0 | 0
+| 1 | 0 | 0 | 0 | 0 | 0 | 0
+| 0 | 0 | 0 | 1 | 0 | 0 | 0
 |===
 so unsatisfiable.
 
@@ -898,10 +898,10 @@ There's another binary function called _implies_ that has the truth table:
 |===
 | P | Q | implies(P, Q)
 
-| T | T | T
-| F | T | T
-| T | F | F
-| F | F | T
+| 1 | 1 | 1
+| 0 | 1 | 1
+| 1 | 0 | 0
+| 0 | 0 | 1
 |===
 
 Take the two simple statements:
@@ -947,10 +947,10 @@ Has the truth table:
 |===
 | P | Q | not(Q) | and(P, not(Q)) | implies(and(P, not(Q)), Q)
 
-| T | T | F      | F              | T
-| F | T | F      | F              | T
-| T | F | T      | T              | F
-| F | F | T      | F              | T
+| 1 | 1 | 0      | 0              | 1
+| 0 | 1 | 0      | 0              | 1
+| 1 | 0 | 1      | 1              | 0
+| 0 | 0 | 1      | 0              | 1
 |===
 
 Another example; the truth table for implies(Q, and(P, not(Q))) is:
@@ -958,10 +958,10 @@ Another example; the truth table for implies(Q, and(P, not(Q))) is:
 |===
 | P | Q | not(Q) | and(P, not(Q)) | implies(Q, and(P, not(Q)))
 
-| T | T | F      | F              | F
-| F | T | F      | F              | F
-| T | F | T      | T              | T
-| F | F | T      | F              | T
+| 1 | 1 | 0      | 0              | 0
+| 0 | 1 | 0      | 0              | 0
+| 1 | 0 | 1      | 1              | 1
+| 0 | 0 | 1      | 0              | 1
 |===
 
 :numbered!:
@@ -997,10 +997,10 @@ Another example; the truth table for implies(Q, and(P, not(Q))) is:
 |===
 | P | Q | not(P) | implies(not(P), Q)
 
-| T | T | F      | T
-| F | T | T      | T
-| T | F | F      | T
-| F | F | T      | F
+| 1 | 1 | 0      | 1
+| 0 | 1 | 1      | 1
+| 1 | 0 | 0      | 1
+| 0 | 0 | 1      | 0
 |===
 +
 .. {empty}
@@ -1008,8 +1008,8 @@ Another example; the truth table for implies(Q, and(P, not(Q))) is:
 |===
 | Q | not(Q) | implies(Q, not(Q))
 
-| T | F      | F
-| F | T      | T
+| 1 | 0      | 0
+| 0 | 1      | 1
 |===
 +
 .. {empty}
@@ -1017,10 +1017,10 @@ Another example; the truth table for implies(Q, and(P, not(Q))) is:
 |===
 | P | Q | implies(P, Q) | or(implies(P, Q), P)
 
-| T | T | T             | T
-| F | T | T             | T
-| T | F | F             | T
-| F | F | T             | T
+| 1 | 1 | 1             | 1
+| 0 | 1 | 1             | 1
+| 1 | 0 | 0             | 1
+| 0 | 0 | 1             | 1
 |===
 +
 .. {empty}
@@ -1035,10 +1035,10 @@ Another example; the truth table for implies(Q, and(P, not(Q))) is:
 | or(not(P), not(Q))
 | implies(not(and(P, Q)), or(not(P), not(Q)))
 
-| T | T | T | F | F | F | F | T
-| F | T | F | T | T | F | T | T
-| T | F | F | T | F | T | T | T
-| F | F | F | T | T | T | T | T
+| 1 | 1 | 1 | 0 | 0 | 0 | 0 | 1
+| 0 | 1 | 0 | 1 | 1 | 0 | 1 | 1
+| 1 | 0 | 0 | 1 | 0 | 1 | 1 | 1
+| 0 | 0 | 0 | 1 | 1 | 1 | 1 | 1
 |===
 +
 .. {empty}
@@ -1051,10 +1051,10 @@ Another example; the truth table for implies(Q, and(P, not(Q))) is:
 | and(P, implies(P, Q))
 | implies(and(P, implies(P, Q)), not(P))
 
-| T | T | T | F | T | F
-| F | T | F | T | F | T
-| T | F | F | F | F | T
-| F | F | F | T | F | T
+| 1 | 1 | 1 | 0 | 1 | 0
+| 0 | 1 | 0 | 1 | 0 | 1
+| 1 | 0 | 0 | 0 | 0 | 1
+| 0 | 0 | 0 | 1 | 0 | 1
 |===
 
 
@@ -1066,10 +1066,10 @@ The _equals_ function is a binary function with the truth table:
 |===
 | P | Q | equals(P, Q)
 
-| T | T | T
-| F | T | F
-| T | F | F
-| F | F | T
+| 1 | 1 | 1
+| 0 | 1 | 0
+| 1 | 0 | 0
+| 0 | 0 | 1
 |===
 
 Translating from English to a formula, the sentence:
@@ -1129,14 +1129,14 @@ equals(P, Q)
 |===
 | A | B | C | and(B, C) | equals(A, and(B, C)
 
-| T | T | T | T         | T
-| F | T | T | T         | F
-| T | F | T | F         | F
-| F | F | T | F         | T
-| T | T | F | F         | F
-| F | T | F | F         | T
-| T | F | F | F         | F
-| F | F | F | F         | T
+| 1 | 1 | 1 | 1         | 1
+| 0 | 1 | 1 | 1         | 0
+| 1 | 0 | 1 | 0         | 0
+| 0 | 0 | 1 | 0         | 1
+| 1 | 1 | 0 | 0         | 0
+| 0 | 1 | 0 | 0         | 1
+| 1 | 0 | 0 | 0         | 0
+| 0 | 0 | 0 | 0         | 1
 |===
 +
 .. or(B, equals(A, B))
@@ -1144,10 +1144,10 @@ equals(P, Q)
 |===
 | A | B | equals(A, B) | or(B, equals(A, B))
 
-| T | T | T            | T
-| F | T | F            | T
-| T | F | F            | F
-| F | F | T            | T
+| 1 | 1 | 1            | 1
+| 0 | 1 | 0            | 1
+| 1 | 0 | 0            | 0
+| 0 | 0 | 1            | 1
 |===
 +
 .. and(P, not(equals(P, or(Q, P))))
@@ -1160,10 +1160,10 @@ equals(P, Q)
 | not(equals(P, or(Q, P))
 | and(P, not(equals(P, or(Q, P))))
 
-| T | T | T | T | F | F
-| F | T | T | F | T | F
-| T | F | T | T | F | F
-| F | F | F | T | F | F
+| 1 | 1 | 1 | 1 | 0 | 0
+| 0 | 1 | 1 | 0 | 1 | 0
+| 1 | 0 | 1 | 1 | 0 | 0
+| 0 | 0 | 0 | 1 | 0 | 0
 |===
 +
 .. and(equals(Q, not(P)), equals(P, not(not(Q))))
@@ -1178,10 +1178,10 @@ equals(P, Q)
 | equals(P, not(not(Q)))
 | and(equals(Q, not(P)), equals(P, not(not(Q))))
 
-| T | T | F | F | F | T | T | F
-| F | T | T | T | F | T | F | F
-| T | F | F | T | T | F | F | F
-| F | F | T | F | T | F | T | F
+| 1 | 1 | 0 | 0 | 0 | 1 | 1 | 0
+| 0 | 1 | 1 | 1 | 0 | 1 | 0 | 0
+| 1 | 0 | 0 | 1 | 1 | 0 | 0 | 0
+| 0 | 0 | 1 | 0 | 1 | 0 | 1 | 0
 |===
 
 :numbered:
@@ -1201,6 +1201,7 @@ equals(implies(A, B), or(not(A), B))
 
 will be valid. Its truth table is:
 
+[cols="6*", options="header"]
 |===
 | A
 | B
@@ -1209,10 +1210,10 @@ will be valid. Its truth table is:
 | or(not(A)), B)
 | equals(implies(A, B), or(not(A), B))
 
-| T | T | T | F | T | T
-| F | T | T | T | T | T
-| T | F | F | F | F | T
-| F | F | T | T | T | T
+| 1 | 1 | 1 | 0 | 1 | 1
+| 0 | 1 | 1 | 1 | 1 | 1
+| 1 | 0 | 0 | 0 | 0 | 1
+| 0 | 0 | 1 | 1 | 1 | 1
 |===
 
 and so indeed we can say that this pair of formulas is an identity. The symbol
@@ -1343,10 +1344,10 @@ they are, giving the name of the associated identity.
 |===
 | A | B | and(A, B) | and(B, A) | equals(and(A, B), and(B, A))
 
-| T | T | T         | T         | T
-| F | T | F         | F         | T
-| T | F | F         | F         | T
-| F | F | F         | F         | T
+| 1 | 1 | 1         | 1         | 1
+| 0 | 1 | 0         | 0         | 1
+| 1 | 0 | 0         | 0         | 1
+| 0 | 0 | 0         | 0         | 1
 |===
 +
 so it is valid and so '`and`' is commutative.
@@ -1355,10 +1356,10 @@ so it is valid and so '`and`' is commutative.
 |===
 | A | B | or(A, B) | or(B, A) | equals(or(A, B), or(B, A))
 
-| T | T | T          | T      | T
-| F | T | T          | T      | T
-| T | F | T          | T      | T
-| F | F | F          | F      | T
+| 1 | 1 | 1          | 1      | 1
+| 0 | 1 | 1          | 1      | 1
+| 1 | 0 | 1          | 1      | 1
+| 0 | 0 | 0          | 0      | 1
 |===
 +
 so it is valid and so '`or`' is commutative.
@@ -1373,10 +1374,10 @@ so it is valid and so '`or`' is commutative.
 | implies(B, A)
 | equals(implies(A, B), equals(B, A))
 
-| T | T | T | T | T
-| F | T | T | F | F
-| T | F | F | T | F
-| F | F | T | T | T
+| 1 | 1 | 1 | 1 | 1
+| 0 | 1 | 1 | 0 | 0
+| 1 | 0 | 0 | 1 | 0
+| 0 | 0 | 1 | 1 | 1
 |===
 +
 it is not valid and so '`implies`' is not commutative.
@@ -1391,10 +1392,10 @@ it is not valid and so '`implies`' is not commutative.
 | equals(B, A)
 | equals(equals(A, B), equals(B, A))
 
-| T | T | T | T | T
-| F | T | F | F | T
-| T | F | F | F | T
-| F | F | T | T | T
+| 1 | 1 | 1 | 1 | 1
+| 0 | 1 | 0 | 0 | 1
+| 1 | 0 | 0 | 0 | 1
+| 0 | 0 | 1 | 1 | 1
 |===
 +
 it is valid and so '`equals`' is commutative.
@@ -1455,14 +1456,14 @@ not, and if they are, giving the name of the identity:
 | and(A, and(B, C))
 | equals(and(and(A, B), C), and(A, and(B, C)))
 
-| T | T | T | T | T | T | T | T
-| F | T | T | F | F | T | F | T
-| T | F | T | F | F | F | F | T
-| F | F | T | F | F | F | F | T
-| T | T | F | T | F | F | F | T
-| F | T | F | F | F | F | F | T
-| T | F | F | F | F | F | F | T
-| F | F | F | F | F | F | F | T
+| 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1
+| 0 | 1 | 1 | 0 | 0 | 1 | 0 | 1
+| 1 | 0 | 1 | 0 | 0 | 0 | 0 | 1
+| 0 | 0 | 1 | 0 | 0 | 0 | 0 | 1
+| 1 | 1 | 0 | 1 | 0 | 0 | 0 | 1
+| 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1
+| 1 | 0 | 0 | 0 | 0 | 0 | 0 | 1
+| 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1
 |===
 +
 it is valid and so '`and`' is associative.
@@ -1480,14 +1481,14 @@ it is valid and so '`and`' is associative.
 | or(A, or(B, C))
 | equals(or(or(A, B), C), or(A, or(B, C)))
 
-| T | T | T | T | T | T | T | T
-| F | T | T | T | T | T | T | T
-| T | F | T | T | T | T | T | T
-| F | F | T | F | T | T | T | T
-| T | T | F | T | T | T | T | T
-| F | T | F | T | T | T | T | T
-| T | F | F | T | T | F | T | T
-| F | F | F | F | F | F | F | T
+| 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1
+| 0 | 1 | 1 | 1 | 1 | 1 | 1 | 1
+| 1 | 0 | 1 | 1 | 1 | 1 | 1 | 1
+| 0 | 0 | 1 | 0 | 1 | 1 | 1 | 1
+| 1 | 1 | 0 | 1 | 1 | 1 | 1 | 1
+| 0 | 1 | 0 | 1 | 1 | 1 | 1 | 1
+| 1 | 0 | 0 | 1 | 1 | 0 | 1 | 1
+| 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1
 |===
 +
 it is valid and so '`or`' is associative.
@@ -1505,14 +1506,14 @@ it is valid and so '`or`' is associative.
 | implies(A, implies(B, C))
 | equals(implies(implies(A, B), C), implies(A, implies(B, C)))
 
-| T | T | T | T | T | T | T | T
-| F | T | T | T | T | T | T | T
-| T | F | T | F | T | T | T | T
-| F | F | T | T | T | T | T | T
-| T | T | F | T | F | F | F | T
-| F | T | F | T | F | F | T | F
-| T | F | F | F | T | T | T | T
-| F | F | F | T | F | T | T | F
+| 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1
+| 0 | 1 | 1 | 1 | 1 | 1 | 1 | 1
+| 1 | 0 | 1 | 0 | 1 | 1 | 1 | 1
+| 0 | 0 | 1 | 1 | 1 | 1 | 1 | 1
+| 1 | 1 | 0 | 1 | 0 | 0 | 0 | 1
+| 0 | 1 | 0 | 1 | 0 | 0 | 1 | 0
+| 1 | 0 | 0 | 0 | 1 | 1 | 1 | 1
+| 0 | 0 | 0 | 1 | 0 | 1 | 1 | 0
 |===
 +
 it is not valid and so '`implies`' is not associative.
@@ -1530,14 +1531,14 @@ it is not valid and so '`implies`' is not associative.
 | equals(A, equals(B, C))
 | equals(equals(equals(A, B), C), equals(A, equals(B, C)))
 
-| T | T | T | T | T | T | T | T
-| F | T | T | F | F | T | F | T
-| T | F | T | F | F | F | F | T
-| F | F | T | T | T | F | T | T
-| T | T | F | T | F | F | F | T
-| F | T | F | F | T | F | T | T
-| T | F | F | F | T | T | T | T
-| F | F | F | T | F | T | F | T
+| 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1
+| 0 | 1 | 1 | 0 | 0 | 1 | 0 | 1
+| 1 | 0 | 1 | 0 | 0 | 0 | 0 | 1
+| 0 | 0 | 1 | 1 | 1 | 0 | 1 | 1
+| 1 | 1 | 0 | 1 | 0 | 0 | 0 | 1
+| 0 | 1 | 0 | 0 | 1 | 0 | 1 | 1
+| 1 | 0 | 0 | 0 | 1 | 1 | 1 | 1
+| 0 | 0 | 0 | 1 | 0 | 1 | 0 | 1
 |===
 +
 it is valid and so '`equals`' is associative.
@@ -1609,14 +1610,14 @@ y(A, z(B, C)) {equiv} z(y(A, B), y(A, C))
 | and(and(P, Q), and(P, R))
 | equals(and(P, and(Q, R)), and(and(P, Q), and(P, R)))
 
-| T | T | T | T | T | T | T | T | T
-| F | T | T | T | F | F | F | F | T
-| T | F | T | F | F | F | T | F | T
-| F | F | T | F | F | F | F | F | T
-| T | T | F | F | F | T | F | F | T
-| F | T | F | F | F | F | F | F | T
-| T | F | F | F | F | F | F | F | T
-| F | F | F | F | F | F | F | F | T
+| 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1
+| 0 | 1 | 1 | 1 | 0 | 0 | 0 | 0 | 1
+| 1 | 0 | 1 | 0 | 0 | 0 | 1 | 0 | 1
+| 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1
+| 1 | 1 | 0 | 0 | 0 | 1 | 0 | 0 | 1
+| 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 1
+| 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1
+| 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1
 |===
 +
 the formula is indeed valid, so '`and`' is distributive over '`and`'.
@@ -1637,14 +1638,14 @@ the formula is indeed valid, so '`and`' is distributive over '`and`'.
 | equals(implies(P, Q), implies(P, R))
 | equals(implies(P, equals(Q, R)), equals(implies(P, Q), implies(P, R)))
 
-| T | T | T | T | T | T | T | T | T
-| F | T | T | T | T | T | T | T | T
-| T | F | T | F | F | F | T | F | T
-| F | F | T | F | T | T | T | T | T
-| T | T | F | F | F | T | F | F | T
-| F | T | F | F | T | T | T | T | T
-| T | F | F | T | T | F | F | T | T
-| F | F | F | T | T | T | T | T | T
+| 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1
+| 0 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1
+| 1 | 0 | 1 | 0 | 0 | 0 | 1 | 0 | 1
+| 0 | 0 | 1 | 0 | 1 | 1 | 1 | 1 | 1
+| 1 | 1 | 0 | 0 | 0 | 1 | 0 | 0 | 1
+| 0 | 1 | 0 | 0 | 1 | 1 | 1 | 1 | 1
+| 1 | 0 | 0 | 1 | 1 | 0 | 0 | 1 | 1
+| 0 | 0 | 0 | 1 | 1 | 1 | 1 | 1 | 1
 |===
 +
 the formula is indeed valid, so '`implies`' is distributive over '`equals`'.
@@ -1664,14 +1665,14 @@ the formula is indeed valid, so '`implies`' is distributive over '`equals`'.
 | equals(or(P, Q), or(P, R))
 | equals(or(P, equals(Q, R)), equals(or(P, Q), or(P, R)))
 
-| T | T | T | T | T | T | T | T | T
-| F | T | T | T | T | T | T | T | T
-| T | F | T | F | T | T | T | T | T
-| F | F | T | F | F | F | T | F | T
-| T | T | F | F | T | T | T | T | T
-| F | T | F | F | F | T | F | F | T
-| T | F | F | T | T | T | T | T | T
-| F | F | F | T | T | F | F | T | T
+| 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1
+| 0 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1
+| 1 | 0 | 1 | 0 | 1 | 1 | 1 | 1 | 1
+| 0 | 0 | 1 | 0 | 0 | 0 | 1 | 0 | 1
+| 1 | 1 | 0 | 0 | 1 | 1 | 1 | 1 | 1
+| 0 | 1 | 0 | 0 | 0 | 1 | 0 | 0 | 1
+| 1 | 0 | 0 | 1 | 1 | 1 | 1 | 1 | 1
+| 0 | 0 | 0 | 1 | 1 | 0 | 0 | 1 | 1
 |===
 +
 the formula is indeed valid, so '`or`' is distributive over '`equals`'.
@@ -1707,8 +1708,8 @@ is valid, as shown by truth table:
 |===
 | P | or(P, P) | equals(or(P, P), P)
 
-| T | T        | T
-| F | F        | T
+| 1 | 1        | 1
+| 0 | 0        | 1
 |===
 
 and '`implies`' is not idempotent because:
@@ -1721,14 +1722,14 @@ is not valid, as shown by the truth table:
 |===
 | P | implies(P, P) | equals(implies(P, P), P)
 
-| T | T             | T
-| F | T             | F
+| 1 | 1             | 1
+| 0 | 1             | 0
 |===
 
 Here's a table showing whether each function is idempotent or not.
 
 |===
-| Function        | Idempotent? | Identity Name
+| 0unction        | Idempotent? | Identity Name
 
 | not             | Yes         | Idempotence of negation
 | and             | Yes         | Idempotence of conjunction
@@ -1766,8 +1767,8 @@ not(not(P)) {equiv} P
 |===
 | P | equals(P, P) | equals(equals(P, P), P)
 
-| T | T            | T
-| F | T            | F
+| 1 | 1            | 1
+| 0 | 1            | 0
 |===
 .. '`and`' is idempotent because: +
    equals(and(P, P), P) +
@@ -1776,8 +1777,8 @@ not(not(P)) {equiv} P
 |===
 | P | and(P, P) | equals(and(P, P), P)
 
-| T | T         | T
-| F | F         | T
+| 1 | 1         | 1
+| 0 | 0         | 1
 |===
 +
 . Use the idempotence of negation identity to simplify the following
@@ -1834,10 +1835,10 @@ Some say they're obvious. Do you find them obvious? I don't.
 | not(or(not(A), not(B)))
 | equals(and(A, B), not(or(not(A), not(B))))
 
-| T | T | T | F | F | F | T | T
-| F | T | F | T | F | T | F | T
-| T | F | F | F | T | T | F | T
-| F | F | F | T | T | T | F | T
+| 1 | 1 | 1 | 0 | 0 | 0 | 1 | 1
+| 0 | 1 | 0 | 1 | 0 | 1 | 0 | 1
+| 1 | 0 | 0 | 0 | 1 | 1 | 0 | 1
+| 0 | 0 | 0 | 1 | 1 | 1 | 0 | 1
 |===
 +
 which shows it is valid, and so the two formulas are equivalent.
@@ -1858,10 +1859,10 @@ which shows it is valid, and so the two formulas are equivalent.
 | not(and(not(A), not(B)))
 | equals(or(A, B), not(and(not(A), not(B)))) +
 
-| T | T | T | F | F | F | T | T
-| F | T | T | T | F | F | T | T
-| T | F | T | F | T | F | T | T
-| F | F | F | T | T | T | F | T
+| 1 | 1 | 1 | 0 | 0 | 0 | 1 | 1
+| 0 | 1 | 1 | 1 | 0 | 0 | 1 | 1
+| 1 | 0 | 1 | 0 | 1 | 0 | 1 | 1
+| 0 | 0 | 0 | 1 | 1 | 1 | 0 | 1
 |===
 +
 which shows it is valid, and so the pair of formulas we started with is an
@@ -1911,10 +1912,10 @@ conclusion with an '`implies`' to get the formula. Bring on the table of truth!
 | and(or(A, B), not(B))
 | implies(and(or(A, B), not(B)), A)
 
-| T | T | T | F | F | T
-| F | T | T | F | F | T
-| T | F | T | T | T | T
-| F | F | F | T | F | T
+| 1 | 1 | 1 | 0 | 0 | 1
+| 0 | 1 | 1 | 0 | 0 | 1
+| 1 | 0 | 1 | 1 | 1 | 1
+| 0 | 0 | 0 | 1 | 0 | 1
 |===
 
 The last column is always true, so the formula is valid, so the premises do
@@ -1959,14 +1960,14 @@ is valid. Doing a giant truth table:
 | and(and(implies(A, not(B)), implies(C, not(B))), A)
 | implies(and(and(implies(A, not(B)), implies(C, not(B))), A), not(B))
 
-| T | T | T | F | F | F | F | F | T
-| F | T | T | F | T | F | F | F | T
-| T | F | T | T | T | F | F | F | T
-| F | F | T | T | T | T | T | F | T
-| T | T | F | F | F | T | F | F | T
-| F | T | F | F | T | T | T | F | T
-| T | F | F | T | T | T | T | T | T
-| F | F | F | T | T | T | T | F | T
+| 1 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 1
+| 0 | 1 | 1 | 0 | 1 | 0 | 0 | 0 | 1
+| 1 | 0 | 1 | 1 | 1 | 0 | 0 | 0 | 1
+| 0 | 0 | 1 | 1 | 1 | 1 | 1 | 0 | 1
+| 1 | 1 | 0 | 0 | 0 | 1 | 0 | 0 | 1
+| 0 | 1 | 0 | 0 | 1 | 1 | 1 | 0 | 1
+| 1 | 0 | 0 | 1 | 1 | 1 | 1 | 1 | 1
+| 0 | 0 | 0 | 1 | 1 | 1 | 1 | 0 | 1
 |===
 
 Shows that the formula is valid and so we can write that:
@@ -2036,10 +2037,10 @@ implies(A, not(B)), implies(C, not(B)), A {entails} not(B)
 | and(implies(P, Q), P)
 | implies(and(implies(P, Q), P), Q)
 
-| T | T | T | T | T
-| F | T | T | F | T
-| T | F | F | F | T
-| F | F | T | F | T
+| 1 | 1 | 1 | 1 | 1
+| 0 | 1 | 1 | 0 | 1
+| 1 | 0 | 0 | 0 | 1
+| 0 | 0 | 1 | 0 | 1
 |===
 +
 .. Premises: or(A, B), not(B) +
@@ -2057,10 +2058,10 @@ implies(A, not(B)), implies(C, not(B)), A {entails} not(B)
 | and(or(A, B), not(B))
 | implies(and(or(A, B), not(B)), A)
 
-| T | T | T | F | F | T
-| F | T | T | F | F | T
-| T | F | T | T | T | T
-| F | F | F | T | F | T
+| 1 | 1 | 1 | 0 | 0 | 1
+| 0 | 1 | 1 | 0 | 0 | 1
+| 1 | 0 | 1 | 1 | 1 | 1
+| 0 | 0 | 0 | 1 | 0 | 1
 |===
 +
 .. Premises: not(and(P, Q)), Q +
@@ -2072,10 +2073,10 @@ implies(A, not(B)), implies(C, not(B)), A {entails} not(B)
 |===
 | P | Q | or(P, Q) | and(or(P, Q), Q) | not(P) | implies(and(or(P, Q)), not(P))
 
-| T | T | T        | T                | F      | F
-| F | T | T        | T                | T      | T
-| T | F | T        | F                | F      | T
-| F | F | F        | F                | T      | T
+| 1 | 1 | 1        | 1                | 0      | 0
+| 0 | 1 | 1        | 1                | 1      | 1
+| 1 | 0 | 1        | 0                | 0      | 1
+| 0 | 0 | 0        | 0                | 1      | 1
 |===
 +
 .. Premises: or(P, Q), implies(or(P, Q), R), not(Q) +
@@ -2098,14 +2099,14 @@ implies(A, not(B)), implies(C, not(B)), A {entails} not(B)
 | and(R, P)
 | implies(and(and(or(P, Q), implies(or(P, Q), R)), not(Q)), and(R, P))
 
-| T | T | T | T | T | T | F | T | F | T
-| F | T | T | F | T | F | F | F | F | T
-| T | F | T | F | F | T | T | F | F | T
-| F | F | T | F | T | F | T | F | F | T
-| T | T | F | T | F | F | F | F | F | T
-| F | T | F | F | T | F | F | F | F | T
-| T | F | F | F | T | F | T | F | F | T
-| F | F | F | F | T | F | T | F | F | T
+| 1 | 1 | 1 | 1 | 1 | 1 | 0 | 1 | 0 | 1
+| 0 | 1 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 1
+| 1 | 0 | 1 | 0 | 0 | 1 | 1 | 0 | 0 | 1
+| 0 | 0 | 1 | 0 | 1 | 0 | 1 | 0 | 0 | 1
+| 1 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1
+| 0 | 1 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 1
+| 1 | 0 | 0 | 0 | 1 | 0 | 1 | 0 | 0 | 1
+| 0 | 0 | 0 | 0 | 1 | 0 | 1 | 0 | 0 | 1
 |===
 +
 .. Premises: or(P, Q), not(and(P, Q)), not(P)
@@ -2127,10 +2128,10 @@ implies(A, not(B)), implies(C, not(B)), A {entails} not(B)
 | and(and(or(P, Q), not(and(P, Q))), not(P))
 | implies(and(and(or(P, Q), not(and(P, Q))), not(P)), Q)
 
-| T | T | T | T | F | F | F | F | T
-| F | T | T | F | T | T | T | T | T
-| T | F | T | F | T | T | F | F | T
-| F | F | F | F | T | F | T | F | T
+| 1 | 1 | 1 | 1 | 0 | 0 | 0 | 0 | 1
+| 0 | 1 | 1 | 0 | 1 | 1 | 1 | 1 | 1
+| 1 | 0 | 1 | 0 | 1 | 1 | 0 | 0 | 1
+| 0 | 0 | 0 | 0 | 1 | 0 | 1 | 0 | 1
 |===
 
 
@@ -2593,10 +2594,10 @@ has the truth table:
 | (P {and} (P {implies} Q))
 | \((P {and} (P {implies} Q)) {implies} Q)
 
-| T | T | T | T | T
-| F | T | T | F | T
-| T | F | F | F | T
-| F | F | T | F | T
+| 1 | 1 | 1 | 1 | 1
+| 0 | 1 | 1 | 0 | 1
+| 1 | 0 | 0 | 0 | 1
+| 0 | 0 | 1 | 0 | 1
 |===
 
 which shows that the formula is valid and so the argument is valid.
@@ -2672,10 +2673,10 @@ Here's a list of rules of inference:
 | 1 | 2 | 3             | 4             | 5
 | A | B | A {implies} B | A {and} col_3 | col_4 implies B
 
-| T | T | T             | T             | T
-| F | T | T             | F             | T
-| T | F | F             | F             | T
-| F | F | T             | F             | T
+| 1 | 1 | 1             | 1             | 1
+| 0 | 1 | 1             | 0             | 1
+| 1 | 0 | 0             | 0             | 1
+| 0 | 0 | 1             | 0             | 1
 |===
 [start=2]
 .. The following truth table shows that A {and} B {implies} (A {implies} B) is
@@ -2684,10 +2685,10 @@ Here's a list of rules of inference:
 | 1 | 2 | 3         | 4             | 5
 | A | B | A {and} B | A {implies} B | col_3 {implies} col_4
 
-| T | T | T         | T             | T
-| F | T | F         | T             | T
-| T | F | F         | F             | T
-| F | F | F         | T             | T
+| 1 | 1 | 1         | 1             | 1
+| 0 | 1 | 0         | 1             | 1
+| 1 | 0 | 0         | 0             | 1
+| 0 | 0 | 0         | 1             | 1
 |===
 [start=3]
 .. The following truth table shows that (A {implies} B) {and} {not}B {implies}
@@ -2696,10 +2697,10 @@ Here's a list of rules of inference:
 | 1 | 2 | 3             | 4      | 5      | 6                 | 7
 | A | B | A {implies} B | {not}B | {not}A | col_3 {and} col_4 | col_6 {implies} col_5
 
-| T | T | T             | F      | F      | F                 | T
-| F | T | T             | F      | T      | F                 | T
-| T | F | F             | T      | F      | F                 | T
-| F | F | T             | T      | T      | T                 | T
+| 1 | 1 | 1             | 0      | 0      | 0                 | 1
+| 0 | 1 | 1             | 0      | 1      | 0                 | 1
+| 1 | 0 | 0             | 1      | 0      | 0                 | 1
+| 0 | 0 | 1             | 1      | 1      | 1                 | 1
 |===
 [start=4]
 .. The following truth table shows that {not}{not}A {implies} A is valid, and so
@@ -2707,8 +2708,8 @@ Here's a list of rules of inference:
 |===
 | A | {not}A | {not}{not}A | {not}{not}A {implies} A
 
-| T | F      | T           | T
-| F | T      | F           | T
+| 1 | 0      | 1           | 1
+| 0 | 1      | 0           | 1
 |===
 [start=5]
 .. The following truth table shows that A {and} B {implies} A is valid, and so
@@ -2716,10 +2717,10 @@ Here's a list of rules of inference:
 |===
 | A | B | A {and} B | A {and} B {implies} A
 
-| T | T | T         | T
-| F | T | F         | T
-| T | F | F         | T
-| F | F | F         | T
+| 1 | 1 | 1         | 1
+| 0 | 1 | 0         | 1
+| 1 | 0 | 0         | 1
+| 0 | 0 | 0         | 1
 |===
 [start=6]
 .. The following truth table shows that A {and} B {implies} A {and} B is
@@ -2732,14 +2733,14 @@ Here's a list of rules of inference:
 | 1 | 2 | 3 | 4             | 5             | 6        | 7                 | 8                 | 9
 | A | B | C | A {implies} C | B {implies} C | A {or} B | col_4 {and} col_5 | col_7 {and} col_6 | col_8 {implies} C
 
-| T | T | T | T             | T             | T        | T                 | T                 | T
-| F | T | T | T             | T             | T        | T                 | T                 | T
-| T | F | T | T             | T             | T        | T                 | T                 | T
-| F | F | T | T             | T             | F        | T                 | F                 | T
-| T | T | F | F             | F             | T        | F                 | F                 | T
-| F | T | F | T             | F             | T        | F                 | F                 | T
-| T | F | F | F             | T             | T        | F                 | F                 | T
-| F | F | F | T             | T             | F        | T                 | F                 | T
+| 1 | 1 | 1 | 1             | 1             | 1        | 1                 | 1                 | 1
+| 0 | 1 | 1 | 1             | 1             | 1        | 1                 | 1                 | 1
+| 1 | 0 | 1 | 1             | 1             | 1        | 1                 | 1                 | 1
+| 0 | 0 | 1 | 1             | 1             | 0        | 1                 | 0                 | 1
+| 1 | 1 | 0 | 0             | 0             | 1        | 0                 | 0                 | 1
+| 0 | 1 | 0 | 1             | 0             | 1        | 0                 | 0                 | 1
+| 1 | 0 | 0 | 0             | 1             | 1        | 0                 | 0                 | 1
+| 0 | 0 | 0 | 1             | 1             | 0        | 1                 | 0                 | 1
 |===
 [start=8]
 .. The following truth table shows that A {implies} A {or} B is valid, and so
@@ -2747,10 +2748,10 @@ Here's a list of rules of inference:
 |===
 | A | B | A {or} B | A {implies} A {or} B
 
-| T | T | T        | T
-| F | T | T        | T
-| T | F | T        | T
-| F | F | F        | T
+| 1 | 1 | 1        | 1
+| 0 | 1 | 1        | 1
+| 1 | 0 | 1        | 1
+| 0 | 0 | 0        | 1
 |===
 [start=9]
 .. The following truth table shows that (A {or} B) {and} {not}B {implies} A is
@@ -2759,10 +2760,10 @@ Here's a list of rules of inference:
 | 1 | 2 | 3        | 4      | 5                 | 6
 | A | B | A {or} B | {not}B | col_3 {and} col_4 | col_5 {implies} A
 
-| T | T | T        | F      | F                 | T
-| F | T | T        | F      | F                 | T
-| T | F | T        | T      | T                 | T
-| F | F | F        | T      | F                 | T
+| 1 | 1 | 1        | 0      | 0                 | 1
+| 0 | 1 | 1        | 0      | 0                 | 1
+| 1 | 0 | 1        | 1      | 1                 | 1
+| 0 | 0 | 0        | 1      | 0                 | 1
 |===
 [start=10]
 .. The following truth table shows that (A {implies} B) {and} (B {implies} C)
@@ -2772,14 +2773,14 @@ Here's a list of rules of inference:
 | 1 | 2 | 3 | 4             | 5             | 6             | 7                 | 8                 | 9
 | A | B | C | A {implies} B | B {implies} C | A {implies} C | col_4 {and} col_5 | col_7 {implies} col_6
 
-| T | T | T | T             | T             | T             | T                 | T
-| F | T | T | T             | T             | T             | T                 | T
-| T | F | T | F             | T             | T             | F                 | T
-| F | F | T | T             | T             | T             | T                 | T
-| T | T | F | T             | F             | F             | F                 | T
-| F | T | F | T             | F             | T             | F                 | T
-| T | F | F | F             | T             | F             | F                 | T
-| F | F | F | T             | T             | T             | T                 | T
+| 1 | 1 | 1 | 1             | 1             | 1             | 1                 | 1
+| 0 | 1 | 1 | 1             | 1             | 1             | 1                 | 1
+| 1 | 0 | 1 | 0             | 1             | 1             | 0                 | 1
+| 0 | 0 | 1 | 1             | 1             | 1             | 1                 | 1
+| 1 | 1 | 0 | 1             | 0             | 0             | 0                 | 1
+| 0 | 1 | 0 | 1             | 0             | 1             | 0                 | 1
+| 1 | 0 | 0 | 0             | 1             | 0             | 0                 | 1
+| 0 | 0 | 0 | 1             | 1             | 1             | 1                 | 1
 |===
 . {empty}
 .. P: It's a silent film. +
@@ -2868,13 +2869,17 @@ the same area of maths. This point of this section is to help us understand
 what other authors are saying, in terms that we already understand.
 
 
-==== Sentential Logic versus Propositional Logic
+==== Sentential Logic versus Propositional Logic versus Boolean Algebra
 
 Some authors talk of Sentential Logic, and some talk of Propositional Logic.
 This is a philosophical difference. Say there are two statements that mean the
 same thing but use a different form of words. The sentential school of thought
 uses a different label for each statement, but the proposition school would use
 just one label.
+
+Where does Boolean Algebra come in? Once you've decided on labels and formulas,
+then as far as I can see Propositional Logic and Sentential logic are both
+Boolean Algebras.
 
 
 ==== Functional Notation Versus Operational Notation
@@ -2899,11 +2904,11 @@ don't necessarily have to learn operational notation.
 | Name
 | Synonym
 
-| True
-| 1, T
+| True, 1
+| T
 
-| False
-| 0, F
+| False, 0
+| F
 
 | Function
 | Operation, connective
@@ -2931,10 +2936,10 @@ don't necessarily have to learn operational notation.
 | compound proposition, compound sentence
 
 | <<_interpretations,Interpretation>>
-| Truth assignment
+| 1ruth assignment
 
 | Valid formula
-| Tautology
+| 1autology
 
 | Unsatisfiable formula
 | Contradiction
@@ -2979,14 +2984,14 @@ Okay, so the truth table for P {or} Q {and} R is:
 |===
 | P | Q | R | Q {and} R | P {or} Q {and} R
 
-| T | T | T | T         | T
-| F | T | T | T         | T
-| T | F | T | F         | T
-| F | F | T | F         | F
-| T | T | F | F         | T
-| F | T | F | F         | F
-| T | F | F | F         | T
-| F | F | F | F         | F
+| 1 | 1 | 1 | 1         | 1
+| 0 | 1 | 1 | 1         | 1
+| 1 | 0 | 1 | 0         | 1
+| 0 | 0 | 1 | 0         | 0
+| 1 | 1 | 0 | 0         | 1
+| 0 | 1 | 0 | 0         | 0
+| 1 | 0 | 0 | 0         | 1
+| 0 | 0 | 0 | 0         | 0
 |===
 
 So what would you write if you want to do P {or} Q and then apply {and} R? The
@@ -3000,14 +3005,14 @@ and the truth table is:
 |===
 | P | Q | R | P {or} Q | (P {or} Q) {and} R
 
-| T | T | T | T         | T
-| F | T | T | T         | T
-| T | F | T | T         | T
-| F | F | T | F         | F
-| T | T | F | T         | F
-| F | T | F | T         | F
-| T | F | F | T         | F
-| F | F | F | F         | F
+| 1 | 1 | 1 | 1         | 1
+| 0 | 1 | 1 | 1         | 1
+| 1 | 0 | 1 | 1         | 1
+| 0 | 0 | 1 | 0         | 0
+| 1 | 1 | 0 | 1         | 0
+| 0 | 1 | 0 | 1         | 0
+| 1 | 0 | 0 | 1         | 0
+| 0 | 0 | 0 | 0         | 0
 |===
 
 :numbered!:
@@ -3027,56 +3032,56 @@ and the truth table is:
 |===
 | P | Q | R | P {and} Q | P {and} Q {or} R
 
-| T | T | T | T         | T
-| F | T | T | F         | T
-| T | F | T | F         | T
-| F | F | T | F         | T
-| T | T | F | T         | T
-| F | T | F | F         | F
-| T | F | F | F         | F
-| F | F | F | F         | F
+| 1 | 1 | 1 | 1         | 1
+| 0 | 1 | 1 | 0         | 1
+| 1 | 0 | 1 | 0         | 1
+| 0 | 0 | 1 | 0         | 1
+| 1 | 1 | 0 | 1         | 1
+| 0 | 1 | 0 | 0         | 0
+| 1 | 0 | 0 | 0         | 0
+| 0 | 0 | 0 | 0         | 0
 |===
 [start=2]
 .. {empty}
 |===
 | P | Q | R | P {and} Q | P {and} Q {and} R
 
-| T | T | T | T         | T
-| F | T | T | F         | F
-| T | F | T | F         | F
-| F | F | T | F         | F
-| T | T | F | T         | F
-| F | T | F | F         | F
-| T | F | F | F         | F
-| F | F | F | F         | F
+| 1 | 1 | 1 | 1         | 1
+| 0 | 1 | 1 | 0         | 0
+| 1 | 0 | 1 | 0         | 0
+| 0 | 0 | 1 | 0         | 0
+| 1 | 1 | 0 | 1         | 0
+| 0 | 1 | 0 | 0         | 0
+| 1 | 0 | 0 | 0         | 0
+| 0 | 0 | 0 | 0         | 0
 |===
 [start=3]
 .. {empty}
 |===
 | P | Q | R | P {or} Q | P {or} Q {or} R
 
-| T | T | T | T         | T
-| F | T | T | T         | T
-| T | F | T | T         | T
-| F | F | T | F         | T
-| T | T | F | T         | T
-| F | T | F | T         | T
-| T | F | F | T         | T
-| F | F | F | F         | F
+| 1 | 1 | 1 | 1         | 1
+| 0 | 1 | 1 | 1         | 1
+| 1 | 0 | 1 | 1         | 1
+| 0 | 0 | 1 | 0         | 1
+| 1 | 1 | 0 | 1         | 1
+| 0 | 1 | 0 | 1         | 1
+| 1 | 0 | 0 | 1         | 1
+| 0 | 0 | 0 | 0         | 0
 |===
 [start=4]
 .. {empty}
 |===
 | P | Q | R | Q {or} R | P {and} (Q {or} R)
 
-| T | T | T | T         | T
-| F | T | T | T         | F
-| T | F | T | T         | T
-| F | F | T | F         | F
-| T | T | F | T         | T
-| F | T | F | T         | F
-| T | F | F | F         | F
-| F | F | F | F         | F
+| 1 | 1 | 1 | 1         | 1
+| 0 | 1 | 1 | 1         | 0
+| 1 | 0 | 1 | 1         | 1
+| 0 | 0 | 1 | 0         | 0
+| 1 | 1 | 0 | 1         | 1
+| 0 | 1 | 0 | 1         | 0
+| 1 | 0 | 0 | 0         | 0
+| 0 | 0 | 0 | 0         | 0
 |===
 
 
