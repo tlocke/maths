@@ -13,6 +13,7 @@ Tony Locke
 :sub: &#x2282;
 :ne: &#x2260;
 :nequiv: &#x2262;
+:brarr: &#x21A6;
 :toc:
 
 [subs="replacements"]
@@ -66,15 +67,15 @@ EPUB:: http://maths.tlocke.org.uk/maths.epub
 .http://commons.wikimedia.org/wiki/File:Young_frege.jpg#media/File:Young_frege.jpg[Gottlob Frege] Licensed under Public Domain via http://commons.wikimedia.org/wiki/[Wikimedia Commons].
 image::gottlob_frege.jpg[Gottlob Frege]
 
-'`Tony`', '`Yes Professor Godel?`', '`You should really start with _classes_`',
-'`Okay, whatevs Prof.`'.
+'`Tony`', '`Yes Professor Frege?`', '`You should really start with _classes_`',
+'`Okay, whatevs Prof`'.
 
 === What's a class?
 
 A _class_ is a collection of distinct objects, where the order doesn't matter,
 and duplicates aren't allowed. Some example are:
 
-* Additive primary colours.
+* Primary colours.
 * Even integers
 * Letters of the alphabet.
 * Natural numbers.
@@ -88,9 +89,9 @@ Written out in _class notation_, these look like:
 
 An object in a class is termed an _element_ of the class.
 
-When the class includes an elipsis (...) at one end or both (as in the second
-and last examples) it denotes an infinite series. An ellipsis in the middle of a
-class of elements is used to save writing out all the items of an obvious class.
+When the class includes an elipsis (...) at one end or both, it denotes an
+infinite series. An ellipsis in the middle of a class of elements is used to
+save writing out all the items of an obvious class.
 
 Strangely enough, a class with a finite number of elements is a _finite class_
 and a class with an infinite number of elements is an _infinite class_.
@@ -138,7 +139,8 @@ A {equiv} B
 `{1, 2, 2}`. What gives?`'. When you write `{1, 2, 2}`, you're describing a
 classs with two elements, `1` and `2`. So `{1, 2, 2}` {equiv} `{1, 2}`. So these
 are two ways of describing the same class. '`Well, okay I suppose. I have to say
-I'm not entirely convinced, but carry on for now.`'.
+I'm not entirely convinced, but carry on for now`'.
+
 
 
 === Common Classes Of Numbers
@@ -147,12 +149,12 @@ Some classes of numbers are common enough to have their own names and symbols:
 
 [cols="3*", options="header"]
 |===
-| Name | Symbol | Definition | Notes
+| Name | Symbol | Definition
 
 | Real Numbers
 | *R*
 | All the numbers on a continuous line from negative infinity to positive
-  infinity.
+infinity.
 
 | Integers
 | *Z*
@@ -168,26 +170,33 @@ Some classes of numbers are common enough to have their own names and symbols:
 
 | Boolean Values
 | *B*
-| {1, 0}
-| By convention, 1 is interpreted as true, and 0 as false.
+| {1, 0} +
+By convention, 1 is interpreted as true, and 0 as false.
+
+| Empty Set
+|
+| {}
 |===
 
 
 === Sets
 
-A class that can be an element of a class is called a _set_. A class that can't
-an element of a class is called a _proper class_.
+A class that's allowed to be an element of a class is called a _set_. A class
+that isn't allowed to be an element of a class is called a _proper class_.
 
 When I first came across this distiction I found it difficult to understand and
 unnecessary. I now just find it difficult to understand :-)
 
-'`Let prattling and more examples!`'. Okay, okay...
+'`Less prattling and more examples!`' Okay, okay...
 
 Most classes that I came across in the tower were actually sets, eg.:
 
 [example]
-{{6, 3}, {78, 3}, {899, 3}}
-{{France, Germany, Spain}, {Hunduras, Colombia, Brazil}}
+{6, 3} +
+{78, 3, 899, {3, 3}} +
+{France, Germany, Spain} +
+{Hunduras, Colombia, Brazil}
+
 
 === Russell's Paradox
 
@@ -223,6 +232,8 @@ order?`'
 Yes, good point reader. Remember I'm still learning this stuff too, you know.
 I'll get back to you...
 
+...I'm back, got it all worked out. Here's our class of countries:
+
 [example]
 {'`UK`', '`Germany`', '`Spain`'}
 
@@ -252,19 +263,19 @@ Here are the names of tuples based on the number of elements they contain...
 |===
 
 Actually, I made up '`nuple`'. It's commonly called '`the empty tuple`'.
-                               
+
 
 === Functions
 
 In the tower they fiddle around a lot with functions. A function is a class
 that relates a class of tuples (the _domain_) to another class (the _codomain_).
-For any tuple (called the `input`) of the domain there's a double in the
+For any tuple (called the '`input`') of the domain there's a double in the
 function of the form:
 
 [example]
 (input, output)
 
-where `output` is an element of the _codomain_.
+where '`output`' is an element of the _codomain_.
 
 '`That sounds all very clever and fancy, but what do you actually mean?`' Well
 an example I found in the tower is the `add_one` function which has as its
@@ -276,7 +287,7 @@ domain *Z*^1^:
 The codomain of `add_one` is *Z*, and the relationship is:
 
 [example]
-add_one {equiv} {..., ((-2), -1), ((-1), 0), ((0), 1), ((1), 2), ...}
+add_one {equiv} {..., ( (-2), -1), ( (-1), 0), ( (0), 1), ( (1), 2), ...}
 
 and if you want to talk about individual inputs and outputs of a function, you
 can write:
@@ -316,7 +327,9 @@ mult_ten(0) {equiv} 0 +
 
 In the previous examples we've choses domains of singles, but let's create a
 function that has a domain of doubles. So let's create a function called
-`mult_add` with the domain *Z*^2^ which can be illustrated with this table:
+`mult_add` with the domain *Z*^2^. Now *Z*^2^ is the set of doubles which are
+all possible combinations of an element of *Z* followed by another element of
+*Z* which is shown in this table:
 
 [cols="8*", options="header"]
 |===
@@ -393,10 +406,10 @@ function that has a domain of doubles. So let's create a function called
 | (..., ...)
 |===
 
-So *Z* is the set of doubles which are all possible combinations of an element
-of *Z* followed by another element of *Z*. The codomain of `mult_add` is *Z*,
-and the relationship between the domain and codomain is defined by:
+The codomain of `mult_add` is *Z*, and the relationship between the domain and
+codomain is defined by:
 
+[example]
 mult_add(x, y) {equiv} x * 2 + y
 
 Let's try it out with some inputs and see what the outputs are:
@@ -410,74 +423,125 @@ Functions whose input is a single are called _unary_ functions, and functions
 whose input is a double are called _binary_ functions. Can we have functions
 whose input is the nuple? Yes we can!
 
+[[img-obama]]
+image::obama.jpg[Yes we can!]
 
 Let's define a function called `five`, it'll have the domain {()} and the
 codomain *Z*. The function just contains one double:
 
 [example]
-((), 5)
+( (), 5)
 
 so:
 
 [example]
 five() {equiv} 5
 
+=== Direct Product
 
-=== Is An Element Of?
+The 
 
-Taking our set of primary colors as a domain:
 
-[example]
-P {equiv} {red, green, blue}
+=== Is In
 
-and using *B* (the Boolean class, true and false) as the codomain. 
-
-we can say that `red` is an element of `P`. In set notation this would written:
+Set theoreticians use the symbol {isin} to mean '`is an element of`'. So if
+there was an element `x` that was in a set `A` we could abbreviate that to:
 
 [example]
-{isin}(red, P)
+x {isin} A
 
-Also, `yellow` is not an element of `P`, which would be written:
-
-[example]
-{not}({isin}(yellow, P))
-
-
-=== Empty Set
-
-A special set is the _empty set_:
+Conversely, they use the symbol {notin} to mean '`is not an element of`'. Eg.
 
 [example]
-{}
+x {notin} A
 
-as the name suggests, it's the set without any elements.
+
+=== Indicator Function
+
+Those wacky mathematicians have come up with a binary function called the
+_indicator function_, denoted by *1*, that has as its input a double consisting
+of an element and a set. The function is defined as:
+
+* Domain: The proper class of doubles of all possible combinations of (element,
+  set).
+* Codomain: *B*
+* *1*(x, A) {equiv} true if x {isin} A otherwise false
+
+[example]
+*1*(1, *Z*) {equiv} true +
+*1*('France', *Z*) {equiv} false +
+*1*(-1000, {red, green, blue}) {equiv} false +
+
 
 
 === Subset
 
-Pressing our two example sets A and B into service again, A is a _subset_ of B
-if and only if all the elements of A are also in B. In set notation this is
-written as:
+Another binary function with codomain *B* is the subset function that has the
+symbol {sube}. The subset function is defined as:
+
+* Domain: The proper class of doubles of all possible combination of (set, set)
+* Codomain: *B*
+* {sube}(A, B) {equiv} true if and only if all the elements of A are also in B,
+otherwise false.
+
+So if A is a subset of B we can write:
 
 [example]
-{sube}(A, B)
+{sube}(A, B) {equiv} true
 
 Following this definition of a subset, every set is a subset of itself. So it's
 always true that:
 
 [example]
-{sube}(A, A)
+{sube}(A, A) {equiv} true
+
+By the way, the domain of {sube} crops up quite a lot in definitions of
+functions, so I'll give it the name *S*, so from now on:
+
+[example]
+*S* {equiv} The proper class of doubles of all possible combination of (set,
+set)
+
+
+
+
+=== Equals
+
+The symbol for the _equals_ function is `=`, and it's defined as:
+
+* Domain: *S*
+* Codomain: *B*
+* =(A, B) {equiv} true if A and B form an identiy, otherwise false.
+
 
 === Proper Subset
 
-A is a _proper subset_ of B if `{sube}(A, B)` and `{ne}(A, B)`. In set notation
-this is written:
+The symbol for the _proper subset_ function is `{sube}`, and it's defined as:
+
+* Domain: *S*
+* Codomain: *B*
+* {sub}(A, B) {equiv} true if `{sube}(A, B)` is true and A {nequiv} B.
+
+
+=== Union
 
 [example]
-{sub}(A, B)
+{cup}: *S* {rarr} *S* +
+A, B {brarr} {x | x {isin} A or x {isin} B}
 
 
+=== Intersection
 
+[example]
+{cap}: *S* {rarr} *S* +
+A, B {brarr} {x | x {isin} A and x {isin} B}
+
+
+=== Complement
+
+[example]
+\\: *S* {rarr} *S* +
+A, B {brarr} {x | x {isin} A and x {notin} B}
 
 === Universal Class
 
