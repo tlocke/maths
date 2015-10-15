@@ -61,91 +61,88 @@ Web:: http://maths.tlocke.org.uk/
 EPUB:: http://maths.tlocke.org.uk/maths.epub
 
 :numbered:
-== Classes
+== Sets
 
 [[img-gottlob_frege]]
 .http://commons.wikimedia.org/wiki/File:Young_frege.jpg#media/File:Young_frege.jpg[Gottlob Frege] Licensed under Public Domain via http://commons.wikimedia.org/wiki/[Wikimedia Commons].
 image::gottlob_frege.jpg[Gottlob Frege]
 
-'`Tony`', '`Yes Professor Frege?`', '`You should really start with _classes_`',
+'`Tony`', '`Yes Professor Frege?`', '`You should really start with _sets_`',
 '`Okay, whatevs Prof`'.
 
-=== What's a class?
+=== What's A Set?
 
-A _class_ is a collection of distinct objects, where the order doesn't matter,
-and duplicates aren't allowed. Some example are:
+A _set_ is a collection of distinct _elements_, where there's no order, and
+duplicates aren't allowed. Some example are:
 
 * Primary colours.
 * Even integers
 * Letters of the alphabet.
 * Natural numbers.
 
-Written out in _class notation_, these look like:
+Written out in _set notation_, these look like:
 
 * {red, green, blue}
 * {..., -4, -2, 0, 2, 4, ...}
 * {a, b, c, ..., x, y, z}
 * {0, 1, 2, 3, ...}
 
-An object in a class is termed an _element_ of the class.
+When the set includes an elipsis (...) at one end or both, it denotes an
+infinite series. An ellipsis in the middle of a set of elements is used to
+save writing out all the items of an obvious set.
 
-When the class includes an elipsis (...) at one end or both, it denotes an
-infinite series. An ellipsis in the middle of a class of elements is used to
-save writing out all the items of an obvious class.
-
-Strangely enough, a class with a finite number of elements is a _finite class_
-and a class with an infinite number of elements is an _infinite class_.
+Strangely enough, a set with a finite number of elements is a _finite set_
+and a set with an infinite number of elements is an _infinite set_.
 
 :numbered:
 === Identity
 
-If two classes have exactly the same elements in them, then they form an
-_identity_. In class notation, if classes A and B are and identity then we can
-write:
+If two sets have exactly the same elements in them, then they form an
+_identity_. In set notation, if sets A and B are and identity they write:
 
 [example]
 A {equiv} B
 
-if A and B aren't an identity we can write:
+if A and B aren't an identity they write:
 
 [example]
 A {nequiv} B
 
-Let's say we've got two classes S and T:
+Let's say we've got two sets S and T:
 
 [example]
 S is {1, 2} +
 T is {2, 1}
 
 S and T are an identity because all that matters for identity is that the two
-classes have the same elements in them. So we can write:
+sets have the same elements in them. So we can write:
 
 [example]
 S {equiv} T
 
-Let's make up two classes A and B:
+Let's make up two sets A and B:
 
 [example]
 A is {1, 2, 2} +
 B is {1, 2}
 
-Classes don't have any duplicates so the two classes A and B are an identity
+Sets don't have any duplicates so the two sets A and B are an identity
 and we can write:
 
 [example]
 A {equiv} B
 
-'`Hey, you said that classes can't have duplicates, but then you wrote
-`{1, 2, 2}`. What gives?`'. When you write `{1, 2, 2}`, you're describing a
-classs with two elements, `1` and `2`. So `{1, 2, 2}` {equiv} `{1, 2}`. So these
-are two ways of describing the same class. '`Well, okay I suppose. I have to say
+'`Hey, you said that sets can't have duplicates, but then you wrote `{1, 2, 2}`.
+What gives?`'. When you write `{1, 2, 2}`, you're describing a
+set with two elements, `1` and `2`. So `{1, 2, 2}` {equiv} `{1, 2}`. So these
+are two ways of describing the same set. '`Well, okay I suppose. I have to say
 I'm not entirely convinced, but carry on for now`'.
 
 
 
-=== Common Classes Of Numbers
+=== Common Sets Of Numbers
 
-Some classes of numbers are common enough to have their own names and symbols:
+Some sets of numbers are common enough to have their own names and symbols:
 
 [cols="3*", options="header"]
 |===
@@ -179,25 +176,6 @@ By convention, 1 is interpreted as true, and 0 as false.
 |===
 
 
-=== Sets
-
-A class that's allowed to be an element of a class is called a _set_. A class
-that isn't allowed to be an element of a class is called a _proper class_.
-
-When I first came across this distiction I found it difficult to understand and
-unnecessary. I now just find it difficult to understand :-)
-
-'`Less prattling and more examples!`' Okay, okay...
-
-Most classes that I came across in the tower were actually sets, eg.:
-
-[example]
-{6, 3} +
-{78, 3, 899, {3, 3}} +
-{France, Germany, Spain} +
-{Hunduras, Colombia, Brazil}
-
-
 === Russell's Paradox
 
 On your first day as an assistant librarian, you're asked to compile a book
@@ -209,30 +187,42 @@ itself, then it should be in the catalogue, in which case it shouldn't...
 
 You've become a victim of Russell's Paradox, and you're fired. Lol!
 
-In maths terms, Russell's Paradox is asking, what's the set of all sets that
-don't have themselves as an element? That set doesn't exist. But what if you
-want to specify a collection that contains all the sets that don't contain
-themselves, but ignore the case of the collection itself? That collection, my
-fine feathered friend, is a _proper class_!
+In terms of sets, Russell's Paradox is asking, what's the set of all sets that
+don't have themselves as an element? That set doesn't exist.
 
 So, that's solved it in maths language, but how should you have answered the
-librarian? Well, you should say that the book (class) he's asked for can't
-exist. But you can write a proper-book (proper class), which has the same
-contents as has been requested, but that doesn't contain itself, because it's
-not allowed to. Convinced? No? Well if it's good enough for Kurt Godel, it's
-good enough for me mate.
+chief librarian? Well, you should say that the book (set) he's asked for can't
+exist. But you can write a book (set), which has the same
+contents as has been requested, except that it doesn't contain itself.
+
+
+=== Other Paradoxes
+
+Curry's Paradox is:
+
+[example]
+If this sentence is true, then you owe me a million pounds.
+
+Do you owe me a million pounds then? Anyway, they told me that there's an
+equivalent paradox for sets.
+
+They also told me that there's a paradox with the set of all sets, so that
+doesn't exist either. As it seems to me, a paradox is something that is clearly
+incorrect, but you can't see the flaw in the argument. Of course, all paradoxes
+can be resolved, and the resolution deepens one's understanding. '`Ooh, hark at
+him pontificating on the philosophy of it all!!`'. Okay, okay.
 
 
 === Tuples
 
-'`Wait, you say that with classes, ordering doesn't matter, but in lots of
-things ordering _does_ matter. What about a class of countries in alphabetical
+'`Wait, you say that with sets, ordering doesn't matter, but in lots of
+things ordering _does_ matter. What about a list of countries in alphabetical
 order?`'
 
 Yes, good point reader. Remember I'm still learning this stuff too, you know.
 I'll get back to you...
 
-...I'm back, got it all worked out. Here's our class of countries:
+...I'm back, got it all worked out. Here's our set of countries:
 
 [example]
 {'`UK`', '`Germany`', '`Spain`'}
@@ -242,10 +232,10 @@ Now adding alphabetical ordering:
 [example]
 {{'`UK`', 3}, {'`Germany`', 1}, {'`Spain`', 2}}
 
-So we've made a class of classes. The little classes have the country and their
-position in alphabetical order. Ordered classes occur quite often in maths, so
-they're given the name _tuples_ and denoted by surrounding the elements with
-brackets, so:
+So we've made a set of sets. The inner sets have the country and their position
+in the alphabetical order. Ordered sets occur quite often in maths, so they're
+given the name _tuples_ and denoted by surrounding the elements with brackets,
+so:
 
 [example]
 {{'`UK`', 3}, {'`Germany`', 1}, {'`Spain`', 2}} {equiv}
@@ -267,8 +257,8 @@ Actually, I made up '`nuple`'. It's commonly called '`the empty tuple`'.
 
 === Functions
 
-In the tower they fiddle around a lot with functions. A function is a class
-that relates a class of tuples (the _domain_) to another class (the _codomain_).
+In the tower they fiddle around a lot with functions. A function is a set
+that relates a set of tuples (the _domain_) to another set (the _codomain_).
 For any tuple (called the '`input`') of the domain there's a double in the
 function of the form:
 
@@ -310,7 +300,6 @@ They'll often use the letter `x`, but it needn't be. Could be anything. Eg:
 [example]
 add_one(H) {equiv} H + 1
 
-
 Another example. Let's make up another function called `mult_ten`. The domain
 will be *Z*^1^ and the codomain *Z* as in the previous example. The relationship
 is defined as:
@@ -325,7 +314,7 @@ mult_ten(1) {equiv} 10 +
 mult_ten(8) {equiv} 80 +
 mult_ten(0) {equiv} 0 +
 
-In the previous examples we've choses domains of singles, but let's create a
+In the previous examples we chose domains of singles, but let's create a
 function that has a domain of doubles. So let's create a function called
 `mult_add` with the domain *Z*^2^. Now *Z*^2^ is the set of doubles which are
 all possible combinations of an element of *Z* followed by another element of
@@ -421,7 +410,7 @@ mult_add(0, 2) {equiv} 2 +
 
 Functions whose input is a single are called _unary_ functions, and functions
 whose input is a double are called _binary_ functions. Can we have functions
-whose input is the nuple? Yes we can!
+whose input is the nuple?
 
 [[img-obama]]
 image::obama.jpg[Yes we can!]
@@ -462,8 +451,7 @@ Those wacky mathematicians have come up with a binary function called the
 _indicator function_, denoted by *1*, that has as its input a double consisting
 of an element and a set. The function is defined as:
 
-* Domain: The proper class of doubles of all possible combinations of (element,
-  set).
+* Domain: The set of doubles of all possible combinations of (element, set).
 * Codomain: *B*
 * *1*(x, A) {equiv} true if x {isin} A otherwise false
 
@@ -473,13 +461,12 @@ of an element and a set. The function is defined as:
 *1*(-1000, {red, green, blue}) {equiv} false +
 
 
-
 === Subset
 
 Another binary function with codomain *B* is the subset function that has the
 symbol {sube}. The subset function is defined as:
 
-* Domain: The proper class of doubles of all possible combination of (set, set)
+* Domain: The set of doubles of all possible combination of (set, set)
 * Codomain: *B*
 * {sube}(A, B) {equiv} true if and only if all the elements of A are also in B,
 otherwise false.
@@ -499,10 +486,7 @@ By the way, the domain of {sube} crops up quite a lot in definitions of
 functions, so I'll give it the name *S*, so from now on:
 
 [example]
-*S* {equiv} The proper class of doubles of all possible combination of (set,
-set)
-
-
+*S* {equiv} The set of doubles of all possible combination of (set, set)
 
 
 === Equals
@@ -567,9 +551,15 @@ A, B {brarr} {x | x {isin} A and x {notin} B}
 
 ==== Answers
 
+Rs
+
 === Rosetta Stone
 
+Rs
+
 ==== Synonyms
+
+Rs
 
 [cols="2*", options="header"]
 |===
@@ -583,7 +573,7 @@ A, B {brarr} {x | x {isin} A and x {notin} B}
 | Ordered pair
 |===
 
-=== Bibliography
+=== Bibliographyo
 
 * http://www.mathsisfun.com/sets/sets-introduction.html
 * http://people.cs.pitt.edu/~milos/courses/cs441/lectures/Class7.pdf
@@ -3701,10 +3691,8 @@ and the truth table is:
 | 0 | 0 | 0 | 0         | 0
 |===
 
-[bibliography]
-=== Bibliography
+=== Bibliographyo
 
-[bibliography]
 * http://en.wikibooks.org/wiki/Formal_Logic/Sentential_Logic (Referred to this
   throughout, very good.)
 * Mathematics for Computing by Robert Callen 1998, Letts Educational. (This

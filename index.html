@@ -426,13 +426,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_formats">1.3. Formats</a></li>
 </ul>
 </li>
-<li><a href="#_classes">2. Classes</a>
+<li><a href="#_sets">2. Sets</a>
 <ul class="sectlevel2">
-<li><a href="#_what_s_a_class">2.1. What&#8217;s a class?</a></li>
+<li><a href="#_what_s_a_set">2.1. What&#8217;s A Set?</a></li>
 <li><a href="#_identity">2.2. Identity</a></li>
-<li><a href="#_common_classes_of_numbers">2.3. Common Classes Of Numbers</a></li>
-<li><a href="#_sets">2.4. Sets</a></li>
-<li><a href="#_russell_s_paradox">2.5. Russell&#8217;s Paradox</a></li>
+<li><a href="#_common_sets_of_numbers">2.3. Common Sets Of Numbers</a></li>
+<li><a href="#_russell_s_paradox">2.4. Russell&#8217;s Paradox</a></li>
+<li><a href="#_other_paradoxes">2.5. Other Paradoxes</a></li>
 <li><a href="#_tuples">2.6. Tuples</a></li>
 <li><a href="#_functions">2.7. Functions</a></li>
 <li><a href="#_direct_product">2.8. Direct Product</a></li>
@@ -441,9 +441,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_subset">2.11. Subset</a></li>
 <li><a href="#_equals">2.12. Equals</a></li>
 <li><a href="#_proper_subset">2.13. Proper Subset</a></li>
-<li><a href="#_universal_class">2.14. Universal Class</a></li>
+<li><a href="#_union">2.14. Union</a></li>
+<li><a href="#_intersection">2.15. Intersection</a></li>
+<li><a href="#_complement">2.16. Complement</a></li>
+<li><a href="#_universal_class">2.17. Universal Class</a></li>
 <li><a href="#_rosetta_stone">Rosetta Stone</a></li>
-<li><a href="#_bibliography">Bibliography</a></li>
+<li><a href="#_bibliographyo">Bibliographyo</a></li>
 </ul>
 </li>
 <li><a href="#_boolean_algebra">Boolean Algebra</a>
@@ -480,7 +483,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_rules_of_inference">3.7. Rules Of Inference</a></li>
 <li><a href="#_sentential_logic_summary">3.8. Sentential Logic: Summary</a></li>
 <li><a href="#_rosetta_stone_2">3.9. Rosetta Stone</a></li>
-<li><a href="#_bibliography_2">Bibliography</a></li>
+<li><a href="#_bibliographyo_2">Bibliographyo</a></li>
 </ul>
 </li>
 <li><a href="#_number_theory">Number Theory</a></li>
@@ -560,7 +563,7 @@ EPUB
 </div>
 </div>
 <div class="sect1">
-<h2 id="_classes">2. Classes</h2>
+<h2 id="_sets">2. Sets</h2>
 <div class="sectionbody">
 <div id="img-gottlob_frege" class="imageblock">
 <div class="content">
@@ -569,19 +572,19 @@ EPUB
 <div class="title">Figure 1. <a href="http://commons.wikimedia.org/wiki/File:Young_frege.jpg#media/File:Young_frege.jpg">Gottlob Frege</a> Licensed under Public Domain via <a href="http://commons.wikimedia.org/wiki/">Wikimedia Commons</a>.</div>
 </div>
 <div class="paragraph">
-<p>&#8216;Tony&#8217;, &#8216;Yes Professor Frege?&#8217;, &#8216;You should really start with <em>classes</em>&#8217;,
-&#8216;Okay, whatevs Prof.&#8217;.</p>
+<p>&#8216;Tony&#8217;, &#8216;Yes Professor Frege?&#8217;, &#8216;You should really start with <em>sets</em>&#8217;,
+&#8216;Okay, whatevs Prof&#8217;.</p>
 </div>
 <div class="sect2">
-<h3 id="_what_s_a_class">2.1. What&#8217;s a class?</h3>
+<h3 id="_what_s_a_set">2.1. What&#8217;s A Set?</h3>
 <div class="paragraph">
-<p>A <em>class</em> is a collection of distinct objects, where the order doesn&#8217;t matter,
-and duplicates aren&#8217;t allowed. Some example are:</p>
+<p>A <em>set</em> is a collection of distinct <em>elements</em>, where there&#8217;s no order, and
+duplicates aren&#8217;t allowed. Some example are:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Additive primary colours.</p>
+<p>Primary colours.</p>
 </li>
 <li>
 <p>Even integers</p>
@@ -595,7 +598,7 @@ and duplicates aren&#8217;t allowed. Some example are:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Written out in <em>class notation</em>, these look like:</p>
+<p>Written out in <em>set notation</em>, these look like:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -614,24 +617,20 @@ and duplicates aren&#8217;t allowed. Some example are:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>An object in a class is termed an <em>element</em> of the class.</p>
+<p>When the set includes an elipsis (&#8230;&#8203;) at one end or both, it denotes an
+infinite series. An ellipsis in the middle of a set of elements is used to
+save writing out all the items of an obvious set.</p>
 </div>
 <div class="paragraph">
-<p>When the class includes an elipsis (&#8230;&#8203;) at one end or both (as in the second
-and last examples) it denotes an infinite series. An ellipsis in the middle of a
-class of elements is used to save writing out all the items of an obvious class.</p>
-</div>
-<div class="paragraph">
-<p>Strangely enough, a class with a finite number of elements is a <em>finite class</em>
-and a class with an infinite number of elements is an <em>infinite class</em>.</p>
+<p>Strangely enough, a set with a finite number of elements is a <em>finite set</em>
+and a set with an infinite number of elements is an <em>infinite set</em>.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_identity">2.2. Identity</h3>
 <div class="paragraph">
-<p>If two classes have exactly the same elements in them, then they form an
-<em>identity</em>. In class notation, if classes A and B are and identity then we can
-write:</p>
+<p>If two sets have exactly the same elements in them, then they form an
+<em>identity</em>. In set notation, if sets A and B are and identity they write:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -639,7 +638,7 @@ A &#8801; B
 </div>
 </div>
 <div class="paragraph">
-<p>if A and B aren&#8217;t an identity we can write:</p>
+<p>if A and B aren&#8217;t an identity they write:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -647,7 +646,7 @@ A &#x2262; B
 </div>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s say we&#8217;ve got two classes S and T:</p>
+<p>Let&#8217;s say we&#8217;ve got two sets S and T:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -657,7 +656,7 @@ T is {2, 1}
 </div>
 <div class="paragraph">
 <p>S and T are an identity because all that matters for identity is that the two
-classes have the same elements in them. So we can write:</p>
+sets have the same elements in them. So we can write:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -665,7 +664,7 @@ S &#8801; T
 </div>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s make up two classes A and B:</p>
+<p>Let&#8217;s make up two sets A and B:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -674,7 +673,7 @@ B is {1, 2}
 </div>
 </div>
 <div class="paragraph">
-<p>Classes don&#8217;t have any duplicates so the two classes A and B are an identity
+<p>Sets don&#8217;t have any duplicates so the two sets A and B are an identity
 and we can write:</p>
 </div>
 <div class="exampleblock">
@@ -683,17 +682,17 @@ A &#8801; B
 </div>
 </div>
 <div class="paragraph">
-<p>&#8216;Hey, you said that classes can&#8217;t have duplicates, but then you wrote
-<code>{1, 2, 2}</code>. What gives?&#8217;. When you write <code>{1, 2, 2}</code>, you&#8217;re describing a
-classs with two elements, <code>1</code> and <code>2</code>. So <code>{1, 2, 2}</code> &#8801; <code>{1, 2}</code>. So these
-are two ways of describing the same class. &#8216;Well, okay I suppose. I have to say
-I&#8217;m not entirely convinced, but carry on for now.&#8217;.</p>
+<p>&#8216;Hey, you said that sets can&#8217;t have duplicates, but then you wrote <code>{1, 2, 2}</code>.
+What gives?&#8217;. When you write <code>{1, 2, 2}</code>, you&#8217;re describing a
+set with two elements, <code>1</code> and <code>2</code>. So <code>{1, 2, 2}</code> &#8801; <code>{1, 2}</code>. So these
+are two ways of describing the same set. &#8216;Well, okay I suppose. I have to say
+I&#8217;m not entirely convinced, but carry on for now&#8217;.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_common_classes_of_numbers">2.3. Common Classes Of Numbers</h3>
+<h3 id="_common_sets_of_numbers">2.3. Common Sets Of Numbers</h3>
 <div class="paragraph">
-<p>Some classes of numbers are common enough to have their own names and symbols:</p>
+<p>Some sets of numbers are common enough to have their own names and symbols:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -745,32 +744,7 @@ By convention, 1 is interpreted as true, and 0 as false.</p></td>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_sets">2.4. Sets</h3>
-<div class="paragraph">
-<p>A class that&#8217;s allowed to be an element of a class is called a <em>set</em>. A class
-that isn&#8217;t allowed to be an element of a class is called a <em>proper class</em>.</p>
-</div>
-<div class="paragraph">
-<p>When I first came across this distiction I found it difficult to understand and
-unnecessary. I now just find it difficult to understand :-)</p>
-</div>
-<div class="paragraph">
-<p>&#8216;Less prattling and more examples!&#8217; Okay, okay&#8230;&#8203;</p>
-</div>
-<div class="paragraph">
-<p>Most classes that I came across in the tower were actually sets, eg.:</p>
-</div>
-<div class="exampleblock">
-<div class="content">
-{6, 3}<br>
-{78, 3, 899, {3, 3}}<br>
-{France, Germany, Spain}<br>
-{Hunduras, Colombia, Brazil}
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_russell_s_paradox">2.5. Russell&#8217;s Paradox</h3>
+<h3 id="_russell_s_paradox">2.4. Russell&#8217;s Paradox</h3>
 <div class="paragraph">
 <p>On your first day as an assistant librarian, you&#8217;re asked to compile a book
 that is a catalogue of all of the books in the library that don&#8217;t mention
@@ -783,31 +757,51 @@ itself, then it should be in the catalogue, in which case it shouldn&#8217;t&#82
 <p>You&#8217;ve become a victim of Russell&#8217;s Paradox, and you&#8217;re fired. Lol!</p>
 </div>
 <div class="paragraph">
-<p>In maths terms, Russell&#8217;s Paradox is asking, what&#8217;s the set of all sets that
-don&#8217;t have themselves as an element? That set doesn&#8217;t exist. But what if you
-want to specify a collection that contains all the sets that don&#8217;t contain
-themselves, but ignore the case of the collection itself? That collection, my
-fine feathered friend, is a <em>proper class</em>!</p>
+<p>In terms of sets, Russell&#8217;s Paradox is asking, what&#8217;s the set of all sets that
+don&#8217;t have themselves as an element? That set doesn&#8217;t exist.</p>
 </div>
 <div class="paragraph">
 <p>So, that&#8217;s solved it in maths language, but how should you have answered the
-librarian? Well, you should say that the book (class) he&#8217;s asked for can&#8217;t
-exist. But you can write a proper-book (proper class), which has the same
-contents as has been requested, but that doesn&#8217;t contain itself, because it&#8217;s
-not allowed to. Convinced? No? Well if it&#8217;s good enough for Kurt Godel, it&#8217;s
-good enough for me mate.</p>
+librarian? Well, you should say that the book (set) he&#8217;s asked for can&#8217;t
+exist. But you can write a book (set), which has the same
+contents as has been requested, except that it doesn&#8217;t contain itself.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_other_paradoxes">2.5. Other Paradoxes</h3>
+<div class="paragraph">
+<p>Curry&#8217;s Paradox is:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+If this sentence is true, then you owe me a million pounds.
+</div>
+</div>
+<div class="paragraph">
+<p>Do you owe me a million pounds then? Anyway, they told me that there&#8217;s an
+equivalent paradox for sets.</p>
+</div>
+<div class="paragraph">
+<p>They also told me that there&#8217;s a paradox with the set of all sets, so that
+doesn&#8217;t exist either. As it seems to me, a paradox is something that is clearly
+incorrect, but you can&#8217;t see the flaw in the argument. Of course, all paradoxes
+can be resolved, and the resolution deepens one&#8217;s understanding. &#8216;Ooh, hark at
+him pontificating on the philosophy of it all!!&#8217;. Okay, okay.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_tuples">2.6. Tuples</h3>
 <div class="paragraph">
-<p>&#8216;Wait, you say that with classes, ordering doesn&#8217;t matter, but in lots of
-things ordering <em>does</em> matter. What about a class of countries in alphabetical
+<p>&#8216;Wait, you say that with sets, ordering doesn&#8217;t matter, but in lots of
+things ordering <em>does</em> matter. What about a list of countries in alphabetical
 order?&#8217;</p>
 </div>
 <div class="paragraph">
 <p>Yes, good point reader. Remember I&#8217;m still learning this stuff too, you know.
 I&#8217;ll get back to you&#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;I&#8217;m back, got it all worked out. Here&#8217;s our set of countries:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -823,10 +817,10 @@ I&#8217;ll get back to you&#8230;&#8203;</p>
 </div>
 </div>
 <div class="paragraph">
-<p>So we&#8217;ve made a class of classes. The little classes have the country and their
-position in alphabetical order. Ordered classes occur quite often in maths, so
-they&#8217;re given the name <em>tuples</em> and denoted by surrounding the elements with
-brackets, so:</p>
+<p>So we&#8217;ve made a set of sets. The inner sets have the country and their position
+in the alphabetical order. Ordered sets occur quite often in maths, so they&#8217;re
+given the name <em>tuples</em> and denoted by surrounding the elements with brackets,
+so:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -880,9 +874,9 @@ brackets, so:</p>
 <div class="sect2">
 <h3 id="_functions">2.7. Functions</h3>
 <div class="paragraph">
-<p>In the tower they fiddle around a lot with functions. A function is a class
-that relates a class of tuples (the <em>domain</em>) to another class (the <em>codomain</em>).
-For any tuple (called the <code>input</code>) of the domain there&#8217;s a double in the
+<p>In the tower they fiddle around a lot with functions. A function is a set
+that relates a set of tuples (the <em>domain</em>) to another set (the <em>codomain</em>).
+For any tuple (called the &#8216;input&#8217;) of the domain there&#8217;s a double in the
 function of the form:</p>
 </div>
 <div class="exampleblock">
@@ -891,7 +885,7 @@ function of the form:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>where <code>output</code> is an element of the <em>codomain</em>.</p>
+<p>where &#8216;output&#8217; is an element of the <em>codomain</em>.</p>
 </div>
 <div class="paragraph">
 <p>&#8216;That sounds all very clever and fancy, but what do you actually mean?&#8217; Well
@@ -962,9 +956,11 @@ mult_ten(0) &#8801; 0<br>
 </div>
 </div>
 <div class="paragraph">
-<p>In the previous examples we&#8217;ve choses domains of singles, but let&#8217;s create a
+<p>In the previous examples we chose domains of singles, but let&#8217;s create a
 function that has a domain of doubles. So let&#8217;s create a function called
-<code>mult_add</code> with the domain <strong>Z</strong><sup>2</sup> which can be illustrated with this table:</p>
+<code>mult_add</code> with the domain <strong>Z</strong><sup>2</sup>. Now <strong>Z</strong><sup>2</sup> is the set of doubles which are
+all possible combinations of an element of <strong>Z</strong> followed by another element of
+<strong>Z</strong> which is shown in this table:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -1063,12 +1059,13 @@ function that has a domain of doubles. So let&#8217;s create a function called
 </tbody>
 </table>
 <div class="paragraph">
-<p>So <strong>Z</strong> is the set of doubles which are all possible combinations of an element
-of <strong>Z</strong> followed by another element of <strong>Z</strong>. The codomain of <code>mult_add</code> is <strong>Z</strong>,
-and the relationship between the domain and codomain is defined by:</p>
+<p>The codomain of <code>mult_add</code> is <strong>Z</strong>, and the relationship between the domain and
+codomain is defined by:</p>
 </div>
-<div class="paragraph">
-<p>mult_add(x, y) &#8801; x * 2 + y</p>
+<div class="exampleblock">
+<div class="content">
+mult_add(x, y) &#8801; x * 2 + y
+</div>
 </div>
 <div class="paragraph">
 <p>Let&#8217;s try it out with some inputs and see what the outputs are:</p>
@@ -1118,7 +1115,7 @@ five() &#8801; 5
 <h3 id="_is_in">2.9. Is In</h3>
 <div class="paragraph">
 <p>Set theoreticians use the symbol &#x2208; to mean &#8216;is an element of&#8217;. So if
-there was an element x that was in a set A we could abbreviate that to:</p>
+there was an element <code>x</code> that was in a set <code>A</code> we could abbreviate that to:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -1144,8 +1141,7 @@ of an element and a set. The function is defined as:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Domain: The proper class of doubles of all possible combinations of (element,
-set).</p>
+<p>Domain: The set of doubles of all possible combinations of (element, set).</p>
 </li>
 <li>
 <p>Codomain: <strong>B</strong></p>
@@ -1157,9 +1153,9 @@ set).</p>
 </div>
 <div class="exampleblock">
 <div class="content">
-<strong>1</strong>(1, <strong>Z</strong>) &#8801; true
-<strong>1</strong>&#x2208;('France', <strong>Z</strong>) &#8801; false
-<strong>1</strong>(-1000, {red, green, blue}) &#8801; false
+<strong>1</strong>(1, <strong>Z</strong>) &#8801; true<br>
+<strong>1</strong>('France', <strong>Z</strong>) &#8801; false<br>
+<strong>1</strong>(-1000, {red, green, blue}) &#8801; false<br>
 </div>
 </div>
 </div>
@@ -1172,7 +1168,7 @@ symbol &#x2286;. The subset function is defined as:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Domain: The proper class of doubles of all possible combination of (set, set)</p>
+<p>Domain: The set of doubles of all possible combination of (set, set)</p>
 </li>
 <li>
 <p>Codomain: <strong>B</strong></p>
@@ -1206,15 +1202,14 @@ functions, so I&#8217;ll give it the name <strong>S</strong>, so from now on:</p
 </div>
 <div class="exampleblock">
 <div class="content">
-<strong>S</strong> &#8801; The proper class of doubles of all possible combination of (set,
-set)
+<strong>S</strong> &#8801; The set of doubles of all possible combination of (set, set)
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_equals">2.12. Equals</h3>
 <div class="paragraph">
-<p>The symbol for the <code>equals</code> function is <code>=</code>, and it&#8217;s defined as:</p>
+<p>The symbol for the <em>equals</em> function is <code>=</code>, and it&#8217;s defined as:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1233,17 +1228,51 @@ set)
 <div class="sect2">
 <h3 id="_proper_subset">2.13. Proper Subset</h3>
 <div class="paragraph">
-<p>A is a <em>proper subset</em> of B if <code>&#x2286;(A, B)</code> and <code>&#x2260;(A, B)</code>. In set notation
-this is written:</p>
+<p>The symbol for the <em>proper subset</em> function is <code>&#x2286;</code>, and it&#8217;s defined as:</p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p>Domain: <strong>S</strong></p>
+</li>
+<li>
+<p>Codomain: <strong>B</strong></p>
+</li>
+<li>
+<p>&#x2282;(A, B) &#8801; true if <code>&#x2286;(A, B)</code> is true and A &#x2262; B.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_union">2.14. Union</h3>
 <div class="exampleblock">
 <div class="content">
-&#x2282;(A, B)
+{cup}: <strong>S</strong> {rarr} <strong>S</strong><br>
+A, B &#x21A6; {x | x &#x2208; A or x &#x2208; B}
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_universal_class">2.14. Universal Class</h3>
+<h3 id="_intersection">2.15. Intersection</h3>
+<div class="exampleblock">
+<div class="content">
+{cap}: <strong>S</strong> {rarr} <strong>S</strong><br>
+A, B &#x21A6; {x | x &#x2208; A and x &#x2208; B}
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_complement">2.16. Complement</h3>
+<div class="exampleblock">
+<div class="content">
+\\: <strong>S</strong> {rarr} <strong>S</strong><br>
+A, B &#x21A6; {x | x &#x2208; A and x &#x2209; B}
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_universal_class">2.17. Universal Class</h3>
 <div class="sect3">
 <h4 id="_questions">Questions</h4>
 <div class="olist arabic">
@@ -1286,13 +1315,21 @@ No, because the 1 and 2 are repeated.</p>
 </div>
 <div class="sect3">
 <h4 id="_answers">Answers</h4>
-
+<div class="paragraph">
+<p>Rs</p>
+</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_rosetta_stone">Rosetta Stone</h3>
+<div class="paragraph">
+<p>Rs</p>
+</div>
 <div class="sect3">
 <h4 id="_synonyms">Synonyms</h4>
+<div class="paragraph">
+<p>Rs</p>
+</div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -1318,7 +1355,7 @@ No, because the 1 and 2 are repeated.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_bibliography">Bibliography</h3>
+<h3 id="_bibliographyo">Bibliographyo</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -9954,9 +9991,9 @@ Rules say that anything in brackets gets evaluated first. So you&#8217;d write:<
 </div>
 </div>
 <div class="sect2">
-<h3 id="_bibliography_2">Bibliography</h3>
-<div class="ulist bibliography">
-<ul class="bibliography">
+<h3 id="_bibliographyo_2">Bibliographyo</h3>
+<div class="ulist">
+<ul>
 <li>
 <p><a href="http://en.wikibooks.org/wiki/Formal_Logic/Sentential_Logic" class="bare">http://en.wikibooks.org/wiki/Formal_Logic/Sentential_Logic</a> (Referred to this
 throughout, very good.)</p>
@@ -10008,7 +10045,7 @@ propositional logic)</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-05-08 14:29:29 BST
+Last updated 2015-07-14 21:20:23 BST
 </div>
 </div>
 </body>
