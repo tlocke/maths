@@ -16,20 +16,6 @@ Tony Locke
 :brarr: &#x21A6;
 :toc:
 
-[subs="replacements"]
-++++
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-1004155-12', 'auto');
-  ga('send', 'pageview');
-
-</script>
-++++
-
 :numbered:
 == Introduction
 
@@ -60,526 +46,7 @@ This book is available in the following formats:
 Web:: http://maths.tlocke.org.uk/
 EPUB:: http://maths.tlocke.org.uk/maths.epub
 
-:numbered:
-== Sets
-
-[[img-gottlob_frege]]
-.http://commons.wikimedia.org/wiki/File:Young_frege.jpg#media/File:Young_frege.jpg[Gottlob Frege] Licensed under Public Domain via http://commons.wikimedia.org/wiki/[Wikimedia Commons].
-image::gottlob_frege.jpg[Gottlob Frege]
-
-'`Tony`', '`Yes Professor Frege?`', '`You should really start with _sets_`',
-'`Okay, whatevs Prof`'.
-
-=== What's A Set?
-
-A _set_ is a collection of distinct _elements_, where there's no order, and
-duplicates aren't allowed. Some example are:
-
-* Primary colours.
-* Even integers
-* Letters of the alphabet.
-* Natural numbers.
-
-Written out in _set notation_, these look like:
-
-* {red, green, blue}
-* {..., -4, -2, 0, 2, 4, ...}
-* {a, b, c, ..., x, y, z}
-* {0, 1, 2, 3, ...}
-
-When the set includes an elipsis (...) at one end or both, it denotes an
-infinite series. An ellipsis in the middle of a set of elements is used to
-save writing out all the items of an obvious set.
-
-Strangely enough, a set with a finite number of elements is a _finite set_
-and a set with an infinite number of elements is an _infinite set_.
-
-:numbered:
-=== Identity
-
-If two sets have exactly the same elements in them, then they form an
-_identity_. In set notation, if sets A and B are and identity they write:
-
-[example]
-A {equiv} B
-
-if A and B aren't an identity they write:
-
-[example]
-A {nequiv} B
-
-Let's say we've got two sets S and T:
-
-[example]
-S is {1, 2} +
-T is {2, 1}
-
-S and T are an identity because all that matters for identity is that the two
-sets have the same elements in them. So we can write:
-
-[example]
-S {equiv} T
-
-Let's make up two sets A and B:
-
-[example]
-A is {1, 2, 2} +
-B is {1, 2}
-
-Sets don't have any duplicates so the two sets A and B are an identity
-and we can write:
-
-[example]
-A {equiv} B
-
-'`Hey, you said that sets can't have duplicates, but then you wrote `{1, 2, 2}`.
-What gives?`'. When you write `{1, 2, 2}`, you're describing a
-set with two elements, `1` and `2`. So `{1, 2, 2}` {equiv} `{1, 2}`. So these
-are two ways of describing the same set. '`Well, okay I suppose. I have to say
-I'm not entirely convinced, but carry on for now`'.
-
-
-
-=== Common Sets Of Numbers
-
-Some sets of numbers are common enough to have their own names and symbols:
-
-[cols="3*", options="header"]
-|===
-| Name | Symbol | Definition
-
-| Real Numbers
-| *R*
-| All the numbers on a continuous line from negative infinity to positive
-infinity.
-
-| Integers
-| *Z*
-| {..., -2, -1, 0, 1, 2, ...}
-
-| Natural Numbers
-| *N*
-| {0, 1, 2, ...}
-
-| Positive Integers
-| *Z+*
-| {1, 2, 3, ...}
-
-| Boolean Values
-| *B*
-| {1, 0} +
-By convention, 1 is interpreted as true, and 0 as false.
-
-| Empty Set
-|
-| {}
-|===
-
-
-=== Russell's Paradox
-
-On your first day as an assistant librarian, you're asked to compile a book
-that is a catalogue of all of the books in the library that don't mention
-themselves. Eventually you present the chief librarian with your completed
-catalogue. The chief librarian asks, '`Does the catalogue mention the
-catalogue?`'. Well no, you answer...but then if the catalogue doesn't mention
-itself, then it should be in the catalogue, in which case it shouldn't...
-
-You've become a victim of Russell's Paradox, and you're fired. Lol!
-
-In terms of sets, Russell's Paradox is asking, what's the set of all sets that
-don't have themselves as an element? That set doesn't exist.
-
-So, that's solved it in maths language, but how should you have answered the
-chief librarian? Well, you should say that the book (set) he's asked for can't
-exist. But you can write a book (set), which has the same
-contents as has been requested, except that it doesn't contain itself.
-
-
-=== Other Paradoxes
-
-Curry's Paradox is:
-
-[example]
-If this sentence is true, then you owe me a million pounds.
-
-Do you owe me a million pounds then? Anyway, they told me that there's an
-equivalent paradox for sets.
-
-They also told me that there's a paradox with the set of all sets, so that
-doesn't exist either. As it seems to me, a paradox is something that is clearly
-incorrect, but you can't see the flaw in the argument. Of course, all paradoxes
-can be resolved, and the resolution deepens one's understanding. '`Ooh, hark at
-him pontificating on the philosophy of it all!!`'. Okay, okay.
-
-
-=== Tuples
-
-'`Wait, you say that with sets, ordering doesn't matter, but in lots of
-things ordering _does_ matter. What about a list of countries in alphabetical
-order?`'
-
-Yes, good point reader. Remember I'm still learning this stuff too, you know.
-I'll get back to you...
-
-...I'm back, got it all worked out. Here's our set of countries:
-
-[example]
-{'`UK`', '`Germany`', '`Spain`'}
-
-Now adding alphabetical ordering:
-
-[example]
-{{'`UK`', 3}, {'`Germany`', 1}, {'`Spain`', 2}}
-
-So we've made a set of sets. The inner sets have the country and their position
-in the alphabetical order. Ordered sets occur quite often in maths, so they're
-given the name _tuples_ and denoted by surrounding the elements with brackets,
-so:
-
-[example]
-{{'`UK`', 3}, {'`Germany`', 1}, {'`Spain`', 2}} {equiv}
-('Germany', '`Spain`', '`UK`')
-
-Here are the names of tuples based on the number of elements they contain...
-
-|===
-| Number Of Elements | Name   | Example
-
-| 0                  | Nuple  | ()
-| 1                  | Single | (8)
-| 2                  | Double | (7, 4)
-| 3                  | Triple | ('`bear`', '`tiger`', '`sheep`')
-|===
-
-Actually, I made up '`nuple`'. It's commonly called '`the empty tuple`'.
-
-
-=== Functions
-
-In the tower they fiddle around a lot with functions. A function is a set
-that relates a set of tuples (the _domain_) to another set (the _codomain_).
-For any tuple (called the '`input`') of the domain there's a double in the
-function of the form:
-
-[example]
-(input, output)
-
-where '`output`' is an element of the _codomain_.
-
-'`That sounds all very clever and fancy, but what do you actually mean?`' Well
-an example I found in the tower is the `add_one` function which has as its
-domain *Z*^1^:
-
-[example]
-*Z*^1^ {equiv} {..., (-2), (-1), (0), (1), (2), ...}
-
-The codomain of `add_one` is *Z*, and the relationship is:
-
-[example]
-add_one {equiv} {..., ( (-2), -1), ( (-1), 0), ( (0), 1), ( (1), 2), ...}
-
-and if you want to talk about individual inputs and outputs of a function, you
-can write:
-
-[example]
-add_one(-2) {equiv} -1 +
-add_one(70) {equiv} 71 +
-add_one(4002) {equiv} 4003 +
-
-We've defined the function `add_one` in words and through examples and using
-the ellipses (and the clue is in the name of the function!) but I saw that
-mostly, mathematicians will define a function using mathematical notation, so
-they'll write:
-
-[example]
-add_one(x) {equiv} x + 1
-
-They'll often use the letter `x`, but it needn't be. Could be anything. Eg:
-
-[example]
-add_one(H) {equiv} H + 1
-
-Another example. Let's make up another function called `mult_ten`. The domain
-will be *Z*^1^ and the codomain *Z* as in the previous example. The relationship
-is defined as:
-
-[example]
-mult_ten(x) {equiv} x * 10
-
-Let's try it out with some inputs and see what the outputs are:
-
-[example]
-mult_ten(1) {equiv} 10 +
-mult_ten(8) {equiv} 80 +
-mult_ten(0) {equiv} 0 +
-
-In the previous examples we chose domains of singles, but let's create a
-function that has a domain of doubles. So let's create a function called
-`mult_add` with the domain *Z*^2^. Now *Z*^2^ is the set of doubles which are
-all possible combinations of an element of *Z* followed by another element of
-*Z* which is shown in this table:
-
-[cols="8*", options="header"]
-|===
-|
-| ...
-| -2
-| -1
-| 0
-| 1
-| 2
-| ...
-
-| ...
-| (..., ...)
-| (..., -2)
-| (..., -1)
-| (..., 0)
-| (..., 1)
-| (..., 2)
-| (..., ...)
-
-| -2
-| (-2, ...)
-| (-2, -2)
-| (-2, -1)
-| (-2, 0)
-| (-2, 1)
-| (-2, 2)
-| (-2, ...)
-
-| -1
-| (-1, ...)
-| (-1, -2)
-| (-1, -1)
-| (-1, 0)
-| (-1, 1)
-| (-1, 2)
-| (-1, ...)
-
-| 0 
-| (0, ...)
-| (0, -2)
-| (0, -1)
-| (0, 0)
-| (0, 1)
-| (0, 2)
-| (0, ...)
-
-| 1 
-| (1, ...)
-| (1, -2)
-| (1, -1)
-| (1, 0)
-| (1, 1)
-| (1, 2)
-| (1, ...)
-
-| 2 
-| (2, ...)
-| (2, -2)
-| (2, -1)
-| (2, 0)
-| (2, 1)
-| (2, 2)
-| (2, ...)
-
-| ... 
-| (..., ...)
-| (..., -2)
-| (..., -1)
-| (..., 0)
-| (..., 1)
-| (..., 2)
-| (..., ...)
-|===
-
-The codomain of `mult_add` is *Z*, and the relationship between the domain and
-codomain is defined by:
-
-[example]
-mult_add(x, y) {equiv} x * 2 + y
-
-Let's try it out with some inputs and see what the outputs are:
-
-[example]
-mult_add(1, 6) {equiv} 8 +
-mult_add(8, 3) {equiv} 19 +
-mult_add(0, 2) {equiv} 2 +
-
-Functions whose input is a single are called _unary_ functions, and functions
-whose input is a double are called _binary_ functions. Can we have functions
-whose input is the nuple?
-
-[[img-obama]]
-image::obama.jpg[Yes we can!]
-
-Let's define a function called `five`, it'll have the domain {()} and the
-codomain *Z*. The function just contains one double:
-
-[example]
-( (), 5)
-
-so:
-
-[example]
-five() {equiv} 5
-
-=== Direct Product
-
-The 
-
-
-=== Is In
-
-Set theoreticians use the symbol {isin} to mean '`is an element of`'. So if
-there was an element `x` that was in a set `A` we could abbreviate that to:
-
-[example]
-x {isin} A
-
-Conversely, they use the symbol {notin} to mean '`is not an element of`'. Eg.
-
-[example]
-x {notin} A
-
-
-=== Indicator Function
-
-Those wacky mathematicians have come up with a binary function called the
-_indicator function_, denoted by *1*, that has as its input a double consisting
-of an element and a set. The function is defined as:
-
-* Domain: The set of doubles of all possible combinations of (element, set).
-* Codomain: *B*
-* *1*(x, A) {equiv} true if x {isin} A otherwise false
-
-[example]
-*1*(1, *Z*) {equiv} true +
-*1*('France', *Z*) {equiv} false +
-*1*(-1000, {red, green, blue}) {equiv} false +
-
-
-=== Subset
-
-Another binary function with codomain *B* is the subset function that has the
-symbol {sube}. The subset function is defined as:
-
-* Domain: The set of doubles of all possible combination of (set, set)
-* Codomain: *B*
-* {sube}(A, B) {equiv} true if and only if all the elements of A are also in B,
-otherwise false.
-
-So if A is a subset of B we can write:
-
-[example]
-{sube}(A, B) {equiv} true
-
-Following this definition of a subset, every set is a subset of itself. So it's
-always true that:
-
-[example]
-{sube}(A, A) {equiv} true
-
-By the way, the domain of {sube} crops up quite a lot in definitions of
-functions, so I'll give it the name *S*, so from now on:
-
-[example]
-*S* {equiv} The set of doubles of all possible combination of (set, set)
-
-
-=== Equals
-
-The symbol for the _equals_ function is `=`, and it's defined as:
-
-* Domain: *S*
-* Codomain: *B*
-* =(A, B) {equiv} true if A and B form an identiy, otherwise false.
-
-
-=== Proper Subset
-
-The symbol for the _proper subset_ function is `{sube}`, and it's defined as:
-
-* Domain: *S*
-* Codomain: *B*
-* {sub}(A, B) {equiv} true if `{sube}(A, B)` is true and A {nequiv} B.
-
-
-=== Union
-
-[example]
-{cup}: *S* {rarr} *S* +
-A, B {brarr} {x | x {isin} A or x {isin} B}
-
-
-=== Intersection
-
-[example]
-{cap}: *S* {rarr} *S* +
-A, B {brarr} {x | x {isin} A and x {isin} B}
-
-
-=== Complement
-
-[example]
-\\: *S* {rarr} *S* +
-A, B {brarr} {x | x {isin} A and x {notin} B}
-
-=== Universal Class
-
-
-
-
-
-
-
-
-:numbered!:
-==== Questions
-
-. Write the following sets in set notation:
-.. Prime numbers less than 12. +
-   {2, 3, 5, 7, 11}
-. For the sets in question 1, say whether they are finite or infinite.
-.. {2, 3, 5, 7, 11} +
-   Finite.
-. Say whether the following are valid sets or not:
-.. {1, 2, 3, 2, 1} +
-   No, because the 1 and 2 are repeated.
-
-==== Answers
-
-Rs
-
-=== Rosetta Stone
-
-Rs
-
-==== Synonyms
-
-Rs
-
-[cols="2*", options="header"]
-|===
-| Name
-| Synonym
-
-| Empty set, {}
-| &#x2205;
-
-| Double
-| Ordered pair
-|===
-
-=== Bibliographyo
-
-* http://www.mathsisfun.com/sets/sets-introduction.html
-* http://people.cs.pitt.edu/~milos/courses/cs441/lectures/Class7.pdf
-* http://www.wtamu.edu/academic/anns/mps/math/mathlab/int_algebra/int_alg_tut3_sets.htm
-
-== Boolean Algebra
+== Propositional Logic
 
 [[img-russel]]
 .http://commons.wikimedia.org/wiki/File:Russell_in_1924_01.jpg#mediaviewer/File:Russell_in_1924_01.jpg[Bertrand Russell in 1924] by Unknown - http://www.humanities.mcmaster.ca/~bertrand/later.html. Licensed under Public domain via http://commons.wikimedia.org/wiki/[Wikimedia Commons].
@@ -587,7 +54,7 @@ image::russell.jpg[Bertrand Russell in 1924]
 
 === True and false
 
-In the realm of Boolean algebra, I found that they deal with things that are
+In the realm of Propositional Logic, I found that they deal with things that are
 either true or false. In the English language, sentences that are either true or
 false are known as _statements_. Here are some sentences together with
 explanations of whether they are statements or not:
@@ -681,7 +148,7 @@ was on other things...
 
 
 :numbered:
-=== Functions
+=== Compound Statements
 
 It seems that the next thing the logicians do is string together simple
 statements to make compound statements. So two simple statements might be:
@@ -695,17 +162,17 @@ And a compound statement formed from these two simple statements is:
 [example]
 Abelard likes coffee and Abelard likes cake.
 
-This compound statement is true if both the simple statements are true,
+We've joined the two simple statements together with the _logical conective_
+'`and`'. This compound statement is true if both the simple statements are true,
 otherwise it is false. Another compound statement we can make from our two
 simple statements is:
 
 [example]
 Abelard likes coffee or Abelard likes cake.
 
-This compound statment is false if both simple statements are false, otherwise
-it's true. Those mathematicians from the Ivory Tower use the term _function_
-for the '`and`' and '`or`' that join simple statements to make compound
-statements.
+Here's we've joined the two simple statements together with the logical
+connective '`or`'. This compound statment is false if both simple statements are
+false, otherwise it's true.
 
 
 :numbered!:
@@ -733,9 +200,20 @@ statements.
 :numbered:
 === Formulas
 
-Rather than always writing simple statements out in full, those work-shy
-logicians assign a label to them. They call the label an _atomic formula_, and
-it can be any capital letter of the alphabet. So for the compound statement:
+Rather than always writing statements out in full, those work-shy logicians
+write them in a shorthand. First they label each simple statement with a capital
+letter of the alphabet. They call the label an _atomic formula_. Then they use
+funny symbols to denote logical connectives. Here's a table of the symbols used
+for logical connectives:
+
+|===
+| Logical connective | Symbol
+
+| and                | {and}
+| or                 | {or}
+|===
+
+So for the compound statement:
 
 [example]
 Abelard likes coffee and Abelard likes cake.
@@ -749,7 +227,7 @@ Q: Abelard likes cake.
 and the compound statement can be written as the _compound formula_:
 
 [example]
-P and Q
+(P {and} Q)
 
 Now that we've said what P and Q stand for we can take this compound statement:
 
@@ -759,7 +237,10 @@ Abelard likes coffe or Abelard likes cake.
 and write it using the atomic formulas to give the compound formula:
 
 [example]
-P or Q
+(P {or} Q)
+
+You'll notice that the formulas have brackets round them. This is useful for
+making the order of evaluation clear when formulas get more complicated.
 
 
 :numbered!:
@@ -779,23 +260,23 @@ P or Q
 . {empty}
 .. P: The film Erin Brokovich stars Julia Roberts. +
    Q: 16 is greater than 4. +
-   P and Q
+   (P {and} Q)
 .. A: London is the capital of France. +
    B: Paris is the capital of France. +
-   A or B
+   (A {or} B)
 .. P: Some people have brown eyes. +
    Q: Humans lay eggs. +
-   P and Q
+   (P {and} Q)
 .. P: Four multiplied by two is twenty. +
    Q: It has never rained in Wales. +
-   P or Q
+   (P {or} Q)
 .. P: Toothpaste is harder than diamond. +
    Q: Less than 100 films have ever been made. +
-   P and Q
+   (P {and} Q)
 
 
 :numbered:
-=== Function Notation
+=== Ambiguous Compound Statements
 
 Here's an ambiguous compound statement:
 
@@ -803,64 +284,64 @@ Here's an ambiguous compound statement:
 London is the capital of the UK or London is the capital of France and Paris is
 the captital of the UK.
 
-substituting in '`true`' or '`false`' for the statements we get:
+Assigning labels to the simple statements:
 
 [example]
-true or false and false
+P: London is the capital of the UK. +
+Q: London is the capital of France. +
+R: Paris is the capital of the UK. +
 
-Which is false if we do the '`or`' first, and true if we do the '`and`' first.
-So to express themselves unambiguously, logicians use _function notation_. In
-function notation the formula:
-
-[example]
-A and B
-
-is written as the formula:
+the compound statement can be transated into two formulas with different
+meanings:
 
 [example]
-and(A, B)
+. ((P {or} Q) {and} R) +
+. (P {or} (Q {and} R)
 
-and the formula:
-
-[example]
-A or B
-
-is written as the formula:
+We know that P is true, Q is false and R is false. That means that the first formula evaluates to false:
 
 [example]
-or(A, B)
+((true {or} false) {and} false) +
+(true {and} false) +
+false
 
-so going back to our example:
-
-[example]
-true or false and false
-
-if a logician wanted '`or`' to be done first they'd write the formula:
+and the second formula evaluates to true:
 
 [example]
-and(or(true, false), false)
+(true {or} (false {and} false)) +
+(true {or} false) +
+true
 
-and if they wanted the '`and`' to be done first they'd write the formula:
-
-[example]
-or(true, and(false, false))
+I think what the Ivory Tower is teaching me here is that even though I started
+out translating from English (what they call a natural language) to formulas
+(what they call a formal language), it turns out that as well as being shorter,
+formulas are unambiguous. It seems to me that the English statements are just a
+jumping off point, and formulas are much better at describing this mathematical
+realm. W00t, I said, `mathematical realm`!!!
 
 
 :numbered!:
 ==== Questions
 
-. Write the answers to the questions for <<_formulas>> using function
-  notation.
+. For the following ambiguous compound statements in English, write down all the
+  possible meanings as formulas.
+.. Two is less than four or Alaska begins with A and purple is a number.
+.. Purple is a number and Alaska begins with A or two is less than four.
 
 
 ==== Answers
 
-. {empty}
-.. and(P, Q)
-.. or(A, B)
-.. and(P, Q)
-.. or(P, Q)
-.. and(P, Q)
+. For the following ambiguous compound statements in English, write down all the
+  possible meanings as formulas. +
+  P: Two is less than four.
+  Q: Alaska begins with A.
+  R: Purple is a number.
+.. Two is less than four or Alaska begins with A and purple is a number. +
+   (P {or} (Q {and} R)) +
+   ((P {or} Q) {and} R)
+.. Purple is a number and Alaska begins with A or two is less than four. +
+   (R {and} (Q {or} P)) +
+   ((R {and} Q) {or} P)
 
 
 :numbered:
@@ -869,7 +350,7 @@ or(true, and(false, false))
 Say you've got a formula:
 
 [example]
-and(P, Q)
+(P {and} Q)
 
 To logicians, an _interpretation_ is the assignment of true or false to P and Q.
 So one interpretation is:
@@ -896,15 +377,15 @@ interpretations:
 | False | False 
 |===
 
-and to make it easier to write they use 1 for true and 0 for false:
+and to make it easier to write they use T for true and F for false:
 
 |===
 | P | Q
 
-| 1 | 1
-| 0 | 1
-| 1 | 0
-| 0 | 0 
+| T | T
+| F | T
+| T | F
+| F | F
 |===
 
 :numbered!:
@@ -916,19 +397,20 @@ and to make it easier to write they use 1 for true and 0 for false:
 
 ==== Answers
 
-. {empty}
+. For a compound formula with three atomic formulas, there are eight possible
+  interpretations. Show those eight possible interpretation in a table.
 +
 |===
 | P | Q | R
 
-| 1 | 1 | 1
-| 0 | 1 | 1
-| 1 | 0 | 1
-| 0 | 0 | 1
-| 1 | 1 | 0
-| 0 | 1 | 0
-| 1 | 0 | 0
-| 0 | 0 | 0
+| T | T | T
+| F | T | T
+| T | F | T
+| F | F | T
+| T | T | F
+| F | T | F
+| T | F | F
+| F | F | F
 |===
 
 :numbered:
@@ -936,49 +418,50 @@ and to make it easier to write they use 1 for true and 0 for false:
 
 A truth table. A medieval device for extracting a confession? No, a
 mathematical device for showing if a formula is true or false for every possible
-<<_interpretations, interpretation>>. The truth table for and(P, Q) is:
+<<_interpretations, interpretation>>. The truth table for (P {and} Q) is:
 
 |===
-| P | Q | and(P, Q)
+| P | Q | (P {and} Q)
 
-| 1 | 1 | 1
-| 0 | 1 | 0
-| 1 | 0 | 0
-| 0 | 0 | 0
+| T | T | T
+| F | T | F
+| T | F | F
+| F | F | F
 |===
 
 so what we've done is written a row for each interpretation of P and Q, and then
-in the final column put the value of and(P, Q). The truth table for
-or(P, Q) is:
+in the final column put the value of (P {and} Q). The truth table for (P {or} Q)
+is:
 
 |===
-| P | Q | or(P, Q)
+| P | Q | (P {or} Q)
 
-| 1 | 1 | 1
-| 0 | 1 | 1
-| 1 | 0 | 1
-| 0 | 0 | 0
+| T | T | T
+| F | T | T
+| T | F | T
+| F | F | F
 |===
 
-You can use a truth table to show that and(P, Q) means the same as and(Q, P):
+You can use a truth table to show that (P {and} Q) means the same as
+(Q {and} P):
 
 |===
-| P | Q | and(P, Q) | and(Q, P)
+| P | Q | (P {and} Q) | (Q {and} P)
 
-| 1 | 1 | 1         | 1
-| 0 | 1 | 0         | 0
-| 1 | 0 | 0         | 0
-| 0 | 0 | 0         | 0
+| T | T | T           | T
+| F | T | F           | F
+| T | F | F           | F
+| F | F | F           | F
 |===
 
-For each interpretation, the last two columns are the same, and so and(P, Q)
-means the same as and(Q, P).
+For each interpretation, the last two columns are the same, and so (P {and) Q)
+means the same as (Q {and} P).
 
 
 :numbered!:
 ==== Questions
 
-. Use a truth table to show that or(P, Q) means the same thing as or(Q, P).
+. Use a truth table to show that (P {or} Q) means the same thing as (Q {or} P).
 
 
 ==== Answers
@@ -986,139 +469,142 @@ means the same as and(Q, P).
 . {empty}
 +
 |===
-| P | Q | or(P, Q) | or(Q, P)
+| P | Q | (P {or} Q) | (Q {or} P)
 
-| 1 | 1 | 1        | 1
-| 0 | 1 | 1        | 1
-| 1 | 0 | 1        | 1
-| 0 | 0 | 0        | 0
+| T | T | T          | T
+| F | T | T          | T
+| T | F | T          | T
+| F | F | F          | F
 |===
 
 For each row of the truth table, the last two columns are the same, and so
-or(P, Q) means the same as or(Q, P).
+(P {or} Q) means the same as (Q {or} P).
 
 
 :numbered:
 === Not
 
-There's another function called _not_, which has the truth table:
+There's another logical connective called _not_, which has the symbol {not} and
+the truth table:
 
 |===
-| P | not(P)
+| P | {not}P
 
-| 1 | 0
-| 0 | 1
+| T | F
+| F | T
 |===
 
 Let us cast it loose amongst the other functions and employ the truth table
 to see what results. Picking a formula at random, let's try:
 
 [example]
-or(not(P), Q)
+({not}P {or} Q)
 
 which gives the truth table:
 
 |===
-| P | Q | not(P) | or(not(P), Q)
+| P | Q | {not}P | ({not}P {or} Q)
 
-| 1 | 1 | 0      | 1
-| 0 | 1 | 1      | 1
-| 1 | 0 | 0      | 0
-| 0 | 0 | 1      | 1
+| T | T | F      | T
+| F | T | T      | T
+| T | F | F      | F
+| F | F | T      | T
 |===
 
 Let us now extract a full confession from:
 
 [example]
-not(or(P, Q))
+{not}(P {or} Q)
 
 which gives the truth table:
 
 |===
-| P | Q | or(P, Q) | not(or(P, Q))
+| P | Q | (P {or} Q) | {not}(P {or} Q)
 
-| 1 | 1 | 1        | 0
-| 0 | 1 | 1        | 0
-| 1 | 0 | 1        | 0
-| 0 | 0 | 0        | 1
+| T | T | T        | F
+| F | T | T        | F
+| T | F | T        | F
+| F | F | F        | T
 |===
 
-One other thing, the first two functions we encountered ('`and`' and '`or`')
-both acted on two formulas, and so they're known as _binary_ functions. The
-'`not`' function acts on one formula and so is called a _unary_ function.
+One other thing, the first two logical connectives we encountered ({and} and
+{or}) both acted on two formulas, and so they're known as _binary_ connectives.
+The {not} connective acts on one formula and so is called a _unary_ connective.
 
 
 :numbered!:
 ==== Questions
 
 . Give the truth tables for:
-.. not(and(P, Q))
-.. or(P, not(Q))
-.. not(not(P))
-.. not(or(or(P, Q), R))
-.. not(and(or(P, Q), R))
+.. {not}(P {and} Q)
+.. (P {or} {not}Q)
+.. {not}{not}P
+.. {not}((P {or} Q) {or} R)
+.. {not}((P {or} Q) {and} R)
 
 
 ==== Answers
 
-. {empty}
-.. {empty}
+. Give the truth tables for:
+.. {not}(P {and} Q)
 +
 |===
-| P | Q | not(P) | not(and(P, Q))
+| P | Q | {not}P | {not}(P {and} Q)
 
-| 1 | 1 | 0      | 0
-| 0 | 1 | 1      | 1
-| 1 | 0 | 0      | 0
-| 0 | 0 | 1      | 0
+| T | T | F      | F
+| F | T | T      | T
+| T | F | F      | F
+| F | F | T      | F
 |===
 +
-.. {empty}
+.. (P {or} {not}Q)
 +
 |===
-| P | Q | not(Q) | or(P, not(Q))
+| P | Q | {not}Q | (P {or} {not}Q)
 
-| 1 | 1 | 0      | 1
-| 0 | 1 | 0      | 1
-| 1 | 0 | 1      | 1
-| 0 | 0 | 1      | 0
+| T | T | F      | T
+| F | T | F      | T
+| T | F | T      | T
+| F | F | T      | F
 |===
 +
-.. {empty}
+.. {not}{not}P
++
 |===
-| P | not(P) | not(not(P))
+| P | {not}P | {not}{not}P
 
-| 1 | 0      | 1
-| 0 | 1      | 0
+| T | F      | T
+| F | T      | F
 |===
 +
-.. {empty}
+.. {not}((P {or} Q) {or} R)
++
 |===
-| P | Q | R | or(P, Q) | or(or(P, Q), R) | not(or(or(P, Q), R))
+| P | Q | R | (P {or} Q) | ((P {or} Q) {or} R) | {not}((P {or} Q) {or} R)
 
-| 1 | 1 | 1 | 1        | 1               | 0
-| 0 | 1 | 1 | 1        | 1               | 0
-| 1 | 0 | 1 | 1        | 1               | 0
-| 0 | 0 | 1 | 0        | 1               | 0
-| 1 | 1 | 0 | 1        | 1               | 0
-| 0 | 1 | 0 | 1        | 1               | 0
-| 1 | 0 | 0 | 1        | 1               | 0
-| 0 | 0 | 0 | 0        | 0               | 1
+| T | T | T | T        | T               | F
+| F | T | T | T        | T               | F
+| T | F | T | T        | T               | F
+| F | F | T | F        | T               | F
+| T | T | F | T        | T               | F
+| F | T | F | T        | T               | F
+| T | F | F | T        | T               | F
+| F | F | F | F        | F               | T
 |===
 +
-.. {empty}
+.. {not}((P {or} Q) {and} R)
 +
 |===
-| P | Q | R | or(P, Q) | and(or(P, Q), R) | not(and(or(P, Q), R))
+| P | Q | R | (P {or} Q) | ((P {or} Q) {and} R) | {not}((P {or} Q) {and} R)
 
-| 1 | 1 | 1 | 1        | 1                | 0
-| 0 | 1 | 1 | 1        | 1                | 0
-| 1 | 0 | 1 | 1        | 1                | 0
-| 0 | 0 | 1 | 0        | 0                | 1
-| 1 | 1 | 0 | 1        | 0                | 1
-| 0 | 1 | 0 | 1        | 0                | 1
-| 1 | 0 | 0 | 1        | 0                | 1
-| 0 | 0 | 0 | 0        | 0                | 1
+| T | T | T | T        | T                | F
+| F | T | T | T        | T                | F
+| T | F | T | T        | T                | F
+| F | F | T | F        | F                | T
+| T | T | F | T        | F                | T
+| F | T | F | T        | F                | T
+| T | F | F | T        | F                | T
+| F | F | F | F        | F                | T
 |===
 
 
@@ -1164,13 +650,13 @@ C is true +
 the formula:
 
 [example]
-or(or(B, A), not\(C))
+((B {or} A) {or} {not}C)
 
 evaluates to:
 
 [example]
-or(or(true, true), not(true)) +
-or(true, false) +
+((true {or} true) {or} {not}true) +
+(true {or} false) +
 true
 
 and so this interpretation satisfies this formula.
@@ -1181,26 +667,30 @@ and so this interpretation satisfies this formula.
 
 . For the following pairs of formulas and interpretations, show that the
   interpretation satisfies the formula:
-.. or(P, Q) when P is true and Q is false.
-.. or(not(P), not(Q)) when P is true and Q is false.
-.. and(not(A), B) when A is false and B is true.
+.. (P {or} Q) when P is true and Q is false.
+.. ({not}P {or} {not}Q) when P is true and Q is false.
+.. ({not}A {and} B) when A is false and B is true.
 
 
 ==== Answers
 
-. {empty}
-.. or(P, Q) +
-   or(true, false) +
+. For the following pairs of formulas and interpretations, show that the
+  interpretation satisfies the formula:
+.. (P {or} Q) when P is true and Q is false. +
+   (P {or} Q) +
+   (true {or} false) +
    true +
    so the interpretation satisfies the formula.
-.. or(not(P), not(Q)) +
-   or(not(true), not(false)) +
-   or(false, true) +
+.. ({not}P {or} {not}Q) when P is true and Q is false. +
+   ({not}P {or} {not}Q) +
+   ({not}true {or} {not}false) +
+   (false {or} true) +
    true
    so the interpretation satisfies the formula.
-.. and(not(A), B) +
-   and(not(false), true) +
-   and(true, true) +
+.. ({not}A {and} B) when A is false and B is true. +
+   ({not}A {and} B) +
+   ({not}false {and} true) +
+   (true {and} true) +
    true +
    so the interpretation satisfies the formula.
 
@@ -1219,13 +709,13 @@ Q is true
 the formula:
 
 [example]
-and(not(P), Q)
+({not}P {and} Q)
 
 evaluates to:
 
 [example]
-and(not(true), true) +
-and(false, true) +
+({not}true {and} true) +
+(false {and} true) +
 false
 
 since it's false, we can say that this interpretation falsifies this formula.
@@ -1239,13 +729,13 @@ C is true +
 the formula:
 
 [example]
-and(or(B, A), not\(C))
+((B {or} A) {and} {not}C)
 
 evaluates to:
 
 [example]
-and(or(true, true), not(true)) +
-and(true, false) +
+((true {or} true) {and} {not}true) +
+(true {and} false) +
 false
 
 and so this interpretation satisfies this formula.
@@ -1256,26 +746,30 @@ and so this interpretation satisfies this formula.
 
 . For the following pairs of formulas and interpretations, show that the
   interpretation falsifies the formula:
-.. or(P, Q) when P is false and Q is false.
-.. or(not(P), not(Q)) when P is true and Q is true.
-.. and(not(A), B) when A is false and B is false.
+.. (P {or} Q) when P is false and Q is false.
+.. ({not}P {or} {not}Q) when P is true and Q is true.
+.. ({not}A {and} B) when A is false and B is false.
 
 
 ==== Answers
 
-. {empty}
-.. or(P, Q) +
-   or(false, false) +
+. For the following pairs of formulas and interpretations, show that the
+  interpretation falsifies the formula:
+.. (P {or} Q) when P is false and Q is false. +
+   (P {or} Q) +
+   (false {or} false) +
    false +
    so the interpretation falsifies the formula.
-.. or(not(P), not(Q)) +
-   or(not(true), not(true)) +
-   or(false, false) +
+.. ({not}P {or} {not}Q) when P is true and Q is true. +
+   ({not}P {or} {not}Q) +
+   ({not}true {or} {not}true) +
+   (false {or} false) +
    false
    so the interpretation falsifies the formula.
-.. and(not(A), B) +
-   and(not(false), false) +
-   and(true, false) +
+.. ({not}A {and} B) when A is false and B is false.
+   ({not}A {and} B) +
+   ({not}false {and} false) +
+   (true {and} false) +
    false +
    so the interpretation falsifies the formula.
 
@@ -1286,15 +780,15 @@ and so this interpretation satisfies this formula.
 The formula:
 
 [example]
-or(P, not(P))
+(P {or} {not}P)
 
 has the truth table:
 
 |===
-| P | not(P) | or(P, not(P))
+| P | {not}P | (P {or} {not}P)
 
-| 1 | 0      | 1
-| 0 | 1      | 1
+| T | F      | T
+| F | T      | T
 |===
 
 which shows that every possible interpretation satisfies the formula. In the
@@ -1305,21 +799,21 @@ Tower such a formula is called a _valid formula_.
 ==== Questions
 
 . Using a truth table, show that the following formula is valid:
-.. or(or(P, Q), not(P))
+.. ((P {or} Q) {or} {not}P)
 
 
 ==== Answers
 
-. {empty}
-.. {empty}
+. Using a truth table, show that the following formula is valid:
+.. ((P {or} Q) {or} {not}P)
 +
 |===
-| P | Q | not(P) | or(P, Q) | or(or(P, Q), not(P))
+| P | Q | {not}P | (P {or} Q) | ((P {or} Q) {or} {not}P)
 
-| 1 | 1 | 0      | 1        | 1
-| 0 | 1 | 1      | 1        | 1
-| 1 | 0 | 0      | 1        | 1
-| 0 | 0 | 1      | 0        | 1
+| T | T | F      | T        | T
+| F | T | T      | T        | T
+| T | F | F      | T        | T
+| F | F | T      | F        | T
 |===
 +
 so the formula is valid.
@@ -1331,15 +825,15 @@ so the formula is valid.
 The formula:
 
 [example]
-and(P, not(P))
+(P {and} {not}P)
 
 has the truth table:
 
 |===
-| P | not(P) | or(P, not(P))
+| P | {not}P | (P {or} {not}P)
 
-| 1 | 0      | 0
-| 0 | 1      | 0
+| T | F      | F
+| F | T      | F
 |===
 
 which shows that every possible interpretation falsifies the formula. In the
@@ -1350,77 +844,77 @@ Tower such a formula is called an _unsatisfiable formula_.
 ==== Questions
 
 . Using truth tables, show that the following formulas are unsatisfiable:
-.. and(and(P, Q), not(and(P, Q)))
-.. and(P, and(Q, not(P)))
-.. and(and(not(P), not(Q)), not(and(not(P), not(Q))))
-.. and(and(and(P, not(P)), Q), R)
+.. ((P {and} Q) {and} {not}(P {and} Q))
+.. (P {and} (Q {and} {not}P))
+.. (({not}P {and} {not}Q) {and} {not}({not}P {and} {not}Q))
+.. (((P {and} {not}P) {and} Q) {and} R)
 
 
 ==== Answers
 
-. {empty}
-.. {empty}
+. Using truth tables, show that the following formulas are unsatisfiable:
+.. ((P {and} Q) {and} {not}(P {and} Q))
 +
 |===
-| P | Q | and(P, Q) | not(and(P, Q)) | and(and(P, Q), not(and(P, Q)))
+| P | Q | (P {and} Q) | {not}(P {and} Q) | ((P {and} Q) {and} {not}(P {and} Q))
 
-| 1 | 1 | 1         | 0              | 0
-| 0 | 1 | 0         | 1              | 0
-| 1 | 0 | 0         | 1              | 0
-| 0 | 0 | 0         | 1              | 0
+| T | T | T           | F                | F
+| F | T | F           | T                | F
+| T | F | F           | T                | F
+| F | F | F           | T                | F
 |===
 +
 so unsatisfiable.
-.. {empty}
+.. (P {and} (Q {and} {not}P))
 +
 |===
-| P | Q | not(P) | and(Q, not(P)) | and(P, and(Q, not(P)))
+| P | Q | {not}P | (Q {and} {not}P) | (P {and} (Q {and} {not}P))
 
-| 1 | 1 | 0      | 0              | 0
-| 0 | 1 | 1      | 1              | 0
-| 1 | 0 | 0      | 0              | 0
-| 0 | 0 | 1      | 0              | 0
+| T | T | F      | F                | F
+| F | T | T      | T                | F
+| T | F | F      | F                | F
+| F | F | T      | F                | F
 |===
 +
 so the formula is unsatisfiable.
-.. {empty}
+.. (((P {and} {not}P) {and} Q) {and} R)
 +
 [cols="6*", options="header"]
 |===
 | P
 | Q
-| not(P)
-| not(Q)
-| and(not(P), not(Q))
-| not(and(not(P), not(Q)))
-| and(and(not(P), not(Q)), not(and(not(P), not(Q))))
+| {not}P
+| {not}Q
+| ({not}P {and} {not}Q)
+| {not}({not}P {and} {not}Q)
+| (({not}P {and} {not}Q) {and} {not}({not}P {and} {not}Q))
 
-| 1 | 1 | 0 | 0 | 0 | 1 | 0
-| 0 | 1 | 1 | 0 | 0 | 1 | 0
-| 1 | 0 | 0 | 1 | 0 | 1 | 0
-| 0 | 0 | 1 | 1 | 1 | 0 | 0
+| T | T | F | F | F | T | F
+| F | T | T | F | F | T | F
+| T | F | F | T | F | T | F
+| F | F | T | T | T | F | F
 |===
 so the formula is unsatisfiable.
-.. {empty}
+.. (((P {and} {not}P) {and} Q) {and} R)
 +
 [cols="7*", options="header"]
 |===
 | P
 | Q
 | R
-| not(P)
-| and(P, not(P))
-| and(and(P, not(P)), Q)
-| and(and(and(P, not(P)), Q), R)
+| {not}P
+| (P {and} {not}P)
+| ((P {and} {not}P) {and} Q)
+| (((P {and} {not}P) {and} Q) {and} R)
 
-| 1 | 1 | 1 | 0 | 0 | 0 | 0
-| 0 | 1 | 1 | 1 | 0 | 0 | 0
-| 1 | 0 | 1 | 0 | 0 | 0 | 0
-| 0 | 0 | 1 | 1 | 0 | 0 | 0
-| 1 | 1 | 0 | 0 | 0 | 0 | 0
-| 0 | 1 | 0 | 1 | 0 | 0 | 0
-| 1 | 0 | 0 | 0 | 0 | 0 | 0
-| 0 | 0 | 0 | 1 | 0 | 0 | 0
+| T | T | T | F | F | F | F
+| F | T | T | T | F | F | F
+| T | F | T | F | F | F | F
+| F | F | T | T | F | F | F
+| T | T | F | F | F | F | F
+| F | T | F | T | F | F | F
+| T | F | F | F | F | F | F
+| F | F | F | T | F | F | F
 |===
 so unsatisfiable.
 
@@ -1428,15 +922,15 @@ so unsatisfiable.
 :numbered:
 === Implies
 
-There's another binary function called _implies_ that has the truth table:
+There's another binary connective called _implies_ that has the truth table:
 
 |===
-| P | Q | implies(P, Q)
+| P | Q | (P {implies} Q)
 
-| 1 | 1 | 1
-| 0 | 1 | 1
-| 1 | 0 | 0
-| 0 | 0 | 1
+| T | T | T
+| F | T | T
+| T | F | F
+| F | F | T
 |===
 
 Take the two simple statements:
@@ -1472,31 +966,31 @@ could be written in these alternative ways:
 * The cafe being open is a necessary condition for Abelard to be at the cafe.
 * The cafe being open follows from Abelard being at the cafe.
 
-The formula:
+Here's an example of {implies} in action. The formula:
 
 [example]
-implies(and(P, not(Q)), Q)
+((P {and} {not}Q) {implies} Q)
 
 Has the truth table:
 
 |===
-| P | Q | not(Q) | and(P, not(Q)) | implies(and(P, not(Q)), Q)
+| P | Q | {not}Q | (P {and} {not}Q) | ((P {and} {not}(Q)) {implies} Q)
 
-| 1 | 1 | 0      | 0              | 1
-| 0 | 1 | 0      | 0              | 1
-| 1 | 0 | 1      | 1              | 0
-| 0 | 0 | 1      | 0              | 1
+| T | T | F      | F                | T
+| F | T | F      | F                | T
+| T | F | T      | T                | F
+| F | F | T      | F                | T
 |===
 
-Another example; the truth table for implies(Q, and(P, not(Q))) is:
+Another example; the truth table for (Q {implies} (P {and} {not}Q)) is:
 
 |===
-| P | Q | not(Q) | and(P, not(Q)) | implies(Q, and(P, not(Q)))
+| P | Q | {not}Q | (P {and} {not}Q) | (Q {implies} (P {and} {not}Q))
 
-| 1 | 1 | 0      | 0              | 0
-| 0 | 1 | 0      | 0              | 0
-| 1 | 0 | 1      | 1              | 1
-| 0 | 0 | 1      | 0              | 1
+| T | T | F      | F              | F
+| F | T | F      | F              | F
+| T | F | T      | T              | T
+| F | F | T      | F              | T
 |===
 
 :numbered!:
@@ -1516,80 +1010,81 @@ Another example; the truth table for implies(Q, and(P, not(Q))) is:
 
 ==== Answers
 
-. {empty}
-.. P: The washing is out. +
+. Write the following English statements as logical formulas:
+.. The washing is out only if it's a dry day. +
+   P: The washing is out. +
    Q: It's a dry day. +
-   implies(P, Q)
-.. A: Keith is in Bath. +
+   (P {implies} Q)
+.. If Keith is in Bath, then Keith is in England. +
+   A: Keith is in Bath. +
    B: Keith is in England. +
-   implies(A, B)
-.. A: The sky is red at night. +
+   (A {implies} B)
+.. The sky being red at night implies that the shepherds are delighted.
+   A: The sky is red at night. +
    B: The shepherds are delighted. +
-   implies(A, B)
-. {empty}
-.. {empty}
+   (A {implies} B)
+. Create a truth table for each of the following formulas:
+.. ({not}P {implies} Q)
 +
 |===
-| P | Q | not(P) | implies(not(P), Q)
+| P | Q | {not}P | ({not}P {implies} Q)
 
-| 1 | 1 | 0      | 1
-| 0 | 1 | 1      | 1
-| 1 | 0 | 0      | 1
-| 0 | 0 | 1      | 0
+| T | T | F      | T
+| F | T | T      | T
+| T | F | F      | T
+| F | F | T      | F
 |===
-+
-.. {empty}
+.. (Q {implies} {not}Q)
 +
 |===
-| Q | not(Q) | implies(Q, not(Q))
+| Q | {not}Q | (Q {implies} {not}Q)
 
-| 1 | 0      | 0
-| 0 | 1      | 1
+| T | F      | F
+| F | T      | T
 |===
-+
-.. {empty}
+.. ((P {implies} Q) {or} P)
 +
 |===
-| P | Q | implies(P, Q) | or(implies(P, Q), P)
+| P | Q | (P {implies} Q) | ((P {implies} Q) {or} P)
 
-| 1 | 1 | 1             | 1
-| 0 | 1 | 1             | 1
-| 1 | 0 | 0             | 1
-| 0 | 0 | 1             | 1
+| T | T | T             | T
+| F | T | T             | T
+| T | F | F             | T
+| F | F | T             | T
 |===
+.. ({not}(P {and} Q) {implies} ({not}P {or} {not}Q))
 +
-.. {empty}
-+
+[cols="8*", options="header"]
 |===
 | P
 | Q
-| and(P, Q)
-| not(and(P, Q))
-| not(P)
-| not(Q)
-| or(not(P), not(Q))
-| implies(not(and(P, Q)), or(not(P), not(Q)))
+| (P {and} Q)
+| {not}(P {and} Q)
+| {not}P
+| {not}Q
+| ({not}P {or} {not}Q)
+| ({not}(P {and} Q) {implies} ({not}P {or} {not}Q))
 
-| 1 | 1 | 1 | 0 | 0 | 0 | 0 | 1
-| 0 | 1 | 0 | 1 | 1 | 0 | 1 | 1
-| 1 | 0 | 0 | 1 | 0 | 1 | 1 | 1
-| 0 | 0 | 0 | 1 | 1 | 1 | 1 | 1
+| T | T | T | F | F | F | F | T
+| F | T | F | T | T | F | T | T
+| T | F | F | T | F | T | T | T
+| F | F | F | T | T | T | T | T
 |===
+.. implies(and(P, implies(P, Q)), not(P))
 +
-.. {empty}
-+
+[cols="6*", options="header"]
 |===
 | P
 | Q
-| implies(P, Q)
-| not(P)
-| and(P, implies(P, Q))
-| implies(and(P, implies(P, Q)), not(P))
+| (P {implies} Q)
+| {not}P
+| (P {and} (P {implies} Q))
+| ((P {and} (P {implies} Q)) {implies} {not}P)
 
-| 1 | 1 | 1 | 0 | 1 | 0
-| 0 | 1 | 0 | 1 | 0 | 1
-| 1 | 0 | 0 | 0 | 0 | 1
-| 0 | 0 | 0 | 1 | 0 | 1
+| T | T | T | F | T | F
+| F | T | F | T | F | T
+| T | F | F | F | F | T
+| F | F | F | T | F | T
 |===
 
 
@@ -2402,6 +1897,527 @@ which shows it is valid, and so the two formulas are equivalent.
 +
 which shows it is valid, and so the pair of formulas we started with is an
 identity.
+
+
+:numbered:
+== Sets
+
+[[img-gottlob_frege]]
+.http://commons.wikimedia.org/wiki/File:Young_frege.jpg#media/File:Young_frege.jpg[Gottlob Frege] Licensed under Public Domain via http://commons.wikimedia.org/wiki/[Wikimedia Commons].
+image::gottlob_frege.jpg[Gottlob Frege]
+
+'`Tony`', '`Yes Professor Frege?`', '`You should really start with _sets_`',
+'`Okay, whatevs Prof`'.
+
+=== What's A Set?
+
+A _set_ is a collection of distinct _elements_, where there's no order, and
+duplicates aren't allowed. Some example are:
+
+* Primary colours.
+* Even integers
+* Letters of the alphabet.
+* Natural numbers.
+
+Written out in _set notation_, these look like:
+
+* {red, green, blue}
+* {..., -4, -2, 0, 2, 4, ...}
+* {a, b, c, ..., x, y, z}
+* {0, 1, 2, 3, ...}
+
+When the set includes an elipsis (...) at one end or both, it denotes an
+infinite series. An ellipsis in the middle of a set of elements is used to
+save writing out all the items of an obvious set.
+
+Strangely enough, a set with a finite number of elements is a _finite set_
+and a set with an infinite number of elements is an _infinite set_.
+
+:numbered:
+=== Identity
+
+If two sets have exactly the same elements in them, then they form an
+_identity_. In set notation, if sets A and B are and identity they write:
+
+[example]
+A {equiv} B
+
+if A and B aren't an identity they write:
+
+[example]
+A {nequiv} B
+
+Let's say we've got two sets S and T:
+
+[example]
+S is {1, 2} +
+T is {2, 1}
+
+S and T are an identity because all that matters for identity is that the two
+sets have the same elements in them. So we can write:
+
+[example]
+S {equiv} T
+
+Let's make up two sets A and B:
+
+[example]
+A is {1, 2, 2} +
+B is {1, 2}
+
+Sets don't have any duplicates so the two sets A and B are an identity
+and we can write:
+
+[example]
+A {equiv} B
+
+'`Hey, you said that sets can't have duplicates, but then you wrote `{1, 2, 2}`.
+What gives?`'. When you write `{1, 2, 2}`, you're describing a
+set with two elements, `1` and `2`. So `{1, 2, 2}` {equiv} `{1, 2}`. So these
+are two ways of describing the same set. '`Well, okay I suppose. I have to say
+I'm not entirely convinced, but carry on for now`'.
+
+
+
+=== Common Sets Of Numbers
+
+Some sets of numbers are common enough to have their own names and symbols:
+
+[cols="3*", options="header"]
+|===
+| Name | Symbol | Definition
+
+| Real Numbers
+| *R*
+| All the numbers on a continuous line from negative infinity to positive
+infinity.
+
+| Integers
+| *Z*
+| {..., -2, -1, 0, 1, 2, ...}
+
+| Natural Numbers
+| *N*
+| {0, 1, 2, ...}
+
+| Positive Integers
+| *Z+*
+| {1, 2, 3, ...}
+
+| Boolean Values
+| *B*
+| {1, 0} +
+By convention, 1 is interpreted as true, and 0 as false.
+
+| Empty Set
+|
+| {}
+|===
+
+
+=== Russell's Paradox
+
+On your first day as an assistant librarian, you're asked to compile a book
+that is a catalogue of all of the books in the library that don't mention
+themselves. Eventually you present the chief librarian with your completed
+catalogue. The chief librarian asks, '`Does the catalogue mention the
+catalogue?`'. Well no, you answer...but then if the catalogue doesn't mention
+itself, then it should be in the catalogue, in which case it shouldn't...
+
+You've become a victim of Russell's Paradox, and you're fired. Lol!
+
+In terms of sets, Russell's Paradox is asking, what's the set of all sets that
+don't have themselves as an element? That set doesn't exist.
+
+So, that's solved it in maths language, but how should you have answered the
+chief librarian? Well, you should say that the book (set) he's asked for can't
+exist. But you can write a book (set), which has the same
+contents as has been requested, except that it doesn't contain itself.
+
+
+=== Other Paradoxes
+
+Curry's Paradox is:
+
+[example]
+If this sentence is true, then you owe me a million pounds.
+
+Do you owe me a million pounds then? Anyway, they told me that there's an
+equivalent paradox for sets.
+
+They also told me that there's a paradox with the set of all sets, so that
+doesn't exist either. As it seems to me, a paradox is something that is clearly
+incorrect, but you can't see the flaw in the argument. Of course, all paradoxes
+can be resolved, and the resolution deepens one's understanding. '`Ooh, hark at
+him pontificating on the philosophy of it all!!`'. Okay, okay.
+
+
+=== Tuples
+
+'`Wait, you say that with sets, ordering doesn't matter, but in lots of
+things ordering _does_ matter. What about a list of countries in alphabetical
+order?`'
+
+Yes, good point reader. Remember I'm still learning this stuff too, you know.
+I'll get back to you...
+
+...I'm back, got it all worked out. Here's our set of countries:
+
+[example]
+{'`UK`', '`Germany`', '`Spain`'}
+
+Now adding alphabetical ordering:
+
+[example]
+{{'`UK`', 3}, {'`Germany`', 1}, {'`Spain`', 2}}
+
+So we've made a set of sets. The inner sets have the country and their position
+in the alphabetical order. Ordered sets occur quite often in maths, so they're
+given the name _tuples_ and denoted by surrounding the elements with brackets,
+so:
+
+[example]
+{{'`UK`', 3}, {'`Germany`', 1}, {'`Spain`', 2}} {equiv}
+('Germany', '`Spain`', '`UK`')
+
+Here are the names of tuples based on the number of elements they contain...
+
+|===
+| Number Of Elements | Name   | Example
+
+| 0                  | Nuple  | ()
+| 1                  | Single | (8)
+| 2                  | Double | (7, 4)
+| 3                  | Triple | ('`bear`', '`tiger`', '`sheep`')
+|===
+
+Actually, I made up '`nuple`'. It's commonly called '`the empty tuple`'.
+
+
+=== Functions
+
+In the tower they fiddle around a lot with functions. A function is a set
+that relates a set of tuples (the _domain_) to another set (the _codomain_).
+For any tuple (called the '`input`') of the domain there's a double in the
+function of the form:
+
+[example]
+(input, output)
+
+where '`output`' is an element of the _codomain_.
+
+'`That sounds all very clever and fancy, but what do you actually mean?`' Well
+an example I found in the tower is the `add_one` function which has as its
+domain *Z*^1^:
+
+[example]
+*Z*^1^ {equiv} {..., (-2), (-1), (0), (1), (2), ...}
+
+The codomain of `add_one` is *Z*, and the relationship is:
+
+[example]
+add_one {equiv} {..., ( (-2), -1), ( (-1), 0), ( (0), 1), ( (1), 2), ...}
+
+and if you want to talk about individual inputs and outputs of a function, you
+can write:
+
+[example]
+add_one(-2) {equiv} -1 +
+add_one(70) {equiv} 71 +
+add_one(4002) {equiv} 4003 +
+
+We've defined the function `add_one` in words and through examples and using
+the ellipses (and the clue is in the name of the function!) but I saw that
+mostly, mathematicians will define a function using mathematical notation, so
+they'll write:
+
+[example]
+add_one(x) {equiv} x + 1
+
+They'll often use the letter `x`, but it needn't be. Could be anything. Eg:
+
+[example]
+add_one(H) {equiv} H + 1
+
+Another example. Let's make up another function called `mult_ten`. The domain
+will be *Z*^1^ and the codomain *Z* as in the previous example. The relationship
+is defined as:
+
+[example]
+mult_ten(x) {equiv} x * 10
+
+Let's try it out with some inputs and see what the outputs are:
+
+[example]
+mult_ten(1) {equiv} 10 +
+mult_ten(8) {equiv} 80 +
+mult_ten(0) {equiv} 0 +
+
+In the previous examples we chose domains of singles, but let's create a
+function that has a domain of doubles. So let's create a function called
+`mult_add` with the domain *Z*^2^. Now *Z*^2^ is the set of doubles which are
+all possible combinations of an element of *Z* followed by another element of
+*Z* which is shown in this table:
+
+[cols="8*", options="header"]
+|===
+|
+| ...
+| -2
+| -1
+| 0
+| 1
+| 2
+| ...
+
+| ...
+| (..., ...)
+| (..., -2)
+| (..., -1)
+| (..., 0)
+| (..., 1)
+| (..., 2)
+| (..., ...)
+
+| -2
+| (-2, ...)
+| (-2, -2)
+| (-2, -1)
+| (-2, 0)
+| (-2, 1)
+| (-2, 2)
+| (-2, ...)
+
+| -1
+| (-1, ...)
+| (-1, -2)
+| (-1, -1)
+| (-1, 0)
+| (-1, 1)
+| (-1, 2)
+| (-1, ...)
+
+| 0 
+| (0, ...)
+| (0, -2)
+| (0, -1)
+| (0, 0)
+| (0, 1)
+| (0, 2)
+| (0, ...)
+
+| 1 
+| (1, ...)
+| (1, -2)
+| (1, -1)
+| (1, 0)
+| (1, 1)
+| (1, 2)
+| (1, ...)
+
+| 2 
+| (2, ...)
+| (2, -2)
+| (2, -1)
+| (2, 0)
+| (2, 1)
+| (2, 2)
+| (2, ...)
+
+| ... 
+| (..., ...)
+| (..., -2)
+| (..., -1)
+| (..., 0)
+| (..., 1)
+| (..., 2)
+| (..., ...)
+|===
+
+The codomain of `mult_add` is *Z*, and the relationship between the domain and
+codomain is defined by:
+
+[example]
+mult_add(x, y) {equiv} x * 2 + y
+
+Let's try it out with some inputs and see what the outputs are:
+
+[example]
+mult_add(1, 6) {equiv} 8 +
+mult_add(8, 3) {equiv} 19 +
+mult_add(0, 2) {equiv} 2 +
+
+Functions whose input is a single are called _unary_ functions, and functions
+whose input is a double are called _binary_ functions. Can we have functions
+whose input is the nuple?
+
+[[img-obama]]
+image::obama.jpg[Yes we can!]
+
+Let's define a function called `five`, it'll have the domain {()} and the
+codomain *Z*. The function just contains one double:
+
+[example]
+( (), 5)
+
+so:
+
+[example]
+five() {equiv} 5
+
+=== Direct Product
+
+The 
+
+
+=== Is In
+
+Set theoreticians use the symbol {isin} to mean '`is an element of`'. So if
+there was an element `x` that was in a set `A` we could abbreviate that to:
+
+[example]
+x {isin} A
+
+Conversely, they use the symbol {notin} to mean '`is not an element of`'. Eg.
+
+[example]
+x {notin} A
+
+
+=== Indicator Function
+
+Those wacky mathematicians have come up with a binary function called the
+_indicator function_, denoted by *1*, that has as its input a double consisting
+of an element and a set. The function is defined as:
+
+* Domain: The set of doubles of all possible combinations of (element, set).
+* Codomain: *B*
+* *1*(x, A) {equiv} true if x {isin} A otherwise false
+
+[example]
+*1*(1, *Z*) {equiv} true +
+*1*('France', *Z*) {equiv} false +
+*1*(-1000, {red, green, blue}) {equiv} false +
+
+
+=== Subset
+
+Another binary function with codomain *B* is the subset function that has the
+symbol {sube}. The subset function is defined as:
+
+* Domain: The set of doubles of all possible combination of (set, set)
+* Codomain: *B*
+* {sube}(A, B) {equiv} true if and only if all the elements of A are also in B,
+otherwise false.
+
+So if A is a subset of B we can write:
+
+[example]
+{sube}(A, B) {equiv} true
+
+Following this definition of a subset, every set is a subset of itself. So it's
+always true that:
+
+[example]
+{sube}(A, A) {equiv} true
+
+By the way, the domain of {sube} crops up quite a lot in definitions of
+functions, so I'll give it the name *S*, so from now on:
+
+[example]
+*S* {equiv} The set of doubles of all possible combination of (set, set)
+
+
+=== Equals
+
+The symbol for the _equals_ function is `=`, and it's defined as:
+
+* Domain: *S*
+* Codomain: *B*
+* =(A, B) {equiv} true if A and B form an identiy, otherwise false.
+
+
+=== Proper Subset
+
+The symbol for the _proper subset_ function is `{sube}`, and it's defined as:
+
+* Domain: *S*
+* Codomain: *B*
+* {sub}(A, B) {equiv} true if `{sube}(A, B)` is true and A {nequiv} B.
+
+
+=== Union
+
+[example]
+{cup}: *S* {rarr} *S* +
+A, B {brarr} {x | x {isin} A or x {isin} B}
+
+
+=== Intersection
+
+[example]
+{cap}: *S* {rarr} *S* +
+A, B {brarr} {x | x {isin} A and x {isin} B}
+
+
+=== Complement
+
+[example]
+\\: *S* {rarr} *S* +
+A, B {brarr} {x | x {isin} A and x {notin} B}
+
+=== Universal Class
+
+
+
+
+
+
+
+
+:numbered!:
+==== Questions
+
+. Write the following sets in set notation:
+.. Prime numbers less than 12. +
+   {2, 3, 5, 7, 11}
+. For the sets in question 1, say whether they are finite or infinite.
+.. {2, 3, 5, 7, 11} +
+   Finite.
+. Say whether the following are valid sets or not:
+.. {1, 2, 3, 2, 1} +
+   No, because the 1 and 2 are repeated.
+
+==== Answers
+
+Rs
+
+=== Rosetta Stone
+
+Rs
+
+==== Synonyms
+
+Rs
+
+[cols="2*", options="header"]
+|===
+| Name
+| Synonym
+
+| Empty set, {}
+| &#x2205;
+
+| Double
+| Ordered pair
+|===
+
+=== Bibliography
+
+* http://www.mathsisfun.com/sets/sets-introduction.html
+* http://people.cs.pitt.edu/~milos/courses/cs441/lectures/Class7.pdf
+* http://www.wtamu.edu/academic/anns/mps/math/mathlab/int_algebra/int_alg_tut3_sets.htm
+
 
 
 :numbered:
@@ -3691,7 +3707,7 @@ and the truth table is:
 | 0 | 0 | 0 | 0         | 0
 |===
 
-=== Bibliographyo
+=== Bibliography
 
 * http://en.wikibooks.org/wiki/Formal_Logic/Sentential_Logic (Referred to this
   throughout, very good.)
