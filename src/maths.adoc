@@ -1,5 +1,6 @@
 = My Glimpse Inside The Ivory Tower Of Mathematics
 Tony Locke
+:doctype: book
 :entails: &#x22A8;
 :and: &#x2227;
 :or: &#x2228;
@@ -295,8 +296,8 @@ the compound statement can be transated into two formulas with different
 meanings:
 
 [example]
-. ((P {or} Q) {and} R) +
-. (P {or} (Q {and} R)
+((P {or} Q) {and} R) +
+(P {or} (Q {and} R)
 
 We know that P is true, Q is false and R is false. That means that the first formula evaluates to false:
 
@@ -2412,7 +2413,8 @@ Rs
 | Ordered pair
 |===
 
-=== Bibliography
+
+=== Sources
 
 * http://www.mathsisfun.com/sets/sets-introduction.html
 * http://people.cs.pitt.edu/~milos/courses/cs441/lectures/Class7.pdf
@@ -3707,7 +3709,7 @@ and the truth table is:
 | 0 | 0 | 0 | 0         | 0
 |===
 
-=== Bibliography
+=== Sources
 
 * http://en.wikibooks.org/wiki/Formal_Logic/Sentential_Logic (Referred to this
   throughout, very good.)
