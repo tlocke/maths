@@ -334,8 +334,8 @@ realm. W00t, I said, `mathematical realm`!!!
 
 . For the following ambiguous compound statements in English, write down all the
   possible meanings as formulas. +
-  P: Two is less than four.
-  Q: Alaska begins with A.
+  P: Two is less than four. +
+  Q: Alaska begins with A. +
   R: Purple is a number.
 .. Two is less than four or Alaska begins with A and purple is a number. +
    (P {or} (Q {and} R)) +
@@ -1002,11 +1002,11 @@ Another example; the truth table for (Q {implies} (P {and} {not}Q)) is:
 .. If Keith is in Bath, then Keith is in England.
 .. The sky being red at night implies that the shepherds are delighted.
 . Create a truth table for each of the following formulas:
-.. implies(not(P), Q)
-.. implies(Q, not(Q))
-.. or(implies(P, Q), P)
-.. implies(not(and(P, Q)), or(not(P), not(Q)))
-.. implies(and(P, implies(P, Q)), not(P))
+.. ({not}P {implies} Q)
+.. (Q {implies} {not}Q)
+.. ((P {implies} Q) {or} P)
+.. ({not}(P {and} Q) {implies} ({not}P {or} {not}Q))
+.. ((P {and} (P {implies} Q)) {implies} {not}P)
 
 
 ==== Answers
@@ -1036,7 +1036,7 @@ Another example; the truth table for (Q {implies} (P {and} {not}Q)) is:
 | F | F | T      | F
 |===
 .. (Q {implies} {not}Q)
-+
+
 |===
 | Q | {not}Q | (Q {implies} {not}Q)
 
@@ -1090,17 +1090,17 @@ Another example; the truth table for (Q {implies} (P {and} {not}Q)) is:
 
 
 :numbered:
-=== Equals
+=== Biconditional
 
-The _equals_ function is a binary function with the truth table:
+The _biconditional_ connective is a binary connective with the truth table:
 
 |===
-| P | Q | equals(P, Q)
+| P | Q | (P {bicond} Q)
 
-| 1 | 1 | 1
-| 0 | 1 | 0
-| 1 | 0 | 0
-| 0 | 0 | 1
+| T | T | T
+| F | T | F
+| T | F | F
+| F | F | T
 |===
 
 Translating from English to a formula, the sentence:
@@ -1113,7 +1113,7 @@ is written:
 [example]
 P: It's Christmas Day. +
 Q: It's the 25th of December. +
-equals(P, Q)
+(P {bicond} Q)
 
 which of course is true. An example that is false is:
 
@@ -1125,7 +1125,7 @@ which is written:
 [example]
 P: It's Christmas Day. +
 Q: It's the 2nd of March. +
-equals(P, Q)
+(P {bicond} Q)
 
 
 :numbered!:
@@ -1136,99 +1136,103 @@ equals(P, Q)
    applied.
 .. The fridge light is on if, and only if, the fridge door is open.
 . Give the truth table for each of the following formulas:
-.. equals(A, and(B, C))
-.. or(B, equals(A, B))
-.. and(P, not(equals(P, or(Q, P))))
-.. and(equals(Q, not(P)), equals(P, not(not(Q))))
+.. (A {bicond} (B {and} C))
+.. (B {or} (A {bicond} B))
+.. (P {and} {not}(P {bicond} (Q {or} P)))
+.. ((Q {bicond} {not}P) {and} (P {bicond} {not}{not}Q))
 
 
 ==== Answers
 
-. {empty}
+. Translate the following English sentences into formulas:
 .. The bike's back brake comes on if, and only if, the left brake lever is
    applied. +
    P: The bike's back brake comes on. +
    Q: The left brake lever is applied. +
-   equals(P, Q)
+   (P {bicond} Q)
 .. The fridge light is on if, and only if, the fridge door is open. +
    P: The fridge light is on. +
    Q: The fridge door is open. +
-   equals(P, Q)
+   (P {bicond} Q)
 . Give the truth table for each of the following formulas:
-.. equals(A, and(B, C))
+.. (A {bicond} (B {and} C))
 +
 |===
-| A | B | C | and(B, C) | equals(A, and(B, C)
+| A | B | C | (B {and} C) | (A {bicond} (B {and} C)
 
-| 1 | 1 | 1 | 1         | 1
-| 0 | 1 | 1 | 1         | 0
-| 1 | 0 | 1 | 0         | 0
-| 0 | 0 | 1 | 0         | 1
-| 1 | 1 | 0 | 0         | 0
-| 0 | 1 | 0 | 0         | 1
-| 1 | 0 | 0 | 0         | 0
-| 0 | 0 | 0 | 0         | 1
+| T | T | T | T           | T
+| F | T | T | T           | F
+| T | F | T | F           | F
+| F | F | T | F           | T
+| T | T | F | F           | F
+| F | T | F | F           | T
+| T | F | F | F           | F
+| F | F | F | F           | T
 |===
 +
-.. or(B, equals(A, B))
+.. (B {or} (A {bicond} B))
 +
 |===
-| A | B | equals(A, B) | or(B, equals(A, B))
+| A | B | (A {bicond} B) | (B {or} (A {bicond} B))
 
-| 1 | 1 | 1            | 1
-| 0 | 1 | 0            | 1
-| 1 | 0 | 0            | 0
-| 0 | 0 | 1            | 1
+| T | T | T              | T
+| F | T | F              | T
+| T | F | F              | F
+| F | F | T              | T
 |===
 +
-.. and(P, not(equals(P, or(Q, P))))
+.. (P {and} {not}(P {bicond} (Q {or} P)))
 +
+[cols="6*", options="header"]
 |===
 | P
 | Q
-| or(Q, P)
-| equals(P, or(Q, P)
-| not(equals(P, or(Q, P))
-| and(P, not(equals(P, or(Q, P))))
+| (Q {or} P)
+| (P {bicond} (Q {or} P)
+| {not}(P {bicond} (Q {or} P))
+| (P {and} {not}(P {bicond} (Q {or} P)))
 
-| 1 | 1 | 1 | 1 | 0 | 0
-| 0 | 1 | 1 | 0 | 1 | 0
-| 1 | 0 | 1 | 1 | 0 | 0
-| 0 | 0 | 0 | 1 | 0 | 0
+| T | T | T | T | F | F
+| F | T | T | F | T | F
+| T | F | T | T | F | F
+| F | F | F | T | F | F
 |===
 +
-.. and(equals(Q, not(P)), equals(P, not(not(Q))))
+.. \((Q {bicond} {not}P) {and} (P {bicond} {not}{not}Q))
 +
+[cols="8*", options="header"]
 |===
 | P
 | Q
-| not(P)
-| equals(Q, not(P))
-| not(Q)
-| not(not(Q))
-| equals(P, not(not(Q)))
-| and(equals(Q, not(P)), equals(P, not(not(Q))))
+| {not}P
+| (Q {bicond} {not}P)
+| {not}Q
+| {not}{not}Q
+| (P {bicond} {not}{not}Q)
+| \((Q {bicond} {not}P) {and} (P {bicond} {not}{not}Q))
 
-| 1 | 1 | 0 | 0 | 0 | 1 | 1 | 0
-| 0 | 1 | 1 | 1 | 0 | 1 | 0 | 0
-| 1 | 0 | 0 | 1 | 1 | 0 | 0 | 0
-| 0 | 0 | 1 | 0 | 1 | 0 | 1 | 0
+| T | T | F | F | F | T | T | F
+| F | T | T | T | F | T | F | F
+| T | F | F | T | T | F | F | F
+| F | F | T | F | T | F | T | F
 |===
 
 :numbered:
 === Identity
 
-If two formulas are an _identity_, then the formula formed by joining them with
-the '`equals`' function will be valid. For example, if the pair of formulas:
+If two formulas are an _identity_, then they mean the same under all
+interpretations. In other words if two formulas are an identity, then the
+formula formed by joining them with the {bicond} connective will be
+<<_valid_formula, valid>>. For example, if the pair of formulas:
 
 [example]
-implies(A, B) +
-or(not(A), B)
+(A {implies} B) +
+({not}A {or} B)
 
 are an identity, then:
 
 [example]
-equals(implies(A, B), or(not(A), B))
+\((A {implies} B) {bicond} ({not}A {or} B))
 
 will be valid. Its truth table is:
 
@@ -1236,30 +1240,30 @@ will be valid. Its truth table is:
 |===
 | A
 | B
-| implies(A, B)
-| not(A)
-| or(not(A)), B)
-| equals(implies(A, B), or(not(A), B))
+| (A {implies} B)
+| {not}A
+| ({not}A {or} B)
+| \((A {implies} B) {bicond} ({not}A {or} B))
 
-| 1 | 1 | 1 | 0 | 1 | 1
-| 0 | 1 | 1 | 1 | 1 | 1
-| 1 | 0 | 0 | 0 | 0 | 1
-| 0 | 0 | 1 | 1 | 1 | 1
+| T | T | T | F | T | T
+| F | T | T | T | T | T
+| T | F | F | F | F | T
+| F | F | T | T | T | T
 |===
 
 and so indeed we can say that this pair of formulas is an identity. The symbol
 for identity is {equiv}, and so we can write the identity as:
 
-implies(A, B) {equiv} or(not(A), B)
+(A {implies} B) {equiv} ({not}A {or} B)
 
 The two formulas in an identity can be substituted for each other in other
 formulas, without changing the meaning of those other formulas. The commonly
 used identities have their own names. The identity that we've just found:
 
 [example]
-implies(A, B) {equiv} or(not(A), B)
+(A {implies} B) {equiv} ({not}A {or} B)
 
-is called _material implication_.
+is called the _material implication identity_.
 
 
 :numbered!:
@@ -1267,34 +1271,34 @@ is called _material implication_.
 
 . Use the material implication identity to rewrite the following formulas while
   preserving their meaning:
-.. implies(A, B)
-.. or(not(A), B)
-.. implies(A, not(B))
-.. or(A, B)
+.. (A {implies} B)
+.. ({not}A {or} B)
+.. (A, {not}B)
+.. (A {or} B)
 
 
 ==== Answers
 
 . Use the material implication identity to rewrite the following formulas while
   preserving their meaning:
-.. implies(A, B) +
-   or(not(A), B)
-.. or(not(A), B) +
-   implies(A, B)
-.. implies(A, not(B)) +
-   or(not(A), not(B))
-.. or(A, B) +
-   implies(not(A), B)
+.. (A {implies} B) +
+   ({not}A {or} B)
+.. ({not}A {or} B) +
+   (A {implies} B)
+.. (A {implies} {not}B) +
+   ({not}A {or} {not}B)
+.. (A {or} B) +
+   ({not}A {implies} B)
 
 
 :numbered:
-==== Material Equality
+==== Material Equality Identity
 
-Hot on the heels of meeting the Material Implies identity, I encountered the
+Hot on the heels of meeting the Material Implication identity, I encountered the
 Material Equality identity:
 
 [example]
-equals(P, Q) {equiv} and(or(not(P), Q), or(P, not(Q)))
+(P = Q) {equiv} (({not}P {or} Q) {and} (P {or} {not}Q))
 
 Actually I found loads of these identities in the Tower, some with names, some
 without. I noted down the ones I thought were important, and the ones that had
@@ -1306,24 +1310,24 @@ a pattern to them and skipped over the rest. Is this the right approach?
 
 . Use the material equality identity to rewrite the following formulas while
   preserving their meaning:
-.. equals(P, Q)
-.. and(or(not(P), Q), or(P, not(Q)))
-.. and(equals(P, Q), P)
-.. or(and(or(P, Q), or(not(P), not(Q))), not(P))
+.. (P = Q)
+.. (({not}P {or} Q) {and} (P {or} {not}Q))
+.. ((P = Q) {and} P)
+.. (((P {or} Q) {and} ({not}P {or} {not}Q)) {or} {not}P)
 
 
 ==== Answers
 
 . Use the material equality identity to rewrite the following formulas while
   preserving their meaning:
-.. equals(P, Q) +
-   and(or(not(P), Q), or(P, not(Q)))
-.. and(or(not(P), Q), or(P, not(Q))) +
-   equals(P, Q)
-.. and(equals(P, Q), P) +
-   and(and(or(not(P), Q), or(P, not(Q))), P)
-.. or(and(or(P, Q), or(not(P), not(Q))), not(P)) +
-   or(equals(P, Q), not(P))
+.. (P = Q) +
+   (({not}P {or} Q) {and} (P {or} {not}Q))
+.. (({not}P {or} Q) {and} (P {or} {not}Q)) +
+   (P = Q)
+.. ((P = Q) {and} P) +
+   ((({not}P {or} Q) {and} (P {or} {not}Q)) {and} P)
+.. (((P {or} Q) {and} ({not}P {or} {not}Q)) {or} {not}P) +
+   ((P = Q) {or} {not}P)
 
 
 :numbered:
