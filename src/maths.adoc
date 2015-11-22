@@ -1549,45 +1549,70 @@ it is valid and so {bicond} is commutative.
 :numbered:
 === Associativity
 
-Another type of identity that some binary functions have is _associativity_. The
-'`and`' function is associative, which means:
+Another type of identity that some binary connectives have is _associativity_.
+The {and} connective is associative, which means:
 
 [example]
-and(P, and(Q, R)) {equiv} and(and(P, Q), R)
+(P {and} (Q {and} R)) {equiv} ((P {and} Q) {and} R)
 
 because the formula:
 
 [example]
-equals(and(P, and(Q, R)), and(and(P, Q), R))
+\((P {and} (Q {and} R)) {bicond} \((P {and} Q) {and} R))
 
-is valid. So if you've got three formulas joined by '`and`', it doesn't
-make any difference if the first two are joined first, or the last two.
+is valid. So if you've got three formulas joined by {and}, it doesn't
+make any difference if the first two are evaluated first, or the last two.
 This identity is called _conjunction associativity_. Here's a
-table showing all the binary functions, and whether they're associative or
+table showing all the binary connectives, and whether they're associative or
 not, and if they are, giving the name of the identity:
 
 |===
-| Binary Function | Associative? | Name Of Identity
+| Binary Connective | Associative? | Name Of Identity
 
-| and             | Yes          | Conjunction associativity
-| or              | Yes          | Disjunction associativity
-| implies         | No           |
-| equals          | Yes          | Equality associativity
+| {and}             | Yes          | Conjunction associativity
+| {or}              | Yes          | Disjunction associativity
+| {implies}         | No           |
+| {bicond}          | Yes          | Biconditional associativity
 |===
 
 
 :numbered!:
 ==== Questions
 
-. For each of the four binary functions use a truth table to show if they
+. For each of the four binary connectives use a truth table to show if they
   are or are not associative (big truth tables ahoy!).
 
 
 ==== Answers
 
-. For each of the four binary functions use a truth table to show if they
+. For each of the four binary connectives use a truth table to show if they
   are or are not associative (big truth tables ahoy!).
-.. '`and`' is associative if equals(and(and(A, B), C), and(A, and(B, C))) is
+.. {and} is associative if
+   \(((A {and} B) {and} C) {bicond} (A {and} (B {and} C))) is valid.
++
+[cols="8*", options="header"]
+|===
+| A
+| B
+| C
+| (A {and} B)
+| ((A {and} B) {and} C)
+| (B {and} C)
+| (A {and} (B {and} C))
+| \(((A {and} B) {and} C) {bicond} (A {and} (B {and} C)))
+
+| T | T | T | T | T | T | T | T
+| F | T | T | F | F | T | F | T
+| T | F | T | F | F | F | F | T
+| F | F | T | F | F | F | F | T
+| T | T | F | T | F | F | F | T
+| F | T | F | F | F | F | F | T
+| T | F | F | F | F | F | F | T
+| F | F | F | F | F | F | F | T
+|===
++
+it is valid and so {and} is associative.
+.. {or} is associative if \(((A {or} B) {or} C) {bicond} (A {or} (B {or} C))) is
    valid.
 +
 [cols="8*", options="header"]
@@ -1595,98 +1620,73 @@ not, and if they are, giving the name of the identity:
 | A
 | B
 | C
-| and(A, B)
-| and(and(A, B), C)
-| and(B, C)
-| and(A, and(B, C))
-| equals(and(and(A, B), C), and(A, and(B, C)))
+| (A {or} B)
+| ((A {or} B) {or} C)
+| (B {or} C)
+| (A {or} (B {or} C))
+| \(((A {or} B) {or} C) {bicond} (A {or} (B {or} C)))
 
-| 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1
-| 0 | 1 | 1 | 0 | 0 | 1 | 0 | 1
-| 1 | 0 | 1 | 0 | 0 | 0 | 0 | 1
-| 0 | 0 | 1 | 0 | 0 | 0 | 0 | 1
-| 1 | 1 | 0 | 1 | 0 | 0 | 0 | 1
-| 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1
-| 1 | 0 | 0 | 0 | 0 | 0 | 0 | 1
-| 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1
+| T | T | T | T | T | T | T | T
+| F | T | T | T | T | T | T | T
+| T | F | T | T | T | T | T | T
+| F | F | T | F | T | T | T | T
+| T | T | F | T | T | T | T | T
+| F | T | F | T | T | T | T | T
+| T | F | F | T | T | F | T | T
+| F | F | F | F | F | F | F | T
 |===
 +
-it is valid and so '`and`' is associative.
-.. '`or`' is associative if equals(or(or(A, B), C), or(A, or(B, C))) is
-   valid.
+it is valid and so {or} is associative.
+.. {implies} is associative if \(((A {implies} B) {implies} C) {bicond}
+   (A {implies} (B {implies} C))) is valid.
 +
 [cols="8*", options="header"]
 |===
 | A
 | B
 | C
-| or(A, B)
-| or(or(A, B), C)
-| or(B, C)
-| or(A, or(B, C))
-| equals(or(or(A, B), C), or(A, or(B, C)))
+| (A {implies} B)
+| ((A {implies} B) {implies} C)
+| (B {implies} C)
+| (A {implies} (B {implies} C))
+| \(((A {implies} B) {implies} C) {bicond} (A {implies} (B {implies} C)))
 
-| 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1
-| 0 | 1 | 1 | 1 | 1 | 1 | 1 | 1
-| 1 | 0 | 1 | 1 | 1 | 1 | 1 | 1
-| 0 | 0 | 1 | 0 | 1 | 1 | 1 | 1
-| 1 | 1 | 0 | 1 | 1 | 1 | 1 | 1
-| 0 | 1 | 0 | 1 | 1 | 1 | 1 | 1
-| 1 | 0 | 0 | 1 | 1 | 0 | 1 | 1
-| 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1
+| T | T | T | T | T | T | T | T
+| F | T | T | T | T | T | T | T
+| T | F | T | F | T | T | T | T
+| F | F | T | T | T | T | T | T
+| T | T | F | T | F | F | F | T
+| F | T | F | T | F | F | T | F
+| T | F | F | F | T | T | T | T
+| F | F | F | T | F | T | T | F
 |===
 +
-it is valid and so '`or`' is associative.
-.. '`implies`' is associative if equals(implies(implies(A, B), C),
-   implies(A, implies(B, C))) is valid.
+it is not valid and so {implies} is not associative.
+.. {bicond} is associative if \(((A {bicond} B) {bicond} C) {bicond}
+   (A {bicond} (B {bicond} C))) is valid.
 +
 [cols="8*", options="header"]
 |===
 | A
 | B
 | C
-| implies(A, B)
-| implies(implies(A, B), C)
-| implies(B, C)
-| implies(A, implies(B, C))
-| equals(implies(implies(A, B), C), implies(A, implies(B, C)))
+| (A {bicond} B)
+| ((A {bicond} B) {bicond} C)
+| (B {bicond} C)
+| (A {bicond} (B {bicond} C))
+| \(((A {bicond} B) {bicond} C) {bicond} (A {bicond} (B {bicond} C)))
 
-| 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1
-| 0 | 1 | 1 | 1 | 1 | 1 | 1 | 1
-| 1 | 0 | 1 | 0 | 1 | 1 | 1 | 1
-| 0 | 0 | 1 | 1 | 1 | 1 | 1 | 1
-| 1 | 1 | 0 | 1 | 0 | 0 | 0 | 1
-| 0 | 1 | 0 | 1 | 0 | 0 | 1 | 0
-| 1 | 0 | 0 | 0 | 1 | 1 | 1 | 1
-| 0 | 0 | 0 | 1 | 0 | 1 | 1 | 0
+| T | T | T | T | T | T | T | T
+| F | T | T | F | F | T | F | T
+| T | F | T | F | F | F | F | T
+| F | F | T | T | T | F | T | T
+| T | T | F | T | F | F | F | T
+| F | T | F | F | T | F | T | T
+| T | F | F | F | T | T | T | T
+| F | F | F | T | F | T | F | T
 |===
 +
-it is not valid and so '`implies`' is not associative.
-.. '`equals`' is associative if equals(equals(equals(A, B), C),
-   equals(A, equals(B, C))) is valid.
-+
-[cols="8*", options="header"]
-|===
-| A
-| B
-| C
-| equals(A, B)
-| equals(equals(A, B), C)
-| equals(B, C)
-| equals(A, equals(B, C))
-| equals(equals(equals(A, B), C), equals(A, equals(B, C)))
-
-| 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1
-| 0 | 1 | 1 | 0 | 0 | 1 | 0 | 1
-| 1 | 0 | 1 | 0 | 0 | 0 | 0 | 1
-| 0 | 0 | 1 | 1 | 1 | 0 | 1 | 1
-| 1 | 1 | 0 | 1 | 0 | 0 | 0 | 1
-| 0 | 1 | 0 | 0 | 1 | 0 | 1 | 1
-| 1 | 0 | 0 | 0 | 1 | 1 | 1 | 1
-| 0 | 0 | 0 | 1 | 0 | 1 | 0 | 1
-|===
-+
-it is valid and so '`equals`' is associative.
+it is valid and so {bicond} is associative.
 
 
 :numbered:
