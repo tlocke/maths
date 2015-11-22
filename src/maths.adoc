@@ -989,7 +989,7 @@ so unsatisfiable.
 so the formula is unsatisfiable.
 .. (((P {and} {not}P) {and} Q) {and} R)
 +
-[cols="6*", options="header"]
+[cols="7*", options="header"]
 |===
 | P
 | Q
@@ -997,7 +997,7 @@ so the formula is unsatisfiable.
 | {not}Q
 | ({not}P {and} {not}Q)
 | {not}({not}P {and} {not}Q)
-| (({not}P {and} {not}Q) {and} {not}({not}P {and} {not}Q))
+| \(({not}P {and} {not}Q) {and} {not}({not}P {and} {not}Q))
 
 | T | T | F | F | F | T | F
 | F | T | T | F | F | T | F
