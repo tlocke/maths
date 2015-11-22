@@ -241,7 +241,32 @@ and write it using the atomic formulas to give the compound formula:
 (P {or} Q)
 
 You'll notice that the formulas have brackets round them. This is useful for
-making the order of evaluation clear when formulas get more complicated.
+later on when formulas get more complicated.
+
+Let's say that Abelard does like coffee, but doesn't like cake. Then:
+
+[example]
+P is true +
+Q is false
+
+Then using our common sense reasoning we know that it isn't true that Abelard likes coffee and likes cake, so this is written formally as:
+
+[example]
+(P {and} Q) +
+(true {and} false) +
+false
+
+and also we know that it is true that either Abelard likes coffee or Abelard
+likes cake and this is written formally as:
+
+[example]
+(P {or} Q) +
+(true {or} false) +
+true
+
+This process of taking a formula and substituting in the true or false values
+and working out if the formula as a whole is true or false, they call
+_evaluating_ the formula for particular values.
 
 
 :numbered!:
@@ -254,26 +279,72 @@ making the order of evaluation clear when formulas get more complicated.
 .. Four multiplied by two is twenty or it has never rained in Wales.
 .. Toothpaste is harder than diamond and less than 100 films have ever been
    made.
+. For each of the formulas in your answers to question 1, evalute them using
+  values of the atomic formulas from your general knowledge.
 
 
 ==== Answers
 
-. {empty}
-.. P: The film Erin Brokovich stars Julia Roberts. +
+. Write the following compound statements as formulas:
+.. The film Erin Brokovich stars Julia Roberts and 16 is greater than 4. +
+   P: The film Erin Brokovich stars Julia Roberts. +
    Q: 16 is greater than 4. +
    (P {and} Q)
-.. A: London is the capital of France. +
+.. London is the capital of France or Paris is the capital of France. +
+   A: London is the capital of France. +
    B: Paris is the capital of France. +
    (A {or} B)
-.. P: Some people have brown eyes. +
+.. Some people have brown eyes and humans lay eggs. +
+   P: Some people have brown eyes. +
    Q: Humans lay eggs. +
    (P {and} Q)
-.. P: Four multiplied by two is twenty. +
+.. Four multiplied by two is twenty or it has never rained in Wales. +
+   P: Four multiplied by two is twenty. +
    Q: It has never rained in Wales. +
    (P {or} Q)
-.. P: Toothpaste is harder than diamond. +
-   Q: Less than 100 films have ever been made. +
+.. Toothpaste is harder than diamond and less than 100 films have ever been
+   made. +
+   P: Toothpaste is harder than diamond. +
+   Q: Fewer than 100 films have ever been made. +
    (P {and} Q)
+. For each of the formulas in your answers to question 1, evalute them using
+  values of the atomic formulas from your general knowledge.
+.. The film Erin Brokovich stars Julia Roberts and 16 is greater than 4. +
+   P: The film Erin Brokovich stars Julia Roberts. +
+   Q: 16 is greater than 4. +
+   (P {and} Q) +
+   P is true +
+   Q is true +
+   (true {and} true) is true
+.. London is the capital of France or Paris is the capital of France. +
+   A: London is the capital of France. +
+   B: Paris is the capital of France. +
+   (A {or} B) +
+   A is false. +
+   B is true. +
+   (false {or} true) is true.
+.. Some people have brown eyes and humans lay eggs. +
+   P: Some people have brown eyes. +
+   Q: Humans lay eggs. +
+   (P {and} Q) +
+   P is true. +
+   Q is false. +
+   (true {and} false) is true.
+.. Four multiplied by two is twenty or it has never rained in Wales. +
+   P: Four multiplied by two is twenty. +
+   Q: It has never rained in Wales. +
+   (P {or} Q) +
+   P is false. +
+   Q is false. +
+   (false {or} false) is false. +
+.. Toothpaste is harder than diamond and less than 100 films have ever been
+   made. +
+   P: Toothpaste is harder than diamond. +
+   Q: Fewer than 100 films have ever been made. +
+   (P {and} Q) +
+   P is false. +
+   Q is false. +
+   (false {and} false) is false.
 
 
 :numbered:
@@ -296,29 +367,37 @@ the compound statement can be transated into two formulas with different
 meanings:
 
 [example]
-((P {or} Q) {and} R) +
-(P {or} (Q {and} R)
+\((P {or} Q) {and} R) +
+(P {or} (Q {and} R))
 
-We know that P is true, Q is false and R is false. That means that the first formula evaluates to false:
+'`Hold on, you blithely said that these two formulas have different meanings,
+but how do you know that?`'. Good point, erm, what would Bertrand Russell do?
+Bear with me.  Okay, using our geography knowledge we know that P is true, Q is
+false and R is false and so evaluating the first formula gives:
 
 [example]
+((P {or} Q) {and} R) +
 ((true {or} false) {and} false) +
 (true {and} false) +
 false
 
-and the second formula evaluates to true:
+and the second formula evaluates to:
 
 [example]
+(P {or} (Q {and} R)) +
 (true {or} (false {and} false)) +
 (true {or} false) +
 true
+
+So when substituting in the same values, the first formula evaluates to false
+and the second evaluates to true, and so the two formulas are different.
 
 I think what the Ivory Tower is teaching me here is that even though I started
 out translating from English (what they call a natural language) to formulas
 (what they call a formal language), it turns out that as well as being shorter,
 formulas are unambiguous. It seems to me that the English statements are just a
 jumping off point, and formulas are much better at describing this mathematical
-realm. W00t, I said, `mathematical realm`!!!
+realm. W00t, I said, '`mathematical realm`'!!!
 
 
 :numbered!:
@@ -328,6 +407,8 @@ realm. W00t, I said, `mathematical realm`!!!
   possible meanings as formulas.
 .. Two is less than four or Alaska begins with A and purple is a number.
 .. Purple is a number and Alaska begins with A or two is less than four.
+. For each of the answers in question 1, evaluate the formulas using the values
+  that you know from general knowledge.
 
 
 ==== Answers
@@ -343,6 +424,34 @@ realm. W00t, I said, `mathematical realm`!!!
 .. Purple is a number and Alaska begins with A or two is less than four. +
    (R {and} (Q {or} P)) +
    ((R {and} Q) {or} P)
+. For each of the answers in question 1, evaluate the formulas using the values
+  that you know from general knowledge.
+  P: Two is less than four. +
+  Q: Alaska begins with A. +
+  R: Purple is a number.
+  P is true +
+  Q is true
+  R is false
+.. Two is less than four or Alaska begins with A and purple is a number. +
+   (P {or} (Q {and} R)) +
+   (true {or} (true {and} false)) +
+   (true {or} false) +
+   true +
+    +
+   ((P {or} Q) {and} R) +
+   ((true {or} true) {and} false) +
+   (true {and} false) +
+   false +
+.. Purple is a number and Alaska begins with A or two is less than four. +
+   (R {and} (Q {or} P)) +
+   (false {and} (true {or} true)) +
+   (false {and} true) +
+   false +
+    +
+   ((R {and} Q) {or} P) +
+   ((false {and} true) {or} true) +
+   (false {or} true) +
+   true
 
 
 :numbered:
@@ -431,8 +540,8 @@ mathematical device for showing if a formula is true or false for every possible
 |===
 
 so what we've done is written a row for each interpretation of P and Q, and then
-in the final column put the value of (P {and} Q). The truth table for (P {or} Q)
-is:
+in the final column we've put the result of evaluating (P {and} Q). The truth
+table for (P {or} Q) is:
 
 |===
 | P | Q | (P {or} Q)
@@ -467,7 +576,7 @@ means the same as (Q {and} P).
 
 ==== Answers
 
-. {empty}
+. Use a truth table to show that (P {or} Q) means the same thing as (Q {or} P).
 +
 |===
 | P | Q | (P {or} Q) | (Q {or} P)
@@ -583,14 +692,14 @@ The {not} connective acts on one formula and so is called a _unary_ connective.
 |===
 | P | Q | R | (P {or} Q) | ((P {or} Q) {or} R) | {not}((P {or} Q) {or} R)
 
-| T | T | T | T        | T               | F
-| F | T | T | T        | T               | F
-| T | F | T | T        | T               | F
-| F | F | T | F        | T               | F
-| T | T | F | T        | T               | F
-| F | T | F | T        | T               | F
-| T | F | F | T        | T               | F
-| F | F | F | F        | F               | T
+| T | T | T | T          | T                   | F
+| F | T | T | T          | T                   | F
+| T | F | T | T          | T                   | F
+| F | F | T | F          | T                   | F
+| T | T | F | T          | T                   | F
+| F | T | F | T          | T                   | F
+| T | F | F | T          | T                   | F
+| F | F | F | F          | F                   | T
 |===
 +
 .. {not}((P {or} Q) {and} R)
@@ -598,14 +707,14 @@ The {not} connective acts on one formula and so is called a _unary_ connective.
 |===
 | P | Q | R | (P {or} Q) | ((P {or} Q) {and} R) | {not}((P {or} Q) {and} R)
 
-| T | T | T | T        | T                | F
-| F | T | T | T        | T                | F
-| T | F | T | T        | T                | F
-| F | F | T | F        | F                | T
-| T | T | F | T        | F                | T
-| F | T | F | T        | F                | T
-| T | F | F | T        | F                | T
-| F | F | F | F        | F                | T
+| T | T | T | T          | T                    | F
+| F | T | T | T          | T                    | F
+| T | F | T | T          | T                    | F
+| F | F | T | F          | F                    | T
+| T | T | F | T          | F                    | T
+| F | T | F | T          | F                    | T
+| T | F | F | T          | F                    | T
+| F | F | F | F          | F                    | T
 |===
 
 
@@ -630,13 +739,13 @@ Q is true
 the formula:
 
 [example]
-and(not(P), Q)
+({not}P {and} Q)
 
 evaluates to:
 
 [example]
-and(not(false), true) +
-and(true, true) +
+({not}false {and} true) +
+(true {and} true) +
 true
 
 since it's true, we can say that this interpretation satisfies this formula.
@@ -811,10 +920,10 @@ Tower such a formula is called a _valid formula_.
 |===
 | P | Q | {not}P | (P {or} Q) | ((P {or} Q) {or} {not}P)
 
-| T | T | F      | T        | T
-| F | T | T      | T        | T
-| T | F | F      | T        | T
-| F | F | T      | F        | T
+| T | T | F      | T          | T
+| F | T | T      | T          | T
+| T | F | F      | T          | T
+| F | F | T      | F          | T
 |===
 +
 so the formula is valid.
@@ -1036,7 +1145,7 @@ Another example; the truth table for (Q {implies} (P {and} {not}Q)) is:
 | F | F | T      | F
 |===
 .. (Q {implies} {not}Q)
-
++
 |===
 | Q | {not}Q | (Q {implies} {not}Q)
 
@@ -1071,7 +1180,7 @@ Another example; the truth table for (Q {implies} (P {and} {not}Q)) is:
 | T | F | F | T | F | T | T | T
 | F | F | F | T | T | T | T | T
 |===
-.. implies(and(P, implies(P, Q)), not(P))
+.. ((P {and} (P {implies} Q)) {implies} {not}P)
 +
 [cols="6*", options="header"]
 |===
@@ -1139,7 +1248,7 @@ Q: It's the 2nd of March. +
 .. (A {bicond} (B {and} C))
 .. (B {or} (A {bicond} B))
 .. (P {and} {not}(P {bicond} (Q {or} P)))
-.. ((Q {bicond} {not}P) {and} (P {bicond} {not}{not}Q))
+.. \((Q {bicond} {not}P) {and} (P {bicond} {not}{not}Q))
 
 
 ==== Answers
@@ -1298,7 +1407,7 @@ Hot on the heels of meeting the Material Implication identity, I encountered the
 Material Equality identity:
 
 [example]
-(P = Q) {equiv} (({not}P {or} Q) {and} (P {or} {not}Q))
+(P {bicond} Q) {equiv} \(({not}P {or} Q) {and} (P {or} {not}Q))
 
 Actually I found loads of these identities in the Tower, some with names, some
 without. I noted down the ones I thought were important, and the ones that had
@@ -1310,58 +1419,58 @@ a pattern to them and skipped over the rest. Is this the right approach?
 
 . Use the material equality identity to rewrite the following formulas while
   preserving their meaning:
-.. (P = Q)
-.. (({not}P {or} Q) {and} (P {or} {not}Q))
-.. ((P = Q) {and} P)
-.. (((P {or} Q) {and} ({not}P {or} {not}Q)) {or} {not}P)
+.. (P {bicond} Q)
+.. \(({not}P {or} Q) {and} (P {or} {not}Q))
+.. ((P {bicond} Q) {and} P)
+.. \(((P {or} Q) {and} ({not}P {or} {not}Q)) {or} {not}P)
 
 
 ==== Answers
 
 . Use the material equality identity to rewrite the following formulas while
   preserving their meaning:
-.. (P = Q) +
-   (({not}P {or} Q) {and} (P {or} {not}Q))
-.. (({not}P {or} Q) {and} (P {or} {not}Q)) +
-   (P = Q)
-.. ((P = Q) {and} P) +
+.. (P {bicond} Q) +
+   \(({not}P {or} Q) {and} (P {or} {not}Q))
+.. \(({not}P {or} Q) {and} (P {or} {not}Q)) +
+   (P {bicond} Q)
+.. \((P {bicond} Q) {and} P) +
    ((({not}P {or} Q) {and} (P {or} {not}Q)) {and} P)
-.. (((P {or} Q) {and} ({not}P {or} {not}Q)) {or} {not}P) +
-   ((P = Q) {or} {not}P)
+.. \(((P {or} Q) {and} ({not}P {or} {not}Q)) {or} {not}P) +
+   ((P {bicond} Q) {or} {not}P)
 
 
 :numbered:
 === Commutativity
 
-A special type of identity that some binary functions have is _commutativity_.
-The function '`and`' is commutative which means that:
+A special type of identity that some binary connectives have is _commutativity_.
+The connective {and} is commutative which means that:
 
 [example]
-and(A, B) {equiv} and(B, A)
+(A {and} B) {equiv} (B {and} A)
 
 This identity is called _conjunction commutativity_. Not all
 binary functions are commutative though. For example the pair of formulas:
 
 [example]
-implies(A, B) +
-implies(B, A)
+(A {implies} B) +
+(B {implies} A)
 
-is not and identity because:
+is not an identity because:
 
 [example]
-equals(implies(A, B), implies(B, A))
+\((A {implies} B) {bicond} (B {implies} A))
 
-is not a valid formula, and so '`implies`' is not commutative. Here's a table
-showing all the binary functions, and whether they're commutative or not, and if
+is not a valid formula, and so {implies} is not commutative. Here's a table
+showing the binary functions, and whether they're commutative or not, and if
 they are, giving the name of the associated identity.
 
 |===
 | Binary Function | Commutative? | Name Of Identity
 
-| and             | Yes          | conjunction commutativity
-| or              | Yes          | disjunction commutativity
-| implies         | No           |
-| equals          | Yes          | equality commutativity
+| {and}           | Yes          | conjunction commutativity
+| {or}            | Yes          | disjunction commutativity
+| {implies}       | No           |
+| {bicond}        | Yes          | biconditional commutativity
 |===
 
 
@@ -1373,67 +1482,68 @@ they are, giving the name of the associated identity.
 
 ==== Answers
 
-. {empty}
-.. '`and`' is commutative if equals(and(A, B), and(B, A)) is valid.
+. For each of the four binary functions use a truth table to show if they
+  are or are not commutative.
+.. {and} is commutative if \((A {and} B) {bicond} (B {and} A)) is valid.
 +
 |===
-| A | B | and(A, B) | and(B, A) | equals(and(A, B), and(B, A))
+| A | B | (A {and} B) | (B {and} A) | \((A {and} B) {bicond} (B {and} A))
 
-| 1 | 1 | 1         | 1         | 1
-| 0 | 1 | 0         | 0         | 1
-| 1 | 0 | 0         | 0         | 1
-| 0 | 0 | 0         | 0         | 1
+| T | T | T           | T           | T
+| F | T | F           | F           | T
+| T | F | F           | F           | T
+| F | F | F           | F           | T
 |===
 +
-so it is valid and so '`and`' is commutative.
-.. '`or`' is commutative if equals(or(A, B), or(B, A)) is valid.
+so it is valid and so {and} is commutative.
+.. {or} is commutative if \((A {or} B) {bicond} (B {or} A)) is valid.
 +
 |===
-| A | B | or(A, B) | or(B, A) | equals(or(A, B), or(B, A))
+| A | B | (A {or} B) | (B {or} A) | \((A {or} B) {bicond} (B {or} A))
 
-| 1 | 1 | 1          | 1      | 1
-| 0 | 1 | 1          | 1      | 1
-| 1 | 0 | 1          | 1      | 1
-| 0 | 0 | 0          | 0      | 1
+| T | T | T          | T          | T
+| F | T | T          | T          | T
+| T | F | T          | T          | T
+| F | F | F          | F          | T
 |===
 +
-so it is valid and so '`or`' is commutative.
-.. '`implies`' is commutative if equals(implies(A, B), implies(B, A)) is 
+so it is valid and so {or} is commutative.
+.. {implies} is commutative if \((A {implies} B) {bicond} (B {implies} A)) is 
    valid.
 +
 [cols="5*", options="header"]
 |===
 | A
 | B
-| implies(A, B)
-| implies(B, A)
-| equals(implies(A, B), equals(B, A))
+| (A {implies} B)
+| (B {implies} A)
+| \((A {implies} B) {bicond} (B {implies} A))
 
-| 1 | 1 | 1 | 1 | 1
-| 0 | 1 | 1 | 0 | 0
-| 1 | 0 | 0 | 1 | 0
-| 0 | 0 | 1 | 1 | 1
+| T | T | T | T | T
+| F | T | T | F | F
+| T | F | F | T | F
+| F | F | T | T | T
 |===
 +
-it is not valid and so '`implies`' is not commutative.
-.. '`equals`' is commutative if equals(equals(A, B), equals(B, A)) is
+it is not valid and so {implies} is not commutative.
+.. {bicond} is commutative if \((A {bicond} B) {bicond} (B {bicond} A)) is
    valid.
 +
 [cols="5*", options="header"]
 |===
 | A
 | B
-| equals(A, B)
-| equals(B, A)
-| equals(equals(A, B), equals(B, A))
+| (A {bicond} B)
+| (B {bicond} A)
+| \((A {bicond} B) {bicond} (B {bicond} A))
 
-| 1 | 1 | 1 | 1 | 1
-| 0 | 1 | 0 | 0 | 1
-| 1 | 0 | 0 | 0 | 1
-| 0 | 0 | 1 | 1 | 1
+| T | T | T | T | T
+| F | T | F | F | T
+| T | F | F | F | T
+| F | F | T | T | T
 |===
 +
-it is valid and so '`equals`' is commutative.
+it is valid and so {bicond} is commutative.
 
 
 :numbered:
