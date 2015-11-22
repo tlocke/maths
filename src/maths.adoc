@@ -954,19 +954,19 @@ Tower such a formula is called an _unsatisfiable formula_.
 ==== Questions
 
 . Using truth tables, show that the following formulas are unsatisfiable:
-.. ((P {and} Q) {and} {not}(P {and} Q))
+.. \((P {and} Q) {and} {not}(P {and} Q))
 .. (P {and} (Q {and} {not}P))
-.. (({not}P {and} {not}Q) {and} {not}({not}P {and} {not}Q))
+.. \(({not}P {and} {not}Q) {and} {not}({not}P {and} {not}Q))
 .. (((P {and} {not}P) {and} Q) {and} R)
 
 
 ==== Answers
 
 . Using truth tables, show that the following formulas are unsatisfiable:
-.. ((P {and} Q) {and} {not}(P {and} Q))
+.. \((P {and} Q) {and} {not}(P {and} Q))
 +
 |===
-| P | Q | (P {and} Q) | {not}(P {and} Q) | ((P {and} Q) {and} {not}(P {and} Q))
+| P | Q | (P {and} Q) | {not}(P {and} Q) | \((P {and} Q) {and} {not}(P {and} Q))
 
 | T | T | T           | F                | F
 | F | T | F           | T                | F
