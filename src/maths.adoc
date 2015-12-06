@@ -1115,7 +1115,7 @@ Another example; the truth table for (Q {implies} (P {and} {not}Q)) is:
 .. (Q {implies} {not}Q)
 .. ((P {implies} Q) {or} P)
 .. ({not}(P {and} Q) {implies} ({not}P {or} {not}Q))
-.. ((P {and} (P {implies} Q)) {implies} {not}P)
+.. \((P {and} (P {implies} Q)) {implies} {not}P)
 
 
 ==== Answers
@@ -1180,7 +1180,7 @@ Another example; the truth table for (Q {implies} (P {and} {not}Q)) is:
 | T | F | F | T | F | T | T | T
 | F | F | F | T | T | T | T | T
 |===
-.. ((P {and} (P {implies} Q)) {implies} {not}P)
+.. \((P {and} (P {implies} Q)) {implies} {not}P)
 +
 [cols="6*", options="header"]
 |===
@@ -1189,7 +1189,7 @@ Another example; the truth table for (Q {implies} (P {and} {not}Q)) is:
 | (P {implies} Q)
 | {not}P
 | (P {and} (P {implies} Q))
-| ((P {and} (P {implies} Q)) {implies} {not}P)
+| \((P {and} (P {implies} Q)) {implies} {not}P)
 
 | T | T | T | F | T | F
 | F | T | F | T | F | T
@@ -1382,7 +1382,7 @@ is called the _material implication identity_.
   preserving their meaning:
 .. (A {implies} B)
 .. ({not}A {or} B)
-.. (A, {not}B)
+.. (A {implies} {not}B)
 .. (A {or} B)
 
 
@@ -1449,7 +1449,7 @@ The connective {and} is commutative which means that:
 (A {and} B) {equiv} (B {and} A)
 
 This identity is called _conjunction commutativity_. Not all
-binary functions are commutative though. For example the pair of formulas:
+binary connectives are commutative though. For example the pair of formulas:
 
 [example]
 (A {implies} B) +
@@ -1697,33 +1697,37 @@ Another '`itivity`'. Here are the _distributivity_ identities:
 |===
 | Identity | Name
 
-| and(A, and(B, C)) {equiv} and(and(A, B), and(A, C))
-| Distribution of '`and`' over '`and`'
+| (A {and} (B {and} C)) {equiv} \((A {and} B) {and} (A {and} C))
+| Distribution of {and} over {and}
 
-| and(A, or(B, C)) {equiv} or(and(A, B), and(A, C))
-| Distribution of '`and`' over '`or`'
+| (A {and} (B {or} C)) {equiv} \((A {and} B) {or} (A {and} C))
+| Distribution of {and} over {or}
 
-| or(A, and(B, C)) {equiv} and(or(A, B), or(A, C))
-| Distribution of '`or`' over '`and`'
+| (A {or} (B {and} C)) {equiv} \((A {or} B) {and} (A {or} C))
+| Distribution of {or} over {and}
 
-| or(A, or(B, C)) {equiv} or(or(A, B), or(A, C))
-| Distribution of '`or`' over '`or`'
+| (A {or} (B {or} C)) {equiv} \((A {or} B) {or} (A {or} C))
+| Distribution of {or} over {or}
 
-| implies(A, implies(B, C)) {equiv} implies(implies(A, B), implies(A, C))
-| Distribution of '`implies`' over '`implies`'
+| (A {implies} (B {implies} C)) {equiv}
+  \((A {implies} B) {implies} (A {implies} C))
 
-| implies(A, equals(B, C)) {equiv} equals(implies(A, B), implies(A, C))
-| Distribution of '`implies`' over '`equals`'
+| Distribution of {implies} over {implies}
 
-| or(A, equals(B, C)) {equiv} equals(or(A, B), or(A, C))
-| Distribution of '`or`' over '`equals`'
+| (A {implies} (B {bicond} C)) {equiv}
+  \((A {implies} B) {bicond} (A {implies} C))
+
+| Distribution of {implies} over {bicond}
+
+| (A {or} (B {bicond} C)) {equiv} \((A {or} B) {bicond} (A {or} C))
+| Distribution of {or} over {bicond}
 |===
 
-Here's the pattern as I see it. If there are two functions y and z, then if
-y distributes over z then:
+Here's the pattern as I see it. If there are two binary connectives y and z,
+then if y distributes over z then:
 
 [example]
-y(A, z(B, C)) {equiv} z(y(A, B), y(A, C))
+(A y (B z C)) {equiv} \((A y B) z (A y C))
 
 
 :numbered!:
@@ -1731,44 +1735,45 @@ y(A, z(B, C)) {equiv} z(y(A, B), y(A, C))
 
 . For the following distributivity identities use a truth table to show that
   they really are identities.
-.. '`and`' over '`and`'
-.. '`implies`' over '`equals`'
-.. '`or`' over '`equals`'
+.. {and} over {and}
+.. {implies} over {bicond}
+.. {or} over {equals}
 
 
 ==== Answers
 
 . For the following distributivity identities use a truth table to show that
   they really are identities.
-.. If '`and`' is distributive over '`and`' then: +
-   equals(and(P, and(Q, R)), and(and(P, Q), and(P, R))) is valid.
+.. If {and} is distributive over {and} then: +
+   \((P {and} (Q {and} R)) {bicond} \((P {and} Q) {and} (P {and} R))) is valid.
 +
 [cols="9*", options="header"]
 |===
 | P
 | Q
 | R
-| and(Q, R)
-| and(P, and(Q, R))
-| and(P, Q)
-| and(P, R)
-| and(and(P, Q), and(P, R))
-| equals(and(P, and(Q, R)), and(and(P, Q), and(P, R)))
+| (Q {and} R)
+| (P {and} (Q {and} R))
+| (P {and} Q)
+| (P {and} R)
+| \((P {and} Q) {and} (P {and} R))
+| \((P {and} (Q {and} R)) {bicond} \((P {and} Q) {and} (P {and} R)))
 
-| 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1
-| 0 | 1 | 1 | 1 | 0 | 0 | 0 | 0 | 1
-| 1 | 0 | 1 | 0 | 0 | 0 | 1 | 0 | 1
-| 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1
-| 1 | 1 | 0 | 0 | 0 | 1 | 0 | 0 | 1
-| 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 1
-| 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1
-| 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1
+| T | T | T | T | T | T | T | T | T
+| F | T | T | T | F | F | F | F | T
+| T | F | T | F | F | F | T | F | T
+| F | F | T | F | F | F | F | F | T
+| T | T | F | F | F | T | F | F | T
+| F | T | F | F | F | F | F | F | T
+| T | F | F | F | F | F | F | F | T
+| F | F | F | F | F | F | F | F | T
 |===
 +
-the formula is indeed valid, so '`and`' is distributive over '`and`'.
-.. '`implies`' over '`equals`'
-.. If '`implies`' is distributive over '`equals`' then: +
-   equals(implies(P, equals(Q, R)), equals(implies(P, Q), implies(P, R))) +
+the formula is indeed valid, so {and} is distributive over {and}.
+.. {implies} over {bicond}
+   If {implies} is distributive over {bicond} then: +
+   \((P {implies} (Q {bicond} R)) {bicond}
+   \((P {implies} Q) {bicond} (P {implies} R))) +
    is valid.
 +
 [cols="9*", options="header"]
@@ -1776,26 +1781,27 @@ the formula is indeed valid, so '`and`' is distributive over '`and`'.
 | P
 | Q
 | R
-| equals(Q, R)
-| implies(P, equals(Q, R))
-| implies(P, Q)
-| implies(P, R)
-| equals(implies(P, Q), implies(P, R))
-| equals(implies(P, equals(Q, R)), equals(implies(P, Q), implies(P, R)))
+| (Q {bicond} R)
+| (P {implies} (Q {bicond} R))
+| (P {implies} Q)
+| (P {implies} R)
+| \((P {implies} Q) {bicond} (P {implies} R))
+| \((P {implies} (Q {bicond} R)) {bicond}
+  \((P {implies} Q) {bicond} (P {implies} R)))
 
-| 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1
-| 0 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1
-| 1 | 0 | 1 | 0 | 0 | 0 | 1 | 0 | 1
-| 0 | 0 | 1 | 0 | 1 | 1 | 1 | 1 | 1
-| 1 | 1 | 0 | 0 | 0 | 1 | 0 | 0 | 1
-| 0 | 1 | 0 | 0 | 1 | 1 | 1 | 1 | 1
-| 1 | 0 | 0 | 1 | 1 | 0 | 0 | 1 | 1
-| 0 | 0 | 0 | 1 | 1 | 1 | 1 | 1 | 1
+| T | T | T | T | T | T | T | T | T
+| F | T | T | T | T | T | T | T | T
+| T | F | T | F | F | F | T | F | T
+| F | F | T | F | T | T | T | T | T
+| T | T | F | F | F | T | F | F | T
+| F | T | F | F | T | T | T | T | T
+| T | F | F | T | T | F | F | T | T
+| F | F | F | T | T | T | T | T | T
 |===
 +
-the formula is indeed valid, so '`implies`' is distributive over '`equals`'.
-.. If '`or`' is distributive over '`equals`' then: +
-   equals(or(P, equals(Q, R)), equals(or(P, Q), or(P, R))) +
+the formula is indeed valid, so {implies} is distributive over {bicond}.
+.. If {or} is distributive over {bicond} then: +
+   \((P {or} (Q {bicond} R)) {bicond} \((P {or} Q) {bicond} (P {or} R))) +
    is valid.
 +
 [cols="9*", options="header"]
@@ -1803,24 +1809,24 @@ the formula is indeed valid, so '`implies`' is distributive over '`equals`'.
 | P
 | Q
 | R
-| equals(Q, R)
-| or(P, equals(Q, R))
-| or(P, Q)
-| or(P, R)
-| equals(or(P, Q), or(P, R))
-| equals(or(P, equals(Q, R)), equals(or(P, Q), or(P, R)))
+| (Q {bicond} R)
+| (P {or} (Q {bicond} R))
+| (P {or} Q)
+| (P {or} R)
+| \((P {or} Q) {bicond} (P {or} R))
+| \((P {or} (Q {bicond} R)) {bicond} \((P {or} Q) {bicond} (P {or} R)))
 
-| 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1
-| 0 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1
-| 1 | 0 | 1 | 0 | 1 | 1 | 1 | 1 | 1
-| 0 | 0 | 1 | 0 | 0 | 0 | 1 | 0 | 1
-| 1 | 1 | 0 | 0 | 1 | 1 | 1 | 1 | 1
-| 0 | 1 | 0 | 0 | 0 | 1 | 0 | 0 | 1
-| 1 | 0 | 0 | 1 | 1 | 1 | 1 | 1 | 1
-| 0 | 0 | 0 | 1 | 1 | 0 | 0 | 1 | 1
+| T | T | T | T | T | T | T | T | T
+| F | T | T | T | T | T | T | T | T
+| T | F | T | F | T | T | T | T | T
+| F | F | T | F | F | F | T | F | T
+| T | T | F | F | T | T | T | T | T
+| F | T | F | F | F | T | F | F | T
+| T | F | F | T | T | T | T | T | T
+| F | F | F | T | T | F | F | T | T
 |===
 +
-the formula is indeed valid, so '`or`' is distributive over '`equals`'.
+the formula is indeed valid, so {or} is distributive over {bicond}.
 
 
 :numbered:
@@ -1831,109 +1837,114 @@ the formula is indeed valid, so '`or`' is distributive over '`equals`'.
 image::benjaminpeirce.jpg[Benjamin Peirce]
 
 '`Hey, Tony`', Benjamin Peirce said as he tapped me on the knee and leaned over
-confidentially, '`there's another property of functions that I call
-_idempotence_`'. The '`and`' function is idempotent because:
+confidentially, '`there's another type of identity that I call _idempotence_`'. The {and} connective is idempotent because:
 
 [example]
-and(P, P) {equiv} P
+(P {and} P) {equiv} P
 
-and the '`or`' function is idempotent because:
-
-[example]
-or(P, P) {equiv} P
-
-but '`implies`' is not idempotent. We can show that '`or`' is idempotent by
-showing that:
+and the {or} connective is idempotent because:
 
 [example]
-equals(or(P, P), P)
+(P {or} P) {equiv} P
+
+but {implies} is not idempotent. So I think what Peirce was telling me is that
+a connective is idempotent if, when it joins a formula with itself, you end up
+with the formula again. Like those tricks where you end up with the number you
+first thought of. Ben showed me that {or} is idempotent by doing the following:
+
+[example]
+((P {or} P) {bicond} P)
 
 is valid, as shown by truth table:
 
 |===
-| P | or(P, P) | equals(or(P, P), P)
+| P | (P {or} P) | ((P {or} P) {bicond} P)
 
-| 1 | 1        | 1
-| 0 | 0        | 1
+| T | T          | T
+| F | F          | T
 |===
 
-and '`implies`' is not idempotent because:
+and {implies} is not idempotent because:
 
 [example]
-equals(implies(P, P), P)
+((P {implies} P) {bicond} P)
 
 is not valid, as shown by the truth table:
 
 |===
-| P | implies(P, P) | equals(implies(P, P), P)
+| P | (P {implies} P) | ((P {implies} P) {bicond} P)
 
-| 1 | 1             | 1
-| 0 | 1             | 0
+| T | T               | T
+| F | T               | F
 |===
 
 Here's a table showing whether each function is idempotent or not.
 
 |===
-| 0unction        | Idempotent? | Identity Name
+| Connective | Idempotent? | Identity Name
 
-| not             | Yes         | Idempotence of negation
-| and             | Yes         | Idempotence of conjunction
-| or              | Yes         | Idempotence of disjunction
-| implies         | No          |
-| equals          | No          |
+| {not}      | Yes         | Idempotence of negation
+| {and}      | Yes         | Idempotence of conjunction
+| {or}       | Yes         | Idempotence of disjunction
+| {implies}  | No          |
+| {bicond}   | No          |
 |===
 
-The unary function '`not`' is idempotent because:
+The unary connective {not} is idempotent because:
 
 [example]
-not(not(P)) {equiv} P
+{not}{not}P {bicond} P
+
+is valid.
 
 
 :numbered!:
 ==== Questions
 
-. For the following functions, use a truth table to show whether or not the
-  function is idempotent.
-.. equals
-.. and
+. For the following connectives, use a truth table to show whether or not the
+  connective is idempotent.
+.. {bicond}
+.. {and}
 . Use the idempotence of negation identity to simplify the following
   formulas:
-.. or(P, not(not(Q)))
-.. not(not(or(P, Q)))
-.. and(not(not(A)), not(not(B)))
+.. (P {or} {not}{not}Q)
+.. {not}{not}(P {or} Q)
+.. ({not}{not}A {and} {not}{not}B)
+
 
 ==== Answers
 
-. {empty}
-.. '`equals`' is not idempotent because: +
-   equals(equals(P, P), P) +
+. For the following connectives, use a truth table to show whether or not the
+  connective is idempotent.
+.. {bicond} is not idempotent because: +
+   ((P {bicond} P) {bicond} P) +
    is not valid, as shown by truth table:
 +
 |===
-| P | equals(P, P) | equals(equals(P, P), P)
+| P | (P {bicond} P) | ((P {bicond} P) {bicond} P)
 
-| 1 | 1            | 1
-| 0 | 1            | 0
+| T | T              | T
+| F | T              | F
 |===
-.. '`and`' is idempotent because: +
-   equals(and(P, P), P) +
+.. {and} is idempotent because: +
+   ((P {and} P) {bicond} P) +
    is valid, as shown by truth table:
 +
 |===
-| P | and(P, P) | equals(and(P, P), P)
+| P | (P {and} P) | ((P {and} P) {bicond} P)
 
-| 1 | 1         | 1
-| 0 | 0         | 1
+| T | T           | T
+| F | F           | T
 |===
 +
 . Use the idempotence of negation identity to simplify the following
   formulas:
-.. or(P, not(not(Q))) +
-   or(P, Q)
-.. not(not(or(P, Q))) +
-   or(P, Q)
-.. and(not(not(A)), not(not(B))) +
-   and(A, B)
+.. (P {or} {not}{not}Q) +
+   (P {or} Q)
+.. {not}{not}(P {or} Q) +
+   (P {or} Q)
+.. ({not}{not}A {and} {not}{not}B) +
+   (A {and} B)
 
 
 :numbered:
@@ -1944,12 +1955,12 @@ was a flautist. I've got no musical ability. De Morgan's Laws are a couple of
 identities:
 
 [example]
-and(A, B) {equiv} not(or(not(A), not(B)))
+(A {and} B) {equiv} {not}({not}A {or} {not}B)
 
 and:
 
 [example]
-or(A, B) {equiv} not(and(not(A), not(B)))
+(A {or} B) {equiv} {not}({not}A {and} {not}B)
 
 Some say they're obvious. Do you find them obvious? I don't.
 
@@ -1964,50 +1975,50 @@ Some say they're obvious. Do you find them obvious? I don't.
 
 . For De Morgan's laws, use a truth table to show that they are identities.
 .. If: +
-   and(A, B) {equiv} not(or(not(A), not(B))) +
+   (A {and} B) {equiv} {not}({not}A {or} {not}B) +
    then: +
-   equals(and(A, B), not(or(not(A), not(B)))) +
+   \((A {and} B) {bicond} {not}({not}A {or} {not}B)) +
    is valid. The truth table is:
 +
 [cols="8*", options="header"]
 |===
 | A
 | B
-| and(A, B)
-| not(A)
-| not(B)
-| or(not(A), not(B))
-| not(or(not(A), not(B)))
-| equals(and(A, B), not(or(not(A), not(B))))
+| (A {and} B)
+| {not}A
+| {not}B
+| ({not}A {or} {not}B)
+| {not}({not}A {or} {not}B)
+| \((A {and} B) {bicond} {not}({not}A {or} {not}B))
 
-| 1 | 1 | 1 | 0 | 0 | 0 | 1 | 1
-| 0 | 1 | 0 | 1 | 0 | 1 | 0 | 1
-| 1 | 0 | 0 | 0 | 1 | 1 | 0 | 1
-| 0 | 0 | 0 | 1 | 1 | 1 | 0 | 1
+| T | T | T | F | F | F | T | T
+| F | T | F | T | F | T | F | T
+| T | F | F | F | T | T | F | T
+| F | F | F | T | T | T | F | T
 |===
 +
 which shows it is valid, and so the two formulas are equivalent.
 .. If: +
-   or(A, B) {equiv} not(and(not(A), not(B))) +
+   (A {or} B) {equiv} {not}({not}A {and} {not}B) +
    then: +
-   or(A, B) {bicond} not(and(not(A), not(B)) +
+   \((A {or} B) {bicond} {not}({not}A {and} {not}B)) +
    is valid. The truth table for this formula is:
 +
 [cols="8*", options="header"]
 |===
 | A
 | B
-| or(A, B)
-| not(A)
-| not(B)
-| and(not(A), not(B))
-| not(and(not(A), not(B)))
-| equals(or(A, B), not(and(not(A), not(B)))) +
+| (A {or} B)
+| {not}A
+| {not}B
+| ({not}A {and} {not}B)
+| {not}({not}A {and} {not}B)
+| \((A {or} B) {bicond} {not}({not}A {and} {not}B)) +
 
-| 1 | 1 | 1 | 0 | 0 | 0 | 1 | 1
-| 0 | 1 | 1 | 1 | 0 | 0 | 1 | 1
-| 1 | 0 | 1 | 0 | 1 | 0 | 1 | 1
-| 0 | 0 | 0 | 1 | 1 | 1 | 0 | 1
+| T | T | T | F | F | F | T | T
+| F | T | T | T | F | F | T | T
+| T | F | T | F | T | F | T | T
+| F | F | F | T | T | T | F | T
 |===
 +
 which shows it is valid, and so the pair of formulas we started with is an

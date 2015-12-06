@@ -3111,7 +3111,7 @@ Abelard is at the cafe only if the cafe is open.
 <p>(&#x00AC;(P &#x2227; Q) &#x2192; (&#x00AC;P &#x2228; &#x00AC;Q))</p>
 </li>
 <li>
-<p>P &#x2227; (P &#x2192; Q &#x2192; &#x00AC;P)</p>
+<p>((P &#x2227; (P &#x2192; Q)) &#x2192; &#x00AC;P)</p>
 </li>
 </ol>
 </div>
@@ -3341,7 +3341,7 @@ B: The shepherds are delighted.<br>
 </table>
 </li>
 <li>
-<p>P &#x2227; (P &#x2192; Q &#x2192; &#x00AC;P)</p>
+<p>((P &#x2227; (P &#x2192; Q)) &#x2192; &#x00AC;P)</p>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 16%;">
@@ -3358,7 +3358,7 @@ B: The shepherds are delighted.<br>
 <th class="tableblock halign-left valign-top">(P &#x2192; Q)</th>
 <th class="tableblock halign-left valign-top">&#x00AC;P</th>
 <th class="tableblock halign-left valign-top">(P &#x2227; (P &#x2192; Q))</th>
-<th class="tableblock halign-left valign-top">P &#x2227; (P &#x2192; Q &#x2192; &#x00AC;P)</th>
+<th class="tableblock halign-left valign-top">((P &#x2227; (P &#x2192; Q)) &#x2192; &#x00AC;P)</th>
 </tr>
 </thead>
 <tbody>
@@ -3921,7 +3921,7 @@ preserving their meaning:</p>
 <p>(&#x00AC;A &#x2228; B)</p>
 </li>
 <li>
-<p>(A, &#x00AC;B)</p>
+<p>(A &#x2192; &#x00AC;B)</p>
 </li>
 <li>
 <p>(A &#x2228; B)</p>
@@ -4052,7 +4052,7 @@ The connective &#x2227; is commutative which means that:</p>
 </div>
 <div class="paragraph">
 <p>This identity is called <em>conjunction commutativity</em>. Not all
-binary functions are commutative though. For example the pair of formulas:</p>
+binary connectives are commutative though. For example the pair of formulas:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -4913,42 +4913,44 @@ valid.</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">and(A, and(B, C)) &#8801; and(and(A, B), and(A, C))</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Distribution of &#8216;and&#8217; over &#8216;and&#8217;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(A &#x2227; (B &#x2227; C)) &#8801; ((A &#x2227; B) &#x2227; (A &#x2227; C))</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Distribution of &#x2227; over &#x2227;</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">and(A, or(B, C)) &#8801; or(and(A, B), and(A, C))</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Distribution of &#8216;and&#8217; over &#8216;or&#8217;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(A &#x2227; (B &#x2228; C)) &#8801; ((A &#x2227; B) &#x2228; (A &#x2227; C))</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Distribution of &#x2227; over &#x2228;</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">or(A, and(B, C)) &#8801; and(or(A, B), or(A, C))</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Distribution of &#8216;or&#8217; over &#8216;and&#8217;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(A &#x2228; (B &#x2227; C)) &#8801; ((A &#x2228; B) &#x2227; (A &#x2228; C))</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Distribution of &#x2228; over &#x2227;</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">or(A, or(B, C)) &#8801; or(or(A, B), or(A, C))</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Distribution of &#8216;or&#8217; over &#8216;or&#8217;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(A &#x2228; (B &#x2228; C)) &#8801; ((A &#x2228; B) &#x2228; (A &#x2228; C))</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Distribution of &#x2228; over &#x2228;</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">implies(A, implies(B, C)) &#8801; implies(implies(A, B), implies(A, C))</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Distribution of &#8216;implies&#8217; over &#8216;implies&#8217;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(A &#x2192; (B &#x2192; C)) &#8801;
+  ((A &#x2192; B) &#x2192; (A &#x2192; C))</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Distribution of &#x2192; over &#x2192;</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">implies(A, equals(B, C)) &#8801; equals(implies(A, B), implies(A, C))</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Distribution of &#8216;implies&#8217; over &#8216;equals&#8217;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(A &#x2192; (B &#x2194; C)) &#8801;
+  ((A &#x2192; B) &#x2194; (A &#x2192; C))</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Distribution of &#x2192; over &#x2194;</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">or(A, equals(B, C)) &#8801; equals(or(A, B), or(A, C))</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Distribution of &#8216;or&#8217; over &#8216;equals&#8217;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(A &#x2228; (B &#x2194; C)) &#8801; ((A &#x2228; B) &#x2194; (A &#x2228; C))</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Distribution of &#x2228; over &#x2194;</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>Here&#8217;s the pattern as I see it. If there are two functions y and z, then if
-y distributes over z then:</p>
+<p>Here&#8217;s the pattern as I see it. If there are two binary connectives y and z,
+then if y distributes over z then:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
-y(A, z(B, C)) &#8801; z(y(A, B), y(A, C))
+(A y (B z C)) &#8801; ((A y B) z (A y C))
 </div>
 </div>
 <div class="sect3">
@@ -4961,13 +4963,13 @@ they really are identities.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>&#8216;and&#8217; over &#8216;and&#8217;</p>
+<p>&#x2227; over &#x2227;</p>
 </li>
 <li>
-<p>&#8216;implies&#8217; over &#8216;equals&#8217;</p>
+<p>&#x2192; over &#x2194;</p>
 </li>
 <li>
-<p>&#8216;or&#8217; over &#8216;equals&#8217;</p>
+<p>&#x2228; over {equals}</p>
 </li>
 </ol>
 </div>
@@ -4985,8 +4987,8 @@ they really are identities.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>If &#8216;and&#8217; is distributive over &#8216;and&#8217; then:<br>
-equals(and(P, and(Q, R)), and(and(P, Q), and(P, R))) is valid.</p>
+<p>If &#x2227; is distributive over &#x2227; then:<br>
+((P &#x2227; (Q &#x2227; R)) &#x2194; ((P &#x2227; Q) &#x2227; (P &#x2227; R))) is valid.</p>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 11%;">
@@ -5004,115 +5006,114 @@ equals(and(P, and(Q, R)), and(and(P, Q), and(P, R))) is valid.</p>
 <th class="tableblock halign-left valign-top">P</th>
 <th class="tableblock halign-left valign-top">Q</th>
 <th class="tableblock halign-left valign-top">R</th>
-<th class="tableblock halign-left valign-top">and(Q, R)</th>
-<th class="tableblock halign-left valign-top">and(P, and(Q, R))</th>
-<th class="tableblock halign-left valign-top">and(P, Q)</th>
-<th class="tableblock halign-left valign-top">and(P, R)</th>
-<th class="tableblock halign-left valign-top">and(and(P, Q), and(P, R))</th>
-<th class="tableblock halign-left valign-top">equals(and(P, and(Q, R)), and(and(P, Q), and(P, R)))</th>
+<th class="tableblock halign-left valign-top">(Q &#x2227; R)</th>
+<th class="tableblock halign-left valign-top">(P &#x2227; (Q &#x2227; R))</th>
+<th class="tableblock halign-left valign-top">(P &#x2227; Q)</th>
+<th class="tableblock halign-left valign-top">(P &#x2227; R)</th>
+<th class="tableblock halign-left valign-top">((P &#x2227; Q) &#x2227; (P &#x2227; R))</th>
+<th class="tableblock halign-left valign-top">((P &#x2227; (Q &#x2227; R)) &#x2194; ((P &#x2227; Q) &#x2227; (P &#x2227; R)))</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>the formula is indeed valid, so &#8216;and&#8217; is distributive over &#8216;and&#8217;.</p>
+<p>the formula is indeed valid, so &#x2227; is distributive over &#x2227;.</p>
 </div>
 </li>
 <li>
-<p>&#8216;implies&#8217; over &#8216;equals&#8217;</p>
-</li>
-<li>
-<p>If &#8216;implies&#8217; is distributive over &#8216;equals&#8217; then:<br>
-equals(implies(P, equals(Q, R)), equals(implies(P, Q), implies(P, R)))<br>
+<p>&#x2192; over &#x2194;
+If &#x2192; is distributive over &#x2194; then:<br>
+((P &#x2192; (Q &#x2194; R)) &#x2194;
+((P &#x2192; Q) &#x2194; (P &#x2192; R)))<br>
 is valid.</p>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -5131,112 +5132,113 @@ is valid.</p>
 <th class="tableblock halign-left valign-top">P</th>
 <th class="tableblock halign-left valign-top">Q</th>
 <th class="tableblock halign-left valign-top">R</th>
-<th class="tableblock halign-left valign-top">equals(Q, R)</th>
-<th class="tableblock halign-left valign-top">implies(P, equals(Q, R))</th>
-<th class="tableblock halign-left valign-top">implies(P, Q)</th>
-<th class="tableblock halign-left valign-top">implies(P, R)</th>
-<th class="tableblock halign-left valign-top">equals(implies(P, Q), implies(P, R))</th>
-<th class="tableblock halign-left valign-top">equals(implies(P, equals(Q, R)), equals(implies(P, Q), implies(P, R)))</th>
+<th class="tableblock halign-left valign-top">(Q &#x2194; R)</th>
+<th class="tableblock halign-left valign-top">(P &#x2192; (Q &#x2194; R))</th>
+<th class="tableblock halign-left valign-top">(P &#x2192; Q)</th>
+<th class="tableblock halign-left valign-top">(P &#x2192; R)</th>
+<th class="tableblock halign-left valign-top">((P &#x2192; Q) &#x2194; (P &#x2192; R))</th>
+<th class="tableblock halign-left valign-top">((P &#x2192; (Q &#x2194; R)) &#x2194;
+  ((P &#x2192; Q) &#x2194; (P &#x2192; R)))</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>the formula is indeed valid, so &#8216;implies&#8217; is distributive over &#8216;equals&#8217;.</p>
+<p>the formula is indeed valid, so &#x2192; is distributive over &#x2194;.</p>
 </div>
 </li>
 <li>
-<p>If &#8216;or&#8217; is distributive over &#8216;equals&#8217; then:<br>
-equals(or(P, equals(Q, R)), equals(or(P, Q), or(P, R)))<br>
+<p>If &#x2228; is distributive over &#x2194; then:<br>
+((P &#x2228; (Q &#x2194; R)) &#x2194; ((P &#x2228; Q) &#x2194; (P &#x2228; R)))<br>
 is valid.</p>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -5255,107 +5257,107 @@ is valid.</p>
 <th class="tableblock halign-left valign-top">P</th>
 <th class="tableblock halign-left valign-top">Q</th>
 <th class="tableblock halign-left valign-top">R</th>
-<th class="tableblock halign-left valign-top">equals(Q, R)</th>
-<th class="tableblock halign-left valign-top">or(P, equals(Q, R))</th>
-<th class="tableblock halign-left valign-top">or(P, Q)</th>
-<th class="tableblock halign-left valign-top">or(P, R)</th>
-<th class="tableblock halign-left valign-top">equals(or(P, Q), or(P, R))</th>
-<th class="tableblock halign-left valign-top">equals(or(P, equals(Q, R)), equals(or(P, Q), or(P, R)))</th>
+<th class="tableblock halign-left valign-top">(Q &#x2194; R)</th>
+<th class="tableblock halign-left valign-top">(P &#x2228; (Q &#x2194; R))</th>
+<th class="tableblock halign-left valign-top">(P &#x2228; Q)</th>
+<th class="tableblock halign-left valign-top">(P &#x2228; R)</th>
+<th class="tableblock halign-left valign-top">((P &#x2228; Q) &#x2194; (P &#x2228; R))</th>
+<th class="tableblock halign-left valign-top">((P &#x2228; (Q &#x2194; R)) &#x2194; ((P &#x2228; Q) &#x2194; (P &#x2228; R)))</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>the formula is indeed valid, so &#8216;or&#8217; is distributive over &#8216;equals&#8217;.</p>
+<p>the formula is indeed valid, so &#x2228; is distributive over &#x2194;.</p>
 </div>
 </li>
 </ol>
@@ -5375,29 +5377,30 @@ is valid.</p>
 </div>
 <div class="paragraph">
 <p>&#8216;Hey, Tony&#8217;, Benjamin Peirce said as he tapped me on the knee and leaned over
-confidentially, &#8216;there&#8217;s another property of functions that I call
-<em>idempotence</em>&#8217;. The &#8216;and&#8217; function is idempotent because:</p>
+confidentially, &#8216;there&#8217;s another type of identity that I call <em>idempotence</em>&#8217;. The &#x2227; connective is idempotent because:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
-and(P, P) &#8801; P
+(P &#x2227; P) &#8801; P
 </div>
 </div>
 <div class="paragraph">
-<p>and the &#8216;or&#8217; function is idempotent because:</p>
+<p>and the &#x2228; connective is idempotent because:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
-or(P, P) &#8801; P
+(P &#x2228; P) &#8801; P
 </div>
 </div>
 <div class="paragraph">
-<p>but &#8216;implies&#8217; is not idempotent. We can show that &#8216;or&#8217; is idempotent by
-showing that:</p>
+<p>but &#x2192; is not idempotent. So I think what Peirce was telling me is that
+a connective is idempotent if, when it joins a formula with itself, you end up
+with the formula again. Like those tricks where you end up with the number you
+first thought of. Ben showed me that &#x2228; is idempotent by doing the following:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
-equals(or(P, P), P)
+((P &#x2228; P) &#x2194; P)
 </div>
 </div>
 <div class="paragraph">
@@ -5412,29 +5415,29 @@ equals(or(P, P), P)
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">P</th>
-<th class="tableblock halign-left valign-top">or(P, P)</th>
-<th class="tableblock halign-left valign-top">equals(or(P, P), P)</th>
+<th class="tableblock halign-left valign-top">(P &#x2228; P)</th>
+<th class="tableblock halign-left valign-top">((P &#x2228; P) &#x2194; P)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>and &#8216;implies&#8217; is not idempotent because:</p>
+<p>and &#x2192; is not idempotent because:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
-equals(implies(P, P), P)
+((P &#x2192; P) &#x2194; P)
 </div>
 </div>
 <div class="paragraph">
@@ -5449,20 +5452,20 @@ equals(implies(P, P), P)
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">P</th>
-<th class="tableblock halign-left valign-top">implies(P, P)</th>
-<th class="tableblock halign-left valign-top">equals(implies(P, P), P)</th>
+<th class="tableblock halign-left valign-top">(P &#x2192; P)</th>
+<th class="tableblock halign-left valign-top">((P &#x2192; P) &#x2194; P)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
 </tr>
 </tbody>
 </table>
@@ -5477,61 +5480,64 @@ equals(implies(P, P), P)
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">0unction</th>
+<th class="tableblock halign-left valign-top">Connective</th>
 <th class="tableblock halign-left valign-top">Idempotent?</th>
 <th class="tableblock halign-left valign-top">Identity Name</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">not</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x00AC;</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Idempotence of negation</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">and</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2227;</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Idempotence of conjunction</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">or</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2228;</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Idempotence of disjunction</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">implies</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2192;</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">equals</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2194;</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>The unary function &#8216;not&#8217; is idempotent because:</p>
+<p>The unary connective &#x00AC; is idempotent because:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
-not(not(P)) &#8801; P
+&#x00AC;&#x00AC;P &#x2194; P
 </div>
+</div>
+<div class="paragraph">
+<p>is valid.</p>
 </div>
 <div class="sect3">
 <h4 id="_questions_19">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>For the following functions, use a truth table to show whether or not the
-function is idempotent.</p>
+<p>For the following connectives, use a truth table to show whether or not the
+connective is idempotent.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>equals</p>
+<p>&#x2194;</p>
 </li>
 <li>
-<p>and</p>
+<p>&#x2227;</p>
 </li>
 </ol>
 </div>
@@ -5542,13 +5548,13 @@ formulas:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>or(P, not(not(Q)))</p>
+<p>(P &#x2228; &#x00AC;&#x00AC;Q)</p>
 </li>
 <li>
-<p>not(not(or(P, Q)))</p>
+<p>&#x00AC;&#x00AC;(P &#x2228; Q)</p>
 </li>
 <li>
-<p>and(not(not(A)), not(not(B)))</p>
+<p>(&#x00AC;&#x00AC;A &#x2227; &#x00AC;&#x00AC;B)</p>
 </li>
 </ol>
 </div>
@@ -5561,12 +5567,13 @@ formulas:</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p></p>
+<p>For the following connectives, use a truth table to show whether or not the
+connective is idempotent.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>&#8216;equals&#8217; is not idempotent because:<br>
-equals(equals(P, P), P)<br>
+<p>&#x2194; is not idempotent because:<br>
+((P &#x2194; P) &#x2194; P)<br>
 is not valid, as shown by truth table:</p>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -5577,27 +5584,27 @@ is not valid, as shown by truth table:</p>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">P</th>
-<th class="tableblock halign-left valign-top">equals(P, P)</th>
-<th class="tableblock halign-left valign-top">equals(equals(P, P), P)</th>
+<th class="tableblock halign-left valign-top">(P &#x2194; P)</th>
+<th class="tableblock halign-left valign-top">((P &#x2194; P) &#x2194; P)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
 </tr>
 </tbody>
 </table>
 </li>
 <li>
-<p>&#8216;and&#8217; is idempotent because:<br>
-equals(and(P, P), P)<br>
+<p>&#x2227; is idempotent because:<br>
+((P &#x2227; P) &#x2194; P)<br>
 is valid, as shown by truth table:</p>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -5608,20 +5615,20 @@ is valid, as shown by truth table:</p>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">P</th>
-<th class="tableblock halign-left valign-top">and(P, P)</th>
-<th class="tableblock halign-left valign-top">equals(and(P, P), P)</th>
+<th class="tableblock halign-left valign-top">(P &#x2227; P)</th>
+<th class="tableblock halign-left valign-top">((P &#x2227; P) &#x2194; P)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 </tbody>
 </table>
@@ -5635,16 +5642,16 @@ formulas:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>or(P, not(not(Q)))<br>
-or(P, Q)</p>
+<p>(P &#x2228; &#x00AC;&#x00AC;Q)<br>
+(P &#x2228; Q)</p>
 </li>
 <li>
-<p>not(not(or(P, Q)))<br>
-or(P, Q)</p>
+<p>&#x00AC;&#x00AC;(P &#x2228; Q)<br>
+(P &#x2228; Q)</p>
 </li>
 <li>
-<p>and(not(not(A)), not(not(B)))<br>
-and(A, B)</p>
+<p>(&#x00AC;&#x00AC;A &#x2227; &#x00AC;&#x00AC;B)<br>
+(A &#x2227; B)</p>
 </li>
 </ol>
 </div>
@@ -5662,7 +5669,7 @@ identities:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
-and(A, B) &#8801; not(or(not(A), not(B)))
+(A &#x2227; B) &#8801; &#x00AC;(&#x00AC;A &#x2228; &#x00AC;B)
 </div>
 </div>
 <div class="paragraph">
@@ -5670,7 +5677,7 @@ and(A, B) &#8801; not(or(not(A), not(B)))
 </div>
 <div class="exampleblock">
 <div class="content">
-or(A, B) &#8801; not(and(not(A), not(B)))
+(A &#x2228; B) &#8801; &#x00AC;(&#x00AC;A &#x2227; &#x00AC;B)
 </div>
 </div>
 <div class="paragraph">
@@ -5696,9 +5703,9 @@ or(A, B) &#8801; not(and(not(A), not(B)))
 <ol class="loweralpha" type="a">
 <li>
 <p>If:<br>
-and(A, B) &#8801; not(or(not(A), not(B)))<br>
+(A &#x2227; B) &#8801; &#x00AC;(&#x00AC;A &#x2228; &#x00AC;B)<br>
 then:<br>
-equals(and(A, B), not(or(not(A), not(B))))<br>
+((A &#x2227; B) &#x2194; &#x00AC;(&#x00AC;A &#x2228; &#x00AC;B))<br>
 is valid. The truth table is:</p>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -5715,54 +5722,54 @@ is valid. The truth table is:</p>
 <tr>
 <th class="tableblock halign-left valign-top">A</th>
 <th class="tableblock halign-left valign-top">B</th>
-<th class="tableblock halign-left valign-top">and(A, B)</th>
-<th class="tableblock halign-left valign-top">not(A)</th>
-<th class="tableblock halign-left valign-top">not(B)</th>
-<th class="tableblock halign-left valign-top">or(not(A), not(B))</th>
-<th class="tableblock halign-left valign-top">not(or(not(A), not(B)))</th>
-<th class="tableblock halign-left valign-top">equals(and(A, B), not(or(not(A), not(B))))</th>
+<th class="tableblock halign-left valign-top">(A &#x2227; B)</th>
+<th class="tableblock halign-left valign-top">&#x00AC;A</th>
+<th class="tableblock halign-left valign-top">&#x00AC;B</th>
+<th class="tableblock halign-left valign-top">(&#x00AC;A &#x2228; &#x00AC;B)</th>
+<th class="tableblock halign-left valign-top">&#x00AC;(&#x00AC;A &#x2228; &#x00AC;B)</th>
+<th class="tableblock halign-left valign-top">((A &#x2227; B) &#x2194; &#x00AC;(&#x00AC;A &#x2228; &#x00AC;B))</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 </tbody>
 </table>
@@ -5772,9 +5779,9 @@ is valid. The truth table is:</p>
 </li>
 <li>
 <p>If:<br>
-or(A, B) &#8801; not(and(not(A), not(B)))<br>
+(A &#x2228; B) &#8801; &#x00AC;(&#x00AC;A &#x2227; &#x00AC;B)<br>
 then:<br>
-or(A, B) &#x2194; not(and(not(A), not(B))<br>
+((A &#x2228; B) &#x2194; &#x00AC;(&#x00AC;A &#x2227; &#x00AC;B))<br>
 is valid. The truth table for this formula is:</p>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -5791,54 +5798,54 @@ is valid. The truth table for this formula is:</p>
 <tr>
 <th class="tableblock halign-left valign-top">A</th>
 <th class="tableblock halign-left valign-top">B</th>
-<th class="tableblock halign-left valign-top">or(A, B)</th>
-<th class="tableblock halign-left valign-top">not(A)</th>
-<th class="tableblock halign-left valign-top">not(B)</th>
-<th class="tableblock halign-left valign-top">and(not(A), not(B))</th>
-<th class="tableblock halign-left valign-top">not(and(not(A), not(B)))</th>
-<th class="tableblock halign-left valign-top">equals(or(A, B), not(and(not(A), not(B))))<br></th>
+<th class="tableblock halign-left valign-top">(A &#x2228; B)</th>
+<th class="tableblock halign-left valign-top">&#x00AC;A</th>
+<th class="tableblock halign-left valign-top">&#x00AC;B</th>
+<th class="tableblock halign-left valign-top">(&#x00AC;A &#x2227; &#x00AC;B)</th>
+<th class="tableblock halign-left valign-top">&#x00AC;(&#x00AC;A &#x2227; &#x00AC;B)</th>
+<th class="tableblock halign-left valign-top">((A &#x2228; B) &#x2194; &#x00AC;(&#x00AC;A &#x2227; &#x00AC;B))<br></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 </tbody>
 </table>
@@ -10021,7 +10028,7 @@ propositional logic)</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-11-22 22:47:16 GMT
+Last updated 2015-12-06 18:04:55 GMT
 </div>
 </div>
 </body>
