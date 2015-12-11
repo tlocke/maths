@@ -15,6 +15,7 @@ Tony Locke
 :ne: &#x2260;
 :nequiv: &#x2262;
 :brarr: &#x21A6;
+:emptyset: &#x2205;
 :toc:
 
 :numbered:
@@ -2032,7 +2033,7 @@ identity.
 .http://commons.wikimedia.org/wiki/File:Young_frege.jpg#media/File:Young_frege.jpg[Gottlob Frege] Licensed under Public Domain via http://commons.wikimedia.org/wiki/[Wikimedia Commons].
 image::gottlob_frege.jpg[Gottlob Frege]
 
-'`Tony`', '`Yes Professor Frege?`', '`You should really start with _sets_`',
+'`Tony`', '`Yes Professor Frege?`', '`You should really learn about _sets_`',
 '`Okay, whatevs Prof`'.
 
 === What's A Set?
@@ -2056,22 +2057,46 @@ When the set includes an elipsis (...) at one end or both, it denotes an
 infinite series. An ellipsis in the middle of a set of elements is used to
 save writing out all the items of an obvious set.
 
-Strangely enough, a set with a finite number of elements is a _finite set_
-and a set with an infinite number of elements is an _infinite set_.
+The terms _finite set_ and _infinite set_ mean what you think they mean, a set
+with a finite number of elements and a set with an infinite number of elements.
+
+
+:numbered!:
+==== Questions
+
+. Write out the following sets in set notation:
+.. Vowels
+.. Minutes on a clock
+.. Days of the week
+. For the sets in question 1, say whether they are finite or infinite.
+
+
+==== Answers
+
+. Write out the following sets in set notation:
+.. Vowels +
+   {A, E, I, O, U}
+.. Minutes on a clock +
+   {0, 1, 2, ..., 57, 58, 59}
+.. Days of the week +
+   {Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday}
+. For the sets in question 1, say whether they are finite or infinite. +
+  They are all finite.
+
 
 :numbered:
-=== Identity
+=== Equality
 
-If two sets have exactly the same elements in them, then they form an
-_identity_. In set notation, if sets A and B are and identity they write:
-
-[example]
-A {equiv} B
-
-if A and B aren't an identity they write:
+If two sets have exactly the same elements in them, then they are equal. In set
+notation, if sets A and B are equal, set theorists write:
 
 [example]
-A {nequiv} B
+A = B
+
+if A and B aren't equal they write:
+
+[example]
+A {ne} B
 
 Let's say we've got two sets S and T:
 
@@ -2079,11 +2104,11 @@ Let's say we've got two sets S and T:
 S is {1, 2} +
 T is {2, 1}
 
-S and T are an identity because all that matters for identity is that the two
-sets have the same elements in them. So we can write:
+S and T are equal because all that matters for identity is that the two sets
+have the same elements in them. So we can write:
 
 [example]
-S {equiv} T
+S = T
 
 Let's make up two sets A and B:
 
@@ -2091,20 +2116,40 @@ Let's make up two sets A and B:
 A is {1, 2, 2} +
 B is {1, 2}
 
-Sets don't have any duplicates so the two sets A and B are an identity
-and we can write:
+Sets don't have any duplicates so the two sets A and B are equal and we can
+write:
 
 [example]
-A {equiv} B
+A = B
 
 '`Hey, you said that sets can't have duplicates, but then you wrote `{1, 2, 2}`.
 What gives?`'. When you write `{1, 2, 2}`, you're describing a
-set with two elements, `1` and `2`. So `{1, 2, 2}` {equiv} `{1, 2}`. So these
+set with two elements, `1` and `2`. So `{1, 2, 2}` = `{1, 2}`. So these
 are two ways of describing the same set. '`Well, okay I suppose. I have to say
 I'm not entirely convinced, but carry on for now`'.
 
 
+:numbered!:
+==== Questions
 
+. For the following sets, say if they're equal or not:
+.. {1, 5, 8} and {1, 6, 8}
+.. {1, 5, 8, 1} and {1, 5, 8}
+.. {8, 5, 1} and {1, 5, 8}
+
+
+==== Answers
+
+. For the following sets, say if they're equal or not:
+.. {1, 5, 8} and {1, 6, 8} +
+   Not equal. 
+.. {1, 5, 8, 1} and {1, 5, 8}
+   Duplicates don't matter, so equal.
+.. {8, 5, 1} and {1, 5, 8}
+   Order doesn't matter, so equal.
+
+
+:numbered:
 === Common Sets Of Numbers
 
 Some sets of numbers are common enough to have their own names and symbols:
@@ -2136,7 +2181,7 @@ infinity.
 By convention, 1 is interpreted as true, and 0 as false.
 
 | Empty Set
-|
+| {emptyset}
 | {}
 |===
 
@@ -2156,7 +2201,7 @@ In terms of sets, Russell's Paradox is asking, what's the set of all sets that
 don't have themselves as an element? That set doesn't exist.
 
 So, that's solved it in maths language, but how should you have answered the
-chief librarian? Well, you should say that the book (set) he's asked for can't
+chief librarian? Well, you could say that the book (set) he's asked for can't
 exist. But you can write a book (set), which has the same
 contents as has been requested, except that it doesn't contain itself.
 
@@ -2175,369 +2220,7 @@ They also told me that there's a paradox with the set of all sets, so that
 doesn't exist either. As it seems to me, a paradox is something that is clearly
 incorrect, but you can't see the flaw in the argument. Of course, all paradoxes
 can be resolved, and the resolution deepens one's understanding. '`Ooh, hark at
-him pontificating on the philosophy of it all!!`'. Okay, okay.
-
-
-=== Tuples
-
-'`Wait, you say that with sets, ordering doesn't matter, but in lots of
-things ordering _does_ matter. What about a list of countries in alphabetical
-order?`'
-
-Yes, good point reader. Remember I'm still learning this stuff too, you know.
-I'll get back to you...
-
-...I'm back, got it all worked out. Here's our set of countries:
-
-[example]
-{'`UK`', '`Germany`', '`Spain`'}
-
-Now adding alphabetical ordering:
-
-[example]
-{{'`UK`', 3}, {'`Germany`', 1}, {'`Spain`', 2}}
-
-So we've made a set of sets. The inner sets have the country and their position
-in the alphabetical order. Ordered sets occur quite often in maths, so they're
-given the name _tuples_ and denoted by surrounding the elements with brackets,
-so:
-
-[example]
-{{'`UK`', 3}, {'`Germany`', 1}, {'`Spain`', 2}} {equiv}
-('Germany', '`Spain`', '`UK`')
-
-Here are the names of tuples based on the number of elements they contain...
-
-|===
-| Number Of Elements | Name   | Example
-
-| 0                  | Nuple  | ()
-| 1                  | Single | (8)
-| 2                  | Double | (7, 4)
-| 3                  | Triple | ('`bear`', '`tiger`', '`sheep`')
-|===
-
-Actually, I made up '`nuple`'. It's commonly called '`the empty tuple`'.
-
-
-=== Functions
-
-In the tower they fiddle around a lot with functions. A function is a set
-that relates a set of tuples (the _domain_) to another set (the _codomain_).
-For any tuple (called the '`input`') of the domain there's a double in the
-function of the form:
-
-[example]
-(input, output)
-
-where '`output`' is an element of the _codomain_.
-
-'`That sounds all very clever and fancy, but what do you actually mean?`' Well
-an example I found in the tower is the `add_one` function which has as its
-domain *Z*^1^:
-
-[example]
-*Z*^1^ {equiv} {..., (-2), (-1), (0), (1), (2), ...}
-
-The codomain of `add_one` is *Z*, and the relationship is:
-
-[example]
-add_one {equiv} {..., ( (-2), -1), ( (-1), 0), ( (0), 1), ( (1), 2), ...}
-
-and if you want to talk about individual inputs and outputs of a function, you
-can write:
-
-[example]
-add_one(-2) {equiv} -1 +
-add_one(70) {equiv} 71 +
-add_one(4002) {equiv} 4003 +
-
-We've defined the function `add_one` in words and through examples and using
-the ellipses (and the clue is in the name of the function!) but I saw that
-mostly, mathematicians will define a function using mathematical notation, so
-they'll write:
-
-[example]
-add_one(x) {equiv} x + 1
-
-They'll often use the letter `x`, but it needn't be. Could be anything. Eg:
-
-[example]
-add_one(H) {equiv} H + 1
-
-Another example. Let's make up another function called `mult_ten`. The domain
-will be *Z*^1^ and the codomain *Z* as in the previous example. The relationship
-is defined as:
-
-[example]
-mult_ten(x) {equiv} x * 10
-
-Let's try it out with some inputs and see what the outputs are:
-
-[example]
-mult_ten(1) {equiv} 10 +
-mult_ten(8) {equiv} 80 +
-mult_ten(0) {equiv} 0 +
-
-In the previous examples we chose domains of singles, but let's create a
-function that has a domain of doubles. So let's create a function called
-`mult_add` with the domain *Z*^2^. Now *Z*^2^ is the set of doubles which are
-all possible combinations of an element of *Z* followed by another element of
-*Z* which is shown in this table:
-
-[cols="8*", options="header"]
-|===
-|
-| ...
-| -2
-| -1
-| 0
-| 1
-| 2
-| ...
-
-| ...
-| (..., ...)
-| (..., -2)
-| (..., -1)
-| (..., 0)
-| (..., 1)
-| (..., 2)
-| (..., ...)
-
-| -2
-| (-2, ...)
-| (-2, -2)
-| (-2, -1)
-| (-2, 0)
-| (-2, 1)
-| (-2, 2)
-| (-2, ...)
-
-| -1
-| (-1, ...)
-| (-1, -2)
-| (-1, -1)
-| (-1, 0)
-| (-1, 1)
-| (-1, 2)
-| (-1, ...)
-
-| 0 
-| (0, ...)
-| (0, -2)
-| (0, -1)
-| (0, 0)
-| (0, 1)
-| (0, 2)
-| (0, ...)
-
-| 1 
-| (1, ...)
-| (1, -2)
-| (1, -1)
-| (1, 0)
-| (1, 1)
-| (1, 2)
-| (1, ...)
-
-| 2 
-| (2, ...)
-| (2, -2)
-| (2, -1)
-| (2, 0)
-| (2, 1)
-| (2, 2)
-| (2, ...)
-
-| ... 
-| (..., ...)
-| (..., -2)
-| (..., -1)
-| (..., 0)
-| (..., 1)
-| (..., 2)
-| (..., ...)
-|===
-
-The codomain of `mult_add` is *Z*, and the relationship between the domain and
-codomain is defined by:
-
-[example]
-mult_add(x, y) {equiv} x * 2 + y
-
-Let's try it out with some inputs and see what the outputs are:
-
-[example]
-mult_add(1, 6) {equiv} 8 +
-mult_add(8, 3) {equiv} 19 +
-mult_add(0, 2) {equiv} 2 +
-
-Functions whose input is a single are called _unary_ functions, and functions
-whose input is a double are called _binary_ functions. Can we have functions
-whose input is the nuple?
-
-[[img-obama]]
-image::obama.jpg[Yes we can!]
-
-Let's define a function called `five`, it'll have the domain {()} and the
-codomain *Z*. The function just contains one double:
-
-[example]
-( (), 5)
-
-so:
-
-[example]
-five() {equiv} 5
-
-=== Direct Product
-
-The 
-
-
-=== Is In
-
-Set theoreticians use the symbol {isin} to mean '`is an element of`'. So if
-there was an element `x` that was in a set `A` we could abbreviate that to:
-
-[example]
-x {isin} A
-
-Conversely, they use the symbol {notin} to mean '`is not an element of`'. Eg.
-
-[example]
-x {notin} A
-
-
-=== Indicator Function
-
-Those wacky mathematicians have come up with a binary function called the
-_indicator function_, denoted by *1*, that has as its input a double consisting
-of an element and a set. The function is defined as:
-
-* Domain: The set of doubles of all possible combinations of (element, set).
-* Codomain: *B*
-* *1*(x, A) {equiv} true if x {isin} A otherwise false
-
-[example]
-*1*(1, *Z*) {equiv} true +
-*1*('France', *Z*) {equiv} false +
-*1*(-1000, {red, green, blue}) {equiv} false +
-
-
-=== Subset
-
-Another binary function with codomain *B* is the subset function that has the
-symbol {sube}. The subset function is defined as:
-
-* Domain: The set of doubles of all possible combination of (set, set)
-* Codomain: *B*
-* {sube}(A, B) {equiv} true if and only if all the elements of A are also in B,
-otherwise false.
-
-So if A is a subset of B we can write:
-
-[example]
-{sube}(A, B) {equiv} true
-
-Following this definition of a subset, every set is a subset of itself. So it's
-always true that:
-
-[example]
-{sube}(A, A) {equiv} true
-
-By the way, the domain of {sube} crops up quite a lot in definitions of
-functions, so I'll give it the name *S*, so from now on:
-
-[example]
-*S* {equiv} The set of doubles of all possible combination of (set, set)
-
-
-=== Equals
-
-The symbol for the _equals_ function is `=`, and it's defined as:
-
-* Domain: *S*
-* Codomain: *B*
-* =(A, B) {equiv} true if A and B form an identiy, otherwise false.
-
-
-=== Proper Subset
-
-The symbol for the _proper subset_ function is `{sube}`, and it's defined as:
-
-* Domain: *S*
-* Codomain: *B*
-* {sub}(A, B) {equiv} true if `{sube}(A, B)` is true and A {nequiv} B.
-
-
-=== Union
-
-[example]
-{cup}: *S* {rarr} *S* +
-A, B {brarr} {x | x {isin} A or x {isin} B}
-
-
-=== Intersection
-
-[example]
-{cap}: *S* {rarr} *S* +
-A, B {brarr} {x | x {isin} A and x {isin} B}
-
-
-=== Complement
-
-[example]
-\\: *S* {rarr} *S* +
-A, B {brarr} {x | x {isin} A and x {notin} B}
-
-=== Universal Class
-
-
-
-
-
-
-
-
-:numbered!:
-==== Questions
-
-. Write the following sets in set notation:
-.. Prime numbers less than 12. +
-   {2, 3, 5, 7, 11}
-. For the sets in question 1, say whether they are finite or infinite.
-.. {2, 3, 5, 7, 11} +
-   Finite.
-. Say whether the following are valid sets or not:
-.. {1, 2, 3, 2, 1} +
-   No, because the 1 and 2 are repeated.
-
-==== Answers
-
-Rs
-
-=== Rosetta Stone
-
-Rs
-
-==== Synonyms
-
-Rs
-
-[cols="2*", options="header"]
-|===
-| Name
-| Synonym
-
-| Empty set, {}
-| &#x2205;
-
-| Double
-| Ordered pair
-|===
-
+him pontificating on the philosophy of it all!!`' Okay, okay.
 
 === Sources
 
@@ -3861,10 +3544,320 @@ The study of real numbers. Also known as calculus.
 The study of complex numbers.
 
 
+=== Tuples
+
+'`Wait, you say that with sets, ordering doesn't matter, but in lots of
+things ordering _does_ matter. What about a list of countries in alphabetical
+order?`'
+
+Yes, good point reader. Remember I'm still learning this stuff too, you know.
+I'll get back to you...
+
+...I'm back, got it all worked out. Here's our set of countries:
+
+[example]
+{'`UK`', '`Germany`', '`Spain`'}
+
+Now adding alphabetical ordering:
+
+[example]
+{{'`UK`', 3}, {'`Germany`', 1}, {'`Spain`', 2}}
+
+So we've made a set of sets. The inner sets have the country and their position
+in the alphabetical order. Ordered sets occur quite often in maths, so they're
+given the name _tuples_ and denoted by surrounding the elements with brackets,
+so:
+
+[example]
+{{'`UK`', 3}, {'`Germany`', 1}, {'`Spain`', 2}} {equiv}
+('Germany', '`Spain`', '`UK`')
+
+Here are the names of tuples based on the number of elements they contain...
+
+|===
+| Number Of Elements | Name                   | Example
+
+| 0                  | Nuple                  | ()
+| 1                  | Single                 | (8)
+| 2                  | Double or Ordered Pair | (7, 4)
+| 3                  | Triple                 | ('`bear`', '`tiger`', '`sheep`')
+|===
+
+Actually, I made up '`nuple`'. It's commonly called '`the empty tuple`'.
 
 
+=== Functions
+
+In the tower they fiddle around a lot with functions. A function is a set
+that relates a set of tuples (the _domain_) to another set (the _codomain_).
+For any tuple (called the '`input`') of the domain there's a double in the
+function of the form:
+
+[example]
+(input, output)
+
+where '`output`' is an element of the _codomain_.
+
+'`That sounds all very clever and fancy, but what do you actually mean?`' Well
+an example I found in the tower is the `add_one` function which has as its
+domain *Z*^1^:
+
+[example]
+*Z*^1^ {equiv} {..., (-2), (-1), (0), (1), (2), ...}
+
+The codomain of `add_one` is *Z*, and the relationship is:
+
+[example]
+add_one {equiv} {..., ( (-2), -1), ( (-1), 0), ( (0), 1), ( (1), 2), ...}
+
+and if you want to talk about individual inputs and outputs of a function, you
+can write:
+
+[example]
+add_one(-2) {equiv} -1 +
+add_one(70) {equiv} 71 +
+add_one(4002) {equiv} 4003 +
+
+We've defined the function `add_one` in words and through examples and using
+the ellipses (and the clue is in the name of the function!) but I saw that
+mostly, mathematicians will define a function using mathematical notation, so
+they'll write:
+
+[example]
+add_one(x) {equiv} x + 1
+
+They'll often use the letter `x`, but it needn't be. Could be anything. Eg:
+
+[example]
+add_one(H) {equiv} H + 1
+
+Another example. Let's make up another function called `mult_ten`. The domain
+will be *Z*^1^ and the codomain *Z* as in the previous example. The relationship
+is defined as:
+
+[example]
+mult_ten(x) {equiv} x * 10
+
+Let's try it out with some inputs and see what the outputs are:
+
+[example]
+mult_ten(1) {equiv} 10 +
+mult_ten(8) {equiv} 80 +
+mult_ten(0) {equiv} 0 +
+
+In the previous examples we chose domains of singles, but let's create a
+function that has a domain of doubles. So let's create a function called
+`mult_add` with the domain *Z*^2^. Now *Z*^2^ is the set of doubles which are
+all possible combinations of an element of *Z* followed by another element of
+*Z* which is shown in this table:
+
+[cols="8*", options="header"]
+|===
+|
+| ...
+| -2
+| -1
+| 0
+| 1
+| 2
+| ...
+
+| ...
+| (..., ...)
+| (..., -2)
+| (..., -1)
+| (..., 0)
+| (..., 1)
+| (..., 2)
+| (..., ...)
+
+| -2
+| (-2, ...)
+| (-2, -2)
+| (-2, -1)
+| (-2, 0)
+| (-2, 1)
+| (-2, 2)
+| (-2, ...)
+
+| -1
+| (-1, ...)
+| (-1, -2)
+| (-1, -1)
+| (-1, 0)
+| (-1, 1)
+| (-1, 2)
+| (-1, ...)
+
+| 0 
+| (0, ...)
+| (0, -2)
+| (0, -1)
+| (0, 0)
+| (0, 1)
+| (0, 2)
+| (0, ...)
+
+| 1 
+| (1, ...)
+| (1, -2)
+| (1, -1)
+| (1, 0)
+| (1, 1)
+| (1, 2)
+| (1, ...)
+
+| 2 
+| (2, ...)
+| (2, -2)
+| (2, -1)
+| (2, 0)
+| (2, 1)
+| (2, 2)
+| (2, ...)
+
+| ... 
+| (..., ...)
+| (..., -2)
+| (..., -1)
+| (..., 0)
+| (..., 1)
+| (..., 2)
+| (..., ...)
+|===
+
+The codomain of `mult_add` is *Z*, and the relationship between the domain and
+codomain is defined by:
+
+[example]
+mult_add(x, y) {equiv} x * 2 + y
+
+Let's try it out with some inputs and see what the outputs are:
+
+[example]
+mult_add(1, 6) {equiv} 8 +
+mult_add(8, 3) {equiv} 19 +
+mult_add(0, 2) {equiv} 2 +
+
+Functions whose input is a single are called _unary_ functions, and functions
+whose input is a double are called _binary_ functions. Can we have functions
+whose input is the nuple?
+
+[[img-obama]]
+image::obama.jpg[Yes we can!]
+
+Let's define a function called `five`, it'll have the domain {()} and the
+codomain *Z*. The function just contains one double:
+
+[example]
+( (), 5)
+
+so:
+
+[example]
+five() {equiv} 5
+
+=== Direct Product
+
+The 
 
 
+=== Is In
+
+Set theoreticians use the symbol {isin} to mean '`is an element of`'. So if
+there was an element `x` that was in a set `A` we could abbreviate that to:
+
+[example]
+x {isin} A
+
+Conversely, they use the symbol {notin} to mean '`is not an element of`'. Eg.
+
+[example]
+x {notin} A
 
 
+=== Indicator Function
 
+Those wacky mathematicians have come up with a binary function called the
+_indicator function_, denoted by *1*, that has as its input a double consisting
+of an element and a set. The function is defined as:
+
+* Domain: The set of doubles of all possible combinations of (element, set).
+* Codomain: *B*
+* *1*(x, A) {equiv} true if x {isin} A otherwise false
+
+[example]
+*1*(1, *Z*) {equiv} true +
+*1*('France', *Z*) {equiv} false +
+*1*(-1000, {red, green, blue}) {equiv} false +
+
+
+=== Subset
+
+Another binary function with codomain *B* is the subset function that has the
+symbol {sube}. The subset function is defined as:
+
+* Domain: The set of doubles of all possible combination of (set, set)
+* Codomain: *B*
+* {sube}(A, B) {equiv} true if and only if all the elements of A are also in B,
+otherwise false.
+
+So if A is a subset of B we can write:
+
+[example]
+{sube}(A, B) {equiv} true
+
+Following this definition of a subset, every set is a subset of itself. So it's
+always true that:
+
+[example]
+{sube}(A, A) {equiv} true
+
+By the way, the domain of {sube} crops up quite a lot in definitions of
+functions, so I'll give it the name *S*, so from now on:
+
+[example]
+*S* {equiv} The set of doubles of all possible combination of (set, set)
+
+
+=== Equals
+
+The symbol for the _equals_ function is `=`, and it's defined as:
+
+* Domain: *S*
+* Codomain: *B*
+* =(A, B) {equiv} true if A and B form an identiy, otherwise false.
+
+
+=== Proper Subset
+
+The symbol for the _proper subset_ function is `{sube}`, and it's defined as:
+
+* Domain: *S*
+* Codomain: *B*
+* {sub}(A, B) {equiv} true if `{sube}(A, B)` is true and A {nequiv} B.
+
+
+=== Union
+
+[example]
+{cup}: *S* {rarr} *S* +
+A, B {brarr} {x | x {isin} A or x {isin} B}
+
+
+=== Intersection
+
+[example]
+{cap}: *S* {rarr} *S* +
+A, B {brarr} {x | x {isin} A and x {isin} B}
+
+
+=== Complement
+
+[example]
+\\: *S* {rarr} *S* +
+A, B {brarr} {x | x {isin} A and x {notin} B}
+
+=== Universal Class
+
+Uc
