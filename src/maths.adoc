@@ -2222,6 +2222,56 @@ incorrect, but you can't see the flaw in the argument. Of course, all paradoxes
 can be resolved, and the resolution deepens one's understanding. '`Ooh, hark at
 him pontificating on the philosophy of it all!!`' Okay, okay.
 
+
+=== Set Membership
+
+The number 1 is an element of *Z*. Or equivalently the number 1 is a member of
+*Z*, or simply 1 is in *Z*. Set theorists write this as:
+
+[example]
+1 {isin} *Z*
+
+The number 1.5 is not in *Z*. They write this as:
+
+[example]
+1.5 {notin} *Z*
+
+
+:numbered!:
+==== Questions
+
+. Translate the following into set notation:
+.. 1.6 is a member of *R*.
+.. Monday is not in {Tuesday, Friday}
+.. 2009 is in *N*
+. Say whether the following mathematical statements are true or false:
+.. 0.5 {isin} *Z*
+.. 5 {notin} {6, 7, 8, ..., 99, 100, 101}
+.. 0 {isin} *R*
+
+
+==== Answers
+
+. Translate the following into set notation:
+.. 1.6 is a member of *R*. +
+   1.6 {isin} *R*
+.. Monday is not in {Tuesday, Friday} +
+   Monday {notin} {Tuesday, Friday}
+.. 2009 is in *N* +
+   2009 {isin} *N*
+. Say whether the following mathematical statements are true or false:
+.. 0.5 {isin} *Z* +
+   False.
+.. 5 {notin} {6, 7, 8, ..., 99, 100, 101} +
+   True
+.. 0 {isin} *R* +
+   True
+
+
+=== Subset
+
+For two sets A and B, A is a __subset__ of B if and only if every element of A
+is a member of B.
 === Sources
 
 * http://www.mathsisfun.com/sets/sets-introduction.html
