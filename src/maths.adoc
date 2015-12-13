@@ -2189,6 +2189,7 @@ letters, and elements to represented by lower case letters.
    Order doesn't matter, so equal.
 
 
+:numbered:
 === Set Membership
 
 The number 1 is an element of *Z*. Or equivalently the number 1 is a member of
