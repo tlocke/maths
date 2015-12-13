@@ -461,11 +461,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#_what_s_a_set">3.1. What&#8217;s A Set?</a></li>
 <li><a href="#_equality">3.2. Equality</a></li>
-<li><a href="#_common_sets_of_numbers">3.3. Common Sets Of Numbers</a></li>
-<li><a href="#_russell_s_paradox">3.4. Russell&#8217;s Paradox</a></li>
-<li><a href="#_other_paradoxes">3.5. Other Paradoxes</a></li>
-<li><a href="#_set_membership">3.6. Set Membership</a></li>
+<li><a href="#_set_membership">Set Membership</a></li>
+<li><a href="#_universal_set">Universal Set</a></li>
 <li><a href="#_subset">Subset</a></li>
+<li><a href="#_sources">Sources</a></li>
+<li><a href="#_russell_s_paradox">Russell&#8217;s Paradox</a></li>
+<li><a href="#_other_paradoxes">Other Paradoxes</a></li>
+<li><a href="#_common_sets_of_numbers">3.3. Common Sets Of Numbers</a></li>
 </ul>
 </li>
 <li><a href="#_boolean_algebra_ii">4. Boolean Algebra II</a>
@@ -479,7 +481,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_rules_of_inference">4.7. Rules Of Inference</a></li>
 <li><a href="#_sentential_logic_summary">4.8. Sentential Logic: Summary</a></li>
 <li><a href="#_rosetta_stone">4.9. Rosetta Stone</a></li>
-<li><a href="#_sources">Sources</a></li>
+<li><a href="#_sources_2">Sources</a></li>
 </ul>
 </li>
 <li><a href="#_number_theory">Number Theory</a></li>
@@ -6048,6 +6050,10 @@ set with two elements, <code>1</code> and <code>2</code>. So <code>{1, 2, 2}</co
 are two ways of describing the same set. &#8216;Well, okay I suppose. I have to say
 I&#8217;m not entirely convinced, but carry on for now&#8217;.</p>
 </div>
+<div class="paragraph">
+<p>And another thing, it&#8217;s the convention for sets to be represented by capital
+letters, and elements to represented by lower case letters.</p>
+</div>
 <div class="sect3">
 <h4 id="_questions_22">Questions</h4>
 <div class="olist arabic">
@@ -6099,107 +6105,7 @@ Order doesn&#8217;t matter, so equal.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_common_sets_of_numbers">3.3. Common Sets Of Numbers</h3>
-<div class="paragraph">
-<p>Some sets of numbers are common enough to have their own names and symbols:</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 33%;">
-<col style="width: 33%;">
-<col style="width: 33%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Symbol</th>
-<th class="tableblock halign-left valign-top">Definition</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Real Numbers</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>R</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All the numbers on a continuous line from negative infinity to positive
-infinity.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Integers</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Z</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">{&#8230;&#8203;, -2, -1, 0, 1, 2, &#8230;&#8203;}</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Natural Numbers</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>N</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">{0, 1, 2, &#8230;&#8203;}</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Positive Integers</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Z+</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">{1, 2, 3, &#8230;&#8203;}</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean Values</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>B</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">{1, 0}<br>
-By convention, 1 is interpreted as true, and 0 as false.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Empty Set</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2205;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">{}</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_russell_s_paradox">3.4. Russell&#8217;s Paradox</h3>
-<div class="paragraph">
-<p>On your first day as an assistant librarian, you&#8217;re asked to compile a book
-that is a catalogue of all of the books in the library that don&#8217;t mention
-themselves. Eventually you present the chief librarian with your completed
-catalogue. The chief librarian asks, &#8216;Does the catalogue mention the
-catalogue?&#8217;. Well no, you answer&#8230;&#8203;but then if the catalogue doesn&#8217;t mention
-itself, then it should be in the catalogue, in which case it shouldn&#8217;t&#8230;&#8203;</p>
-</div>
-<div class="paragraph">
-<p>You&#8217;ve become a victim of Russell&#8217;s Paradox, and you&#8217;re fired. Lol!</p>
-</div>
-<div class="paragraph">
-<p>In terms of sets, Russell&#8217;s Paradox is asking, what&#8217;s the set of all sets that
-don&#8217;t have themselves as an element? That set doesn&#8217;t exist.</p>
-</div>
-<div class="paragraph">
-<p>So, that&#8217;s solved it in maths language, but how should you have answered the
-chief librarian? Well, you could say that the book (set) he&#8217;s asked for can&#8217;t
-exist. But you can write a book (set), which has the same
-contents as has been requested, except that it doesn&#8217;t contain itself.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_other_paradoxes">3.5. Other Paradoxes</h3>
-<div class="paragraph">
-<p>Curry&#8217;s Paradox is:</p>
-</div>
-<div class="exampleblock">
-<div class="content">
-If this sentence is true, then you owe me a million pounds.
-</div>
-</div>
-<div class="paragraph">
-<p>Do you owe me a million pounds then? Anyway, they told me that there&#8217;s an
-equivalent paradox for sets.</p>
-</div>
-<div class="paragraph">
-<p>They also told me that there&#8217;s a paradox with the set of all sets, so that
-doesn&#8217;t exist either. As it seems to me, a paradox is something that is clearly
-incorrect, but you can&#8217;t see the flaw in the argument. Of course, all paradoxes
-can be resolved, and the resolution deepens one&#8217;s understanding. &#8216;Ooh, hark at
-him pontificating on the philosophy of it all!!&#8217; Okay, okay.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_set_membership">3.6. Set Membership</h3>
+<h3 id="_set_membership">Set Membership</h3>
 <div class="paragraph">
 <p>The number 1 is an element of <strong>Z</strong>. Or equivalently the number 1 is a member of
 <strong>Z</strong>, or simply 1 is in <strong>Z</strong>. Set theorists write this as:</p>
@@ -6303,12 +6209,187 @@ True</p>
 </div>
 </div>
 <div class="sect2">
+<h3 id="_universal_set">Universal Set</h3>
+<div class="paragraph">
+<p>Let&#8217;s say we&#8217;re talking about a set of books:</p>
+</div>
+<div class="paragraph">
+<p><strong>U</strong> = {Emma by Jane Austen, Anna Karenina by Leo Tolstoy, Crime and Punishment
+by Fyodor Dostoevsky, Use of Weapons by Ian Banks, Wuthering Heights by
+Charlotte Bronte}</p>
+</div>
+<div class="paragraph">
+<p>Since we&#8217;re only considering this set for the time being, it&#8217;s called the
+<em>universal set</em>. In different situations we can specify a different universal
+set. For example if we&#8217;re only talking about natural numbers, then that would
+be our universal set. A Venn diagram of our universal set:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="sets_universal_set.png" alt="sets universal set">
+</div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="_subset">Subset</h3>
 <div class="paragraph">
 <p>For two sets A and B, A is a <em>subset</em> of B if and only if every element of A
-is a member of B.
-=== Sources</p>
+is a member of B. The set theorist will write:</p>
 </div>
+<div class="exampleblock">
+<div class="content">
+A &#x2286; B
+</div>
+</div>
+<div class="paragraph">
+<p>Going back to our universal set of books, let&#8217;s define two sets:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+T = written before the 20th century<br>
+F = written by female authors
+</div>
+</div>
+<div class="paragraph">
+<p>then:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+F &#x2286; T
+</div>
+</div>
+<div class="paragraph">
+<p>written as a Venn diagram:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="sets_subset.png" alt="sets subset">
+</div>
+</div>
+<div class="paragraph">
+<p>In other words we&#8217;re saying that for the books in our univeral set, those
+written by female authors are a subset of those written before the 20th
+century.</p>
+</div>
+<div class="paragraph">
+<p>A theorem is a mathematical statement that has been proven to be true. It&#8217;s a
+theorem that for any set S you can say that:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+S &#x2286; S
+</div>
+</div>
+<div class="paragraph">
+<p>A proof is an argument made up of small, incontrovertible steps that lead
+to the theorem. A proof that S &#x2286; S is:</p>
+</div>
+<div class="ulist example">
+<ul class="example">
+<li>
+<p>A &#x2286; B is defined as being true if and only if every element of A is in B.</p>
+</li>
+<li>
+<p>If A = S and B = S then A = B, and so every element of A must be in B.</p>
+</li>
+<li>
+<p>Therefore S &#x2286; S.</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="_questions_24">Questions</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Assume <strong>U</strong> is {0, 1, 2, &#8230;&#8203;, 7, 8, 9} and S is the set <code>'less than 5'</code> and E
+is the set <code>'less than 3'</code>.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Say whether the following statements are true or false:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p><strong>U</strong> &#x2286; E</p>
+</li>
+<li>
+<p><strong>U</strong> &#x2286; S</p>
+</li>
+<li>
+<p><strong>U</strong> &#x2286; <strong>U</strong></p>
+</li>
+<li>
+<p>E &#x2286; S</p>
+</li>
+<li>
+<p>S &#x2286; E</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Draw a Venn diagram of <strong>U</strong>, S and E.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_answers_24">Answers</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Assume <strong>U</strong> is {0, 1, 2, &#8230;&#8203;, 7, 8, 9} and S is the set <code>'less than 5'</code> and E
+is the set <code>'less than 3'</code>.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Say whether the following statements are true or false:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p><strong>U</strong> &#x2286; E<br>
+False</p>
+</li>
+<li>
+<p><strong>U</strong> &#x2286; S<br>
+False</p>
+</li>
+<li>
+<p><strong>U</strong> &#x2286; <strong>U</strong><br>
+True</p>
+</li>
+<li>
+<p>E &#x2286; S<br>
+True</p>
+</li>
+<li>
+<p>S &#x2286; E<br>
+False</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Draw a Venn diagram of <strong>U</strong>, S and E.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="sets_qs_1.png" alt="sets qs 1">
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sources">Sources</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -6322,6 +6403,106 @@ is a member of B.
 </li>
 </ul>
 </div>
+</div>
+<div class="sect2">
+<h3 id="_russell_s_paradox">Russell&#8217;s Paradox</h3>
+<div class="paragraph">
+<p>On your first day as an assistant librarian, you&#8217;re asked to compile a book
+that is a catalogue of all of the books in the library that don&#8217;t mention
+themselves. Eventually you present the chief librarian with your completed
+catalogue. The chief librarian asks, &#8216;Does the catalogue mention the
+catalogue?&#8217;. Well no, you answer&#8230;&#8203;but then if the catalogue doesn&#8217;t mention
+itself, then it should be in the catalogue, in which case it shouldn&#8217;t&#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<p>You&#8217;ve become a victim of Russell&#8217;s Paradox, and you&#8217;re fired. Lol!</p>
+</div>
+<div class="paragraph">
+<p>In terms of sets, Russell&#8217;s Paradox is asking, what&#8217;s the set of all sets that
+don&#8217;t have themselves as an element? That set doesn&#8217;t exist.</p>
+</div>
+<div class="paragraph">
+<p>So, that&#8217;s solved it in maths language, but how should you have answered the
+chief librarian? Well, you could say that the book (set) he&#8217;s asked for can&#8217;t
+exist. But you can write a book (set), which has the same
+contents as has been requested, except that it doesn&#8217;t contain itself.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_other_paradoxes">Other Paradoxes</h3>
+<div class="paragraph">
+<p>Curry&#8217;s Paradox is:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+If this sentence is true, then you owe me a million pounds.
+</div>
+</div>
+<div class="paragraph">
+<p>Do you owe me a million pounds then? Anyway, they told me that there&#8217;s an
+equivalent paradox for sets.</p>
+</div>
+<div class="paragraph">
+<p>They also told me that there&#8217;s a paradox with the set of all sets, so that
+doesn&#8217;t exist either. As it seems to me, a paradox is something that is clearly
+incorrect, but you can&#8217;t see the flaw in the argument. Of course, all paradoxes
+can be resolved, and the resolution deepens one&#8217;s understanding. &#8216;Ooh, hark at
+him pontificating on the philosophy of it all!!&#8217; Okay, okay.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_common_sets_of_numbers">3.3. Common Sets Of Numbers</h3>
+<div class="paragraph">
+<p>Some sets of numbers are common enough to have their own names and symbols:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33%;">
+<col style="width: 33%;">
+<col style="width: 33%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Symbol</th>
+<th class="tableblock halign-left valign-top">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Real Numbers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>R</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All the numbers on a continuous line from negative infinity to positive
+infinity.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Z</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{&#8230;&#8203;, -2, -1, 0, 1, 2, &#8230;&#8203;}</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Natural Numbers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>N</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{0, 1, 2, &#8230;&#8203;}</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Positive Integers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Z+</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{1, 2, 3, &#8230;&#8203;}</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean Values</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>B</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{1, 0}<br>
+By convention, 1 is interpreted as true, and 0 as false.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Empty Set</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2205;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{}</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -6598,7 +6779,7 @@ implies(A, not(B)), implies(C, not(B)), A &#x22A8; not(B)
 </div>
 </div>
 <div class="sect3">
-<h4 id="_questions_24">Questions</h4>
+<h4 id="_questions_25">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -6637,7 +6818,7 @@ and off. This light switch is not on. Therefore the light switch is off.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_24">Answers</h4>
+<h4 id="_answers_25">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7108,7 +7289,7 @@ it to be true. So what&#8217;s a proof exactly? It&#8217;s a chain of small self
 true steps that lead to the theorem.</p>
 </div>
 <div class="sect3">
-<h4 id="_questions_25">Questions</h4>
+<h4 id="_questions_26">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7137,7 +7318,7 @@ true steps that lead to the theorem.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_25">Answers</h4>
+<h4 id="_answers_26">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7361,7 +7542,7 @@ and(or(or(not(C), not(A)), B), or(or(not(C), A), not(B)))
 <p>we&#8217;ve got it in CNF.</p>
 </div>
 <div class="sect3">
-<h4 id="_questions_26">Questions</h4>
+<h4 id="_questions_27">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7390,7 +7571,7 @@ and(or(or(not(C), not(A)), B), or(or(not(C), A), not(B)))
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_26">Answers</h4>
+<h4 id="_answers_27">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7729,7 +7910,7 @@ and idempotence)</p>
 </ol>
 </div>
 <div class="sect3">
-<h4 id="_questions_27">Questions</h4>
+<h4 id="_questions_28">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7739,7 +7920,7 @@ and idempotence)</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_27">Answers</h4>
+<h4 id="_answers_28">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -8058,7 +8239,7 @@ Q, (R &#x2227; P) &#x2227; (R &#x2227; Q) &#x2192; P &#x22A8; P
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="_questions_28">Questions</h4>
+<h4 id="_questions_29">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -8072,7 +8253,7 @@ valid by using rules of inference.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_28">Answers</h4>
+<h4 id="_answers_29">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -8919,7 +9100,7 @@ P &#x2228; Q, &#x00AC;(P &#x2227; Q), &#x00AC;P &#x22A8; Q</p>
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="_answers_29">4.8.1. Answers</h4>
+<h4 id="_answers_30">4.8.1. Answers</h4>
 <div class="paragraph">
 <p>Answers on their way&#8230;&#8203;</p>
 </div>
@@ -9257,7 +9438,7 @@ Rules say that anything in brackets gets evaluated first. So you&#8217;d write:<
 </table>
 </div>
 <div class="sect3">
-<h4 id="_questions_29">Questions</h4>
+<h4 id="_questions_30">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -9283,7 +9464,7 @@ Rules say that anything in brackets gets evaluated first. So you&#8217;d write:<
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_30">Answers</h4>
+<h4 id="_answers_31">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -9626,7 +9807,7 @@ Rules say that anything in brackets gets evaluated first. So you&#8217;d write:<
 </div>
 </div>
 <div class="sect2">
-<h3 id="_sources">Sources</h3>
+<h3 id="_sources_2">Sources</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -10168,7 +10349,7 @@ A, B &#x21A6; {x | x &#x2208; A and x &#x2209; B}
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-12-12 15:08:30 GMT
+Last updated 2015-12-13 17:49:57 GMT
 </div>
 </div>
 </body>

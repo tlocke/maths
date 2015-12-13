@@ -2128,6 +2128,9 @@ set with two elements, `1` and `2`. So `{1, 2, 2}` = `{1, 2}`. So these
 are two ways of describing the same set. '`Well, okay I suppose. I have to say
 I'm not entirely convinced, but carry on for now`'.
 
+And another thing, it's the convention for sets to be represented by capital
+letters, and elements to represented by lower case letters.
+
 
 :numbered!:
 ==== Questions
@@ -2147,80 +2150,6 @@ I'm not entirely convinced, but carry on for now`'.
    Duplicates don't matter, so equal.
 .. {8, 5, 1} and {1, 5, 8}
    Order doesn't matter, so equal.
-
-
-:numbered:
-=== Common Sets Of Numbers
-
-Some sets of numbers are common enough to have their own names and symbols:
-
-[cols="3*", options="header"]
-|===
-| Name | Symbol | Definition
-
-| Real Numbers
-| *R*
-| All the numbers on a continuous line from negative infinity to positive
-infinity.
-
-| Integers
-| *Z*
-| {..., -2, -1, 0, 1, 2, ...}
-
-| Natural Numbers
-| *N*
-| {0, 1, 2, ...}
-
-| Positive Integers
-| *Z+*
-| {1, 2, 3, ...}
-
-| Boolean Values
-| *B*
-| {1, 0} +
-By convention, 1 is interpreted as true, and 0 as false.
-
-| Empty Set
-| {emptyset}
-| {}
-|===
-
-
-=== Russell's Paradox
-
-On your first day as an assistant librarian, you're asked to compile a book
-that is a catalogue of all of the books in the library that don't mention
-themselves. Eventually you present the chief librarian with your completed
-catalogue. The chief librarian asks, '`Does the catalogue mention the
-catalogue?`'. Well no, you answer...but then if the catalogue doesn't mention
-itself, then it should be in the catalogue, in which case it shouldn't...
-
-You've become a victim of Russell's Paradox, and you're fired. Lol!
-
-In terms of sets, Russell's Paradox is asking, what's the set of all sets that
-don't have themselves as an element? That set doesn't exist.
-
-So, that's solved it in maths language, but how should you have answered the
-chief librarian? Well, you could say that the book (set) he's asked for can't
-exist. But you can write a book (set), which has the same
-contents as has been requested, except that it doesn't contain itself.
-
-
-=== Other Paradoxes
-
-Curry's Paradox is:
-
-[example]
-If this sentence is true, then you owe me a million pounds.
-
-Do you owe me a million pounds then? Anyway, they told me that there's an
-equivalent paradox for sets.
-
-They also told me that there's a paradox with the set of all sets, so that
-doesn't exist either. As it seems to me, a paradox is something that is clearly
-incorrect, but you can't see the flaw in the argument. Of course, all paradoxes
-can be resolved, and the resolution deepens one's understanding. '`Ooh, hark at
-him pontificating on the philosophy of it all!!`' Okay, okay.
 
 
 === Set Membership
@@ -2268,16 +2197,177 @@ The number 1.5 is not in *Z*. They write this as:
    True
 
 
+=== Universal Set
+
+Let's say we're talking about a set of books:
+
+*U* = {Emma by Jane Austen, Anna Karenina by Leo Tolstoy, Crime and Punishment
+by Fyodor Dostoevsky, Use of Weapons by Ian Banks, Wuthering Heights by
+Charlotte Bronte}
+
+Since we're only considering this set for the time being, it's called the
+_universal set_. In different situations we can specify a different universal
+set. For example if we're only talking about natural numbers, then that would
+be our universal set. A Venn diagram of our universal set:
+
+image::sets_universal_set.png[]
+
+
+
 === Subset
 
 For two sets A and B, A is a __subset__ of B if and only if every element of A
-is a member of B.
+is a member of B. The set theorist will write:
+
+[example]
+A {sube} B
+
+Going back to our universal set of books, let's define two sets:
+
+[example]
+T = written before the 20th century +
+F = written by female authors
+
+then:
+
+[example]
+F {sube} T
+
+written as a Venn diagram:
+
+image::sets_subset.png[]
+
+In other words we're saying that for the books in our univeral set, those
+written by female authors are a subset of those written before the 20th
+century.
+
+A theorem is a mathematical statement that has been proven to be true. It's a
+theorem that for any set S you can say that:
+
+[example]
+S {sube} S
+
+A proof is an argument made up of small, incontrovertible steps that lead
+to the theorem. A proof that S {sube} S is:
+
+[example]
+* A {sube} B is defined as being true if and only if every element of A is in B.
+* If A = S and B = S then A = B, and so every element of A must be in B.
+* Therefore S {sube} S.
+
+
+:numbered!:
+==== Questions
+
+. Assume *U* is {0, 1, 2, ..., 7, 8, 9} and S is the set `'less than 5'` and E
+  is the set `'less than 3'`.
+.. Say whether the following statements are true or false:
+... *U* {sube} E
+... *U* {sube} S
+... *U* {sube} *U*
+... E {sube} S
+... S {sube} E
+.. Draw a Venn diagram of *U*, S and E.
+
+
+==== Answers
+
+. Assume *U* is {0, 1, 2, ..., 7, 8, 9} and S is the set `'less than 5'` and E
+  is the set `'less than 3'`.
+.. Say whether the following statements are true or false:
+... *U* {sube} E +
+    False
+... *U* {sube} S +
+    False
+... *U* {sube} *U* +
+    True 
+... E {sube} S +
+    True
+... S {sube} E +
+    False
+.. Draw a Venn diagram of *U*, S and E.
+
+image::sets_qs_1.png[]
+
+
 === Sources
 
 * http://www.mathsisfun.com/sets/sets-introduction.html
 * http://people.cs.pitt.edu/~milos/courses/cs441/lectures/Class7.pdf
 * http://www.wtamu.edu/academic/anns/mps/math/mathlab/int_algebra/int_alg_tut3_sets.htm
 
+
+=== Russell's Paradox
+
+On your first day as an assistant librarian, you're asked to compile a book
+that is a catalogue of all of the books in the library that don't mention
+themselves. Eventually you present the chief librarian with your completed
+catalogue. The chief librarian asks, '`Does the catalogue mention the
+catalogue?`'. Well no, you answer...but then if the catalogue doesn't mention
+itself, then it should be in the catalogue, in which case it shouldn't...
+
+You've become a victim of Russell's Paradox, and you're fired. Lol!
+
+In terms of sets, Russell's Paradox is asking, what's the set of all sets that
+don't have themselves as an element? That set doesn't exist.
+
+So, that's solved it in maths language, but how should you have answered the
+chief librarian? Well, you could say that the book (set) he's asked for can't
+exist. But you can write a book (set), which has the same
+contents as has been requested, except that it doesn't contain itself.
+
+
+=== Other Paradoxes
+
+Curry's Paradox is:
+
+[example]
+If this sentence is true, then you owe me a million pounds.
+
+Do you owe me a million pounds then? Anyway, they told me that there's an
+equivalent paradox for sets.
+
+They also told me that there's a paradox with the set of all sets, so that
+doesn't exist either. As it seems to me, a paradox is something that is clearly
+incorrect, but you can't see the flaw in the argument. Of course, all paradoxes
+can be resolved, and the resolution deepens one's understanding. '`Ooh, hark at
+him pontificating on the philosophy of it all!!`' Okay, okay.
+
+:numbered:
+=== Common Sets Of Numbers
+
+Some sets of numbers are common enough to have their own names and symbols:
+
+[cols="3*", options="header"]
+|===
+| Name | Symbol | Definition
+
+| Real Numbers
+| *R*
+| All the numbers on a continuous line from negative infinity to positive
+infinity.
+
+| Integers
+| *Z*
+| {..., -2, -1, 0, 1, 2, ...}
+
+| Natural Numbers
+| *N*
+| {0, 1, 2, ...}
+
+| Positive Integers
+| *Z+*
+| {1, 2, 3, ...}
+
+| Boolean Values
+| *B*
+| {1, 0} +
+By convention, 1 is interpreted as true, and 0 as false.
+
+| Empty Set
+| {emptyset}
+| {}
+|===
 
 
 :numbered:
