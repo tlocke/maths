@@ -460,14 +460,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_sets">3. Sets</a>
 <ul class="sectlevel2">
 <li><a href="#_what_s_a_set">3.1. What&#8217;s A Set?</a></li>
-<li><a href="#_equality">3.2. Equality</a></li>
+<li><a href="#_common_sets_of_numbers">3.2. Common Sets Of Numbers</a></li>
+<li><a href="#_equality">3.3. Equality</a></li>
 <li><a href="#_set_membership">Set Membership</a></li>
-<li><a href="#_universal_set">Universal Set</a></li>
-<li><a href="#_subset">Subset</a></li>
-<li><a href="#_sources">Sources</a></li>
-<li><a href="#_russell_s_paradox">Russell&#8217;s Paradox</a></li>
-<li><a href="#_other_paradoxes">Other Paradoxes</a></li>
-<li><a href="#_common_sets_of_numbers">3.3. Common Sets Of Numbers</a></li>
+<li><a href="#_set_builder_notation">3.4. Set Builder Notation</a></li>
+<li><a href="#_universal_set">3.5. Universal Set</a></li>
+<li><a href="#_subset">3.6. Subset</a></li>
+<li><a href="#_russell_s_paradox">3.7. Russell&#8217;s Paradox</a></li>
+<li><a href="#_other_paradoxes">3.8. Other Paradoxes</a></li>
+<li><a href="#_sources">3.9. Sources</a></li>
 </ul>
 </li>
 <li><a href="#_boolean_algebra_ii">4. Boolean Algebra II</a>
@@ -5989,7 +5990,61 @@ They are all finite.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_equality">3.2. Equality</h3>
+<h3 id="_common_sets_of_numbers">3.2. Common Sets Of Numbers</h3>
+<div class="paragraph">
+<p>Some sets of numbers are common enough to have their own names and symbols:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33%;">
+<col style="width: 33%;">
+<col style="width: 33%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Symbol</th>
+<th class="tableblock halign-left valign-top">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Real Numbers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>R</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{All the numbers on a continuous line from negative infinity to positive
+infinity}</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Z</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{&#8230;&#8203;, -2, -1, 0, 1, 2, &#8230;&#8203;}</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Natural Numbers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>N</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{0, 1, 2, &#8230;&#8203;}</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Positive Integers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Z+</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{1, 2, 3, &#8230;&#8203;}</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean Values</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>B</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{1, 0}<br>
+By convention, 1 is interpreted as true, and 0 as false.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Empty Set</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2205;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{}</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_equality">3.3. Equality</h3>
 <div class="paragraph">
 <p>If two sets have exactly the same elements in them, then they are equal. In set
 notation, if sets A and B are equal, set theorists write:</p>
@@ -6209,14 +6264,165 @@ True</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_universal_set">Universal Set</h3>
+<h3 id="_set_builder_notation">3.4. Set Builder Notation</h3>
+<div class="paragraph">
+<p>Up to this point I&#8217;d seen sets specified in three ways:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Written in natural language eg. <strong>R</strong> = {All the numbers on a continuous line</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>from negative infinity to positive infinity}</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Each element in the set given explicitly eg. W = {Monday, Tuesday, Wednesday,
+Thursday, Friday, Saturday, Sunday}.</p>
+</li>
+<li>
+<p>Using ellipses to imply elements, eg. M = {0, 1, 2, &#8230;&#8203;, 57, 58, 59}</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Then I came across a method of defining a set by specifying a rule in
+a mathematical notation called <em>set_builder_notation</em>. For example:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+{x | x &#x2208; <strong>Z</strong> &#x2227; x &gt; 7}
+</div>
+</div>
+<div class="paragraph">
+<p>which specifies the set:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+{8, 9, 10, &#8230;&#8203;}
+</div>
+</div>
+<div class="paragraph">
+<p>This rule is read as, &#8216;the set consists of all values of x such that
+x is an integer and x is greater than 7.&#8217; The condition on the right hand side
+of the bar re-uses the connectives from propositional logic. Another example
+of set builder notation is:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+{x | x &#x2208; <strong>R</strong> &#x2227; x = x<sup>2</sup>}
+</div>
+</div>
+<div class="paragraph">
+<p>which specifies the set:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+{0, 1}
+</div>
+</div>
+<div class="paragraph">
+<p>This rule is read as, &#8216;the set consists of all values of x such that
+x is a real number and x equals x squared.&#8217;</p>
+</div>
+<div class="sect3">
+<h4 id="_questions_24">Questions</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Define the following sets in set builder notation:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>{34, 35, 36, &#8230;&#8203;}</p>
+</li>
+<li>
+<p>{34, 35, 36, &#8230;&#8203;, 102, 103, 104}</p>
+</li>
+<li>
+<p>{Real numbers greater than 8.1}</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Write down the sets specified by the following set builder notation:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>{x | x = 0}</p>
+</li>
+<li>
+<p>{x | x &#x2208; <strong>Z</strong> &#x2227; x &lt; 30}</p>
+</li>
+<li>
+<p>{x | x = 1 &#x2227; x = 0}</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_answers_24">Answers</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Specify the following sets in set builder notation:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>{34, 35, 36, &#8230;&#8203;}<br>
+{x | x &#x2208; <strong>Z</strong> &#x2227; x &gt; 33}</p>
+</li>
+<li>
+<p>{34, 35, 36, &#8230;&#8203;, 102, 103, 104}<br>
+{x | x &#x2208; <strong>Z</strong> &#x2227; x &gt; 33 &#x2227; x &lt; 105}</p>
+</li>
+<li>
+<p>{Real numbers greater than 8.1}<br>
+{x | x &#x2208; <strong>R</strong> &#x2227; x &gt; 8.1}</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Write down the sets specified by the following set builder notation:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>{x | x = 0}<br>
+{0}</p>
+</li>
+<li>
+<p>{x | x &#x2208; <strong>Z</strong> &#x2227; x &lt; 30}<br>
+{&#8230;&#8203;, 27, 28, 29}</p>
+</li>
+<li>
+<p>{x | x = 1 &#x2227; x = 0}<br>
+{}</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_universal_set">3.5. Universal Set</h3>
 <div class="paragraph">
 <p>Let&#8217;s say we&#8217;re talking about a set of books:</p>
 </div>
 <div class="paragraph">
 <p><strong>U</strong> = {Emma by Jane Austen, Anna Karenina by Leo Tolstoy, Crime and Punishment
 by Fyodor Dostoevsky, Use of Weapons by Ian Banks, Wuthering Heights by
-Charlotte Bronte}</p>
+Charlotte Bronte, The New Men by C. P. Snow}</p>
 </div>
 <div class="paragraph">
 <p>Since we&#8217;re only considering this set for the time being, it&#8217;s called the
@@ -6231,7 +6437,7 @@ be our universal set. A Venn diagram of our universal set:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_subset">Subset</h3>
+<h3 id="_subset">3.6. Subset</h3>
 <div class="paragraph">
 <p>For two sets A and B, A is a <em>subset</em> of B if and only if every element of A
 is a member of B. The set theorist will write:</p>
@@ -6298,7 +6504,7 @@ to the theorem. A proof that S &#x2286; S is:</p>
 </ul>
 </div>
 <div class="sect3">
-<h4 id="_questions_24">Questions</h4>
+<h4 id="_questions_25">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -6338,7 +6544,7 @@ is the set <code>'less than 3'</code>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_24">Answers</h4>
+<h4 id="_answers_25">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -6389,23 +6595,7 @@ False</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_sources">Sources</h3>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="http://www.mathsisfun.com/sets/sets-introduction.html" class="bare">http://www.mathsisfun.com/sets/sets-introduction.html</a></p>
-</li>
-<li>
-<p><a href="http://people.cs.pitt.edu/~milos/courses/cs441/lectures/Class7.pdf" class="bare">http://people.cs.pitt.edu/~milos/courses/cs441/lectures/Class7.pdf</a></p>
-</li>
-<li>
-<p><a href="http://www.wtamu.edu/academic/anns/mps/math/mathlab/int_algebra/int_alg_tut3_sets.htm" class="bare">http://www.wtamu.edu/academic/anns/mps/math/mathlab/int_algebra/int_alg_tut3_sets.htm</a></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_russell_s_paradox">Russell&#8217;s Paradox</h3>
+<h3 id="_russell_s_paradox">3.7. Russell&#8217;s Paradox</h3>
 <div class="paragraph">
 <p>On your first day as an assistant librarian, you&#8217;re asked to compile a book
 that is a catalogue of all of the books in the library that don&#8217;t mention
@@ -6429,7 +6619,7 @@ contents as has been requested, except that it doesn&#8217;t contain itself.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_other_paradoxes">Other Paradoxes</h3>
+<h3 id="_other_paradoxes">3.8. Other Paradoxes</h3>
 <div class="paragraph">
 <p>Curry&#8217;s Paradox is:</p>
 </div>
@@ -6451,58 +6641,20 @@ him pontificating on the philosophy of it all!!&#8217; Okay, okay.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_common_sets_of_numbers">3.3. Common Sets Of Numbers</h3>
-<div class="paragraph">
-<p>Some sets of numbers are common enough to have their own names and symbols:</p>
+<h3 id="_sources">3.9. Sources</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://www.mathsisfun.com/sets/sets-introduction.html" class="bare">http://www.mathsisfun.com/sets/sets-introduction.html</a></p>
+</li>
+<li>
+<p><a href="http://people.cs.pitt.edu/~milos/courses/cs441/lectures/Class7.pdf" class="bare">http://people.cs.pitt.edu/~milos/courses/cs441/lectures/Class7.pdf</a></p>
+</li>
+<li>
+<p><a href="http://www.wtamu.edu/academic/anns/mps/math/mathlab/int_algebra/int_alg_tut3_sets.htm" class="bare">http://www.wtamu.edu/academic/anns/mps/math/mathlab/int_algebra/int_alg_tut3_sets.htm</a></p>
+</li>
+</ul>
 </div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 33%;">
-<col style="width: 33%;">
-<col style="width: 33%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Symbol</th>
-<th class="tableblock halign-left valign-top">Definition</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Real Numbers</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>R</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All the numbers on a continuous line from negative infinity to positive
-infinity.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Integers</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Z</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">{&#8230;&#8203;, -2, -1, 0, 1, 2, &#8230;&#8203;}</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Natural Numbers</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>N</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">{0, 1, 2, &#8230;&#8203;}</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Positive Integers</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Z+</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">{1, 2, 3, &#8230;&#8203;}</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean Values</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>B</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">{1, 0}<br>
-By convention, 1 is interpreted as true, and 0 as false.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Empty Set</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2205;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">{}</p></td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 </div>
@@ -6779,7 +6931,7 @@ implies(A, not(B)), implies(C, not(B)), A &#x22A8; not(B)
 </div>
 </div>
 <div class="sect3">
-<h4 id="_questions_25">Questions</h4>
+<h4 id="_questions_26">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -6818,7 +6970,7 @@ and off. This light switch is not on. Therefore the light switch is off.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_25">Answers</h4>
+<h4 id="_answers_26">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7289,7 +7441,7 @@ it to be true. So what&#8217;s a proof exactly? It&#8217;s a chain of small self
 true steps that lead to the theorem.</p>
 </div>
 <div class="sect3">
-<h4 id="_questions_26">Questions</h4>
+<h4 id="_questions_27">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7318,7 +7470,7 @@ true steps that lead to the theorem.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_26">Answers</h4>
+<h4 id="_answers_27">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7542,7 +7694,7 @@ and(or(or(not(C), not(A)), B), or(or(not(C), A), not(B)))
 <p>we&#8217;ve got it in CNF.</p>
 </div>
 <div class="sect3">
-<h4 id="_questions_27">Questions</h4>
+<h4 id="_questions_28">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7571,7 +7723,7 @@ and(or(or(not(C), not(A)), B), or(or(not(C), A), not(B)))
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_27">Answers</h4>
+<h4 id="_answers_28">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7910,7 +8062,7 @@ and idempotence)</p>
 </ol>
 </div>
 <div class="sect3">
-<h4 id="_questions_28">Questions</h4>
+<h4 id="_questions_29">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7920,7 +8072,7 @@ and idempotence)</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_28">Answers</h4>
+<h4 id="_answers_29">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -8239,7 +8391,7 @@ Q, (R &#x2227; P) &#x2227; (R &#x2227; Q) &#x2192; P &#x22A8; P
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="_questions_29">Questions</h4>
+<h4 id="_questions_30">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -8253,7 +8405,7 @@ valid by using rules of inference.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_29">Answers</h4>
+<h4 id="_answers_30">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -9100,7 +9252,7 @@ P &#x2228; Q, &#x00AC;(P &#x2227; Q), &#x00AC;P &#x22A8; Q</p>
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="_answers_30">4.8.1. Answers</h4>
+<h4 id="_answers_31">4.8.1. Answers</h4>
 <div class="paragraph">
 <p>Answers on their way&#8230;&#8203;</p>
 </div>
@@ -9438,7 +9590,7 @@ Rules say that anything in brackets gets evaluated first. So you&#8217;d write:<
 </table>
 </div>
 <div class="sect3">
-<h4 id="_questions_30">Questions</h4>
+<h4 id="_questions_31">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -9464,7 +9616,7 @@ Rules say that anything in brackets gets evaluated first. So you&#8217;d write:<
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_31">Answers</h4>
+<h4 id="_answers_32">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -10349,7 +10501,7 @@ A, B &#x21A6; {x | x &#x2208; A and x &#x2209; B}
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-12-13 17:49:57 GMT
+Last updated 2015-12-13 22:50:54 GMT
 </div>
 </div>
 </body>

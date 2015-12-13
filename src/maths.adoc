@@ -2085,6 +2085,43 @@ with a finite number of elements and a set with an infinite number of elements.
 
 
 :numbered:
+=== Common Sets Of Numbers
+
+Some sets of numbers are common enough to have their own names and symbols:
+
+[cols="3*", options="header"]
+|===
+| Name | Symbol | Definition
+
+| Real Numbers
+| *R*
+| {All the numbers on a continuous line from negative infinity to positive
+infinity}
+
+| Integers
+| *Z*
+| {..., -2, -1, 0, 1, 2, ...}
+
+| Natural Numbers
+| *N*
+| {0, 1, 2, ...}
+
+| Positive Integers
+| *Z+*
+| {1, 2, 3, ...}
+
+| Boolean Values
+| *B*
+| {1, 0} +
+By convention, 1 is interpreted as true, and 0 as false.
+
+| Empty Set
+| {emptyset}
+| {}
+|===
+
+
+:numbered:
 === Equality
 
 If two sets have exactly the same elements in them, then they are equal. In set
@@ -2197,13 +2234,83 @@ The number 1.5 is not in *Z*. They write this as:
    True
 
 
+:numbered:
+=== Set Builder Notation
+
+Up to this point I'd seen sets specified in three ways:
+
+* Written in natural language eg. *R* = {All the numbers on a continuous line
+. from negative infinity to positive infinity}
+* Each element in the set given explicitly eg. W = {Monday, Tuesday, Wednesday,
+  Thursday, Friday, Saturday, Sunday}.
+* Using ellipses to imply elements, eg. M = {0, 1, 2, ..., 57, 58, 59}
+
+Then I came across a method of defining a set by specifying a rule in
+a mathematical notation called __set_builder_notation__. For example:
+
+[example]
+{x | x {isin} *Z* {and} x > 7}
+
+which specifies the set:
+
+[example]
+{8, 9, 10, ...}
+
+This rule is read as, '`the set consists of all values of x such that
+x is an integer and x is greater than 7.`' The condition on the right hand side
+of the bar re-uses the connectives from propositional logic. Another example
+of set builder notation is:
+
+[example]
+{x | x {isin} *R* {and} x = x^2^}
+
+which specifies the set:
+
+[example]
+{0, 1}
+
+This rule is read as, '`the set consists of all values of x such that
+x is a real number and x equals x squared.`'
+
+
+:numbered!:
+==== Questions
+
+. Define the following sets in set builder notation:
+.. {34, 35, 36, ...}
+.. {34, 35, 36, ..., 102, 103, 104}
+.. {Real numbers greater than 8.1}
+. Write down the sets specified by the following set builder notation:
+.. {x | x = 0}
+.. {x | x {isin} *Z* {and} x < 30}
+.. {x | x = 1 {and} x = 0}
+
+==== Answers
+
+. Specify the following sets in set builder notation:
+.. {34, 35, 36, ...} +
+   {x | x {isin} *Z* {and} x > 33}
+.. {34, 35, 36, ..., 102, 103, 104} +
+   {x | x {isin} *Z* {and} x > 33 {and} x < 105}
+.. {Real numbers greater than 8.1} +
+   {x | x {isin} *R* {and} x > 8.1}
+. Write down the sets specified by the following set builder notation:
+.. {x | x = 0} +
+   \{0}
+.. {x | x {isin} *Z* {and} x < 30} +
+   {..., 27, 28, 29}
+.. {x | x = 1 {and} x = 0} +
+   {}
+
+
+:numbered:
 === Universal Set
 
 Let's say we're talking about a set of books:
 
 *U* = {Emma by Jane Austen, Anna Karenina by Leo Tolstoy, Crime and Punishment
 by Fyodor Dostoevsky, Use of Weapons by Ian Banks, Wuthering Heights by
-Charlotte Bronte}
+Charlotte Bronte, The New Men by C. P. Snow}
 
 Since we're only considering this set for the time being, it's called the
 _universal set_. In different situations we can specify a different universal
@@ -2290,13 +2397,7 @@ to the theorem. A proof that S {sube} S is:
 image::sets_qs_1.png[]
 
 
-=== Sources
-
-* http://www.mathsisfun.com/sets/sets-introduction.html
-* http://people.cs.pitt.edu/~milos/courses/cs441/lectures/Class7.pdf
-* http://www.wtamu.edu/academic/anns/mps/math/mathlab/int_algebra/int_alg_tut3_sets.htm
-
-
+:numbered:
 === Russell's Paradox
 
 On your first day as an assistant librarian, you're asked to compile a book
@@ -2333,41 +2434,11 @@ incorrect, but you can't see the flaw in the argument. Of course, all paradoxes
 can be resolved, and the resolution deepens one's understanding. '`Ooh, hark at
 him pontificating on the philosophy of it all!!`' Okay, okay.
 
-:numbered:
-=== Common Sets Of Numbers
+=== Sources
 
-Some sets of numbers are common enough to have their own names and symbols:
-
-[cols="3*", options="header"]
-|===
-| Name | Symbol | Definition
-
-| Real Numbers
-| *R*
-| All the numbers on a continuous line from negative infinity to positive
-infinity.
-
-| Integers
-| *Z*
-| {..., -2, -1, 0, 1, 2, ...}
-
-| Natural Numbers
-| *N*
-| {0, 1, 2, ...}
-
-| Positive Integers
-| *Z+*
-| {1, 2, 3, ...}
-
-| Boolean Values
-| *B*
-| {1, 0} +
-By convention, 1 is interpreted as true, and 0 as false.
-
-| Empty Set
-| {emptyset}
-| {}
-|===
+* http://www.mathsisfun.com/sets/sets-introduction.html
+* http://people.cs.pitt.edu/~milos/courses/cs441/lectures/Class7.pdf
+* http://www.wtamu.edu/academic/anns/mps/math/mathlab/int_algebra/int_alg_tut3_sets.htm
 
 
 :numbered:
