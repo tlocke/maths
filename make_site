@@ -11,3 +11,4 @@ a2x -fepub -D epub src/maths.adoc
 cp html/index.html .
 cp epub/maths.epub .
 cp src/*.jpg .
+cp src/*.png .
