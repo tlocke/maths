@@ -466,9 +466,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_set_builder_notation">3.5. Set Builder Notation</a></li>
 <li><a href="#_universal_set">3.6. Universal Set</a></li>
 <li><a href="#_subset">3.7. Subset</a></li>
-<li><a href="#_russell_s_paradox">3.8. Russell&#8217;s Paradox</a></li>
-<li><a href="#_other_paradoxes">3.9. Other Paradoxes</a></li>
-<li><a href="#_sources">3.10. Sources</a></li>
+<li><a href="#_proper_subset">3.8. Proper Subset</a></li>
+<li><a href="#_cardinality">3.9. Cardinality</a></li>
+<li><a href="#_power_set">Power Set</a></li>
+<li><a href="#_cardinality_of_the_power_set">Cardinality Of The Power Set</a></li>
+<li><a href="#_russell_s_paradox">3.10. Russell&#8217;s Paradox</a></li>
+<li><a href="#_other_paradoxes">3.11. Other Paradoxes</a></li>
+<li><a href="#_sources">3.12. Sources</a></li>
 </ul>
 </li>
 <li><a href="#_boolean_algebra_ii">4. Boolean Algebra II</a>
@@ -496,7 +500,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_indicator_function">Indicator Function</a></li>
 <li><a href="#_subset_2">Subset</a></li>
 <li><a href="#_equals">Equals</a></li>
-<li><a href="#_proper_subset">Proper Subset</a></li>
+<li><a href="#_proper_subset_2">Proper Subset</a></li>
 <li><a href="#_union">Union</a></li>
 <li><a href="#_intersection">Intersection</a></li>
 <li><a href="#_complement">Complement</a></li>
@@ -6036,6 +6040,11 @@ infinity}</p></td>
 By convention, 1 is interpreted as true, and 0 as false.</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rational Numbers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Q</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numbers of the form p / q, where p and q are integers and p &#x2260; 0</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Empty Set</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#x2205;</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">{}</p></td>
@@ -6162,8 +6171,9 @@ Order doesn&#8217;t matter, so equal.</p>
 <div class="sect2">
 <h3 id="_set_membership">3.4. Set Membership</h3>
 <div class="paragraph">
-<p>The number 1 is an element of <strong>Z</strong>. Or equivalently the number 1 is a member of
-<strong>Z</strong>, or simply 1 is in <strong>Z</strong>. Set theorists write this as:</p>
+<p>I learnt from <a href="#_common_sets_of_numbers">Common Sets Of Numbers</a> that <strong>Z</strong> stands for the set of
+integers. So the number 1 is an element of <strong>Z</strong>. Or equivalently the number 1 is
+a member of <strong>Z</strong>, or simply 1 is in <strong>Z</strong>. Set theorists write this as:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -6271,14 +6281,8 @@ True</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Written in natural language eg. <strong>R</strong> = {All the numbers on a continuous line</p>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>from negative infinity to positive infinity}</p>
-</li>
-</ol>
-</div>
+<p>Written in natural language eg. <strong>R</strong> = {All the numbers on a continuous line
+from negative infinity to positive infinity}</p>
 </li>
 <li>
 <p>Each element in the set given explicitly eg. W = {Monday, Tuesday, Wednesday,
@@ -6291,7 +6295,7 @@ Thursday, Friday, Saturday, Sunday}.</p>
 </div>
 <div class="paragraph">
 <p>Then I came across a method of defining a set by specifying a rule in
-a mathematical notation called <em>set_builder_notation</em>. For example:</p>
+a mathematical notation called <em>set builder notation</em>. For example:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -6309,8 +6313,8 @@ a mathematical notation called <em>set_builder_notation</em>. For example:</p>
 <div class="paragraph">
 <p>This rule is read as, &#8216;the set consists of all values of x such that
 x is an integer and x is greater than 7.&#8217; The condition on the right hand side
-of the bar re-uses the connectives from propositional logic. Another example
-of set builder notation is:</p>
+of the bar re-uses the connectives from <a href="#_propositional_logic">Propositional Logic</a>. Another
+example of set builder notation is:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -6416,6 +6420,12 @@ x is a real number and x equals x squared.&#8217;</p>
 </div>
 <div class="sect2">
 <h3 id="_universal_set">3.6. Universal Set</h3>
+<div id="img-venn" class="imageblock">
+<div class="content">
+<img src="venn.jpg" alt="Venn Diagram">
+</div>
+<div class="title">Figure 4. <a href="https://commons.wikimedia.org/wiki/File:Venn-stainedglass-gonville-caius.jpg#/media/File:Venn-stainedglass-gonville-caius.jpg">Venn stained glass gonville caius</a> by <a href="https://commons.wikimedia.org/wiki/User:Schutz">User:Schutz</a>. The stained glass was designed by Maria McClafferty and installed in 1989. Licensed under <a href="http://creativecommons.org/licenses/by-sa/2.5">CC BY-SA 2.5</a> via <a href="https://commons.wikimedia.org/wiki/">Wikimedia Commons</a>.</div>
+</div>
 <div class="paragraph">
 <p>Let&#8217;s say we&#8217;re talking about a set of books:</p>
 </div>
@@ -6452,8 +6462,8 @@ A &#x2286; B
 </div>
 <div class="exampleblock">
 <div class="content">
-T = written before the 20th century<br>
-F = written by female authors
+T = {written before the 20th century}<br>
+F = {written by female authors}
 </div>
 </div>
 <div class="paragraph">
@@ -6490,26 +6500,52 @@ S &#x2286; S
 <p>A proof is an argument made up of small, incontrovertible steps that lead
 to the theorem. A proof that S &#x2286; S is:</p>
 </div>
-<div class="ulist example">
-<ul class="example">
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>A &#x2286; B is defined as being true if and only if every element of A is in B.</p>
 </li>
 <li>
-<p>If A = S and B = S then A = B, and so every element of A must be in B.</p>
+<p>Every element of S must be in S.</p>
 </li>
 <li>
 <p>Therefore S &#x2286; S.</p>
 </li>
-</ul>
+</ol>
+</div>
+<div class="paragraph">
+<p>Another theorem that I came across says that for any set S:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+&#x2205; &#x2286; S
+</div>
+</div>
+<div class="paragraph">
+<p>A proof of &#x2205; &#x2286; S is:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>A &#x2286; B is defined as being true if and only if every element of A is in B.</p>
+</li>
+<li>
+<p>If it were false that &#x2205; &#x2286; S, then there would be an element of
+&#x2205; that wasn&#8217;t in S. There are no elements of &#x2205;, so that
+isn&#8217;t possible.</p>
+</li>
+<li>
+<p>Therefore it must be true that &#x2205; &#x2286; S.</p>
+</li>
+</ol>
 </div>
 <div class="sect3">
 <h4 id="_questions_25">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Assume <strong>U</strong> is {0, 1, 2, &#8230;&#8203;, 7, 8, 9} and S is the set <code>'less than 5'</code> and E
-is the set <code>'less than 3'</code>.</p>
+<p>Assume <strong>U</strong> is {0, 1, 2, &#8230;&#8203;, 7, 8, 9} and S is the set &#8216;less than 5&#8217; and E
+is the set &#8216;less than 3&#8217;.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -6531,6 +6567,12 @@ is the set <code>'less than 3'</code>.</p>
 <li>
 <p>S &#x2286; E</p>
 </li>
+<li>
+<p>E &#x2286; E</p>
+</li>
+<li>
+<p>S &#x2286; S</p>
+</li>
 </ol>
 </div>
 </li>
@@ -6548,8 +6590,8 @@ is the set <code>'less than 3'</code>.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Assume <strong>U</strong> is {0, 1, 2, &#8230;&#8203;, 7, 8, 9} and S is the set <code>'less than 5'</code> and E
-is the set <code>'less than 3'</code>.</p>
+<p>Assume <strong>U</strong> is {0, 1, 2, &#8230;&#8203;, 7, 8, 9} and S is the set &#8216;less than 5&#8217; and E
+is the set &#8216;less than 3&#8217;.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -6576,6 +6618,14 @@ True</p>
 <p>S &#x2286; E<br>
 False</p>
 </li>
+<li>
+<p>E &#x2286; S<br>
+True</p>
+</li>
+<li>
+<p>S &#x2286; S<br>
+True</p>
+</li>
 </ol>
 </div>
 </li>
@@ -6595,7 +6645,353 @@ False</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_russell_s_paradox">3.8. Russell&#8217;s Paradox</h3>
+<h3 id="_proper_subset">3.8. Proper Subset</h3>
+<div class="paragraph">
+<p>For two sets A and B, A is a <em>proper subset</em> of B if and only if A &#x2286; B
+and A &#x2260; B. Set theorists write:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+A &#x2282; B
+</div>
+</div>
+<div class="paragraph">
+<p>With the universal set of books and the two sets:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+T = {written before the 20th century}<br>
+F = {written by female authors}
+</div>
+</div>
+<div class="paragraph">
+<p>then:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+F &#x2282; T
+</div>
+</div>
+<div class="paragraph">
+<p>drawn as a Venn diagram:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="sets_subset.png" alt="sets subset">
+</div>
+</div>
+<div class="sect3">
+<h4 id="_questions_26">Questions</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Assume <strong>U</strong> is {0, 1, 2, &#8230;&#8203;, 7, 8, 9} and S is the set &#8216;less than 5&#8217; and E
+is the set &#8216;less than 3&#8217;.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Say whether the following statements are true or false:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p><strong>U</strong> &#x2282; E</p>
+</li>
+<li>
+<p><strong>U</strong> &#x2282; S</p>
+</li>
+<li>
+<p><strong>U</strong> &#x2282; <strong>U</strong></p>
+</li>
+<li>
+<p>E &#x2282; S</p>
+</li>
+<li>
+<p>S &#x2282; E</p>
+</li>
+<li>
+<p>E &#x2282; E</p>
+</li>
+<li>
+<p>S &#x2282; S</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Draw a Venn diagram of <strong>U</strong>, S and E.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_answers_26">Answers</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Assume <strong>U</strong> is {0, 1, 2, &#8230;&#8203;, 7, 8, 9} and S is the set &#8216;less than 5&#8217; and E
+is the set &#8216;less than 3&#8217;.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Say whether the following statements are true or false:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p><strong>U</strong> &#x2282; E<br>
+False</p>
+</li>
+<li>
+<p><strong>U</strong> &#x2282; S<br>
+False</p>
+</li>
+<li>
+<p><strong>U</strong> &#x2282; <strong>U</strong><br>
+False</p>
+</li>
+<li>
+<p>E &#x2282; S<br>
+True</p>
+</li>
+<li>
+<p>S &#x2282; E<br>
+False</p>
+</li>
+<li>
+<p>E &#x2282; E<br>
+True</p>
+</li>
+<li>
+<p>S &#x2282; S<br>
+True</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Draw a Venn diagram of <strong>U</strong>, S and E.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="sets_qs_1.png" alt="sets qs 1">
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_cardinality">3.9. Cardinality</h3>
+<div class="paragraph">
+<p>Cardinality is the size of a set. For a finite set this is the number of
+elements of the set. So for:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+D = {days of the week}
+</div>
+</div>
+<div class="paragraph">
+<p>the cardinality of D is 7. Set theorists write this as:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+|D| = 7
+</div>
+</div>
+<div class="sect3">
+<h4 id="_questions_27">Questions</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Give the cardinality of the following sets:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>V = {A, E, I, O, U}</p>
+</li>
+<li>
+<p>M = {0, 1, 2, &#8230;&#8203;, 57, 58, 59}</p>
+</li>
+<li>
+<p>T = {2, 4, 6, 8, 10, 12}</p>
+</li>
+<li>
+<p>&#x2205;</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_answers_27">Answers</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Give the cardinality of the following sets:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>V = {A, E, I, O, U}<br>
+|V| = 5</p>
+</li>
+<li>
+<p>M = {0, 1, 2, &#8230;&#8203;, 57, 58, 59}<br>
+|M| = 60</p>
+</li>
+<li>
+<p>T = {2, 4, 6, 8, 10, 12}<br>
+|T| = 6</p>
+</li>
+<li>
+<p>&#x2205;<br>
+|&#x2205;| = 0</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_power_set">Power Set</h3>
+<div class="paragraph">
+<p>The <em>power set</em> of a set S is the set of all the subsets of S. The power set of
+S is written:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+P(S)
+</div>
+</div>
+<div class="paragraph">
+<p>Take for example the set of primary colours:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+C = {red, green, blue}
+</div>
+</div>
+<div class="paragraph">
+<p>The subsets of C are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>&#x2205;</p>
+</li>
+<li>
+<p>{red}</p>
+</li>
+<li>
+<p>{green}</p>
+</li>
+<li>
+<p>{blue}</p>
+</li>
+<li>
+<p>{red, green}</p>
+</li>
+<li>
+<p>{red, blue}</p>
+</li>
+<li>
+<p>{green, blue}</p>
+</li>
+<li>
+<p>{red, green, blue}</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>so the power set is:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+P(C) = {{red}, {green}, {blue}, {red, green}, {red, blue}, {green, blue},
+{red, green, blue}}
+</div>
+</div>
+<div class="sect3">
+<h4 id="_questions_28">Questions</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Write down the power set of each of the following sets:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>&#x2205;</p>
+</li>
+<li>
+<p>{1}</p>
+</li>
+<li>
+<p>{1, 2}</p>
+</li>
+<li>
+<p>{1, 2, 3}</p>
+</li>
+<li>
+<p>{True, False}</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_answers_28">Answers</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Write down the power set of each of the following sets:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>&#x2205;<br>
+{&#x2205;}</p>
+</li>
+<li>
+<p>{1}<br>
+{&#x2205;, {1}}</p>
+</li>
+<li>
+<p>{1, 2}<br>
+{&#x2205;, {1}, {2}, {1, 2}}</p>
+</li>
+<li>
+<p>{1, 2, 3}<br>
+{&#x2205;, {1}, {2}, {1, 2}, {3}, {1, 3}, {2, 3}, {1, 2, 3}}</p>
+</li>
+<li>
+<p>{True, False}<br>
+{&#x2205;, {True}, {False}, {True, False}}</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_cardinality_of_the_power_set">Cardinality Of The Power Set</h3>
+<div class="paragraph">
+<p>What&#8217;s the cardinality of the power set?</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_russell_s_paradox">3.10. Russell&#8217;s Paradox</h3>
 <div class="paragraph">
 <p>On your first day as an assistant librarian, you&#8217;re asked to compile a book
 that is a catalogue of all of the books in the library that don&#8217;t mention
@@ -6619,7 +7015,7 @@ contents as has been requested, except that it doesn&#8217;t contain itself.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_other_paradoxes">3.9. Other Paradoxes</h3>
+<h3 id="_other_paradoxes">3.11. Other Paradoxes</h3>
 <div class="paragraph">
 <p>Curry&#8217;s Paradox is:</p>
 </div>
@@ -6641,7 +7037,7 @@ him pontificating on the philosophy of it all!!&#8217; Okay, okay.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_sources">3.10. Sources</h3>
+<h3 id="_sources">3.12. Sources</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -6931,7 +7327,7 @@ implies(A, not(B)), implies(C, not(B)), A &#x22A8; not(B)
 </div>
 </div>
 <div class="sect3">
-<h4 id="_questions_26">Questions</h4>
+<h4 id="_questions_29">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -6970,7 +7366,7 @@ and off. This light switch is not on. Therefore the light switch is off.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_26">Answers</h4>
+<h4 id="_answers_29">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7441,7 +7837,7 @@ it to be true. So what&#8217;s a proof exactly? It&#8217;s a chain of small self
 true steps that lead to the theorem.</p>
 </div>
 <div class="sect3">
-<h4 id="_questions_27">Questions</h4>
+<h4 id="_questions_30">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7470,7 +7866,7 @@ true steps that lead to the theorem.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_27">Answers</h4>
+<h4 id="_answers_30">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7694,7 +8090,7 @@ and(or(or(not(C), not(A)), B), or(or(not(C), A), not(B)))
 <p>we&#8217;ve got it in CNF.</p>
 </div>
 <div class="sect3">
-<h4 id="_questions_28">Questions</h4>
+<h4 id="_questions_31">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7723,7 +8119,7 @@ and(or(or(not(C), not(A)), B), or(or(not(C), A), not(B)))
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_28">Answers</h4>
+<h4 id="_answers_31">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -8062,7 +8458,7 @@ and idempotence)</p>
 </ol>
 </div>
 <div class="sect3">
-<h4 id="_questions_29">Questions</h4>
+<h4 id="_questions_32">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -8072,7 +8468,7 @@ and idempotence)</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_29">Answers</h4>
+<h4 id="_answers_32">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -8391,7 +8787,7 @@ Q, (R &#x2227; P) &#x2227; (R &#x2227; Q) &#x2192; P &#x22A8; P
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="_questions_30">Questions</h4>
+<h4 id="_questions_33">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -8405,7 +8801,7 @@ valid by using rules of inference.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_30">Answers</h4>
+<h4 id="_answers_33">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -9252,7 +9648,7 @@ P &#x2228; Q, &#x00AC;(P &#x2227; Q), &#x00AC;P &#x22A8; Q</p>
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="_answers_31">4.8.1. Answers</h4>
+<h4 id="_answers_34">4.8.1. Answers</h4>
 <div class="paragraph">
 <p>Answers on their way&#8230;&#8203;</p>
 </div>
@@ -9264,7 +9660,7 @@ P &#x2228; Q, &#x00AC;(P &#x2227; Q), &#x00AC;P &#x22A8; Q</p>
 <div class="content">
 <img src="rosetta.jpg" alt="Rosetta Stone">
 </div>
-<div class="title">Figure 4. <a href="http://commons.wikimedia.org/wiki/File:Rosetta_Stone.JPG#mediaviewer/File:Rosetta_Stone.JPG">Rosetta Stone</a> by <a href="http://commons.wikimedia.org/wiki/User:Biopics">Hans Hillewaert</a> - Own work. Licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a> via <a href="http://commons.wikimedia.org/wiki/">Wikimedia Commons</a>.</div>
+<div class="title">Figure 5. <a href="http://commons.wikimedia.org/wiki/File:Rosetta_Stone.JPG#mediaviewer/File:Rosetta_Stone.JPG">Rosetta Stone</a> by <a href="http://commons.wikimedia.org/wiki/User:Biopics">Hans Hillewaert</a> - Own work. Licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a> via <a href="http://commons.wikimedia.org/wiki/">Wikimedia Commons</a>.</div>
 </div>
 <div class="paragraph">
 <p>I&#8217;ve found that in maths, the same thing is often called different names by
@@ -9590,7 +9986,7 @@ Rules say that anything in brackets gets evaluated first. So you&#8217;d write:<
 </table>
 </div>
 <div class="sect3">
-<h4 id="_questions_31">Questions</h4>
+<h4 id="_questions_34">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -9616,7 +10012,7 @@ Rules say that anything in brackets gets evaluated first. So you&#8217;d write:<
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_32">Answers</h4>
+<h4 id="_answers_35">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -10445,7 +10841,7 @@ functions, so I&#8217;ll give it the name <strong>S</strong>, so from now on:</p
 </div>
 </div>
 <div class="sect2">
-<h3 id="_proper_subset">Proper Subset</h3>
+<h3 id="_proper_subset_2">Proper Subset</h3>
 <div class="paragraph">
 <p>The symbol for the <em>proper subset</em> function is <code>&#x2286;</code>, and it&#8217;s defined as:</p>
 </div>
@@ -10501,7 +10897,7 @@ A, B &#x21A6; {x | x &#x2208; A and x &#x2209; B}
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-12-13 22:54:00 GMT
+Last updated 2015-12-26 22:24:04 GMT
 </div>
 </div>
 </body>

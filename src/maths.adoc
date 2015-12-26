@@ -2115,6 +2115,10 @@ infinity}
 | {1, 0} +
 By convention, 1 is interpreted as true, and 0 as false.
 
+| Rational Numbers
+| *Q*
+| Numbers of the form p / q, where p and q are integers and p {ne} 0
+
 | Empty Set
 | {emptyset}
 | {}
@@ -2192,8 +2196,9 @@ letters, and elements to represented by lower case letters.
 :numbered:
 === Set Membership
 
-The number 1 is an element of *Z*. Or equivalently the number 1 is a member of
-*Z*, or simply 1 is in *Z*. Set theorists write this as:
+I learnt from <<_common_sets_of_numbers>> that *Z* stands for the set of
+integers. So the number 1 is an element of *Z*. Or equivalently the number 1 is
+a member of *Z*, or simply 1 is in *Z*. Set theorists write this as:
 
 [example]
 1 {isin} *Z*
@@ -2241,13 +2246,13 @@ The number 1.5 is not in *Z*. They write this as:
 Up to this point I'd seen sets specified in three ways:
 
 * Written in natural language eg. *R* = {All the numbers on a continuous line
-. from negative infinity to positive infinity}
+from negative infinity to positive infinity}
 * Each element in the set given explicitly eg. W = {Monday, Tuesday, Wednesday,
   Thursday, Friday, Saturday, Sunday}.
 * Using ellipses to imply elements, eg. M = {0, 1, 2, ..., 57, 58, 59}
 
 Then I came across a method of defining a set by specifying a rule in
-a mathematical notation called __set_builder_notation__. For example:
+a mathematical notation called __set builder notation__. For example:
 
 [example]
 {x | x {isin} *Z* {and} x > 7}
@@ -2259,8 +2264,8 @@ which specifies the set:
 
 This rule is read as, '`the set consists of all values of x such that
 x is an integer and x is greater than 7.`' The condition on the right hand side
-of the bar re-uses the connectives from propositional logic. Another example
-of set builder notation is:
+of the bar re-uses the connectives from <<_propositional_logic>>. Another
+example of set builder notation is:
 
 [example]
 {x | x {isin} *R* {and} x = x^2^}
@@ -2307,6 +2312,10 @@ x is a real number and x equals x squared.`'
 :numbered:
 === Universal Set
 
+[[img-venn]]
+.https://commons.wikimedia.org/wiki/File:Venn-stainedglass-gonville-caius.jpg#/media/File:Venn-stainedglass-gonville-caius.jpg[Venn stained glass gonville caius] by https://commons.wikimedia.org/wiki/User:Schutz[User:Schutz]. The stained glass was designed by Maria McClafferty and installed in 1989. Licensed under http://creativecommons.org/licenses/by-sa/2.5[CC BY-SA 2.5] via https://commons.wikimedia.org/wiki/[Wikimedia Commons].
+image::venn.jpg[Venn Diagram]
+
 Let's say we're talking about a set of books:
 
 *U* = {Emma by Jane Austen, Anna Karenina by Leo Tolstoy, Crime and Punishment
@@ -2333,8 +2342,8 @@ A {sube} B
 Going back to our universal set of books, let's define two sets:
 
 [example]
-T = written before the 20th century +
-F = written by female authors
+T = {written before the 20th century} +
+F = {written by female authors}
 
 then:
 
@@ -2358,30 +2367,44 @@ S {sube} S
 A proof is an argument made up of small, incontrovertible steps that lead
 to the theorem. A proof that S {sube} S is:
 
+. A {sube} B is defined as being true if and only if every element of A is in B.
+. Every element of S must be in S.
+. Therefore S {sube} S.
+
+Another theorem that I came across says that for any set S:
+
 [example]
-* A {sube} B is defined as being true if and only if every element of A is in B.
-* If A = S and B = S then A = B, and so every element of A must be in B.
-* Therefore S {sube} S.
+{emptyset} {sube} S
+
+A proof of {emptyset} {sube} S is:
+
+. A {sube} B is defined as being true if and only if every element of A is in B.
+. If it were false that {emptyset} {sube} S, then there would be an element of
+  {emptyset} that wasn't in S. There are no elements of {emptyset}, so that
+  isn't possible.
+. Therefore it must be true that {emptyset} {sube} S.
 
 
 :numbered!:
 ==== Questions
 
-. Assume *U* is {0, 1, 2, ..., 7, 8, 9} and S is the set `'less than 5'` and E
-  is the set `'less than 3'`.
+. Assume *U* is {0, 1, 2, ..., 7, 8, 9} and S is the set '`less than 5`' and E
+  is the set '`less than 3`'.
 .. Say whether the following statements are true or false:
 ... *U* {sube} E
 ... *U* {sube} S
 ... *U* {sube} *U*
 ... E {sube} S
 ... S {sube} E
+... E {sube} E
+... S {sube} S
 .. Draw a Venn diagram of *U*, S and E.
 
 
 ==== Answers
 
-. Assume *U* is {0, 1, 2, ..., 7, 8, 9} and S is the set `'less than 5'` and E
-  is the set `'less than 3'`.
+. Assume *U* is {0, 1, 2, ..., 7, 8, 9} and S is the set '`less than 5`' and E
+  is the set '`less than 3`'.
 .. Say whether the following statements are true or false:
 ... *U* {sube} E +
     False
@@ -2393,9 +2416,173 @@ to the theorem. A proof that S {sube} S is:
     True
 ... S {sube} E +
     False
+... E {sube} S +
+    True
+... S {sube} S +
+    True
 .. Draw a Venn diagram of *U*, S and E.
 
 image::sets_qs_1.png[]
+
+
+:numbered:
+=== Proper Subset
+
+For two sets A and B, A is a __proper subset__ of B if and only if A {sube} B
+and A {ne} B. Set theorists write:
+
+[example]
+A {sub} B
+
+With the universal set of books and the two sets:
+
+[example]
+T = {written before the 20th century} +
+F = {written by female authors}
+
+then:
+
+[example]
+F {sub} T
+
+drawn as a Venn diagram:
+
+image::sets_subset.png[]
+
+
+:numbered!:
+==== Questions
+
+. Assume *U* is {0, 1, 2, ..., 7, 8, 9} and S is the set '`less than 5`' and E
+  is the set '`less than 3`'.
+.. Say whether the following statements are true or false:
+... *U* {sub} E
+... *U* {sub} S
+... *U* {sub} *U*
+... E {sub} S
+... S {sub} E
+... E {sub} E
+... S {sub} S
+.. Draw a Venn diagram of *U*, S and E.
+
+
+==== Answers
+
+. Assume *U* is {0, 1, 2, ..., 7, 8, 9} and S is the set '`less than 5`' and E
+  is the set '`less than 3`'.
+.. Say whether the following statements are true or false:
+... *U* {sub} E +
+    False
+... *U* {sub} S +
+    False
+... *U* {sub} *U* +
+    False
+... E {sub} S +
+    True
+... S {sub} E +
+    False
+... E {sub} E +
+    True
+... S {sub} S +
+    True
+.. Draw a Venn diagram of *U*, S and E.
+
+image::sets_qs_1.png[]
+
+
+:numbered:
+=== Cardinality
+
+Cardinality is the size of a set. For a finite set this is the number of
+elements of the set. So for:
+
+[example]
+D = {days of the week}
+
+the cardinality of D is 7. Set theorists write this as:
+
+[example]
+|D| = 7
+
+
+:numbered!:
+==== Questions
+. Give the cardinality of the following sets:
+.. V = {A, E, I, O, U}
+.. M = {0, 1, 2, ..., 57, 58, 59}
+.. T = {2, 4, 6, 8, 10, 12}
+.. {emptyset}
+
+
+==== Answers
+. Give the cardinality of the following sets:
+.. V = {A, E, I, O, U} +
+   |V| = 5
+.. M = {0, 1, 2, ..., 57, 58, 59} +
+   |M| = 60
+.. T = {2, 4, 6, 8, 10, 12} +
+   |T| = 6
+.. {emptyset} +
+   |{emptyset}| = 0
+
+
+=== Power Set
+
+The _power set_ of a set S is the set of all the subsets of S. The power set of
+S is written:
+
+[example]
+P(S)
+
+Take for example the set of primary colours:
+
+[example]
+C = {red, green, blue}
+
+The subsets of C are:
+
+* {emptyset}
+* \{red}
+* \{green}
+* \{blue}
+* {red, green}
+* {red, blue}
+* {green, blue}
+* {red, green, blue}
+
+so the power set is:
+
+[example]
+P\(C) = {\{red}, \{green}, \{blue}, {red, green}, {red, blue}, {green, blue},
+{red, green, blue}}
+
+
+:numbered!:
+==== Questions
+. Write down the power set of each of the following sets:
+.. {emptyset}
+.. \{1}
+.. {1, 2}
+.. {1, 2, 3}
+.. {True, False}
+
+
+==== Answers
+. Write down the power set of each of the following sets:
+.. {emptyset} +
+   {{emptyset}}
+.. \{1} +
+   {{emptyset}, \{1}}
+.. {1, 2} +
+   {{emptyset}, \{1}, \{2}, {1, 2}}
+.. {1, 2, 3} +
+   {{emptyset}, \{1}, \{2}, {1, 2}, \{3}, {1, 3}, {2, 3}, {1, 2, 3}}
+.. {True, False} +
+   {{emptyset}, \{True}, \{False}, {True, False}}
+
+
+=== Cardinality Of The Power Set
+What's the cardinality of the power set?
 
 
 :numbered:
