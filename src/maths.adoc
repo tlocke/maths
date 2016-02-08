@@ -16,7 +16,7 @@ Tony Locke
 :nequiv: &#x2262;
 :brarr: &#x21A6;
 :emptyset: &#x2205;
-:mathP: 𝒫
+:mathP: 𝓟
 :toc:
 
 :numbered:
@@ -2028,6 +2028,283 @@ identity.
 
 
 :numbered:
+=== Entailment
+
+'`What does that _entail_, lol!`', yeah thanks for that. In English you might
+have some _premises_ leading to a _conclusion_ such as:
+
+[example]
+Abelard ordered coffee or Abelard ordered cake. Abelard didn't order cake.
+Therefore Abelard ordered coffee.
+
+To convert the premises and conclusion from English into logical formulas, we
+first of all define the atomic formulas:
+
+[example]
+A: Abelard ordered coffee. +
+B: Abelard ordered cake.
+
+So the premises and conclusion becomes:
+
+[example]
+Premises: (A {or} B), {not}B +
+Conclusion: A
+
+Now, do the premises _entail_ the conclusion? In other words, for every
+interpretation where the premises are true, is the conclusion true? If the
+premises entail the conclusion, the following formula must be valid:
+
+[example]
+(((A {or} B) {and} {not}B) {implies} A)
+
+In effect we've joined the premises together with {and} and then added on the
+conclusion with an {implies} to get the formula. Bring on the table of truth!
+
+[cols="6*", options="header"]
+|===
+
+| A
+| B
+| (A {or} B)
+| {not}B
+| ((A {or} B) {and} {not}B)
+| (((A {or} B) {and} {not}B) {implies} A)
+
+| T | T | T | F | F | T
+| F | T | T | F | F | T
+| T | F | T | T | T | T
+| F | F | F | T | F | T
+|===
+
+The last column is always true, so the formula is valid, so the premises do
+entail the conclusion. Logicians denote an entailment with the {entails} symbol.
+So the entailment we've just found can be written:
+
+[example]
+(A {or} B), {not}B {entails} A
+
+Here's another example of some premises and a conclusion in English:
+
+[example]
+If we run out of petrol we won't get to the wedding on time. If we lose our
+way we won't get to the wedding on time. We've run out of petrol. We won't get
+to the wedding on time.
+
+In logic symbols the argument is:
+
+[example]
+A: Run out of petrol. +
+B: Get to the wedding on time. +
+C: Lose our way. +
+Premises: (A {implies} {not}B), (C {implies} {not}B), A +
+Conclusion: {not}B
+
+It's an entailment if:
+
+[example]
+((((A {implies} {not}B) {and} (C {implies} {not}B)) {and} A) {implies} {not}B)
+
+is valid. Doing a giant truth table:
+
+[cols="9*", options="header"]
+|===
+| A
+| B
+| C
+| {not}B
+| (A {implies} {not}B)
+| (C {implies} {not}B)
+| ((A {implies} {not}B) {and} (C {implies} {not}B))
+| (((A {implies} {not}B) {and} (C {implies} {not}B)) {and} A)
+| ((((A {implies} {not}B) {and} (C {implies} {not}B)) {and} A) {implies} {not}B)
+
+| T | T | T | F | F | F | F | F | T
+| F | T | T | F | T | F | F | F | T
+| T | F | T | T | T | F | F | F | T
+| F | F | T | T | T | T | T | F | T
+| T | T | F | F | F | T | F | F | T
+| F | T | F | F | T | T | T | F | T
+| T | F | F | T | T | T | T | T | T
+| F | F | F | T | T | T | T | F | T
+|===
+
+Shows that the formula is valid and so we can write that:
+
+[example]
+(A {implies} {not}B), (C {implies} {not}B), A {entails} {not}B
+
+
+:numbered!:
+==== Questions
+
+. Construct logical formulas for the following premises and conclusions:
+.. If it's a silent film then there's no sound. It's a silent film. Therefore
+   there's no sound.
+.. Scheherazade bought black paint or Scheherazade bought grey paint.
+   Scheherazade did not buy grey paint. Therefore Scheherazade bought black
+   paint.
+.. It is not the case that Ben won a tennis match and Toby won a tennis match.
+   Toby won a tennis match. Therefore Ben did not win a tennis match.
+.. Bill orders 6x or Bill orders Tribute. If Bill orders 6x or Tribute then the
+   pub is open. Bill does not order Tribute. Therefore the pub is open and Bill
+   orders 6x.
+.. The light switch is on or the light switch is off. The light switch is not on
+   and off. This light switch is not on. Therefore the light switch is off.
+. For the arguments given in question 1, show whether they are valid or not.
+
+
+==== Answers
+
+. Construct logical formulas for the following premises and conclusions:
+.. If it's a silent film then there's no sound. It's a silent film. Therefore
+   there's no sound. +
+   P: It's a silent film. +
+   Q: There's no sound. +
+   Premises: (P {implies} Q), P +
+   Conclusion: Q
+.. A: Scheherazade bought black paint. +
+   B: Scheherazade bought grey paint. +
+   Premises: (A {or} B), {not}B +
+   Conclusion: A
+.. It is not the case that Ben won a tennis match and Toby won a tennis match.
+   Toby won a tennis match. Therefore Ben did not win a tennis match. +
+   P: Ben won a tennis match. +
+   Q: Toby won a tennis match. +
+   Premises: {not}(P {and} Q), Q
+   Conclusion: {not}P
+.. P: Bill orders 6x. +
+   Q: Bill orders Tribute. +
+   R: The pub is open. +
+   Premises: (P {or} Q), ((P {or} Q) {implies} R), {not}Q
+   Conclusion: (R {and} P)
+.. P: The light switch is on. +
+   Q: The light switch is off. +
+   Premises: (P {or} Q), {not}(P {and} Q), {not}P
+   Conclusion: Q
+. For the premises and conclusions given in question 1, show whether they are
+  entailments not.
+.. Premises: (P {implies} Q), P +
+   Conclusion: Q +
+   The truth table below shows that the formula
+   (((P {implies} Q) {and} P) {implies} Q) is valid, and so +
+   (P {implies} Q), P {entails} Q
++
+[cols="5*", options="header"]
+|===
+| P
+| Q
+| (P {implies} Q)
+| ((P {implies} Q) {and} P)
+| (((P {implies} Q) {and} P) {implies} Q)
+
+| T | T | T | T | T
+| F | T | T | F | T
+| T | F | F | F | T
+| F | F | T | F | T
+|===
++
+.. Premises: (A {or} B), {not}B +
+   Conclusion: A +
+   The truth table below shows that the formula
+   (((A {or} B) {and} {not}B) {implies} A) is valid, and so: +
+   (A {or} B), {not}B {entails} A
++
+[cols="6*", options="header"]
+|===
+| A
+| B
+| (A {or} B)
+| {not}B
+| ((A {or} B) {and} {not}B)
+| (((A {or} B) {and} {not}B) {implies} A)
+
+| T | T | T | F | F | T
+| F | T | T | F | F | T
+| T | F | T | T | T | T
+| F | F | F | T | F | T
+|===
++
+.. Premises: {not}(P {and} Q), Q +
+   Conclusion: {not}P +
+   The truth table below shows that the formula: +
+   (({not}(P {and} Q) {and} Q) {implies} {not}P) +
+   is valid and so the premises entail the conclusion.
++
+|===
+| P
+| Q
+| (P {and} Q)
+| {not}(P {and} Q)
+| ({not}(P {and} Q) {and} Q)
+| {not}P
+| (({not}(P {and} Q) {and} Q) {implies} {not}P)
+
+| T | T | T | F | F | F | T
+| F | T | F | T | T | T | T
+| T | F | F | T | F | F | T
+| F | F | F | T | F | T | T
+|===
++
+.. Premises: (P {or} Q), ((P {or} Q) {implies} R), {not}Q +
+   Conclusion: (R {and} P) +
+   The truth table below shows that the formula: +
+   ((((P {or} Q) {and} implies((P {or} Q) {or} R)) {and} {not}Q) {implies}
+   (R {and} P)) +
+   is valid and so: +
+   (P {or} Q), ((P {or} Q) {implies} R), {not}Q {entails} (R {and} P)
++
+[cols="10*", options="header"]
+|===
+| P
+| Q
+| R
+| (P {or} Q)
+| ((P {or} Q) {implies} R)
+| {not}Q
+| ((P {or} Q) {and} ((P {or} Q) {implies} R))
+| (((P {or} Q) {and} ((P {or} Q) {implies} R)) {and} {not}Q)
+| (R {and} P)
+| ((((P {or} Q) {and} implies((P {or} Q) {and} R)) {and} {not}Q) {implies}
+  (R {and} P))
+
+| T | T | T | T | T | T | F | T | F | T
+| F | T | T | F | T | F | F | F | F | T
+| T | F | T | F | F | T | T | F | F | T
+| F | F | T | F | T | F | T | F | F | T
+| T | T | F | T | F | F | F | F | F | T
+| F | T | F | F | T | F | F | F | F | T
+| T | F | F | F | T | F | T | F | F | T
+| F | F | F | F | T | F | T | F | F | T
+|===
++
+.. Premises: (P {or} Q), {not}(P {and} Q), {not}P
+   Conclusion: Q
+   The truth table below shows that the formula: +
+   ((((P {or} Q) {and} {not}(P {and} Q)) {and} {not}P) {implies} Q) +
+   is valid and so: +
+   (P {or} Q), {not}(P {and} Q), {not}P {entails} Q +
++
+[cols="9*", options="header"]
+|===
+| P
+| Q
+| (P {or} Q)
+| (P {and} Q)
+| {not}(P {and} Q)
+| ((P {or} Q) {and} {not}((P {and} Q)))
+| {not}P
+| (((P {or} Q) {and} {not}(P {and} Q)) {and} {not}P)
+| ((((P {or} Q) {and} {not}(P {and} Q)) {and} {not}P) {implies} Q)
+
+| T | T | T | T | F | F | F | F | T
+| F | T | T | F | T | T | T | T | T
+| T | F | T | F | T | T | F | F | T
+| F | F | F | F | T | F | T | F | T
+|===
+
+
+
+:numbered:
 == Sets
 
 [[img-gottlob_frege]]
@@ -2656,7 +2933,7 @@ Here's a proof of |{mathP}(S)| = 2^n^:
 === Proof By Induction
 
 I'm told that the proof we just did of |{mathP}(S)| = 2^n^ was an example of
-_proof by induction__. I tried to find out the underlying form of proof by
+_proof by induction_. I tried to find out the underlying form of proof by
 induction and it turns out to have three parts:
 
 Say we've got a mathematical statment P that depends on n {isin} *N*. It's the
@@ -2700,7 +2977,7 @@ The sum of all the elements of S is n(n + 1) / 2
 :numbered:
 === Set Difference
 
-
+Set difference
 
 :numbered:
 === Russell's Paradox
@@ -2750,272 +3027,6 @@ him pontificating on the philosophy of it all!!`' Okay, okay.
 == Boolean Algebra II
 
 In which we encounter entailment and SAT problems!
-
-:numbered:
-=== Entailment
-
-'`What does that _entail_, lol!`', yeah thanks for that. In English you might
-have some _premises_ leading to a _conclusion_ such as:
-
-[example]
-Abelard ordered coffee or Abelard ordered cake. Abelard didn't order cake.
-Therefore Abelard ordered coffee.
-
-To convert the premises and conclusion from English into logical formulas, we
-first of all define the atomic formulas:
-
-[example]
-A: Abelard ordered coffee. +
-B: Abelard ordered cake.
-
-So the premises and conclusion becomes:
-
-[example]
-Premises: or(A, B), not(B) +
-Conclusion: A
-
-Now, do the premises _entail_ the conclusion? In other words, for every
-interpretation where the premises are true, is the conclusion true? If the
-premises entail the conclusion, the following formula must be valid:
-
-[example]
-implies(and(or(A, B), not(B)), A)
-
-In effect we've joined the premises together with '`and`' and then added on the
-conclusion with an '`implies`' to get the formula. Bring on the table of truth!
-
-[cols="6*", options="header"]
-|===
-
-| A
-| B
-| or(A, B)
-| not(B)
-| and(or(A, B), not(B))
-| implies(and(or(A, B), not(B)), A)
-
-| 1 | 1 | 1 | 0 | 0 | 1
-| 0 | 1 | 1 | 0 | 0 | 1
-| 1 | 0 | 1 | 1 | 1 | 1
-| 0 | 0 | 0 | 1 | 0 | 1
-|===
-
-The last column is always true, so the formula is valid, so the premises do
-entail the conclusion. Logicians denote an entailment with the {entails} symbol.
-So the entailment we've just found can be written:
-
-[example]
-or(A, B), not(B) {entails} A
-
-Here's another example of some premises and a conclusion in English:
-
-[example]
-If we run out of petrol we won't get to the wedding on time. If we lose our
-way we won't get to the wedding on time. We've run out of petrol. We won't get
-to the wedding on time.
-
-In logic symbols the argument is:
-
-[example]
-A: Run out of petrol. +
-B: Get to the wedding on time. +
-C: Lose our way. +
-Premises: implies(A, not(B)), implies(C, not(B)), A +
-Conclusion: not(B)
-
-It's an entailment if:
-
-[example]
-implies(and(and(implies(A, not(B)), implies(C, not(B))), A), not(B))
-
-is valid. Doing a giant truth table:
-
-[cols="9*", options="header"]
-|===
-| A
-| B
-| C
-| not(B)
-| implies(A, not(B))
-| implies(C, not(B))
-| and(implies(A, not(B)), implies(C, not(B)))
-| and(and(implies(A, not(B)), implies(C, not(B))), A)
-| implies(and(and(implies(A, not(B)), implies(C, not(B))), A), not(B))
-
-| 1 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 1
-| 0 | 1 | 1 | 0 | 1 | 0 | 0 | 0 | 1
-| 1 | 0 | 1 | 1 | 1 | 0 | 0 | 0 | 1
-| 0 | 0 | 1 | 1 | 1 | 1 | 1 | 0 | 1
-| 1 | 1 | 0 | 0 | 0 | 1 | 0 | 0 | 1
-| 0 | 1 | 0 | 0 | 1 | 1 | 1 | 0 | 1
-| 1 | 0 | 0 | 1 | 1 | 1 | 1 | 1 | 1
-| 0 | 0 | 0 | 1 | 1 | 1 | 1 | 0 | 1
-|===
-
-Shows that the formula is valid and so we can write that:
-
-[example]
-implies(A, not(B)), implies(C, not(B)), A {entails} not(B)
-
-
-:numbered!:
-==== Questions
-
-. Construct logical formulas for the following premises and conclusions:
-.. If it's a silent film then there's no sound. It's a silent film. Therefore
-   there's no sound.
-.. Scheherazade bought black paint or Scheherazade bought grey paint.
-   Scheherazade did not buy grey paint. Therefore Scheherazade bought black
-   paint.
-.. It is not the case that Ben won a tennis match and Toby won a tennis match.
-   Toby won a tennis match. Therefore Ben did not win a tennis match.
-.. Bill orders 6x or Bill orders Tribute. If Bill orders 6x or Tribute then the
-   pub is open. Bill does not order Tribute. Therefore the pub is open and Bill
-   orders 6x.
-.. The light switch is on or the light switch is off. The light switch is not on
-   and off. This light switch is not on. Therefore the light switch is off.
-. For the arguments given in question 1, show whether they are valid or not.
-
-
-==== Answers
-
-. Construct logical formulas for the following premises and conclusions:
-.. If it's a silent film then there's no sound. It's a silent film. Therefore
-   there's no sound. +
-   P: It's a silent film. +
-   Q: There's no sound. +
-   Premises: implies(P, Q), P +
-   Conclusion: Q
-.. A: Scheherazade bought black paint. +
-   B: Scheherazade bought grey paint. +
-   Premises: or(A, B), not(B) +
-   Conclusion: A
-.. P: Ben won a tennis match. +
-   Q: Toby won a tennis match. +
-   Premises: not(and(P, Q)), Q
-   Conclusion: not(P)
-.. P: Bill orders 6x. +
-   Q: Bill orders Tribute. +
-   R: The pub is open. +
-   Premises: or(P, Q), implies(or(P, Q), R), not(Q)
-   Conclusion: and(R, P)
-.. P: The light switch is on. +
-   Q: The light switch is off. +
-   Premises: or(P, Q), not(and(P, Q)), not(P)
-   Conclusion: Q
-. For the premises and conclusions given in question 1, show whether they are
-  entailments not.
-.. Premises: implies(P, Q), P +
-   Conclusion: Q +
-   The truth table below shows that the formula
-   implies(and(implies(P, Q), P), Q) is valid, and so +
-   implies(P, Q), P {entails} Q
-+
-[cols="5*", options="header"]
-|===
-| P
-| Q
-| implies(P, Q)
-| and(implies(P, Q), P)
-| implies(and(implies(P, Q), P), Q)
-
-| 1 | 1 | 1 | 1 | 1
-| 0 | 1 | 1 | 0 | 1
-| 1 | 0 | 0 | 0 | 1
-| 0 | 0 | 1 | 0 | 1
-|===
-+
-.. Premises: or(A, B), not(B) +
-   Conclusion: A +
-   The truth table below shows that the formula
-   implies(and(or(A, B), not(B)), A) is valid, and so: +
-   or(A, B), not(B) {entails} A
-+
-[cols="6*", options="header"]
-|===
-| A
-| B
-| or(A, B)
-| not(B)
-| and(or(A, B), not(B))
-| implies(and(or(A, B), not(B)), A)
-
-| 1 | 1 | 1 | 0 | 0 | 1
-| 0 | 1 | 1 | 0 | 0 | 1
-| 1 | 0 | 1 | 1 | 1 | 1
-| 0 | 0 | 0 | 1 | 0 | 1
-|===
-+
-.. Premises: not(and(P, Q)), Q +
-   Conclusion: not(P) +
-   The truth table below shows that the formula: +
-   implies(and(or(P, Q), Q), not(P)) +
-   is not valid and so the premises do not ential the conclusion.
-+
-|===
-| P | Q | or(P, Q) | and(or(P, Q), Q) | not(P) | implies(and(or(P, Q)), not(P))
-
-| 1 | 1 | 1        | 1                | 0      | 0
-| 0 | 1 | 1        | 1                | 1      | 1
-| 1 | 0 | 1        | 0                | 0      | 1
-| 0 | 0 | 0        | 0                | 1      | 1
-|===
-+
-.. Premises: or(P, Q), implies(or(P, Q), R), not(Q) +
-   Conclusion: and(R, P) +
-   The truth table below shows that the formula: +
-   implies(and(and(or(P, Q), implies(or(P, Q), R)), not(Q)), and(R, P)) +
-   is valid and so: +
-   or(P, Q), implies(or(P, Q), R), not(Q) {entails} and(R, P)
-+
-[cols="10*", options="header"]
-|===
-| P
-| Q
-| R
-| or(P, Q)
-| implies(or(P, Q), R)
-| not(Q)
-| and(or(P, Q), implies(or(P, Q), R))
-| and(and(or(P, Q), implies(or(P, Q), R)), not(Q))
-| and(R, P)
-| implies(and(and(or(P, Q), implies(or(P, Q), R)), not(Q)), and(R, P))
-
-| 1 | 1 | 1 | 1 | 1 | 1 | 0 | 1 | 0 | 1
-| 0 | 1 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 1
-| 1 | 0 | 1 | 0 | 0 | 1 | 1 | 0 | 0 | 1
-| 0 | 0 | 1 | 0 | 1 | 0 | 1 | 0 | 0 | 1
-| 1 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1
-| 0 | 1 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 1
-| 1 | 0 | 0 | 0 | 1 | 0 | 1 | 0 | 0 | 1
-| 0 | 0 | 0 | 0 | 1 | 0 | 1 | 0 | 0 | 1
-|===
-+
-.. Premises: or(P, Q), not(and(P, Q)), not(P)
-   Conclusion: Q
-   The truth table below shows that the formula: +
-   implies(and(and(or(P, Q), not(and(P, Q))), not(P)), Q) +
-   is valid and so: +
-   or(P, Q), not(and(P, Q)), not(P) {entails} Q +
-+
-[cols="9*", options="header"]
-|===
-| P
-| Q
-| or(P, Q)
-| and(P, Q)
-| not(and(P, Q))
-| and(or(P, Q), not(and(P, Q)))
-| not(P)
-| and(and(or(P, Q), not(and(P, Q))), not(P))
-| implies(and(and(or(P, Q), not(and(P, Q))), not(P)), Q)
-
-| 1 | 1 | 1 | 1 | 0 | 0 | 0 | 0 | 1
-| 0 | 1 | 1 | 0 | 1 | 1 | 1 | 1 | 1
-| 1 | 0 | 1 | 0 | 1 | 1 | 0 | 0 | 1
-| 0 | 0 | 0 | 0 | 1 | 0 | 1 | 0 | 1
-|===
-
 
 
 
@@ -4033,6 +4044,8 @@ and the truth table is:
 | 0 | 0 | 0 | 0         | 0
 |===
 
+
+:numbered:
 === Sources
 
 * http://en.wikibooks.org/wiki/Formal_Logic/Sentential_Logic (Referred to this
@@ -4041,7 +4054,7 @@ and the truth table is:
   book first got me going on propositional logic.)
 * http://en.wikipedia.org/wiki/Propositional_calculus (This and related pages
   on Wikipedia continually useful).
-* http://logic.stanford.edu/intrologic/chapters/cover.html (Excellent notes).
+* http://logic.stanford.edu/intrologic/notes/notes.html (Excellent notes).
 * https://www.trinity.edu/cbrown/logic/alter.pdf (Shows the different systems of
   propositional logic)
 
