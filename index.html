@@ -468,11 +468,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_subset">3.7. Subset</a></li>
 <li><a href="#_proper_subset">3.8. Proper Subset</a></li>
 <li><a href="#_cardinality">3.9. Cardinality</a></li>
-<li><a href="#_power_set">Power Set</a></li>
-<li><a href="#_cardinality_of_the_power_set">Cardinality Of The Power Set</a></li>
-<li><a href="#_russell_s_paradox">3.10. Russell&#8217;s Paradox</a></li>
-<li><a href="#_other_paradoxes">3.11. Other Paradoxes</a></li>
-<li><a href="#_sources">3.12. Sources</a></li>
+<li><a href="#_power_set">3.10. Power Set</a></li>
+<li><a href="#_cardinality_of_the_power_set">3.11. Cardinality Of The Power Set</a></li>
+<li><a href="#_proof_by_induction">3.12. Proof By Induction</a></li>
+<li><a href="#_russell_s_paradox">3.13. Russell&#8217;s Paradox</a></li>
+<li><a href="#_other_paradoxes">3.14. Other Paradoxes</a></li>
+<li><a href="#_sources">3.15. Sources</a></li>
 </ul>
 </li>
 <li><a href="#_boolean_algebra_ii">4. Boolean Algebra II</a>
@@ -6862,14 +6863,14 @@ D = {days of the week}
 </div>
 </div>
 <div class="sect2">
-<h3 id="_power_set">Power Set</h3>
+<h3 id="_power_set">3.10. Power Set</h3>
 <div class="paragraph">
 <p>The <em>power set</em> of a set S is the set of all the subsets of S. The power set of
 S is written:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
-P(S)
+𝒫(S)
 </div>
 </div>
 <div class="paragraph">
@@ -6916,8 +6917,8 @@ C = {red, green, blue}
 </div>
 <div class="exampleblock">
 <div class="content">
-P(C) = {{red}, {green}, {blue}, {red, green}, {red, blue}, {green, blue},
-{red, green, blue}}
+𝒫(C) = {&#x2205;, {red}, {green}, {blue}, {red, green}, {red, blue},
+{green, blue}, {red, green, blue}}
 </div>
 </div>
 <div class="sect3">
@@ -6985,13 +6986,168 @@ P(C) = {{red}, {green}, {blue}, {red, green}, {red, blue}, {green, blue},
 </div>
 </div>
 <div class="sect2">
-<h3 id="_cardinality_of_the_power_set">Cardinality Of The Power Set</h3>
+<h3 id="_cardinality_of_the_power_set">3.11. Cardinality Of The Power Set</h3>
 <div class="paragraph">
-<p>What&#8217;s the cardinality of the power set?</p>
+<p>Set theorists have shown that if a set S has cardinality n, then:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+|𝒫(S)| = 2<sup>n</sup>
+</div>
+</div>
+<div class="paragraph">
+<p>Looking at the cardinalities of the power sets of sets with cardinality
+0, 1, 2, 3 we get:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>|𝒫(&#x2205;)| = |{&#x2205;}| = 1</p>
+</li>
+<li>
+<p>|𝒫({1})| = |{&#x2205;, {1}}| = 2</p>
+</li>
+<li>
+<p>|𝒫({1, 2})| = |{&#x2205;, {1}, {2}, {1, 2}}| = 4</p>
+</li>
+<li>
+<p>|𝒫({1, 2, 3})| =  |{&#x2205;, {1}, {2}, {1, 2}, {3}, {1, 3},
+{2, 3}, {1, 2, 3}}| = 8</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Writing this out in a table gives:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">A</th>
+<th class="tableblock halign-left valign-top">B</th>
+<th class="tableblock halign-left valign-top">or(A, B)</th>
+<th class="tableblock halign-left valign-top">not(B)</th>
+<th class="tableblock halign-left valign-top">and(or(A, B), not(B))</th>
+<th class="tableblock halign-left valign-top">implies(and(or(A, B), not(B)), A)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>So I saw that to get the next power set you take the previous power set,
+and then for each set in the previous power set, you add the new element.</p>
+</div>
+<div class="paragraph">
+<p>So the theorem |𝒫(S)| = 2<sup>n</sup> is working so far. From wandering round in
+the Ivory Tower, I found that in maths you have to have things nailed down
+inescapably, which is where the idea of proofs come in.
+A proof of the cardinality of the power set involves this realization. Here&#8217;s
+the proof:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Looking at the case for n = 0</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>If n = 0 then S = &#x2205;, so</p>
+</li>
+<li>
+<p>|𝒫(&#x2205;)| = |{&#x2205;}|</p>
+</li>
+<li>
+<p>|{&#x2205;}| = 1</p>
+</li>
+<li>
+<p>1 = 2<sup>0</sup></p>
+</li>
+<li>
+<p>So the theorem is correct for the case n = 0</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Take a set S with cardinality n.</p>
+</li>
+<li>
+<p>If a new set T were formed that had all the elements of S but also a new
+element x, then T would have cardinality n + 1.</p>
+</li>
+<li>
+<p>Then 𝒫(T) would be 𝒫(S) combined with each set in 𝒫(S)
+having the element x added to it.</p>
+</li>
+<li>
+<p>So |𝒫(T)| = 2 * |𝒫(S)|</p>
+</li>
+<li>
+<p>In other words if the cardinality if a set increases by 1, then the
+cardinality of the power set is multiplies by 2.</p>
+</li>
+<li>
+<p>Starting at n = 0 we get the series 1, 1 * 2, 1 * 2 * 2, 1 * 2 * 2 * 2, &#8230;&#8203;</p>
+</li>
+<li>
+<p>which is the same as 2<sup>n</sup></p>
+</li>
+<li>
+<p>So for a set S of cardinality n, |𝒫(S)| = 2<sup>n</sup></p>
+</li>
+</ol>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_russell_s_paradox">3.10. Russell&#8217;s Paradox</h3>
+<h3 id="_proof_by_induction">3.12. Proof By Induction</h3>
+<div class="paragraph">
+<p>I&#8217;m told that the proof we just did of |𝒫(S)| = 2<sup>n</sup> was an example of
+<em>proof by induction_</em>. I tried to find out the underlying form of proof by
+induction and it turns out to have three parts:</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_russell_s_paradox">3.13. Russell&#8217;s Paradox</h3>
 <div class="paragraph">
 <p>On your first day as an assistant librarian, you&#8217;re asked to compile a book
 that is a catalogue of all of the books in the library that don&#8217;t mention
@@ -7015,7 +7171,7 @@ contents as has been requested, except that it doesn&#8217;t contain itself.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_other_paradoxes">3.11. Other Paradoxes</h3>
+<h3 id="_other_paradoxes">3.14. Other Paradoxes</h3>
 <div class="paragraph">
 <p>Curry&#8217;s Paradox is:</p>
 </div>
@@ -7037,7 +7193,7 @@ him pontificating on the philosophy of it all!!&#8217; Okay, okay.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_sources">3.12. Sources</h3>
+<h3 id="_sources">3.15. Sources</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -10897,7 +11053,7 @@ A, B &#x21A6; {x | x &#x2208; A and x &#x2209; B}
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-12-26 22:24:04 GMT
+Last updated 2015-12-28 11:28:52 GMT
 </div>
 </div>
 </body>
