@@ -464,8 +464,8 @@ Say you've got a formula:
 [example]
 (P {and} Q)
 
-To logicians, an _interpretation_ is the assignment of true or false to P and Q.
-So one interpretation is:
+To logicians, an _interpretation_ (also called a _truth assignment_) is the
+assignment of true or false to P and Q. So one interpretation is:
 
 [example]
 P is false +
@@ -2170,12 +2170,12 @@ Shows that the formula is valid and so we can write that:
    Toby won a tennis match. Therefore Ben did not win a tennis match. +
    P: Ben won a tennis match. +
    Q: Toby won a tennis match. +
-   Premises: {not}(P {and} Q), Q
+   Premises: {not}(P {and} Q), Q +
    Conclusion: {not}P
 .. P: Bill orders 6x. +
    Q: Bill orders Tribute. +
    R: The pub is open. +
-   Premises: (P {or} Q), ((P {or} Q) {implies} R), {not}Q
+   Premises: (P {or} Q), ((P {or} Q) {implies} R), {not}Q +
    Conclusion: (R {and} P)
 .. P: The light switch is on. +
    Q: The light switch is off. +
@@ -2230,6 +2230,7 @@ Shows that the formula is valid and so we can write that:
    (({not}(P {and} Q) {and} Q) {implies} {not}P) +
    is valid and so the premises entail the conclusion.
 +
+[cols="7*", options="header"]
 |===
 | P
 | Q
@@ -2277,8 +2278,8 @@ Shows that the formula is valid and so we can write that:
 | F | F | F | F | T | F | T | F | F | T
 |===
 +
-.. Premises: (P {or} Q), {not}(P {and} Q), {not}P
-   Conclusion: Q
+.. Premises: (P {or} Q), {not}(P {and} Q), {not}P +
+   Conclusion: Q +
    The truth table below shows that the formula: +
    ((((P {or} Q) {and} {not}(P {and} Q)) {and} {not}P) {implies} Q) +
    is valid and so: +
@@ -2972,6 +2973,8 @@ The sum of all the elements of S is n(n + 1) / 2
   1/2n^2^ + 1/2n + n + 1 = 1/2n^2^ + 3/2n + 1 +
   1/2n^2^ + 3/2n + 1 = 1/2n^2^ + 3/2n + 1 +
   and so the proposition is true for all n.
+
+Query: Is this similar to recursion in say Haskell?
 
 
 :numbered:
