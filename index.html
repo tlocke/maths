@@ -447,15 +447,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_falsification">2.9. Falsification</a></li>
 <li><a href="#_valid_formula">2.10. Valid Formula</a></li>
 <li><a href="#_unsatisfiable_formula">2.11. Unsatisfiable Formula</a></li>
-<li><a href="#_implies">2.12. Implies</a></li>
-<li><a href="#_biconditional">2.13. Biconditional</a></li>
-<li><a href="#_identity">2.14. Identity</a></li>
-<li><a href="#_commutativity">2.15. Commutativity</a></li>
-<li><a href="#_associativity">2.16. Associativity</a></li>
-<li><a href="#_distributivity">2.17. Distributivity</a></li>
-<li><a href="#_idempotence">2.18. Idempotence</a></li>
-<li><a href="#_de_morgan_s_laws">2.19. De Morgan&#8217;s Laws</a></li>
-<li><a href="#_entailment">2.20. Entailment</a></li>
+<li><a href="#_contingent_formula">2.12. Contingent Formula</a></li>
+<li><a href="#_implies">2.13. Implies</a></li>
+<li><a href="#_biconditional">2.14. Biconditional</a></li>
+<li><a href="#_identity">2.15. Identity</a></li>
+<li><a href="#_commutativity">2.16. Commutativity</a></li>
+<li><a href="#_associativity">2.17. Associativity</a></li>
+<li><a href="#_distributivity">2.18. Distributivity</a></li>
+<li><a href="#_idempotence">2.19. Idempotence</a></li>
+<li><a href="#_de_morgan_s_laws">2.20. De Morgan&#8217;s Laws</a></li>
+<li><a href="#_entailment">2.21. Entailment</a></li>
 </ul>
 </li>
 <li><a href="#_sets">3. Sets</a>
@@ -1284,8 +1285,8 @@ true</p>
 </div>
 </div>
 <div class="paragraph">
-<p>To logicians, an <em>interpretation</em> is the assignment of true or false to P and Q.
-So one interpretation is:</p>
+<p>To logicians, an <em>interpretation</em> (also called a <em>truth assignment</em>) is the
+assignment of true or false to P and Q. So one interpretation is:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -2882,7 +2883,260 @@ Tower such a formula is called an <em>unsatisfiable formula</em>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_implies">2.12. Implies</h3>
+<h3 id="_contingent_formula">2.12. Contingent Formula</h3>
+<div class="paragraph">
+<p>A formula that is neither valid nor unsatisfiable is said to be <em>contingent</em>. For example the formula:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+P &#x2227; Q
+</div>
+</div>
+<div class="paragraph">
+<p>has the truth table:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">P</th>
+<th class="tableblock halign-left valign-top">Q</th>
+<th class="tableblock halign-left valign-top">P &#x2227; Q</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>which shows that the formula is neither valid not unsatisfiable and so it is
+contingent. Another way of putting it is to say that a formula is contingent if
+it is both satisfiable and falsifiable.</p>
+</div>
+<div class="sect3">
+<h4 id="_questions_12">Questions</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Using truth tables, show that the following formulas are contingent:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>(P &#x2227; &#x00AC;Q)</p>
+</li>
+<li>
+<p>P</p>
+</li>
+<li>
+<p>P &#x2228; Q</p>
+</li>
+<li>
+<p>&#x00AC;P</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_answers_12">Answers</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Using truth tables, show that the following formulas are contingent:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>(P &#x2227; &#x00AC;Q)</p>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">P</th>
+<th class="tableblock halign-left valign-top">Q</th>
+<th class="tableblock halign-left valign-top">&#x00AC;Q</th>
+<th class="tableblock halign-left valign-top">(P &#x2227; &#x00AC;Q)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>so the formula is neither valid or unsatisfiable and so it&#8217;s contingent.</p>
+</div>
+</li>
+<li>
+<p>P</p>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">P</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>so the formula is neither valid or unsatisfiable and so it&#8217;s contingent.</p>
+</div>
+</li>
+<li>
+<p>P &#x2228; Q</p>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">P</th>
+<th class="tableblock halign-left valign-top">Q</th>
+<th class="tableblock halign-left valign-top">P &#x2228; Q</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>so the formula is neither valid or unsatisfiable and so it&#8217;s contingent.</p>
+</div>
+</li>
+<li>
+<p>&#x00AC;P</p>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">P</th>
+<th class="tableblock halign-left valign-top">&#x00AC;P</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>so the formula is neither valid or unsatisfiable and so it&#8217;s contingent.</p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_implies">2.13. Implies</h3>
 <div class="paragraph">
 <p>There&#8217;s another binary connective called <em>implies</em> that has the truth table:</p>
 </div>
@@ -3087,7 +3341,7 @@ Abelard is at the cafe only if the cafe is open.
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="_questions_12">Questions</h4>
+<h4 id="_questions_13">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3132,7 +3386,7 @@ Abelard is at the cafe only if the cafe is open.
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_12">Answers</h4>
+<h4 id="_answers_13">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3417,7 +3671,7 @@ B: The shepherds are delighted.<br>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_biconditional">2.13. Biconditional</h3>
+<h3 id="_biconditional">2.14. Biconditional</h3>
 <div class="paragraph">
 <p>The <em>biconditional</em> connective is a binary connective with the truth table:</p>
 </div>
@@ -3494,7 +3748,7 @@ Q: It&#8217;s the 2nd of March.<br>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_questions_13">Questions</h4>
+<h4 id="_questions_14">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3534,7 +3788,7 @@ applied.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_13">Answers</h4>
+<h4 id="_answers_14">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3819,7 +4073,7 @@ Q: The fridge door is open.<br>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_identity">2.14. Identity</h3>
+<h3 id="_identity">2.15. Identity</h3>
 <div class="paragraph">
 <p>If two formulas are an <em>identity</em>, then they mean the same under all
 interpretations. In other words if two formulas are an identity, then the
@@ -3918,7 +4172,7 @@ used identities have their own names. The identity that we&#8217;ve just found:<
 <p>is called the <em>material implication identity</em>.</p>
 </div>
 <div class="sect3">
-<h4 id="_questions_14">Questions</h4>
+<h4 id="_questions_15">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3945,7 +4199,7 @@ preserving their meaning:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_14">Answers</h4>
+<h4 id="_answers_15">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3976,7 +4230,7 @@ preserving their meaning:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_material_equality_identity">2.14.1. Material Equality Identity</h4>
+<h4 id="_material_equality_identity">2.15.1. Material Equality Identity</h4>
 <div class="paragraph">
 <p>Hot on the heels of meeting the Material Implication identity, I encountered the
 Material Equality identity:</p>
@@ -3993,7 +4247,7 @@ a pattern to them and skipped over the rest. Is this the right approach?</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_questions_15">Questions</h4>
+<h4 id="_questions_16">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4020,7 +4274,7 @@ preserving their meaning:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_15">Answers</h4>
+<h4 id="_answers_16">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4052,7 +4306,7 @@ preserving their meaning:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_commutativity">2.15. Commutativity</h3>
+<h3 id="_commutativity">2.16. Commutativity</h3>
 <div class="paragraph">
 <p>A special type of identity that some binary connectives have is <em>commutativity</em>.
 The connective &#x2227; is commutative which means that:</p>
@@ -4122,7 +4376,7 @@ they are, giving the name of the associated identity.</p>
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="_questions_16">Questions</h4>
+<h4 id="_questions_17">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4133,7 +4387,7 @@ are or are not commutative.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_16">Answers</h4>
+<h4 id="_answers_17">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4367,7 +4621,7 @@ valid.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_associativity">2.16. Associativity</h3>
+<h3 id="_associativity">2.17. Associativity</h3>
 <div class="paragraph">
 <p>Another type of identity that some binary connectives have is <em>associativity</em>.
 The &#x2227; connective is associative, which means:</p>
@@ -4429,7 +4683,7 @@ not, and if they are, giving the name of the identity:</p>
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="_questions_17">Questions</h4>
+<h4 id="_questions_18">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4440,7 +4694,7 @@ are or are not associative (big truth tables ahoy!).</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_17">Answers</h4>
+<h4 id="_answers_18">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4908,7 +5162,7 @@ valid.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_distributivity">2.17. Distributivity</h3>
+<h3 id="_distributivity">2.18. Distributivity</h3>
 <div class="paragraph">
 <p>Another &#8216;itivity&#8217;. Here are the <em>distributivity</em> identities:</p>
 </div>
@@ -4966,7 +5220,7 @@ then if y distributes over z then:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_questions_18">Questions</h4>
+<h4 id="_questions_19">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4990,7 +5244,7 @@ they really are identities.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_18">Answers</h4>
+<h4 id="_answers_19">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -5380,7 +5634,7 @@ is valid.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_idempotence">2.18. Idempotence</h3>
+<h3 id="_idempotence">2.19. Idempotence</h3>
 <div id="img-benjaminpeirce" class="imageblock">
 <div class="content">
 <img src="benjaminpeirce.jpg" alt="Benjamin Peirce">
@@ -5537,7 +5791,7 @@ first thought of. Ben showed me that &#x2228; is idempotent by doing the followi
 <p>is valid.</p>
 </div>
 <div class="sect3">
-<h4 id="_questions_19">Questions</h4>
+<h4 id="_questions_20">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -5575,7 +5829,7 @@ formulas:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_19">Answers</h4>
+<h4 id="_answers_20">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -5673,7 +5927,7 @@ formulas:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_de_morgan_s_laws">2.19. De Morgan&#8217;s Laws</h3>
+<h3 id="_de_morgan_s_laws">2.20. De Morgan&#8217;s Laws</h3>
 <div class="paragraph">
 <p>I found in the Tower that Mathematicians are often good at music too. De Morgan
 was a flautist. I&#8217;ve got no musical ability. De Morgan&#8217;s Laws are a couple of
@@ -5696,7 +5950,7 @@ identities:</p>
 <p>Some say they&#8217;re obvious. Do you find them obvious? I don&#8217;t.</p>
 </div>
 <div class="sect3">
-<h4 id="_questions_20">Questions</h4>
+<h4 id="_questions_21">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -5706,7 +5960,7 @@ identities:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_20">Answers</h4>
+<h4 id="_answers_21">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -5874,7 +6128,7 @@ identity.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_entailment">2.20. Entailment</h3>
+<h3 id="_entailment">2.21. Entailment</h3>
 <div class="paragraph">
 <p>&#8216;What does that <em>entail</em>, lol!&#8217;, yeah thanks for that. In English you might
 have some <em>premises</em> leading to a <em>conclusion</em> such as:</p>
@@ -6140,7 +6394,7 @@ Conclusion: &#x00AC;B
 </div>
 </div>
 <div class="sect3">
-<h4 id="_questions_21">Questions</h4>
+<h4 id="_questions_22">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -6179,7 +6433,7 @@ and off. This light switch is not on. Therefore the light switch is off.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_21">Answers</h4>
+<h4 id="_answers_22">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -6205,14 +6459,14 @@ Conclusion: A</p>
 Toby won a tennis match. Therefore Ben did not win a tennis match.<br>
 P: Ben won a tennis match.<br>
 Q: Toby won a tennis match.<br>
-Premises: &#x00AC;(P &#x2227; Q), Q
+Premises: &#x00AC;(P &#x2227; Q), Q<br>
 Conclusion: &#x00AC;P</p>
 </li>
 <li>
 <p>P: Bill orders 6x.<br>
 Q: Bill orders Tribute.<br>
 R: The pub is open.<br>
-Premises: (P &#x2228; Q), ((P &#x2228; Q) &#x2192; R), &#x00AC;Q
+Premises: (P &#x2228; Q), ((P &#x2228; Q) &#x2192; R), &#x00AC;Q<br>
 Conclusion: (R &#x2227; P)</p>
 </li>
 <li>
@@ -6353,112 +6607,60 @@ The truth table below shows that the formula:<br>
 is valid and so the premises entail the conclusion.</p>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
-<col style="width: 100%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2858%;">
 </colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">P</th>
+<th class="tableblock halign-left valign-top">Q</th>
+<th class="tableblock halign-left valign-top">(P &#x2227; Q)</th>
+<th class="tableblock halign-left valign-top">&#x00AC;(P &#x2227; Q)</th>
+<th class="tableblock halign-left valign-top">(&#x00AC;(P &#x2227; Q) &#x2227; Q)</th>
+<th class="tableblock halign-left valign-top">&#x00AC;P</th>
+<th class="tableblock halign-left valign-top">((&#x00AC;(P &#x2227; Q) &#x2227; Q) &#x2192; &#x00AC;P)</th>
+</tr>
+</thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">P</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Q</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">(P &#x2227; Q)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#x00AC;(P &#x2227; Q)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">(&#x00AC;(P &#x2227; Q) &#x2227; Q)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#x00AC;P</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">((&#x00AC;(P &#x2227; Q) &#x2227; Q) &#x2192; &#x00AC;P)</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-</tr>
-<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-</tr>
-<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-</tr>
-<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-</tr>
-<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 </tbody>
@@ -6598,8 +6800,8 @@ is valid and so:<br>
 </table>
 </li>
 <li>
-<p>Premises: (P &#x2228; Q), &#x00AC;(P &#x2227; Q), &#x00AC;P
-Conclusion: Q
+<p>Premises: (P &#x2228; Q), &#x00AC;(P &#x2227; Q), &#x00AC;P<br>
+Conclusion: Q<br>
 The truth table below shows that the formula:<br>
 ((P &#x2228; Q) &#x2227; &#x00AC;(P &#x2227; Q &#x2227; &#x00AC;P) &#x2192; Q)<br>
 is valid and so:<br>
@@ -6750,7 +6952,7 @@ save writing out all the items of an obvious set.</p>
 with a finite number of elements and a set with an infinite number of elements.</p>
 </div>
 <div class="sect3">
-<h4 id="_questions_22">Questions</h4>
+<h4 id="_questions_23">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -6776,7 +6978,7 @@ with a finite number of elements and a set with an infinite number of elements.<
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_22">Answers</h4>
+<h4 id="_answers_23">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -6932,7 +7134,7 @@ I&#8217;m not entirely convinced, but carry on for now&#8217;.</p>
 letters, and elements to represented by lower case letters.</p>
 </div>
 <div class="sect3">
-<h4 id="_questions_23">Questions</h4>
+<h4 id="_questions_24">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -6955,7 +7157,7 @@ letters, and elements to represented by lower case letters.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_23">Answers</h4>
+<h4 id="_answers_24">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7002,7 +7204,7 @@ a member of <strong>Z</strong>, or simply 1 is in <strong>Z</strong>. Set theori
 </div>
 </div>
 <div class="sect3">
-<h4 id="_questions_24">Questions</h4>
+<h4 id="_questions_25">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7041,7 +7243,7 @@ a member of <strong>Z</strong>, or simply 1 is in <strong>Z</strong>. Set theori
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_24">Answers</h4>
+<h4 id="_answers_25">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7147,7 +7349,7 @@ example of set builder notation is:</p>
 x is a real number and x equals x squared.&#8217;</p>
 </div>
 <div class="sect3">
-<h4 id="_questions_25">Questions</h4>
+<h4 id="_questions_26">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7186,7 +7388,7 @@ x is a real number and x equals x squared.&#8217;</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_25">Answers</h4>
+<h4 id="_answers_26">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7353,7 +7555,7 @@ isn&#8217;t possible.</p>
 </ol>
 </div>
 <div class="sect3">
-<h4 id="_questions_26">Questions</h4>
+<h4 id="_questions_27">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7399,7 +7601,7 @@ is the set &#8216;less than 3&#8217;.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_26">Answers</h4>
+<h4 id="_answers_27">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7494,7 +7696,7 @@ F &#x2282; T
 </div>
 </div>
 <div class="sect3">
-<h4 id="_questions_27">Questions</h4>
+<h4 id="_questions_28">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7540,7 +7742,7 @@ is the set &#8216;less than 3&#8217;.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_27">Answers</h4>
+<h4 id="_answers_28">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7618,7 +7820,7 @@ D = {days of the week}
 </div>
 </div>
 <div class="sect3">
-<h4 id="_questions_28">Questions</h4>
+<h4 id="_questions_29">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7644,7 +7846,7 @@ D = {days of the week}
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_28">Answers</h4>
+<h4 id="_answers_29">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7734,7 +7936,7 @@ C = {red, green, blue}
 </div>
 </div>
 <div class="sect3">
-<h4 id="_questions_29">Questions</h4>
+<h4 id="_questions_30">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7763,7 +7965,7 @@ C = {red, green, blue}
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_29">Answers</h4>
+<h4 id="_answers_30">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -8000,6 +8202,9 @@ and so the proposition is true for all n.</p>
 </li>
 </ol>
 </div>
+<div class="paragraph">
+<p>Query: Is this similar to recursion in say Haskell?</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_set_difference">3.13. Set Difference</h3>
@@ -8102,7 +8307,7 @@ it to be true. So what&#8217;s a proof exactly? It&#8217;s a chain of small self
 true steps that lead to the theorem.</p>
 </div>
 <div class="sect3">
-<h4 id="_questions_30">Questions</h4>
+<h4 id="_questions_31">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -8131,7 +8336,7 @@ true steps that lead to the theorem.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_30">Answers</h4>
+<h4 id="_answers_31">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -8355,7 +8560,7 @@ and(or(or(not(C), not(A)), B), or(or(not(C), A), not(B)))
 <p>we&#8217;ve got it in CNF.</p>
 </div>
 <div class="sect3">
-<h4 id="_questions_31">Questions</h4>
+<h4 id="_questions_32">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -8384,7 +8589,7 @@ and(or(or(not(C), not(A)), B), or(or(not(C), A), not(B)))
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_31">Answers</h4>
+<h4 id="_answers_32">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -8723,7 +8928,7 @@ and idempotence)</p>
 </ol>
 </div>
 <div class="sect3">
-<h4 id="_questions_32">Questions</h4>
+<h4 id="_questions_33">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -8733,7 +8938,7 @@ and idempotence)</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_32">Answers</h4>
+<h4 id="_answers_33">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -9052,7 +9257,7 @@ Q, (R &#x2227; P) &#x2227; (R &#x2227; Q) &#x2192; P &#x22A8; P
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="_questions_33">Questions</h4>
+<h4 id="_questions_34">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -9066,7 +9271,7 @@ valid by using rules of inference.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_33">Answers</h4>
+<h4 id="_answers_34">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -9913,7 +10118,7 @@ P &#x2228; Q, &#x00AC;(P &#x2227; Q), &#x00AC;P &#x22A8; Q</p>
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="_answers_34">4.7.1. Answers</h4>
+<h4 id="_answers_35">4.7.1. Answers</h4>
 <div class="paragraph">
 <p>Answers on their way&#8230;&#8203;</p>
 </div>
@@ -10061,13 +10266,7 @@ after the &#x2192; is the <em>consequent</em>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_contingent">4.8.5. Contingent</h4>
-<div class="paragraph">
-<p>A formula that is neither valid nor unsatisfiable is said to be <em>contingent</em>.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_precedence">4.8.6. Precedence</h4>
+<h4 id="_precedence">4.8.5. Precedence</h4>
 <div class="paragraph">
 <p>In many parts of the Ivory Tower they adopt the convention of <em>precedence</em> of
 functions
@@ -10251,7 +10450,7 @@ Rules say that anything in brackets gets evaluated first. So you&#8217;d write:<
 </table>
 </div>
 <div class="sect3">
-<h4 id="_questions_34">Questions</h4>
+<h4 id="_questions_35">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -10277,7 +10476,7 @@ Rules say that anything in brackets gets evaluated first. So you&#8217;d write:<
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_35">Answers</h4>
+<h4 id="_answers_36">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -11162,7 +11361,7 @@ A, B &#x21A6; {x | x &#x2208; A and x &#x2209; B}
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-02-08 23:26:36 GMT
+Last updated 2016-11-19 16:40:56 GMT
 </div>
 </div>
 </body>

@@ -1032,6 +1032,91 @@ so unsatisfiable.
 
 
 :numbered:
+=== Contingent Formula
+
+A formula that is neither valid nor unsatisfiable is said to be _contingent_. For example the formula:
+
+[example]
+P {and} Q
+
+has the truth table:
+
+|===
+| P | Q | P {and} Q
+
+| T | T | T
+| F | T | F
+| T | F | F
+| F | F | F
+|===
+
+which shows that the formula is neither valid not unsatisfiable and so it is
+contingent. Another way of putting it is to say that a formula is contingent if
+it is both satisfiable and falsifiable.
+
+
+:numbered!:
+==== Questions
+
+. Using truth tables, show that the following formulas are contingent:
+.. (P {and} {not}Q)
+.. P
+.. P {or} Q
+.. {not}P
+
+
+==== Answers
+
+. Using truth tables, show that the following formulas are contingent:
+.. (P {and} {not}Q)
++
+|===
+| P | Q | {not}Q | (P {and} {not}Q)
+
+| T | T | F      | F
+| F | T | F      | T
+| T | F | T      | T
+| F | F | T      | F
+|===
++
+so the formula is neither valid or unsatisfiable and so it's contingent.
+.. P
++
+|===
+| P
+
+| T
+| F
+|===
++
+so the formula is neither valid or unsatisfiable and so it's contingent.
+.. P {or} Q
++
+|===
+| P | Q | P {or} Q
+
+| T | T | T
+| F | T | T
+| T | F | T
+| F | F | F
+|===
++
+so the formula is neither valid or unsatisfiable and so it's contingent.
+.. {not}P
++
+|===
+| P | {not}P
+
+| T | T | F
+| F | T | F
+| T | F | T
+| F | F | T
+|===
++
+so the formula is neither valid or unsatisfiable and so it's contingent.
+
+
+:numbered:
 === Implies
 
 There's another binary connective called _implies_ that has the truth table:
@@ -3922,11 +4007,6 @@ don't necessarily have to learn operational notation.
 
 The formula before the {implies} is called the _antecedent_ and the formula
 after the {implies} is the _consequent_.
-
-
-==== Contingent
-
-A formula that is neither valid nor unsatisfiable is said to be _contingent_.
 
 
 ==== Precedence
