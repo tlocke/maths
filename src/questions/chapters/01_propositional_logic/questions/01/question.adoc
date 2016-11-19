@@ -1,0 +1,2 @@
+Answer 'True' or 'False', is the following a statement?
+Who is John Galt?

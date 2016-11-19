@@ -1,0 +1,60 @@
+== Propositional Logic
+
+[[img-russel]]
+.http://commons.wikimedia.org/wiki/File:Russell_in_1924_01.jpg#mediaviewer/File:Russell_in_1924_01.jpg[Bertrand Russell in 1924] by Unknown - http://www.humanities.mcmaster.ca/~bertrand/later.html. Licensed under Public domain via http://commons.wikimedia.org/wiki/[Wikimedia Commons].
+image::russell.jpg[Bertrand Russell in 1924]
+
+=== True and false
+
+In the realm of Propositional Logic, I found that they deal with things that are
+either true or false. In the English language, sentences that are either true or
+false are known as _statements_. Here are some sentences together with
+explanations of whether they are statements or not:
+
+[example]
+How many miles to Crinnis?
+
+This is a question, so not a statement.
+
+[example]
+Elephants have four legs.
+
+Yay, an actual statement! It's a sentence that is either true or false.
+
+[example]
+Don't dilly-dally.
+
+This isn't true or false, it sounds like someone admonishing somebody. Not a
+statement.
+
+[example]
+The capital of France is Paris.
+
+Yes, a statement.
+
+[example]
+He likes chocolate.
+
+This sounds like a statement, but according to those logicians in the ivory
+tower it doesn't count because it relies on knowing who '`he`' is.
+
+[example]
+Don't spoil the ship for a ha'peth of tar.
+
+This is a proverb, not a statement.
+
+I've got this nagging doubt in my mind. Most statements I can think of aren't
+_totally_ ambiguous. Take the '`Elephants have four legs`' example. Maybe
+there's a three legged elephant in existence, perhaps one in a zoo got
+gangrene or something and had to have a leg amputated... Nevertheless, let's
+suspend our disbelief and imagine all those perfect statements.
+
+At that point, Alfred Tarski spoke up, '`What about this then?`'.
+
+[example]
+This statement is false.
+
+Well, I'm not sure what to do. It seems like a statement, but if it's true then
+it's false, and if it's false then it's true! Okay, let's get round it by saying
+that this isn't really a statement. What do you think Taski? But Tarski's mind
+was on other things...
