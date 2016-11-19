@@ -1,2 +1,0 @@
-Answer 'True' or 'False', is the following a statement?
-Blue is a colour.

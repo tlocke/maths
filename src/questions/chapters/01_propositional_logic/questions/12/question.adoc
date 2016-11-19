@@ -1,3 +1,0 @@
-Is the following statement true or false?
-The word '`rotavator`' is a
-      http://en.wiktionary.org/wiki/palindrome[palindrome].
