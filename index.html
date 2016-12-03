@@ -479,7 +479,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_sources">3.16. Sources</a></li>
 </ul>
 </li>
-<li><a href="#_boolean_algebra_ii">4. Boolean Algebra II</a>
+<li><a href="#_propositional_logic_ii">4. Propositional Logic II</a>
 <ul class="sectlevel2">
 <li><a href="#_unsatisfiability_theorem">4.1. Unsatisfiability Theorem</a></li>
 <li><a href="#_conjunctive_normal_form_cnf">4.2. Conjunctive Normal Form (CNF)</a></li>
@@ -1840,7 +1840,7 @@ The &#x00AC; connective acts on one formula and so is called a <em>unary</em> co
 <tr>
 <th class="tableblock halign-left valign-top">P</th>
 <th class="tableblock halign-left valign-top">Q</th>
-<th class="tableblock halign-left valign-top">&#x00AC;P</th>
+<th class="tableblock halign-left valign-top">(P &#x2227; Q)</th>
 <th class="tableblock halign-left valign-top">&#x00AC;(P &#x2227; Q)</th>
 </tr>
 </thead>
@@ -1848,26 +1848,26 @@ The &#x00AC; connective acts on one formula and so is called a <em>unary</em> co
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 </tbody>
 </table>
@@ -1900,7 +1900,7 @@ The &#x00AC; connective acts on one formula and so is called a <em>unary</em> co
 <td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
@@ -1912,7 +1912,7 @@ The &#x00AC; connective acts on one formula and so is called a <em>unary</em> co
 <td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
 </tr>
 </tbody>
 </table>
@@ -4075,10 +4075,11 @@ Q: The fridge door is open.<br>
 <div class="sect2">
 <h3 id="_identity">2.15. Identity</h3>
 <div class="paragraph">
-<p>If two formulas are an <em>identity</em>, then they mean the same under all
-interpretations. In other words if two formulas are an identity, then the
-formula formed by joining them with the &#x2194; connective will be
-<a href="#_valid_formula">valid</a>. For example, if the pair of formulas:</p>
+<p>If two formulas are an <em>identity</em> (also called <em>logically equivalent</em>), then
+they mean the same under all interpretations. In other words if two formulas are
+an identity, then the formula formed by joining them with the &#x2194;
+connective will be <a href="#_valid_formula">valid</a>. For example, if the pair of
+formulas:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -8277,10 +8278,10 @@ him pontificating on the philosophy of it all!!&#8217; Okay, okay.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_boolean_algebra_ii">4. Boolean Algebra II</h2>
+<h2 id="_propositional_logic_ii">4. Propositional Logic II</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In which we encounter entailment and SAT problems!</p>
+<p>This is propositional logic that requires a knowledge of sets.</p>
 </div>
 <div class="sect2">
 <h3 id="_unsatisfiability_theorem">4.1. Unsatisfiability Theorem</h3>
@@ -11361,7 +11362,7 @@ A, B &#x21A6; {x | x &#x2208; A and x &#x2209; B}
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-11-19 16:40:56 GMT
+Last updated 2016-12-03 16:04:22 GMT
 </div>
 </div>
 </body>

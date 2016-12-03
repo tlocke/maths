@@ -661,12 +661,12 @@ The {not} connective acts on one formula and so is called a _unary_ connective.
 .. {not}(P {and} Q)
 +
 |===
-| P | Q | {not}P | {not}(P {and} Q)
+| P | Q | (P {and} Q) | {not}(P {and} Q)
 
-| T | T | F      | F
-| F | T | T      | T
-| T | F | F      | F
-| F | F | T      | F
+| T | T | T           | F
+| F | T | F           | T
+| T | F | F           | T
+| F | F | F           | T
 |===
 +
 .. (P {or} {not}Q)
@@ -675,9 +675,9 @@ The {not} connective acts on one formula and so is called a _unary_ connective.
 | P | Q | {not}Q | (P {or} {not}Q)
 
 | T | T | F      | T
-| F | T | F      | T
+| F | T | F      | F
 | T | F | T      | T
-| F | F | T      | F
+| F | F | T      | T
 |===
 +
 .. {not}{not}P
@@ -1413,13 +1413,15 @@ Q: It's the 2nd of March. +
 | F | F | T | F | T | F | T | F
 |===
 
+
 :numbered:
 === Identity
 
-If two formulas are an _identity_, then they mean the same under all
-interpretations. In other words if two formulas are an identity, then the
-formula formed by joining them with the {bicond} connective will be
-<<_valid_formula, valid>>. For example, if the pair of formulas:
+If two formulas are an _identity_ (also called _logically equivalent_), then
+they mean the same under all interpretations. In other words if two formulas are
+an identity, then the formula formed by joining them with the {bicond}
+connective will be <<_valid_formula, valid>>. For example, if the pair of
+formulas:
 
 [example]
 (A {implies} B) +
@@ -3112,10 +3114,9 @@ him pontificating on the philosophy of it all!!`' Okay, okay.
 
 
 :numbered:
-== Boolean Algebra II
+== Propositional Logic II
 
-In which we encounter entailment and SAT problems!
-
+This is propositional logic that requires a knowledge of sets.
 
 
 :numbered:
