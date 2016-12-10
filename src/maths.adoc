@@ -17,6 +17,12 @@ Tony Locke
 :brarr: &#x21A6;
 :emptyset: &#x2205;
 :mathP: 𝓟
+:Delta: &#x0394;
+:Gamma: &#x0393;
+:phi: &#x03C6;
+:psi: &#x03C8;
+:cap: &#8745;
+:cup: &#8746;
 :toc:
 
 :numbered:
@@ -3070,6 +3076,17 @@ Query: Is this similar to recursion in say Haskell?
 Set difference
 
 :numbered:
+=== Set Union
+
+Set Union {cup}.
+
+:numbered:
+=== Set Intersection
+
+Set Intersection {cap}.
+
+
+:numbered:
 === Russell's Paradox
 
 On your first day as an assistant librarian, you're asked to compile a book
@@ -3116,7 +3133,50 @@ him pontificating on the philosophy of it all!!`' Okay, okay.
 :numbered:
 == Propositional Logic II
 
-This is propositional logic that requires a knowledge of sets.
+This is propositional logic that requires a knowledge of sets. In which we get
+to use Greek capital letters!
+
+
+:numbered:
+=== Sets Of Formulas
+
+I'm not quite sure why yet, but in maths land they talk about sets of formulas,
+often giving them Greek capital letters! So they say:
+
+[example]
+{Gamma} = {{phi}~1~, ...,{phi}~n~}
+
+Also, if {psi} is a formula then:
+
+[example]
+{Gamma} {entails} {psi}
+
+stands for:
+
+[example]
+((({phi}~1~ {and} {phi}~2~) {and} ...) {and} {phi}~n~) {entails} {psi}
+
+
+:numbered!:
+==== Questions
+
+. If {Delta} = {{phi}~1~, {phi}~2~} and {Gamma} = {{phi}~2~, {phi}~3~} then
+write the following in terms of individual formalas:
+.. {Delta} {entails} {psi}
+.. {Delta} {cap} {Gamma} {entails} {psi}
+.. {Gamma} {cup} {Delta} {entails} {psi}
+
+
+==== Answers
+
+. If {Delta} = {{phi}~1~, {phi}~2~} and {Gamma} = {{phi}~2~, {phi}~3~} then
+write the following in terms of individual formalas:
+.. {Delta} {entails} {psi} +
+   ({phi}~1~ {and} {phi}~2~) {entails} {psi}
+.. {Delta} {cap} {Gamma} {entails} {psi} +
+   {phi}~2~ {entails} {psi}
+.. {Gamma} {cup} {Delta} {entails} {psi} +
+   (({phi}~1~ {and} {phi}~2~) {and} {phi}~3~) {entails} {psi}
 
 
 :numbered:
