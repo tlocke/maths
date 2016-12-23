@@ -457,6 +457,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_idempotence">2.19. Idempotence</a></li>
 <li><a href="#_de_morgan_s_laws">2.20. De Morgan&#8217;s Laws</a></li>
 <li><a href="#_entailment">2.21. Entailment</a></li>
+<li><a href="#_implicit_parentheses">2.22. Implicit parentheses</a></li>
 </ul>
 </li>
 <li><a href="#_sets">3. Sets</a>
@@ -469,16 +470,17 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_universal_set">3.6. Universal Set</a></li>
 <li><a href="#_subset">3.7. Subset</a></li>
 <li><a href="#_proper_subset">3.8. Proper Subset</a></li>
-<li><a href="#_cardinality">3.9. Cardinality</a></li>
-<li><a href="#_power_set">3.10. Power Set</a></li>
-<li><a href="#_cardinality_of_the_power_set">3.11. Cardinality Of The Power Set</a></li>
-<li><a href="#_proof_by_induction">3.12. Proof By Induction</a></li>
-<li><a href="#_set_difference">3.13. Set Difference</a></li>
-<li><a href="#_set_union">3.14. Set Union</a></li>
-<li><a href="#_set_intersection">3.15. Set Intersection</a></li>
-<li><a href="#_russell_s_paradox">3.16. Russell&#8217;s Paradox</a></li>
-<li><a href="#_other_paradoxes">3.17. Other Paradoxes</a></li>
-<li><a href="#_sources">3.18. Sources</a></li>
+<li><a href="#_union">3.9. Union</a></li>
+<li><a href="#_intersection">3.10. Intersection</a></li>
+<li><a href="#_cardinality">3.11. Cardinality</a></li>
+<li><a href="#_power_set">3.12. Power Set</a></li>
+<li><a href="#_cardinality_of_the_power_set">3.13. Cardinality Of The Power Set</a></li>
+<li><a href="#_proof_by_induction">3.14. Proof By Induction</a></li>
+<li><a href="#_set_difference">3.15. Set Difference</a></li>
+<li><a href="#_set_intersection">3.16. Set Intersection</a></li>
+<li><a href="#_russell_s_paradox">3.17. Russell&#8217;s Paradox</a></li>
+<li><a href="#_other_paradoxes">3.18. Other Paradoxes</a></li>
+<li><a href="#_sources">3.19. Sources</a></li>
 </ul>
 </li>
 <li><a href="#_propositional_logic_ii">4. Propositional Logic II</a>
@@ -507,8 +509,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_subset_2">7.6. Subset</a></li>
 <li><a href="#_equals">7.7. Equals</a></li>
 <li><a href="#_proper_subset_2">7.8. Proper Subset</a></li>
-<li><a href="#_union">7.9. Union</a></li>
-<li><a href="#_intersection">7.10. Intersection</a></li>
+<li><a href="#_union_2">7.9. Union</a></li>
+<li><a href="#_intersection_2">7.10. Intersection</a></li>
 <li><a href="#_complement">7.11. Complement</a></li>
 <li><a href="#_universal_class">7.12. Universal Class</a></li>
 </ul>
@@ -1583,7 +1585,7 @@ table for (P &#x2228; Q) is:</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>For each interpretation, the last two columns are the same, and so (P {and) Q)
+<p>For each interpretation, the last two columns are the same, and so (P &#x2227; Q)
 means the same as (Q &#x2227; P).</p>
 </div>
 <div class="sect3">
@@ -1667,7 +1669,7 @@ the truth table:</p>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">P</th>
-<th class="tableblock halign-left valign-top">&#x00AC;P</th>
+<th class="tableblock halign-left valign-top">(&#x00AC;P)</th>
 </tr>
 </thead>
 <tbody>
@@ -1682,12 +1684,28 @@ the truth table:</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>Let us cast it loose amongst the other functions and employ the truth table
-to see what results. Picking a formula at random, let&#8217;s try:</p>
+<p>Usually the brackets are omitted for &#x00AC;, so when you see:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
-(&#x00AC;P &#x2228; Q)
+&#x00AC;P
+</div>
+</div>
+<div class="paragraph">
+<p>it&#8217;s taken to mean:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+(&#x00AC;P)
+</div>
+</div>
+<div class="paragraph">
+<p>Anyway, let us cast it loose amongst the other functions and employ the truth
+table to see what results. Picking a formula at random, let&#8217;s try:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+((&#x00AC;P) &#x2228; Q)
 </div>
 </div>
 <div class="paragraph">
@@ -6890,6 +6908,130 @@ is valid and so:<br>
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_implicit_parentheses">2.22. Implicit parentheses</h3>
+<div class="paragraph">
+<p>Writing down formulas involves writing a lot of parentheses. There are a couple
+of conventions for reducing the number of parentheses you have to write, while
+still keeping a formula unambiguous. I&#8217;ve already discovered that logicians
+write:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+&#x00AC;P
+</div>
+</div>
+<div class="paragraph">
+<p>to mean:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+(&#x00AC;P)
+</div>
+</div>
+<div class="paragraph">
+<p>They also assume that if brackets aren&#8217;t explicitly written, then they they
+implicity exist from left to right. For example the following formula has no
+explicit parentheses:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+A &#x2228; B &#x2227; C
+</div>
+</div>
+<div class="paragraph">
+<p>But the implied formula is:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+(\(A &#x2228; B) &#x2227; C)
+</div>
+</div>
+<div class="sect3">
+<h4 id="_questions_23">Questions</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>For the following formulas, rewrite the formulas with explicit parentheses:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>&#x00AC;P &#x2227; Q</p>
+</li>
+<li>
+<p>&#x00AC;(P &#x2227; Q)</p>
+</li>
+<li>
+<p>&#x00AC;P &#x2227; Q &#x2228; R</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>For the following formulas, rewrite the formulas with implicit parentheses:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>(\(P &#x2228; Q) &#x2228; R)</p>
+</li>
+<li>
+<p>(&#x00AC;R)</p>
+</li>
+<li>
+<p>(&#x00AC;(P &#x2227; (Q &#x2228; R)))</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_answers_23">Answers</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>For the following formulas, rewrite the formulas with explicit parentheses:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>&#x00AC;P &#x2227; Q<br>
+(\(&#x00AC;P) {and) Q)</p>
+</li>
+<li>
+<p>&#x00AC;(P &#x2227; Q)<br>
+(&#x00AC;(P &#x2227; Q))</p>
+</li>
+<li>
+<p>&#x00AC;P &#x2227; Q &#x2228; R<br>
+(\(\(&#x00AC;P) &#x2227; Q) &#x2228; R)</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>For the following formulas, rewrite the formulas with implicit parentheses:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>(\(P &#x2228; Q) &#x2228; R)<br>
+P &#x2228; Q &#x2228; R</p>
+</li>
+<li>
+<p>(&#x00AC;R)<br>
+&#x00AC;R</p>
+</li>
+<li>
+<p>(&#x00AC;(P &#x2227; (Q &#x2228; R)))<br>
+&#x00AC;(P &#x2227; (Q &#x2228; R))</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -6956,7 +7098,7 @@ save writing out all the items of an obvious set.</p>
 with a finite number of elements and a set with an infinite number of elements.</p>
 </div>
 <div class="sect3">
-<h4 id="_questions_23">Questions</h4>
+<h4 id="_questions_24">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -6982,7 +7124,7 @@ with a finite number of elements and a set with an infinite number of elements.<
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_23">Answers</h4>
+<h4 id="_answers_24">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7138,7 +7280,7 @@ I&#8217;m not entirely convinced, but carry on for now&#8217;.</p>
 letters, and elements to represented by lower case letters.</p>
 </div>
 <div class="sect3">
-<h4 id="_questions_24">Questions</h4>
+<h4 id="_questions_25">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7161,7 +7303,7 @@ letters, and elements to represented by lower case letters.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_24">Answers</h4>
+<h4 id="_answers_25">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7208,7 +7350,7 @@ a member of <strong>Z</strong>, or simply 1 is in <strong>Z</strong>. Set theori
 </div>
 </div>
 <div class="sect3">
-<h4 id="_questions_25">Questions</h4>
+<h4 id="_questions_26">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7247,7 +7389,7 @@ a member of <strong>Z</strong>, or simply 1 is in <strong>Z</strong>. Set theori
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_25">Answers</h4>
+<h4 id="_answers_26">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7353,7 +7495,7 @@ example of set builder notation is:</p>
 x is a real number and x equals x squared.&#8217;</p>
 </div>
 <div class="sect3">
-<h4 id="_questions_26">Questions</h4>
+<h4 id="_questions_27">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7392,7 +7534,7 @@ x is a real number and x equals x squared.&#8217;</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_26">Answers</h4>
+<h4 id="_answers_27">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7559,7 +7701,7 @@ isn&#8217;t possible.</p>
 </ol>
 </div>
 <div class="sect3">
-<h4 id="_questions_27">Questions</h4>
+<h4 id="_questions_28">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7605,7 +7747,7 @@ is the set &#8216;less than 3&#8217;.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_27">Answers</h4>
+<h4 id="_answers_28">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7700,7 +7842,7 @@ F &#x2282; T
 </div>
 </div>
 <div class="sect3">
-<h4 id="_questions_28">Questions</h4>
+<h4 id="_questions_29">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7746,7 +7888,7 @@ is the set &#8216;less than 3&#8217;.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_28">Answers</h4>
+<h4 id="_answers_29">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7805,7 +7947,201 @@ True</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_cardinality">3.9. Cardinality</h3>
+<h3 id="_union">3.9. Union</h3>
+<div class="paragraph">
+<p>The set that you get from adding two sets together is the <em>union</em> of the the
+two sets. As I&#8217;ve come to expect, there&#8217;s a special symbol for this operation,
+&#8746;. Going back to our example with the universal set of books we could define two sets</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+T = {written before the 20th century} = {Emma by Jane Austen,
+Anna Karenina by Leo Tolstoy, Crime and Punishment by Fyodor Dostoevsky,
+Wuthering Heights by Charlotte Bronte}<br>
+F = {written by female authors} = {Emma by Jane Austen,
+Wuthering Heights by Charlotte Bronte}
+</div>
+</div>
+<div class="paragraph">
+<p>then:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+F &#x2282; T = {Emma by Jane Austen, Anna Karenina by Leo Tolstoy,<br>
+Crime and Punishment by Fyodor Dostoevsky,<br>
+Wuthering Heights by Charlotte Bronte}
+</div>
+</div>
+<div class="sect3">
+<h4 id="_questions_30">Questions</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Write the union of the following sets:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>P = {0, 2, 4, 6}<br>
+Q = {1, 3, 5, 7}</p>
+</li>
+<li>
+<p>P = {0, 1, 2, 3}<br>
+Q = {3, 4, 5, 6}</p>
+</li>
+<li>
+<p>D = {Monday, Tuesday, Wednesday}
+W = {Monday, Tuesday, Wednesday}</p>
+</li>
+<li>
+<p>P = &#x2205;
+Q = {0, -6}</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Write A &#8746; B in set builder notation.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_answers_30">Answers</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Write the union of the following sets:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>P = {0, 2, 4, 6}<br>
+Q = {1, 3, 5, 7}<br>
+P &#8746; Q = {0, 1, 2, 3, 4, 5, 6, 7}</p>
+</li>
+<li>
+<p>P = {0, 1, 2, 3}<br>
+Q = {3, 4, 5, 6}<br>
+P &#8746; Q = {0, 1, 2, 3, 4, 5, 6}</p>
+</li>
+<li>
+<p>D = {Monday, Tuesday, Wednesday}<br>
+W = {Monday, Tuesday, Wednesday}<br>
+D &#8746; W = {Monday, Tuesday, Wednesday}</p>
+</li>
+<li>
+<p>P = &#x2205;<br>
+Q = {0, -6}<br>
+P &#8746; Q = {0, -6}</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Write A &#8746; B in set builder notation.<br>
+A &#8746; B = {x | x &#x2208; A &#x2228; x &#x2208; B}</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_intersection">3.10. Intersection</h3>
+<div class="paragraph">
+<p>For two sets A and B, the <em>intersection</em> of A and B is the set of elements
+that and in both A and B. The symbol for this operation is &#8745;. Going back to
+the example with the universal set of books we could define two sets:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+T = {written before the 20th century} = {Emma by Jane Austen,
+Anna Karenina by Leo Tolstoy, Crime and Punishment by Fyodor Dostoevsky,
+Wuthering Heights by Charlotte Bronte}<br>
+F = {written by female authors} = {Emma by Jane Austen,
+Wuthering Heights by Charlotte Bronte}
+</div>
+</div>
+<div class="paragraph">
+<p>then:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+F &#8745; T = {Emma by Jane Austen, Wuthering Heights by Charlotte Bronte}
+</div>
+</div>
+<div class="sect3">
+<h4 id="_questions_31">Questions</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Write the intersection of the following sets:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>P = {0, 2, 4, 6}<br>
+Q = {1, 3, 5, 7}</p>
+</li>
+<li>
+<p>P = {0, 1, 2, 3}<br>
+Q = {3, 4, 5, 6}</p>
+</li>
+<li>
+<p>D = {Monday, Tuesday, Wednesday}
+W = {Monday, Tuesday, Wednesday}</p>
+</li>
+<li>
+<p>P = &#x2205;
+Q = {0, -6}</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Write A &#8745; B in set builder notation.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_answers_31">Answers</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Write the intersection of the following sets:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>P = {0, 2, 4, 6}<br>
+Q = {1, 3, 5, 7}<br>
+P &#8745; Q = &#x2205;</p>
+</li>
+<li>
+<p>P = {0, 1, 2, 3}<br>
+Q = {3, 4, 5, 6}<br>
+P &#8745; Q = {3}</p>
+</li>
+<li>
+<p>D = {Monday, Tuesday, Wednesday}<br>
+W = {Monday, Tuesday, Wednesday}<br>
+D &#8745; W = {Monday, Tuesday, Wednesday}</p>
+</li>
+<li>
+<p>P = &#x2205;<br>
+Q = {0, -6}<br>
+P &#8745; Q = &#x2205;</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Write A &#8745; B in set builder notation.<br>
+A &#8745; B = {x | x &#x2208; A &#x2227; x &#x2208; B}</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_cardinality">3.11. Cardinality</h3>
 <div class="paragraph">
 <p>Cardinality is the size of a set. For a finite set this is the number of
 elements of the set. So for:</p>
@@ -7824,7 +8160,7 @@ D = {days of the week}
 </div>
 </div>
 <div class="sect3">
-<h4 id="_questions_29">Questions</h4>
+<h4 id="_questions_32">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7850,7 +8186,7 @@ D = {days of the week}
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_29">Answers</h4>
+<h4 id="_answers_32">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7881,7 +8217,7 @@ D = {days of the week}
 </div>
 </div>
 <div class="sect2">
-<h3 id="_power_set">3.10. Power Set</h3>
+<h3 id="_power_set">3.12. Power Set</h3>
 <div class="paragraph">
 <p>The <em>power set</em> of a set S is the set of all the subsets of S. The power set of
 S is written:</p>
@@ -7940,7 +8276,7 @@ C = {red, green, blue}
 </div>
 </div>
 <div class="sect3">
-<h4 id="_questions_30">Questions</h4>
+<h4 id="_questions_33">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7969,7 +8305,7 @@ C = {red, green, blue}
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_30">Answers</h4>
+<h4 id="_answers_33">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -8004,7 +8340,7 @@ C = {red, green, blue}
 </div>
 </div>
 <div class="sect2">
-<h3 id="_cardinality_of_the_power_set">3.11. Cardinality Of The Power Set</h3>
+<h3 id="_cardinality_of_the_power_set">3.13. Cardinality Of The Power Set</h3>
 <div class="paragraph">
 <p>Set theorists have shown that if a set S has cardinality |S| = n, then:</p>
 </div>
@@ -8138,7 +8474,7 @@ cardinality of the power set is multiplies by 2.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_proof_by_induction">3.12. Proof By Induction</h3>
+<h3 id="_proof_by_induction">3.14. Proof By Induction</h3>
 <div class="paragraph">
 <p>I&#8217;m told that the proof we just did of |𝓟(S)| = 2<sup>n</sup> was an example of
 <em>proof by induction</em>. I tried to find out the underlying form of proof by
@@ -8211,25 +8547,19 @@ and so the proposition is true for all n.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_set_difference">3.13. Set Difference</h3>
+<h3 id="_set_difference">3.15. Set Difference</h3>
 <div class="paragraph">
 <p>Set difference</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_set_union">3.14. Set Union</h3>
-<div class="paragraph">
-<p>Set Union &#8746;.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_set_intersection">3.15. Set Intersection</h3>
+<h3 id="_set_intersection">3.16. Set Intersection</h3>
 <div class="paragraph">
 <p>Set Intersection &#8745;.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_russell_s_paradox">3.16. Russell&#8217;s Paradox</h3>
+<h3 id="_russell_s_paradox">3.17. Russell&#8217;s Paradox</h3>
 <div class="paragraph">
 <p>On your first day as an assistant librarian, you&#8217;re asked to compile a book
 that is a catalogue of all of the books in the library that don&#8217;t mention
@@ -8253,7 +8583,7 @@ contents as has been requested, except that it doesn&#8217;t contain itself.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_other_paradoxes">3.17. Other Paradoxes</h3>
+<h3 id="_other_paradoxes">3.18. Other Paradoxes</h3>
 <div class="paragraph">
 <p>Curry&#8217;s Paradox is:</p>
 </div>
@@ -8275,7 +8605,7 @@ him pontificating on the philosophy of it all!!&#8217; Okay, okay.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_sources">3.18. Sources</h3>
+<h3 id="_sources">3.19. Sources</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -8327,7 +8657,7 @@ often giving them Greek capital letters! So they say:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_questions_31">Questions</h4>
+<h4 id="_questions_34">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -8351,7 +8681,7 @@ write the following in terms of individual formalas:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_31">Answers</h4>
+<h4 id="_answers_34">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -8403,7 +8733,7 @@ it to be true. So what&#8217;s a proof exactly? It&#8217;s a chain of small self
 true steps that lead to the theorem.</p>
 </div>
 <div class="sect3">
-<h4 id="_questions_32">Questions</h4>
+<h4 id="_questions_35">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -8432,7 +8762,7 @@ true steps that lead to the theorem.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_32">Answers</h4>
+<h4 id="_answers_35">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -8656,7 +8986,7 @@ and(or(or(not(C), not(A)), B), or(or(not(C), A), not(B)))
 <p>we&#8217;ve got it in CNF.</p>
 </div>
 <div class="sect3">
-<h4 id="_questions_33">Questions</h4>
+<h4 id="_questions_36">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -8685,7 +9015,7 @@ and(or(or(not(C), not(A)), B), or(or(not(C), A), not(B)))
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_33">Answers</h4>
+<h4 id="_answers_36">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -9024,7 +9354,7 @@ and idempotence)</p>
 </ol>
 </div>
 <div class="sect3">
-<h4 id="_questions_34">Questions</h4>
+<h4 id="_questions_37">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -9034,7 +9364,7 @@ and idempotence)</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_34">Answers</h4>
+<h4 id="_answers_37">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -9353,7 +9683,7 @@ Q, (R &#x2227; P) &#x2227; (R &#x2227; Q) &#x2192; P &#x22A8; P
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="_questions_35">Questions</h4>
+<h4 id="_questions_38">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -9367,7 +9697,7 @@ valid by using rules of inference.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_35">Answers</h4>
+<h4 id="_answers_38">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -10214,7 +10544,7 @@ P &#x2228; Q, &#x00AC;(P &#x2227; Q), &#x00AC;P &#x22A8; Q</p>
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="_answers_36">4.8.1. Answers</h4>
+<h4 id="_answers_39">4.8.1. Answers</h4>
 <div class="paragraph">
 <p>Answers on their way&#8230;&#8203;</p>
 </div>
@@ -10546,7 +10876,7 @@ Rules say that anything in brackets gets evaluated first. So you&#8217;d write:<
 </table>
 </div>
 <div class="sect3">
-<h4 id="_questions_36">Questions</h4>
+<h4 id="_questions_39">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -10572,7 +10902,7 @@ Rules say that anything in brackets gets evaluated first. So you&#8217;d write:<
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_37">Answers</h4>
+<h4 id="_answers_40">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -11420,7 +11750,7 @@ functions, so I&#8217;ll give it the name <strong>S</strong>, so from now on:</p
 </div>
 </div>
 <div class="sect2">
-<h3 id="_union">7.9. Union</h3>
+<h3 id="_union_2">7.9. Union</h3>
 <div class="exampleblock">
 <div class="content">
 &#8746;: <strong>S</strong> {rarr} <strong>S</strong><br>
@@ -11429,7 +11759,7 @@ A, B &#x21A6; {x | x &#x2208; A or x &#x2208; B}
 </div>
 </div>
 <div class="sect2">
-<h3 id="_intersection">7.10. Intersection</h3>
+<h3 id="_intersection_2">7.10. Intersection</h3>
 <div class="exampleblock">
 <div class="content">
 &#8745;: <strong>S</strong> {rarr} <strong>S</strong><br>
@@ -11457,7 +11787,7 @@ A, B &#x21A6; {x | x &#x2208; A and x &#x2209; B}
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-12-10 17:46:24 GMT
+Last updated 2016-12-23 20:27:22 GMT
 </div>
 </div>
 </body>
