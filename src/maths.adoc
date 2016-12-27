@@ -2,6 +2,7 @@
 Tony Locke
 :doctype: book
 :entails: &#x22A8;
+:notentails: &#x22AD;
 :and: &#x2227;
 :or: &#x2228;
 :implies: &#x2192;
@@ -21,6 +22,7 @@ Tony Locke
 :Gamma: &#x0393;
 :phi: &#x03C6;
 :psi: &#x03C8;
+:sigma: &#x03C3;
 :cap: &#8745;
 :cup: &#8746;
 :toc:
@@ -2278,7 +2280,7 @@ Shows that the formula is valid and so we can write that:
 .. P: Bill orders 6x. +
    Q: Bill orders Tribute. +
    R: The pub is open. +
-   Premises: (P {or} Q), ((P {or} Q) {implies} R), {not}Q +
+   Premises: (P {or} Q), (\(P {or} Q) {implies} R), {not}Q +
    Conclusion: (R {and} P)
 .. P: The light switch is on. +
    Q: The light switch is off. +
@@ -2289,7 +2291,7 @@ Shows that the formula is valid and so we can write that:
 .. Premises: (P {implies} Q), P +
    Conclusion: Q +
    The truth table below shows that the formula
-   (((P {implies} Q) {and} P) {implies} Q) is valid, and so +
+   (\((P {implies} Q) {and} P) {implies} Q) is valid, and so +
    (P {implies} Q), P {entails} Q
 +
 [cols="5*", options="header"]
@@ -2297,8 +2299,8 @@ Shows that the formula is valid and so we can write that:
 | P
 | Q
 | (P {implies} Q)
-| ((P {implies} Q) {and} P)
-| (((P {implies} Q) {and} P) {implies} Q)
+| (\(P {implies} Q) {and} P)
+| (\((P {implies} Q) {and} P) {implies} Q)
 
 | T | T | T | T | T
 | F | T | T | F | T
@@ -2949,8 +2951,8 @@ Wuthering Heights by Charlotte Bronte}
 then:
 
 [example]
-F {sub} T = {Emma by Jane Austen, Anna Karenina by Leo Tolstoy, +
-Crime and Punishment by Fyodor Dostoevsky, +
+F {cup} T = {Emma by Jane Austen, Anna Karenina by Leo Tolstoy,
+Crime and Punishment by Fyodor Dostoevsky,
 Wuthering Heights by Charlotte Bronte}
 
 
@@ -2961,9 +2963,9 @@ Wuthering Heights by Charlotte Bronte}
    Q = {1, 3, 5, 7}
 .. P = {0, 1, 2, 3} +
    Q = {3, 4, 5, 6}
-.. D = {Monday, Tuesday, Wednesday}
+.. D = {Monday, Tuesday, Wednesday} +
    W = {Monday, Tuesday, Wednesday}
-.. P = {emptyset}
+.. P = {emptyset} +
    Q = {0, -6}
 . Write A {cup} B in set builder notation.
 
@@ -3013,9 +3015,9 @@ F {cap} T = {Emma by Jane Austen, Wuthering Heights by Charlotte Bronte}
    Q = {1, 3, 5, 7}
 .. P = {0, 1, 2, 3} +
    Q = {3, 4, 5, 6}
-.. D = {Monday, Tuesday, Wednesday}
+.. D = {Monday, Tuesday, Wednesday} +
    W = {Monday, Tuesday, Wednesday}
-.. P = {emptyset}
+.. P = {emptyset} +
    Q = {0, -6}
 . Write A {cap} B in set builder notation.
 
@@ -3325,7 +3327,7 @@ Also, if {psi} is a formula then:
 stands for:
 
 [example]
-((({phi}~1~ {and} {phi}~2~) {and} ...) {and} {phi}~n~) {entails} {psi}
+{phi}~1~ {and} {phi}~2~ {and} ... {and} {phi}~n~ {entails} {psi}
 
 
 :numbered!:
@@ -3336,18 +3338,133 @@ write the following in terms of individual formalas:
 .. {Delta} {entails} {psi}
 .. {Delta} {cap} {Gamma} {entails} {psi}
 .. {Gamma} {cup} {Delta} {entails} {psi}
-
+. If {Delta} and {Gamma} are sets of formulas, say whether the following are
+  true or false:
+.. If {Delta} {entails} {psi} and {Gamma} {entails} {psi} then
+   {Delta} {cup} {Gamma} {entails} {psi}.
+.. If {Delta} {entails} {psi} and {Gamma} {entails} {psi} then
+   {Delta} {cap} {Gamma} {entails} {psi}.
+.. If {Delta} {entails} {psi} and {Gamma} {notentails} {psi} then
+   {Delta} {cup} {Gamma} {entails} {psi}.
+.. If {Delta} {notentails} {psi} then {Delta} {entails} {not}{psi}.
 
 ==== Answers
 
 . If {Delta} = {{phi}~1~, {phi}~2~} and {Gamma} = {{phi}~2~, {phi}~3~} then
-write the following in terms of individual formalas:
+  write the following in terms of individual formulas:
 .. {Delta} {entails} {psi} +
-   ({phi}~1~ {and} {phi}~2~) {entails} {psi}
+   {phi}~1~ {and} {phi}~2~ {entails} {psi}
 .. {Delta} {cap} {Gamma} {entails} {psi} +
    {phi}~2~ {entails} {psi}
 .. {Gamma} {cup} {Delta} {entails} {psi} +
-   (({phi}~1~ {and} {phi}~2~) {and} {phi}~3~) {entails} {psi}
+   {phi}~1~ {and} {phi}~2~ {and} {phi}~3~ {entails} {psi}
+. If {Delta} and {Gamma} are sets of formulas, say whether the following are
+  true or false:
+.. If {Delta} {entails} {psi} and {Gamma} {entails} {psi} then
+   {Delta} {cup} {Gamma} {entails} {psi}. +
+   If: +
+   {empty} +
+   {Delta} = {{phi}~1~, {phi}~2~, ..., {phi}~n~} +
+   {Gamma} = {{sigma}~1~, {sigma}~2~, ..., {sigma}~n~} +
+   {empty} +
+   and if: +
+   {empty} +
+   {Delta} {entails} {psi} +
+   {empty} +
+   then: +
+   {empty} +
+   {phi}~1~ {and} {phi}~2~ {and} ... {and} {phi}~n~ {implies} {psi} +
+   {empty} +
+   is valid. Adding extra {and} terms on to the left hand side of the {implies}
+   can never make it true if it was already false, and so the expression: +
+   {empty} +
+   {phi}~1~ {and} {phi}~2~ {and} ... {and} {phi}~n~ {and} {sigma}~1~ {and}
+   {sigma}~2~ {and} ... {sigma}~n~ {implies} {psi} +
+   {empty} +
+   is valid, and so: +
+   {empty} +
+   {Delta} {cup} {Gamma} {entails} {psi} +
+   {empty} +
+   is true.
+.. If {Delta} {entails} {psi} and {Gamma} {entails} {psi} then
+   {Delta} {cap} {Gamma} {entails} {psi}. +
+   {empty} +
+   Proof by counter-example! Say: +
+   {empty} +
+   {Delta} = {P {or} {not}P, P {and} {not}P} +
+   {Gamma} = {P {or} {not}P, Q {and} {not}Q} +
+   {empty} +
+   then: +
+   {empty} +
+   {Delta} {cap} {Gamma} = {P {or} {not}P} +
+   {empty} +
+   and: +
+   {empty} +
+   {P {or} {not}P} {implies} {psi} +
+   {empty} +
+   Is not valid, and so: +
+   {empty} +
+   {Delta} {cap} {Gamma} {entails} {psi} +
+   {empty} +
+   is not true.
+   {empty} +
+.. If {Delta} {entails} {psi} and {Gamma} {notentails} {psi} then
+   {Delta} {cup} {Gamma} {entails} {psi}.
+   {empty} +
+   If: +
+   {empty} +
+   {Delta} = {{phi}~1~, {phi}~2~, ..., {phi}~n~} +
+   {empty} +
+   and: +
+   {empty} +
+   {Delta} {entails} {psi} +
+   {empty} +
+   then: +
+   {empty} +
+   {phi}~1~ {and} {phi}~2~ {and} ... {and} {phi}~n~ {implies} {psi} +
+   {empty} +
+   is valid. Adding extra '`and`' terms to the left hand side can never make the
+   formula invalid so the expression: +
+   {empty} +
+   {phi}~1~ {and} {phi}~2~ {and} ... {and} {phi}~n~ {and} {sigma}~1~ {and}
+   {sigma}~2~ {and} ... {sigma}~n~ {implies} {psi} +
+   {empty} +
+   is also valid. So if: +
+   {empty} +
+   {Gamma} = {{sigma}~1~, {sigma}~2~, ..., {sigma}~n~} +
+   {empty} +
+   then: +
+   {empty} +
+   {Delta} {cup} {Gamma} {entails} {psi} +
+   {empty} +
+   is true.
+.. If {Delta} {notentails} {psi} then {Delta} {entails} {not}{psi}. +
+   {empty} +
+   Proof by counter-example. If: +
+   {empty} +
+   {Delta} = {{phi} {or} {not}{phi}} +
+   {empty} +
+   then: +
+   {empty} +
+   {phi} {or} {not}{phi} {implies} {phi} +
+   {empty} +
+   is not valid, so: +
+   {empty} +
+   {Delta} {notentails} {phi} +
+   {empty} +
+   but if: +
+   {empty} +
+   {Delta} {entails} {not}{phi} +
+   {empty} +
+   then: +
+   {empty} +
+   {phi} {or} {not}{phi} {implies} {not}{phi} +
+   {empty} +
+   which isn't valid, so: +
+   {empty} +
+   {Delta} {entails} {not}{phi} +
+   {empty} +
+   is not true.
 
 
 :numbered:

@@ -6488,7 +6488,7 @@ Conclusion: &#x00AC;P</p>
 <p>P: Bill orders 6x.<br>
 Q: Bill orders Tribute.<br>
 R: The pub is open.<br>
-Premises: (P &#x2228; Q), ((P &#x2228; Q) &#x2192; R), &#x00AC;Q<br>
+Premises: (P &#x2228; Q), (\(P &#x2228; Q) &#x2192; R), &#x00AC;Q<br>
 Conclusion: (R &#x2227; P)</p>
 </li>
 <li>
@@ -6509,7 +6509,7 @@ entailments not.</p>
 <p>Premises: (P &#x2192; Q), P<br>
 Conclusion: Q<br>
 The truth table below shows that the formula
-(((P &#x2192; Q) &#x2227; P) &#x2192; Q) is valid, and so<br>
+(\((P &#x2192; Q) &#x2227; P) &#x2192; Q) is valid, and so<br>
 (P &#x2192; Q), P &#x22A8; Q</p>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -6524,8 +6524,8 @@ The truth table below shows that the formula
 <th class="tableblock halign-left valign-top">P</th>
 <th class="tableblock halign-left valign-top">Q</th>
 <th class="tableblock halign-left valign-top">(P &#x2192; Q)</th>
-<th class="tableblock halign-left valign-top">((P &#x2192; Q) &#x2227; P)</th>
-<th class="tableblock halign-left valign-top">(((P &#x2192; Q) &#x2227; P) &#x2192; Q)</th>
+<th class="tableblock halign-left valign-top">(\(P &#x2192; Q) &#x2227; P)</th>
+<th class="tableblock halign-left valign-top">(\((P &#x2192; Q) &#x2227; P) &#x2192; Q)</th>
 </tr>
 </thead>
 <tbody>
@@ -7967,8 +7967,8 @@ Wuthering Heights by Charlotte Bronte}
 </div>
 <div class="exampleblock">
 <div class="content">
-F &#x2282; T = {Emma by Jane Austen, Anna Karenina by Leo Tolstoy,<br>
-Crime and Punishment by Fyodor Dostoevsky,<br>
+F &#8746; T = {Emma by Jane Austen, Anna Karenina by Leo Tolstoy,
+Crime and Punishment by Fyodor Dostoevsky,
 Wuthering Heights by Charlotte Bronte}
 </div>
 </div>
@@ -7989,11 +7989,11 @@ Q = {1, 3, 5, 7}</p>
 Q = {3, 4, 5, 6}</p>
 </li>
 <li>
-<p>D = {Monday, Tuesday, Wednesday}
+<p>D = {Monday, Tuesday, Wednesday}<br>
 W = {Monday, Tuesday, Wednesday}</p>
 </li>
 <li>
-<p>P = &#x2205;
+<p>P = &#x2205;<br>
 Q = {0, -6}</p>
 </li>
 </ol>
@@ -8085,11 +8085,11 @@ Q = {1, 3, 5, 7}</p>
 Q = {3, 4, 5, 6}</p>
 </li>
 <li>
-<p>D = {Monday, Tuesday, Wednesday}
+<p>D = {Monday, Tuesday, Wednesday}<br>
 W = {Monday, Tuesday, Wednesday}</p>
 </li>
 <li>
-<p>P = &#x2205;
+<p>P = &#x2205;<br>
 Q = {0, -6}</p>
 </li>
 </ol>
@@ -8653,7 +8653,7 @@ often giving them Greek capital letters! So they say:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
-(((&#x03C6;<sub>1</sub> &#x2227; &#x03C6;<sub>2</sub>) &#x2227; &#8230;&#8203;) &#x2227; &#x03C6;<sub>n</sub>) &#x22A8; &#x03C8;
+&#x03C6;<sub>1</sub> &#x2227; &#x03C6;<sub>2</sub> &#x2227; &#8230;&#8203; &#x2227; &#x03C6;<sub>n</sub> &#x22A8; &#x03C8;
 </div>
 </div>
 <div class="sect3">
@@ -8677,6 +8677,29 @@ write the following in terms of individual formalas:</p>
 </ol>
 </div>
 </li>
+<li>
+<p>If &#x0394; and &#x0393; are sets of formulas, say whether the following are
+true or false:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>If &#x0394; &#x22A8; &#x03C8; and &#x0393; &#x22A8; &#x03C8; then
+&#x0394; &#8746; &#x0393; &#x22A8; &#x03C8;.</p>
+</li>
+<li>
+<p>If &#x0394; &#x22A8; &#x03C8; and &#x0393; &#x22A8; &#x03C8; then
+&#x0394; &#8745; &#x0393; &#x22A8; &#x03C8;.</p>
+</li>
+<li>
+<p>If &#x0394; &#x22A8; &#x03C8; and &#x0393; &#x22AD; &#x03C8; then
+&#x0394; &#8746; &#x0393; &#x22A8; &#x03C8;.</p>
+</li>
+<li>
+<p>If &#x0394; &#x22AD; &#x03C8; then &#x0394; &#x22A8; &#x00AC;&#x03C8;.</p>
+</li>
+</ol>
+</div>
+</li>
 </ol>
 </div>
 </div>
@@ -8686,12 +8709,12 @@ write the following in terms of individual formalas:</p>
 <ol class="arabic">
 <li>
 <p>If &#x0394; = {&#x03C6;<sub>1</sub>, &#x03C6;<sub>2</sub>} and &#x0393; = {&#x03C6;<sub>2</sub>, &#x03C6;<sub>3</sub>} then
-write the following in terms of individual formalas:</p>
+write the following in terms of individual formulas:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
 <p>&#x0394; &#x22A8; &#x03C8;<br>
-(&#x03C6;<sub>1</sub> &#x2227; &#x03C6;<sub>2</sub>) &#x22A8; &#x03C8;</p>
+&#x03C6;<sub>1</sub> &#x2227; &#x03C6;<sub>2</sub> &#x22A8; &#x03C8;</p>
 </li>
 <li>
 <p>&#x0394; &#8745; &#x0393; &#x22A8; &#x03C8;<br>
@@ -8699,7 +8722,128 @@ write the following in terms of individual formalas:</p>
 </li>
 <li>
 <p>&#x0393; &#8746; &#x0394; &#x22A8; &#x03C8;<br>
-((&#x03C6;<sub>1</sub> &#x2227; &#x03C6;<sub>2</sub>) &#x2227; &#x03C6;<sub>3</sub>) &#x22A8; &#x03C8;</p>
+&#x03C6;<sub>1</sub> &#x2227; &#x03C6;<sub>2</sub> &#x2227; &#x03C6;<sub>3</sub> &#x22A8; &#x03C8;</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>If &#x0394; and &#x0393; are sets of formulas, say whether the following are
+true or false:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>If &#x0394; &#x22A8; &#x03C8; and &#x0393; &#x22A8; &#x03C8; then
+&#x0394; &#8746; &#x0393; &#x22A8; &#x03C8;.<br>
+If:<br>
+<br>
+&#x0394; = {&#x03C6;<sub>1</sub>, &#x03C6;<sub>2</sub>, &#8230;&#8203;, &#x03C6;<sub>n</sub>}<br>
+&#x0393; = {&#x03C3;<sub>1</sub>, &#x03C3;<sub>2</sub>, &#8230;&#8203;, &#x03C3;<sub>n</sub>}<br>
+<br>
+and if:<br>
+<br>
+&#x0394; &#x22A8; &#x03C8;<br>
+<br>
+then:<br>
+<br>
+&#x03C6;<sub>1</sub> &#x2227; &#x03C6;<sub>2</sub> &#x2227; &#8230;&#8203; &#x2227; &#x03C6;<sub>n</sub> &#x2192; &#x03C8;<br>
+<br>
+is valid. Adding extra &#x2227; terms on to the left hand side of the &#x2192;
+can never make it true if it was already false, and so the expression:<br>
+<br>
+&#x03C6;<sub>1</sub> &#x2227; &#x03C6;<sub>2</sub> &#x2227; &#8230;&#8203; &#x2227; &#x03C6;<sub>n</sub> &#x2227; &#x03C3;<sub>1</sub> &#x2227;
+&#x03C3;<sub>2</sub> &#x2227; &#8230;&#8203; &#x03C3;<sub>n</sub> &#x2192; &#x03C8;<br>
+<br>
+is valid, and so:<br>
+<br>
+&#x0394; &#8746; &#x0393; &#x22A8; &#x03C8;<br>
+<br>
+is true.</p>
+</li>
+<li>
+<p>If &#x0394; &#x22A8; &#x03C8; and &#x0393; &#x22A8; &#x03C8; then
+&#x0394; &#8745; &#x0393; &#x22A8; &#x03C8;.<br>
+<br>
+Proof by counter-example! Say:<br>
+<br>
+&#x0394; = {P &#x2228; &#x00AC;P, P &#x2227; &#x00AC;P}<br>
+&#x0393; = {P &#x2228; &#x00AC;P, Q &#x2227; &#x00AC;Q}<br>
+<br>
+then:<br>
+<br>
+&#x0394; &#8745; &#x0393; = {P &#x2228; &#x00AC;P}<br>
+<br>
+and:<br>
+<br>
+{P &#x2228; &#x00AC;P} &#x2192; &#x03C8;<br>
+<br>
+Is not valid, and so:<br>
+<br>
+&#x0394; &#8745; &#x0393; &#x22A8; &#x03C8;<br>
+<br>
+is not true.
+<br></p>
+</li>
+<li>
+<p>If &#x0394; &#x22A8; &#x03C8; and &#x0393; &#x22AD; &#x03C8; then
+&#x0394; &#8746; &#x0393; &#x22A8; &#x03C8;.
+<br>
+If:<br>
+<br>
+&#x0394; = {&#x03C6;<sub>1</sub>, &#x03C6;<sub>2</sub>, &#8230;&#8203;, &#x03C6;<sub>n</sub>}<br>
+<br>
+and:<br>
+<br>
+&#x0394; &#x22A8; &#x03C8;<br>
+<br>
+then:<br>
+<br>
+&#x03C6;<sub>1</sub> &#x2227; &#x03C6;<sub>2</sub> &#x2227; &#8230;&#8203; &#x2227; &#x03C6;<sub>n</sub> &#x2192; &#x03C8;<br>
+<br>
+is valid. Adding extra &#8216;and&#8217; terms to the left hand side can never make the
+formula invalid so the expression:<br>
+<br>
+&#x03C6;<sub>1</sub> &#x2227; &#x03C6;<sub>2</sub> &#x2227; &#8230;&#8203; &#x2227; &#x03C6;<sub>n</sub> &#x2227; &#x03C3;<sub>1</sub> &#x2227;
+&#x03C3;<sub>2</sub> &#x2227; &#8230;&#8203; &#x03C3;<sub>n</sub> &#x2192; &#x03C8;<br>
+<br>
+is also valid. So if:<br>
+<br>
+&#x0393; = {&#x03C3;<sub>1</sub>, &#x03C3;<sub>2</sub>, &#8230;&#8203;, &#x03C3;<sub>n</sub>}<br>
+<br>
+then:<br>
+<br>
+&#x0394; &#8746; &#x0393; &#x22A8; &#x03C8;<br>
+<br>
+is true.</p>
+</li>
+<li>
+<p>If &#x0394; &#x22AD; &#x03C8; then &#x0394; &#x22A8; &#x00AC;&#x03C8;.<br>
+<br>
+Proof by counter-example. If:<br>
+<br>
+&#x0394; = {&#x03C6; &#x2228; &#x00AC;&#x03C6;}<br>
+<br>
+then:<br>
+<br>
+&#x03C6; &#x2228; &#x00AC;&#x03C6; &#x2192; &#x03C6;<br>
+<br>
+is not valid, so:<br>
+<br>
+&#x0394; &#x22AD; &#x03C6;<br>
+<br>
+but if:<br>
+<br>
+&#x0394; &#x22A8; &#x00AC;&#x03C6;<br>
+<br>
+then:<br>
+<br>
+&#x03C6; &#x2228; &#x00AC;&#x03C6; &#x2192; &#x00AC;&#x03C6;<br>
+<br>
+which isn&#8217;t valid, so:<br>
+<br>
+&#x0394; &#x22A8; &#x00AC;&#x03C6;<br>
+<br>
+is not true.</p>
 </li>
 </ol>
 </div>
@@ -11787,7 +11931,7 @@ A, B &#x21A6; {x | x &#x2208; A and x &#x2209; B}
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-12-23 20:27:22 GMT
+Last updated 2016-12-27 14:26:49 GMT
 </div>
 </div>
 </body>
