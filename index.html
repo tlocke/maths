@@ -485,16 +485,17 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#_propositional_logic_ii">4. Propositional Logic II</a>
 <ul class="sectlevel2">
-<li><a href="#_sets_of_formulas">4.1. Sets Of Formulas</a></li>
-<li><a href="#_unsatisfiability_theorem">4.2. Unsatisfiability Theorem</a></li>
-<li><a href="#_conjunctive_normal_form_cnf">4.3. Conjunctive Normal Form (CNF)</a></li>
-<li><a href="#_cnf_set_notation">4.4. CNF Set Notation</a></li>
-<li><a href="#_propositional_resolution">4.5. Propositional Resolution</a></li>
-<li><a href="#_mendelson_s_axiomatic_system">4.6. Mendelson&#8217;s Axiomatic System</a></li>
-<li><a href="#_rules_of_inference">4.7. Rules Of Inference</a></li>
-<li><a href="#_sentential_logic_summary">4.8. Sentential Logic: Summary</a></li>
-<li><a href="#_rosetta_stone">4.9. Rosetta Stone</a></li>
-<li><a href="#_sources_2">4.10. Sources</a></li>
+<li><a href="#_theory">4.1. Theory</a></li>
+<li><a href="#_semantic_consistency">4.2. Semantic Consistency</a></li>
+<li><a href="#_unsatisfiability_theorem">4.3. Unsatisfiability Theorem</a></li>
+<li><a href="#_conjunctive_normal_form_cnf">4.4. Conjunctive Normal Form (CNF)</a></li>
+<li><a href="#_cnf_set_notation">4.5. CNF Set Notation</a></li>
+<li><a href="#_propositional_resolution">4.6. Propositional Resolution</a></li>
+<li><a href="#_mendelson_s_axiomatic_system">4.7. Mendelson&#8217;s Axiomatic System</a></li>
+<li><a href="#_rules_of_inference">4.8. Rules Of Inference</a></li>
+<li><a href="#_sentential_logic_summary">4.9. Sentential Logic: Summary</a></li>
+<li><a href="#_rosetta_stone">4.10. Rosetta Stone</a></li>
+<li><a href="#_sources_2">4.11. Sources</a></li>
 </ul>
 </li>
 <li><a href="#_number_theory">5. Number Theory</a></li>
@@ -8630,10 +8631,11 @@ him pontificating on the philosophy of it all!!&#8217; Okay, okay.</p>
 to use Greek capital letters!</p>
 </div>
 <div class="sect2">
-<h3 id="_sets_of_formulas">4.1. Sets Of Formulas</h3>
+<h3 id="_theory">4.1. Theory</h3>
 <div class="paragraph">
 <p>I&#8217;m not quite sure why yet, but in maths land they talk about sets of formulas,
-often giving them Greek capital letters! So they say:</p>
+calling them <em>theories</em> and often giving them Greek capital letters! So they
+say:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -8678,8 +8680,8 @@ write the following in terms of individual formalas:</p>
 </div>
 </li>
 <li>
-<p>If &#x0394; and &#x0393; are sets of formulas, say whether the following are
-true or false:</p>
+<p>If &#x0394; and &#x0393; are theories, say whether the following are true or
+false:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -8728,8 +8730,8 @@ write the following in terms of individual formulas:</p>
 </div>
 </li>
 <li>
-<p>If &#x0394; and &#x0393; are sets of formulas, say whether the following are
-true or false:</p>
+<p>If &#x0394; and &#x0393; are theories, say whether the following are true or
+false:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -8853,7 +8855,399 @@ is not true.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_unsatisfiability_theorem">4.2. Unsatisfiability Theorem</h3>
+<h3 id="_semantic_consistency">4.2. Semantic Consistency</h3>
+<div class="paragraph">
+<p>A theory is <em>semantically consistent</em> if and only if there&#8217;s an interpretation
+where all the formulas of the theory are true. In other words if there&#8217;s a
+theory &#x0394; is:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+&#x0394; = {&#x03C6;<sub>1</sub>, &#8230;&#8203;,&#x03C6;<sub>n</sub>}
+</div>
+</div>
+<div class="paragraph">
+<p>Then &#x0394; is semantically consistent if:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+&#x03C6;<sub>1</sub> &#x2227; &#x03C6;<sub>2</sub> &#x2227; &#8230;&#8203; &#x2227; &#x03C6;<sub>n</sub>
+</div>
+</div>
+<div class="paragraph">
+<p>is satisfiable. An example you say? Okay, if:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+&#x0393; = {P, Q &#x2227; P, Q &#x2228; P, Q}
+</div>
+</div>
+<div class="paragraph">
+<p>then &#x0393; is consistent if:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+P &#x2227; (Q &#x2227; P) &#x2227; (Q &#x2228; P) &#x2227; Q
+</div>
+</div>
+<div class="paragraph">
+<p>is satisfiable. Using a truth table:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">P</th>
+<th class="tableblock halign-left valign-top">Q</th>
+<th class="tableblock halign-left valign-top">Q &#x2227; P</th>
+<th class="tableblock halign-left valign-top">Q &#x2228; P</th>
+<th class="tableblock halign-left valign-top">P &#x2227; (Q &#x2227; P) &#x2227; (Q &#x2228; P) &#x2227; Q</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="_questions_35">Questions</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Say whether the following theories are consistent or not:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>&#x0394; = {Q, &#x00AC;Q}</p>
+</li>
+<li>
+<p>&#x0393; = {P &#x2227; Q, Q}</p>
+</li>
+<li>
+<p>&#x0393; = {P &#x2228; Q, &#x00AC;Q}</p>
+</li>
+<li>
+<p>&#x0393; = {P &#x2192; Q, Q &#x2192; &#x00AC;P}</p>
+</li>
+<li>
+<p>&#x0393; = {&#x00AC;P, &#x00AC;Q, P &#x2194; Q}</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_answers_35">Answers</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Say whether the following theories are consistent or not:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>&#x0394; = {Q, &#x00AC;Q}<br>
+&#x0394; is consistent if Q &#x2227; &#x00AC;Q is satisfiable:</p>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Q</th>
+<th class="tableblock halign-left valign-top">&#x00AC;Q</th>
+<th class="tableblock halign-left valign-top">Q &#x2227; &#x00AC;Q</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>So the theory &#x0394; is not consistent.</p>
+</div>
+</li>
+<li>
+<p>&#x0393; = {P &#x2227; Q, Q}<br>
+&#x0393; is consistent if P &#x2227; Q &#x2227; Q is satisfiable</p>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">P</th>
+<th class="tableblock halign-left valign-top">Q</th>
+<th class="tableblock halign-left valign-top">P &#x2227; Q</th>
+<th class="tableblock halign-left valign-top">P &#x2227; Q &#x2227; Q</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>So the theory &#x0393; is consistent.</p>
+</div>
+</li>
+<li>
+<p>&#x0393; = {P &#x2228; Q, &#x00AC;Q}<br>
+&#x0393; is consistent if (P &#x2228; Q) &#x2227; &#x00AC;Q is satisfiable</p>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">P</th>
+<th class="tableblock halign-left valign-top">Q</th>
+<th class="tableblock halign-left valign-top">P &#x2228; Q</th>
+<th class="tableblock halign-left valign-top">&#x00AC;Q</th>
+<th class="tableblock halign-left valign-top">(P &#x2228; Q) &#x2227; &#x00AC;Q</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>So the theory &#x0393; is consistent.</p>
+</div>
+</li>
+<li>
+<p>&#x0393; = {P &#x2192; Q, Q &#x2192; &#x00AC;P}<br>
+&#x0393; is consistent if (P &#x2192; Q) &#x2227; (Q &#x2192; &#x00AC;P) is
+satisfiable.</p>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">P</th>
+<th class="tableblock halign-left valign-top">Q</th>
+<th class="tableblock halign-left valign-top">P &#x2192; Q</th>
+<th class="tableblock halign-left valign-top">&#x00AC;P</th>
+<th class="tableblock halign-left valign-top">Q &#x2192; &#x00AC;P</th>
+<th class="tableblock halign-left valign-top">(P &#x2192; Q) &#x2227; (Q &#x2192; &#x00AC;P)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>So the theory &#x0393; is consistent.</p>
+</div>
+</li>
+<li>
+<p>&#x0393; = {&#x00AC;P, &#x00AC;Q, P &#x2194; Q}<br>
+&#x0393; is consistent if &#x00AC;P &#x2227; &#x00AC;Q &#x2227; (P &#x2194; Q) is
+satisfiable</p>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">P</th>
+<th class="tableblock halign-left valign-top">Q</th>
+<th class="tableblock halign-left valign-top">&#x00AC;P</th>
+<th class="tableblock halign-left valign-top">&#x00AC;Q</th>
+<th class="tableblock halign-left valign-top">P &#x2194; Q</th>
+<th class="tableblock halign-left valign-top">&#x00AC;P &#x2227; &#x00AC;Q &#x2227; (P &#x2194; Q)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>So the theory &#x0393; is consistent.</p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_unsatisfiability_theorem">4.3. Unsatisfiability Theorem</h3>
 <div class="paragraph">
 <p>I would like, dear reader, to present to you a mathematical theorem. &#8216;Oooh,
 hark at him with his theorems! He&#8217;s just got started in maths and now he thinks
@@ -8877,7 +9271,7 @@ it to be true. So what&#8217;s a proof exactly? It&#8217;s a chain of small self
 true steps that lead to the theorem.</p>
 </div>
 <div class="sect3">
-<h4 id="_questions_35">Questions</h4>
+<h4 id="_questions_36">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -8906,7 +9300,7 @@ true steps that lead to the theorem.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_35">Answers</h4>
+<h4 id="_answers_36">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -8954,7 +9348,7 @@ and(and(and(A, B), A), C) [&#8216;and&#8217; is associative]</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_conjunctive_normal_form_cnf">4.3. Conjunctive Normal Form (CNF)</h3>
+<h3 id="_conjunctive_normal_form_cnf">4.4. Conjunctive Normal Form (CNF)</h3>
 <div class="paragraph">
 <p>When I got to this point in the Ivory Tower, John Alan Robinson took me by the
 scruff of the neck and said, &#8216;Look, you&#8217;ve just got to learn this, don&#8217;t ask
@@ -9130,7 +9524,7 @@ and(or(or(not(C), not(A)), B), or(or(not(C), A), not(B)))
 <p>we&#8217;ve got it in CNF.</p>
 </div>
 <div class="sect3">
-<h4 id="_questions_36">Questions</h4>
+<h4 id="_questions_37">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -9159,7 +9553,7 @@ and(or(or(not(C), not(A)), B), or(or(not(C), A), not(B)))
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_36">Answers</h4>
+<h4 id="_answers_37">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -9207,7 +9601,7 @@ and(and(and(A, B), A), C) [&#8216;and&#8217; is associative]</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_cnf_set_notation">4.4. CNF Set Notation</h3>
+<h3 id="_cnf_set_notation">4.5. CNF Set Notation</h3>
 <div class="paragraph">
 <p>As we&#8217;ve seen, the &#8216;or&#8217; function is commutative and associative. Dr Robinson
 told me that this means that for any CNF clause it doesn&#8217;t matter how you
@@ -9498,7 +9892,7 @@ and idempotence)</p>
 </ol>
 </div>
 <div class="sect3">
-<h4 id="_questions_37">Questions</h4>
+<h4 id="_questions_38">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -9508,7 +9902,7 @@ and idempotence)</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_37">Answers</h4>
+<h4 id="_answers_38">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -9542,7 +9936,7 @@ and(and(B, A), C) [&#8216;and&#8217; associativity, commutativity and idempotenc
 </div>
 </div>
 <div class="sect2">
-<h3 id="_propositional_resolution">4.5. Propositional Resolution</h3>
+<h3 id="_propositional_resolution">4.6. Propositional Resolution</h3>
 <div class="paragraph">
 <p>The logicians have discovered / invented other ways of showing if an argument is
 valid or not. One of these methods is <em>Propositional Resolution</em>.</p>
@@ -9553,7 +9947,7 @@ exponentially with the number of atomic formulas. The logicians have discovered<
 </div>
 </div>
 <div class="sect2">
-<h3 id="_mendelson_s_axiomatic_system">4.6. Mendelson&#8217;s Axiomatic System</h3>
+<h3 id="_mendelson_s_axiomatic_system">4.7. Mendelson&#8217;s Axiomatic System</h3>
 <div class="paragraph">
 <p>Writing out truth tables gets tedious, especially as the number of rows grows
 exponentially with the number of atomic formulas. The logicians have discovered
@@ -9617,7 +10011,7 @@ that are known as <em>rules of inference</em>. One rule of inference is:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_rules_of_inference">4.7. Rules Of Inference</h3>
+<h3 id="_rules_of_inference">4.8. Rules Of Inference</h3>
 <div class="paragraph">
 <p>Writing out truth tables gets tedious, especially as the number of rows grows
 exponentially with the number of atomic formulas. The logicians have discovered
@@ -9827,7 +10221,7 @@ Q, (R &#x2227; P) &#x2227; (R &#x2227; Q) &#x2192; P &#x22A8; P
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="_questions_38">Questions</h4>
+<h4 id="_questions_39">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -9841,7 +10235,7 @@ valid by using rules of inference.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_38">Answers</h4>
+<h4 id="_answers_39">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -10652,7 +11046,7 @@ P &#x2228; Q, &#x00AC;(P &#x2227; Q), &#x00AC;P &#x22A8; Q</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_sentential_logic_summary">4.8. Sentential Logic: Summary</h3>
+<h3 id="_sentential_logic_summary">4.9. Sentential Logic: Summary</h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -10688,14 +11082,14 @@ P &#x2228; Q, &#x00AC;(P &#x2227; Q), &#x00AC;P &#x22A8; Q</p>
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="_answers_39">4.8.1. Answers</h4>
+<h4 id="_answers_40">4.9.1. Answers</h4>
 <div class="paragraph">
 <p>Answers on their way&#8230;&#8203;</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_rosetta_stone">4.9. Rosetta Stone</h3>
+<h3 id="_rosetta_stone">4.10. Rosetta Stone</h3>
 <div id="img-rosetta" class="imageblock">
 <div class="content">
 <img src="rosetta.jpg" alt="Rosetta Stone">
@@ -10709,7 +11103,7 @@ the same area of maths. This point of this section is to help us understand
 what other authors are saying, in terms that we already understand.</p>
 </div>
 <div class="sect3">
-<h4 id="_sentential_logic_versus_propositional_logic_versus_boolean_algebra">4.9.1. Sentential Logic versus Propositional Logic versus Boolean Algebra</h4>
+<h4 id="_sentential_logic_versus_propositional_logic_versus_boolean_algebra">4.10.1. Sentential Logic versus Propositional Logic versus Boolean Algebra</h4>
 <div class="paragraph">
 <p>Some authors talk of Sentential Logic, and some talk of Propositional Logic.
 This is a philosophical difference. Say there are two statements that mean the
@@ -10724,7 +11118,7 @@ Boolean Algebras.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_functional_notation_versus_operational_notation">4.9.2. Functional Notation Versus Operational Notation</h4>
+<h4 id="_functional_notation_versus_operational_notation">4.10.2. Functional Notation Versus Operational Notation</h4>
 <div class="paragraph">
 <p>The formula:</p>
 </div>
@@ -10744,7 +11138,7 @@ don&#8217;t necessarily have to learn operational notation.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_synonyms">4.9.3. Synonyms</h4>
+<h4 id="_synonyms">4.10.3. Synonyms</h4>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -10829,14 +11223,14 @@ don&#8217;t necessarily have to learn operational notation.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_antecedent_and_consequent">4.9.4. Antecedent and Consequent</h4>
+<h4 id="_antecedent_and_consequent">4.10.4. Antecedent and Consequent</h4>
 <div class="paragraph">
 <p>The formula before the &#x2192; is called the <em>antecedent</em> and the formula
 after the &#x2192; is the <em>consequent</em>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_precedence">4.9.5. Precedence</h4>
+<h4 id="_precedence">4.10.5. Precedence</h4>
 <div class="paragraph">
 <p>In many parts of the Ivory Tower they adopt the convention of <em>precedence</em> of
 functions
@@ -11020,7 +11414,7 @@ Rules say that anything in brackets gets evaluated first. So you&#8217;d write:<
 </table>
 </div>
 <div class="sect3">
-<h4 id="_questions_39">Questions</h4>
+<h4 id="_questions_40">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -11046,7 +11440,7 @@ Rules say that anything in brackets gets evaluated first. So you&#8217;d write:<
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_40">Answers</h4>
+<h4 id="_answers_41">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -11389,7 +11783,7 @@ Rules say that anything in brackets gets evaluated first. So you&#8217;d write:<
 </div>
 </div>
 <div class="sect2">
-<h3 id="_sources_2">4.10. Sources</h3>
+<h3 id="_sources_2">4.11. Sources</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -11410,6 +11804,9 @@ on Wikipedia continually useful).</p>
 <li>
 <p><a href="https://www.trinity.edu/cbrown/logic/alter.pdf" class="bare">https://www.trinity.edu/cbrown/logic/alter.pdf</a> (Shows the different systems of
 propositional logic)</p>
+</li>
+<li>
+<p><a href="http://logicmanual.philosophy.ox.ac.uk/vorlesung/logic7p.pdf" class="bare">http://logicmanual.philosophy.ox.ac.uk/vorlesung/logic7p.pdf</a></p>
 </li>
 </ul>
 </div>
@@ -11931,7 +12328,7 @@ A, B &#x21A6; {x | x &#x2208; A and x &#x2209; B}
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-12-27 14:26:49 GMT
+Last updated 2017-01-02 17:26:12 GMT
 </div>
 </div>
 </body>

@@ -3311,10 +3311,11 @@ to use Greek capital letters!
 
 
 :numbered:
-=== Sets Of Formulas
+=== Theory
 
 I'm not quite sure why yet, but in maths land they talk about sets of formulas,
-often giving them Greek capital letters! So they say:
+calling them __theories__ and often giving them Greek capital letters! So they
+say:
 
 [example]
 {Gamma} = {{phi}~1~, ...,{phi}~n~}
@@ -3338,8 +3339,8 @@ write the following in terms of individual formalas:
 .. {Delta} {entails} {psi}
 .. {Delta} {cap} {Gamma} {entails} {psi}
 .. {Gamma} {cup} {Delta} {entails} {psi}
-. If {Delta} and {Gamma} are sets of formulas, say whether the following are
-  true or false:
+. If {Delta} and {Gamma} are theories, say whether the following are true or
+  false:
 .. If {Delta} {entails} {psi} and {Gamma} {entails} {psi} then
    {Delta} {cup} {Gamma} {entails} {psi}.
 .. If {Delta} {entails} {psi} and {Gamma} {entails} {psi} then
@@ -3358,8 +3359,8 @@ write the following in terms of individual formalas:
    {phi}~2~ {entails} {psi}
 .. {Gamma} {cup} {Delta} {entails} {psi} +
    {phi}~1~ {and} {phi}~2~ {and} {phi}~3~ {entails} {psi}
-. If {Delta} and {Gamma} are sets of formulas, say whether the following are
-  true or false:
+. If {Delta} and {Gamma} are theories, say whether the following are true or
+  false:
 .. If {Delta} {entails} {psi} and {Gamma} {entails} {psi} then
    {Delta} {cup} {Gamma} {entails} {psi}. +
    If: +
@@ -3465,6 +3466,206 @@ write the following in terms of individual formalas:
    {Delta} {entails} {not}{phi} +
    {empty} +
    is not true.
+
+
+:numbered:
+=== Semantic Consistency
+
+A theory is __semantically consistent__ if and only if there's an interpretation
+where all the formulas of the theory are true. In other words if there's a
+theory {Delta} is:
+
+[example]
+{Delta} = {{phi}~1~, ...,{phi}~n~}
+
+Then {Delta} is semantically consistent if:
+
+[example]
+{phi}~1~ {and} {phi}~2~ {and} ... {and} {phi}~n~
+
+is satisfiable. An example you say? Okay, if:
+
+[example]
+{Gamma} = {P, Q {and} P, Q {or} P, Q}
+
+then {Gamma} is consistent if:
+
+[example]
+P {and} (Q {and} P) {and} (Q {or} P) {and} Q
+
+is satisfiable. Using a truth table:
+
+[cols="5*", options="header"]
+|===
+| P
+| Q
+| Q {and} P
+| Q {or} P
+| P {and} (Q {and} P) {and} (Q {or} P) {and} Q
+
+| T
+| T
+| T
+| T
+| T
+
+| F
+| T
+| F
+| T
+| F
+
+| T
+| F
+| F
+| T
+| F
+
+| F
+| F
+| F
+| F
+| F
+|===
+
+
+:numbered!:
+==== Questions
+
+. Say whether the following theories are consistent or not:
+.. {Delta} = {Q, {not}Q}
+.. {Gamma} = {P {and} Q, Q}
+.. {Gamma} = {P {or} Q, {not}Q}
+.. {Gamma} = {P {implies} Q, Q {implies} {not}P}
+.. {Gamma} = {{not}P, {not}Q, P {bicond} Q}
+
+
+==== Answers
+
+. Say whether the following theories are consistent or not:
+.. {Delta} = {Q, {not}Q} +
+   {Delta} is consistent if Q {and} {not}Q is satisfiable:
++
+|===
+| Q | {not}Q | Q {and} {not}Q
+
+| T | F | F
+| F | T | F
+|===
++
+So the theory {Delta} is not consistent.
+.. {Gamma} = {P {and} Q, Q} +
+   {Gamma} is consistent if P {and} Q {and} Q is satisfiable
++
+|===
+| P | Q | P {and} Q | P {and} Q {and} Q
+
+| T | T | T         | T
+| F | T | F         | F
+| T | F | F         | F
+| F | F | F         | F
+|===
++
+So the theory {Gamma} is consistent.
+.. {Gamma} = {P {or} Q, {not}Q} +
+   {Gamma} is consistent if (P {or} Q) {and} {not}Q is satisfiable
++
+|===
+| P | Q | P {or} Q | {not}Q | (P {or} Q) {and} {not}Q
+
+| T | T | T        | F      | F
+| F | T | T        | F      | F
+| T | F | T        | T      | T
+| F | F | F        | T      | F
+|===
++
+So the theory {Gamma} is consistent.
+.. {Gamma} = {P {implies} Q, Q {implies} {not}P} +
+   {Gamma} is consistent if (P {implies} Q) {and} (Q {implies} {not}P) is
+   satisfiable.
++
+[cols="6*", options="header"]
+|===
+| P
+| Q
+| P {implies} Q
+| {not}P
+| Q {implies} {not}P
+| (P {implies} Q) {and} (Q {implies} {not}P)
+
+| T
+| T
+| T
+| F
+| F
+| F
+
+| F
+| T
+| T
+| T
+| T
+| T
+
+| T
+| F
+| F
+| F
+| T
+| F
+
+| F
+| F
+| T
+| T
+| T
+| T
+|===
++
+So the theory {Gamma} is consistent.
+.. {Gamma} = {{not}P, {not}Q, P {bicond} Q} +
+   {Gamma} is consistent if {not}P {and} {not}Q {and} (P {bicond} Q) is
+   satisfiable
++
+[cols="6*", options="header"]
+|===
+| P
+| Q
+| {not}P
+| {not}Q
+| P {bicond} Q
+| {not}P {and} {not}Q {and} (P {bicond} Q)
+
+| T
+| T
+| F
+| F
+| T
+| F
+
+| F
+| T
+| T
+| F
+| F
+| F
+
+| T
+| F
+| F
+| T
+| F
+| F
+
+| F
+| F
+| T
+| T
+| T
+| T
+|===
++
+So the theory {Gamma} is consistent.
 
 
 :numbered:
@@ -4489,6 +4690,7 @@ and the truth table is:
 * http://logic.stanford.edu/intrologic/notes/notes.html (Excellent notes).
 * https://www.trinity.edu/cbrown/logic/alter.pdf (Shows the different systems of
   propositional logic)
+* http://logicmanual.philosophy.ox.ac.uk/vorlesung/logic7p.pdf
 
 
 == Number Theory
