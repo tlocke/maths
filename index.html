@@ -6489,7 +6489,7 @@ Conclusion: &#x00AC;P</p>
 <p>P: Bill orders 6x.<br>
 Q: Bill orders Tribute.<br>
 R: The pub is open.<br>
-Premises: (P &#x2228; Q), (\(P &#x2228; Q) &#x2192; R), &#x00AC;Q<br>
+Premises: (P &#x2228; Q), ((P &#x2228; Q) &#x2192; R), &#x00AC;Q<br>
 Conclusion: (R &#x2227; P)</p>
 </li>
 <li>
@@ -6510,7 +6510,7 @@ entailments not.</p>
 <p>Premises: (P &#x2192; Q), P<br>
 Conclusion: Q<br>
 The truth table below shows that the formula
-(\((P &#x2192; Q) &#x2227; P) &#x2192; Q) is valid, and so<br>
+(((P &#x2192; Q) &#x2227; P) &#x2192; Q) is valid, and so<br>
 (P &#x2192; Q), P &#x22A8; Q</p>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -6525,8 +6525,8 @@ The truth table below shows that the formula
 <th class="tableblock halign-left valign-top">P</th>
 <th class="tableblock halign-left valign-top">Q</th>
 <th class="tableblock halign-left valign-top">(P &#x2192; Q)</th>
-<th class="tableblock halign-left valign-top">(\(P &#x2192; Q) &#x2227; P)</th>
-<th class="tableblock halign-left valign-top">(\((P &#x2192; Q) &#x2227; P) &#x2192; Q)</th>
+<th class="tableblock halign-left valign-top">((P &#x2192; Q) &#x2227; P)</th>
+<th class="tableblock halign-left valign-top">(((P &#x2192; Q) &#x2227; P) &#x2192; Q)</th>
 </tr>
 </thead>
 <tbody>
@@ -6690,7 +6690,10 @@ is valid and so the premises entail the conclusion.</p>
 </table>
 </li>
 <li>
-<p>Premises: (P &#x2228; Q), P &#x2228; Q) &#x2192; R), &#x00AC;Q + Conclusion: (R &#x2227; P) + The truth table below shows that the formula: + ((((P &#x2228; Q) &#x2227; implies((P &#x2228; Q) &#x2228; R &#x2227; &#x00AC;Q) &#x2192;
+<p>Premises: (P &#x2228; Q), ((P &#x2228; Q) &#x2192; R), &#x00AC;Q<br>
+Conclusion: (R &#x2227; P)<br>
+The truth table below shows that the formula:<br>
+((((P &#x2228; Q) &#x2227; ((P &#x2228; Q) &#x2192; R)) &#x2227; &#x00AC;Q) &#x2192;
 (R &#x2227; P))<br>
 is valid and so:<br>
 (P &#x2228; Q), ((P &#x2228; Q) &#x2192; R), &#x00AC;Q &#x22A8; (R &#x2227; P)</p>
@@ -6718,8 +6721,8 @@ is valid and so:<br>
 <th class="tableblock halign-left valign-top">P &#x2228; Q) &#x2227; ((P &#x2228; Q) &#x2192; R</th>
 <th class="tableblock halign-left valign-top">(P &#x2228; Q) &#x2227; ((P &#x2228; Q) &#x2192; R &#x2227; &#x00AC;Q)</th>
 <th class="tableblock halign-left valign-top">(R &#x2227; P)</th>
-<th class="tableblock halign-left valign-top">((P &#x2228; Q) &#x2227; implies((P &#x2228; Q) &#x2227; R &#x2227; &#x00AC;Q) &#x2192;
-  (R &#x2227; P))</th>
+<th class="tableblock halign-left valign-top">(P &#x2228; Q) &#x2227; ((P &#x2228; Q) &#x2192; R &#x2227; &#x00AC;Q) &#x2192;
+  (R &#x2227; P)</th>
 </tr>
 </thead>
 <tbody>
@@ -8859,7 +8862,7 @@ is not true.</p>
 <div class="paragraph">
 <p>A theory is <em>semantically consistent</em> if and only if there&#8217;s an interpretation
 where all the formulas of the theory are true. In other words if there&#8217;s a
-theory &#x0394; is:</p>
+theory &#x0394;:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -8941,6 +8944,9 @@ P &#x2227; (Q &#x2227; P) &#x2227; (Q &#x2228; P) &#x2227; Q
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>the formula is satisfiable and so &#x0394; is semantically consistent.</p>
+</div>
 <div class="sect3">
 <h4 id="_questions_35">Questions</h4>
 <div class="olist arabic">
@@ -9253,22 +9259,51 @@ satisfiable</p>
 hark at him with his theorems! He&#8217;s just got started in maths and now he thinks
 he&#8217;s Bertrand Russell!&#8217;. Well, okay reader maybe I was being a bit pompous, but
 anyway I found that a theorem is a statement about maths that&#8217;s been proven to
-be true. The <em>Unsatisfiability Theorem</em> states that:</p>
+be true. The <em>Unsatisfiability Theorem</em> states that for a set of formulas &#x0394; and a formula &#x03C6;:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
-and(and(A, B), C) &#x22A8; P if and only if and(and(and(A, B) C) not(P)) is unsatisfiable.
+&#x0394; &#x22A8; &#x03C6; if and only if &#x0394; &#8746; &#x00AC;&#x03C6; is
+unsatisfiable.
 </div>
 </div>
 <div class="paragraph">
-<p>So what&#8217;s the proof of that? Well, if an interpretation satisfies {A, B, C},
-then it must satisfy P, and therefore it can&#8217;t satisfy not(P). So for every
-interpretation, {A, B, C, not(P)} is unsatisfiable.</p>
+<p>So what&#8217;s the proof of the Unsatisfiability Theorem? Well, if an interpretation
+satisfies &#x0394;, then it must satisfy &#x03C6;, and therefore it can&#8217;t satisfy
+&#x00AC;&#x03C6;. So for every interpretation, &#x0394; &#8746; &#x00AC;&#x03C6; is
+unsatisfiable. That</p>
 </div>
 <div class="paragraph">
 <p>I found that I had to think about that for quite a long time before I accepted
 it to be true. So what&#8217;s a proof exactly? It&#8217;s a chain of small self-evidently
 true steps that lead to the theorem.</p>
+</div>
+<div class="paragraph">
+<p>While we&#8217;re on the subject of theorems, in the <a href="#_entailment">Entailment</a> section I
+actually encountered the <em>Deduction Theorem</em> but I didn&#8217;t know it was called
+that at the time. The Deduction Theorem is a statement about formulas (a
+metalogical statement no less) that says that for a theory &#x0394;:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+&#x0394; = {&#x0393;<sub>1</sub>, &#8230;&#8203;,&#x0393;<sub>n</sub>}
+</div>
+</div>
+<div class="paragraph">
+<p>if:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+&#x0394; &#x22A8; &#x03C6;
+</div>
+</div>
+<div class="paragraph">
+<p>then:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+{&#x0393;<sub>1</sub> &#x2227; &#8230;&#8203; &#x2227; &#x0393;<sub>n</sub>} &#x2192; &#x03C6;
+</div>
 </div>
 <div class="sect3">
 <h4 id="_questions_36">Questions</h4>
@@ -12328,7 +12363,7 @@ A, B &#x21A6; {x | x &#x2208; A and x &#x2209; B}
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-01-02 17:26:12 GMT
+Last updated 2017-04-09 14:30:38 BST
 </div>
 </div>
 </body>
