@@ -3249,6 +3249,42 @@ Query: Is this similar to recursion in say Haskell?
 
 
 :numbered:
+=== Counterexample
+
+Sometimes a mathematician will come up with statement that she thinks is true,
+a conjecture in other words, then another mathematician could disprove the
+conjecture with a _counterexample_. A conjecture might be:
+
+[example]
+All sets have cardinality greater than 3.
+
+Another mathematician can say, '`that can't be true, what about the set {1},
+that has cardinality one?`'. Thus the conjecture has been disproved by
+counterexample.
+
+
+:numbered!:
+==== Questions
+. Disprove the following conjectures by coming up with a counterexample:
+.. There is no higher number than 100.
+.. For all prime numbers p, 2p + 1 is prime.
+.. For two sets A and B, |A {cup} B| = |A| + |B|
+.. For two sets A and B, |A {cap} B| = |A| - |B|
+
+
+==== Answers
+. Disprove the following conjectures by coming up with a counterexample:
+.. There is no higher number than 100. +
+   Counterexample: 100
+.. For all prime numbers p, 2p + 1 is prime. +
+   Counterexample: 7
+.. For any two sets A and B, |A {cup} B| = |A| + |B| +
+   Counterexample: A = {1} and B = {1}
+.. For any two sets A and B, |A {cap} B| = |A| - |B| +
+   Counterexample: A = {1} and B = {1}
+
+
+:numbered:
 === Set Difference
 
 Set difference
@@ -3540,6 +3576,11 @@ the formula is satisfiable and so {Delta} is semantically consistent.
 .. {Gamma} = {P {or} Q, {not}Q}
 .. {Gamma} = {P {implies} Q, Q {implies} {not}P}
 .. {Gamma} = {{not}P, {not}Q, P {bicond} Q}
+. Disprove the following conjectures with a counterexample:
+.. If {{psi}, {phi}} is consistent, then {psi} {equiv} {phi}.
+.. If {{psi}, {phi}} is consistent, then {psi} {entails} {phi}.
+.. If {psi} {equiv} {phi}, then {{psi}, {phi}} is consistent.
+.. If {psi} {entails} {phi}, then {{psi}, {phi}} is consistent.
 
 
 ==== Answers
@@ -3668,6 +3709,23 @@ So the theory {Gamma} is consistent.
 |===
 +
 So the theory {Gamma} is consistent.
+. Disprove the following conjectures with a counterexample:
+.. If {{psi}, {phi}} is consistent, then {psi} {equiv} {phi}. +
+   If {{psi}, {phi}} is consistent then ({psi} {and} {phi}) is satisfiable. Say
+   {psi} is (P {or} {or}P) and {phi} is P, then ({psi} {and} {phi}) is
+   satisfiable, but {psi} is not equivalent to {phi}, so the conjecture is
+   false.
+.. If {{psi}, {phi}} is consistent, then {psi} {entails} {phi}. +
+   If {{psi}, {phi}} is consistent then ({psi} {and} {phi}) is satisfiable. If
+   {psi} {entails} {phi} then ({psi} {implies} {phi}) is valid. But if {psi} is
+   (P {and} {not}P) and {phi} is P, then ({psi} {and} {phi}) is satisfiable and
+   ({psi} {implies} {phi}) is not valid, so the conjecture is false.
+.. If {psi} {equiv} {phi}, then {{psi}, {phi}} is consistent. +
+   If {psi} {equiv} {phi} then ({psi} {bicond} {phi}) is valid. If
+   {{psi}, {phi}} is consistent then ({psi} {and} {phi}) is valid. But if
+   {psi} is ( the theory {{psi}, {phi}} is consistent, then
+   ({psi} {and} {phi}) is
+.. If {psi} {entails} {phi}, then {{psi}, {phi}} is consistent.
 
 
 :numbered:
@@ -3680,13 +3738,15 @@ anyway I found that a theorem is a statement about maths that's been proven to
 be true. The _Unsatisfiability Theorem_ states that for a set of formulas {Delta} and a formula {phi}:
 
 [example]
-{Delta} {entails} {phi} if and only if {Delta} {cup} {not}{phi} is
+{Delta} {entails} {phi} if and only if {Delta} {cup} {{not}{phi}} is
 unsatisfiable.
 
 So what's the proof of the Unsatisfiability Theorem? Well, if an interpretation
 satisfies {Delta}, then it must satisfy {phi}, and therefore it can't satisfy
-{not}{phi}. So for every interpretation, {Delta} {cup} {not}{phi} is
-unsatisfiable. That 
+{not}{phi}. So for every interpretation, {Delta} {cup} {{not}{phi}} is
+unsatisfiable. That's looking at it from one direction, it says 'if and only if'
+, so we have to look at it from the other direction too. If
+{Delta} {cup} {{not}{phi}} is unsatisfiable, then every interpretation that satisfies {Delta} must not satisfy {not}{phi} (so must satisfy {phi}). So {Delta} must entail {phi}.
 
 I found that I had to think about that for quite a long time before I accepted
 it to be true. So what's a proof exactly? It's a chain of small self-evidently
@@ -3698,7 +3758,7 @@ that at the time. The Deduction Theorem is a statement about formulas (a
 metalogical statement no less) that says that for a theory {Delta}:
 
 [example]
-{Delta} = {{gamma}~1~, ...,{gamma}~n~}
+{Delta} = {{psi}~1~, ...,{psi}~n~}
 
 if:
 
@@ -3708,13 +3768,26 @@ if:
 then:
 
 [example]
-{{gamma}~1~ {and} ... {and} {gamma}~n~} {implies} {phi}
+{{psi}~1~ {and} ... {and} {psi}~n~} {implies} {phi}
+
+And in the <<_identity>> section I came across the idea that for two formulas
+{phi} and {psi} if:
+
+[example]
+{phi} {equiv} {psi}
+
+then:
+
+[example]
+{phi} {bicond} {psi}
+
+is valid. That idea is called the _equivalence theorem_.
 
 
 :numbered!:
 ==== Questions
 
-. Write the following formulas in CNF notation:
+. 
 .. or(A, implies(not(B), A))
 .. implies(implies(A, B), C)
 .. or(P, equals(Q, not(P)))
@@ -5042,3 +5115,9 @@ A, B {brarr} {x | x {isin} A and x {notin} B}
 === Universal Class
 
 Uc
+
+== To Do
+
+* Quantum logic https://en.wikipedia.org/wiki/Quantum_logic
+* Analogies between arithmatic and propositional logic (entails is <=).
+* https://aimath.org/textbooks/approved-textbooks/leary-kristiansen/

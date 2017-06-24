@@ -476,11 +476,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_power_set">3.12. Power Set</a></li>
 <li><a href="#_cardinality_of_the_power_set">3.13. Cardinality Of The Power Set</a></li>
 <li><a href="#_proof_by_induction">3.14. Proof By Induction</a></li>
-<li><a href="#_set_difference">3.15. Set Difference</a></li>
-<li><a href="#_set_intersection">3.16. Set Intersection</a></li>
-<li><a href="#_russell_s_paradox">3.17. Russell&#8217;s Paradox</a></li>
-<li><a href="#_other_paradoxes">3.18. Other Paradoxes</a></li>
-<li><a href="#_sources">3.19. Sources</a></li>
+<li><a href="#_counterexample">3.15. Counterexample</a></li>
+<li><a href="#_set_difference">3.16. Set Difference</a></li>
+<li><a href="#_set_intersection">3.17. Set Intersection</a></li>
+<li><a href="#_russell_s_paradox">3.18. Russell&#8217;s Paradox</a></li>
+<li><a href="#_other_paradoxes">3.19. Other Paradoxes</a></li>
+<li><a href="#_sources">3.20. Sources</a></li>
 </ul>
 </li>
 <li><a href="#_propositional_logic_ii">4. Propositional Logic II</a>
@@ -516,6 +517,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_universal_class">7.12. Universal Class</a></li>
 </ul>
 </li>
+<li><a href="#_to_do">8. To Do</a></li>
 </ul>
 </div>
 </div>
@@ -8551,19 +8553,93 @@ and so the proposition is true for all n.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_set_difference">3.15. Set Difference</h3>
+<h3 id="_counterexample">3.15. Counterexample</h3>
+<div class="paragraph">
+<p>Sometimes a mathematician will come up with statement that she thinks is true,
+a conjecture in other words, then another mathematician could disprove the
+conjecture with a <em>counterexample</em>. A conjecture might be:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+All sets have cardinality greater than 3.
+</div>
+</div>
+<div class="paragraph">
+<p>Another mathematician can say, &#8216;that can&#8217;t be true, what about the set {1},
+that has cardinality one?&#8217;. Thus the conjecture has been disproved by
+counterexample.</p>
+</div>
+<div class="sect3">
+<h4 id="_questions_34">Questions</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Disprove the following conjectures by coming up with a counterexample:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>There is no higher number than 100.</p>
+</li>
+<li>
+<p>For all prime numbers p, 2p + 1 is prime.</p>
+</li>
+<li>
+<p>For two sets A and B, |A &#8746; B| = |A| + |B|</p>
+</li>
+<li>
+<p>For two sets A and B, |A &#8745; B| = |A| - |B|</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_answers_34">Answers</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Disprove the following conjectures by coming up with a counterexample:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>There is no higher number than 100.<br>
+Counterexample: 100</p>
+</li>
+<li>
+<p>For all prime numbers p, 2p + 1 is prime.<br>
+Counterexample: 7</p>
+</li>
+<li>
+<p>For any two sets A and B, |A &#8746; B| = |A| + |B|<br>
+Counterexample: A = {1} and B = {1}</p>
+</li>
+<li>
+<p>For any two sets A and B, |A &#8745; B| = |A| - |B|<br>
+Counterexample: A = {1} and B = {1}</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_set_difference">3.16. Set Difference</h3>
 <div class="paragraph">
 <p>Set difference</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_set_intersection">3.16. Set Intersection</h3>
+<h3 id="_set_intersection">3.17. Set Intersection</h3>
 <div class="paragraph">
 <p>Set Intersection &#8745;.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_russell_s_paradox">3.17. Russell&#8217;s Paradox</h3>
+<h3 id="_russell_s_paradox">3.18. Russell&#8217;s Paradox</h3>
 <div class="paragraph">
 <p>On your first day as an assistant librarian, you&#8217;re asked to compile a book
 that is a catalogue of all of the books in the library that don&#8217;t mention
@@ -8587,7 +8663,7 @@ contents as has been requested, except that it doesn&#8217;t contain itself.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_other_paradoxes">3.18. Other Paradoxes</h3>
+<h3 id="_other_paradoxes">3.19. Other Paradoxes</h3>
 <div class="paragraph">
 <p>Curry&#8217;s Paradox is:</p>
 </div>
@@ -8609,7 +8685,7 @@ him pontificating on the philosophy of it all!!&#8217; Okay, okay.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_sources">3.19. Sources</h3>
+<h3 id="_sources">3.20. Sources</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -8662,7 +8738,7 @@ say:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_questions_34">Questions</h4>
+<h4 id="_questions_35">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -8709,7 +8785,7 @@ false:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_34">Answers</h4>
+<h4 id="_answers_35">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -8948,7 +9024,7 @@ P &#x2227; (Q &#x2227; P) &#x2227; (Q &#x2228; P) &#x2227; Q
 <p>the formula is satisfiable and so &#x0394; is semantically consistent.</p>
 </div>
 <div class="sect3">
-<h4 id="_questions_35">Questions</h4>
+<h4 id="_questions_36">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -8973,11 +9049,30 @@ P &#x2227; (Q &#x2227; P) &#x2227; (Q &#x2228; P) &#x2227; Q
 </ol>
 </div>
 </li>
+<li>
+<p>Disprove the following conjectures with a counterexample:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>If {&#x03C8;, &#x03C6;} is consistent, then &#x03C8; &#8801; &#x03C6;.</p>
+</li>
+<li>
+<p>If {&#x03C8;, &#x03C6;} is consistent, then &#x03C8; &#x22A8; &#x03C6;.</p>
+</li>
+<li>
+<p>If &#x03C8; &#8801; &#x03C6;, then {&#x03C8;, &#x03C6;} is consistent.</p>
+</li>
+<li>
+<p>If &#x03C8; &#x22A8; &#x03C6;, then {&#x03C8;, &#x03C6;} is consistent.</p>
+</li>
+</ol>
+</div>
+</li>
 </ol>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_35">Answers</h4>
+<h4 id="_answers_36">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -9248,6 +9343,37 @@ satisfiable</p>
 </ol>
 </div>
 </li>
+<li>
+<p>Disprove the following conjectures with a counterexample:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>If {&#x03C8;, &#x03C6;} is consistent, then &#x03C8; &#8801; &#x03C6;.<br>
+If {&#x03C8;, &#x03C6;} is consistent then (&#x03C8; &#x2227; &#x03C6;) is satisfiable. Say
+&#x03C8; is (P &#x2228; &#x2228;P) and &#x03C6; is P, then (&#x03C8; &#x2227; &#x03C6;) is
+satisfiable, but &#x03C8; is not equivalent to &#x03C6;, so the conjecture is
+false.</p>
+</li>
+<li>
+<p>If {&#x03C8;, &#x03C6;} is consistent, then &#x03C8; &#x22A8; &#x03C6;.<br>
+If {&#x03C8;, &#x03C6;} is consistent then (&#x03C8; &#x2227; &#x03C6;) is satisfiable. If
+&#x03C8; &#x22A8; &#x03C6; then (&#x03C8; &#x2192; &#x03C6;) is valid. But if &#x03C8; is
+(P &#x2227; &#x00AC;P) and &#x03C6; is P, then (&#x03C8; &#x2227; &#x03C6;) is satisfiable and
+(&#x03C8; &#x2192; &#x03C6;) is not valid, so the conjecture is false.</p>
+</li>
+<li>
+<p>If &#x03C8; &#8801; &#x03C6;, then {&#x03C8;, &#x03C6;} is consistent.<br>
+If &#x03C8; &#8801; &#x03C6; then (&#x03C8; &#x2194; &#x03C6;) is valid. If
+{&#x03C8;, &#x03C6;} is consistent then (&#x03C8; &#x2227; &#x03C6;) is valid. But if
+&#x03C8; is ( the theory {&#x03C8;, &#x03C6;} is consistent, then
+(&#x03C8; &#x2227; &#x03C6;) is</p>
+</li>
+<li>
+<p>If &#x03C8; &#x22A8; &#x03C6;, then {&#x03C8;, &#x03C6;} is consistent.</p>
+</li>
+</ol>
+</div>
+</li>
 </ol>
 </div>
 </div>
@@ -9263,15 +9389,17 @@ be true. The <em>Unsatisfiability Theorem</em> states that for a set of formulas
 </div>
 <div class="exampleblock">
 <div class="content">
-&#x0394; &#x22A8; &#x03C6; if and only if &#x0394; &#8746; &#x00AC;&#x03C6; is
+&#x0394; &#x22A8; &#x03C6; if and only if &#x0394; &#8746; {&#x00AC;&#x03C6;} is
 unsatisfiable.
 </div>
 </div>
 <div class="paragraph">
 <p>So what&#8217;s the proof of the Unsatisfiability Theorem? Well, if an interpretation
 satisfies &#x0394;, then it must satisfy &#x03C6;, and therefore it can&#8217;t satisfy
-&#x00AC;&#x03C6;. So for every interpretation, &#x0394; &#8746; &#x00AC;&#x03C6; is
-unsatisfiable. That</p>
+&#x00AC;&#x03C6;. So for every interpretation, &#x0394; &#8746; {&#x00AC;&#x03C6;} is
+unsatisfiable. That&#8217;s looking at it from one direction, it says 'if and only if'
+, so we have to look at it from the other direction too. If
+&#x0394; &#8746; {&#x00AC;&#x03C6;} is unsatisfiable, then every interpretation that satisfies &#x0394; must not satisfy &#x00AC;&#x03C6; (so must satisfy &#x03C6;). So &#x0394; must entail &#x03C6;.</p>
 </div>
 <div class="paragraph">
 <p>I found that I had to think about that for quite a long time before I accepted
@@ -9286,7 +9414,7 @@ metalogical statement no less) that says that for a theory &#x0394;:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
-&#x0394; = {&#x0393;<sub>1</sub>, &#8230;&#8203;,&#x0393;<sub>n</sub>}
+&#x0394; = {&#x03C8;<sub>1</sub>, &#8230;&#8203;,&#x03C8;<sub>n</sub>}
 </div>
 </div>
 <div class="paragraph">
@@ -9302,40 +9430,42 @@ metalogical statement no less) that says that for a theory &#x0394;:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
-{&#x0393;<sub>1</sub> &#x2227; &#8230;&#8203; &#x2227; &#x0393;<sub>n</sub>} &#x2192; &#x03C6;
+{&#x03C8;<sub>1</sub> &#x2227; &#8230;&#8203; &#x2227; &#x03C8;<sub>n</sub>} &#x2192; &#x03C6;
+</div>
+</div>
+<div class="paragraph">
+<p>And in the <a href="#_identity">Identity</a> section I came across the idea that for two formulas
+&#x03C6; and &#x03C8; if:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+&#x03C6; &#8801; &#x03C8;
+</div>
+</div>
+<div class="paragraph">
+<p>then:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+&#x03C6; &#x2194; &#x03C8;
+</div>
+</div>
+<div class="paragraph">
+<p>is valid. That idea is called the <em>equivalence theorem</em>.</p>
+</div>
+<div class="sect3">
+<h4 id="_questions_37">Questions</h4>
+<div class="paragraph">
+<p>.
+.. or(A, implies(not(B), A))
+.. implies(implies(A, B), C)
+.. or(P, equals(Q, not(P)))
+.. or(and(A, B), and(A, C))
+.. and(and(A, B), and(A, C))</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_questions_36">Questions</h4>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Write the following formulas in CNF notation:</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>or(A, implies(not(B), A))</p>
-</li>
-<li>
-<p>implies(implies(A, B), C)</p>
-</li>
-<li>
-<p>or(P, equals(Q, not(P)))</p>
-</li>
-<li>
-<p>or(and(A, B), and(A, C))</p>
-</li>
-<li>
-<p>and(and(A, B), and(A, C))</p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_answers_36">Answers</h4>
+<h4 id="_answers_37">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -9559,7 +9689,7 @@ and(or(or(not(C), not(A)), B), or(or(not(C), A), not(B)))
 <p>we&#8217;ve got it in CNF.</p>
 </div>
 <div class="sect3">
-<h4 id="_questions_37">Questions</h4>
+<h4 id="_questions_38">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -9588,7 +9718,7 @@ and(or(or(not(C), not(A)), B), or(or(not(C), A), not(B)))
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_37">Answers</h4>
+<h4 id="_answers_38">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -9927,7 +10057,7 @@ and idempotence)</p>
 </ol>
 </div>
 <div class="sect3">
-<h4 id="_questions_38">Questions</h4>
+<h4 id="_questions_39">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -9937,7 +10067,7 @@ and idempotence)</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_38">Answers</h4>
+<h4 id="_answers_39">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -10256,7 +10386,7 @@ Q, (R &#x2227; P) &#x2227; (R &#x2227; Q) &#x2192; P &#x22A8; P
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="_questions_39">Questions</h4>
+<h4 id="_questions_40">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -10270,7 +10400,7 @@ valid by using rules of inference.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_39">Answers</h4>
+<h4 id="_answers_40">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -11117,7 +11247,7 @@ P &#x2228; Q, &#x00AC;(P &#x2227; Q), &#x00AC;P &#x22A8; Q</p>
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="_answers_40">4.9.1. Answers</h4>
+<h4 id="_answers_41">4.9.1. Answers</h4>
 <div class="paragraph">
 <p>Answers on their way&#8230;&#8203;</p>
 </div>
@@ -11449,7 +11579,7 @@ Rules say that anything in brackets gets evaluated first. So you&#8217;d write:<
 </table>
 </div>
 <div class="sect3">
-<h4 id="_questions_40">Questions</h4>
+<h4 id="_questions_41">Questions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -11475,7 +11605,7 @@ Rules say that anything in brackets gets evaluated first. So you&#8217;d write:<
 </div>
 </div>
 <div class="sect3">
-<h4 id="_answers_41">Answers</h4>
+<h4 id="_answers_42">Answers</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -12360,10 +12490,28 @@ A, B &#x21A6; {x | x &#x2208; A and x &#x2209; B}
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_to_do">8. To Do</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Quantum logic <a href="https://en.wikipedia.org/wiki/Quantum_logic" class="bare">https://en.wikipedia.org/wiki/Quantum_logic</a></p>
+</li>
+<li>
+<p>Analogies between arithmatic and propositional logic (entails is &#8656;).</p>
+</li>
+<li>
+<p><a href="https://aimath.org/textbooks/approved-textbooks/leary-kristiansen/" class="bare">https://aimath.org/textbooks/approved-textbooks/leary-kristiansen/</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-04-09 14:30:38 BST
+Last updated 2017-06-24 16:55:55 BST
 </div>
 </div>
 </body>
